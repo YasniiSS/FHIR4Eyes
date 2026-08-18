@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Guidance - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="usecases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Guidance</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Guidance</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#guidance" id="markdown-toc-guidance">Guidance</a>    <ul>
+      <li><a href="#what-must-support-means-here" id="markdown-toc-what-must-support-means-here">What "Must Support" means here</a></li>
+      <li><a href="#the-laterality-pattern-bodysite-with-a-bodystructure-reference" id="markdown-toc-the-laterality-pattern-bodysite-with-a-bodystructure-reference">The laterality pattern: <code class="language-plaintext highlighter-rouge">bodySite</code> with a <code class="language-plaintext highlighter-rouge">BodyStructure</code> reference</a></li>
+      <li><a href="#the-panel-pattern-grouping-related-observations-with-hasmember" id="markdown-toc-the-panel-pattern-grouping-related-observations-with-hasmember">The panel pattern: grouping related observations with <code class="language-plaintext highlighter-rouge">hasMember</code></a>        <ul>
+          <li><a href="#worked-example-tensioncurve-with-corrected-readings" id="markdown-toc-worked-example-tensioncurve-with-corrected-readings">Worked example: TensionCurve with corrected readings</a></li>
+          <li><a href="#worked-example-strabismusexams-two-tier-structure" id="markdown-toc-worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-granular-components-pattern" id="markdown-toc-the-granular-components-pattern">The granular-components pattern</a></li>
+      <li><a href="#fixating-eye-vs-measured-eye" id="markdown-toc-fixating-eye-vs-measured-eye">Fixating eye vs. measured eye</a></li>
+      <li><a href="#chaining-resources-through-a-clinical-episode" id="markdown-toc-chaining-resources-through-a-clinical-episode">Chaining resources through a clinical episode</a></li>
+      <li><a href="#terminology-strategy-summary" id="markdown-toc-terminology-strategy-summary">Terminology strategy summary</a></li>
+      <li><a href="#a-note-on-how-this-guide-was-built" id="markdown-toc-a-note-on-how-this-guide-was-built">A note on how this guide was built</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="guidance">Guidance</h1>
+
+<p>This page explains the conventions used consistently throughout FHIR4Eyes, and gives
+practical guidance for implementers building systems against these profiles. If you are
+new to this guide, this page is a good companion to <a href="profiles.html">Profiles</a>: the profiles
+page defines <em>what</em> each resource looks like, while this page explains the recurring
+<em>patterns</em> behind those definitions.</p>
+
+<h2 id="what-must-support-means-here">What "Must Support" means here</h2>
+
+<p>Throughout this guide, elements marked <code class="language-plaintext highlighter-rouge">MS</code> (Must Support) are elements that a conformant
+system must be capable of populating, storing, and displaying, if it has data for them. It
+does <strong>not</strong> mean the element is mandatory in every instance (that is what cardinality,
+like <code class="language-plaintext highlighter-rouge">1..1</code>, is for). An element can be <code class="language-plaintext highlighter-rouge">0..1 MS</code>: optional to populate for a given patient,
+but if data exists, a conformant system cannot silently drop it.</p>
+
+<p>This distinction matters in practice: <code class="language-plaintext highlighter-rouge">OphthalmicCondition.bodySite</code> is <code class="language-plaintext highlighter-rouge">0..* MS</code>. A
+diagnosis without laterality (for example, a systemic condition with ocular manifestations)
+is perfectly valid and doesn't need <code class="language-plaintext highlighter-rouge">bodySite</code> populated. But a system that receives a
+<code class="language-plaintext highlighter-rouge">bodySite</code> value for a diagnosis that <em>is</em> laterality-specific must not discard it.</p>
+
+<h2 id="the-laterality-pattern-bodysite-with-a-bodystructure-reference">The laterality pattern: <code class="language-plaintext highlighter-rouge">bodySite</code> with a <code class="language-plaintext highlighter-rouge">BodyStructure</code> reference</h2>
+
+<p>Almost every clinical resource in this guide (<code class="language-plaintext highlighter-rouge">OphthalmicCondition</code>, <code class="language-plaintext highlighter-rouge">OphthalmicProcedure</code>,
+<code class="language-plaintext highlighter-rouge">OphthalmicVisualAcuity</code>, and others) expresses laterality the same way: a <code class="language-plaintext highlighter-rouge">bodySite</code>
+element carrying a nested extension that references an <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code> instance,
+rather than a plain code.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* bodySite 0..* MS
+* bodySite.extension contains
+    http://hl7.org/fhir/StructureDefinition/bodySite named bodySiteEye 0..* MS
+* bodySite.extension[bodySiteEye].value[x] only Reference(OcularBodyStructure)
+</code></pre></div></div>
+
+<p>Why a reference instead of a simple code? A <code class="language-plaintext highlighter-rouge">Reference</code> lets the same <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code>
+instance (for example, "right eye" for a specific patient) be shared across multiple
+resources: a <code class="language-plaintext highlighter-rouge">Condition</code>, a <code class="language-plaintext highlighter-rouge">Procedure</code>, and an <code class="language-plaintext highlighter-rouge">Observation</code> can all point to the exact
+same structure instance, enabling queries like "what else references this eye" that a
+repeated plain code cannot support. See <a href="terminology.html">Terminology</a> and
+<a href="background.html">Background</a> for the full rationale, including where this guide follows
+the HL7 Eye Care IG's pattern and where it diverges.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ImagingStudy</code> is the one exception: its <code class="language-plaintext highlighter-rouge">series.bodySite</code> and <code class="language-plaintext highlighter-rouge">series.laterality</code> are
+native <code class="language-plaintext highlighter-rouge">Coding</code> fields (not references), for standard DICOM/PACS compatibility. This guide
+adds the same <code class="language-plaintext highlighter-rouge">bodySiteEye</code> extension alongside those native fields, so an imaging study
+can still be linked to the same shared <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code> instance when needed. See
+<code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> in <a href="profiles.html">Profiles</a>.</p>
+
+<h2 id="the-panel-pattern-grouping-related-observations-with-hasmember">The panel pattern: grouping related observations with <code class="language-plaintext highlighter-rouge">hasMember</code></h2>
+
+<p>Several profiles represent a <em>panel</em>: a parent <code class="language-plaintext highlighter-rouge">Observation</code> that has no value of its own,
+but groups together a set of related child observations via <code class="language-plaintext highlighter-rouge">hasMember</code>. This guide uses
+this pattern in two situations:</p>
+
+<p><strong>Fixed-purpose panels</strong>, where the parent's role is always the same:
+<code class="language-plaintext highlighter-rouge">TensionCurve</code> groups individual <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> readings taken across a day.</p>
+
+<p><strong>Flexible panels</strong>, where the parent groups whichever sub-observations were actually
+performed, with no fixed checklist: <code class="language-plaintext highlighter-rouge">StrabismusExam</code> groups any combination of its
+sub-tests (<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>, <code class="language-plaintext highlighter-rouge">PrismCoverTest</code>, and others), and
+<code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code> each group one <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> per gaze
+position tested.</p>
+
+<p>In both cases, the panel itself sets <code class="language-plaintext highlighter-rouge">value[x] 0..0</code>: the panel carries no value, only
+<code class="language-plaintext highlighter-rouge">hasMember</code> references.</p>
+
+<h3 id="worked-example-tensioncurve-with-corrected-readings">Worked example: TensionCurve with corrected readings</h3>
+
+<p><code class="language-plaintext highlighter-rouge">TensionCurve.hasMember</code> accepts <em>either</em> <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> or
+<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> as its members, since a single curve may mix plain and
+corrected readings depending on whether pachymetry was available for each reading. This
+illustrates how the panel pattern and the <code class="language-plaintext highlighter-rouge">derivedFrom</code> pattern combine:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TensionCurve</code> groups several readings across the day via <code class="language-plaintext highlighter-rouge">hasMember</code>.</li>
+  <li>Each member is either a plain <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading, or a
+<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> reading.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> instance is never a standalone measurement: it always
+references, via <code class="language-plaintext highlighter-rouge">derivedFrom</code>, the specific <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading and
+<code class="language-plaintext highlighter-rouge">Pachymetry</code> measurement it was calculated from.</li>
+</ul>
+
+<p>So a single curve reading can carry a two-level chain: the curve references the corrected
+reading, and the corrected reading itself references the two measurements it was derived
+from. Implementers should expect to traverse both levels when they need the full detail
+behind a corrected value (for example, to show the original uncorrected IOP alongside the
+correction).</p>
+
+<h3 id="worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is the most elaborate panel in this guide, combining both the fixed and
+flexible variants of the pattern described above, across two tiers:</p>
+
+<p><strong>Tier 1 (the top-level panel).</strong> <code class="language-plaintext highlighter-rouge">StrabismusExam.hasMember</code> is open (<code class="language-plaintext highlighter-rouge">0..*</code>), grouping
+whichever sub-tests were actually performed. These sub-tests fall into two groups:</p>
+
+<ul>
+  <li>Direct sub-tests, which produce a single result and don't vary by gaze position:
+<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>, <code class="language-plaintext highlighter-rouge">NearPointOfConvergence</code>, <code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>,
+<code class="language-plaintext highlighter-rouge">StereopsisTest</code>.</li>
+  <li>Position-based sub-tests, which are themselves small panels (see Tier 2 below):
+<code class="language-plaintext highlighter-rouge">PrismCoverTest</code>, <code class="language-plaintext highlighter-rouge">KrimskyTest</code>, <code class="language-plaintext highlighter-rouge">HirschbergTest</code>, <code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>,
+<code class="language-plaintext highlighter-rouge">Worth4DotTest</code>.</li>
+</ul>
+
+<p><strong>Tier 2 (position-based sub-test panels).</strong> Each position-based sub-test groups one
+<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> per gaze position tested, via its own <code class="language-plaintext highlighter-rouge">hasMember</code>.
+<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> is a single shared pattern used by all five position-based
+sub-tests, with optional components for two different kinds of per-position result:
+<code class="language-plaintext highlighter-rouge">horizontalDeviation</code>/<code class="language-plaintext highlighter-rouge">verticalDeviation</code> (Quantity, prism diopters, used by
+<code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code>), or <code class="language-plaintext highlighter-rouge">finding</code> (CodeableConcept, used by
+<code class="language-plaintext highlighter-rouge">HirschbergTest</code>, <code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, and <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>). Each <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>
+also carries a <code class="language-plaintext highlighter-rouge">fixatingEye</code> component, kept explicitly separate from <code class="language-plaintext highlighter-rouge">bodySite</code> (the
+measured eye) to avoid the "FOD/FOI" ambiguity described earlier on this page.</p>
+
+<p>Traversing a full <code class="language-plaintext highlighter-rouge">StrabismusExam</code> therefore means walking <code class="language-plaintext highlighter-rouge">hasMember</code> at the top level,
+and, for any position-based sub-test found there, walking its own nested <code class="language-plaintext highlighter-rouge">hasMember</code> down
+to the individual <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> instances. See the example instances bundled
+with this guide for a complete worked case.</p>
+
+<h2 id="the-granular-components-pattern">The granular-components pattern</h2>
+
+<p><code class="language-plaintext highlighter-rouge">OphthalmicVisualAcuity</code> and the <code class="language-plaintext highlighter-rouge">StrabismusExam</code> sub-test family follow a shared design
+principle: rather than using a single pre-coordinated code that bundles multiple pieces of
+clinical detail together (for example, one SNOMED CT code for "distance visual acuity,
+uncorrected"), this guide records that detail as independent, optional <code class="language-plaintext highlighter-rouge">component</code>
+elements (distance, correction status, chart type, and so on). See
+<a href="profiles.html#ophthalmicvisualacuity">Profiles</a> for the full rationale, including how this
+diverges from the HL7 Eye Care IG's 2021 approach.</p>
+
+<p>In FSH, this pattern always requires declaring the slicing discriminator explicitly before
+<code class="language-plaintext highlighter-rouge">component contains</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains
+    distance 0..1 MS and
+    correctionStatus 0..1 MS and
+    ...
+</code></pre></div></div>
+
+<p>Implementers consuming these resources should read <code class="language-plaintext highlighter-rouge">component</code> as an open set of optional,
+independently meaningful facts about the measurement, not a fixed record structure: only
+the components relevant to the specific test performed will be present.</p>
+
+<h2 id="fixating-eye-vs-measured-eye">Fixating eye vs. measured eye</h2>
+
+<p>In strabismus testing, measurements are described relative to which eye is fixating (for
+example, "FOD", fixing with the right eye), while the deviation being measured belongs to
+the <em>other</em> eye. This guide resolves that ambiguity by always keeping the two separate:
+<code class="language-plaintext highlighter-rouge">bodySite</code> identifies the eye being measured, and a dedicated <code class="language-plaintext highlighter-rouge">fixatingEye</code> component (on
+<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>) identifies which eye was fixating. Never assume one from the
+other.</p>
+
+<h2 id="chaining-resources-through-a-clinical-episode">Chaining resources through a clinical episode</h2>
+
+<p>A typical ophthalmology episode in this guide follows a consistent reference chain:</p>
+
+<p><code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> (the order) → <code class="language-plaintext highlighter-rouge">OphthalmicProcedure</code> or an <code class="language-plaintext highlighter-rouge">Observation</code>-family
+resource (the exam performed) → <code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> (when imaging is involved,
+<code class="language-plaintext highlighter-rouge">basedOn</code> the request) → <code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code> (<code class="language-plaintext highlighter-rouge">basedOn</code> the request,
+<code class="language-plaintext highlighter-rouge">imagingStudy</code> the study) → <code class="language-plaintext highlighter-rouge">OphthalmicCondition</code> (the diagnosis, referenced from the
+report or encounter) → <code class="language-plaintext highlighter-rouge">OphthalmicCarePlan</code> (the resulting treatment scheme, <code class="language-plaintext highlighter-rouge">addresses</code>
+the condition) → <code class="language-plaintext highlighter-rouge">OphthalmicProcedure</code> instances for each treatment session (<code class="language-plaintext highlighter-rouge">basedOn</code> the
+care plan).</p>
+
+<p>When implementing a system against this guide, this chain is the backbone to build first:
+getting <code class="language-plaintext highlighter-rouge">basedOn</code>, <code class="language-plaintext highlighter-rouge">addresses</code>, and <code class="language-plaintext highlighter-rouge">hasMember</code>/<code class="language-plaintext highlighter-rouge">derivedFrom</code> references right across this
+chain is what makes the data usable for downstream queries (for example, "show me every
+procedure performed under this care plan", or "show me the order that led to this
+report").</p>
+
+<h2 id="terminology-strategy-summary">Terminology strategy summary</h2>
+
+<p>See <a href="terminology.html">Terminology</a> for the full detail. In short: this guide binds
+directly to SNOMED CT and LOINC wherever possible, rather than depending on the HL7 Eye
+Care IG's own value sets (which cannot be formally imported, since that guide has no
+published FHIR package yet). New terminology (like <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code>) is only
+introduced where a genuine, verified gap exists.</p>
+
+<h2 id="a-note-on-how-this-guide-was-built">A note on how this guide was built</h2>
+
+<p>Several profiles in this guide explicitly document open questions, terminology still to be
+confirmed, or lower-priority items deferred pending clinical review (see
+<a href="profiles.html">Profiles</a>). This is deliberate: this guide favors being transparent about
+what is settled versus what is still evolving, over presenting a false sense of
+completeness. If you are implementing against a profile with an open item noted, treat that
+element as provisional and check for updates.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

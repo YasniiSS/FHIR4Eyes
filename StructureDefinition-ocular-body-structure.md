@@ -16,7 +16,8 @@ Represents an anatomical ocular location, used throughout this guide to express 
 
 **Usages:**
 
-* Refer to this Profile: [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md)
+* Refer to this Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocular-pressure.md), [Cover Test](StructureDefinition-cover-test.md), [Gaze Position Measurement](StructureDefinition-gaze-position-measurement.md), [Intraocular Pressure](StructureDefinition-intraocular-pressure.md)... Show 8 more, [Ocular Motility](StructureDefinition-ocular-motility.md), [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md), [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study.md), [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md), [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md), [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md), [Pachymetry](StructureDefinition-pachymetry.md) and [Tension Curve](StructureDefinition-tension-curve.md)
+* Examples for this Profile: [BodyStructure/LeftEyeStructureExample](BodyStructure-LeftEyeStructureExample.md) and [BodyStructure/RightEyeStructureExample](BodyStructure-RightEyeStructureExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ocular-body-structure.json)
 
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ocular-body-structur
   "name" : "OcularBodyStructure",
   "title" : "Ocular Body Structure",
   "status" : "draft",
-  "date" : "2026-08-18T00:29:29+00:00",
+  "date" : "2026-08-18T20:04:06+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

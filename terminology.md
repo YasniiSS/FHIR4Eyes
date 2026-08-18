@@ -44,7 +44,7 @@ The table below summarizes how this applies across the examinations covered by t
 | Retinography | SNOMED CT | The device does not produce a structured report; the ophthalmologist records clinical findings directly, which follows the finding-type logic rather than the parametric-panel logic |
 | Retinal angiography | SNOMED CT | Same reasoning as retinography: findings are recorded by the ophthalmologist, not output as a structured device report |
 | Tonometry, pachymetry, tension curve, autorefractometry, pupillometry | SNOMED CT | Single or few discrete values, not a structured panel |
-| Low vision (below chart-measurable range) | FHIR4Eyes`LowVisionAssessment` | Partially covered by SNOMED CT; see below |
+| Low vision (below chart-measurable range) | FHIR4Eyes`LowVisionAssessment` | A curated value set of SNOMED CT concepts; see below |
 
 > The exact LOINC codes to use for OCT, visual field, topography, and biometry are to be identified when each of these profiles is built, following the pattern above rather than reproducing a full code list here.
 
@@ -76,17 +76,17 @@ The World Health Organization defines vision impairment and blindness severity c
 
 #### Terminology basis
 
-Unlike the rest of this guide's visual acuity terminology, this value set is a **mixed case**: SNOMED CT was searched for each of the five concepts below, and three were found with a direct match, while two were not found as dedicated visual acuity findings.
+All five codes below have a confirmed match in SNOMED CT, verified directly against the SNOMED CT browser.
 
 | | | |
 | :--- | :--- | :--- |
-| counting-fingers | Counting fingers (at a specified distance) | Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code |
-| hand-motion | Hand motion | Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code |
+| counting-fingers | Counting fingers (at a specified distance) | `422256009`(Counts fingers, distance vision, generic) or, when the specific distance is known,`260292001`(1 metre),`260293006`(1/2 metre),`260294000`(1/3 metre) |
+| hand-motion | Hand motion | `260295004`(Sees hand movements) |
 | light-perception-good-projection | Light perception, good projection | Matches SNOMED CT`260297007`/`264944004`(Visual acuity perception of light, accurate projection) |
 | light-perception-poor-projection | Light perception, poor projection | Matches SNOMED CT`264943005`(Visual acuity perception of light, inaccurate projection) |
 | no-light-perception | No light perception | Matches SNOMED CT`63063006`(Visual acuity, no light perception) |
 
-> **Open for revision:** the two codes without a confirmed SNOMED CT match (`counting-fingers` and `hand-motion`) are FHIR4Eyes proposals, not yet bound to an external terminology. If a suitable SNOMED CT concept is identified later (or one is added to SNOMED CT), these should be updated to bind to it instead of remaining as FHIR4Eyes-only codes. The three codes with a confirmed match should bind directly to their SNOMED CT concepts rather than being redefined as FHIR4Eyes-only codes.
+> **Design note:** for `counting-fingers`, this guide uses the generic `422256009` code by default, since the specific testing distance is not always recorded. When the distance is known and clinically relevant, implementers may use the more specific distance-based codes instead.
 
 The distinction between good and poor projection matters clinically: both indicate that the patient can perceive light, but poor projection means the patient cannot reliably tell where the light is coming from, which is a clinically meaningful difference from good projection.
 

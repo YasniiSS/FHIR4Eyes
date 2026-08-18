@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="VisualAcuityUncorrectedRightEyeExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation VisualAcuityUncorrectedRightEyeExample</b></p><a name="VisualAcuityUncorrectedRightEyeExample"> </a><a name="hcVisualAcuityUncorrectedRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ophthalmic-visual-acuity.html">Ophthalmic Visual Acuity</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Distance visual acuity</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>value</b>: 20 ft<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeft = 'ft')</span>/40 ft<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeft = 'ft')</span></p><p><b>bodySite</b>: <span title="Codes:"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Correction status</span></p><p><b>value</b>: <span title="Codes:">Without correction</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Testing distance</span></p><p><b>value</b>: 6 m<span style="background: LightGoldenRodYellow"> (Details: UCUM  codem = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Chart</span></p><p><b>value</b>: <span title="Codes:">Snellen</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Scale</span></p><p><b>value</b>: <span title="Codes:">Snellen fraction</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="Distance visual acuity"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <valueRatio>
+    <numerator>
+      <value value="20"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ft"/>
+    </numerator>
+    <denominator>
+      <value value="40"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ft"/>
+    </denominator>
+  </valueRatio>
+  <bodySite>
+    <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
+      <valueReference>
+        <reference value="BodyStructure/RightEyeStructureExample"/>
+      </valueReference>
+    </extension>
+  </bodySite>
+  <component>
+    <code>
+      <text value="Correction status"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Without correction"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Testing distance"/>
+    </code>
+    <valueQuantity>
+      <value value="6"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="m"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Chart"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Snellen"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Scale"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Snellen fraction"/>
+    </valueCodeableConcept>
+  </component>
+</Observation>

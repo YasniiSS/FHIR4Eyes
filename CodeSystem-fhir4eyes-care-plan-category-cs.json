@@ -1,0 +1,49 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "fhir4eyes-care-plan-category-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem fhir4eyes-care-plan-category-cs</b></p><a name=\"fhir4eyes-care-plan-category-cs\"> </a><a name=\"hcfhir4eyes-care-plan-category-cs\"> </a><p>This  code system <code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">intravitreal-injection-therapy<a name=\"fhir4eyes-care-plan-category-cs-intravitreal-injection-therapy\"> </a></td><td>Intravitreal injection therapy</td><td>A scheme of repeated intravitreal injections</td></tr><tr><td style=\"white-space:nowrap\">functional-therapy<a name=\"fhir4eyes-care-plan-category-cs-functional-therapy\"> </a></td><td>Functional therapy</td><td>A scheme of repeated vision therapy or orthoptic sessions</td></tr></table></div>"
+  },
+  "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
+  "version" : "0.1.0",
+  "name" : "FHIR4EyesCarePlanCategoryCS",
+  "title" : "FHIR4Eyes Care Plan Category Code System",
+  "status" : "draft",
+  "date" : "2026-08-18T20:04:06+00:00",
+  "publisher" : "FHIR4Eyes Project",
+  "contact" : [{
+    "name" : "FHIR4Eyes Project",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  },
+  {
+    "name" : "Yasna Soto",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  }],
+  "description" : "Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an\nexternal terminology. See the Profiles page of this guide for the design rationale.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 2,
+  "concept" : [{
+    "code" : "intravitreal-injection-therapy",
+    "display" : "Intravitreal injection therapy",
+    "definition" : "A scheme of repeated intravitreal injections"
+  },
+  {
+    "code" : "functional-therapy",
+    "display" : "Functional therapy",
+    "definition" : "A scheme of repeated vision therapy or orthoptic sessions"
+  }]
+}

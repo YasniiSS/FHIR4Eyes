@@ -99,6 +99,12 @@
     <a href="profiles.html">Profiles</a>
   </li>
   <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -173,6 +179,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </ul>
       </li>
       <li><a href="#strabismusexam" id="markdown-toc-strabismusexam">StrabismusExam</a>        <ul>
+          <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
           <li><a href="#design-decisions-4" id="markdown-toc-design-decisions-4">Design decisions</a></li>
           <li><a href="#status-4" id="markdown-toc-status-4">Status</a></li>
         </ul>
@@ -190,6 +197,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#ophthalmiccareplan" id="markdown-toc-ophthalmiccareplan">OphthalmicCarePlan</a>        <ul>
           <li><a href="#design-decisions-7" id="markdown-toc-design-decisions-7">Design decisions</a></li>
           <li><a href="#status-7" id="markdown-toc-status-7">Status</a></li>
+        </ul>
+      </li>
+      <li><a href="#ophthalmicvisualacuity" id="markdown-toc-ophthalmicvisualacuity">OphthalmicVisualAcuity</a>        <ul>
+          <li><a href="#design-decisions-8" id="markdown-toc-design-decisions-8">Design decisions</a></li>
+          <li><a href="#status-8" id="markdown-toc-status-8">Status</a></li>
         </ul>
       </li>
       <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
@@ -388,34 +400,80 @@ decisions reached so far; the StructureDefinition itself is the next step.</p>
 
 <h2 id="strabismusexam">StrabismusExam</h2>
 
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code></p>
+<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code> (panel), plus a family of related sub-test profiles</p>
 
-<p><strong>Motivation:</strong> Represents a strabismus examination, which unlike most examinations in
-<a href="usecases.html#group-a-direct-observations">use case 2, group A</a>, is not a single
-measurement but a clinical exam made up of several possible components (for example,
-deviation angle, cover test result, ocular motility), evaluated as needed for the specific
-clinical case.</p>
+<p><strong>Motivation:</strong> Represents a strabismus examination. Unlike most examinations in
+<a href="usecases.html#group-a-direct-observations">use case 2, group A</a>, this is not a single
+measurement: it is made up of several possible sub-tests (cover test, ocular motility,
+near point of convergence, stereopsis, prism cover test, Krimsky test, and others),
+evaluated as needed for the specific clinical case, patient age, and available equipment.
+No two strabismus exams necessarily include the same set of sub-tests.</p>
+
+<h3 id="architecture">Architecture</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is a panel <code class="language-plaintext highlighter-rouge">Observation</code> that groups together whichever sub-tests were
+actually performed, via <code class="language-plaintext highlighter-rouge">hasMember</code>. <code class="language-plaintext highlighter-rouge">hasMember</code> is intentionally open (<code class="language-plaintext highlighter-rouge">0..*</code>, not bound
+to a fixed list of profiles): the set of sub-tests recognized by this guide is expected to
+grow over time, and a clinical team may also record sub-tests not yet covered here.</p>
+
+<p>The sub-tests fall into two groups, based on their structure:</p>
+
+<p><strong>Direct sub-tests</strong> produce a single result and do not vary by gaze position:
+<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>, <code class="language-plaintext highlighter-rouge">NearPointOfConvergence</code>, <code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>,
+<code class="language-plaintext highlighter-rouge">StereopsisTest</code>.</p>
+
+<p><strong>Position-based sub-tests</strong> are performed across multiple gaze positions (primary
+position, right gaze, up-and-right gaze, and so on), with one measurement or finding
+recorded per position: <code class="language-plaintext highlighter-rouge">PrismCoverTest</code>, <code class="language-plaintext highlighter-rouge">KrimskyTest</code>, <code class="language-plaintext highlighter-rouge">HirschbergTest</code>,
+<code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>. Each of these is itself a small panel: it groups its
+per-position results via <code class="language-plaintext highlighter-rouge">hasMember</code>, referencing a shared reusable pattern,
+<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>, once per gaze position tested.</p>
+
+<p><code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> supports two kinds of per-position result through optional
+components: a quantitative prism diopter deviation (<code class="language-plaintext highlighter-rouge">horizontalDeviation</code>,
+<code class="language-plaintext highlighter-rouge">verticalDeviation</code>), used by <code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code>; and a qualitative
+<code class="language-plaintext highlighter-rouge">finding</code> (for example fusion, suppression, diplopia), used by <code class="language-plaintext highlighter-rouge">HirschbergTest</code>,
+<code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, and <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>. A single shared pattern is used for both cases,
+rather than two separate profiles, since only the choice of component differs.</p>
+
+<blockquote>
+  <p>This list of sub-tests is not exhaustive. Other tests exist in practice (for example,
+additional stereopsis test types beyond what this guide currently distinguishes) and may
+be added to this guide over time, following the same patterns established here.</p>
+</blockquote>
 
 <h3 id="design-decisions-4">Design decisions</h3>
 
-<p><strong>Flexible components, not a fixed checklist.</strong> This examination does not follow a fixed,
-required set of components; which aspects are assessed and recorded depends on the
-clinical case. <code class="language-plaintext highlighter-rouge">Observation.component</code> is used to represent this, with <code class="language-plaintext highlighter-rouge">0..*</code> cardinality
-and no components marked as required. Each component carries its own SNOMED CT code
-(following the terminology strategy in <a href="terminology.html">Terminology</a>) and its own value,
-allowing any combination relevant to the case at hand, rather than forcing every strabismus
-exam to report the same fixed checklist.</p>
+<p><strong>Fixating eye vs. measured eye.</strong> A recurring source of confusion in strabismus testing
+is that measurements are described relative to which eye is fixating (for example "FOD",
+fixing with the right eye), while the actual deviation being measured belongs to the
+<em>other</em> eye. To avoid this ambiguity, this guide separates the two explicitly: <code class="language-plaintext highlighter-rouge">bodySite</code>
+(via the standard extension to <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code>) always identifies the eye being
+<em>measured</em> (the deviating eye), while a separate <code class="language-plaintext highlighter-rouge">fixatingEye</code> component identifies which
+eye was <em>fixating</em> during that specific measurement. The two are never combined into a
+single field.</p>
+
+<p><strong>Flexible components, not a fixed checklist.</strong> None of the sub-test profiles enforce a
+required set of components. Which aspects are assessed and recorded depends on the
+clinical case, the patient's age, and what equipment is available.</p>
+
+<p><strong>Open terminology.</strong> Several sub-test profiles (<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>,
+<code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>, and others) leave their finding values as an open
+<code class="language-plaintext highlighter-rouge">CodeableConcept</code>, explicitly noted as "terminology to be confirmed" in their FSH source.
+No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is
+left as an open item rather than guessing at codes.</p>
 
 <blockquote>
-  <p>This structure was defined by the guide's author directly, as a case where enough
+  <p>This architecture was defined by the guide's author directly, as a case where enough
 clinical judgment was already available to model it without deferring to further
 ophthalmologist review (unlike the lower-priority profiles listed below).</p>
 </blockquote>
 
 <h3 id="status-4">Status</h3>
 
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
+<p>None of the profiles in this family are yet formally defined in FSH. This page currently
+documents the design decisions reached so far; the StructureDefinitions themselves are the
+next step.</p>
 
 <h2 id="ophthalmicimagingstudy">OphthalmicImagingStudy</h2>
 
@@ -569,6 +627,83 @@ intravitreal injections. The same pattern applies to vision therapy and orthopti
 <p>This profile is not yet formally defined in FSH. This page currently documents the design
 decisions reached so far; the StructureDefinition itself is the next step.</p>
 
+<h2 id="ophthalmicvisualacuity">OphthalmicVisualAcuity</h2>
+
+<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code></p>
+
+<p><strong>Motivation:</strong> Represents a visual acuity measurement. This is one of the two
+high-priority profiles still to be built for this guide (see <a href="background.html">Background</a>).</p>
+
+<h3 id="design-decisions-8">Design decisions</h3>
+
+<p><strong>Granular components, not a single pre-coordinated code.</strong> The HL7 Eye Care IG's
+published (2021) approach captures distance and correction status entirely within <code class="language-plaintext highlighter-rouge">code</code>
+itself (for example, SNOMED CT <code class="language-plaintext highlighter-rouge">251739003</code>, "Distance visual acuity"), relying on SNOMED CT
+to provide a distinct, pre-coordinated concept for every possible combination. This guide
+instead follows a more granular pattern, aligned with a newer proposal discussed within
+SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible,
+independently recordable components over pre-coordinated codes: <code class="language-plaintext highlighter-rouge">code</code> is fixed to the
+generic concept "Visual acuity" (SNOMED CT <code class="language-plaintext highlighter-rouge">363983007</code>), and the specific detail is
+captured through separate components instead:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">distance</code></td>
+      <td>The testing distance (e.g. in metres). Not applicable to the qualitative <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> values (light perception, no light perception), which are distance-independent by nature. For counting fingers, this captures the specific distance separately from the qualitative "counting fingers" value itself.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">correctionStatus</code></td>
+      <td>Only two states are used clinically: corrected or uncorrected.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">chart</code></td>
+      <td>The chart or optotype used (e.g. Snellen, ETDRS).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">scale</code></td>
+      <td>The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pinhole</code></td>
+      <td>A boolean: whether this specific measurement was taken through a pinhole occluder.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The exact code system to use for the <code class="language-plaintext highlighter-rouge">distance</code> component's own code is still to be
+identified (a placeholder is used for now; see the FSH source).</p>
+</blockquote>
+
+<p><strong>Value.</strong> <code class="language-plaintext highlighter-rouge">value[x]</code> accepts <code class="language-plaintext highlighter-rouge">Ratio</code> (Snellen fractions), <code class="language-plaintext highlighter-rouge">Quantity</code> (decimal or LogMAR),
+or <code class="language-plaintext highlighter-rouge">CodeableConcept</code> (the qualitative <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> scale, for vision that falls
+below what any chart can measure; see <a href="terminology.html">Terminology</a>).</p>
+
+<p><strong>Pinhole measurements reference their base measurement.</strong> In practice, a pinhole
+measurement is only taken as a follow-up to an uncorrected measurement already taken (for
+example, "OD sc 20/40, with pinhole 20/30"): it does not happen on its own. Rather than
+leaving the two measurements unconnected, or forcing them into a single Observation, this
+guide records them as two separate <code class="language-plaintext highlighter-rouge">OphthalmicVisualAcuity</code> instances (one with the
+<code class="language-plaintext highlighter-rouge">pinhole</code> component set to <code class="language-plaintext highlighter-rouge">false</code> or absent, one with it set to <code class="language-plaintext highlighter-rouge">true</code>), with the pinhole
+measurement's <code class="language-plaintext highlighter-rouge">derivedFrom</code> referencing the base measurement it followed. This mirrors the
+same pattern already used for <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code>, which references the plain
+IOP and pachymetry measurements it derives from.</p>
+
+<p><strong>Laterality.</strong> Uses the same <code class="language-plaintext highlighter-rouge">bodySite</code> extension pattern as the rest of this guide,
+referencing <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code>.</p>
+
+<h3 id="status-8">Status</h3>
+
+<p>This profile is not yet formally defined in FSH. This page currently documents the design
+decisions reached so far; the StructureDefinition itself is the next step.</p>
+
 <h2 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h2>
 
 <p>The following profiles remain lower priority and are deliberately left undesigned in this
@@ -609,7 +744,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="OphthalmologistExample"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner OphthalmologistExample</b></p><a name="OphthalmologistExample"> </a><a name="hcOphthalmologistExample"> </a><p><b>name</b>: Ophthalmologist Example </p><h3>Qualifications</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:">Ophthalmologist</span></td></tr></table></div>
+  </text>
+  <name>
+    <family value="Example"/>
+    <given value="Ophthalmologist"/>
+  </name>
+  <qualification>
+    <code>
+      <text value="Ophthalmologist"/>
+    </code>
+  </qualification>
+</Practitioner>

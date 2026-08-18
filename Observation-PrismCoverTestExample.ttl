@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/PrismCoverTestExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PrismCoverTestExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PrismCoverTestExample</b></p><a name=\"PrismCoverTestExample\"> </a><a name=\"hcPrismCoverTestExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-prism-cover-test.html\">Prism Cover Test</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Prism cover test</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>hasMember</b>: <a href=\"Observation-PrismCoverTestPrimaryPositionExample.html\">Primary position - fixating left eye, -30 PD</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Test distance</span></p><p><b>value</b>: <span title=\"Codes:\">Near</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Correction status</span></p><p><b>value</b>: <span title=\"Codes:\">With correction</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Prism cover test" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.hasMember [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/PrismCoverTestPrimaryPositionExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/PrismCoverTestPrimaryPositionExample" ] ;
+     fhir:Reference.display [ fhir:value "Primary position - fixating left eye, -30 PD" ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Test distance" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Near" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Correction status" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "With correction" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/PrismCoverTestExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

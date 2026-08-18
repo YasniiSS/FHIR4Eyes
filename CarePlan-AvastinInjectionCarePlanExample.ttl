@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/CarePlan/AvastinInjectionCarePlanExample> a fhir:CarePlan ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AvastinInjectionCarePlanExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CarePlan AvastinInjectionCarePlanExample</b></p><a name=\"AvastinInjectionCarePlanExample\"> </a><a name=\"hcAvastinInjectionCarePlanExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-care-plan.html\">Ophthalmic Care Plan</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>category</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs intravitreal-injection-therapy}\">Intravitreal injection therapy</span></p><p><b>title</b>: Avastin injection scheme - left eye</p><p><b>description</b>: 3 monthly intravitreal Avastin injections for diabetic macular edema</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>period</b>: 2026-08-18 --&gt; 2026-10-18</p><p><b>author</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>addresses</b>: <a href=\"Condition-DiabeticMacularEdemaConditionExample.html\">Condition </a></p><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Status</b></td><td><b>Scheduled[x]</b></td><td><b>Description</b></td></tr><tr><td style=\"display: none\">*</td><td>Completed</td><td>2026-08-18 --&gt; 2026-08-18</td><td>Dose 1 - Intravitreal Avastin injection, left eye</td></tr></table></blockquote><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Status</b></td><td><b>Scheduled[x]</b></td><td><b>Description</b></td></tr><tr><td style=\"display: none\">*</td><td>In Progress</td><td>2026-09-01 --&gt; 2026-09-30</td><td>Dose 2 - Intravitreal Avastin injection, left eye</td></tr></table></blockquote><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Status</b></td><td><b>Scheduled[x]</b></td><td><b>Description</b></td></tr><tr><td style=\"display: none\">*</td><td>Not Started</td><td>2026-10-01 --&gt; 2026-10-31</td><td>Dose 3 - Intravitreal Avastin injection, left eye</td></tr></table></blockquote><p><b>note</b>: </p><blockquote><div><p>Patient must attend a follow-up visit before each injection for macular OCT evaluation</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:CarePlan.status [ fhir:value "active"] ;
+  fhir:CarePlan.intent [ fhir:value "plan"] ;
+  fhir:CarePlan.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs" ] ;
+       fhir:Coding.code [ fhir:value "intravitreal-injection-therapy" ] ;
+       fhir:Coding.display [ fhir:value "Intravitreal injection therapy" ]
+     ]
+  ] ;
+  fhir:CarePlan.title [ fhir:value "Avastin injection scheme - left eye"] ;
+  fhir:CarePlan.description [ fhir:value "3 monthly intravitreal Avastin injections for diabetic macular edema"] ;
+  fhir:CarePlan.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:CarePlan.period [
+     fhir:Period.start [ fhir:value "2026-08-18"^^xsd:date ] ;
+     fhir:Period.end [ fhir:value "2026-10-18"^^xsd:date ]
+  ] ;
+  fhir:CarePlan.author [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:CarePlan.addresses [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Condition/DiabeticMacularEdemaConditionExample> ;
+     fhir:Reference.reference [ fhir:value "Condition/DiabeticMacularEdemaConditionExample" ]
+  ] ;
+  fhir:CarePlan.activity [
+     fhir:index 0 ;
+     fhir:CarePlan.activity.detail [
+       fhir:CarePlan.activity.detail.status [ fhir:value "completed" ] ;
+       fhir:CarePlan.activity.detail.scheduledPeriod [
+         fhir:Period.start [ fhir:value "2026-08-18"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2026-08-18"^^xsd:date ]
+       ] ;
+       fhir:CarePlan.activity.detail.description [ fhir:value "Dose 1 - Intravitreal Avastin injection, left eye" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CarePlan.activity.detail [
+       fhir:CarePlan.activity.detail.status [ fhir:value "in-progress" ] ;
+       fhir:CarePlan.activity.detail.scheduledPeriod [
+         fhir:Period.start [ fhir:value "2026-09-01"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2026-09-30"^^xsd:date ]
+       ] ;
+       fhir:CarePlan.activity.detail.description [ fhir:value "Dose 2 - Intravitreal Avastin injection, left eye" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CarePlan.activity.detail [
+       fhir:CarePlan.activity.detail.status [ fhir:value "not-started" ] ;
+       fhir:CarePlan.activity.detail.scheduledPeriod [
+         fhir:Period.start [ fhir:value "2026-10-01"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2026-10-31"^^xsd:date ]
+       ] ;
+       fhir:CarePlan.activity.detail.description [ fhir:value "Dose 3 - Intravitreal Avastin injection, left eye" ]
+     ]
+  ] ;
+  fhir:CarePlan.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Patient must attend a follow-up visit before each injection for macular OCT evaluation" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/CarePlan/AvastinInjectionCarePlanExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

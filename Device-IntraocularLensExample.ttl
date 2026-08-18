@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Device/IntraocularLensExample> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "IntraocularLensExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device IntraocularLensExample</b></p><a name=\"IntraocularLensExample\"> </a><a name=\"hcIntraocularLensExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-device.html\">Ophthalmic Device</a></p></div><p><b>identifier</b>: LIO-2026-00123</p><p><b>manufacturer</b>: Alcon</p><p><b>lotNumber</b>: LOT-A123</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>AcrySof IQ</td><td>Manufacturer name</td></tr></table><p><b>type</b>: <span title=\"Codes:\">Intraocular lens, monofocal</span></p><h3>Properties</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>ValueQuantity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Diopter power</span></td><td>21 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></td></tr></table><p><b>patient</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p></div>"
+  ] ;
+  fhir:Device.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.value [ fhir:value "LIO-2026-00123" ]
+  ] ;
+  fhir:Device.manufacturer [ fhir:value "Alcon"] ;
+  fhir:Device.lotNumber [ fhir:value "LOT-A123"] ;
+  fhir:Device.deviceName [
+     fhir:index 0 ;
+     fhir:Device.deviceName.name [ fhir:value "AcrySof IQ" ] ;
+     fhir:Device.deviceName.type [ fhir:value "manufacturer-name" ]
+  ] ;
+  fhir:Device.type [
+     fhir:CodeableConcept.text [ fhir:value "Intraocular lens, monofocal" ]
+  ] ;
+  fhir:Device.property [
+     fhir:index 0 ;
+     fhir:Device.property.type [
+       fhir:CodeableConcept.text [ fhir:value "Diopter power" ]
+     ] ;
+     fhir:Device.property.valueQuantity [
+       fhir:index 0 ;
+       fhir:Quantity.value [ fhir:value "21"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "[diop]" ]
+     ]
+  ] ;
+  fhir:Device.patient [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Device/IntraocularLensExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

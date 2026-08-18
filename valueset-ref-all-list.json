@@ -1,5 +1,47 @@
 {
   "codeSystems" : [{
+    "url" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html",
+    "version" : "2025.3.20250714",
+    "status" : "active",
+    "name" : "AcquisitionModality",
+    "title" : null,
+    "description" : "Transitive closure of CID 29 AcquisitionModality",
+    "systems" : ["http://dicom.nema.org/resources/ontology/DCM"],
+    "oids" : ["1.2.840.10008.6.1.19"],
+    "sources" : ["1.2.840.10008.6.1.19"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/administration-method-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTAdministrationMethodCodes",
+    "title" : "SNOMED CT Administration Method Codes",
+    "description" : "This value set includes some method codes from SNOMED CT - provided as an exemplar",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.97"],
+    "sources" : ["2.16.840.1.113883.4.642.3.97"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/approach-site-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTAnatomicalStructureForAdministrationSiteCodes",
+    "title" : "SNOMED CT Anatomical Structure for Administration Site Codes",
+    "description" : "This value set includes Anatomical Structure codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.346"],
+    "sources" : ["2.16.840.1.113883.4.642.3.346"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/body-site",
     "version" : "4.0.1",
     "status" : "draft",
@@ -12,8 +54,41 @@
     "uses" : {
     },
     "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure",
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure",
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
     "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition",
-    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/bodysite-laterality",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Laterality",
+    "title" : "Laterality",
+    "description" : "Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.287"],
+    "sources" : ["2.16.840.1.113883.4.642.3.287"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/bodystructure-code",
@@ -42,6 +117,77 @@
     "uses" : {
     },
     "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-kind",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityKind",
+    "title" : "Care Plan Activity Kind",
+    "description" : "Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.",
+    "systems" : ["http://hl7.org/fhir/resource-types"],
+    "oids" : ["2.16.840.1.113883.4.642.3.145"],
+    "sources" : ["2.16.840.1.113883.4.642.3.145"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-outcome",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityOutcome",
+    "title" : "Care Plan Activity Outcome",
+    "description" : "Example codes indicating the outcome of a care plan activity. Note that these are in no way complete and might not even be appropriate for some uses.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.149"],
+    "sources" : ["2.16.840.1.113883.4.642.3.149"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityStatus",
+    "title" : "CarePlanActivityStatus",
+    "description" : "Codes that reflect the current state of a care plan activity within its overall life cycle.",
+    "systems" : ["http://hl7.org/fhir/care-plan-activity-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.146"],
+    "sources" : ["2.16.840.1.113883.4.642.3.146"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanIntent",
+    "title" : "Care Plan Intent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a care plan.",
+    "systems" : ["http://hl7.org/fhir/request-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.150"],
+    "sources" : ["2.16.840.1.113883.4.642.3.150"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTClinicalFindings",
+    "title" : "SNOMED CT Clinical Findings",
+    "description" : "This value set includes all the \"Clinical finding\" [SNOMED CT](http://snomed.info/sct) codes - concepts where concept is-a 404684003 (Clinical finding (finding)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.232"],
+    "sources" : ["2.16.840.1.113883.4.642.3.232"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan",
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -83,6 +229,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.161"],
     "uses" : {
     },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure",
     "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
   },
   {
@@ -142,6 +289,332 @@
     "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/data-absent-reason",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "DataAbsentReason",
+    "title" : "DataAbsentReason",
+    "description" : "Used to specify why the normally expected content of the data element is missing.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/data-absent-reason"],
+    "oids" : ["2.16.840.1.113883.4.642.3.5"],
+    "sources" : ["2.16.840.1.113883.4.642.3.5"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-action",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureDeviceActionCodes",
+    "title" : "Procedure Device Action Codes",
+    "description" : "Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.425"],
+    "sources" : ["2.16.840.1.113883.4.642.3.425"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-kind",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "FHIRDeviceTypes",
+    "title" : "FHIR Device Types",
+    "description" : "Codes used to identify medical devices. Includes concepts from SNOMED CT (http://www.snomed.org/) where concept is-a 49062001 (Device)  and is provided as a suggestive example.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.208"],
+    "sources" : ["2.16.840.1.113883.4.642.3.208"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-nametype",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DeviceNameType",
+    "title" : "DeviceNameType",
+    "description" : "The type of name the device is referred by.",
+    "systems" : ["http://hl7.org/fhir/device-nametype"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1083"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1083"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "FHIRDeviceStatus",
+    "title" : "FHIRDeviceStatus",
+    "description" : "The availability status of the device.",
+    "systems" : ["http://hl7.org/fhir/device-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.209"],
+    "sources" : ["2.16.840.1.113883.4.642.3.209"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-status-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "FHIRDeviceStatusReason",
+    "title" : "FHIRDeviceStatusReason",
+    "description" : "The availability status reason of the device.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/device-status-reason"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1081"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1081"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/device-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DeviceType",
+    "title" : "Device Type",
+    "description" : "Codes used to identify medical devices. Includes concepts from SNOMED CT (http://www.snomed.org/) where concept is-a 49062001 (Device)  and is provided as a suggestive example.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1376"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1376"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/diagnosis-role",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DiagnosisRole",
+    "title" : "DiagnosisRole",
+    "description" : "This value set defines a set of codes that can be used to express the role of a diagnosis on the Encounter or EpisodeOfCare record.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role"],
+    "oids" : ["2.16.840.1.113883.4.642.3.49"],
+    "sources" : ["2.16.840.1.113883.4.642.3.49"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/diagnostic-report-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DiagnosticReportStatus",
+    "title" : "DiagnosticReportStatus",
+    "description" : "The status of the diagnostic report.",
+    "systems" : ["http://hl7.org/fhir/diagnostic-report-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.235"],
+    "sources" : ["2.16.840.1.113883.4.642.3.235"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/diagnostic-service-sections",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DiagnosticServiceSectionCodes",
+    "title" : "Diagnostic Service Section Codes",
+    "description" : "This value set includes all the codes in HL7 V2 table 0074.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0074"],
+    "oids" : ["2.16.840.1.113883.4.642.3.234"],
+    "sources" : ["2.16.840.1.113883.4.642.3.234"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-admit-source",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AdmitSource",
+    "title" : "Admit source",
+    "description" : "This value set defines a set of codes that can be used to indicate from where the patient came in.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/admit-source"],
+    "oids" : ["2.16.840.1.113883.4.642.3.257"],
+    "sources" : ["2.16.840.1.113883.4.642.3.257"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-diet",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Diet",
+    "title" : "Diet",
+    "description" : "This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diet"],
+    "oids" : ["2.16.840.1.113883.4.642.3.255"],
+    "sources" : ["2.16.840.1.113883.4.642.3.255"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-discharge-disposition",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DischargeDisposition",
+    "title" : "Discharge disposition",
+    "description" : "This value set defines a set of codes that can be used to where the patient left the hospital.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/discharge-disposition"],
+    "oids" : ["2.16.840.1.113883.4.642.3.259"],
+    "sources" : ["2.16.840.1.113883.4.642.3.259"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-location-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterLocationStatus",
+    "title" : "EncounterLocationStatus",
+    "description" : "The status of the location.",
+    "systems" : ["http://hl7.org/fhir/encounter-location-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.262"],
+    "sources" : ["2.16.840.1.113883.4.642.3.262"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ParticipantType",
+    "title" : "Participant type",
+    "description" : "This value set defines a set of codes that can be used to indicate how an individual participates in an encounter.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/participant-type",
+    "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"],
+    "oids" : ["2.16.840.1.113883.4.642.3.250"],
+    "sources" : ["2.16.840.1.113883.4.642.3.250"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterReasonCodes",
+    "title" : "Encounter Reason Codes",
+    "description" : "This examples value set defines the set of codes that can be used to indicate reasons for an encounter.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.261"],
+    "sources" : ["2.16.840.1.113883.4.642.3.261"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-special-arrangements",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SpecialArrangements",
+    "title" : "Special arrangements",
+    "description" : "This value set defines a set of codes that can be used to indicate the kinds of special arrangements in place for a patients visit.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/encounter-special-arrangements"],
+    "oids" : ["2.16.840.1.113883.4.642.3.253"],
+    "sources" : ["2.16.840.1.113883.4.642.3.253"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-special-courtesy",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SpecialCourtesy",
+    "title" : "Special courtesy",
+    "description" : "This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+    "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"],
+    "oids" : ["2.16.840.1.113883.4.642.3.252"],
+    "sources" : ["2.16.840.1.113883.4.642.3.252"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterStatus",
+    "title" : "EncounterStatus",
+    "description" : "Current state of the encounter.",
+    "systems" : ["http://hl7.org/fhir/encounter-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.246"],
+    "sources" : ["2.16.840.1.113883.4.642.3.246"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterType",
+    "title" : "Encounter type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/encounter-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.248"],
+    "sources" : ["2.16.840.1.113883.4.642.3.248"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/event-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EventStatus",
+    "title" : "EventStatus",
+    "description" : "Codes identifying the lifecycle stage of an event.",
+    "systems" : ["http://hl7.org/fhir/event-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.109"],
+    "sources" : ["2.16.840.1.113883.4.642.3.109"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/imagingstudy-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ImagingStudyStatus",
+    "title" : "ImagingStudyStatus",
+    "description" : "The status of the ImagingStudy.",
+    "systems" : ["http://hl7.org/fhir/imagingstudy-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.990"],
+    "sources" : ["2.16.840.1.113883.4.642.3.990"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
     "version" : "4.0.1",
     "status" : "draft",
@@ -154,8 +627,47 @@
     "uses" : {
     },
     "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure",
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report",
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration",
     "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition",
-    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+    "StructureDefinition-ophthalmic-medication.html" : "Ophthalmic Medication",
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry",
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan",
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/location-physical-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.328"],
+    "sources" : ["2.16.840.1.113883.4.642.3.328"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/manifestation-or-symptom",
@@ -172,6 +684,48 @@
     "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/med-admin-perform-function",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "MedicationAdministration Performer Function Codes",
+    "title" : "Medication administration  performer  function  codes",
+    "description" : "MedicationAdministration Performer Function Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/med-admin-perform-function"],
+    "oids" : ["2.16.840.1.113883.4.642.3.349"],
+    "sources" : ["2.16.840.1.113883.4.642.3.349"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-admin-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "MedicationAdministration Category Codes",
+    "title" : "Medication administration  category  codes",
+    "description" : "MedicationAdministration Category Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medication-admin-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.347"],
+    "sources" : ["2.16.840.1.113883.4.642.3.347"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-admin-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "MedicationAdministration Status Codes",
+    "title" : "Medication administration  status  codes",
+    "description" : "MedicationAdministration Status Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medication-admin-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.340"],
+    "sources" : ["2.16.840.1.113883.4.642.3.340"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
     "version" : "4.0.1",
     "status" : "draft",
@@ -184,6 +738,199 @@
     "uses" : {
     },
     "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationCodes",
+    "title" : "SNOMED CT Medication Codes",
+    "description" : "This value set includes all drug or medicament substance codes and all pharmaceutical/biologic products from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.375"],
+    "sources" : ["2.16.840.1.113883.4.642.3.375"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication.html" : "Ophthalmic Medication",
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-form-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTFormCodes",
+    "title" : "SNOMED CT Form Codes",
+    "description" : "This value set includes all dose form codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.374"],
+    "sources" : ["2.16.840.1.113883.4.642.3.374"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication.html" : "Ophthalmic Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Medication Status Codes",
+    "title" : "Medication  status  codes",
+    "description" : "Medication Status Codes",
+    "systems" : ["http://hl7.org/fhir/CodeSystem/medication-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.376"],
+    "sources" : ["2.16.840.1.113883.4.642.3.376"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication.html" : "Ophthalmic Medication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/observation-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ObservationCategoryCodes",
+    "title" : "Observation Category Codes",
+    "description" : "Observation Category codes.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/observation-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.403"],
+    "sources" : ["2.16.840.1.113883.4.642.3.403"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LOINCCodes",
+    "title" : "LOINC Codes",
+    "description" : "This value set includes all LOINC codes",
+    "systems" : ["http://loinc.org"],
+    "oids" : ["2.16.840.1.113883.4.642.3.396"],
+    "sources" : ["2.16.840.1.113883.4.642.3.396"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ObservationInterpretationCodes",
+    "title" : "Observation Interpretation Codes",
+    "description" : "A categorical assessment, providing a rough qualitative interpretation of the observation value,    such as “normal”/ “abnormal”,”low” / “high”, “better” / “worse”, “susceptible” / “resistant”, “expected”/ “not expected”.    The value set is intended to be for ANY use where coded representation of an interpretation is needed.   \r\n   \r\n   Notes:\r\n   \r\n   This is being communicated in v2.x in OBX-8 (Observation Interpretation), in v3 in ObservationInterpretation (CWE) in R1 (Representative Realm) and in FHIR in    Observation.interpretation. Historically these values come from the laboratory domain, and these codes are extensively    used. The value set binding is extensible, so codes outside the value set that are needed for interpretation concepts    (i.e. particular meanings) that are not included in the value set can be used, and these new codes may also be added to    the value set and published in a future version.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"],
+    "oids" : ["2.16.840.1.113883.4.642.3.399"],
+    "sources" : ["2.16.840.1.113883.4.642.3.399"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ObservationMethods",
+    "title" : "Observation Methods",
+    "description" : "Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.395"],
+    "sources" : ["2.16.840.1.113883.4.642.3.395"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/observation-status",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ObservationStatus",
+    "title" : "ObservationStatus",
+    "description" : "Codes providing the status of an observation.",
+    "systems" : ["http://hl7.org/fhir/observation-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.400"],
+    "sources" : ["2.16.840.1.113883.4.642.3.400"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/participant-role",
@@ -200,6 +947,34 @@
     "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/performer-role",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedurePerformerRoleCodes",
+    "title" : "Procedure Performer Role Codes",
+    "description" : "This example value set defines the set of codes that can be used to indicate a role of a procedure performer.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.433"],
+    "sources" : ["2.16.840.1.113883.4.642.3.433"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureCategoryCodes(SNOMEDCT)",
+    "title" : "Procedure Category Codes (SNOMED CT)",
+    "description" : "Procedure Category code: A selection of relevant SNOMED CT codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.430"],
+    "sources" : ["2.16.840.1.113883.4.642.3.430"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
     "version" : "4.0.1",
     "status" : "draft",
@@ -211,7 +986,51 @@
     "sources" : ["2.16.840.1.113883.4.642.3.427"],
     "uses" : {
     },
-    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request",
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-followup",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureFollowUpCodes(SNOMEDCT)",
+    "title" : "Procedure Follow up Codes (SNOMED CT)",
+    "description" : "Procedure follow up codes: A selection of SNOMED CT codes relevant to procedure follow up.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.429"],
+    "sources" : ["2.16.840.1.113883.4.642.3.429"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ProcedureNotPerformedReason(SNOMED-CT)",
+    "title" : "Procedure Not Performed Reason (SNOMED-CT)",
+    "description" : "Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.431"],
+    "sources" : ["2.16.840.1.113883.4.642.3.431"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-outcome",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureOutcomeCodes(SNOMEDCT)",
+    "title" : "Procedure Outcome Codes (SNOMED CT)",
+    "description" : "Procedure Outcome code: A selection of relevant SNOMED CT codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.428"],
+    "sources" : ["2.16.840.1.113883.4.642.3.428"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/procedure-reason",
@@ -225,7 +1044,112 @@
     "sources" : ["2.16.840.1.113883.4.642.3.432"],
     "uses" : {
     },
-    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+    "StructureDefinition-ophthalmic-procedure.html" : "Ophthalmic Procedure",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request",
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/reason-medication-given-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ReasonMedicationGivenCodes",
+    "title" : "Reason Medication Given Codes",
+    "description" : "This value set is provided as an example. The value set to instantiate this attribute should be drawn from a robust terminology code system that consists of or contains concepts to support the medication process.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/reason-medication-given"],
+    "oids" : ["2.16.840.1.113883.4.642.3.344"],
+    "sources" : ["2.16.840.1.113883.4.642.3.344"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/reason-medication-not-given-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTReasonMedicationNotGivenCodes",
+    "title" : "SNOMED CT Reason Medication Not Given Codes",
+    "description" : "This value set includes all medication refused, medication not administered, and non-administration of necessary drug or medicine codes from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.342"],
+    "sources" : ["2.16.840.1.113883.4.642.3.342"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ObservationReferenceRangeAppliesToCodes",
+    "title" : "Observation Reference Range Applies To Codes",
+    "description" : "This value set defines a set of codes that can be used to indicate the particular target population the reference range applies to.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-Race",
+    "http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.407"],
+    "sources" : ["2.16.840.1.113883.4.642.3.407"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ObservationReferenceRangeMeaningCodes",
+    "title" : "Observation Reference Range Meaning Codes",
+    "description" : "This value set defines a set of codes that can be used to indicate the meaning/use of a reference range for a particular target population.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/referencerange-meaning"],
+    "oids" : ["2.16.840.1.113883.4.642.3.397"],
+    "sources" : ["2.16.840.1.113883.4.642.3.397"],
+    "uses" : {
+    },
+    "StructureDefinition-convergence-assessment.html" : "Convergence Assessment",
+    "StructureDefinition-intraocular-pressure.html" : "Intraocular Pressure",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
+    "StructureDefinition-hirschberg-test.html" : "Hirschberg Test",
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity",
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement",
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-strabismus-exam.html" : "Strabismus Exam",
+    "StructureDefinition-corrected-intraocular-pressure.html" : "Corrected Intraocular Pressure",
+    "StructureDefinition-tension-curve.html" : "Tension Curve",
+    "StructureDefinition-ocular-motility.html" : "Ocular Motility",
+    "StructureDefinition-near-point-of-convergence.html" : "Near Point of Convergence",
+    "StructureDefinition-stereopsis-test.html" : "Stereopsis Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-pachymetry.html" : "Pachymetry"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/report-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LOINCDiagnosticReportCodes",
+    "title" : "LOINC Diagnostic Report Codes",
+    "description" : "This value set includes LOINC codes that relate to Diagnostic Observations.",
+    "systems" : ["http://loinc.org"],
+    "oids" : ["2.16.840.1.113883.4.642.3.233"],
+    "sources" : ["2.16.840.1.113883.4.642.3.233"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/request-intent",
@@ -267,7 +1191,50 @@
     "sources" : ["2.16.840.1.113883.4.642.3.111"],
     "uses" : {
     },
-    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request",
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/route-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTRouteCodes",
+    "title" : "SNOMED CT Route Codes",
+    "description" : "This value set includes all Route codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.98"],
+    "sources" : ["2.16.840.1.113883.4.642.3.98"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-medication-administration.html" : "Ophthalmic Medication Administration"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/series-performer-function",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ImagingStudySeriesPerformerFunction",
+    "title" : "ImagingStudy series performer function",
+    "description" : "Performer function of an agent in an imaging study series",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ParticipationType"],
+    "oids" : ["2.16.840.1.113883.4.642.3.989"],
+    "sources" : ["2.16.840.1.113883.4.642.3.989"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-imaging-study.html" : "Ophthalmic Imaging Study"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceType",
+    "title" : "Service type",
+    "description" : "This value set defines an example set of codes of service-types.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.518"],
+    "sources" : ["2.16.840.1.113883.4.642.3.518"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/servicerequest-category",
@@ -298,6 +1265,62 @@
     "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/udi-entry-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "UDIEntryType",
+    "title" : "UDIEntryType",
+    "description" : "Codes to identify how UDI data was entered.",
+    "systems" : ["http://hl7.org/fhir/udi-entry-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.211"],
+    "sources" : ["2.16.840.1.113883.4.642.3.211"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-device.html" : "Ophthalmic Device"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "Hl7VSReAdmissionIndicator",
+    "title" : "hl7VS-re-admissionIndicator",
+    "description" : "Value Set of codes which are used to specify that a patient is being re-admitted to a healthcare facility from which they were discharged, and indicates the circumstances around such re-admission.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0092"],
+    "oids" : ["2.16.840.1.113883.21.40"],
+    "sources" : ["2.16.840.1.113883.21.40"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ActEncounterCode",
+    "title" : "ActEncounterCode",
+    "description" : "Domain provides codes that qualify the ActEncounterClass (ENC)",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "oids" : ["2.16.840.1.113883.1.11.13955"],
+    "sources" : ["2.16.840.1.113883.1.11.13955"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActPriority",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ActPriority",
+    "title" : "ActPriority",
+    "description" : "A code or set of codes (e.g., for routine, emergency,) specifying the urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen.\r\n\r\n*Discussion:* This attribute is used in orders to indicate the ordered priority, and in event documentation it indicates the actual priority used to perform the act. In definition mood it indicates the available priorities.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActPriority"],
+    "oids" : ["2.16.840.1.113883.1.11.16866"],
+    "sources" : ["2.16.840.1.113883.1.11.16866"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-encounter.html" : "Ophthalmic Encounter"
+  },
+  {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
     "version" : "3.0.0",
     "status" : "active",
@@ -310,5 +1333,29 @@
     "uses" : {
     },
     "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "LowVisionAssessmentVS",
+    "title" : "Low Vision Assessment Value Set",
+    "description" : "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "OphthalmicCarePlanCategoryVS",
+    "title" : "Ophthalmic Care Plan Category Value Set",
+    "description" : "The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,\nopen to revision if a suitable external code is identified later.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
   }]
 }

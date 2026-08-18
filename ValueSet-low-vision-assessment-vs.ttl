@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "low-vision-assessment-vs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet low-vision-assessment-vs</b></p><a name=\"low-vision-assessment-vs\"> </a><a name=\"hclow-vision-assessment-vs\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/422256009\">422256009</a></td><td>Counts fingers - distance vision (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/260295004\">260295004</a></td><td>Sees hand movements (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/260297007\">260297007</a></td><td>Visual acuity perception of light - accurate projection (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/264943005\">264943005</a></td><td>Visual acuity perception of light - inaccurate projection (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/63063006\">63063006</a></td><td>Visual acuity, no light perception (finding)</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "LowVisionAssessmentVS"] ;
+  fhir:ValueSet.title [ fhir:value "Low Vision Assessment Value Set"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.date [ fhir:value "2026-08-18T20:04:06+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "FHIR4Eyes Project"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "FHIR4Eyes Project" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Yasna Soto" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ] ;
+       fhir:Coding.display [ fhir:value "World" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "422256009" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Counts fingers - distance vision (finding)" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "260295004" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Sees hand movements (finding)" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "260297007" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Visual acuity perception of light - accurate projection (finding)" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "264943005" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Visual acuity perception of light - inaccurate projection (finding)" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "63063006" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Visual acuity, no light perception (finding)" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

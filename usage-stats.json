@@ -5,16 +5,98 @@
   "jurisdiction": "001",
   "extensions": [],
   "profiles": {
+    "Observation": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+        "title": "Ophthalmic Visual Acuity"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
+        "title": "Pachymetry"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test",
+        "title": "Prism Cover Test"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test",
+        "title": "Red Filter Light Test"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test",
+        "title": "Stereopsis Test"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam",
+        "title": "Strabismus Exam"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve",
+        "title": "Tension Curve"
+      },
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test",
+        "title": "Worth 4 Dot Test"
+      }
+    ],
     "BodyStructure": [
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
         "title": "Ocular Body Structure"
       }
     ],
+    "CarePlan": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan",
+        "title": "Ophthalmic Care Plan"
+      }
+    ],
     "Condition": [
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition",
         "title": "Ophthalmic Condition"
+      }
+    ],
+    "Device": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device",
+        "title": "Ophthalmic Device"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
+        "title": "Ophthalmic Diagnostic Report"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter",
+        "title": "Ophthalmic Encounter"
+      }
+    ],
+    "ImagingStudy": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
+        "title": "Ophthalmic Imaging Study"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication",
+        "title": "Ophthalmic Medication"
+      }
+    ],
+    "MedicationAdministration": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration",
+        "title": "Ophthalmic Medication Administration"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
+        "title": "Ophthalmic Procedure"
       }
     ],
     "ServiceRequest": [
@@ -26,7 +108,11 @@
   },
   "usage": {
     "http://hl7.org/fhir/StructureDefinition/bodySite": [
-      "Condition"
+      "Condition.bodySite",
+      "ImagingStudy.series",
+      "MedicationAdministration.dosage.site",
+      "Observation.bodySite",
+      "Procedure.bodySite"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -40,7 +126,16 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [

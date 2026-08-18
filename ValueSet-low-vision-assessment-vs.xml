@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="low-vision-assessment-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet low-vision-assessment-vs</b></p><a name="low-vision-assessment-vs"> </a><a name="hclow-vision-assessment-vs"> </a><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/422256009">422256009</a></td><td>Counts fingers - distance vision (finding)</td></tr><tr><td><a href="http://snomed.info/id/260295004">260295004</a></td><td>Sees hand movements (finding)</td></tr><tr><td><a href="http://snomed.info/id/260297007">260297007</a></td><td>Visual acuity perception of light - accurate projection (finding)</td></tr><tr><td><a href="http://snomed.info/id/264943005">264943005</a></td><td>Visual acuity perception of light - inaccurate projection (finding)</td></tr><tr><td><a href="http://snomed.info/id/63063006">63063006</a></td><td>Visual acuity, no light perception (finding)</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs"/>
+  <version value="0.1.0"/>
+  <name value="LowVisionAssessmentVS"/>
+  <title value="Low Vision Assessment Value Set"/>
+  <status value="draft"/>
+  <date value="2026-08-18T20:04:06+00:00"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Qualitative visual acuity for patients whose vision falls below what any&#xA;chart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed&#xA;SNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for&#xA;the full clinical and terminology rationale. The counting-fingers concept below uses the&#xA;generic code by default; the more specific distance-based codes may be used instead when&#xA;that detail is known."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="422256009"/>
+        <display value="Counts fingers - distance vision (finding)"/>
+      </concept>
+      <concept>
+        <code value="260295004"/>
+        <display value="Sees hand movements (finding)"/>
+      </concept>
+      <concept>
+        <code value="260297007"/>
+        <display value="Visual acuity perception of light - accurate projection (finding)"/>
+      </concept>
+      <concept>
+        <code value="264943005"/>
+        <display value="Visual acuity perception of light - inaccurate projection (finding)"/>
+      </concept>
+      <concept>
+        <code value="63063006"/>
+        <display value="Visual acuity, no light perception (finding)"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

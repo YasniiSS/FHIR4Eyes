@@ -1,0 +1,17 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "OphthalmologistExample",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner OphthalmologistExample</b></p><a name=\"OphthalmologistExample\"> </a><a name=\"hcOphthalmologistExample\"> </a><p><b>name</b>: Ophthalmologist Example </p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Ophthalmologist</span></td></tr></table></div>"
+  },
+  "name" : [{
+    "family" : "Example",
+    "given" : ["Ophthalmologist"]
+  }],
+  "qualification" : [{
+    "code" : {
+      "text" : "Ophthalmologist"
+    }
+  }]
+}

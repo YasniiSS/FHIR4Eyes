@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample> a fhir:BodyStructure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "RightEyeStructureExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: BodyStructure RightEyeStructureExample</b></p><a name=\"RightEyeStructureExample\"> </a><a name=\"hcRightEyeStructureExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ocular-body-structure.html\">Ocular Body Structure</a></p></div><p><b>location</b>: <span title=\"Codes:{http://snomed.info/sct 81745001}\">Structure of eye proper</span></p><p><b>locationQualifier</b>: <span title=\"Codes:{http://snomed.info/sct 24028007}\">Right</span></p><p><b>patient</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p></div>"
+  ] ;
+  fhir:BodyStructure.location [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:81745001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "81745001" ] ;
+       fhir:Coding.display [ fhir:value "Structure of eye proper" ]
+     ]
+  ] ;
+  fhir:BodyStructure.locationQualifier [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:24028007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "24028007" ] ;
+       fhir:Coding.display [ fhir:value "Right" ]
+     ]
+  ] ;
+  fhir:BodyStructure.patient [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,36 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OphthalmologistExample"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner OphthalmologistExample</b></p><a name=\"OphthalmologistExample\"> </a><a name=\"hcOphthalmologistExample\"> </a><p><b>name</b>: Ophthalmologist Example </p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Ophthalmologist</span></td></tr></table></div>"
+  ] ;
+  fhir:Practitioner.name [
+     fhir:index 0 ;
+     fhir:HumanName.family [ fhir:value "Example" ] ;
+     fhir:HumanName.given [
+       fhir:value "Ophthalmologist" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Practitioner.qualification [
+     fhir:index 0 ;
+     fhir:Practitioner.qualification.code [
+       fhir:CodeableConcept.text [ fhir:value "Ophthalmologist" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

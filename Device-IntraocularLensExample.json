@@ -1,0 +1,36 @@
+{
+  "resourceType" : "Device",
+  "id" : "IntraocularLensExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device IntraocularLensExample</b></p><a name=\"IntraocularLensExample\"> </a><a name=\"hcIntraocularLensExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-device.html\">Ophthalmic Device</a></p></div><p><b>identifier</b>: LIO-2026-00123</p><p><b>manufacturer</b>: Alcon</p><p><b>lotNumber</b>: LOT-A123</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>AcrySof IQ</td><td>Manufacturer name</td></tr></table><p><b>type</b>: <span title=\"Codes:\">Intraocular lens, monofocal</span></p><h3>Properties</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>ValueQuantity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Diopter power</span></td><td>21 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></td></tr></table><p><b>patient</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p></div>"
+  },
+  "identifier" : [{
+    "value" : "LIO-2026-00123"
+  }],
+  "manufacturer" : "Alcon",
+  "lotNumber" : "LOT-A123",
+  "deviceName" : [{
+    "name" : "AcrySof IQ",
+    "type" : "manufacturer-name"
+  }],
+  "type" : {
+    "text" : "Intraocular lens, monofocal"
+  },
+  "property" : [{
+    "type" : {
+      "text" : "Diopter power"
+    },
+    "valueQuantity" : [{
+      "value" : 21,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[diop]"
+    }]
+  }],
+  "patient" : {
+    "reference" : "Patient/PatientExample"
+  }
+}

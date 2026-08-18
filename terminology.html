@@ -99,6 +99,12 @@
     <a href="profiles.html">Profiles</a>
   </li>
   <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -287,7 +293,7 @@ examination not explicitly listed here.</p>
     <tr>
       <td>Low vision (below chart-measurable range)</td>
       <td>FHIR4Eyes <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code></td>
-      <td>Partially covered by SNOMED CT; see below</td>
+      <td>A curated value set of SNOMED CT concepts; see below</td>
     </tr>
   </tbody>
 </table>
@@ -376,28 +382,27 @@ clinicians instead record it using the qualitative scale below.</p>
 
 <h4 id="terminology-basis">Terminology basis</h4>
 
-<p>Unlike the rest of this guide's visual acuity terminology, this value set is a <strong>mixed
-case</strong>: SNOMED CT was searched for each of the five concepts below, and three were found
-with a direct match, while two were not found as dedicated visual acuity findings.</p>
+<p>All five codes below have a confirmed match in SNOMED CT, verified directly against the
+SNOMED CT browser.</p>
 
 <table>
   <thead>
     <tr>
       <th>Code</th>
       <th>Display</th>
-      <th>SNOMED CT status</th>
+      <th>SNOMED CT match</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>counting-fingers</td>
       <td>Counting fingers (at a specified distance)</td>
-      <td>Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code</td>
+      <td><code class="language-plaintext highlighter-rouge">422256009</code> (Counts fingers, distance vision, generic) or, when the specific distance is known, <code class="language-plaintext highlighter-rouge">260292001</code> (1 metre), <code class="language-plaintext highlighter-rouge">260293006</code> (1/2 metre), <code class="language-plaintext highlighter-rouge">260294000</code> (1/3 metre)</td>
     </tr>
     <tr>
       <td>hand-motion</td>
       <td>Hand motion</td>
-      <td>Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code</td>
+      <td><code class="language-plaintext highlighter-rouge">260295004</code> (Sees hand movements)</td>
     </tr>
     <tr>
       <td>light-perception-good-projection</td>
@@ -418,12 +423,10 @@ with a direct match, while two were not found as dedicated visual acuity finding
 </table>
 
 <blockquote>
-  <p><strong>Open for revision:</strong> the two codes without a confirmed SNOMED CT match
-(<code class="language-plaintext highlighter-rouge">counting-fingers</code> and <code class="language-plaintext highlighter-rouge">hand-motion</code>) are FHIR4Eyes proposals, not yet bound to an
-external terminology. If a suitable SNOMED CT concept is identified later (or one is
-added to SNOMED CT), these should be updated to bind to it instead of remaining as
-FHIR4Eyes-only codes. The three codes with a confirmed match should bind directly to
-their SNOMED CT concepts rather than being redefined as FHIR4Eyes-only codes.</p>
+  <p><strong>Design note:</strong> for <code class="language-plaintext highlighter-rouge">counting-fingers</code>, this guide uses the generic <code class="language-plaintext highlighter-rouge">422256009</code> code by
+default, since the specific testing distance is not always recorded. When the distance is
+known and clinically relevant, implementers may use the more specific distance-based codes
+instead.</p>
 </blockquote>
 
 <p>The distinction between good and poor projection matters clinically: both indicate that
@@ -456,7 +459,7 @@ projection.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

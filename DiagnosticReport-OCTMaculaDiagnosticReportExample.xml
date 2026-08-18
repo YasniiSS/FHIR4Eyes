@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="OCTMaculaDiagnosticReportExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: DiagnosticReport OCTMaculaDiagnosticReportExample</b></p><a name="OCTMaculaDiagnosticReportExample"> </a><a name="hcOCTMaculaDiagnosticReportExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a></p></div><h2><span title="Codes:">OCT macula report</span> (<span title="Codes:{http://snomed.info/sct 394594003}">Ophthalmology (qualifier value)</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 IMG}">Diagnostic Imaging</span>) </h2><table class="grid"><tr><td>Subject</td><td>Patient Example  Female, DoB: 1990-01-01</td></tr><tr><td>Relevant Time</td><td>2026-08-18 10:05:00+0000</td></tr><tr><td>Performer</td><td> <a href="Practitioner-OphthalmologistExample.html">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>Report Details</b></p><p>Increased central macular thickness consistent with diabetic macular edema, left eye</p></div>
+  </text>
+  <basedOn>
+    <reference value="ServiceRequest/OCTMaculaServiceRequestExample"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394594003"/>
+      <display value="Ophthalmology (qualifier value)"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="IMG"/>
+      <display value="Diagnostic Imaging"/>
+    </coding>
+  </category>
+  <code>
+    <text value="OCT macula report"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2026-08-18T10:05:00Z"/>
+  <performer>
+    <reference value="Practitioner/OphthalmologistExample"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="Practitioner/OphthalmologistExample"/>
+  </resultsInterpreter>
+  <imagingStudy>
+    <reference value="ImagingStudy/OCTMaculaLeftEyeExample"/>
+  </imagingStudy>
+  <conclusion value="Increased central macular thickness consistent with diabetic macular edema, left eye"/>
+</DiagnosticReport>

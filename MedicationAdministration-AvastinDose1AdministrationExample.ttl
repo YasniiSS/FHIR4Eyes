@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/MedicationAdministration/AvastinDose1AdministrationExample> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AvastinDose1AdministrationExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration AvastinDose1AdministrationExample</b></p><a name=\"AvastinDose1AdministrationExample\"> </a><a name=\"hcAvastinDose1AdministrationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-medication-administration.html\">Ophthalmic Medication Administration</a></p></div><p><b>partOf</b>: <a href=\"Procedure-IntravitrealInjectionProcedureExample.html\">Procedure </a></p><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-AvastinMedicationExample.html\">Medication </a></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>note</b>: </p><blockquote><div><p>Primera dosis del esquema de inyecciones de Avastin</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Site</b></td><td><b>Route</b></td><td><b>Dose</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\"></span></td><td><span title=\"Codes:\">Intravitreal</span></td><td>1.25 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></div>"
+  ] ;
+  fhir:MedicationAdministration.partOf [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Procedure/IntravitrealInjectionProcedureExample> ;
+     fhir:Reference.reference [ fhir:value "Procedure/IntravitrealInjectionProcedureExample" ]
+  ] ;
+  fhir:MedicationAdministration.status [ fhir:value "completed"] ;
+  fhir:MedicationAdministration.medicationReference [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Medication/AvastinMedicationExample> ;
+     fhir:Reference.reference [ fhir:value "Medication/AvastinMedicationExample" ]
+  ] ;
+  fhir:MedicationAdministration.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:MedicationAdministration.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:MedicationAdministration.performer [
+     fhir:index 0 ;
+     fhir:MedicationAdministration.performer.actor [
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+       fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+     ]
+  ] ;
+  fhir:MedicationAdministration.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Primera dosis del esquema de inyecciones de Avastin" ]
+  ] ;
+  fhir:MedicationAdministration.dosage [
+     fhir:MedicationAdministration.dosage.site [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+         fhir:Extension.valueReference [
+           fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/LeftEyeStructureExample> ;
+           fhir:Reference.reference [ fhir:value "BodyStructure/LeftEyeStructureExample" ]
+         ]
+       ]
+     ] ;
+     fhir:MedicationAdministration.dosage.route [
+       fhir:CodeableConcept.text [ fhir:value "Intravitreal" ]
+     ] ;
+     fhir:MedicationAdministration.dosage.dose [
+       fhir:Quantity.value [ fhir:value "1.25"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mg" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/MedicationAdministration/AvastinDose1AdministrationExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

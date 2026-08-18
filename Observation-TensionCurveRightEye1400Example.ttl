@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/TensionCurveRightEye1400Example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "TensionCurveRightEye1400Example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation TensionCurveRightEye1400Example</b></p><a name=\"TensionCurveRightEye1400Example\"> </a><a name=\"hcTensionCurveRightEye1400Example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-intraocular-pressure.html\">Intraocular Pressure</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 41633001}\">Intraocular pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>effective</b>: 2026-08-18 14:00:00+0000</p><p><b>value</b>: 19 mm[Hg]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Applanation tonometry</span></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:41633001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "41633001" ] ;
+       fhir:Coding.display [ fhir:value "Intraocular pressure" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T14:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "19"^^xsd:decimal ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/RightEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.text [ fhir:value "Applanation tonometry" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/TensionCurveRightEye1400Example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

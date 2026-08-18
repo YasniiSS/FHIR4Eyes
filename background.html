@@ -99,6 +99,12 @@
     <a href="profiles.html">Profiles</a>
   </li>
   <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -192,10 +198,15 @@ day into a single clinical concept: a tension curve. FHIR4Eyes defines a panel p
 
 <h3 id="implantable-devices">Implantable devices</h3>
 
-<p>Intraocular lenses (IOLs) and similar devices are cataloged products implanted during a
-procedure and left in the eye permanently. They need to be modeled as inventory items
-linked to the patient through the procedure that implanted them, not as loose references
-scattered across clinical records.</p>
+<p>Several ophthalmic treatments involve a device that is implanted during a procedure and
+left in place, sometimes permanently. Intraocular lenses (IOLs), used after cataract
+surgery, are the most common example and are used throughout this guide as the reference
+case. Other implantable devices exist too, such as glaucoma drainage devices (for example
+Ahmed valves) and intrastromal corneal ring segments used in keratoconus management
+(though whether the latter should be modeled as a <code class="language-plaintext highlighter-rouge">Device</code> in the FHIR sense, given their
+different clinical handling, is still an open question). These devices need to be modeled
+as cataloged items linked to the patient through the procedure that implanted them, not as
+loose references scattered across clinical records.</p>
 
 <h3 id="chronic-treatment-with-repeated-doses">Chronic treatment with repeated doses</h3>
 
@@ -306,7 +317,7 @@ that motivated the profiles that already exist.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

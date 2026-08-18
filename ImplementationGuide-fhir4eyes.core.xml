@@ -11,7 +11,7 @@
   <name value="FHIR4Eyes"/>
   <title value="FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"/>
   <status value="draft"/>
-  <date value="2026-08-18T00:29:29+00:00"/>
+  <date value="2026-08-18T20:04:06+00:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -460,6 +460,337 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/AvastinInjectionCarePlanExample"/>
+      </reference>
+      <name value="Avastin injection scheme - left eye"/>
+      <description value="3 monthly intravitreal Avastin injections for diabetic macular edema"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/AvastinDose1AdministrationExample"/>
+      </reference>
+      <name value="AvastinDose1AdministrationExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/AvastinMedicationExample"/>
+      </reference>
+      <name value="AvastinMedicationExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/CataractSurgeryProcedureExample"/>
+      </reference>
+      <name value="CataractSurgeryProcedureExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/convergence-assessment"/>
+      </reference>
+      <name value="Convergence Assessment"/>
+      <description value="Represents a qualitative assessment of convergence ability (good, fair,&#xA;insufficient, poor)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ConvergenceAssessmentExample"/>
+      </reference>
+      <name value="ConvergenceAssessmentExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/corrected-intraocular-pressure"/>
+      </reference>
+      <name value="Corrected Intraocular Pressure"/>
+      <description value="Represents an intraocular pressure reading corrected for corneal thickness&#xD;&#xA;(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing&#xD;&#xA;both the IOP and pachymetry measurements it was derived from via derivedFrom."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CorrectedIntraocularPressureLeftEyeExample"/>
+      </reference>
+      <name value="CorrectedIntraocularPressureLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CorrectedIntraocularPressureRightEyeExample"/>
+      </reference>
+      <name value="CorrectedIntraocularPressureRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cover-test"/>
+      </reference>
+      <name value="Cover Test"/>
+      <description value="Represents a cover test result, performed with or without correction, at&#xD;&#xA;near or far distance. Findings are recorded as open text/coded values for now (PC:&#xD;&#xA;orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has&#xD;&#xA;been verified for these specific findings yet."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CoverTestExample"/>
+      </reference>
+      <name value="CoverTestExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/DiabeticMacularEdemaConditionExample"/>
+      </reference>
+      <name value="DiabeticMacularEdemaConditionExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/EncounterExample"/>
+      </reference>
+      <name value="EncounterExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/fhir4eyes-care-plan-category-cs"/>
+      </reference>
+      <name value="FHIR4Eyes Care Plan Category Code System"/>
+      <description value="Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an&#xA;external terminology. See the Profiles page of this guide for the design rationale."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/gaze-position-measurement"/>
+      </reference>
+      <name value="Gaze Position Measurement"/>
+      <description value="A reusable pattern for a single measurement or finding taken at one gaze&#xD;&#xA;position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and&#xD;&#xA;KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,&#xD;&#xA;RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test&#xD;&#xA;uses only the components relevant to it; all components are optional. Not intended to be&#xD;&#xA;used standalone; always referenced via hasMember from one of those panels."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/hirschberg-test"/>
+      </reference>
+      <name value="Hirschberg Test"/>
+      <description value="Represents a Hirschberg corneal light reflex test, used to estimate the&#xD;&#xA;angle of deviation when other tests aren't feasible (e.g. young children). Performed across&#xD;&#xA;multiple gaze positions; each position is recorded as a separate GazePositionMeasurement,&#xD;&#xA;referenced here via hasMember, using its qualitative finding component."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/intraocular-pressure"/>
+      </reference>
+      <name value="Intraocular Pressure"/>
+      <description value="Represents a single intraocular pressure (IOP) reading, in mmHg. Code is&#xD;&#xA;fixed to SNOMED CT 41633001 (Intraocular pressure)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/IntraocularLensExample"/>
+      </reference>
+      <name value="IntraocularLensExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/IntraocularPressureLeftEyeExample"/>
+      </reference>
+      <name value="IntraocularPressureLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/IntraocularPressureRightEyeExample"/>
+      </reference>
+      <name value="IntraocularPressureRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/IntravitrealInjectionProcedureExample"/>
+      </reference>
+      <name value="IntravitrealInjectionProcedureExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/krimsky-test"/>
+      </reference>
+      <name value="Krimsky Test"/>
+      <description value="Represents a Krimsky test (corneal light reflex test with prism), measuring&#xD;&#xA;ocular deviation in prism diopters across multiple gaze positions. Follows the same&#xD;&#xA;structural pattern as PrismCoverTest: each gaze position is a separate&#xD;&#xA;GazePositionMeasurement, referenced via hasMember."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="BodyStructure"/>
+      </extension>
+      <reference>
+        <reference value="BodyStructure/LeftEyeStructureExample"/>
+      </reference>
+      <name value="LeftEyeStructureExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/low-vision-assessment-vs"/>
+      </reference>
+      <name value="Low Vision Assessment Value Set"/>
+      <description value="Qualitative visual acuity for patients whose vision falls below what any&#xA;chart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed&#xA;SNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for&#xA;the full clinical and terminology rationale. The counting-fingers concept below uses the&#xA;generic code by default; the more specific distance-based codes may be used instead when&#xA;that detail is known."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/near-point-of-convergence"/>
+      </reference>
+      <name value="Near Point of Convergence"/>
+      <description value="Represents the near point of convergence (PPC), recorded either as a&#xA;numeric distance in centimetres, or, when a precise measurement isn't obtained, as a&#xA;qualitative finding (e.g. 'nasal', 'near nasal')."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/NearPointOfConvergenceExample"/>
+      </reference>
+      <name value="NearPointOfConvergenceExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/OCTMaculaDiagnosticReportExample"/>
+      </reference>
+      <name value="OCTMaculaDiagnosticReportExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImagingStudy"/>
+      </extension>
+      <reference>
+        <reference value="ImagingStudy/OCTMaculaLeftEyeExample"/>
+      </reference>
+      <name value="OCTMaculaLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/OCTMaculaServiceRequestExample"/>
+      </reference>
+      <name value="OCTMaculaServiceRequestExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImagingStudy"/>
+      </extension>
+      <reference>
+        <reference value="ImagingStudy/OCTOpticDiscLeftEyeExample"/>
+      </reference>
+      <name value="OCTOpticDiscLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/OCTOpticDiscServiceRequestExample"/>
+      </reference>
+      <name value="OCTOpticDiscServiceRequestExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/OCTProcedureExample"/>
+      </reference>
+      <name value="OCTProcedureExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -467,6 +798,59 @@
       </reference>
       <name value="Ocular Body Structure"/>
       <description value="Represents an anatomical ocular location, used throughout this guide to&#xA;express laterality (right eye, left eye, or both eyes) for observations, conditions,&#xA;procedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care&#xA;IG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location`&#xA;element identifying the anatomical structure, and a `locationQualifier` element carrying&#xA;laterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets&#xA;for these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for&#xA;locationQualifier), which are the intended reference terminology for this profile. However,&#xA;because the HL7 Eye Care IG is not published as a usable FHIR package, those value sets&#xA;cannot be formally imported here; this profile binds to SNOMED CT directly instead (see the&#xA;Terminology page of this guide for the general rationale)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ocular-motility"/>
+      </reference>
+      <name value="Ocular Motility"/>
+      <description value="Represents the assessment of extraocular muscle function (hypofunction or&#xD;&#xA;hyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can&#xD;&#xA;differ between the two eyes independently."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/OcularMotilityLeftEyeExample"/>
+      </reference>
+      <name value="OcularMotilityLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/OcularMotilityRightEyeExample"/>
+      </reference>
+      <name value="OcularMotilityRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-care-plan"/>
+      </reference>
+      <name value="Ophthalmic Care Plan"/>
+      <description value="A long-term treatment scheme made up of repeated sessions or&#xA;administrations, rather than a single event. Covers two schemes identified in this guide's&#xA;Use Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not&#xA;every planned session is necessarily scheduled at once: some sessions remain planned but&#xA;unscheduled within the CarePlan (via activity), while each session that is actually&#xA;performed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via&#xA;Procedure.basedOn."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ophthalmic-care-plan-category-vs"/>
+      </reference>
+      <name value="Ophthalmic Care Plan Category Value Set"/>
+      <description value="The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,&#xA;open to revision if a suitable external code is identified later."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -485,10 +869,365 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ophthalmic-device"/>
+      </reference>
+      <name value="Ophthalmic Device"/>
+      <description value="An implanted ophthalmic device instance, such as an intraocular lens (IOL),&#xA;affixed to a specific patient. Following the same pattern as US Core's Implantable Device&#xA;Profile, this represents the specific unit already implanted, not a generic catalog item;&#xA;patient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also&#xA;references this Device from the implanting procedure, consistent with US Core's own&#xA;guidance that a procedure involving an implantable device should reference it via&#xA;focalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for&#xA;now. See the Profiles page of this guide for the full design rationale, including a note&#xA;on other implantable devices (such as glaucoma drainage devices) that may also fit this&#xA;profile."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-diagnostic-report"/>
+      </reference>
+      <name value="Ophthalmic Diagnostic Report"/>
+      <description value="Represents the findings, diagnosis, and treatment plan reached after&#xD;&#xA;reviewing an imaging study or structured examination dataset. Unlike a radiology report,&#xD;&#xA;this is not limited to describing imaging findings: the same clinical act typically also&#xD;&#xA;reaches a diagnosis and defines a treatment plan, recorded as separate Condition and&#xD;&#xA;CarePlan resources referencing this report."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-encounter"/>
+      </reference>
+      <name value="Ophthalmic Encounter"/>
+      <description value="An ambulatory ophthalmology consultation encounter. Parented on the generic&#xD;&#xA;FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean&#xD;&#xA;dependency belongs in the FHIR4Eyes CL extension, not this Core guide."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-imaging-study"/>
+      </reference>
+      <name value="Ophthalmic Imaging Study"/>
+      <description value="An ophthalmic imaging study, such as OCT, retinography, or angiography.&#xD;&#xA;Always traceable back to the medical order that led to it via basedOn. Laterality is&#xD;&#xA;represented both through the native series.bodySite/series.laterality Coding fields (for&#xD;&#xA;standard DICOM/PACS compatibility) and through an additional extension referencing&#xD;&#xA;OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of&#xD;&#xA;this guide)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-medication"/>
+      </reference>
+      <name value="Ophthalmic Medication"/>
+      <description value="A medication used in ophthalmology, such as an anti-VEGF agent for&#xD;&#xA;intravitreal injection."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-medication-administration"/>
+      </reference>
+      <name value="Ophthalmic Medication Administration"/>
+      <description value="Records the administration of a medication during an ophthalmic procedure,&#xD;&#xA;most notably an intravitreal injection. Always linked back to the specific procedure it was&#xD;&#xA;administered during, via partOf, consistent with FHIR's standard 'larger event of which&#xD;&#xA;this is a component' pattern."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-procedure"/>
+      </reference>
+      <name value="Ophthalmic Procedure"/>
+      <description value="Any ophthalmic procedure, from minor ambulatory surgeries to individual&#xA;sessions within a longer treatment scheme, such as an intravitreal injection or a vision&#xA;therapy session. When a procedure involves administering a medication (e.g. an intravitreal&#xA;injection), the medication administration is recorded as a separate&#xA;OphthalmicMedicationAdministration, linked back to this procedure via&#xA;MedicationAdministration.partOf, not the other way around."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ophthalmic-service-request"/>
       </reference>
       <name value="Ophthalmic Service Request"/>
       <description value="A request for an ophthalmic examination and, where relevant, its&#xA;interpretation or treatment. Covers three scenarios: an order fulfilled locally, an order&#xA;referred from primary care to a hospital or reference center, and an order originating&#xA;directly at a hospital. See the Use Cases and Profiles pages of this guide for the full&#xA;clinical and design rationale."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ophthalmic-visual-acuity"/>
+      </reference>
+      <name value="Ophthalmic Visual Acuity"/>
+      <description value="Represents a visual acuity measurement, modeled as discrete, independently&#xD;&#xA;combinable components (distance, correction status, chart/optotype, scale, pinhole) rather&#xD;&#xA;than as a single pre-coordinated code that bundles all of these together. This follows a&#xD;&#xA;more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a&#xD;&#xA;newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group&#xD;&#xA;(2025), which favors flexible, independently recordable components over pre-coordinated&#xD;&#xA;codes. See Terminology for the underlying terminology strategy, including the&#xD;&#xA;LowVisionAssessment value set for vision below what any chart can measure."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/OphthalmologistExample"/>
+      </reference>
+      <name value="OphthalmologistExample"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pachymetry"/>
+      </reference>
+      <name value="Pachymetry"/>
+      <description value="Represents a corneal pachymetry measurement (corneal thickness), typically&#xD;&#xA;in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when&#xD;&#xA;correcting an IOP reading for corneal thickness."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PachymetryLeftEyeExample"/>
+      </reference>
+      <name value="PachymetryLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PachymetryRightEyeExample"/>
+      </reference>
+      <name value="PachymetryRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PacienteEjemplo"/>
+      </reference>
+      <name value="PacienteEjemplo"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientExample"/>
+      </reference>
+      <name value="PatientExample"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/prism-cover-test"/>
+      </reference>
+      <name value="Prism Cover Test"/>
+      <description value="Represents a prism cover test, measuring ocular deviation in prism diopters&#xD;&#xA;across multiple gaze positions. Each gaze position is recorded as a separate&#xD;&#xA;GazePositionMeasurement, referenced here via hasMember. Distance and correction status are&#xD;&#xA;recorded as components on this panel, following the same granular pattern used for&#xD;&#xA;OphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PrismCoverTestExample"/>
+      </reference>
+      <name value="PrismCoverTestExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PrismCoverTestPrimaryPositionExample"/>
+      </reference>
+      <name value="PrismCoverTestPrimaryPositionExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/red-filter-light-test"/>
+      </reference>
+      <name value="Red Filter Light Test"/>
+      <description value="Represents a red filter plus light test, assessing fusion, suppression, or&#xD;&#xA;diplopia. Performed across multiple gaze positions; each position is recorded as a separate&#xD;&#xA;GazePositionMeasurement, referenced here via hasMember, using its qualitative finding&#xD;&#xA;component. Distance and correction status are recorded as components on this panel."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="BodyStructure"/>
+      </extension>
+      <reference>
+        <reference value="BodyStructure/RightEyeStructureExample"/>
+      </reference>
+      <name value="RightEyeStructureExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/stereopsis-test"/>
+      </reference>
+      <name value="Stereopsis Test"/>
+      <description value="Represents a stereoacuity test result (e.g. Titmus, Randot). The specific&#xD;&#xA;test used is recorded as a component, since several different stereopsis tests exist in&#xD;&#xA;practice and the test type affects how the result should be interpreted."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/StereopsisTestExample"/>
+      </reference>
+      <name value="StereopsisTestExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/strabismus-exam"/>
+      </reference>
+      <name value="Strabismus Exam"/>
+      <description value="Represents a strabismus examination as a panel grouping together whichever&#xD;&#xA;sub-tests were actually performed for this patient (for example, cover test, motility,&#xD;&#xA;near point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible&#xD;&#xA;sub-test is performed for every patient; this profile does not enforce a fixed checklist.&#xD;&#xA;Each sub-test is recorded as its own Observation, referenced here via hasMember."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/StrabismusExamExample"/>
+      </reference>
+      <name value="StrabismusExamExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/tension-curve"/>
+      </reference>
+      <name value="Tension Curve"/>
+      <description value="Represents an ambulatory tension curve: several intraocular pressure&#xD;&#xA;readings taken across a single day, grouped together as a single clinical concept rather&#xD;&#xA;than recorded as unrelated, disconnected observations. This profile was already defined in&#xD;&#xA;an earlier version of this guide's design work and is carried forward here."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TensionCurveRightEye0800Example"/>
+      </reference>
+      <name value="TensionCurveRightEye0800Example"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TensionCurveRightEye1200Example"/>
+      </reference>
+      <name value="TensionCurveRightEye1200Example"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TensionCurveRightEye1400Example"/>
+      </reference>
+      <name value="TensionCurveRightEye1400Example"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TensionCurveRightEyeExample"/>
+      </reference>
+      <name value="TensionCurveRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VisualAcuityBinocularExample"/>
+      </reference>
+      <name value="VisualAcuityBinocularExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VisualAcuityCorrectedLeftEyeExample"/>
+      </reference>
+      <name value="VisualAcuityCorrectedLeftEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VisualAcuityCountingFingersRightEyeExample"/>
+      </reference>
+      <name value="VisualAcuityCountingFingersRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VisualAcuityPinholeRightEyeExample"/>
+      </reference>
+      <name value="VisualAcuityPinholeRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VisualAcuityUncorrectedRightEyeExample"/>
+      </reference>
+      <name value="VisualAcuityUncorrectedRightEyeExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/worth-4-dot-test"/>
+      </reference>
+      <name value="Worth 4 Dot Test"/>
+      <description value="Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.&#xD;&#xA;Performed across multiple gaze positions; each position is recorded as a separate&#xD;&#xA;GazePositionMeasurement, referenced here via hasMember, using its qualitative finding&#xD;&#xA;component."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -536,6 +1275,22 @@
         </extension>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="guidance.html"/>
+        </extension>
+        <nameUrl value="guidance.html"/>
+        <title value="Guidance"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="security.html"/>
+        </extension>
+        <nameUrl value="security.html"/>
+        <title value="Security and Privacy"/>
         <generation value="markdown"/>
       </page>
     </page>

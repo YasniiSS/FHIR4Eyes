@@ -107,19 +107,37 @@ This profile is not yet formally defined in FSH. This page currently documents t
 
 ## StrabismusExam
 
-**FHIR resource:** `Observation`
+**FHIR resource:** `Observation` (panel), plus a family of related sub-test profiles
 
-**Motivation:** Represents a strabismus examination, which unlike most examinations in [use case 2, group A](usecases.md#group-a-direct-observations), is not a single measurement but a clinical exam made up of several possible components (for example, deviation angle, cover test result, ocular motility), evaluated as needed for the specific clinical case.
+**Motivation:** Represents a strabismus examination. Unlike most examinations in [use case 2, group A](usecases.md#group-a-direct-observations), this is not a single measurement: it is made up of several possible sub-tests (cover test, ocular motility, near point of convergence, stereopsis, prism cover test, Krimsky test, and others), evaluated as needed for the specific clinical case, patient age, and available equipment. No two strabismus exams necessarily include the same set of sub-tests.
+
+### Architecture
+
+`StrabismusExam` is a panel `Observation` that groups together whichever sub-tests were actually performed, via `hasMember`. `hasMember` is intentionally open (`0..*`, not bound to a fixed list of profiles): the set of sub-tests recognized by this guide is expected to grow over time, and a clinical team may also record sub-tests not yet covered here.
+
+The sub-tests fall into two groups, based on their structure:
+
+**Direct sub-tests** produce a single result and do not vary by gaze position: `CoverTest`, `OcularMotility`, `NearPointOfConvergence`, `ConvergenceAssessment`, `StereopsisTest`.
+
+**Position-based sub-tests** are performed across multiple gaze positions (primary position, right gaze, up-and-right gaze, and so on), with one measurement or finding recorded per position: `PrismCoverTest`, `KrimskyTest`, `HirschbergTest`, `RedFilterLightTest`, `Worth4DotTest`. Each of these is itself a small panel: it groups its per-position results via `hasMember`, referencing a shared reusable pattern, `GazePositionMeasurement`, once per gaze position tested.
+
+`GazePositionMeasurement` supports two kinds of per-position result through optional components: a quantitative prism diopter deviation (`horizontalDeviation`, `verticalDeviation`), used by `PrismCoverTest` and `KrimskyTest`; and a qualitative `finding` (for example fusion, suppression, diplopia), used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`. A single shared pattern is used for both cases, rather than two separate profiles, since only the choice of component differs.
+
+> This list of sub-tests is not exhaustive. Other tests exist in practice (for example, additional stereopsis test types beyond what this guide currently distinguishes) and may be added to this guide over time, following the same patterns established here.
 
 ### Design decisions
 
-**Flexible components, not a fixed checklist.** This examination does not follow a fixed, required set of components; which aspects are assessed and recorded depends on the clinical case. `Observation.component` is used to represent this, with `0..*` cardinality and no components marked as required. Each component carries its own SNOMED CT code (following the terminology strategy in [Terminology](terminology.md)) and its own value, allowing any combination relevant to the case at hand, rather than forcing every strabismus exam to report the same fixed checklist.
+**Fixating eye vs. measured eye.** A recurring source of confusion in strabismus testing is that measurements are described relative to which eye is fixating (for example "FOD", fixing with the right eye), while the actual deviation being measured belongs to the **other** eye. To avoid this ambiguity, this guide separates the two explicitly: `bodySite` (via the standard extension to `OcularBodyStructure`) always identifies the eye being **measured** (the deviating eye), while a separate `fixatingEye` component identifies which eye was **fixating** during that specific measurement. The two are never combined into a single field.
 
-> This structure was defined by the guide's author directly, as a case where enough clinical judgment was already available to model it without deferring to further ophthalmologist review (unlike the lower-priority profiles listed below).
+**Flexible components, not a fixed checklist.** None of the sub-test profiles enforce a required set of components. Which aspects are assessed and recorded depends on the clinical case, the patient's age, and what equipment is available.
+
+**Open terminology.** Several sub-test profiles (`CoverTest`, `OcularMotility`, `ConvergenceAssessment`, and others) leave their finding values as an open `CodeableConcept`, explicitly noted as "terminology to be confirmed" in their FSH source. No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is left as an open item rather than guessing at codes.
+
+> This architecture was defined by the guide's author directly, as a case where enough clinical judgment was already available to model it without deferring to further ophthalmologist review (unlike the lower-priority profiles listed below).
 
 ### Status
 
-This profile is not yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinition itself is the next step.
+None of the profiles in this family are yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinitions themselves are the next step.
 
 ## OphthalmicImagingStudy
 
@@ -182,6 +200,36 @@ This profile is not yet formally defined in FSH. This page currently documents t
 **Goal.** `CarePlan.goal` (`Reference(Goal)`) is `0..1`, included when clinically relevant, rather than being required for every scheme. Some schemes have a clear measurable target (for example, a target intraocular pressure), while others may not need one recorded explicitly. A dedicated `Goal` profile for ophthalmology is listed as a lower-priority item still to be built (see [Background](background.md)).
 
 **Linked procedures.** Individual sessions or injections are recorded as separate `OphthalmicProcedure` instances, linked back to this `CarePlan` via `Procedure.basedOn`, as established in [use case 4](usecases.md#intravitreal-injection-treatment) for intravitreal injections. The same pattern applies to vision therapy and orthoptic sessions.
+
+### Status
+
+This profile is not yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinition itself is the next step.
+
+## OphthalmicVisualAcuity
+
+**FHIR resource:** `Observation`
+
+**Motivation:** Represents a visual acuity measurement. This is one of the two high-priority profiles still to be built for this guide (see [Background](background.md)).
+
+### Design decisions
+
+**Granular components, not a single pre-coordinated code.** The HL7 Eye Care IG's published (2021) approach captures distance and correction status entirely within `code` itself (for example, SNOMED CT `251739003`, "Distance visual acuity"), relying on SNOMED CT to provide a distinct, pre-coordinated concept for every possible combination. This guide instead follows a more granular pattern, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes: `code` is fixed to the generic concept "Visual acuity" (SNOMED CT `363983007`), and the specific detail is captured through separate components instead:
+
+| | |
+| :--- | :--- |
+| `distance` | The testing distance (e.g. in metres). Not applicable to the qualitative`LowVisionAssessment`values (light perception, no light perception), which are distance-independent by nature. For counting fingers, this captures the specific distance separately from the qualitative "counting fingers" value itself. |
+| `correctionStatus` | Only two states are used clinically: corrected or uncorrected. |
+| `chart` | The chart or optotype used (e.g. Snellen, ETDRS). |
+| `scale` | The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR). |
+| `pinhole` | A boolean: whether this specific measurement was taken through a pinhole occluder. |
+
+> The exact code system to use for the `distance` component's own code is still to be identified (a placeholder is used for now; see the FSH source).
+
+**Value.** `value[x]` accepts `Ratio` (Snellen fractions), `Quantity` (decimal or LogMAR), or `CodeableConcept` (the qualitative `LowVisionAssessment` scale, for vision that falls below what any chart can measure; see [Terminology](terminology.md)).
+
+**Pinhole measurements reference their base measurement.** In practice, a pinhole measurement is only taken as a follow-up to an uncorrected measurement already taken (for example, "OD sc 20/40, with pinhole 20/30"): it does not happen on its own. Rather than leaving the two measurements unconnected, or forcing them into a single Observation, this guide records them as two separate `OphthalmicVisualAcuity` instances (one with the `pinhole` component set to `false` or absent, one with it set to `true`), with the pinhole measurement's `derivedFrom` referencing the base measurement it followed. This mirrors the same pattern already used for `CorrectedIntraocularPressure`, which references the plain IOP and pachymetry measurements it derives from.
+
+**Laterality.** Uses the same `bodySite` extension pattern as the rest of this guide, referencing `OcularBodyStructure`.
 
 ### Status
 

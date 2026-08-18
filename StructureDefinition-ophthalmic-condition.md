@@ -16,7 +16,8 @@ The formal, past or present clinical diagnosis of a specific ophthalmic conditio
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Specification
+* Refer to this Profile: [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md) and [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md)
+* Examples for this Profile: [Condition/DiabeticMacularEdemaConditionExample](Condition-DiabeticMacularEdemaConditionExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-condition.json)
 
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-condition
   "name" : "OphthalmicCondition",
   "title" : "Ophthalmic Condition",
   "status" : "draft",
-  "date" : "2026-08-18T00:29:29+00:00",
+  "date" : "2026-08-18T20:04:06+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -107,37 +108,10 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-condition
       "path" : "Condition"
     },
     {
-      "id" : "Condition.extension",
-      "path" : "Condition.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Condition.extension:bodySiteEye",
-      "path" : "Condition.extension",
-      "sliceName" : "bodySiteEye",
-      "short" : "Laterality of the diagnosis, via BodyStructure",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
-      }],
+      "id" : "Condition.identifier",
+      "path" : "Condition.identifier",
+      "short" : "External identifier for this diagnosis, if applicable",
       "mustSupport" : true
-    },
-    {
-      "id" : "Condition.extension:bodySiteEye.value[x]",
-      "path" : "Condition.extension.value[x]",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"]
-      }]
     },
     {
       "id" : "Condition.code",
@@ -150,6 +124,27 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-condition
       "id" : "Condition.bodySite",
       "path" : "Condition.bodySite",
       "mustSupport" : true
+    },
+    {
+      "id" : "Condition.bodySite.extension:bodySiteEye",
+      "path" : "Condition.bodySite.extension",
+      "sliceName" : "bodySiteEye",
+      "short" : "Laterality of the diagnosis, via BodyStructure",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.bodySite.extension:bodySiteEye.value[x]",
+      "path" : "Condition.bodySite.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"]
+      }]
     },
     {
       "id" : "Condition.subject",

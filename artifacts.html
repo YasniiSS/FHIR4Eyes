@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6"}
-    h3,h4,h5,h6{--heading-prefix:"6.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -99,6 +99,12 @@
     <a href="profiles.html">Profiles</a>
   </li>
   <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -147,6 +153,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>
          <a href="#1">Structures: Resource Profiles</a>
       </li>
+      <li>
+         <a href="#2">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#4">Example: Example Instances</a>
+      </li>
    </ul>
 </div>
 <div xmlns="http://www.w3.org/1999/xhtml"
@@ -159,6 +174,98 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-convergence-assessment.html"
+                  title="StructureDefinition/convergence-assessment">Convergence Assessment</a>
+            </td>
+            <td>
+<p>Represents a qualitative assessment of convergence ability (good, fair,
+insufficient, poor).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-corrected-intraocular-pressure.html"
+                  title="StructureDefinition/corrected-intraocular-pressure">Corrected Intraocular Pressure</a>
+            </td>
+            <td>
+<p>Represents an intraocular pressure reading corrected for corneal thickness
+(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing
+both the IOP and pachymetry measurements it was derived from via derivedFrom.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-cover-test.html"
+                  title="StructureDefinition/cover-test">Cover Test</a>
+            </td>
+            <td>
+<p>Represents a cover test result, performed with or without correction, at
+near or far distance. Findings are recorded as open text/coded values for now (PC:
+orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has
+been verified for these specific findings yet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-gaze-position-measurement.html"
+                  title="StructureDefinition/gaze-position-measurement">Gaze Position Measurement</a>
+            </td>
+            <td>
+<p>A reusable pattern for a single measurement or finding taken at one gaze
+position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and
+KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,
+RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test
+uses only the components relevant to it; all components are optional. Not intended to be
+used standalone; always referenced via hasMember from one of those panels.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-hirschberg-test.html"
+                  title="StructureDefinition/hirschberg-test">Hirschberg Test</a>
+            </td>
+            <td>
+<p>Represents a Hirschberg corneal light reflex test, used to estimate the
+angle of deviation when other tests aren't feasible (e.g. young children). Performed across
+multiple gaze positions; each position is recorded as a separate GazePositionMeasurement,
+referenced here via hasMember, using its qualitative finding component.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-intraocular-pressure.html"
+                  title="StructureDefinition/intraocular-pressure">Intraocular Pressure</a>
+            </td>
+            <td>
+<p>Represents a single intraocular pressure (IOP) reading, in mmHg. Code is
+fixed to SNOMED CT 41633001 (Intraocular pressure).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-krimsky-test.html"
+                  title="StructureDefinition/krimsky-test">Krimsky Test</a>
+            </td>
+            <td>
+<p>Represents a Krimsky test (corneal light reflex test with prism), measuring
+ocular deviation in prism diopters across multiple gaze positions. Follows the same
+structural pattern as PrismCoverTest: each gaze position is a separate
+GazePositionMeasurement, referenced via hasMember.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-near-point-of-convergence.html"
+                  title="StructureDefinition/near-point-of-convergence">Near Point of Convergence</a>
+            </td>
+            <td>
+<p>Represents the near point of convergence (PPC), recorded either as a
+numeric distance in centimetres, or, when a precise measurement isn't obtained, as a
+qualitative finding (e.g. 'nasal', 'near nasal').</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-ocular-body-structure.html"
@@ -180,6 +287,32 @@ Terminology page of this guide for the general rationale).</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ocular-motility.html"
+                  title="StructureDefinition/ocular-motility">Ocular Motility</a>
+            </td>
+            <td>
+<p>Represents the assessment of extraocular muscle function (hypofunction or
+hyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can
+differ between the two eyes independently.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-care-plan.html"
+                  title="StructureDefinition/ophthalmic-care-plan">Ophthalmic Care Plan</a>
+            </td>
+            <td>
+<p>A long-term treatment scheme made up of repeated sessions or
+administrations, rather than a single event. Covers two schemes identified in this guide's
+Use Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not
+every planned session is necessarily scheduled at once: some sessions remain planned but
+unscheduled within the CarePlan (via activity), while each session that is actually
+performed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via
+Procedure.basedOn.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ophthalmic-condition.html"
                   title="StructureDefinition/ophthalmic-condition">Ophthalmic Condition</a>
             </td>
@@ -194,6 +327,98 @@ FHIR4Eyes departs from the Eye Care IG's own narrative documentation.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-device.html"
+                  title="StructureDefinition/ophthalmic-device">Ophthalmic Device</a>
+            </td>
+            <td>
+<p>An implanted ophthalmic device instance, such as an intraocular lens (IOL),
+affixed to a specific patient. Following the same pattern as US Core's Implantable Device
+Profile, this represents the specific unit already implanted, not a generic catalog item;
+patient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also
+references this Device from the implanting procedure, consistent with US Core's own
+guidance that a procedure involving an implantable device should reference it via
+focalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for
+now. See the Profiles page of this guide for the full design rationale, including a note
+on other implantable devices (such as glaucoma drainage devices) that may also fit this
+profile.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-diagnostic-report.html"
+                  title="StructureDefinition/ophthalmic-diagnostic-report">Ophthalmic Diagnostic Report</a>
+            </td>
+            <td>
+<p>Represents the findings, diagnosis, and treatment plan reached after
+reviewing an imaging study or structured examination dataset. Unlike a radiology report,
+this is not limited to describing imaging findings: the same clinical act typically also
+reaches a diagnosis and defines a treatment plan, recorded as separate Condition and
+CarePlan resources referencing this report.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-encounter.html"
+                  title="StructureDefinition/ophthalmic-encounter">Ophthalmic Encounter</a>
+            </td>
+            <td>
+<p>An ambulatory ophthalmology consultation encounter. Parented on the generic
+FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean
+dependency belongs in the FHIR4Eyes CL extension, not this Core guide.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-imaging-study.html"
+                  title="StructureDefinition/ophthalmic-imaging-study">Ophthalmic Imaging Study</a>
+            </td>
+            <td>
+<p>An ophthalmic imaging study, such as OCT, retinography, or angiography.
+Always traceable back to the medical order that led to it via basedOn. Laterality is
+represented both through the native series.bodySite/series.laterality Coding fields (for
+standard DICOM/PACS compatibility) and through an additional extension referencing
+OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of
+this guide).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-medication.html"
+                  title="StructureDefinition/ophthalmic-medication">Ophthalmic Medication</a>
+            </td>
+            <td>
+<p>A medication used in ophthalmology, such as an anti-VEGF agent for
+intravitreal injection.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-medication-administration.html"
+                  title="StructureDefinition/ophthalmic-medication-administration">Ophthalmic Medication Administration</a>
+            </td>
+            <td>
+<p>Records the administration of a medication during an ophthalmic procedure,
+most notably an intravitreal injection. Always linked back to the specific procedure it was
+administered during, via partOf, consistent with FHIR's standard 'larger event of which
+this is a component' pattern.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-procedure.html"
+                  title="StructureDefinition/ophthalmic-procedure">Ophthalmic Procedure</a>
+            </td>
+            <td>
+<p>Any ophthalmic procedure, from minor ambulatory surgeries to individual
+sessions within a longer treatment scheme, such as an intravitreal injection or a vision
+therapy session. When a procedure involves administering a medication (e.g. an intravitreal
+injection), the medication administration is recorded as a separate
+OphthalmicMedicationAdministration, linked back to this procedure via
+MedicationAdministration.partOf, not the other way around.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ophthalmic-service-request.html"
                   title="StructureDefinition/ophthalmic-service-request">Ophthalmic Service Request</a>
             </td>
@@ -203,6 +428,549 @@ interpretation or treatment. Covers three scenarios: an order fulfilled locally,
 referred from primary care to a hospital or reference center, and an order originating
 directly at a hospital. See the Use Cases and Profiles pages of this guide for the full
 clinical and design rationale.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-visual-acuity.html"
+                  title="StructureDefinition/ophthalmic-visual-acuity">Ophthalmic Visual Acuity</a>
+            </td>
+            <td>
+<p>Represents a visual acuity measurement, modeled as discrete, independently
+combinable components (distance, correction status, chart/optotype, scale, pinhole) rather
+than as a single pre-coordinated code that bundles all of these together. This follows a
+more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a
+newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group
+(2025), which favors flexible, independently recordable components over pre-coordinated
+codes. See Terminology for the underlying terminology strategy, including the
+LowVisionAssessment value set for vision below what any chart can measure.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-pachymetry.html"
+                  title="StructureDefinition/pachymetry">Pachymetry</a>
+            </td>
+            <td>
+<p>Represents a corneal pachymetry measurement (corneal thickness), typically
+in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when
+correcting an IOP reading for corneal thickness.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-prism-cover-test.html"
+                  title="StructureDefinition/prism-cover-test">Prism Cover Test</a>
+            </td>
+            <td>
+<p>Represents a prism cover test, measuring ocular deviation in prism diopters
+across multiple gaze positions. Each gaze position is recorded as a separate
+GazePositionMeasurement, referenced here via hasMember. Distance and correction status are
+recorded as components on this panel, following the same granular pattern used for
+OphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-red-filter-light-test.html"
+                  title="StructureDefinition/red-filter-light-test">Red Filter Light Test</a>
+            </td>
+            <td>
+<p>Represents a red filter plus light test, assessing fusion, suppression, or
+diplopia. Performed across multiple gaze positions; each position is recorded as a separate
+GazePositionMeasurement, referenced here via hasMember, using its qualitative finding
+component. Distance and correction status are recorded as components on this panel.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-stereopsis-test.html"
+                  title="StructureDefinition/stereopsis-test">Stereopsis Test</a>
+            </td>
+            <td>
+<p>Represents a stereoacuity test result (e.g. Titmus, Randot). The specific
+test used is recorded as a component, since several different stereopsis tests exist in
+practice and the test type affects how the result should be interpreted.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-strabismus-exam.html"
+                  title="StructureDefinition/strabismus-exam">Strabismus Exam</a>
+            </td>
+            <td>
+<p>Represents a strabismus examination as a panel grouping together whichever
+sub-tests were actually performed for this patient (for example, cover test, motility,
+near point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible
+sub-test is performed for every patient; this profile does not enforce a fixed checklist.
+Each sub-test is recorded as its own Observation, referenced here via hasMember.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-tension-curve.html"
+                  title="StructureDefinition/tension-curve">Tension Curve</a>
+            </td>
+            <td>
+<p>Represents an ambulatory tension curve: several intraocular pressure
+readings taken across a single day, grouped together as a single clinical concept rather
+than recorded as unrelated, disconnected observations. This profile was already defined in
+an earlier version of this guide's design work and is carried forward here.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-worth-4-dot-test.html"
+                  title="StructureDefinition/worth-4-dot-test">Worth 4 Dot Test</a>
+            </td>
+            <td>
+<p>Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.
+Performed across multiple gaze positions; each position is recorded as a separate
+GazePositionMeasurement, referenced here via hasMember, using its qualitative finding
+component.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-low-vision-assessment-vs.html"
+                  title="ValueSet/low-vision-assessment-vs">Low Vision Assessment Value Set</a>
+            </td>
+            <td>
+<p>Qualitative visual acuity for patients whose vision falls below what any
+chart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed
+SNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for
+the full clinical and terminology rationale. The counting-fingers concept below uses the
+generic code by default; the more specific distance-based codes may be used instead when
+that detail is known.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ophthalmic-care-plan-category-vs.html"
+                  title="ValueSet/ophthalmic-care-plan-category-vs">Ophthalmic Care Plan Category Value Set</a>
+            </td>
+            <td>
+<p>The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,
+open to revision if a suitable external code is identified later.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-fhir4eyes-care-plan-category-cs.html"
+                  title="CodeSystem/fhir4eyes-care-plan-category-cs">FHIR4Eyes Care Plan Category Code System</a>
+            </td>
+            <td>
+<p>Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an
+external terminology. See the Profiles page of this guide for the design rationale.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CarePlan-AvastinInjectionCarePlanExample.html"
+                  title="CarePlan/AvastinInjectionCarePlanExample">Avastin injection scheme - left eye</a>
+            </td>
+            <td>
+<p>3 monthly intravitreal Avastin injections for diabetic macular edema</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="MedicationAdministration-AvastinDose1AdministrationExample.html"
+                  title="MedicationAdministration/AvastinDose1AdministrationExample">AvastinDose1AdministrationExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Medication-AvastinMedicationExample.html"
+                  title="Medication/AvastinMedicationExample">AvastinMedicationExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-CataractSurgeryProcedureExample.html"
+                  title="Procedure/CataractSurgeryProcedureExample">CataractSurgeryProcedureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ConvergenceAssessmentExample.html"
+                  title="Observation/ConvergenceAssessmentExample">ConvergenceAssessmentExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CorrectedIntraocularPressureLeftEyeExample.html"
+                  title="Observation/CorrectedIntraocularPressureLeftEyeExample">CorrectedIntraocularPressureLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CorrectedIntraocularPressureRightEyeExample.html"
+                  title="Observation/CorrectedIntraocularPressureRightEyeExample">CorrectedIntraocularPressureRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CoverTestExample.html"
+                  title="Observation/CoverTestExample">CoverTestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Condition-DiabeticMacularEdemaConditionExample.html"
+                  title="Condition/DiabeticMacularEdemaConditionExample">DiabeticMacularEdemaConditionExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Encounter-EncounterExample.html"
+                  title="Encounter/EncounterExample">EncounterExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-IntraocularLensExample.html"
+                  title="Device/IntraocularLensExample">IntraocularLensExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-IntraocularPressureLeftEyeExample.html"
+                  title="Observation/IntraocularPressureLeftEyeExample">IntraocularPressureLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-IntraocularPressureRightEyeExample.html"
+                  title="Observation/IntraocularPressureRightEyeExample">IntraocularPressureRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-IntravitrealInjectionProcedureExample.html"
+                  title="Procedure/IntravitrealInjectionProcedureExample">IntravitrealInjectionProcedureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="BodyStructure-LeftEyeStructureExample.html"
+                  title="BodyStructure/LeftEyeStructureExample">LeftEyeStructureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-NearPointOfConvergenceExample.html"
+                  title="Observation/NearPointOfConvergenceExample">NearPointOfConvergenceExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-OCTMaculaDiagnosticReportExample.html"
+                  title="DiagnosticReport/OCTMaculaDiagnosticReportExample">OCTMaculaDiagnosticReportExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ImagingStudy-OCTMaculaLeftEyeExample.html"
+                  title="ImagingStudy/OCTMaculaLeftEyeExample">OCTMaculaLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ServiceRequest-OCTMaculaServiceRequestExample.html"
+                  title="ServiceRequest/OCTMaculaServiceRequestExample">OCTMaculaServiceRequestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ImagingStudy-OCTOpticDiscLeftEyeExample.html"
+                  title="ImagingStudy/OCTOpticDiscLeftEyeExample">OCTOpticDiscLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ServiceRequest-OCTOpticDiscServiceRequestExample.html"
+                  title="ServiceRequest/OCTOpticDiscServiceRequestExample">OCTOpticDiscServiceRequestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Procedure-OCTProcedureExample.html"
+                  title="Procedure/OCTProcedureExample">OCTProcedureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OcularMotilityLeftEyeExample.html"
+                  title="Observation/OcularMotilityLeftEyeExample">OcularMotilityLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OcularMotilityRightEyeExample.html"
+                  title="Observation/OcularMotilityRightEyeExample">OcularMotilityRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-OphthalmologistExample.html"
+                  title="Practitioner/OphthalmologistExample">OphthalmologistExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-PachymetryLeftEyeExample.html"
+                  title="Observation/PachymetryLeftEyeExample">PachymetryLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-PachymetryRightEyeExample.html"
+                  title="Observation/PachymetryRightEyeExample">PachymetryRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-PacienteEjemplo.html" title="Patient/PacienteEjemplo">PacienteEjemplo</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-PatientExample.html" title="Patient/PatientExample">PatientExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-PrismCoverTestExample.html"
+                  title="Observation/PrismCoverTestExample">PrismCoverTestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-PrismCoverTestPrimaryPositionExample.html"
+                  title="Observation/PrismCoverTestPrimaryPositionExample">PrismCoverTestPrimaryPositionExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="BodyStructure-RightEyeStructureExample.html"
+                  title="BodyStructure/RightEyeStructureExample">RightEyeStructureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-StereopsisTestExample.html"
+                  title="Observation/StereopsisTestExample">StereopsisTestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-StrabismusExamExample.html"
+                  title="Observation/StrabismusExamExample">StrabismusExamExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TensionCurveRightEye0800Example.html"
+                  title="Observation/TensionCurveRightEye0800Example">TensionCurveRightEye0800Example</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TensionCurveRightEye1200Example.html"
+                  title="Observation/TensionCurveRightEye1200Example">TensionCurveRightEye1200Example</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TensionCurveRightEye1400Example.html"
+                  title="Observation/TensionCurveRightEye1400Example">TensionCurveRightEye1400Example</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TensionCurveRightEyeExample.html"
+                  title="Observation/TensionCurveRightEyeExample">TensionCurveRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VisualAcuityBinocularExample.html"
+                  title="Observation/VisualAcuityBinocularExample">VisualAcuityBinocularExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VisualAcuityCorrectedLeftEyeExample.html"
+                  title="Observation/VisualAcuityCorrectedLeftEyeExample">VisualAcuityCorrectedLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VisualAcuityCountingFingersRightEyeExample.html"
+                  title="Observation/VisualAcuityCountingFingersRightEyeExample">VisualAcuityCountingFingersRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VisualAcuityPinholeRightEyeExample.html"
+                  title="Observation/VisualAcuityPinholeRightEyeExample">VisualAcuityPinholeRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VisualAcuityUncorrectedRightEyeExample.html"
+                  title="Observation/VisualAcuityUncorrectedRightEyeExample">VisualAcuityUncorrectedRightEyeExample</a>
+            </td>
+            <td>
+
 </td>
          </tr>
       </tbody>
@@ -225,7 +993,7 @@ clinical and design rationale.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

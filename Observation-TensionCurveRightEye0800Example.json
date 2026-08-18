@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Observation",
+  "id" : "TensionCurveRightEye0800Example",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation TensionCurveRightEye0800Example</b></p><a name=\"TensionCurveRightEye0800Example\"> </a><a name=\"hcTensionCurveRightEye0800Example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-intraocular-pressure.html\">Intraocular Pressure</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 41633001}\">Intraocular pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>effective</b>: 2026-08-18 08:00:00+0000</p><p><b>value</b>: 18 mm[Hg]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Applanation tonometry</span></p></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "exam",
+      "display" : "Exam"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "41633001",
+      "display" : "Intraocular pressure"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2026-08-18T08:00:00Z",
+  "valueQuantity" : {
+    "value" : 18,
+    "system" : "http://unitsofmeasure.org",
+    "code" : "mm[Hg]"
+  },
+  "bodySite" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
+      "valueReference" : {
+        "reference" : "BodyStructure/RightEyeStructureExample"
+      }
+    }]
+  },
+  "method" : {
+    "text" : "Applanation tonometry"
+  }
+}

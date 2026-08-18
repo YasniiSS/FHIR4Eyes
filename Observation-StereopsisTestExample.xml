@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="StereopsisTestExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation StereopsisTestExample</b></p><a name="StereopsisTestExample"> </a><a name="hcStereopsisTestExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-stereopsis-test.html">Stereopsis Test</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Stereopsis test</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>value</b>: <span title="Codes:">Absent</span></p><p><b>note</b>: </p><blockquote><div><p>Uncertain whether the patient fully understood the test</p>
+</div></blockquote><h3>Components</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:">Test used</span></td><td><span title="Codes:">Titmus</span></td></tr></table></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="Stereopsis test"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <valueCodeableConcept>
+    <text value="Absent"/>
+  </valueCodeableConcept>
+  <note>
+    <text value="Uncertain whether the patient fully understood the test"/>
+  </note>
+  <component>
+    <code>
+      <text value="Test used"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Titmus"/>
+    </valueCodeableConcept>
+  </component>
+</Observation>

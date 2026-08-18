@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/StrabismusExamExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "StrabismusExamExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation StrabismusExamExample</b></p><a name=\"StrabismusExamExample\"> </a><a name=\"hcStrabismusExamExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-strabismus-exam.html\">Strabismus Exam</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Strabismus exam</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-CoverTestExample.html\">Cover test - alternating exotropia</a></li><li><a href=\"Observation-OcularMotilityLeftEyeExample.html\">Ocular motility, left inferior oblique - hypofunction</a></li><li><a href=\"Observation-OcularMotilityRightEyeExample.html\">Ocular motility, right superior oblique - hyperfunction</a></li><li><a href=\"Observation-NearPointOfConvergenceExample.html\">Near point of convergence - near nasal</a></li><li><a href=\"Observation-ConvergenceAssessmentExample.html\">Convergence assessment - good</a></li><li><a href=\"Observation-StereopsisTestExample.html\">Stereopsis (Titmus) - absent</a></li><li><a href=\"Observation-PrismCoverTestExample.html\">Prism cover test - near, with correction</a></li></ul></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Strabismus exam" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.hasMember [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CoverTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/CoverTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Cover test - alternating exotropia" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OcularMotilityLeftEyeExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/OcularMotilityLeftEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "Ocular motility, left inferior oblique - hypofunction" ]
+  ], [
+     fhir:index 2 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OcularMotilityRightEyeExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/OcularMotilityRightEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "Ocular motility, right superior oblique - hyperfunction" ]
+  ], [
+     fhir:index 3 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/NearPointOfConvergenceExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/NearPointOfConvergenceExample" ] ;
+     fhir:Reference.display [ fhir:value "Near point of convergence - near nasal" ]
+  ], [
+     fhir:index 4 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/ConvergenceAssessmentExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/ConvergenceAssessmentExample" ] ;
+     fhir:Reference.display [ fhir:value "Convergence assessment - good" ]
+  ], [
+     fhir:index 5 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/StereopsisTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/StereopsisTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Stereopsis (Titmus) - absent" ]
+  ], [
+     fhir:index 6 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/PrismCoverTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/PrismCoverTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Prism cover test - near, with correction" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/StrabismusExamExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

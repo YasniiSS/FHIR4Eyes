@@ -1,0 +1,14 @@
+{
+  "resourceType" : "Patient",
+  "id" : "PacienteEjemplo",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PacienteEjemplo</b></p><a name=\"PacienteEjemplo\"> </a><a name=\"hcPacienteEjemplo\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Paciente Ejemplo  Female, DoB: 1990-01-01</p><hr/></div>"
+  },
+  "name" : [{
+    "family" : "Ejemplo",
+    "given" : ["Paciente"]
+  }],
+  "gender" : "female",
+  "birthDate" : "1990-01-01"
+}

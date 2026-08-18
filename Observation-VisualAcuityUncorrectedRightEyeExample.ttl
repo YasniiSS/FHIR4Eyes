@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/VisualAcuityUncorrectedRightEyeExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "VisualAcuityUncorrectedRightEyeExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation VisualAcuityUncorrectedRightEyeExample</b></p><a name=\"VisualAcuityUncorrectedRightEyeExample\"> </a><a name=\"hcVisualAcuityUncorrectedRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-visual-acuity.html\">Ophthalmic Visual Acuity</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Distance visual acuity</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>value</b>: 20 ft<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeft = 'ft')</span>/40 ft<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeft = 'ft')</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Correction status</span></p><p><b>value</b>: <span title=\"Codes:\">Without correction</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Testing distance</span></p><p><b>value</b>: 6 m<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codem = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Chart</span></p><p><b>value</b>: <span title=\"Codes:\">Snellen</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Scale</span></p><p><b>value</b>: <span title=\"Codes:\">Snellen fraction</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Distance visual acuity" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.valueRatio [
+     fhir:Ratio.numerator [
+       fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "ft" ]
+     ] ;
+     fhir:Ratio.denominator [
+       fhir:Quantity.value [ fhir:value "40"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "ft" ]
+     ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/RightEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Correction status" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Without correction" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Testing distance" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "6"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "m" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Chart" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Snellen" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Scale" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Snellen fraction" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/VisualAcuityUncorrectedRightEyeExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

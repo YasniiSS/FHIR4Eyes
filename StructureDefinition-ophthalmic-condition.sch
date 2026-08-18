@@ -16,8 +16,16 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>f:Condition/f:extension</sch:title>
-    <sch:rule context="f:Condition/f:extension">
+    <sch:title>f:Condition/f:bodySite</sch:title>
+    <sch:rule context="f:Condition/f:bodySite">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/bodySite']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/bodySite': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Condition/f:bodySite/f:extension</sch:title>
+    <sch:rule context="f:Condition/f:bodySite/f:extension">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>

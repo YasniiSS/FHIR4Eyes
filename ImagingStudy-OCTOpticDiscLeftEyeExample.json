@@ -1,0 +1,53 @@
+{
+  "resourceType" : "ImagingStudy",
+  "id" : "OCTOpticDiscLeftEyeExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImagingStudy OCTOpticDiscLeftEyeExample</b></p><a name=\"OCTOpticDiscLeftEyeExample\"> </a><a name=\"hcOCTOpticDiscLeftEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-imaging-study.html\">Ophthalmic Imaging Study</a></p></div><p><b>status</b>: Available</p><p><b>modality</b>: unknown: OCT (Optical Coherence Tomography Scanner)</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>started</b>: 2026-08-18 10:15:00+0000</p><p><b>basedOn</b>: <a href=\"ServiceRequest-OCTOpticDiscServiceRequestExample.html\">ServiceRequest </a></p><p><b>numberOfSeries</b>: 1</p><p><b>numberOfInstances</b>: 1</p><blockquote><p><b>series</b></p><p><b>BodyStructure Reference</b>: <a href=\"BodyStructure-LeftEyeStructureExample.html\">BodyStructure: location = Structure of eye proper; locationQualifier = Left</a></p><p><b>uid</b>: 1.2.840.10008.oct.rnfl.example</p><p><b>modality</b>: unknown: OCT (Optical Coherence Tomography Scanner)</p><p><b>bodySite</b>: [not stated]:  (Optic disc / RNFL)</p><p><b>laterality</b>: [not stated]:  (Left)</p><h3>Instances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uid</b></td><td><b>SopClass</b></td></tr><tr><td style=\"display: none\">*</td><td>1.2.840.10008.oct.rnfl.example.instance1</td><td>unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)</td></tr></table></blockquote></div>"
+  },
+  "status" : "available",
+  "modality" : [{
+    "system" : "urn:oid:1.2.840.10008.2.16.4",
+    "code" : "OCT",
+    "display" : "Optical Coherence Tomography Scanner"
+  }],
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "started" : "2026-08-18T10:15:00Z",
+  "basedOn" : [{
+    "reference" : "ServiceRequest/OCTOpticDiscServiceRequestExample"
+  }],
+  "numberOfSeries" : 1,
+  "numberOfInstances" : 1,
+  "series" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
+      "valueReference" : {
+        "reference" : "BodyStructure/LeftEyeStructureExample"
+      }
+    }],
+    "uid" : "1.2.840.10008.oct.rnfl.example",
+    "modality" : {
+      "system" : "urn:oid:1.2.840.10008.2.16.4",
+      "code" : "OCT",
+      "display" : "Optical Coherence Tomography Scanner"
+    },
+    "bodySite" : {
+      "display" : "Optic disc / RNFL"
+    },
+    "laterality" : {
+      "display" : "Left"
+    },
+    "instance" : [{
+      "uid" : "1.2.840.10008.oct.rnfl.example.instance1",
+      "sopClass" : {
+        "system" : "urn:ietf:rfc:3986",
+        "code" : "urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4"
+      }
+    }]
+  }]
+}

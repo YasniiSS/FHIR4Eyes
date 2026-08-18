@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="PacienteEjemplo"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient PacienteEjemplo</b></p><a name="PacienteEjemplo"> </a><a name="hcPacienteEjemplo"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Paciente Ejemplo  Female, DoB: 1990-01-01</p><hr/></div>
+  </text>
+  <name>
+    <family value="Ejemplo"/>
+    <given value="Paciente"/>
+  </name>
+  <gender value="female"/>
+  <birthDate value="1990-01-01"/>
+</Patient>

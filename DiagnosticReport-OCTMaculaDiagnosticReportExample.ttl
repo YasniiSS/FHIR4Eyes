@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/OCTMaculaDiagnosticReportExample> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OCTMaculaDiagnosticReportExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DiagnosticReport OCTMaculaDiagnosticReportExample</b></p><a name=\"OCTMaculaDiagnosticReportExample\"> </a><a name=\"hcOCTMaculaDiagnosticReportExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-diagnostic-report.html\">Ophthalmic Diagnostic Report</a></p></div><h2><span title=\"Codes:\">OCT macula report</span> (<span title=\"Codes:{http://snomed.info/sct 394594003}\">Ophthalmology (qualifier value)</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 IMG}\">Diagnostic Imaging</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td>Patient Example  Female, DoB: 1990-01-01</td></tr><tr><td>Relevant Time</td><td>2026-08-18 10:05:00+0000</td></tr><tr><td>Performer</td><td> <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>Report Details</b></p><p>Increased central macular thickness consistent with diabetic macular edema, left eye</p></div>"
+  ] ;
+  fhir:DiagnosticReport.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/ServiceRequest/OCTMaculaServiceRequestExample> ;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/OCTMaculaServiceRequestExample" ]
+  ] ;
+  fhir:DiagnosticReport.status [ fhir:value "final"] ;
+  fhir:DiagnosticReport.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:394594003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "394594003" ] ;
+       fhir:Coding.display [ fhir:value "Ophthalmology (qualifier value)" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ] ;
+       fhir:Coding.code [ fhir:value "IMG" ] ;
+       fhir:Coding.display [ fhir:value "Diagnostic Imaging" ]
+     ]
+  ] ;
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.text [ fhir:value "OCT macula report" ]
+  ] ;
+  fhir:DiagnosticReport.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2026-08-18T10:05:00Z"^^xsd:dateTime] ;
+  fhir:DiagnosticReport.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:DiagnosticReport.resultsInterpreter [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:DiagnosticReport.imagingStudy [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/ImagingStudy/OCTMaculaLeftEyeExample> ;
+     fhir:Reference.reference [ fhir:value "ImagingStudy/OCTMaculaLeftEyeExample" ]
+  ] ;
+  fhir:DiagnosticReport.conclusion [ fhir:value "Increased central macular thickness consistent with diabetic macular edema, left eye"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/OCTMaculaDiagnosticReportExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -21,7 +21,7 @@ Some measurements, most notably intraocular pressure (IOP), are rarely useful in
 
 ### Implantable devices
 
-Intraocular lenses (IOLs) and similar devices are cataloged products implanted during a procedure and left in the eye permanently. They need to be modeled as inventory items linked to the patient through the procedure that implanted them, not as loose references scattered across clinical records.
+Several ophthalmic treatments involve a device that is implanted during a procedure and left in place, sometimes permanently. Intraocular lenses (IOLs), used after cataract surgery, are the most common example and are used throughout this guide as the reference case. Other implantable devices exist too, such as glaucoma drainage devices (for example Ahmed valves) and intrastromal corneal ring segments used in keratoconus management (though whether the latter should be modeled as a `Device` in the FHIR sense, given their different clinical handling, is still an open question). These devices need to be modeled as cataloged items linked to the patient through the procedure that implanted them, not as loose references scattered across clinical records.
 
 ### Chronic treatment with repeated doses
 

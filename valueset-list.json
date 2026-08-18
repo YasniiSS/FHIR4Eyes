@@ -1,3 +1,20 @@
 {
-  "codeSystems" : []
+  "codeSystems" : [{
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "LowVisionAssessmentVS",
+    "title" : "Low Vision Assessment Value Set",
+    "description" : "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known.",
+    "systems" : ["http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "OphthalmicCarePlanCategoryVS",
+    "title" : "Ophthalmic Care Plan Category Value Set",
+    "description" : "The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,\nopen to revision if a suitable external code is identified later.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs"]
+  }]
 }

@@ -1,0 +1,25 @@
+{
+  "resourceType" : "Condition",
+  "id" : "DiabeticMacularEdemaConditionExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition DiabeticMacularEdemaConditionExample</b></p><a name=\"DiabeticMacularEdemaConditionExample\"> </a><a name=\"hcDiabeticMacularEdemaConditionExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-condition.html\">Ophthalmic Condition</a></p></div><p><b>code</b>: <span title=\"Codes:\">Diabetic macular edema</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p></div>"
+  },
+  "code" : {
+    "text" : "Diabetic macular edema"
+  },
+  "bodySite" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
+      "valueReference" : {
+        "reference" : "BodyStructure/LeftEyeStructureExample"
+      }
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  }
+}

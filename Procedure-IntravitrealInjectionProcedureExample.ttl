@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Procedure/IntravitrealInjectionProcedureExample> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "IntravitrealInjectionProcedureExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure IntravitrealInjectionProcedureExample</b></p><a name=\"IntravitrealInjectionProcedureExample\"> </a><a name=\"hcIntravitrealInjectionProcedureExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-procedure.html\">Ophthalmic Procedure</a></p></div><p><b>basedOn</b>: <a href=\"CarePlan-AvastinInjectionCarePlanExample.html\">CarePlan Avastin injection scheme - left eye</a></p><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:\">Intravitreal injection</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>performed</b>: 2026-08-18 09:00:00+0000</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>outcome</b>: <span title=\"Codes:\">First dose administered without complications</span></p></div>"
+  ] ;
+  fhir:Procedure.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/CarePlan/AvastinInjectionCarePlanExample> ;
+     fhir:Reference.reference [ fhir:value "CarePlan/AvastinInjectionCarePlanExample" ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.text [ fhir:value "Intravitreal injection" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Procedure.performedDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Procedure.performer [
+     fhir:index 0 ;
+     fhir:Procedure.performer.actor [
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+       fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+     ]
+  ] ;
+  fhir:Procedure.bodySite [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/LeftEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/LeftEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Procedure.outcome [
+     fhir:CodeableConcept.text [ fhir:value "First dose administered without complications" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Procedure/IntravitrealInjectionProcedureExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

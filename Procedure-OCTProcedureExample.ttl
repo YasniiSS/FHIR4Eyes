@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Procedure/OCTProcedureExample> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OCTProcedureExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure OCTProcedureExample</b></p><a name=\"OCTProcedureExample\"> </a><a name=\"hcOCTProcedureExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-procedure.html\">Ophthalmic Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:\">Optical coherence tomography</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>performed</b>: 2026-08-18 10:00:00+0000</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>report</b>: <a href=\"DiagnosticReport-OCTMaculaDiagnosticReportExample.html\">Diagnostic Report for '' for '-&gt;Patient Example  Female, DoB: 1990-01-01'</a></p></div>"
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.text [ fhir:value "Optical coherence tomography" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Procedure.performedDateTime [ fhir:value "2026-08-18T10:00:00Z"^^xsd:dateTime] ;
+  fhir:Procedure.performer [
+     fhir:index 0 ;
+     fhir:Procedure.performer.actor [
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+       fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+     ]
+  ] ;
+  fhir:Procedure.bodySite [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/LeftEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/LeftEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Procedure.report [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/OCTMaculaDiagnosticReportExample> ;
+     fhir:Reference.reference [ fhir:value "DiagnosticReport/OCTMaculaDiagnosticReportExample" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Procedure/OCTProcedureExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
