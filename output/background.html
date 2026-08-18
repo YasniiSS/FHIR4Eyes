@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Background - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="usecases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Background</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Background</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#background" id="markdown-toc-background">Background</a>    <ul>
+      <li><a href="#why-does-ophthalmology-need-its-own-profiles" id="markdown-toc-why-does-ophthalmology-need-its-own-profiles">Why does ophthalmology need its own profiles?</a>        <ul>
+          <li><a href="#bilaterality" id="markdown-toc-bilaterality">Bilaterality</a></li>
+          <li><a href="#serial-measurements-and-panels" id="markdown-toc-serial-measurements-and-panels">Serial measurements and panels</a></li>
+          <li><a href="#implantable-devices" id="markdown-toc-implantable-devices">Implantable devices</a></li>
+          <li><a href="#chronic-treatment-with-repeated-doses" id="markdown-toc-chronic-treatment-with-repeated-doses">Chronic treatment with repeated doses</a></li>
+          <li><a href="#an-integrated-imaging-and-care-pathway" id="markdown-toc-an-integrated-imaging-and-care-pathway">An integrated imaging and care pathway</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-current-state-of-standardization" id="markdown-toc-the-current-state-of-standardization">The current state of standardization</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="background">Background</h1>
+
+<h2 id="why-does-ophthalmology-need-its-own-profiles">Why does ophthalmology need its own profiles?</h2>
+
+<p>Generic FHIR resources like <code class="language-plaintext highlighter-rouge">Observation</code>, <code class="language-plaintext highlighter-rouge">Procedure</code>, or <code class="language-plaintext highlighter-rouge">ImagingStudy</code> can technically
+represent almost any clinical data. But using them without further guidance leaves too much
+room for different systems to represent the same clinical concept in incompatible ways. Eye
+care has a specific set of characteristics that make this especially true.</p>
+
+<h3 id="bilaterality">Bilaterality</h3>
+
+<p>Almost every eye care measurement, finding, or procedure applies to one eye, the other, or
+both, and the two eyes are frequently compared against each other. A generic <code class="language-plaintext highlighter-rouge">Observation</code>
+has no reliable way to say "this measurement is for the right eye" that every system will
+interpret the same way. FHIR4Eyes standardizes this using <code class="language-plaintext highlighter-rouge">BodyStructure</code>, aligned with the
+approach the HL7 Eye Care IG is also converging on.</p>
+
+<h3 id="serial-measurements-and-panels">Serial measurements and panels</h3>
+
+<p>Some measurements, most notably intraocular pressure (IOP), are rarely useful in isolation.
+Clinicians track them over time, and sometimes group several readings taken across a single
+day into a single clinical concept: a tension curve. FHIR4Eyes defines a panel pattern
+(<code class="language-plaintext highlighter-rouge">hasMember</code>) for this, something not addressed by generic observation profiles.</p>
+
+<h3 id="implantable-devices">Implantable devices</h3>
+
+<p>Intraocular lenses (IOLs) and similar devices are cataloged products implanted during a
+procedure and left in the eye permanently. They need to be modeled as inventory items
+linked to the patient through the procedure that implanted them, not as loose references
+scattered across clinical records.</p>
+
+<h3 id="chronic-treatment-with-repeated-doses">Chronic treatment with repeated doses</h3>
+
+<p>Conditions treated with intravitreal injections follow a long-term treatment plan, made up
+of many individual administration events over months or years. This calls for a <code class="language-plaintext highlighter-rouge">CarePlan</code>
+and <code class="language-plaintext highlighter-rouge">MedicationAdministration</code> pattern that can represent an ongoing scheme, not just a
+single medication event.</p>
+
+<h3 id="an-integrated-imaging-and-care-pathway">An integrated imaging and care pathway</h3>
+
+<p>Ophthalmology also differs from other specialties in how imaging fits into the clinical
+workflow. In radiology, the clinician who orders an imaging study is usually not the one
+who interprets it: a radiologist, a different specialist entirely, reviews the images and
+produces a report that is then sent back. In ophthalmology, imaging studies such as OCT
+scans or retinal photographs are typically reviewed and interpreted by the same
+ophthalmologist, or the same eye care team, that is following the patient clinically, often
+within the same visit. In addition, other eye health professionals (such as
+optometrists and eye care technologists) contribute their own procedures and encounters
+along the way, not only imaging, all supporting the continuity of the same care pathway.</p>
+
+<p>The result is that clinical findings, imaging data, and procedural data stay tightly
+connected within a single, continuous circuit of care, rather than being handed off between
+separate systems or specialties. A generic radiology-oriented pattern for imaging and
+diagnostic reports does not reflect this well. FHIR4Eyes profiles are designed around this
+integrated pathway instead.</p>
+
+<h2 id="the-current-state-of-standardization">The current state of standardization</h2>
+
+<p>There is no mature, complete international standard for ophthalmology data exchange today.
+The most relevant existing effort, the
+<a href="https://build.fhir.org/ig/HL7/fhir-eyecare-ig/">HL7 Eye Care Implementation Guide</a>, is
+still in early ballot status. It defines a solid foundation for basic clinical observations
+(visual acuity, IOP, visual fields, OCT) but does not yet cover diagnoses, treatment,
+devices, or the imaging and care-pathway integration described above.</p>
+
+<p>The table below summarizes where FHIR4Eyes adds coverage that isn't available anywhere
+else yet. See <a href="profiles.html">Profiles</a> for the full technical detail of each one.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Gap covered by FHIR4Eyes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IOP corrected for corneal thickness</td>
+      <td>Dedicated profile linking IOP and pachymetry via <code class="language-plaintext highlighter-rouge">derivedFrom</code></td>
+    </tr>
+    <tr>
+      <td>Corneal pachymetry</td>
+      <td>Dedicated observation profile</td>
+    </tr>
+    <tr>
+      <td>Tension curve (panel of IOP readings)</td>
+      <td>Panel pattern using <code class="language-plaintext highlighter-rouge">hasMember</code></td>
+    </tr>
+    <tr>
+      <td>Ophthalmic imaging studies</td>
+      <td><code class="language-plaintext highlighter-rouge">ImagingStudy</code> profile for OCT, retinography, angiography</td>
+    </tr>
+    <tr>
+      <td>Intravitreal injection care plans</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan</code> modeling a full treatment scheme</td>
+    </tr>
+    <tr>
+      <td>Individual medication administrations</td>
+      <td><code class="language-plaintext highlighter-rouge">MedicationAdministration</code> for each dose</td>
+    </tr>
+    <tr>
+      <td>Implantable device catalog (IOLs)</td>
+      <td><code class="language-plaintext highlighter-rouge">Device</code> profile using an inventory model</td>
+    </tr>
+    <tr>
+      <td>Ophthalmology-specific encounters</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter</code> profile for outpatient eye care visits</td>
+    </tr>
+    <tr>
+      <td>Qualitative low vision acuity</td>
+      <td>Dedicated value set (counting fingers, hand motion, light perception, no light perception)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A number of areas remain open opportunities, not yet covered by FHIR4Eyes, the HL7 Eye Care
+IG, or any other known effort: refraction, biomicroscopy, gonioscopy, fundus examination
+findings, Schirmer testing, contrast sensitivity, and color vision. These are candidates for
+future versions of this guide. See <a href="usecases.html">Use Cases</a> for the clinical scenarios
+that motivated the profiles that already exist.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

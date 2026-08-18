@@ -1,0 +1,22 @@
+# fhir4eyes.core#0.1.0: FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology
+
+## Pages
+
+* [Home](index.md)
+* [Artifacts Summary](artifacts.md)
+* [Background](background.md)
+* [Profiles](profiles.md)
+* [Terminology](terminology.md)
+* [Use Cases](usecases.md)
+
+## Resources
+
+### Resource Profiles
+
+* [Ocular Body Structure](StructureDefinition-ocular-body-structure.md)
+* [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md)
+* [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md)
+
+### ImplementationGuides
+
+* [FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology](index.md)

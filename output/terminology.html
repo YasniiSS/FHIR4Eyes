@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Terminology - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="usecases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Terminology</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Terminology</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="terminology">Terminology</h1>
+
+<h2 id="strategy">Strategy</h2>
+
+<p>This guide follows a simple principle: reuse existing terminology wherever it already
+exists, and only define new terminology where a genuine gap exists.</p>
+
+<p>The <a href="https://build.fhir.org/ig/HL7/fhir-eyecare-ig/">HL7 Eye Care Implementation Guide</a>
+is not yet available as a published FHIR package, so it cannot be declared as a formal
+dependency (see <a href="background.html">Background</a>). Because of that, FHIR4Eyes does not
+attempt to reuse its value sets by reference. Instead, wherever a clinical concept is
+already representable in SNOMED CT, FHIR4Eyes binds directly to SNOMED CT, without
+introducing an intermediate value set of its own. This keeps FHIR4Eyes decoupled from an
+unpublished guide while still remaining aligned with how eye care terminology is generally
+represented internationally.</p>
+
+<p>New value sets are only introduced by FHIR4Eyes where there is a real terminology gap, not
+otherwise covered by SNOMED CT or by the HL7 Eye Care IG.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clinical findings, examination methods, procedures</td>
+      <td>Direct binding to SNOMED CT</td>
+    </tr>
+    <tr>
+      <td>Diagnoses (FHIR4Eyes Core)</td>
+      <td>SNOMED CT and/or ICD-11</td>
+    </tr>
+    <tr>
+      <td>Diagnoses (FHIR4Eyes CL)</td>
+      <td>ICD-10, as currently used in the Chilean public health system</td>
+    </tr>
+    <tr>
+      <td>Laterality</td>
+      <td>Represented using <code class="language-plaintext highlighter-rouge">BodyStructure</code> (see <a href="background.html">Background</a>); no dedicated value set needed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="general-principle-choosing-between-snomed-ct-and-loinc">General principle: choosing between SNOMED CT and LOINC</h2>
+
+<p>Rather than replicating every value set from the HL7 Eye Care IG here (which would be
+redundant and fragile if that guide changes), this guide follows one general principle,
+consistent with how the HL7 Eye Care IG itself applies terminology:</p>
+
+<ul>
+  <li><strong>SNOMED CT</strong> is used for observable concepts, examination methods, findings, and
+procedures: the kind of clinical concept that benefits from SNOMED's hierarchical
+structure (<code class="language-plaintext highlighter-rouge">descendant-of</code> a root concept). This includes imaging examinations where the
+device itself does not output a structured report, and the ophthalmologist instead
+records findings directly (for example retinography and retinal angiography).</li>
+  <li><strong>LOINC</strong> is used for structured panels of numeric, parametric results: examinations
+where the device produces a battery of discrete measured values, each with its own code,
+the way laboratory panels typically work (for example OCT or specular microscopy).</li>
+</ul>
+
+<p>The table below summarizes how this applies across the examinations covered by this guide
+(see <a href="usecases.html">Use Cases</a> for the clinical description of each). Only the exceptions
+and open gaps are elaborated further below; the general principle applies to any
+examination not explicitly listed here.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Examination</th>
+      <th>System</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visual acuity (observable entity and chart/method)</td>
+      <td>SNOMED CT</td>
+      <td>Descendants of <code class="language-plaintext highlighter-rouge">363983007</code> and <code class="language-plaintext highlighter-rouge">400912000</code></td>
+    </tr>
+    <tr>
+      <td>Ophthalmic procedures</td>
+      <td>SNOMED CT</td>
+      <td>Descendants of <code class="language-plaintext highlighter-rouge">371548008</code> and <code class="language-plaintext highlighter-rouge">371560009</code>; CPT for codes not covered by SNOMED CT</td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td>SNOMED CT and/or ICD-11 (Core); ICD-10 (CL)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>OCT (macula and RNFL)</td>
+      <td>LOINC</td>
+      <td>Device produces a structured parametric report</td>
+    </tr>
+    <tr>
+      <td>Specular microscopy</td>
+      <td>LOINC</td>
+      <td>Device produces a structured parametric report (for example endothelial cell density, morphology)</td>
+    </tr>
+    <tr>
+      <td>Computerized and Goldmann visual field</td>
+      <td>LOINC</td>
+      <td>Follows the same parametric-panel logic as OCT</td>
+    </tr>
+    <tr>
+      <td>Corneal topography</td>
+      <td>LOINC</td>
+      <td>Follows the same parametric-panel logic as OCT</td>
+    </tr>
+    <tr>
+      <td>Ocular biometry</td>
+      <td>LOINC</td>
+      <td>Follows the same parametric-panel logic as OCT</td>
+    </tr>
+    <tr>
+      <td>Retinography</td>
+      <td>SNOMED CT</td>
+      <td>The device does not produce a structured report; the ophthalmologist records clinical findings directly, which follows the finding-type logic rather than the parametric-panel logic</td>
+    </tr>
+    <tr>
+      <td>Retinal angiography</td>
+      <td>SNOMED CT</td>
+      <td>Same reasoning as retinography: findings are recorded by the ophthalmologist, not output as a structured device report</td>
+    </tr>
+    <tr>
+      <td>Tonometry, pachymetry, tension curve, autorefractometry, pupillometry</td>
+      <td>SNOMED CT</td>
+      <td>Single or few discrete values, not a structured panel</td>
+    </tr>
+    <tr>
+      <td>Low vision (below chart-measurable range)</td>
+      <td>FHIR4Eyes <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code></td>
+      <td>Partially covered by SNOMED CT; see below</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The exact LOINC codes to use for OCT, visual field, topography, and biometry are to be
+identified when each of these profiles is built, following the pattern above rather than
+reproducing a full code list here.</p>
+</blockquote>
+
+<h2 id="fhir4eyes-value-sets">FHIR4Eyes value sets</h2>
+
+<h3 id="lowvisionassessment">LowVisionAssessment</h3>
+
+<p>Represents visual acuity in patients whose vision is too limited to be measured on a
+standard chart.</p>
+
+<h4 id="clinical-and-official-basis">Clinical and official basis</h4>
+
+<p>The World Health Organization defines vision impairment and blindness severity categories
+in <a href="https://icd.who.int/browse/latest-release/mms/en">ICD-11 (9D90)</a>, based on
+best-corrected visual acuity in the better eye:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Visual acuity worse than</th>
+      <th>Equal to or better than</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No vision impairment</td>
+      <td> </td>
+      <td>6/12, 5/10 (0.5), 20/40, 0.3</td>
+    </tr>
+    <tr>
+      <td>1: Mild vision impairment</td>
+      <td>6/12, 5/10 (0.5), 20/40, 0.3</td>
+      <td>6/18, 3/10 (0.3), 20/70, 0.5</td>
+    </tr>
+    <tr>
+      <td>2: Moderate vision impairment</td>
+      <td>6/18, 3/10 (0.3), 20/70, 0.5</td>
+      <td>6/60, 1/10 (0.1), 20/200, 1.0</td>
+    </tr>
+    <tr>
+      <td>3: Severe vision impairment</td>
+      <td>6/60, 1/10 (0.1), 20/200, 1.0</td>
+      <td>3/60, 1/20 (0.05), 20/400, 1.3</td>
+    </tr>
+    <tr>
+      <td>4: Blindness</td>
+      <td>3/60, 1/20 (0.05), 20/400, 1.3</td>
+      <td>1/60 or counts fingers (CF) at 1 metre, 1/50 (0.02), 20/1200 or CF at 1 metre, 1.8</td>
+    </tr>
+    <tr>
+      <td>5: Blindness</td>
+      <td>1/60, 1/50 (0.02), 5/300 (20/1200), 1.8</td>
+      <td>Light perception</td>
+    </tr>
+    <tr>
+      <td>6: Blindness</td>
+      <td>No light perception</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9: Undetermined or unspecified</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Near vision impairment</td>
+      <td>N6 or M 0.8 at 40 cm</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*1 Presented in metres, decimals, feet and logMAR.</p>
+
+<p><code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> covers the range of ICD-11 categories 4 through 6 (blindness), where
+visual acuity is no longer meaningfully expressed on a Snellen or decimal chart, and
+clinicians instead record it using the qualitative scale below.</p>
+
+<h4 id="terminology-basis">Terminology basis</h4>
+
+<p>Unlike the rest of this guide's visual acuity terminology, this value set is a <strong>mixed
+case</strong>: SNOMED CT was searched for each of the five concepts below, and three were found
+with a direct match, while two were not found as dedicated visual acuity findings.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Display</th>
+      <th>SNOMED CT status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>counting-fingers</td>
+      <td>Counting fingers (at a specified distance)</td>
+      <td>Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code</td>
+    </tr>
+    <tr>
+      <td>hand-motion</td>
+      <td>Hand motion</td>
+      <td>Not found as a dedicated visual acuity finding in SNOMED CT; proposed FHIR4Eyes code</td>
+    </tr>
+    <tr>
+      <td>light-perception-good-projection</td>
+      <td>Light perception, good projection</td>
+      <td>Matches SNOMED CT <code class="language-plaintext highlighter-rouge">260297007</code> / <code class="language-plaintext highlighter-rouge">264944004</code> (Visual acuity perception of light, accurate projection)</td>
+    </tr>
+    <tr>
+      <td>light-perception-poor-projection</td>
+      <td>Light perception, poor projection</td>
+      <td>Matches SNOMED CT <code class="language-plaintext highlighter-rouge">264943005</code> (Visual acuity perception of light, inaccurate projection)</td>
+    </tr>
+    <tr>
+      <td>no-light-perception</td>
+      <td>No light perception</td>
+      <td>Matches SNOMED CT <code class="language-plaintext highlighter-rouge">63063006</code> (Visual acuity, no light perception)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Open for revision:</strong> the two codes without a confirmed SNOMED CT match
+(<code class="language-plaintext highlighter-rouge">counting-fingers</code> and <code class="language-plaintext highlighter-rouge">hand-motion</code>) are FHIR4Eyes proposals, not yet bound to an
+external terminology. If a suitable SNOMED CT concept is identified later (or one is
+added to SNOMED CT), these should be updated to bind to it instead of remaining as
+FHIR4Eyes-only codes. The three codes with a confirmed match should bind directly to
+their SNOMED CT concepts rather than being redefined as FHIR4Eyes-only codes.</p>
+</blockquote>
+
+<p>The distinction between good and poor projection matters clinically: both indicate that
+the patient can perceive light, but poor projection means the patient cannot reliably tell
+where the light is coming from, which is a clinically meaningful difference from good
+projection.</p>
+
+<blockquote>
+  <p>The exact code system URL, formal value set URL, and FSH definition for
+<code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> are to be finalized when this value set is implemented in
+<a href="profiles.html">Profiles</a>.</p>
+</blockquote>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

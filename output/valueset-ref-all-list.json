@@ -1,0 +1,314 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/body-site",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTBodyStructures",
+    "title" : "SNOMED CT Body Structures",
+    "description" : "This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.141"],
+    "sources" : ["2.16.840.1.113883.4.642.3.141"],
+    "uses" : {
+    },
+    "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure",
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/bodystructure-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMorphologicAbnormalities",
+    "title" : "SNOMED CT Morphologic Abnormalities",
+    "description" : "This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.142"],
+    "sources" : ["2.16.840.1.113883.4.642.3.142"],
+    "uses" : {
+    },
+    "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/bodystructure-relative-location",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "BodystructureLocationQualifier",
+    "title" : "Bodystructure Location Qualifier",
+    "description" : "SNOMED-CT concepts modifying the anatomic location",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.140"],
+    "sources" : ["2.16.840.1.113883.4.642.3.140"],
+    "uses" : {
+    },
+    "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConditionCategoryCodes",
+    "title" : "Condition Category Codes",
+    "description" : "Preferred value set for Condition Categories.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/condition-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.162"],
+    "sources" : ["2.16.840.1.113883.4.642.3.162"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConditionClinicalStatusCodes",
+    "title" : "Condition Clinical Status Codes",
+    "description" : "Preferred value set for Condition Clinical Status.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/condition-clinical"],
+    "oids" : ["2.16.840.1.113883.4.642.3.164"],
+    "sources" : ["2.16.840.1.113883.4.642.3.164"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Condition/Problem/DiagnosisCodes",
+    "title" : "Condition/Problem/Diagnosis Codes",
+    "description" : "Example value set for Condition/Problem/Diagnosis codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.161"],
+    "sources" : ["2.16.840.1.113883.4.642.3.161"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Condition/DiagnosisSeverity",
+    "title" : "Condition/Diagnosis Severity",
+    "description" : "Preferred value set for Condition/Diagnosis severity grading.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.168"],
+    "sources" : ["2.16.840.1.113883.4.642.3.168"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-stage",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConditionStage",
+    "title" : "Condition Stage",
+    "description" : "Example value set for stages of cancer and other conditions.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.170"],
+    "sources" : ["2.16.840.1.113883.4.642.3.170"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-stage-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConditionStageType",
+    "title" : "Condition Stage Type",
+    "description" : "Example value set for the type of stages of cancer and other conditions",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.171"],
+    "sources" : ["2.16.840.1.113883.4.642.3.171"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-ver-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConditionVerificationStatus",
+    "title" : "ConditionVerificationStatus",
+    "description" : "The verification status to support or decline the clinical status of the condition or diagnosis.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/condition-ver-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.166"],
+    "sources" : ["2.16.840.1.113883.4.642.3.166"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/languages",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CommonLanguages",
+    "title" : "Common Languages",
+    "description" : "This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)",
+    "systems" : ["urn:ietf:bcp:47"],
+    "oids" : ["2.16.840.1.113883.4.642.3.20"],
+    "sources" : ["2.16.840.1.113883.4.642.3.20"],
+    "uses" : {
+    },
+    "StructureDefinition-ocular-body-structure.html" : "Ocular Body Structure",
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition",
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/manifestation-or-symptom",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ManifestationAndSymptomCodes",
+    "title" : "Manifestation and Symptom Codes",
+    "description" : "Example value set for Manifestation and Symptom codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.169"],
+    "sources" : ["2.16.840.1.113883.4.642.3.169"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-condition.html" : "Ophthalmic Condition"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationAsNeededReasonCodes",
+    "title" : "SNOMED CT Medication As Needed Reason Codes",
+    "description" : "This value set includes all clinical findings from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.96"],
+    "sources" : ["2.16.840.1.113883.4.642.3.96"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/participant-role",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ParticipantRoles",
+    "title" : "Participant Roles",
+    "description" : "Roles of participants that may be included in a care team.  Defined as: Is a Person, Healthcare professional (occupation) or Healthcare related organization (qualifier value).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.152"],
+    "sources" : ["2.16.840.1.113883.4.642.3.152"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureCodes(SNOMEDCT)",
+    "title" : "Procedure Codes (SNOMED CT)",
+    "description" : "Procedure Code: All SNOMED CT procedure codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.427"],
+    "sources" : ["2.16.840.1.113883.4.642.3.427"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureReasonCodes",
+    "title" : "Procedure Reason Codes",
+    "description" : "This example value set defines the set of codes that can be used to indicate a reason for a procedure.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.432"],
+    "sources" : ["2.16.840.1.113883.4.642.3.432"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestIntent",
+    "title" : "RequestIntent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a request.",
+    "systems" : ["http://hl7.org/fhir/request-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.113"],
+    "sources" : ["2.16.840.1.113883.4.642.3.113"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "Request priority",
+    "description" : "The clinical priority of a diagnostic order.",
+    "systems" : ["http://hl7.org/fhir/request-priority"],
+    "oids" : ["2.16.840.1.113883.4.642.3.115"],
+    "sources" : ["2.16.840.1.113883.4.642.3.115"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestStatus",
+    "title" : "RequestStatus",
+    "description" : "Codes identifying the lifecycle stage of a request.",
+    "systems" : ["http://hl7.org/fhir/request-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.111"],
+    "sources" : ["2.16.840.1.113883.4.642.3.111"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/servicerequest-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceRequestCategoryCodes",
+    "title" : "Service Request Category Codes",
+    "description" : "An example value set of SNOMED CT concepts that can classify a requested service",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.434"],
+    "sources" : ["2.16.840.1.113883.4.642.3.434"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/servicerequest-orderdetail",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceRequestOrderDetailsCodes",
+    "title" : "Service Request Order Details Codes",
+    "description" : "An example value set of Codified order entry details concepts.  These concepts only make sense in the context of what is being ordered.  This example is for a patient ventilation order",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.435"],
+    "sources" : ["2.16.840.1.113883.4.642.3.435"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ServiceDeliveryLocationRoleType",
+    "title" : "ServiceDeliveryLocationRoleType",
+    "description" : "A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-RoleCode"],
+    "oids" : ["2.16.840.1.113883.1.11.17660"],
+    "sources" : ["2.16.840.1.113883.1.11.17660"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-service-request.html" : "Ophthalmic Service Request"
+  }]
+}

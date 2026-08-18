@@ -1,0 +1,28 @@
+[{
+  "id" : "fhir4eyes.core",
+  "type" : "ImplementationGuide",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
+  "version" : "0.1.0",
+  "name" : "FHIR4Eyes"
+},
+{
+  "id" : "ocular-body-structure",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
+  "version" : "0.1.0",
+  "name" : "OcularBodyStructure"
+},
+{
+  "id" : "ophthalmic-condition",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition",
+  "version" : "0.1.0",
+  "name" : "OphthalmicCondition"
+},
+{
+  "id" : "ophthalmic-service-request",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
+  "version" : "0.1.0",
+  "name" : "OphthalmicServiceRequest"
+}]

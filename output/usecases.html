@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img src="assets/images/001.svg" alt="International flag" title="International" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="usecases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Use Cases</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Use Cases</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a>    <ul>
+      <li><a href="#actors-used-throughout-this-page" id="markdown-toc-actors-used-throughout-this-page">Actors used throughout this page</a></li>
+      <li><a href="#baseline-resources-assumed-throughout" id="markdown-toc-baseline-resources-assumed-throughout">Baseline resources assumed throughout</a></li>
+      <li><a href="#use-case-1-general-ophthalmology-encounter" id="markdown-toc-use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</a></li>
+      <li><a href="#use-case-2-diagnostic-examinations" id="markdown-toc-use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</a>        <ul>
+          <li><a href="#group-a-direct-observations" id="markdown-toc-group-a-direct-observations">Group A: Direct observations</a></li>
+          <li><a href="#group-b-imaging-studies-with-report" id="markdown-toc-group-b-imaging-studies-with-report">Group B: Imaging studies with report</a></li>
+        </ul>
+      </li>
+      <li><a href="#use-case-3-vision-therapy-and-rehabilitation" id="markdown-toc-use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</a></li>
+      <li><a href="#use-case-4-minor-ambulatory-surgical-procedures" id="markdown-toc-use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</a>        <ul>
+          <li><a href="#intravitreal-injection-treatment" id="markdown-toc-intravitreal-injection-treatment">Intravitreal injection treatment</a></li>
+        </ul>
+      </li>
+      <li><a href="#use-case-5-cataract-surgery-with-intraocular-lens-implantation" id="markdown-toc-use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</a></li>
+      <li><a href="#use-case-6-teleophthalmology" id="markdown-toc-use-case-6-teleophthalmology">Use case 6: Teleophthalmology</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="use-cases">Use Cases</h1>
+
+<p>This page describes the clinical scenarios that motivated the profiles defined in this
+guide. Each use case lists the actors involved, the general flow, and the FHIR resources
+that come into play. For the full technical detail of each profile, see
+<a href="profiles.html">Profiles</a>.</p>
+
+<h2 id="actors-used-throughout-this-page">Actors used throughout this page</h2>
+
+<p><a name="l331">​</a>To keep this guide usable across different health systems, the following generic actor
+names are used instead of country-specific role titles (see the
+<a href="cl/index.html">FHIR4Eyes CL</a> extension for Chile-specific role mappings):</p>
+
+<ul>
+  <li><strong>Patient</strong>: the person receiving eye care.</li>
+  <li><strong>Ophthalmologist</strong>: the physician specialized in eye care, responsible for diagnosis,
+clinical decision-making, and interpretation of most eye examinations.</li>
+  <li><strong>Eye care professional</strong>: a non-physician professional trained to perform eye
+examinations and procedures (this may correspond to an optometrist, an orthoptist, or a
+medical technologist specialized in ophthalmology, depending on the country).</li>
+  <li><strong>Eye care assistant</strong>: support staff who assist with preparing the patient or the
+equipment for an examination or procedure, without independently interpreting results.</li>
+</ul>
+
+<h2 id="baseline-resources-assumed-throughout">Baseline resources assumed throughout</h2>
+
+<p>Every use case below produces at least an <code class="language-plaintext highlighter-rouge">Encounter</code>, representing the clinical visit
+itself. Many of the procedures and examinations described in this guide also follow a
+prior chain of steps: a scheduled appointment, and a medical order (represented by
+<code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>, defined in <a href="profiles.html">Profiles</a>, when the exam was
+formally ordered rather than performed ad hoc during the same visit).</p>
+
+<p>Scheduling itself (<code class="language-plaintext highlighter-rouge">Appointment</code>, <code class="language-plaintext highlighter-rouge">Schedule</code>, <code class="language-plaintext highlighter-rouge">Slot</code>) is intentionally out of scope for
+this guide, since it is purely administrative and already well served by generic FHIR
+resources (see <a href="background.html">Background</a>).</p>
+
+<p>The "FHIR resources involved" tables in each use case below list only the resources that
+are specific or structurally distinctive to that use case. They do not repeat <code class="language-plaintext highlighter-rouge">Encounter</code>
+or <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> in every table, even though both are typically present in the
+full chain leading up to the use case described.</p>
+
+<h2 id="use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</h2>
+
+<p>This is the baseline clinical encounter and does not, on its own, require anything beyond
+what FHIR already provides through generic resources. It is included here as the starting
+point for every other use case in this guide.</p>
+
+<p><strong>Actors:</strong> Patient, Ophthalmologist (an Eye care professional may also be involved,
+depending on local workflows).</p>
+
+<p><strong>Flow:</strong> The patient is seen by the ophthalmologist, who reviews the reason for the visit,
+examines the patient, may request or perform diagnostic procedures (see
+<a href="#use-case-2-diagnostic-examinations">Use case 2</a>), and records a diagnosis and a plan.</p>
+
+<p><strong>FHIR resources involved:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Encounter</code></td>
+      <td>Represents the visit itself</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition</code></td>
+      <td>Represents the diagnosis reached during the visit</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Observation</code></td>
+      <td>Represents any clinical findings recorded (generic, no FHIR4Eyes profile required at this level)</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant O as Ophthalmologist
+    P-&gt;&gt;O: Presents with reason for visit
+    O-&gt;&gt;P: Examination
+    O-&gt;&gt;O: Records Condition and Observation(s)
+    O-&gt;&gt;P: Communicates diagnosis and plan
+</code></pre>
+
+<blockquote>
+  <p>This use case does not currently require any FHIR4Eyes-specific profile. As the guide
+develops further (for example, if an <code class="language-plaintext highlighter-rouge">OphthalmicCondition</code> profile is defined), this
+section will be updated to reference it.</p>
+</blockquote>
+
+<h2 id="use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</h2>
+
+<p>Ophthalmology relies on a wide range of diagnostic examinations, performed by the
+ophthalmologist or by an eye care professional. These examinations split naturally into two
+groups, because they follow different FHIR patterns.</p>
+
+<blockquote>
+  <p>The lists below are not exhaustive. They cover the most representative and frequently
+performed examinations considered so far. Less common examinations not yet listed here
+can still be represented using the same patterns, and may be added to this guide over
+time.</p>
+</blockquote>
+
+<h3 id="group-a-direct-observations">Group A: Direct observations</h3>
+
+<p>These examinations produce a clinical value or finding directly. There is no separate
+image to review afterward; the result itself is the data.</p>
+
+<p><strong>Actors:</strong> Patient, and either an Ophthalmologist or an Eye care professional (who may be
+assisted by an Eye care assistant, depending on the examination and local workflow).</p>
+
+<p><strong>Flow:</strong> The professional performs the examination on the patient and records the
+resulting value or finding directly as clinical data.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant E as Ophthalmologist / Eye care professional
+    P-&gt;&gt;E: Undergoes examination
+    E-&gt;&gt;E: Records Observation directly
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">Procedure</code> (the act of performing the examination) and
+<code class="language-plaintext highlighter-rouge">Observation</code> (the resulting value).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Examination</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tonometry (applanation or other)</td>
+      <td>Covered by the <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> profile</td>
+    </tr>
+    <tr>
+      <td>Pachymetry</td>
+      <td>Covered by the <code class="language-plaintext highlighter-rouge">Pachymetry</code> profile</td>
+    </tr>
+    <tr>
+      <td>Ambulatory tension curve</td>
+      <td>Covered by the <code class="language-plaintext highlighter-rouge">TensionCurve</code> panel profile</td>
+    </tr>
+    <tr>
+      <td>Autorefractometry</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Clinical refraction</td>
+      <td>Not yet covered by a dedicated profile (see <a href="background.html">Background</a>)</td>
+    </tr>
+    <tr>
+      <td>Strabismus examination</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="group-b-imaging-studies-with-report">Group B: Imaging studies with report</h3>
+
+<p>These examinations generate an image or a structured dataset (stored using DICOM, whether
+as a photograph, a scan, or structured waveform-like data), which is then reviewed and
+interpreted separately from the acquisition itself. Unlike radiology, this interpretation
+is typically performed by the same ophthalmologist or eye care team following the patient,
+often within the same visit (see <a href="background.html">Background</a>).</p>
+
+<p><strong>Actors:</strong> Patient, Eye care professional or Eye care assistant (usually performs the
+acquisition), Ophthalmologist (usually performs the interpretation, though in some
+workflows the same professional may do both).</p>
+
+<p><strong>Flow:</strong> The image or structured dataset is acquired and stored. The ophthalmologist then
+reviews it, but unlike a radiology report, this step is not limited to describing imaging
+findings: it typically leads directly into a diagnosis and a treatment plan for the patient,
+all within the same clinical act. This is part of what distinguishes the ophthalmology
+imaging pathway from radiology (see <a href="background.html">Background</a>).</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant A as Eye care professional / assistant
+    participant O as Ophthalmologist
+    P-&gt;&gt;A: Undergoes imaging study
+    A-&gt;&gt;A: Acquires and stores ImagingStudy
+    O-&gt;&gt;A: Reviews the study
+    O-&gt;&gt;O: Records findings and DiagnosticReport
+    O-&gt;&gt;O: Reaches a diagnosis (Condition)
+    O-&gt;&gt;O: Defines a treatment plan (CarePlan)
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ImagingStudy</code> (the acquired study), <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> (the
+findings), <code class="language-plaintext highlighter-rouge">Condition</code> (the diagnosis reached), and <code class="language-plaintext highlighter-rouge">CarePlan</code> (the resulting treatment
+plan, when applicable).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Examination</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Optical coherence tomography (OCT)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Retinal angiography</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Retinography</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Corneal topography</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Computerized and Goldmann visual field</td>
+      <td>Structured report data, also stored as part of the imaging study</td>
+    </tr>
+    <tr>
+      <td>Ocular ultrasound</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Ocular biometry</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Pupillometry</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Electroretinogram (ERG)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Aberrometry</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Meibography</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Specular microscopy</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code> is not yet built (see the profiles inventory in
+<a href="background.html">Background</a>); it is a high-priority item for this guide, since every
+examination in this group depends on it to represent the interpretation step.</p>
+</blockquote>
+
+<h2 id="use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</h2>
+
+<p>Some conditions, such as strabismus or binocular vision disorders, are treated not with
+medication or surgery but with a structured program of repeated sessions: vision therapy
+exercises or orthoptic treatment aimed at improving visual function over time.</p>
+
+<p><strong>Actors:</strong> Patient, Ophthalmologist (defines and oversees the treatment plan), Eye care
+professional (an orthoptist or similarly trained professional, who may perform the
+sessions themselves depending on local workflow).</p>
+
+<p><strong>Flow:</strong> The ophthalmologist establishes a treatment plan made up of multiple sessions. The
+professional performing each session carries out the exercises, and the patient's
+functional progress (for example deviation angle or binocular function) is recorded at each
+session, so progress can be tracked over the course of the plan.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant O as Ophthalmologist
+    participant T as Eye care professional
+    O-&gt;&gt;O: Defines CarePlan (treatment scheme)
+    loop Each session
+        P-&gt;&gt;T: Attends session
+        T-&gt;&gt;T: Performs Procedure (session)
+        T-&gt;&gt;T: Records Observation (functional progress)
+    end
+    T-&gt;&gt;O: Progress reviewed against CarePlan
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">CarePlan</code> (the overall treatment scheme), <code class="language-plaintext highlighter-rouge">Procedure</code> (each
+individual session), and <code class="language-plaintext highlighter-rouge">Observation</code> (functional progress recorded per session).</p>
+
+<blockquote>
+  <p>Whether vision therapy and orthoptic treatment reuse the same <code class="language-plaintext highlighter-rouge">CarePlan</code> profile defined
+for intravitreal injection treatment, or require their own variation, is still to be
+decided in <a href="profiles.html">Profiles</a>.</p>
+</blockquote>
+
+<h2 id="use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</h2>
+
+<p>Several ophthalmology treatments are performed as brief, ambulatory surgical procedures.
+This includes procedures such as panretinal photocoagulation, LASIK, PRK, and YAG
+capsulotomy (typically performed after cataract surgery, to clear a clouded lens capsule).</p>
+
+<p><strong>Actors:</strong> Patient, Ophthalmologist (performs the procedure), Eye care assistant (may
+support preparation).</p>
+
+<p><strong>Flow:</strong> The ophthalmologist performs the procedure during a single encounter. The
+procedure is recorded with its laterality and any relevant clinical detail.</p>
+
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">Encounter</code>, <code class="language-plaintext highlighter-rouge">Procedure</code> (with <code class="language-plaintext highlighter-rouge">bodySite</code> referencing
+<code class="language-plaintext highlighter-rouge">BodyStructure</code> for laterality).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Procedure</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Panretinal photocoagulation</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>LASIK</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>PRK</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>YAG capsulotomy</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This list is not exhaustive and is expected to grow as more procedures are documented.</p>
+</blockquote>
+
+<h3 id="intravitreal-injection-treatment">Intravitreal injection treatment</h3>
+
+<p>Intravitreal injections are treated separately from the procedures above because they are
+not a single event: they follow a long-term treatment scheme made up of repeated injection
+sessions, each administering a medication directly into the eye.</p>
+
+<p><strong>Actors:</strong> Patient, Ophthalmologist (establishes the diagnosis and the treatment scheme,
+and typically performs each injection).</p>
+
+<p><strong>Flow:</strong> A diagnosis is reached and recorded once. Based on it, a treatment scheme is
+defined, covering the expected course of injections over time. Each individual injection is
+then recorded as its own procedure, linked back to the overall scheme, along with the
+medication administered during it.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant O as Ophthalmologist
+    O-&gt;&gt;O: Records diagnosis (Condition)
+    O-&gt;&gt;O: Defines treatment scheme (CarePlan)
+    loop Each injection session
+        P-&gt;&gt;O: Attends session
+        O-&gt;&gt;O: Performs Procedure (linked to CarePlan)
+        O-&gt;&gt;O: Records MedicationAdministration
+    end
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition</code></td>
+      <td>The diagnosis motivating treatment, recorded once and referenced throughout</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan</code></td>
+      <td>The overall treatment scheme</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Procedure</code></td>
+      <td>Each individual injection, linked to the <code class="language-plaintext highlighter-rouge">CarePlan</code> via <code class="language-plaintext highlighter-rouge">basedOn</code>, with <code class="language-plaintext highlighter-rouge">bodySite</code> for laterality</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MedicationAdministration</code></td>
+      <td>The medication administered during each injection, referencing the cataloged <code class="language-plaintext highlighter-rouge">Medication</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</h2>
+
+<p>Cataract surgery involves removing the eye's clouded natural lens and replacing it with an
+intraocular lens (IOL). Unlike the procedures in <a href="#use-case-4-minor-ambulatory-surgical-procedures">use case 4</a>,
+this involves a permanently implanted device, which needs to be represented as such.</p>
+
+<p><strong>Actors:</strong> Patient, Ophthalmologist (reviews prior examinations, selects the lens, and
+performs the surgery).</p>
+
+<p><strong>Flow:</strong> Before the day of surgery, the ophthalmologist reviews the relevant prior
+examinations (typically including ocular biometry) and selects the appropriate IOL from the
+device catalog. On the day of surgery, the ophthalmologist performs the procedure and
+implants the selected lens, which is recorded as the focal device of the procedure.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant O as Ophthalmologist
+    participant P as Patient
+    O-&gt;&gt;O: Reviews prior exams (e.g. ocular biometry)
+    O-&gt;&gt;O: Selects IOL from Device catalog
+    P-&gt;&gt;O: Attends surgery
+    O-&gt;&gt;O: Performs Procedure, with selected Device as focalDevice
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Device</code></td>
+      <td>The IOL, modeled as a cataloged/inventory item, not linked to the patient directly</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Procedure</code></td>
+      <td>The surgery itself, with <code class="language-plaintext highlighter-rouge">bodySite</code> for laterality and <code class="language-plaintext highlighter-rouge">focalDevice</code> referencing the implanted <code class="language-plaintext highlighter-rouge">Device</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The link from patient to implanted device is made only through <code class="language-plaintext highlighter-rouge">Procedure.focalDevice</code>.
+The <code class="language-plaintext highlighter-rouge">Device</code> resource itself is not linked to the patient.</p>
+</blockquote>
+
+<h2 id="use-case-6-teleophthalmology">Use case 6: Teleophthalmology</h2>
+
+<p>In many health systems, imaging studies are acquired at a primary care facility, while
+interpretation is performed remotely by an ophthalmologist based at a hospital or reference
+center. This differs from the integrated pathway described in
+<a href="#group-b-imaging-studies-with-report">use case 2, group B</a>, where acquisition and
+interpretation typically happen close together, often within the same visit. In
+teleophthalmology, the two steps are separated in place and often in time, and a formal
+request is needed to connect them, similar in structure to how teleradiology works.</p>
+
+<p><strong>Actors:</strong> Patient, Eye care professional (acquires the study at the primary care
+facility), Ophthalmologist (interprets remotely at a hospital or reference center).</p>
+
+<p><strong>Flow:</strong> A request for remote interpretation is created at the primary care facility. The
+study is acquired there and made available to the remote ophthalmologist, who reviews it
+and produces the interpretation, findings, diagnosis, and treatment plan as with any other
+imaging study, but without being physically present with the patient.</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant P as Patient
+    participant A as Eye care professional (primary care)
+    participant O as Ophthalmologist (remote, hospital)
+    A-&gt;&gt;A: Creates ServiceRequest for remote interpretation
+    P-&gt;&gt;A: Undergoes imaging study
+    A-&gt;&gt;A: Acquires and stores ImagingStudy
+    O-&gt;&gt;A: Reviews the study remotely
+    O-&gt;&gt;O: Records DiagnosticReport, Condition, CarePlan as applicable
+</code></pre>
+
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (the request for remote interpretation, not
+yet covered by a dedicated profile), plus the same resources as
+<a href="#group-b-imaging-studies-with-report">use case 2, group B</a> (<code class="language-plaintext highlighter-rouge">ImagingStudy</code>,
+<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Condition</code>, <code class="language-plaintext highlighter-rouge">CarePlan</code>).</p>
+
+<blockquote>
+  <p>This use case is an open opportunity for this guide. <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> is listed
+as a medium-priority profile to build (see <a href="background.html">Background</a>), and the full
+detail of how the remote request and response should be structured is still to be
+designed.</p>
+</blockquote>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 00:29+0000">2026-08-18</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
