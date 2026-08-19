@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-worth-4-dot-test.csv
   "name" : "Worth4DotTest",
   "title" : "Worth 4 Dot Test",
   "status" : "draft",
-  "date" : "2026-08-19T17:13:42+00:00",
+  "date" : "2026-08-19T17:55:33+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

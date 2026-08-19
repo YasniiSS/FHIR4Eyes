@@ -10,7 +10,7 @@
   "name" : "OphthalmicOCTRNFL",
   "title" : "Ophthalmic OCT RNFL",
   "status" : "draft",
-  "date" : "2026-08-19T17:13:42+00:00",
+  "date" : "2026-08-19T17:55:33+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -26,7 +26,7 @@
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\nquadrant-level components and an overall classification, matching the structure of typical\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\nare laterality-specific (a different code for right vs. left eye); implementers should\nselect the correct code for the eye being examined when populating each component. See\nTerminology for the general LOINC-for-structured-panels strategy.",
+  "description" : "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\r\nquadrant-level components and an overall classification, matching the structure of typical\r\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\r\nare laterality-specific (a different code for right vs. left eye); implementers should\r\nselect the correct code for the eye being examined when populating each component. See\r\nTerminology for the general LOINC-for-structured-panels strategy.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",

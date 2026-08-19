@@ -3,7 +3,7 @@ FHIR4Eyes : Validation Results
 
 err = 282, warn = 165, info = 83
 IG Publisher Version: 2.3.2
-Generated Wed Aug 19 17:43:11 UTC 2026. FHIR version 4.0.1 for fhir4eyes.core#0.1.0 (canonical = https://YasniiSS.github.io/fhir4eyes)
+Generated Wed Aug 19 18:20:47 UTC 2026. FHIR version 4.0.1 for fhir4eyes.core#0.1.0 (canonical = https://YasniiSS.github.io/fhir4eyes)
  Build Errors : 3 / 606 / 0
  /home/publisher/ig/fsh-generated/resources/BodyStructure-LeftEyeStructureExample : 0 / 0 / 1
  /home/publisher/ig/fsh-generated/resources/BodyStructure-RightEyeStructureExample : 0 / 0 / 1

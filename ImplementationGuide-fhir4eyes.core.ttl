@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "FHIR4Eyes"] ;
   fhir:ImplementationGuide.title [ fhir:value "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-19T17:13:42+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-19T17:55:33+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -1520,7 +1520,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-oct-rnfl" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic OCT RNFL" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\nquadrant-level components and an overall classification, matching the structure of typical\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\nare laterality-specific (a different code for right vs. left eye); implementers should\nselect the correct code for the eye being examined when populating each component. See\nTerminology for the general LOINC-for-structured-panels strategy." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\r\nquadrant-level components and an overall classification, matching the structure of typical\r\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\r\nare laterality-specific (a different code for right vs. left eye); implementers should\r\nselect the correct code for the eye being examined when populating each component. See\r\nTerminology for the general LOINC-for-structured-panels strategy." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 55 ;

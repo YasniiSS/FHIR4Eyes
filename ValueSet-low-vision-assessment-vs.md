@@ -50,7 +50,7 @@ Qualitative visual acuity for patients whose vision falls below what any chart c
   "name" : "LowVisionAssessmentVS",
   "title" : "Low Vision Assessment Value Set",
   "status" : "draft",
-  "date" : "2026-08-19T17:13:42+00:00",
+  "date" : "2026-08-19T17:55:33+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

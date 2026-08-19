@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "OphthalmicOCTRNFL"] ;
   fhir:StructureDefinition.title [ fhir:value "Ophthalmic OCT RNFL"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-08-19T17:13:42+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-08-19T17:55:33+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -36,7 +36,7 @@
        fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
      ]
   ] ;
-  fhir:StructureDefinition.description [ fhir:value "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\nquadrant-level components and an overall classification, matching the structure of typical\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\nare laterality-specific (a different code for right vs. left eye); implementers should\nselect the correct code for the eye being examined when populating each component. See\nTerminology for the general LOINC-for-structured-panels strategy."] ;
+  fhir:StructureDefinition.description [ fhir:value "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\r\nquadrant-level components and an overall classification, matching the structure of typical\r\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\r\nare laterality-specific (a different code for right vs. left eye); implementers should\r\nselect the correct code for the eye being examined when populating each component. See\r\nTerminology for the general LOINC-for-structured-panels strategy."] ;
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0 ;
      fhir:CodeableConcept.coding [
