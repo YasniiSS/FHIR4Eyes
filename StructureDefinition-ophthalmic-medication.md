@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:OphthalmicMedication |
+| Draft as of 2026-08-19 | *Computable Name*:OphthalmicMedication |
 
  
 A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "name" : "OphthalmicMedication",
   "title" : "Ophthalmic Medication",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

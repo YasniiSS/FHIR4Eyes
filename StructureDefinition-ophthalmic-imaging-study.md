@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:OphthalmicImagingStudy |
+| Draft as of 2026-08-19 | *Computable Name*:OphthalmicImagingStudy |
 
  
 An ophthalmic imaging study, such as OCT, retinography, or angiography. Always traceable back to the medical order that led to it via basedOn. Laterality is represented both through the native series.bodySite/series.laterality Coding fields (for standard DICOM/PACS compatibility) and through an additional extension referencing OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of this guide). 
@@ -17,7 +17,7 @@ An ophthalmic imaging study, such as OCT, retinography, or angiography. Always t
 **Usages:**
 
 * Refer to this Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnostic-report.md)
-* Examples for this Profile: [ImagingStudy/OCTMaculaLeftEyeExample](ImagingStudy-OCTMaculaLeftEyeExample.md) and [ImagingStudy/OCTOpticDiscLeftEyeExample](ImagingStudy-OCTOpticDiscLeftEyeExample.md)
+* Examples for this Profile: [ImagingStudy/OCTMaculaLeftEyeExample](ImagingStudy-OCTMaculaLeftEyeExample.md), [ImagingStudy/OCTOpticDiscLeftEyeExample](ImagingStudy-OCTOpticDiscLeftEyeExample.md), [ImagingStudy/OCTStudyLeftEyeExample](ImagingStudy-OCTStudyLeftEyeExample.md) and [ImagingStudy/OCTStudyRightEyeExample](ImagingStudy-OCTStudyRightEyeExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-imaging-study.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-imaging-s
   "name" : "OphthalmicImagingStudy",
   "title" : "Ophthalmic Imaging Study",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

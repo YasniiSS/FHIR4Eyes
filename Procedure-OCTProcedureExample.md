@@ -25,7 +25,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **bodySite**: 
 
-**report**: [Diagnostic Report for '' for '->Patient Example Female, DoB: 1990-01-01'](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
+**report**: [Diagnostic Report for '' for '->Patient Example Female, DoB: 1990-01-01'](DiagnosticReport-OCTDiagnosticReportExample.md)
 
 
 
@@ -60,7 +60,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
     }]
   }],
   "report" : [{
-    "reference" : "DiagnosticReport/OCTMaculaDiagnosticReportExample"
+    "reference" : "DiagnosticReport/OCTDiagnosticReportExample"
   }]
 }
 

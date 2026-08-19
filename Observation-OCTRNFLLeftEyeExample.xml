@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="OCTRNFLLeftEyeExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation OCTRNFLLeftEyeExample</b></p><a name="OCTRNFLLeftEyeExample"> </a><a name="hcOCTRNFLLeftEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ophthalmic-oct-rnfl.html">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">OCT RNFL analysis</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Reference database: European Descent (2009). Valid for Caucasian eyes only.</p>
+</div></blockquote><p><b>bodySite</b>: <span title="Codes:"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">RNFL superior thickness</span></p><p><b>value</b>: 98 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">RNFL inferior thickness</span></p><p><b>value</b>: 89 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">RNFL nasal thickness</span></p><p><b>value</b>: 51 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">RNFL temporal thickness</span></p><p><b>value</b>: 51 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">RNFL average thickness</span></p><p><b>value</b>: 78 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Overall classification</span></p><p><b>value</b>: <span title="Codes:">Outside Normal Limits</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="OCT RNFL analysis"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <note>
+    <text value="Reference database: European Descent (2009). Valid for Caucasian eyes only."/>
+  </note>
+  <bodySite>
+    <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
+      <valueReference>
+        <reference value="BodyStructure/LeftEyeStructureExample"/>
+      </valueReference>
+    </extension>
+  </bodySite>
+  <component>
+    <code>
+      <text value="RNFL superior thickness"/>
+    </code>
+    <valueQuantity>
+      <value value="98"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="RNFL inferior thickness"/>
+    </code>
+    <valueQuantity>
+      <value value="89"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="RNFL nasal thickness"/>
+    </code>
+    <valueQuantity>
+      <value value="51"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="RNFL temporal thickness"/>
+    </code>
+    <valueQuantity>
+      <value value="51"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="RNFL average thickness"/>
+    </code>
+    <valueQuantity>
+      <value value="78"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Overall classification"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Outside Normal Limits"/>
+    </valueCodeableConcept>
+  </component>
+</Observation>

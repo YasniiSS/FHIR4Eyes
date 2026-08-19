@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:CoverTest |
+| Draft as of 2026-08-19 | *Computable Name*:CoverTest |
 
  
 Represents a cover test result, performed with or without correction, at near or far distance. Findings are recorded as open text/coded values for now (PC: orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has been verified for these specific findings yet. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
   "name" : "CoverTest",
   "title" : "Cover Test",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

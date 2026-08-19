@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:HirschbergTest |
+| Draft as of 2026-08-19 | *Computable Name*:HirschbergTest |
 
  
 Represents a Hirschberg corneal light reflex test, used to estimate the angle of deviation when other tests aren't feasible (e.g. young children). Performed across multiple gaze positions; each position is recorded as a separate GazePositionMeasurement, referenced here via hasMember, using its qualitative finding component. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-hirschberg-test.csv)
   "name" : "HirschbergTest",
   "title" : "Hirschberg Test",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

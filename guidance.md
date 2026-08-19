@@ -31,6 +31,30 @@ Why a reference instead of a simple code? A `Reference` lets the same `OcularBod
 
 `ImagingStudy` is the one exception: its `series.bodySite` and `series.laterality` are native `Coding` fields (not references), for standard DICOM/PACS compatibility. This guide adds the same `bodySiteEye` extension alongside those native fields, so an imaging study can still be linked to the same shared `OcularBodyStructure` instance when needed. See `OphthalmicImagingStudy` in [Profiles](profiles.md).
 
+## The Study / Series / Instance hierarchy
+
+`OphthalmicImagingStudy` follows the standard DICOM/FHIR hierarchy: an `ImagingStudy` resource represents one **study** (one imaging session), which contains one or more **series** (one per scan protocol), each of which contains one or more **instances** (the individual images or frames captured).
+
+A common source of confusion is how many `ImagingStudy` resources a single visit produces. This depends on how the acquiring device or PACS groups its output, and both patterns are valid and supported by this guide (`OphthalmicDiagnosticReport.imagingStudy` is `0..*`, matching both the base FHIR specification and the IHE Radiology Imaging Diagnostic Report profile, which also allow multiple studies per report):
+
+* **One study per eye**, each containing multiple series for the different scan types performed on that eye (for example, one study for the right eye with an RNFL series and a macula series, and a separate study for the left eye).
+* **One study for the whole session**, with series distinguishing both eye and scan type.
+
+For a bilateral OCT session (RNFL and macula, both eyes), following the first pattern:
+
+```
+OphthalmicImagingStudy (right eye)
+  ├── series: RNFL scan, right eye
+  └── series: Macula scan, right eye
+
+OphthalmicImagingStudy (left eye)
+  ├── series: RNFL scan, left eye
+  └── series: Macula scan, left eye
+
+```
+
+Each series is where scan type (RNFL vs. macula) is distinguished, not the study itself; the study is the acquisition session (per eye, in this example).
+
 ## The panel pattern: grouping related observations with hasMember
 
 Several profiles represent a **panel**: a parent `Observation` that has no value of its own, but groups together a set of related child observations via `hasMember`. This guide uses this pattern in two situations:
@@ -51,6 +75,16 @@ In both cases, the panel itself sets `value[x] 0..0`: the panel carries no value
 
 So a single curve reading can carry a two-level chain: the curve references the corrected reading, and the corrected reading itself references the two measurements it was derived from. Implementers should expect to traverse both levels when they need the full detail behind a corrected value (for example, to show the original uncorrected IOP alongside the correction).
 
+```
+graph TD
+    TC[TensionCurve<br/>panel] -->|hasMember| IOP1[IntraocularPressure<br/>08:00]
+    TC -->|hasMember| IOP2[IntraocularPressure<br/>12:00]
+    TC -->|hasMember| CIOP[CorrectedIntraocularPressure<br/>14:00]
+    CIOP -->|derivedFrom| IOP3[IntraocularPressure<br/>base reading]
+    CIOP -->|derivedFrom| PACHY[Pachymetry<br/>corneal thickness]
+
+```
+
 ### Worked example: StrabismusExam's two-tier structure
 
 `StrabismusExam` is the most elaborate panel in this guide, combining both the fixed and flexible variants of the pattern described above, across two tiers:
@@ -63,6 +97,24 @@ So a single curve reading can carry a two-level chain: the curve references the 
 **Tier 2 (position-based sub-test panels).** Each position-based sub-test groups one `GazePositionMeasurement` per gaze position tested, via its own `hasMember`. `GazePositionMeasurement` is a single shared pattern used by all five position-based sub-tests, with optional components for two different kinds of per-position result: `horizontalDeviation`/`verticalDeviation` (Quantity, prism diopters, used by `PrismCoverTest` and `KrimskyTest`), or `finding` (CodeableConcept, used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`). Each `GazePositionMeasurement` also carries a `fixatingEye` component, kept explicitly separate from `bodySite` (the measured eye) to avoid the "FOD/FOI" ambiguity described earlier on this page.
 
 Traversing a full `StrabismusExam` therefore means walking `hasMember` at the top level, and, for any position-based sub-test found there, walking its own nested `hasMember` down to the individual `GazePositionMeasurement` instances. See the example instances bundled with this guide for a complete worked case.
+
+```
+graph TD
+    SE[StrabismusExam<br/>panel] -->|hasMember| CT[CoverTest]
+    SE -->|hasMember| OM[OcularMotility]
+    SE -->|hasMember| PPC[NearPointOfConvergence]
+    SE -->|hasMember| CA[ConvergenceAssessment]
+    SE -->|hasMember| ST[StereopsisTest]
+    SE -->|hasMember| PCT[PrismCoverTest]
+    SE -->|hasMember| KT[KrimskyTest]
+
+    PCT -->|hasMember| GPM1[GazePositionMeasurement<br/>primary position]
+    PCT -->|hasMember| GPM2[GazePositionMeasurement<br/>right gaze]
+    KT -->|hasMember| GPM3[GazePositionMeasurement<br/>primary position]
+
+    GPM1 -.-> COMP1["fixatingEye, horizontalDeviation,<br/>verticalDeviation"]
+
+```
 
 ## The granular-components pattern
 

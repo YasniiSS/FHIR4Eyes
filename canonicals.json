@@ -139,6 +139,20 @@
   "name" : "OphthalmicMedicationAdministration"
 },
 {
+  "id" : "ophthalmic-oct-macula",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
+  "version" : "0.1.0",
+  "name" : "OphthalmicOCTMacula"
+},
+{
+  "id" : "ophthalmic-oct-rnfl",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl",
+  "version" : "0.1.0",
+  "name" : "OphthalmicOCTRNFL"
+},
+{
   "id" : "ophthalmic-procedure",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",

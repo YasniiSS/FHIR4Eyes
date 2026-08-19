@@ -160,6 +160,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#guidance" id="markdown-toc-guidance">Guidance</a>    <ul>
       <li><a href="#what-must-support-means-here" id="markdown-toc-what-must-support-means-here">What "Must Support" means here</a></li>
       <li><a href="#the-laterality-pattern-bodysite-with-a-bodystructure-reference" id="markdown-toc-the-laterality-pattern-bodysite-with-a-bodystructure-reference">The laterality pattern: <code class="language-plaintext highlighter-rouge">bodySite</code> with a <code class="language-plaintext highlighter-rouge">BodyStructure</code> reference</a></li>
+      <li><a href="#the-study--series--instance-hierarchy" id="markdown-toc-the-study--series--instance-hierarchy">The Study / Series / Instance hierarchy</a></li>
       <li><a href="#the-panel-pattern-grouping-related-observations-with-hasmember" id="markdown-toc-the-panel-pattern-grouping-related-observations-with-hasmember">The panel pattern: grouping related observations with <code class="language-plaintext highlighter-rouge">hasMember</code></a>        <ul>
           <li><a href="#worked-example-tensioncurve-with-corrected-readings" id="markdown-toc-worked-example-tensioncurve-with-corrected-readings">Worked example: TensionCurve with corrected readings</a></li>
           <li><a href="#worked-example-strabismusexams-two-tier-structure" id="markdown-toc-worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</a></li>
@@ -223,6 +224,40 @@ adds the same <code class="language-plaintext highlighter-rouge">bodySiteEye</co
 can still be linked to the same shared <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code> instance when needed. See
 <code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> in <a href="profiles.html">Profiles</a>.</p>
 
+<h2 id="the-study--series--instance-hierarchy">The Study / Series / Instance hierarchy</h2>
+
+<p><code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> follows the standard DICOM/FHIR hierarchy: an <code class="language-plaintext highlighter-rouge">ImagingStudy</code>
+resource represents one <strong>study</strong> (one imaging session), which contains one or more
+<strong>series</strong> (one per scan protocol), each of which contains one or more <strong>instances</strong> (the
+individual images or frames captured).</p>
+
+<p>A common source of confusion is how many <code class="language-plaintext highlighter-rouge">ImagingStudy</code> resources a single visit produces.
+This depends on how the acquiring device or PACS groups its output, and both patterns are
+valid and supported by this guide (<code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport.imagingStudy</code> is <code class="language-plaintext highlighter-rouge">0..*</code>,
+matching both the base FHIR specification and the IHE Radiology Imaging Diagnostic Report
+profile, which also allow multiple studies per report):</p>
+
+<ul>
+  <li><strong>One study per eye</strong>, each containing multiple series for the different scan types
+performed on that eye (for example, one study for the right eye with an RNFL series and
+a macula series, and a separate study for the left eye).</li>
+  <li><strong>One study for the whole session</strong>, with series distinguishing both eye and scan type.</li>
+</ul>
+
+<p>For a bilateral OCT session (RNFL and macula, both eyes), following the first pattern:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OphthalmicImagingStudy (right eye)
+  ├── series: RNFL scan, right eye
+  └── series: Macula scan, right eye
+
+OphthalmicImagingStudy (left eye)
+  ├── series: RNFL scan, left eye
+  └── series: Macula scan, left eye
+</code></pre></div></div>
+
+<p>Each series is where scan type (RNFL vs. macula) is distinguished, not the study itself;
+the study is the acquisition session (per eye, in this example).</p>
+
 <h2 id="the-panel-pattern-grouping-related-observations-with-hasmember">The panel pattern: grouping related observations with <code class="language-plaintext highlighter-rouge">hasMember</code></h2>
 
 <p>Several profiles represent a <em>panel</em>: a parent <code class="language-plaintext highlighter-rouge">Observation</code> that has no value of its own,
@@ -263,6 +298,14 @@ from. Implementers should expect to traverse both levels when they need the full
 behind a corrected value (for example, to show the original uncorrected IOP alongside the
 correction).</p>
 
+<pre><code class="language-mermaid">graph TD
+    TC[TensionCurve&lt;br/&gt;panel] --&gt;|hasMember| IOP1[IntraocularPressure&lt;br/&gt;08:00]
+    TC --&gt;|hasMember| IOP2[IntraocularPressure&lt;br/&gt;12:00]
+    TC --&gt;|hasMember| CIOP[CorrectedIntraocularPressure&lt;br/&gt;14:00]
+    CIOP --&gt;|derivedFrom| IOP3[IntraocularPressure&lt;br/&gt;base reading]
+    CIOP --&gt;|derivedFrom| PACHY[Pachymetry&lt;br/&gt;corneal thickness]
+</code></pre>
+
 <h3 id="worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</h3>
 
 <p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is the most elaborate panel in this guide, combining both the fixed and
@@ -294,6 +337,22 @@ measured eye) to avoid the "FOD/FOI" ambiguity described earlier on this page.</
 and, for any position-based sub-test found there, walking its own nested <code class="language-plaintext highlighter-rouge">hasMember</code> down
 to the individual <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> instances. See the example instances bundled
 with this guide for a complete worked case.</p>
+
+<pre><code class="language-mermaid">graph TD
+    SE[StrabismusExam&lt;br/&gt;panel] --&gt;|hasMember| CT[CoverTest]
+    SE --&gt;|hasMember| OM[OcularMotility]
+    SE --&gt;|hasMember| PPC[NearPointOfConvergence]
+    SE --&gt;|hasMember| CA[ConvergenceAssessment]
+    SE --&gt;|hasMember| ST[StereopsisTest]
+    SE --&gt;|hasMember| PCT[PrismCoverTest]
+    SE --&gt;|hasMember| KT[KrimskyTest]
+
+    PCT --&gt;|hasMember| GPM1[GazePositionMeasurement&lt;br/&gt;primary position]
+    PCT --&gt;|hasMember| GPM2[GazePositionMeasurement&lt;br/&gt;right gaze]
+    KT --&gt;|hasMember| GPM3[GazePositionMeasurement&lt;br/&gt;primary position]
+
+    GPM1 -.-&gt; COMP1["fixatingEye, horizontalDeviation,&lt;br/&gt;verticalDeviation"]
+</code></pre>
 
 <h2 id="the-granular-components-pattern">The granular-components pattern</h2>
 
@@ -384,7 +443,7 @@ element as provisional and check for updates.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:13+0000">2026-08-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

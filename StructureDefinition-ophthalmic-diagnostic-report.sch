@@ -13,7 +13,6 @@
     <sch:title>f:DiagnosticReport</sch:title>
     <sch:rule context="f:DiagnosticReport">
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
-      <sch:assert test="count(f:imagingStudy) &lt;= 1">imagingStudy: maximum cardinality of 'imagingStudy' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

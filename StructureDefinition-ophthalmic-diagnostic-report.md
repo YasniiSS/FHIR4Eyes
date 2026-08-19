@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:OphthalmicDiagnosticReport |
+| Draft as of 2026-08-19 | *Computable Name*:OphthalmicDiagnosticReport |
 
  
 Represents the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset. Unlike a radiology report, this is not limited to describing imaging findings: the same clinical act typically also reaches a diagnosis and defines a treatment plan, recorded as separate Condition and CarePlan resources referencing this report. 
@@ -17,7 +17,7 @@ Represents the findings, diagnosis, and treatment plan reached after reviewing a
 **Usages:**
 
 * Refer to this Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
-* Examples for this Profile: [DiagnosticReport/OCTMaculaDiagnosticReportExample](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
+* Examples for this Profile: [DiagnosticReport/OCTDiagnosticReportExample](DiagnosticReport-OCTDiagnosticReportExample.md) and [DiagnosticReport/OCTMaculaDiagnosticReportExample](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-diagnostic-report.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
   "name" : "OphthalmicDiagnosticReport",
   "title" : "Ophthalmic Diagnostic Report",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -212,7 +212,6 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
       "id" : "DiagnosticReport.imagingStudy",
       "path" : "DiagnosticReport.imagingStudy",
       "short" : "The imaging study this report interprets, when applicable",
-      "max" : "1",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"]

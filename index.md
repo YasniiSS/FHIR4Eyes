@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:FHIR4Eyes |
+| Draft as of 2026-08-19 | *Computable Name*:FHIR4Eyes |
 
 # FHIR4Eyes
 
@@ -72,7 +72,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -1082,6 +1082,21 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DiagnosticReport-OCTDiagnosticReportExample.html"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/OCTDiagnosticReportExample"
+      },
+      "name" : "OCTDiagnosticReportExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "DiagnosticReport-OCTMaculaDiagnosticReportExample.html"
       }],
       "reference" : {
@@ -1104,6 +1119,36 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "OCTMaculaLeftEyeExample",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTMaculaLeftEyeExample2.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTMaculaLeftEyeExample2"
+      },
+      "name" : "OCTMaculaLeftEyeExample2",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTMaculaRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTMaculaRightEyeExample"
+      },
+      "name" : "OCTMaculaRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
     },
     {
       "extension" : [{
@@ -1164,6 +1209,81 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "OCTProcedureExample",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTRNFLLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTRNFLLeftEyeExample"
+      },
+      "name" : "OCTRNFLLeftEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTRNFLRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTRNFLRightEyeExample"
+      },
+      "name" : "OCTRNFLRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-OCTServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/OCTServiceRequestExample"
+      },
+      "name" : "OCTServiceRequestExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTStudyLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTStudyLeftEyeExample"
+      },
+      "name" : "OCTStudyLeftEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTStudyRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTStudyRightEyeExample"
+      },
+      "name" : "OCTStudyRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
     },
     {
       "extension" : [{
@@ -1369,6 +1489,38 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Ophthalmic Medication Administration",
       "description" : "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-oct-macula.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-oct-macula"
+      },
+      "name" : "Ophthalmic OCT Macula",
+      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid\n(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are\nconfirmed for the center point, center subfield, and inner sectors; codes for the outer\nsectors were not found confirmed and are left open pending verification (see component\nnotes below).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-oct-rnfl.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
+      },
+      "name" : "Ophthalmic OCT RNFL",
+      "description" : "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\nquadrant-level components and an overall classification, matching the structure of typical\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\nare laterality-specific (a different code for right vs. left eye); implementers should\nselect the correct code for the eye being examined when populating each component. See\nTerminology for the general LOINC-for-structured-panels strategy.",
       "exampleBoolean" : false
     },
     {

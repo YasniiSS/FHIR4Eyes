@@ -405,6 +405,33 @@ this is a component' pattern.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-oct-macula.html"
+                  title="StructureDefinition/ophthalmic-oct-macula">Ophthalmic OCT Macula</a>
+            </td>
+            <td>
+<p>Represents an OCT macular thickness analysis using the ETDRS 9-sector grid
+(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are
+confirmed for the center point, center subfield, and inner sectors; codes for the outer
+sectors were not found confirmed and are left open pending verification (see component
+notes below).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-oct-rnfl.html"
+                  title="StructureDefinition/ophthalmic-oct-rnfl">Ophthalmic OCT RNFL</a>
+            </td>
+            <td>
+<p>Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with
+quadrant-level components and an overall classification, matching the structure of typical
+vendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but
+are laterality-specific (a different code for right vs. left eye); implementers should
+select the correct code for the eye being examined when populating each component. See
+Terminology for the general LOINC-for-structured-panels strategy.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ophthalmic-procedure.html"
                   title="StructureDefinition/ophthalmic-procedure">Ophthalmic Procedure</a>
             </td>
@@ -734,6 +761,15 @@ external terminology. See the Profiles page of this guide for the design rationa
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="DiagnosticReport-OCTDiagnosticReportExample.html"
+                  title="DiagnosticReport/OCTDiagnosticReportExample">OCTDiagnosticReportExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="DiagnosticReport-OCTMaculaDiagnosticReportExample.html"
                   title="DiagnosticReport/OCTMaculaDiagnosticReportExample">OCTMaculaDiagnosticReportExample</a>
             </td>
@@ -745,6 +781,24 @@ external terminology. See the Profiles page of this guide for the design rationa
             <td style="column-width:30%">
                <a href="ImagingStudy-OCTMaculaLeftEyeExample.html"
                   title="ImagingStudy/OCTMaculaLeftEyeExample">OCTMaculaLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OCTMaculaLeftEyeExample2.html"
+                  title="Observation/OCTMaculaLeftEyeExample2">OCTMaculaLeftEyeExample2</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OCTMaculaRightEyeExample.html"
+                  title="Observation/OCTMaculaRightEyeExample">OCTMaculaRightEyeExample</a>
             </td>
             <td>
 
@@ -781,6 +835,51 @@ external terminology. See the Profiles page of this guide for the design rationa
             <td style="column-width:30%">
                <a href="Procedure-OCTProcedureExample.html"
                   title="Procedure/OCTProcedureExample">OCTProcedureExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OCTRNFLLeftEyeExample.html"
+                  title="Observation/OCTRNFLLeftEyeExample">OCTRNFLLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-OCTRNFLRightEyeExample.html"
+                  title="Observation/OCTRNFLRightEyeExample">OCTRNFLRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ServiceRequest-OCTServiceRequestExample.html"
+                  title="ServiceRequest/OCTServiceRequestExample">OCTServiceRequestExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ImagingStudy-OCTStudyLeftEyeExample.html"
+                  title="ImagingStudy/OCTStudyLeftEyeExample">OCTStudyLeftEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ImagingStudy-OCTStudyRightEyeExample.html"
+                  title="ImagingStudy/OCTStudyRightEyeExample">OCTStudyRightEyeExample</a>
             </td>
             <td>
 
@@ -993,7 +1092,7 @@ external terminology. See the Profiles page of this guide for the design rationa
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:13+0000">2026-08-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

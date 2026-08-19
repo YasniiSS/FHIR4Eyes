@@ -1,0 +1,192 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/OCTMaculaLeftEyeExample2> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OCTMaculaLeftEyeExample2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTMaculaLeftEyeExample2</b></p><a name=\"OCTMaculaLeftEyeExample2\"> </a><a name=\"hcOCTMaculaLeftEyeExample2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-macula.html\">Ophthalmic OCT Macula</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT macula analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Central minimum 189 um, central maximum 244 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57108-3}\">Macular grid.center point thickness by OCT</span></p><p><b>value</b>: 191 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57109-1}\">Macular grid.center subfield thickness by OCT</span></p><p><b>value</b>: 271 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57110-9}\">Macular grid.inner superior subfield thickness by OCT</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57111-7}\">Macular grid.inner nasal subfield thickness by OCT</span></p><p><b>value</b>: 317 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57112-5}\">Macular grid.inner inferior subfield thickness by OCT</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Macular grid, inner temporal subfield thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Macular grid, outer superior subfield thickness</span></p><p><b>value</b>: 269 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Macular grid, outer nasal subfield thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Macular grid, outer inferior subfield thickness</span></p><p><b>value</b>: 268 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Macular grid, outer temporal subfield thickness</span></p><p><b>value</b>: 242 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "OCT macula analysis" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Central minimum 189 um, central maximum 244 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography." ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/LeftEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/LeftEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:57108-3 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "57108-3" ] ;
+         fhir:Coding.display [ fhir:value "Macular grid.center point thickness by OCT" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "191"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:57109-1 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "57109-1" ] ;
+         fhir:Coding.display [ fhir:value "Macular grid.center subfield thickness by OCT" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "271"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:57110-9 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "57110-9" ] ;
+         fhir:Coding.display [ fhir:value "Macular grid.inner superior subfield thickness by OCT" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "315"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:57111-7 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "57111-7" ] ;
+         fhir:Coding.display [ fhir:value "Macular grid.inner nasal subfield thickness by OCT" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "317"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:57112-5 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "57112-5" ] ;
+         fhir:Coding.display [ fhir:value "Macular grid.inner inferior subfield thickness by OCT" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "315"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Macular grid, inner temporal subfield thickness" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "284"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Macular grid, outer superior subfield thickness" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "269"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Macular grid, outer nasal subfield thickness" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "284"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Macular grid, outer inferior subfield thickness" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "268"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Macular grid, outer temporal subfield thickness" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "242"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/OCTMaculaLeftEyeExample2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

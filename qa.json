@@ -6,14 +6,14 @@
   "status" : "draft",
   "package-id" : "fhir4eyes.core",
   "ig-ver" : "0.1.0",
-  "date" : "Tue, 18 Aug, 2026 20:04:06 +0000",
-  "dateISO8601" : "2026-08-18T20:04:06+00:00",
-  "errs" : 102,
-  "warnings" : 135,
-  "hints" : 74,
+  "date" : "Wed, 19 Aug, 2026 17:13:42 +0000",
+  "dateISO8601" : "2026-08-19T17:13:42+00:00",
+  "errs" : 282,
+  "warnings" : 165,
+  "hints" : 83,
   "suppressed-hints" : 0,
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 899344424
+  "maxMemory" : 1325823400
 }

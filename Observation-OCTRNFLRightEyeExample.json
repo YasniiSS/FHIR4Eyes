@@ -1,0 +1,94 @@
+{
+  "resourceType" : "Observation",
+  "id" : "OCTRNFLRightEyeExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLRightEyeExample</b></p><a name=\"OCTRNFLRightEyeExample\"> </a><a name=\"hcOCTRNFLRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Reference database: European Descent (2009). Valid for Caucasian eyes only.</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL superior thickness</span></p><p><b>value</b>: 107 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL inferior thickness</span></p><p><b>value</b>: 122 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL nasal thickness</span></p><p><b>value</b>: 66 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL temporal thickness</span></p><p><b>value</b>: 54 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL average thickness</span></p><p><b>value</b>: 88 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Overall classification</span></p><p><b>value</b>: <span title=\"Codes:\">Borderline</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "exam",
+      "display" : "Exam"
+    }]
+  }],
+  "code" : {
+    "text" : "OCT RNFL analysis"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "note" : [{
+    "text" : "Reference database: European Descent (2009). Valid for Caucasian eyes only."
+  }],
+  "bodySite" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
+      "valueReference" : {
+        "reference" : "BodyStructure/RightEyeStructureExample"
+      }
+    }]
+  },
+  "component" : [{
+    "code" : {
+      "text" : "RNFL superior thickness"
+    },
+    "valueQuantity" : {
+      "value" : 107,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "RNFL inferior thickness"
+    },
+    "valueQuantity" : {
+      "value" : 122,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "RNFL nasal thickness"
+    },
+    "valueQuantity" : {
+      "value" : 66,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "RNFL temporal thickness"
+    },
+    "valueQuantity" : {
+      "value" : 54,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "RNFL average thickness"
+    },
+    "valueQuantity" : {
+      "value" : 88,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Overall classification"
+    },
+    "valueCodeableConcept" : {
+      "text" : "Borderline"
+    }
+  }]
+}

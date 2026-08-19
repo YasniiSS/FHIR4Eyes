@@ -11,6 +11,26 @@ This page documents the profile-level design decisions for FHIR4Eyes Core. For t
 
 Profiles below are presented in the chronological order they typically appear within a clinical encounter: the medical order, the diagnosis (when already known), the procedure or observation performed, any imaging study involved, the resulting diagnostic report, and finally the treatment plan.
 
+## Index by FHIR resource
+
+| | |
+| :--- | :--- |
+| `ServiceRequest` | [OphthalmicServiceRequest](#ophthalmicservicerequest) |
+| `Condition` | [OphthalmicCondition](#ophthalmiccondition) |
+| `Procedure` | [OphthalmicProcedure](#ophthalmicprocedure) |
+| `Observation` | [OphthalmicVisualAcuity](#ophthalmicvisualacuity),[TensionCurve](#tensioncurve), IntraocularPressure, CorrectedIntraocularPressure, Pachymetry,[StrabismusExam](#strabismusexam)and its sub-test family (see below),[OphthalmicOCTRNFL and OphthalmicOCTMacula](#ophthalmicoctrnfl-and-ophthalmicoctmacula) |
+| `Observation`(StrabismusExam sub-test family) | GazePositionMeasurement, CoverTest, OcularMotility, NearPointOfConvergence, ConvergenceAssessment, StereopsisTest, PrismCoverTest, KrimskyTest, HirschbergTest, RedFilterLightTest, Worth4DotTest |
+| `ImagingStudy` | [OphthalmicImagingStudy](#ophthalmicimagingstudy) |
+| `DiagnosticReport` | [OphthalmicDiagnosticReport](#ophthalmicdiagnosticreport) |
+| `CarePlan` | [OphthalmicCarePlan](#ophthalmiccareplan) |
+| `Device` | OphthalmicDevice (referenced from OphthalmicProcedure) |
+| `Encounter` | OphthalmicEncounter |
+| `Medication` | OphthalmicMedication |
+| `MedicationAdministration` | OphthalmicMedicationAdministration |
+| `BodyStructure` | OcularBodyStructure (referenced throughout for laterality) |
+
+> Some profiles listed above without a link are defined directly in FSH but do not yet have their own narrative "Design decisions" section on this page (`IntraocularPressure`, `CorrectedIntraocularPressure`, `Pachymetry`, `OphthalmicDevice`, `OphthalmicEncounter`, `OphthalmicMedication`, `OphthalmicMedicationAdministration`, and the individual StrabismusExam sub-test profiles beyond what is already summarized in the [StrabismusExam](#strabismusexam) section). Adding narrative for these is a documentation item still to be completed.
+
 ## OphthalmicServiceRequest
 
 **FHIR resource:** `ServiceRequest`
@@ -234,6 +254,28 @@ This profile is not yet formally defined in FSH. This page currently documents t
 ### Status
 
 This profile is not yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinition itself is the next step.
+
+## OphthalmicOCTRNFL and OphthalmicOCTMacula
+
+**FHIR resource:** `Observation`, both
+
+**Motivation:** Represent, respectively, an OCT retinal nerve fiber layer (RNFL) thickness analysis and an OCT macular thickness analysis, matching the structure of typical vendor reports (for example, Heidelberg Spectralis), which present a quadrant or sector breakdown alongside an overall classification.
+
+### Design decisions
+
+**Component-based, diverging from the HL7 Eye Care IG's atomic pattern.** The HL7 Eye Care IG represents each individual sector value (for example, "RNFL superior thickness") as its own separate `Observation`, each with a single LOINC code and a single value. This guide instead represents each full analysis (all quadrants or sectors from one scan) as a single `Observation` with multiple `component` entries, one per sector.
+
+This is a deliberate divergence, not an oversight: the sector values from a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
+
+**Real LOINC codes, where they exist, are laterality-specific.** The HL7 Eye Care IG's RNFL and macula value sets use **different** LOINC codes for the right versus left eye (for example, `86276-3` for right eye superior RNFL thickness, `86277-1` for left eye). Because this guide's `component[x].code` is fixed once per profile (not per instance), it cannot be pre-bound to a single laterality-specific code that would work for both eyes. Instead, each affected component documents both real codes in its `^short` text, and implementers select the correct one for the eye being examined (indicated via `bodySite`) when populating an instance.
+
+**RNFL classification is a FHIR4Eyes addition.** The `classification` component (Within Normal Limits / Borderline / Outside Normal Limits) does not exist in the HL7 Eye Care IG's RNFL value set. It reflects a classification commonly shown in commercial vendor reports (see the reference reports this guide's examples are based on) but has no confirmed SNOMED CT or LOINC binding yet; this is left open pending verification, following the same pattern as other unconfirmed terminology in this guide.
+
+**Macula outer sectors are not yet confirmed.** LOINC codes were confirmed for the macula center point, center subfield, and the four inner sectors, but not for the four outer sectors. Those components are left with open `CodeableConcept` codes and a note, rather than guessing at a code, consistent with this guide's terminology rigor (see [Terminology](terminology.md)).
+
+### Status
+
+Both profiles are not yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinitions themselves are the next step.
 
 ## Profiles pending clinical validation
 

@@ -31,6 +31,8 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study.md) | An ophthalmic imaging study, such as OCT, retinography, or angiography. Always traceable back to the medical order that led to it via basedOn. Laterality is represented both through the native series.bodySite/series.laterality Coding fields (for standard DICOM/PACS compatibility) and through an additional extension referencing OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of this guide). |
 | [Ophthalmic Medication](StructureDefinition-ophthalmic-medication.md) | A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. |
 | [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md) | Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. Always linked back to the specific procedure it was administered during, via partOf, consistent with FHIR's standard 'larger event of which this is a component' pattern. |
+| [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md) | Represents an OCT macular thickness analysis using the ETDRS 9-sector grid (center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are confirmed for the center point, center subfield, and inner sectors; codes for the outer sectors were not found confirmed and are left open pending verification (see component notes below). |
+| [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md) | Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with quadrant-level components and an overall classification, matching the structure of typical vendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but are laterality-specific (a different code for right vs. left eye); implementers should select the correct code for the eye being examined when populating each component. See Terminology for the general LOINC-for-structured-panels strategy. |
 | [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md) | Any ophthalmic procedure, from minor ambulatory surgeries to individual sessions within a longer treatment scheme, such as an intravitreal injection or a vision therapy session. When a procedure involves administering a medication (e.g. an intravitreal injection), the medication administration is recorded as a separate OphthalmicMedicationAdministration, linked back to this procedure via MedicationAdministration.partOf, not the other way around. |
 | [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md) | A request for an ophthalmic examination and, where relevant, its interpretation or treatment. Covers three scenarios: an order fulfilled locally, an order referred from primary care to a hospital or reference center, and an order originating directly at a hospital. See the Use Cases and Profiles pages of this guide for the full clinical and design rationale. |
 | [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md) | Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. |
@@ -81,12 +83,20 @@ These are example instances that show what data produced and consumed by systems
 | [IntravitrealInjectionProcedureExample](Procedure-IntravitrealInjectionProcedureExample.md) |  |
 | [LeftEyeStructureExample](BodyStructure-LeftEyeStructureExample.md) |  |
 | [NearPointOfConvergenceExample](Observation-NearPointOfConvergenceExample.md) |  |
+| [OCTDiagnosticReportExample](DiagnosticReport-OCTDiagnosticReportExample.md) |  |
 | [OCTMaculaDiagnosticReportExample](DiagnosticReport-OCTMaculaDiagnosticReportExample.md) |  |
 | [OCTMaculaLeftEyeExample](ImagingStudy-OCTMaculaLeftEyeExample.md) |  |
+| [OCTMaculaLeftEyeExample2](Observation-OCTMaculaLeftEyeExample2.md) |  |
+| [OCTMaculaRightEyeExample](Observation-OCTMaculaRightEyeExample.md) |  |
 | [OCTMaculaServiceRequestExample](ServiceRequest-OCTMaculaServiceRequestExample.md) |  |
 | [OCTOpticDiscLeftEyeExample](ImagingStudy-OCTOpticDiscLeftEyeExample.md) |  |
 | [OCTOpticDiscServiceRequestExample](ServiceRequest-OCTOpticDiscServiceRequestExample.md) |  |
 | [OCTProcedureExample](Procedure-OCTProcedureExample.md) |  |
+| [OCTRNFLLeftEyeExample](Observation-OCTRNFLLeftEyeExample.md) |  |
+| [OCTRNFLRightEyeExample](Observation-OCTRNFLRightEyeExample.md) |  |
+| [OCTServiceRequestExample](ServiceRequest-OCTServiceRequestExample.md) |  |
+| [OCTStudyLeftEyeExample](ImagingStudy-OCTStudyLeftEyeExample.md) |  |
+| [OCTStudyRightEyeExample](ImagingStudy-OCTStudyRightEyeExample.md) |  |
 | [OcularMotilityLeftEyeExample](Observation-OcularMotilityLeftEyeExample.md) |  |
 | [OcularMotilityRightEyeExample](Observation-OcularMotilityRightEyeExample.md) |  |
 | [OphthalmologistExample](Practitioner-OphthalmologistExample.md) |  |

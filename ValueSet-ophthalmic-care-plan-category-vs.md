@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs | *Version*:0.1.0 |
-| Draft as of 2026-08-18 | *Computable Name*:OphthalmicCarePlanCategoryVS |
+| Draft as of 2026-08-19 | *Computable Name*:OphthalmicCarePlanCategoryVS |
 
  
 The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes, open to revision if a suitable external code is identified later. 
@@ -50,7 +50,7 @@ The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes, open to 
   "name" : "OphthalmicCarePlanCategoryVS",
   "title" : "Ophthalmic Care Plan Category Value Set",
   "status" : "draft",
-  "date" : "2026-08-18T20:04:06+00:00",
+  "date" : "2026-08-19T17:13:42+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

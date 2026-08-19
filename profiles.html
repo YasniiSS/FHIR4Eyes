@@ -158,6 +158,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#profiles" id="markdown-toc-profiles">Profiles</a>    <ul>
+      <li><a href="#index-by-fhir-resource" id="markdown-toc-index-by-fhir-resource">Index by FHIR resource</a></li>
       <li><a href="#ophthalmicservicerequest" id="markdown-toc-ophthalmicservicerequest">OphthalmicServiceRequest</a>        <ul>
           <li><a href="#design-decisions" id="markdown-toc-design-decisions">Design decisions</a></li>
           <li><a href="#status" id="markdown-toc-status">Status</a></li>
@@ -204,6 +205,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <li><a href="#status-8" id="markdown-toc-status-8">Status</a></li>
         </ul>
       </li>
+      <li><a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula" id="markdown-toc-ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a>        <ul>
+          <li><a href="#design-decisions-9" id="markdown-toc-design-decisions-9">Design decisions</a></li>
+          <li><a href="#status-9" id="markdown-toc-status-9">Status</a></li>
+        </ul>
+      </li>
       <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
     </ul>
   </li>
@@ -220,6 +226,81 @@ strategy and value sets, see <a href="terminology.html">Terminology</a>.</p>
 clinical encounter: the medical order, the diagnosis (when already known), the procedure
 or observation performed, any imaging study involved, the resulting diagnostic report, and
 finally the treatment plan.</p>
+
+<h2 id="index-by-fhir-resource">Index by FHIR resource</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Profiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+      <td><a href="#ophthalmicservicerequest">OphthalmicServiceRequest</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition</code></td>
+      <td><a href="#ophthalmiccondition">OphthalmicCondition</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Procedure</code></td>
+      <td><a href="#ophthalmicprocedure">OphthalmicProcedure</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Observation</code></td>
+      <td><a href="#ophthalmicvisualacuity">OphthalmicVisualAcuity</a>, <a href="#tensioncurve">TensionCurve</a>, IntraocularPressure, CorrectedIntraocularPressure, Pachymetry, <a href="#strabismusexam">StrabismusExam</a> and its sub-test family (see below), <a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Observation</code> (StrabismusExam sub-test family)</td>
+      <td>GazePositionMeasurement, CoverTest, OcularMotility, NearPointOfConvergence, ConvergenceAssessment, StereopsisTest, PrismCoverTest, KrimskyTest, HirschbergTest, RedFilterLightTest, Worth4DotTest</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ImagingStudy</code></td>
+      <td><a href="#ophthalmicimagingstudy">OphthalmicImagingStudy</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport</code></td>
+      <td><a href="#ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan</code></td>
+      <td><a href="#ophthalmiccareplan">OphthalmicCarePlan</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Device</code></td>
+      <td>OphthalmicDevice (referenced from OphthalmicProcedure)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Encounter</code></td>
+      <td>OphthalmicEncounter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code></td>
+      <td>OphthalmicMedication</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MedicationAdministration</code></td>
+      <td>OphthalmicMedicationAdministration</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">BodyStructure</code></td>
+      <td>OcularBodyStructure (referenced throughout for laterality)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Some profiles listed above without a link are defined directly in FSH but do not yet
+have their own narrative "Design decisions" section on this page (<code class="language-plaintext highlighter-rouge">IntraocularPressure</code>,
+<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code>, <code class="language-plaintext highlighter-rouge">Pachymetry</code>, <code class="language-plaintext highlighter-rouge">OphthalmicDevice</code>, <code class="language-plaintext highlighter-rouge">OphthalmicEncounter</code>,
+<code class="language-plaintext highlighter-rouge">OphthalmicMedication</code>, <code class="language-plaintext highlighter-rouge">OphthalmicMedicationAdministration</code>, and the individual
+StrabismusExam sub-test profiles beyond what is already summarized in the
+<a href="#strabismusexam">StrabismusExam</a> section). Adding narrative for these is a documentation
+item still to be completed.</p>
+</blockquote>
 
 <h2 id="ophthalmicservicerequest">OphthalmicServiceRequest</h2>
 
@@ -704,6 +785,58 @@ referencing <code class="language-plaintext highlighter-rouge">OcularBodyStructu
 <p>This profile is not yet formally defined in FSH. This page currently documents the design
 decisions reached so far; the StructureDefinition itself is the next step.</p>
 
+<h2 id="ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</h2>
+
+<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code>, both</p>
+
+<p><strong>Motivation:</strong> Represent, respectively, an OCT retinal nerve fiber layer (RNFL) thickness
+analysis and an OCT macular thickness analysis, matching the structure of typical vendor
+reports (for example, Heidelberg Spectralis), which present a quadrant or sector breakdown
+alongside an overall classification.</p>
+
+<h3 id="design-decisions-9">Design decisions</h3>
+
+<p><strong>Component-based, diverging from the HL7 Eye Care IG's atomic pattern.</strong> The HL7 Eye Care
+IG represents each individual sector value (for example, "RNFL superior thickness") as its
+own separate <code class="language-plaintext highlighter-rouge">Observation</code>, each with a single LOINC code and a single value. This guide
+instead represents each full analysis (all quadrants or sectors from one scan) as a single
+<code class="language-plaintext highlighter-rouge">Observation</code> with multiple <code class="language-plaintext highlighter-rouge">component</code> entries, one per sector.</p>
+
+<p>This is a deliberate divergence, not an oversight: the sector values from a single OCT scan
+are, by FHIR's own definition of <code class="language-plaintext highlighter-rouge">component</code>, "multiple component observations for a
+single measurement" (the same pattern used for systolic/diastolic blood pressure). They are
+produced together, from the same scan, at the same instant, for the same eye; modeling them
+as separate, disconnected <code class="language-plaintext highlighter-rouge">Observation</code> resources would lose that inherent grouping and
+require an additional panel/<code class="language-plaintext highlighter-rouge">hasMember</code> layer to reconstruct it. The component-based
+approach keeps that grouping implicit in the resource's own structure.</p>
+
+<p><strong>Real LOINC codes, where they exist, are laterality-specific.</strong> The HL7 Eye Care IG's
+RNFL and macula value sets use <em>different</em> LOINC codes for the right versus left eye (for
+example, <code class="language-plaintext highlighter-rouge">86276-3</code> for right eye superior RNFL thickness, <code class="language-plaintext highlighter-rouge">86277-1</code> for left eye). Because
+this guide's <code class="language-plaintext highlighter-rouge">component[x].code</code> is fixed once per profile (not per instance), it cannot
+be pre-bound to a single laterality-specific code that would work for both eyes. Instead,
+each affected component documents both real codes in its <code class="language-plaintext highlighter-rouge">^short</code> text, and implementers
+select the correct one for the eye being examined (indicated via <code class="language-plaintext highlighter-rouge">bodySite</code>) when
+populating an instance.</p>
+
+<p><strong>RNFL classification is a FHIR4Eyes addition.</strong> The <code class="language-plaintext highlighter-rouge">classification</code> component
+(Within Normal Limits / Borderline / Outside Normal Limits) does not exist in the HL7 Eye
+Care IG's RNFL value set. It reflects a classification commonly shown in commercial vendor
+reports (see the reference reports this guide's examples are based on) but has no
+confirmed SNOMED CT or LOINC binding yet; this is left open pending verification, following
+the same pattern as other unconfirmed terminology in this guide.</p>
+
+<p><strong>Macula outer sectors are not yet confirmed.</strong> LOINC codes were confirmed for the macula
+center point, center subfield, and the four inner sectors, but not for the four outer
+sectors. Those components are left with open <code class="language-plaintext highlighter-rouge">CodeableConcept</code> codes and a note, rather
+than guessing at a code, consistent with this guide's terminology rigor (see
+<a href="terminology.html">Terminology</a>).</p>
+
+<h3 id="status-9">Status</h3>
+
+<p>Both profiles are not yet formally defined in FSH. This page currently documents the
+design decisions reached so far; the StructureDefinitions themselves are the next step.</p>
+
 <h2 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h2>
 
 <p>The following profiles remain lower priority and are deliberately left undesigned in this
@@ -744,7 +877,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 20:04+0000">2026-08-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:13+0000">2026-08-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

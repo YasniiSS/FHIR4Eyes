@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/OCTDiagnosticReportExample> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OCTDiagnosticReportExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DiagnosticReport OCTDiagnosticReportExample</b></p><a name=\"OCTDiagnosticReportExample\"> </a><a name=\"hcOCTDiagnosticReportExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-diagnostic-report.html\">Ophthalmic Diagnostic Report</a></p></div><h2><span title=\"Codes:\">OCT RNFL and macula report, both eyes</span> (<span title=\"Codes:{http://snomed.info/sct 394594003}\">Ophthalmology (qualifier value)</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 IMG}\">Diagnostic Imaging</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td>Patient Example  Female, DoB: 1990-01-01</td></tr><tr><td>Relevant Time</td><td>2018-02-06 09:15:00+0000</td></tr><tr><td>Performer</td><td> <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td><a href=\"Observation-OCTRNFLRightEyeExample.html\"><span title=\"Codes:\">OCT RNFL analysis</span></a> (<span title=\"Codes:\"></span>)</td><td/><td>Final</td><td><blockquote><div><p>Reference database: European Descent (2009). Valid for Caucasian eyes only.</p>\n</div></blockquote></td></tr><tr><td><a href=\"Observation-OCTRNFLLeftEyeExample.html\"><span title=\"Codes:\">OCT RNFL analysis</span></a> (<span title=\"Codes:\"></span>)</td><td/><td>Final</td><td><blockquote><div><p>Reference database: European Descent (2009). Valid for Caucasian eyes only.</p>\n</div></blockquote></td></tr><tr><td><a href=\"Observation-OCTMaculaRightEyeExample.html\"><span title=\"Codes:\">OCT macula analysis</span></a> (<span title=\"Codes:\"></span>)</td><td/><td>Final</td><td><blockquote><div><p>Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.</p>\n</div></blockquote></td></tr><tr><td><a href=\"Observation-OCTMaculaLeftEyeExample2.html\"><span title=\"Codes:\">OCT macula analysis</span></a> (<span title=\"Codes:\"></span>)</td><td/><td>Final</td><td><blockquote><div><p>Central minimum 189 um, central maximum 244 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.</p>\n</div></blockquote></td></tr></table><p>Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema.</p></div>"
+  ] ;
+  fhir:DiagnosticReport.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/ServiceRequest/OCTServiceRequestExample> ;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/OCTServiceRequestExample" ]
+  ] ;
+  fhir:DiagnosticReport.status [ fhir:value "final"] ;
+  fhir:DiagnosticReport.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:394594003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "394594003" ] ;
+       fhir:Coding.display [ fhir:value "Ophthalmology (qualifier value)" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ] ;
+       fhir:Coding.code [ fhir:value "IMG" ] ;
+       fhir:Coding.display [ fhir:value "Diagnostic Imaging" ]
+     ]
+  ] ;
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.text [ fhir:value "OCT RNFL and macula report, both eyes" ]
+  ] ;
+  fhir:DiagnosticReport.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2018-02-06T09:15:00Z"^^xsd:dateTime] ;
+  fhir:DiagnosticReport.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:DiagnosticReport.resultsInterpreter [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:DiagnosticReport.result [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OCTRNFLRightEyeExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/OCTRNFLRightEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "RNFL analysis, right eye - Borderline" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OCTRNFLLeftEyeExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/OCTRNFLLeftEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "RNFL analysis, left eye - Outside Normal Limits" ]
+  ], [
+     fhir:index 2 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OCTMaculaRightEyeExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/OCTMaculaRightEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "Macula analysis, right eye - center 285 um" ]
+  ], [
+     fhir:index 3 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OCTMaculaLeftEyeExample2> ;
+     fhir:Reference.reference [ fhir:value "Observation/OCTMaculaLeftEyeExample2" ] ;
+     fhir:Reference.display [ fhir:value "Macula analysis, left eye - center 271 um" ]
+  ] ;
+  fhir:DiagnosticReport.imagingStudy [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/ImagingStudy/OCTStudyRightEyeExample> ;
+     fhir:Reference.reference [ fhir:value "ImagingStudy/OCTStudyRightEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "OCT study, right eye" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/ImagingStudy/OCTStudyLeftEyeExample> ;
+     fhir:Reference.reference [ fhir:value "ImagingStudy/OCTStudyLeftEyeExample" ] ;
+     fhir:Reference.display [ fhir:value "OCT study, left eye" ]
+  ] ;
+  fhir:DiagnosticReport.conclusion [ fhir:value "Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema."] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/OCTDiagnosticReportExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
