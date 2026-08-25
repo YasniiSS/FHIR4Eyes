@@ -1,4 +1,4 @@
-# Background - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Background - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Background**
@@ -33,7 +33,7 @@ Ophthalmology also differs from other specialties in how imaging fits into the c
 
 The result is that clinical findings, imaging data, and procedural data stay tightly connected within a single, continuous circuit of care, rather than being handed off between separate systems or specialties. A generic radiology-oriented pattern for imaging and diagnostic reports does not reflect this well. FHIR4Eyes profiles are designed around this integrated pathway instead.
 
-## The current state of standardization
+### The current state of standardization
 
 There is no mature, complete international standard for ophthalmology data exchange today. The most relevant existing effort, the [HL7 Eye Care Implementation Guide](https://build.fhir.org/ig/HL7/fhir-eyecare-ig/), is still in early ballot status. It defines a solid foundation for basic clinical observations (visual acuity, IOP, visual fields, OCT) but does not yet cover diagnoses, treatment, devices, or the imaging and care-pathway integration described above.
 

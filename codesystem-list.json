@@ -1,7 +1,7 @@
 {
   "codeSystems" : [{
     "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
-    "version" : "0.1.0",
+    "version" : "0.2.0",
     "status" : "draft",
     "name" : "FHIR4EyesCarePlanCategoryCS",
     "title" : "FHIR4Eyes Care Plan Category Code System",

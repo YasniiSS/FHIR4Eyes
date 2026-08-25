@@ -1,4 +1,4 @@
-# Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Use Cases**
@@ -9,7 +9,7 @@
 
 This page describes the clinical scenarios that motivated the profiles defined in this guide. Each use case lists the actors involved, the general flow, and the FHIR resources that come into play. For the full technical detail of each profile, see [Profiles](profiles.md).
 
-## Actors used throughout this page
+### Actors used throughout this page
 
 To keep this guide usable across different health systems, the following generic actor names are used instead of country-specific role titles (see the [FHIR4Eyes CL](cl/index.md) extension for Chile-specific role mappings):
 
@@ -18,7 +18,7 @@ To keep this guide usable across different health systems, the following generic
 * **Eye care professional**: a non-physician professional trained to perform eye examinations and procedures (this may correspond to an optometrist, an orthoptist, or a medical technologist specialized in ophthalmology, depending on the country).
 * **Eye care assistant**: support staff who assist with preparing the patient or the equipment for an examination or procedure, without independently interpreting results.
 
-## Baseline resources assumed throughout
+### Baseline resources assumed throughout
 
 Every use case below produces at least an `Encounter`, representing the clinical visit itself. Many of the procedures and examinations described in this guide also follow a prior chain of steps: a scheduled appointment, and a medical order (represented by `OphthalmicServiceRequest`, defined in [Profiles](profiles.md), when the exam was formally ordered rather than performed ad hoc during the same visit).
 
@@ -26,7 +26,7 @@ Scheduling itself (`Appointment`, `Schedule`, `Slot`) is intentionally out of sc
 
 The "FHIR resources involved" tables in each use case below list only the resources that are specific or structurally distinctive to that use case. They do not repeat `Encounter` or `OphthalmicServiceRequest` in every table, even though both are typically present in the full chain leading up to the use case described.
 
-## Use case 1: General ophthalmology encounter
+### Use case 1: General ophthalmology encounter
 
 This is the baseline clinical encounter and does not, on its own, require anything beyond what FHIR already provides through generic resources. It is included here as the starting point for every other use case in this guide.
 
@@ -55,7 +55,7 @@ sequenceDiagram
 
 > This use case does not currently require any FHIR4Eyes-specific profile. As the guide develops further (for example, if an `OphthalmicCondition` profile is defined), this section will be updated to reference it.
 
-## Use case 2: Diagnostic examinations
+### Use case 2: Diagnostic examinations
 
 Ophthalmology relies on a wide range of diagnostic examinations, performed by the ophthalmologist or by an eye care professional. These examinations split naturally into two groups, because they follow different FHIR patterns.
 
@@ -130,7 +130,7 @@ sequenceDiagram
 
 > `OphthalmicDiagnosticReport` is not yet built (see the profiles inventory in [Background](background.md)); it is a high-priority item for this guide, since every examination in this group depends on it to represent the interpretation step.
 
-## Use case 3: Vision therapy and rehabilitation
+### Use case 3: Vision therapy and rehabilitation
 
 Some conditions, such as strabismus or binocular vision disorders, are treated not with medication or surgery but with a structured program of repeated sessions: vision therapy exercises or orthoptic treatment aimed at improving visual function over time.
 
@@ -157,7 +157,7 @@ sequenceDiagram
 
 > Whether vision therapy and orthoptic treatment reuse the same `CarePlan` profile defined for intravitreal injection treatment, or require their own variation, is still to be decided in [Profiles](profiles.md).
 
-## Use case 4: Minor ambulatory surgical procedures
+### Use case 4: Minor ambulatory surgical procedures
 
 Several ophthalmology treatments are performed as brief, ambulatory surgical procedures. This includes procedures such as panretinal photocoagulation, LASIK, PRK, and YAG capsulotomy (typically performed after cataract surgery, to clear a clouded lens capsule).
 
@@ -176,7 +176,7 @@ Several ophthalmology treatments are performed as brief, ambulatory surgical pro
 
 > This list is not exhaustive and is expected to grow as more procedures are documented.
 
-### Intravitreal injection treatment
+#### Intravitreal injection treatment
 
 Intravitreal injections are treated separately from the procedures above because they are not a single event: they follow a long-term treatment scheme made up of repeated injection sessions, each administering a medication directly into the eye.
 
@@ -207,7 +207,7 @@ sequenceDiagram
 | `Procedure` | Each individual injection, linked to the`CarePlan`via`basedOn`, with`bodySite`for laterality |
 | `MedicationAdministration` | The medication administered during each injection, referencing the cataloged`Medication` |
 
-## Use case 5: Cataract surgery with intraocular lens implantation
+### Use case 5: Cataract surgery with intraocular lens implantation
 
 Cataract surgery involves removing the eye's clouded natural lens and replacing it with an intraocular lens (IOL). Unlike the procedures in [use case 4](#use-case-4-minor-ambulatory-surgical-procedures), this involves a permanently implanted device, which needs to be represented as such.
 
@@ -235,7 +235,7 @@ sequenceDiagram
 
 > The link from patient to implanted device is made only through `Procedure.focalDevice`. The `Device` resource itself is not linked to the patient.
 
-## Use case 6: Teleophthalmology
+### Use case 6: Teleophthalmology
 
 In many health systems, imaging studies are acquired at a primary care facility, while interpretation is performed remotely by an ophthalmologist based at a hospital or reference center. This differs from the integrated pathway described in [use case 2, group B](#group-b-imaging-studies-with-report), where acquisition and interpretation typically happen close together, often within the same visit. In teleophthalmology, the two steps are separated in place and often in time, and a formal request is needed to connect them, similar in structure to how teleradiology works.
 

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+    <title>Artifacts Summary - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8"}
-    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -105,6 +105,9 @@
     <a href="security.html">Security</a>
   </li>
   <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -139,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -182,6 +185,110 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>
 <p>Represents a qualitative assessment of convergence ability (good, fair,
 insufficient, poor).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-anterior-chamber.html"
+                  title="StructureDefinition/ct-anterior-chamber">Corneal Tomography - Anterior Chamber</a>
+            </td>
+            <td>
+<p>Represents the anterior chamber analysis component of a corneal tomography
+exam, one of six Observations grouped under a single CornealTomographyReport. Component
+codes are left as open text for now, following this guide's terminology rigor: no
+confirmed SNOMED CT/LOINC codes were identified for these device-specific measurements
+(see Terminology).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-anterior-surface.html"
+                  title="StructureDefinition/ct-anterior-surface">Corneal Tomography - Anterior Surface</a>
+            </td>
+            <td>
+<p>Represents the anterior corneal surface analysis component of a corneal
+tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped
+under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations
+catalog (Corneal Topography: Anterior Surface section). Component codes are left as open
+text for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC
+codes were not identified for these device-specific indices (see Terminology); a handful
+of components reference specific DICOM Sup 168 tags directly in their terminology, noted
+in the catalog.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-densitometry.html"
+                  title="StructureDefinition/ct-densitometry">Corneal Tomography - Densitometry</a>
+            </td>
+            <td>
+<p>Represents the corneal densitometry (light backscatter) component of a
+corneal tomography exam, one of six Observations grouped under a single
+CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog
+(Corneal Topography: Densitometry section): three radial zones plus total, and a
+per-layer breakdown (anterior, central, posterior). Component codes are left as open
+text for now, following this guide's terminology rigor (see Terminology).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-keratoconus-indices.html"
+                  title="StructureDefinition/ct-keratoconus-indices">Corneal Tomography - Keratoconus Indices</a>
+            </td>
+            <td>
+<p>Represents the keratoconus screening/classification indices component of a
+corneal tomography exam, one of six Observations grouped under a single
+CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog
+(Corneal Topography: Keratoconus Indices section). Component codes are left as open text
+for now, following this guide's terminology rigor (see Terminology).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-pachymetry.html"
+                  title="StructureDefinition/ct-pachymetry">Corneal Tomography - Pachymetry</a>
+            </td>
+            <td>
+<p>Represents the pachymetry (corneal thickness) component of a corneal
+tomography exam, one of six Observations grouped under a single CornealTomographyReport.
+Distinct from the standalone Pachymetry profile used for simple central corneal thickness
+measurements outside the tomography context (see Profiles); this profile captures the
+fuller thickness map data a tomography device produces. Sourced directly from the
+FHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ct-posterior-surface.html"
+                  title="StructureDefinition/ct-posterior-surface">Corneal Tomography - Posterior Surface</a>
+            </td>
+            <td>
+<p>Represents the posterior corneal surface analysis component of a corneal
+tomography exam, one of six Observations grouped under a single CornealTomographyReport.
+Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior
+Surface section). Component codes are left as open text for now, following this guide's
+terminology rigor (see Terminology).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-corneal-tomography-report.html"
+                  title="StructureDefinition/corneal-tomography-report">Corneal Tomography Report</a>
+            </td>
+            <td>
+<p>A specialization of OphthalmicDiagnosticReport for corneal tomography exams
+(e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses
+(CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber,
+CTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport
+grouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula).</p>
+
+<p>Open question, not yet resolved: in practice, a tomography device may print these as
+separate reports or 'maps' (an anterior surface map, a posterior surface map, and so on)
+rather than a single integrated report. For now, this guide captures all six as results
+under a single combined report, since the current priority is representing the underlying
+data correctly rather than resolving the exact report/printout structure a given device
+produces. Whether this should instead be split into multiple report profiles is left open
+for future review.</p>
 </td>
          </tr>
          <tr>
@@ -369,6 +476,17 @@ dependency belongs in the FHIR4Eyes CL extension, not this Core guide.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-humphrey-visual-field.html"
+                  title="StructureDefinition/ophthalmic-humphrey-visual-field">Ophthalmic Humphrey Visual Field</a>
+            </td>
+            <td>
+<p>Represents an automated static perimetry (Humphrey field analyzer) exam.
+Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)
+section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ophthalmic-imaging-study.html"
                   title="StructureDefinition/ophthalmic-imaging-study">Ophthalmic Imaging Study</a>
             </td>
@@ -409,11 +527,11 @@ this is a component' pattern.</p>
                   title="StructureDefinition/ophthalmic-oct-macula">Ophthalmic OCT Macula</a>
             </td>
             <td>
-<p>Represents an OCT macular thickness analysis using the ETDRS 9-sector grid
-(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are
-confirmed for the center point, center subfield, and inner sectors; codes for the outer
-sectors were not found confirmed and are left open pending verification (see component
-notes below).</p>
+<p>Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,
+plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152
+classification fields (thickness definition, deviation category, anatomic reference
+point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),
+replacing an earlier, less complete version of this profile.</p>
 </td>
          </tr>
          <tr>
@@ -422,12 +540,24 @@ notes below).</p>
                   title="StructureDefinition/ophthalmic-oct-rnfl">Ophthalmic OCT RNFL</a>
             </td>
             <td>
-<p>Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with
-quadrant-level components and an overall classification, matching the structure of typical
-vendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but
-are laterality-specific (a different code for right vs. left eye); implementers should
-select the correct code for the eye being examined when populating each component. See
-Terminology for the general LOINC-for-structured-panels strategy.</p>
+<p>Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)
+analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),
+and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,
+alongside acquisition metadata and an overall normative classification. Sourced directly
+from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an
+earlier, quadrant-thickness-only version of this profile.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-ocular-biometry.html"
+                  title="StructureDefinition/ophthalmic-ocular-biometry">Ophthalmic Ocular Biometry</a>
+            </td>
+            <td>
+<p>Represents an ocular biometry exam (optical or ultrasonic), used primarily
+for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes
+Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a
+CID reference is noted.</p>
 </td>
          </tr>
          <tr>
@@ -455,6 +585,16 @@ interpretation or treatment. Covers three scenarios: an order fulfilled locally,
 referred from primary care to a hospital or reference center, and an order originating
 directly at a hospital. See the Use Cases and Profiles pages of this guide for the full
 clinical and design rationale.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ophthalmic-specular-microscopy.html"
+                  title="StructureDefinition/ophthalmic-specular-microscopy">Ophthalmic Specular Microscopy</a>
+            </td>
+            <td>
+<p>Represents a corneal endothelial specular microscopy exam. Sourced directly
+from the FHIR4Eyes Observations catalog (Specular Microscopy section).</p>
 </td>
          </tr>
          <tr>
@@ -644,6 +784,69 @@ external terminology. See the Profiles page of this guide for the design rationa
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-BiometryRightEyeExample.html"
+                  title="Observation/BiometryRightEyeExample">BiometryRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTAnteriorChamberRightEyeExample.html"
+                  title="Observation/CTAnteriorChamberRightEyeExample">CTAnteriorChamberRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTAnteriorSurfaceRightEyeExample.html"
+                  title="Observation/CTAnteriorSurfaceRightEyeExample">CTAnteriorSurfaceRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTDensitometryRightEyeExample.html"
+                  title="Observation/CTDensitometryRightEyeExample">CTDensitometryRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTKeratoconusIndicesRightEyeExample.html"
+                  title="Observation/CTKeratoconusIndicesRightEyeExample">CTKeratoconusIndicesRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTPachymetryRightEyeExample.html"
+                  title="Observation/CTPachymetryRightEyeExample">CTPachymetryRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CTPosteriorSurfaceRightEyeExample.html"
+                  title="Observation/CTPosteriorSurfaceRightEyeExample">CTPosteriorSurfaceRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Procedure-CataractSurgeryProcedureExample.html"
                   title="Procedure/CataractSurgeryProcedureExample">CataractSurgeryProcedureExample</a>
             </td>
@@ -655,6 +858,24 @@ external terminology. See the Profiles page of this guide for the design rationa
             <td style="column-width:30%">
                <a href="Observation-ConvergenceAssessmentExample.html"
                   title="Observation/ConvergenceAssessmentExample">ConvergenceAssessmentExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-CornealTomographyReportRightEyeExample.html"
+                  title="DiagnosticReport/CornealTomographyReportRightEyeExample">CornealTomographyReportRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ServiceRequest-CornealTomographyServiceRequestExample.html"
+                  title="ServiceRequest/CornealTomographyServiceRequestExample">CornealTomographyServiceRequestExample</a>
             </td>
             <td>
 
@@ -700,6 +921,15 @@ external terminology. See the Profiles page of this guide for the design rationa
             <td style="column-width:30%">
                <a href="Encounter-EncounterExample.html"
                   title="Encounter/EncounterExample">EncounterExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HumphreyVFRightEyeExample.html"
+                  title="Observation/HumphreyVFRightEyeExample">HumphreyVFRightEyeExample</a>
             </td>
             <td>
 
@@ -975,6 +1205,15 @@ external terminology. See the Profiles page of this guide for the design rationa
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-SpecularMicroscopyRightEyeExample.html"
+                  title="Observation/SpecularMicroscopyRightEyeExample">SpecularMicroscopyRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-StereopsisTestExample.html"
                   title="Observation/StereopsisTestExample">StereopsisTestExample</a>
             </td>
@@ -1092,7 +1331,7 @@ external terminology. See the Profiles page of this guide for the design rationa
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:55+0000">2026-08-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

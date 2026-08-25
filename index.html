@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+    <title>Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -105,6 +105,9 @@
     <a href="security.html">Security</a>
   </li>
   <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -139,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Home</h2>
   
 
@@ -154,7 +157,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core<button data-clipboard-text="https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core" title="Click to copy URL" class="btn-copy"></button></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.0<button data-clipboard-text="https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core|0.1.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
+      <span class="copy-text">0.2.0<button data-clipboard-text="https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core|0.2.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
       </td>
     </tr>
 
@@ -170,7 +173,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-08-19
+            as of 2026-08-25
           
         
       </td>
@@ -253,7 +256,7 @@ the "how".</li>
 <ul>
   <li><strong>FHIR4Eyes Core</strong> (this guide) covers international, resource and terminology level
 content that isn't tied to any country's regulations.</li>
-  <li><strong><a name="l383">​</a><a href="cl/index.html">FHIR4Eyes CL</a></strong> is a Chilean extension, adding the constraints and
+  <li><strong><a name="l389">​</a><a href="cl/index.html">FHIR4Eyes CL</a></strong> is a Chilean extension, adding the constraints and
 bindings required for use within Chile's national FHIR core profiles
 (<a href="https://simplifier.net/chilehl7"><code class="language-plaintext highlighter-rouge">hl7.fhir.cl.clcore</code></a>).</li>
 </ul>
@@ -284,9 +287,9 @@ Master's in Medical Informatics, Universidad de Chile, in collaboration with Uni
 Civil Informatics Engineering student, Universidad San Sebastián</p>
 
 <p>I worked for five years in clinical and hospital settings within ophthalmology units,
-performing a wide range of specialty examinations. I then moved into medical informatics,
-where my first contribution was standardizing ophthalmic imaging toward the PACS system at
-Hospital San José, in Independencia, Santiago de Chile. I continue working toward the
+performing a wide range of specialty examinations and five years in Medical Informatics. 
+I then moved into medical informatics,where my first contribution was standardizing ophthalmic imaging 
+toward the PACS system at Hospital San José, in Independencia, Santiago de Chile. I continue working toward the
 greatest possible standardization of ophthalmology data, aiming for an interoperable path
 that allows modality neutrality and a more standardized flow of ophthalmic procedures and
 records.</p>
@@ -310,7 +313,7 @@ records.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:55+0000">2026-08-19</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

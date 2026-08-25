@@ -1,4 +1,4 @@
-# Ophthalmic Procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic Procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicProcedure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicProcedure |
 
  
 Any ophthalmic procedure, from minor ambulatory surgeries to individual sessions within a longer treatment scheme, such as an intravitreal injection or a vision therapy session. When a procedure involves administering a medication (e.g. an intravitreal injection), the medication administration is recorded as a separate OphthalmicMedicationAdministration, linked back to this procedure via MedicationAdministration.partOf, not the other way around. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-procedure
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-procedure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicProcedure",
   "title" : "Ophthalmic Procedure",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

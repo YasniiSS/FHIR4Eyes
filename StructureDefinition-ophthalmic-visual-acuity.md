@@ -1,4 +1,4 @@
-# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicVisualAcuity |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicVisualAcuity |
 
  
 Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-visual-acuity",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicVisualAcuity",
   "title" : "Ophthalmic Visual Acuity",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

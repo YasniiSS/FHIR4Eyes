@@ -1,4 +1,4 @@
-# Ophthalmic Medication Administration - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic Medication Administration - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicMedicationAdministration |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicMedicationAdministration |
 
  
 Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. Always linked back to the specific procedure it was administered during, via partOf, consistent with FHIR's standard 'larger event of which this is a component' pattern. 
@@ -37,11 +37,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-medication-administration",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicMedicationAdministration",
   "title" : "Ophthalmic Medication Administration",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

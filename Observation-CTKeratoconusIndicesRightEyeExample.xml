@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="CTKeratoconusIndicesRightEyeExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation CTKeratoconusIndicesRightEyeExample</b></p><a name="CTKeratoconusIndicesRightEyeExample"> </a><a name="hcCTKeratoconusIndicesRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Corneal tomography, keratoconus indices</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD-D (final D)</span></p><p><b>value</b>: 1.2 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Df (front deviation)</span></p><p><b>value</b>: 0.9 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Db (back deviation)</span></p><p><b>value</b>: 1 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dp (pachymetric deviation)</span></p><p><b>value</b>: 0.8 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dt (thinnest deviation)</span></p><p><b>value</b>: 0.7 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dy (vertical asymmetry)</span></p><p><b>value</b>: 0.5 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD classification</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Enhanced BFS radius front</span></p><p><b>value</b>: 7.8 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Enhanced BFS radius back</span></p><p><b>value</b>: 6.42 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Amsler-Krumeich stage</span></p><p><b>value</b>: <span title="Codes:">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">ABCD grading (Belin)</span></p><p><b>value</b>: A0/B0/C0/D0</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">ISV (Index Surface Variance)</span></p><p><b>value</b>: 18 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IVA (Index Vertical Asymmetry)</span></p><p><b>value</b>: 0.15 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">KI (Keratoconus Index)</span></p><p><b>value</b>: 1.02 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">CKI (Center Keratoconus Index)</span></p><p><b>value</b>: 1.01 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IHA (Index Height Asymmetry)</span></p><p><b>value</b>: 8 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IHD (Index Height Decentration)</span></p><p><b>value</b>: 0.008 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Rmin (minimum sagittal curvature)</span></p><p><b>value</b>: 7.4 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">TKC (topographic KC classification)</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="Corneal tomography, keratoconus indices"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <bodySite>
+    <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
+      <valueReference>
+        <reference value="BodyStructure/RightEyeStructureExample"/>
+      </valueReference>
+    </extension>
+  </bodySite>
+  <device>
+    <display value="Pentacam AXL"/>
+  </device>
+  <component>
+    <code>
+      <text value="BAD-D (final D)"/>
+    </code>
+    <valueQuantity>
+      <value value="1.2"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD Df (front deviation)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.9"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD Db (back deviation)"/>
+    </code>
+    <valueQuantity>
+      <value value="1"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD Dp (pachymetric deviation)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.8"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD Dt (thinnest deviation)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.7"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD Dy (vertical asymmetry)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.5"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="BAD classification"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Normal"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Enhanced BFS radius front"/>
+    </code>
+    <valueQuantity>
+      <value value="7.8"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Enhanced BFS radius back"/>
+    </code>
+    <valueQuantity>
+      <value value="6.42"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Amsler-Krumeich stage"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="None"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="ABCD grading (Belin)"/>
+    </code>
+    <valueString value="A0/B0/C0/D0"/>
+  </component>
+  <component>
+    <code>
+      <text value="ISV (Index Surface Variance)"/>
+    </code>
+    <valueQuantity>
+      <value value="18"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="IVA (Index Vertical Asymmetry)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.15"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="KI (Keratoconus Index)"/>
+    </code>
+    <valueQuantity>
+      <value value="1.02"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="CKI (Center Keratoconus Index)"/>
+    </code>
+    <valueQuantity>
+      <value value="1.01"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="IHA (Index Height Asymmetry)"/>
+    </code>
+    <valueQuantity>
+      <value value="8"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="um"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="IHD (Index Height Decentration)"/>
+    </code>
+    <valueQuantity>
+      <value value="0.008"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Rmin (minimum sagittal curvature)"/>
+    </code>
+    <valueQuantity>
+      <value value="7.4"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="TKC (topographic KC classification)"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Normal"/>
+    </valueCodeableConcept>
+  </component>
+</Observation>

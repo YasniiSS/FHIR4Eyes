@@ -1,0 +1,506 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/CTAnteriorSurfaceRightEyeExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "CTAnteriorSurfaceRightEyeExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTAnteriorSurfaceRightEyeExample</b></p><a name=\"CTAnteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTAnteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-anterior-surface.html\">Corneal Tomography - Anterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, anterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Pentacam-style anterior surface report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat axis)</span></p><p><b>value</b>: 43.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep axis)</span></p><p><b>value</b>: 44.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Km (average)</span></p><p><b>value</b>: 43.9 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal astigmatism</span></p><p><b>value</b>: 1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: -1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K Max (front)</span></p><p><b>value</b>: 45.8 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SimK steep/flat</span></p><p><b>value</b>: 44.1 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rh (horizontal radius)</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rv (vertical radius)</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rmin (minimum radius)</span></p><p><b>value</b>: 7.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Q-value front</span></p><p><b>value</b>: -0.24 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation front BFS</span></p><p><b>value</b>: 4 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius front</span></p><p><b>value</b>: 7.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Regularity Index (SRI)</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Asymmetry Index (SAI)</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">I-S value</span></p><p><b>value</b>: 0.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">KISA% index</span></p><p><b>value</b>: 12.4 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Topographic pattern</span></p><p><b>value</b>: <span title=\"Codes:\">Regular</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total Corneal Refractive Power (TCRP)</span></p><p><b>value</b>: 43.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">True Net Power (TNP)</span></p><p><b>value</b>: 43.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 1.0mm zone</span></p><p><b>value</b>: 43.7 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 3.0mm zone</span></p><p><b>value</b>: 43.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 4.5mm zone</span></p><p><b>value</b>: 43.1 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Mean Power</span></p><p><b>value</b>: 43.8 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Astig Power</span></p><p><b>value</b>: 1.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Steep Axis</span></p><p><b>value</b>: 100 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Flat Axis</span></p><p><b>value</b>: 10 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Mean Power</span></p><p><b>value</b>: 43.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Astig Power</span></p><p><b>value</b>: 1.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Steep Axis</span></p><p><b>value</b>: 103 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Flat Axis</span></p><p><b>value</b>: 13 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal astigmatism (tWFA)</span></p><p><b>value</b>: 1.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal irregular astigmatism</span></p><p><b>value</b>: 0.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal HOA RMS</span></p><p><b>value</b>: 0.31 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa angle</span></p><p><b>value</b>: 4.2 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa intercept</span></p><p><b>value</b>: x: 0.18mm, y: -0.06mm</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SIA (Surgically Induced Astigmatism)</span></p><p><b>value</b>: 0.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Predicted post-op corneal astigmatism</span></p><p><b>value</b>: 0.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Optimal toric IOL axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">QS (quality score)</span></p><p><b>value</b>: <span title=\"Codes:\">OK</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Corneal tomography, anterior surface analysis" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Example based on typical Pentacam-style anterior surface report" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/RightEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Observation.device [
+     fhir:Reference.display [ fhir:value "Pentacam AXL" ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K1 (flat axis)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.2"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K1 axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "12"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K1 radius" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.81"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K2 (steep axis)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "44.6"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K2 axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "102"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K2 radius" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.56"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Km (average)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.9"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Corneal astigmatism" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Corneal cylinder" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-1.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "K Max (front)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "45.8"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 10 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "SimK steep/flat" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "44.1"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 11 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Rh (horizontal radius)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.81"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 12 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Rv (vertical radius)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.56"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 13 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Rmin (minimum radius)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 14 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Q-value front" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-0.24"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 15 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Elevation front BFS" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 16 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "BFS radius front" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.78"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 17 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Surface Regularity Index (SRI)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.42"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 18 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Surface Asymmetry Index (SAI)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.38"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 19 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "I-S value" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.6"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 20 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "KISA% index" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "12.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "%" ]
+     ]
+  ], [
+     fhir:index 21 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Keratometric index" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.3375"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 22 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Topographic pattern" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Regular" ]
+     ]
+  ], [
+     fhir:index 23 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Total Corneal Refractive Power (TCRP)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.5"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 24 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "True Net Power (TNP)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.3"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 25 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "EKR 1.0mm zone" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.7"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 26 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "EKR 3.0mm zone" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 27 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "EKR 4.5mm zone" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.1"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 28 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "3mm zone Mean Power" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.8"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 29 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "3mm zone Astig Power" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.3"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 30 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "3mm zone Steep Axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 31 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "3mm zone Flat Axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 32 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "5mm zone Mean Power" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "43.6"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 33 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "5mm zone Astig Power" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.5"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 34 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "5mm zone Steep Axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "103"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 35 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "5mm zone Flat Axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "13"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 36 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Total corneal astigmatism (tWFA)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1.3"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 37 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Total corneal irregular astigmatism" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.2"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 38 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Corneal HOA RMS" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.31"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 39 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Kappa angle" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "4.2"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 40 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Kappa intercept" ]
+     ] ;
+     fhir:Observation.component.valueString [ fhir:value "x: 0.18mm, y: -0.06mm" ]
+  ], [
+     fhir:index 41 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "SIA (Surgically Induced Astigmatism)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.3"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 42 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Predicted post-op corneal astigmatism" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "0.4"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ], [
+     fhir:index 43 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Optimal toric IOL axis" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "102"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "deg" ]
+     ]
+  ], [
+     fhir:index 44 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "QS (quality score)" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "OK" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/CTAnteriorSurfaceRightEyeExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

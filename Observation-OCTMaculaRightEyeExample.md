@@ -1,4 +1,4 @@
-# OCTMaculaRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# OCTMaculaRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -20,30 +20,44 @@ Profile: [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md)
 
 > 
 
-Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.
+Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 
 **bodySite**: 
 
-> **component****code**: Macular grid.center point thickness by OCT**value**: 179 um (Details: UCUM codeum = 'um')
+> **component****code**: Central macular thickness (CMT)**value**: 285 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid.center subfield thickness by OCT**value**: 285 um (Details: UCUM codeum = 'um')
+> **component****code**: Center thickness**value**: 179 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid.inner superior subfield thickness by OCT**value**: 328 um (Details: UCUM codeum = 'um')
+> **component****code**: Central Min**value**: 179 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid.inner nasal subfield thickness by OCT**value**: 339 um (Details: UCUM codeum = 'um')
+> **component****code**: Central Max**value**: 253 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid.inner inferior subfield thickness by OCT**value**: 327 um (Details: UCUM codeum = 'um')
+> **component****code**: Inner Superior thickness**value**: 328 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid, inner temporal subfield thickness**value**: 299 um (Details: UCUM codeum = 'um')
+> **component****code**: Inner Nasal thickness**value**: 339 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid, outer superior subfield thickness**value**: 276 um (Details: UCUM codeum = 'um')
+> **component****code**: Inner Inferior thickness**value**: 327 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid, outer nasal subfield thickness**value**: 299 um (Details: UCUM codeum = 'um')
+> **component****code**: Inner Temporal thickness**value**: 299 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid, outer inferior subfield thickness**value**: 264 um (Details: UCUM codeum = 'um')
+> **component****code**: Outer Superior thickness**value**: 276 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Macular grid, outer temporal subfield thickness**value**: 249 um (Details: UCUM codeum = 'um')
+> **component****code**: Outer Nasal thickness**value**: 299 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Outer Inferior thickness**value**: 264 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Outer Temporal thickness**value**: 249 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Central subfield volume**value**: 0.28 mm3 (Details: UCUM codemm3 = 'mm3')
+
+> **component****code**: ETDRS circle diameters**value**: 1, 3, 6 mm ETDRS
+
+> **component****code**: Retinal thickness definition**value**: ILM to RPE
+
+> **component****code**: Pupil dilated**value**: No
+
+> **component****code**: Signal strength**value**: 9 1 (Details: UCUM code1 = '1')
 
 
 
@@ -71,7 +85,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
     "reference" : "Patient/PatientExample"
   },
   "note" : [{
-    "text" : "Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography."
+    "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
   }],
   "bodySite" : {
     "extension" : [{
@@ -83,25 +97,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   "component" : [{
     "code" : {
-      "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "57108-3",
-        "display" : "Macular grid.center point thickness by OCT"
-      }]
-    },
-    "valueQuantity" : {
-      "value" : 179,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "57109-1",
-        "display" : "Macular grid.center subfield thickness by OCT"
-      }]
+      "text" : "Central macular thickness (CMT)"
     },
     "valueQuantity" : {
       "value" : 285,
@@ -111,11 +107,37 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "57110-9",
-        "display" : "Macular grid.inner superior subfield thickness by OCT"
-      }]
+      "text" : "Center thickness"
+    },
+    "valueQuantity" : {
+      "value" : 179,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Central Min"
+    },
+    "valueQuantity" : {
+      "value" : 179,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Central Max"
+    },
+    "valueQuantity" : {
+      "value" : 253,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Inner Superior thickness"
     },
     "valueQuantity" : {
       "value" : 328,
@@ -125,11 +147,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "57111-7",
-        "display" : "Macular grid.inner nasal subfield thickness by OCT"
-      }]
+      "text" : "Inner Nasal thickness"
     },
     "valueQuantity" : {
       "value" : 339,
@@ -139,11 +157,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "57112-5",
-        "display" : "Macular grid.inner inferior subfield thickness by OCT"
-      }]
+      "text" : "Inner Inferior thickness"
     },
     "valueQuantity" : {
       "value" : 327,
@@ -153,7 +167,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "text" : "Macular grid, inner temporal subfield thickness"
+      "text" : "Inner Temporal thickness"
     },
     "valueQuantity" : {
       "value" : 299,
@@ -163,7 +177,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "text" : "Macular grid, outer superior subfield thickness"
+      "text" : "Outer Superior thickness"
     },
     "valueQuantity" : {
       "value" : 276,
@@ -173,7 +187,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "text" : "Macular grid, outer nasal subfield thickness"
+      "text" : "Outer Nasal thickness"
     },
     "valueQuantity" : {
       "value" : 299,
@@ -183,7 +197,7 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "text" : "Macular grid, outer inferior subfield thickness"
+      "text" : "Outer Inferior thickness"
     },
     "valueQuantity" : {
       "value" : 264,
@@ -193,12 +207,54 @@ Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDR
   },
   {
     "code" : {
-      "text" : "Macular grid, outer temporal subfield thickness"
+      "text" : "Outer Temporal thickness"
     },
     "valueQuantity" : {
       "value" : 249,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Central subfield volume"
+    },
+    "valueQuantity" : {
+      "value" : 0.28,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm3"
+    }
+  },
+  {
+    "code" : {
+      "text" : "ETDRS circle diameters"
+    },
+    "valueString" : "1, 3, 6 mm ETDRS"
+  },
+  {
+    "code" : {
+      "text" : "Retinal thickness definition"
+    },
+    "valueCodeableConcept" : {
+      "text" : "ILM to RPE"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Pupil dilated"
+    },
+    "valueCodeableConcept" : {
+      "text" : "No"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
     }
   }]
 }

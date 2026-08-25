@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Profiles - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+    <title>Profiles - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -105,6 +105,9 @@
     <a href="security.html">Security</a>
   </li>
   <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -139,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Profiles</h2>
   
 
@@ -208,6 +211,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula" id="markdown-toc-ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a>        <ul>
           <li><a href="#design-decisions-9" id="markdown-toc-design-decisions-9">Design decisions</a></li>
           <li><a href="#status-9" id="markdown-toc-status-9">Status</a></li>
+        </ul>
+      </li>
+      <li><a href="#corneal-tomography-six-observations-under-one-report" id="markdown-toc-corneal-tomography-six-observations-under-one-report">Corneal Tomography: six Observations under one report</a>        <ul>
+          <li><a href="#design-decisions-10" id="markdown-toc-design-decisions-10">Design decisions</a></li>
+          <li><a href="#status-10" id="markdown-toc-status-10">Status</a></li>
         </ul>
       </li>
       <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
@@ -834,8 +842,79 @@ than guessing at a code, consistent with this guide's terminology rigor (see
 
 <h3 id="status-9">Status</h3>
 
-<p>Both profiles are not yet formally defined in FSH. This page currently documents the
-design decisions reached so far; the StructureDefinitions themselves are the next step.</p>
+<p>Both profiles are formally defined in FSH.</p>
+
+<h2 id="corneal-tomography-six-observations-under-one-report">Corneal Tomography: six Observations under one report</h2>
+
+<p><strong>FHIR resources:</strong> <code class="language-plaintext highlighter-rouge">Observation</code> (six profiles: <code class="language-plaintext highlighter-rouge">CTAnteriorSurface</code>, <code class="language-plaintext highlighter-rouge">CTPosteriorSurface</code>,
+<code class="language-plaintext highlighter-rouge">CTPachymetry</code>, <code class="language-plaintext highlighter-rouge">CTAnteriorChamber</code>, <code class="language-plaintext highlighter-rouge">CTKeratoconusIndices</code>, <code class="language-plaintext highlighter-rouge">CTDensitometry</code>), plus
+<code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> (<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>)</p>
+
+<p><strong>Motivation:</strong> A modern corneal tomographer (Scheimpflug/Pentacam-style device) produces
+a single exam session that covers several genuinely distinct analyses: the shape of the
+front of the cornea, the shape of the back of the cornea, how thick the cornea is at each
+point, the anterior chamber behind it, derived keratoconus screening indices, and corneal
+transparency (densitometry). This guide represents each of these six analyses as its own
+<code class="language-plaintext highlighter-rouge">Observation</code> profile, grouped together under a single <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code>.</p>
+
+<pre><code class="language-mermaid">graph TD
+    R[CornealTomographyReport] --&gt;|result| A[CTAnteriorSurface&lt;br/&gt;55 components]
+    R --&gt;|result| B[CTPosteriorSurface&lt;br/&gt;7 components]
+    R --&gt;|result| C[CTPachymetry&lt;br/&gt;6 components]
+    R --&gt;|result| D[CTAnteriorChamber&lt;br/&gt;5 components]
+    R --&gt;|result| E[CTKeratoconusIndices&lt;br/&gt;19 components]
+    R --&gt;|result| F[CTDensitometry&lt;br/&gt;7 components]
+</code></pre>
+
+<h3 id="design-decisions-10">Design decisions</h3>
+
+<p><strong>Why six Observations, not one, and not fifty-plus.</strong> This is the same underlying
+principle applied at the OCT profiles above (see the "Component-based" note there), taken
+to its natural conclusion for a much richer exam. Values that describe the <em>same</em>
+underlying analysis — for example, all the different keratometry and elevation readings
+that describe the anterior corneal surface — are grouped as <code class="language-plaintext highlighter-rouge">component</code> entries within a
+single Observation, exactly like RNFL's quadrant thicknesses. But <code class="language-plaintext highlighter-rouge">CTAnteriorSurface</code> and
+<code class="language-plaintext highlighter-rouge">CTPosteriorSurface</code> are <strong>not</strong> merged into one Observation with a "front/back" component,
+even though they share many parallel fields (K1, K2, Km, Q-value, elevation, BFS radius all
+appear in both). The distinction is not "are these numbers similar in shape", it is "are
+these numbers describing the same physical/optical entity". The anterior and posterior
+corneal surfaces are optically and clinically distinct surfaces — a keratorefractive
+surgeon reasons about them separately, and a device can output one without the other (for
+example, older Placido-based topographers only measure the anterior surface). Likewise,
+pachymetry (a thickness map), the anterior chamber (a different anatomical structure
+entirely), keratoconus indices (derived screening scores, not raw measurements), and
+densitometry (a transparency/light-scatter property, not a shape property) are each their
+own kind of analysis, so each gets its own Observation.</p>
+
+<p><strong>Rule of thumb used throughout this guide:</strong> if two values are two facets of describing
+the <em>same object at the same moment</em> (e.g. this scan's superior RNFL thickness and this
+scan's inferior RNFL thickness — both are "how thick is the RNFL, broken down by
+direction"), they are components of one Observation. If two values describe <em>different
+objects or different kinds of analysis</em> (e.g. how the front of the cornea curves vs. how
+thick the cornea is), they belong in separate Observations, tied together by the parent
+<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>.</p>
+
+<p><strong>A note on the HL7 Eye Care IG.</strong> Corneal tomography of this depth (Scheimpflug-based,
+with keratoconus screening indices) is not covered by the HL7 Eye Care IG at all; this
+entire family of profiles is a FHIR4Eyes contribution, not an adaptation of an existing
+pattern.</p>
+
+<p><strong>Grouping under one report is provisional.</strong> See the design note in
+<code class="language-plaintext highlighter-rouge">CornealTomographyReport</code>'s own FSH source: whether these six analyses should be grouped
+under a single report, or split to mirror how a given device physically prints separate
+"maps", is left open for future review, since the current priority is representing the
+underlying data correctly.</p>
+
+<p><strong>Sourced directly from the FHIR4Eyes Observations catalog.</strong> Every component in these six
+profiles, including the eight components that reference specific DICOM Sup 168 tags
+(vertex location, pupil centroid, map type, and others), was taken directly from the
+project's maintained variable catalog, not invented for this guide. Where a component has
+no confirmed SNOMED CT or LOINC binding, its code is left open, following this guide's
+terminology rigor (see <a href="terminology.html">Terminology</a>).</p>
+
+<h3 id="status-10">Status</h3>
+
+<p>All six Observation profiles and <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> are formally defined in FSH.</p>
 
 <h2 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h2>
 
@@ -877,7 +956,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:55+0000">2026-08-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

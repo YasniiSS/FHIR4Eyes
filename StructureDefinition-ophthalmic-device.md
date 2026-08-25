@@ -1,4 +1,4 @@
-# Ophthalmic Device - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic Device - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicDevice |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicDevice |
 
  
 An implanted ophthalmic device instance, such as an intraocular lens (IOL), affixed to a specific patient. Following the same pattern as US Core's Implantable Device Profile, this represents the specific unit already implanted, not a generic catalog item; patient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also references this Device from the implanting procedure, consistent with US Core's own guidance that a procedure involving an implantable device should reference it via focalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for now. See the Profiles page of this guide for the full design rationale, including a note on other implantable devices (such as glaucoma drainage devices) that may also fit this profile. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-device.cs
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-device",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicDevice",
   "title" : "Ophthalmic Device",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -1,4 +1,4 @@
-# OCTDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# OCTDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -18,24 +18,24 @@ Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnosti
 
 **Report Details**
 
-* **Code**: [OCT RNFL analysis](Observation-OCTRNFLRightEyeExample.md)()
+* **Code**: [OCT optic disc / RNFL analysis](Observation-OCTRNFLRightEyeExample.md)()
   * **Value**: 
-  * **Flags**: Final
-  * **Note**: > Reference database: European Descent (2009). Valid for Caucasian eyes only.
-* **Code**: [OCT RNFL analysis](Observation-OCTRNFLLeftEyeExample.md)()
+  * **Flags**: Final,Borderline
+  * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
+* **Code**: [OCT optic disc / RNFL analysis](Observation-OCTRNFLLeftEyeExample.md)()
   * **Value**: 
-  * **Flags**: Final
-  * **Note**: > Reference database: European Descent (2009). Valid for Caucasian eyes only.
+  * **Flags**: Final,Outside Normal Limits
+  * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 * **Code**: [OCT macula analysis](Observation-OCTMaculaRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
-  * **Note**: > Central minimum 179 um, central maximum 253 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.
+  * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 * **Code**: [OCT macula analysis](Observation-OCTMaculaLeftEyeExample2.md)()
   * **Value**: 
   * **Flags**: Final
-  * **Note**: > Central minimum 189 um, central maximum 244 um. Circle diameters 1, 3, 6 mm ETDRS. Device: Heidelberg Spectralis SPIRIT tracking laser tomography.
+  * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
-Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema.
+Right eye ONH borderline, left eye ONH outside normal limits with increased cup-to-disc ratio and DDLS stage 5, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema.
 
 
 
@@ -81,19 +81,19 @@ Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with 
   }],
   "result" : [{
     "reference" : "Observation/OCTRNFLRightEyeExample",
-    "display" : "RNFL analysis, right eye - Borderline"
+    "display" : "RNFL/ONH analysis, right eye - Borderline"
   },
   {
     "reference" : "Observation/OCTRNFLLeftEyeExample",
-    "display" : "RNFL analysis, left eye - Outside Normal Limits"
+    "display" : "RNFL/ONH analysis, left eye - Outside Normal Limits"
   },
   {
     "reference" : "Observation/OCTMaculaRightEyeExample",
-    "display" : "Macula analysis, right eye - center 285 um"
+    "display" : "Macula analysis, right eye - CMT 285 um"
   },
   {
     "reference" : "Observation/OCTMaculaLeftEyeExample2",
-    "display" : "Macula analysis, left eye - center 271 um"
+    "display" : "Macula analysis, left eye - CMT 271 um"
   }],
   "imagingStudy" : [{
     "reference" : "ImagingStudy/OCTStudyRightEyeExample",
@@ -103,7 +103,7 @@ Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with 
     "reference" : "ImagingStudy/OCTStudyLeftEyeExample",
     "display" : "OCT study, left eye"
   }],
-  "conclusion" : "Right eye RNFL borderline, left eye RNFL outside normal limits, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema."
+  "conclusion" : "Right eye ONH borderline, left eye ONH outside normal limits with increased cup-to-disc ratio and DDLS stage 5, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema."
 }
 
 ```

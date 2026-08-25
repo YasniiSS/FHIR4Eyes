@@ -1,4 +1,4 @@
-# Gaze Position Measurement - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Gaze Position Measurement - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:GazePositionMeasurement |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:GazePositionMeasurement |
 
  
 A reusable pattern for a single measurement or finding taken at one gaze position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest, RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test uses only the components relevant to it; all components are optional. Not intended to be used standalone; always referenced via hasMember from one of those panels. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
   "resourceType" : "StructureDefinition",
   "id" : "gaze-position-measurement",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "GazePositionMeasurement",
   "title" : "Gaze Position Measurement",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

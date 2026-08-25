@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="HumphreyVFRightEyeExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation HumphreyVFRightEyeExample</b></p><a name="HumphreyVFRightEyeExample"> </a><a name="hcHumphreyVFRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ophthalmic-humphrey-visual-field.html">Ophthalmic Humphrey Visual Field</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Automated static perimetry, right eye</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Right eye borderline unreliable fixation losses within normal limits.</p>
+</div></blockquote><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>method</b>: <span title="Codes:">SITA Standard</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Test pattern</span></p><p><b>value</b>: 24-2</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Mean Deviation (MD)</span></p><p><b>value</b>: -3.42 dB<span style="background: LightGoldenRodYellow"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Pattern Standard Deviation (PSD)</span></p><p><b>value</b>: 4.15 dB<span style="background: LightGoldenRodYellow"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Visual Field Index (VFI)</span></p><p><b>value</b>: 91 %<span style="background: LightGoldenRodYellow"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Fixation strategy</span></p><p><b>value</b>: <span title="Codes:">Gaze tracking</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Stimulus size</span></p><p><b>value</b>: <span title="Codes:">Goldmann III</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Stimulus color</span></p><p><b>value</b>: <span title="Codes:">White</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Background luminance</span></p><p><b>value</b>: 31.5 asb<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeasb = 'asb')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Stimulus duration</span></p><p><b>value</b>: 200 ms<span style="background: LightGoldenRodYellow"> (Details: UCUM  codems = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Foveal sensitivity</span></p><p><b>value</b>: 34 dB<span style="background: LightGoldenRodYellow"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Test duration</span></p><p><b>value</b>: 6 min<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Number of test points</span></p><p><b>value</b>: 54 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Correction lens used</span></p><p><b>value</b>: <span title="Codes:">Yes, near correction trial lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Correction lens power</span></p><p><b>value</b>: 2.5 D<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeD = 'D')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="Automated static perimetry, right eye"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <note>
+    <text value="Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Right eye borderline unreliable fixation losses within normal limits."/>
+  </note>
+  <bodySite>
+    <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
+      <valueReference>
+        <reference value="BodyStructure/RightEyeStructureExample"/>
+      </valueReference>
+    </extension>
+  </bodySite>
+  <method>
+    <text value="SITA Standard"/>
+  </method>
+  <component>
+    <code>
+      <text value="Test pattern"/>
+    </code>
+    <valueString value="24-2"/>
+  </component>
+  <component>
+    <code>
+      <text value="Mean Deviation (MD)"/>
+    </code>
+    <valueQuantity>
+      <value value="-3.42"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="dB"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Pattern Standard Deviation (PSD)"/>
+    </code>
+    <valueQuantity>
+      <value value="4.15"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="dB"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Visual Field Index (VFI)"/>
+    </code>
+    <valueQuantity>
+      <value value="91"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Fixation strategy"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Gaze tracking"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Stimulus size"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Goldmann III"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Stimulus color"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="White"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Background luminance"/>
+    </code>
+    <valueQuantity>
+      <value value="31.5"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="asb"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Stimulus duration"/>
+    </code>
+    <valueQuantity>
+      <value value="200"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ms"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Foveal sensitivity"/>
+    </code>
+    <valueQuantity>
+      <value value="34"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="dB"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Test duration"/>
+    </code>
+    <valueQuantity>
+      <value value="6"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Number of test points"/>
+    </code>
+    <valueQuantity>
+      <value value="54"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Correction lens used"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="Yes, near correction trial lens"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Correction lens power"/>
+    </code>
+    <valueQuantity>
+      <value value="2.5"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="D"/>
+    </valueQuantity>
+  </component>
+</Observation>

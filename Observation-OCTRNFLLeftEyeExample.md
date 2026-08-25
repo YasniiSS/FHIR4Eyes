@@ -1,4 +1,4 @@
-# OCTRNFLLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# OCTRNFLLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,30 +12,68 @@ Profile: [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md)
 
 **category**: Exam
 
-**code**: OCT RNFL analysis
+**code**: OCT optic disc / RNFL analysis
 
 **subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+
+**interpretation**: Outside Normal Limits
 
 **note**: 
 
 > 
 
-Reference database: European Descent (2009). Valid for Caucasian eyes only.
+Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 
 **bodySite**: 
 
-> **component****code**: RNFL superior thickness**value**: 98 um (Details: UCUM codeum = 'um')
+> **component****code**: Cup area**value**: 0.58 mm2 (Details: UCUM codemm2 = 'mm2')
 
-> **component****code**: RNFL inferior thickness**value**: 89 um (Details: UCUM codeum = 'um')
+> **component****code**: Cup volume**value**: 0.16 mm3 (Details: UCUM codemm3 = 'mm3')
 
-> **component****code**: RNFL nasal thickness**value**: 51 um (Details: UCUM codeum = 'um')
+> **component****code**: Rim volume**value**: 0.21 mm3 (Details: UCUM codemm3 = 'mm3')
 
-> **component****code**: RNFL temporal thickness**value**: 51 um (Details: UCUM codeum = 'um')
+> **component****code**: C/D horizontal**value**: 0.61 1 (Details: UCUM code1 = '1')
 
-> **component****code**: RNFL average thickness**value**: 78 um (Details: UCUM codeum = 'um')
+> **component****code**: C/D vertical**value**: 0.64 1 (Details: UCUM code1 = '1')
 
-> **component****code**: Overall classification**value**: Outside Normal Limits
+> **component****code**: Disc diameter horizontal**value**: 1.8 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Disc diameter vertical**value**: 1.9 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Disc diameter mean**value**: 1.85 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Cup diameter horizontal**value**: 1.1 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Cup diameter vertical**value**: 1.16 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Cup diameter mean**value**: 1.13 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Mean cup depth**value**: 0.29 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Max cup depth**value**: 0.52 mm (Details: UCUM codemm = 'mm')
+
+> **component****code**: Disc vert/horiz ratio**value**: 1.06 1 (Details: UCUM code1 = '1')
+
+> **component****code**: Cup vert/horiz ratio**value**: 1.05 1 (Details: UCUM code1 = '1')
+
+> **component****code**: Rim/Disc ratio**value**: 0.39 1 (Details: UCUM code1 = '1')
+
+> **component****code**: Rim absence**value**: 15 deg (Details: UCUM codedeg = 'deg')
+
+> **component****code**: DDLS**value**: 5
+
+> **component****code**: RNFL Symmetry**value**: 88 % (Details: UCUM code% = '%')
+
+> **component****code**: Mean TSNIT**value**: 76 um (Details: UCUM codeum = 'um')
+
+> **component****code**: TSNIT std deviation**value**: 18 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Signal strength**value**: 8 1 (Details: UCUM code1 = '1')
+
+> **component****code**: Retinal thickness definition**value**: ILM to RNFL boundary
+
+> **component****code**: Pupil dilated**value**: No
 
 
 
@@ -57,13 +95,16 @@ Reference database: European Descent (2009). Valid for Caucasian eyes only.
     }]
   }],
   "code" : {
-    "text" : "OCT RNFL analysis"
+    "text" : "OCT optic disc / RNFL analysis"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "interpretation" : [{
+    "text" : "Outside Normal Limits"
+  }],
   "note" : [{
-    "text" : "Reference database: European Descent (2009). Valid for Caucasian eyes only."
+    "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
   }],
   "bodySite" : {
     "extension" : [{
@@ -75,60 +116,234 @@ Reference database: European Descent (2009). Valid for Caucasian eyes only.
   },
   "component" : [{
     "code" : {
-      "text" : "RNFL superior thickness"
+      "text" : "Cup area"
     },
     "valueQuantity" : {
-      "value" : 98,
+      "value" : 0.58,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm2"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup volume"
+    },
+    "valueQuantity" : {
+      "value" : 0.16,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm3"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim volume"
+    },
+    "valueQuantity" : {
+      "value" : 0.21,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm3"
+    }
+  },
+  {
+    "code" : {
+      "text" : "C/D horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 0.61,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "C/D vertical"
+    },
+    "valueQuantity" : {
+      "value" : 0.64,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 1.8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter vertical"
+    },
+    "valueQuantity" : {
+      "value" : 1.9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter mean"
+    },
+    "valueQuantity" : {
+      "value" : 1.85,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 1.1,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter vertical"
+    },
+    "valueQuantity" : {
+      "value" : 1.16,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter mean"
+    },
+    "valueQuantity" : {
+      "value" : 1.13,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Mean cup depth"
+    },
+    "valueQuantity" : {
+      "value" : 0.29,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Max cup depth"
+    },
+    "valueQuantity" : {
+      "value" : 0.52,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc vert/horiz ratio"
+    },
+    "valueQuantity" : {
+      "value" : 1.06,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup vert/horiz ratio"
+    },
+    "valueQuantity" : {
+      "value" : 1.05,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim/Disc ratio"
+    },
+    "valueQuantity" : {
+      "value" : 0.39,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim absence"
+    },
+    "valueQuantity" : {
+      "value" : 15,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "deg"
+    }
+  },
+  {
+    "code" : {
+      "text" : "DDLS"
+    },
+    "valueInteger" : 5
+  },
+  {
+    "code" : {
+      "text" : "RNFL Symmetry"
+    },
+    "valueQuantity" : {
+      "value" : 88,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "%"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Mean TSNIT"
+    },
+    "valueQuantity" : {
+      "value" : 76,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
   },
   {
     "code" : {
-      "text" : "RNFL inferior thickness"
+      "text" : "TSNIT std deviation"
     },
     "valueQuantity" : {
-      "value" : 89,
+      "value" : 18,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
   },
   {
     "code" : {
-      "text" : "RNFL nasal thickness"
+      "text" : "Signal strength"
     },
     "valueQuantity" : {
-      "value" : 51,
+      "value" : 8,
       "system" : "http://unitsofmeasure.org",
-      "code" : "um"
+      "code" : "1"
     }
   },
   {
     "code" : {
-      "text" : "RNFL temporal thickness"
-    },
-    "valueQuantity" : {
-      "value" : 51,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "RNFL average thickness"
-    },
-    "valueQuantity" : {
-      "value" : 78,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Overall classification"
+      "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
-      "text" : "Outside Normal Limits"
+      "text" : "ILM to RNFL boundary"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Pupil dilated"
+    },
+    "valueCodeableConcept" : {
+      "text" : "No"
     }
   }]
 }

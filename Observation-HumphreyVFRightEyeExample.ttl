@@ -1,0 +1,192 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/HumphreyVFRightEyeExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "HumphreyVFRightEyeExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation HumphreyVFRightEyeExample</b></p><a name=\"HumphreyVFRightEyeExample\"> </a><a name=\"hcHumphreyVFRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-humphrey-visual-field.html\">Ophthalmic Humphrey Visual Field</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Automated static perimetry, right eye</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Right eye borderline unreliable fixation losses within normal limits.</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">SITA Standard</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Test pattern</span></p><p><b>value</b>: 24-2</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean Deviation (MD)</span></p><p><b>value</b>: -3.42 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pattern Standard Deviation (PSD)</span></p><p><b>value</b>: 4.15 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Visual Field Index (VFI)</span></p><p><b>value</b>: 91 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Fixation strategy</span></p><p><b>value</b>: <span title=\"Codes:\">Gaze tracking</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Stimulus size</span></p><p><b>value</b>: <span title=\"Codes:\">Goldmann III</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Stimulus color</span></p><p><b>value</b>: <span title=\"Codes:\">White</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Background luminance</span></p><p><b>value</b>: 31.5 asb<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeasb = 'asb')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Stimulus duration</span></p><p><b>value</b>: 200 ms<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codems = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Foveal sensitivity</span></p><p><b>value</b>: 34 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Test duration</span></p><p><b>value</b>: 6 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Number of test points</span></p><p><b>value</b>: 54 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Correction lens used</span></p><p><b>value</b>: <span title=\"Codes:\">Yes, near correction trial lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Correction lens power</span></p><p><b>value</b>: 2.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.text [ fhir:value "Automated static perimetry, right eye" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Right eye borderline unreliable fixation losses within normal limits." ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/bodySite" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/RightEyeStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/RightEyeStructureExample" ]
+       ]
+     ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.text [ fhir:value "SITA Standard" ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Test pattern" ]
+     ] ;
+     fhir:Observation.component.valueString [ fhir:value "24-2" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Mean Deviation (MD)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "-3.42"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "dB" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Pattern Standard Deviation (PSD)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "4.15"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "dB" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Visual Field Index (VFI)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "91"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "%" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Fixation strategy" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Gaze tracking" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Stimulus size" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Goldmann III" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Stimulus color" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "White" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Background luminance" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "31.5"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "asb" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Stimulus duration" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "200"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "ms" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Foveal sensitivity" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "34"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "dB" ]
+     ]
+  ], [
+     fhir:index 10 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Test duration" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "6"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "min" ]
+     ]
+  ], [
+     fhir:index 11 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Number of test points" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "54"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 12 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Correction lens used" ]
+     ] ;
+     fhir:Observation.component.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Yes, near correction trial lens" ]
+     ]
+  ], [
+     fhir:index 13 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Correction lens power" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "2.5"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "D" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/HumphreyVFRightEyeExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

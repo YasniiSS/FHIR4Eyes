@@ -1,4 +1,4 @@
-# Ophthalmic Care Plan Category Value Set - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic Care Plan Category Value Set - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicCarePlanCategoryVS |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicCarePlanCategoryVS |
 
  
 The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes, open to revision if a suitable external code is identified later. 
@@ -46,11 +46,11 @@ The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes, open to 
   "resourceType" : "ValueSet",
   "id" : "ophthalmic-care-plan-category-vs",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicCarePlanCategoryVS",
   "title" : "Ophthalmic Care Plan Category Value Set",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -1,0 +1,532 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>BiometryRightEyeExample - XML Representation - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.47"}
+    h3,h4,h5,h6{--heading-prefix:"9.47"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="usecases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="security.html">Security</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>BiometryRightEyeExample</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Observation-BiometryRightEyeExample.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Observation-BiometryRightEyeExample.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Observation-BiometryRightEyeExample.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: BiometryRightEyeExample - XML Representation</h2>
+
+
+<p><a href="Observation-BiometryRightEyeExample.xml" no-download="true">Raw xml</a> | <a href="Observation-BiometryRightEyeExample.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation">Observation</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;BiometryRightEyeExample&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Observation.meta">meta</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Observation.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: Observation BiometryRightEyeExample&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;BiometryRightEyeExample&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcBiometryRightEyeExample&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-ophthalmic-ocular-biometry.html&quot;&gt;Ophthalmic Ocular Biometry&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: &lt;span title=&quot;Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}&quot;&gt;Exam&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Ocular biometry for IOL power calculation&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=&quot;Patient-PatientExample.html&quot;&gt;Patient Example  Female, DoB: 1990-01-01&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;note&lt;/b&gt;: &lt;/p&gt;&lt;blockquote&gt;&lt;div&gt;&lt;p&gt;Example based on typical IOLMaster 700 biometry report&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;method&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Optical biometry (IOLMaster)&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Axial length (AL)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 23.45 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;AL measurement type&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Optical&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;AL signal-to-noise ratio (SNR)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 3.2 1&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  code1 = '1')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Anterior chamber depth (ACD)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 3.1 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;ACD definition&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Epithelium to lens&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Lens thickness (LT)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 4.35 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Lens status&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Phakic&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;K1 (flat keratometry)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 43.2 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;K1 radius&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 7.81 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;K2 (steep keratometry)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 44.6 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;K2 radius&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 7.56 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Corneal cylinder&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 1.4 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Keratometric index (n)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 1.3375 1&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  code1 = '1')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;White-to-white (WTW)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 11.8 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Pupil diameter&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 3.4 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Pupil dilated&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;No&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Refractive surgery history&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;None&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Target refraction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: -0.25 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;IOL model&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Alcon AcrySof IQ SN60WF&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;IOL formula 1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Barrett Universal II&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;IOL formula 2&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;SRK/T&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Lens constant type&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;A-constant&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Lens constant value&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 119 1&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  code1 = '1')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Recommended IOL power&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 21 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Expected refraction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: -0.18 D&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codeD = 'D')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=&quot;Codes:&quot;&gt;Vertex distance&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 12 mm&lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt; (Details: UCUM  codemm = 'mm')&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Observation.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;final&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.category">category</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;exam&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Exam&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.category">category</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ocular biometry for IOL power calculation&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.code">code</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;<a href="Patient-PatientExample.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/PatientExample&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.note">note</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Annotation#Annotation.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Example based on typical IOLMaster 700 biometry report&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.note">note</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.bodySite">bodySite</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CodeableConcept.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/bodySite&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>&gt;<a href="BodyStructure-RightEyeStructureExample.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;BodyStructure/RightEyeStructureExample&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#CodeableConcept.extension">extension</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.bodySite">bodySite</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.method">method</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Optical biometry (IOLMaster)&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.method">method</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Axial length (AL)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;23.45&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;AL measurement type&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Optical&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;AL signal-to-noise ratio (SNR)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;3.2&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;1&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Anterior chamber depth (ACD)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;3.1&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ACD definition&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Epithelium to lens&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lens thickness (LT)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;4.35&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lens status&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Phakic&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;K1 (flat keratometry)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;43.2&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;K1 radius&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;7.81&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;K2 (steep keratometry)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;44.6&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;K2 radius&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;7.56&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Corneal cylinder&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;1.4&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Keratometric index (n)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;1.3375&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;1&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;White-to-white (WTW)&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;11.8&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pupil diameter&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;3.4&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pupil dilated&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;No&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Refractive surgery history&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;None&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Target refraction&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;-0.25&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IOL model&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Alcon AcrySof IQ SN60WF&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IOL formula 1&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Barrett Universal II&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;IOL formula 2&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SRK/T&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lens constant type&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A-constant&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueCodeableConcept</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lens constant value&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;119&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;1&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Recommended IOL power&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;21&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Expected refraction&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;-0.18&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;D&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vertex distance&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.code">code</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;12&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unitsofmeasure.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mm&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component.value_x_">valueQuantity</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation.component">component</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/observation.html#Observation">Observation</a>&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLLeftEyeExample</b></p><a name=\"OCTRNFLLeftEyeExample\"> </a><a name=\"hcOCTRNFLLeftEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Reference database: European Descent (2009). Valid for Caucasian eyes only.</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL superior thickness</span></p><p><b>value</b>: 98 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL inferior thickness</span></p><p><b>value</b>: 89 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL nasal thickness</span></p><p><b>value</b>: 51 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL temporal thickness</span></p><p><b>value</b>: 51 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL average thickness</span></p><p><b>value</b>: 78 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Overall classification</span></p><p><b>value</b>: <span title=\"Codes:\">Outside Normal Limits</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLLeftEyeExample</b></p><a name=\"OCTRNFLLeftEyeExample\"> </a><a name=\"hcOCTRNFLLeftEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT optic disc / RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>interpretation</b>: <span title=\"Codes:\">Outside Normal Limits</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup area</span></p><p><b>value</b>: 0.58 mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm2 = 'mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup volume</span></p><p><b>value</b>: 0.16 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim volume</span></p><p><b>value</b>: 0.21 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D horizontal</span></p><p><b>value</b>: 0.61 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D vertical</span></p><p><b>value</b>: 0.64 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter horizontal</span></p><p><b>value</b>: 1.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter vertical</span></p><p><b>value</b>: 1.9 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter mean</span></p><p><b>value</b>: 1.85 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter horizontal</span></p><p><b>value</b>: 1.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter vertical</span></p><p><b>value</b>: 1.16 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter mean</span></p><p><b>value</b>: 1.13 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean cup depth</span></p><p><b>value</b>: 0.29 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Max cup depth</span></p><p><b>value</b>: 0.52 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc vert/horiz ratio</span></p><p><b>value</b>: 1.06 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup vert/horiz ratio</span></p><p><b>value</b>: 1.05 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim/Disc ratio</span></p><p><b>value</b>: 0.39 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim absence</span></p><p><b>value</b>: 15 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">DDLS</span></p><p><b>value</b>: 5</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL Symmetry</span></p><p><b>value</b>: 88 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean TSNIT</span></p><p><b>value</b>: 76 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">TSNIT std deviation</span></p><p><b>value</b>: 18 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 8 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RNFL boundary</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -17,13 +17,16 @@
     }]
   }],
   "code" : {
-    "text" : "OCT RNFL analysis"
+    "text" : "OCT optic disc / RNFL analysis"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "interpretation" : [{
+    "text" : "Outside Normal Limits"
+  }],
   "note" : [{
-    "text" : "Reference database: European Descent (2009). Valid for Caucasian eyes only."
+    "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
   }],
   "bodySite" : {
     "extension" : [{
@@ -35,60 +38,234 @@
   },
   "component" : [{
     "code" : {
-      "text" : "RNFL superior thickness"
+      "text" : "Cup area"
     },
     "valueQuantity" : {
-      "value" : 98,
+      "value" : 0.58,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm2"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup volume"
+    },
+    "valueQuantity" : {
+      "value" : 0.16,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm3"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim volume"
+    },
+    "valueQuantity" : {
+      "value" : 0.21,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm3"
+    }
+  },
+  {
+    "code" : {
+      "text" : "C/D horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 0.61,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "C/D vertical"
+    },
+    "valueQuantity" : {
+      "value" : 0.64,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 1.8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter vertical"
+    },
+    "valueQuantity" : {
+      "value" : 1.9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc diameter mean"
+    },
+    "valueQuantity" : {
+      "value" : 1.85,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter horizontal"
+    },
+    "valueQuantity" : {
+      "value" : 1.1,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter vertical"
+    },
+    "valueQuantity" : {
+      "value" : 1.16,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup diameter mean"
+    },
+    "valueQuantity" : {
+      "value" : 1.13,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Mean cup depth"
+    },
+    "valueQuantity" : {
+      "value" : 0.29,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Max cup depth"
+    },
+    "valueQuantity" : {
+      "value" : 0.52,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Disc vert/horiz ratio"
+    },
+    "valueQuantity" : {
+      "value" : 1.06,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Cup vert/horiz ratio"
+    },
+    "valueQuantity" : {
+      "value" : 1.05,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim/Disc ratio"
+    },
+    "valueQuantity" : {
+      "value" : 0.39,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Rim absence"
+    },
+    "valueQuantity" : {
+      "value" : 15,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "deg"
+    }
+  },
+  {
+    "code" : {
+      "text" : "DDLS"
+    },
+    "valueInteger" : 5
+  },
+  {
+    "code" : {
+      "text" : "RNFL Symmetry"
+    },
+    "valueQuantity" : {
+      "value" : 88,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "%"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Mean TSNIT"
+    },
+    "valueQuantity" : {
+      "value" : 76,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
   },
   {
     "code" : {
-      "text" : "RNFL inferior thickness"
+      "text" : "TSNIT std deviation"
     },
     "valueQuantity" : {
-      "value" : 89,
+      "value" : 18,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
   },
   {
     "code" : {
-      "text" : "RNFL nasal thickness"
+      "text" : "Signal strength"
     },
     "valueQuantity" : {
-      "value" : 51,
+      "value" : 8,
       "system" : "http://unitsofmeasure.org",
-      "code" : "um"
+      "code" : "1"
     }
   },
   {
     "code" : {
-      "text" : "RNFL temporal thickness"
-    },
-    "valueQuantity" : {
-      "value" : 51,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "RNFL average thickness"
-    },
-    "valueQuantity" : {
-      "value" : 78,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Overall classification"
+      "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
-      "text" : "Outside Normal Limits"
+      "text" : "ILM to RNFL boundary"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Pupil dilated"
+    },
+    "valueCodeableConcept" : {
+      "text" : "No"
     }
   }]
 }

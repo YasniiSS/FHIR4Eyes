@@ -1,11 +1,15 @@
 {
   "package": "fhir4eyes.core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "001",
   "extensions": [],
   "profiles": {
     "Observation": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy",
+        "title": "Ophthalmic Specular Microscopy"
+      },
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
         "title": "Ophthalmic Visual Acuity"
@@ -39,6 +43,12 @@
         "title": "Worth 4 Dot Test"
       }
     ],
+    "DiagnosticReport": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
+        "title": "Ophthalmic Diagnostic Report"
+      }
+    ],
     "BodyStructure": [
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
@@ -61,12 +71,6 @@
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device",
         "title": "Ophthalmic Device"
-      }
-    ],
-    "DiagnosticReport": [
-      {
-        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
-        "title": "Ophthalmic Diagnostic Report"
       }
     ],
     "Encounter": [

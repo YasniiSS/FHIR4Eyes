@@ -13,11 +13,11 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir4eyes.core</b></p><a name=\"fhir4eyes.core\"> </a><a name=\"hcfhir4eyes.core\"> </a><h2>FHIR4Eyes</h2><p>The official URL for this implementation guide is: </p><pre>https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core</pre><div><p>A proposed international FHIR R4 Implementation Guide for eye care interoperability</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core"] ;
-  fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
+  fhir:ImplementationGuide.version [ fhir:value "0.2.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "FHIR4Eyes"] ;
   fhir:ImplementationGuide.title [ fhir:value "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-19T17:55:33+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-25T00:41:24+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -741,6 +741,22 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/BiometryRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/BiometryRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BiometryRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry>
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Procedure" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -753,7 +769,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure>
        ]
      ], [
-       fhir:index 4 ;
+       fhir:index 5 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -767,7 +783,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a qualitative assessment of convergence ability (good, fair,\ninsufficient, poor)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5 ;
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -783,7 +799,137 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment>
        ]
      ], [
-       fhir:index 6 ;
+       fhir:index 7 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-anterior-chamber" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Anterior Chamber" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-anterior-surface" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Anterior Surface" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-densitometry" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Densitometry" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-keratoconus-indices" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Keratoconus Indices" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-pachymetry" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Pachymetry" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the pachymetry (corneal thickness) component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nDistinct from the standalone Pachymetry profile used for simple central corneal thickness\nmeasurements outside the tomography context (see Profiles); this profile captures the\nfuller thickness map data a tomography device produces. Sourced directly from the\nFHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ct-posterior-surface" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Posterior Surface" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/corneal-tomography-report" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography Report" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A specialization of OphthalmicDiagnosticReport for corneal tomography exams\n(e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses\n(CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber,\nCTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport\ngrouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula).\n\nOpen question, not yet resolved: in practice, a tomography device may print these as\nseparate reports or 'maps' (an anterior surface map, a posterior surface map, and so on)\nrather than a single integrated report. For now, this guide captures all six as results\nunder a single combined report, since the current priority is representing the underlying\ndata correctly rather than resolving the exact report/printout structure a given device\nproduces. Whether this should instead be split into multiple report profiles is left open\nfor future review." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "DiagnosticReport" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/DiagnosticReport/CornealTomographyReportRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "DiagnosticReport/CornealTomographyReportRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CornealTomographyReportRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report>
+       ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ServiceRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ServiceRequest/CornealTomographyServiceRequestExample> ;
+         fhir:Reference.reference [ fhir:value "ServiceRequest/CornealTomographyServiceRequestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CornealTomographyServiceRequestExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request>
+       ]
+     ], [
+       fhir:index 16 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -797,7 +943,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an intraocular pressure reading corrected for corneal thickness\r\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\r\nboth the IOP and pachymetry measurements it was derived from via derivedFrom." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 7 ;
+       fhir:index 17 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -813,7 +959,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure>
        ]
      ], [
-       fhir:index 8 ;
+       fhir:index 18 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -829,7 +975,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure>
        ]
      ], [
-       fhir:index 9 ;
+       fhir:index 19 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -843,7 +989,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 10 ;
+       fhir:index 20 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -859,7 +1005,103 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test>
        ]
      ], [
-       fhir:index 11 ;
+       fhir:index 21 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTAnteriorChamberRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTAnteriorChamberRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTAnteriorChamberRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber>
+       ]
+     ], [
+       fhir:index 22 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTAnteriorSurfaceRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTAnteriorSurfaceRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTAnteriorSurfaceRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface>
+       ]
+     ], [
+       fhir:index 23 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTDensitometryRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTDensitometryRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTDensitometryRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry>
+       ]
+     ], [
+       fhir:index 24 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTKeratoconusIndicesRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTKeratoconusIndicesRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTKeratoconusIndicesRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices>
+       ]
+     ], [
+       fhir:index 25 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTPachymetryRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTPachymetryRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTPachymetryRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry>
+       ]
+     ], [
+       fhir:index 26 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CTPosteriorSurfaceRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CTPosteriorSurfaceRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CTPosteriorSurfaceRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface>
+       ]
+     ], [
+       fhir:index 27 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -875,7 +1117,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition>
        ]
      ], [
-       fhir:index 12 ;
+       fhir:index 28 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -891,7 +1133,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter>
        ]
      ], [
-       fhir:index 13 ;
+       fhir:index 29 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -905,7 +1147,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an\nexternal terminology. See the Profiles page of this guide for the design rationale." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 14 ;
+       fhir:index 30 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -919,7 +1161,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 15 ;
+       fhir:index 31 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -933,7 +1175,23 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 16 ;
+       fhir:index 32 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HumphreyVFRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HumphreyVFRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HumphreyVFRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field>
+       ]
+     ], [
+       fhir:index 33 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -947,7 +1205,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\r\nfixed to SNOMED CT 41633001 (Intraocular pressure)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 17 ;
+       fhir:index 34 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -963,7 +1221,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device>
        ]
      ], [
-       fhir:index 18 ;
+       fhir:index 35 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -979,7 +1237,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
        ]
      ], [
-       fhir:index 19 ;
+       fhir:index 36 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -995,7 +1253,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
        ]
      ], [
-       fhir:index 20 ;
+       fhir:index 37 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1011,7 +1269,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure>
        ]
      ], [
-       fhir:index 21 ;
+       fhir:index 38 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1025,7 +1283,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Krimsky test (corneal light reflex test with prism), measuring\r\nocular deviation in prism diopters across multiple gaze positions. Follows the same\r\nstructural pattern as PrismCoverTest: each gaze position is a separate\r\nGazePositionMeasurement, referenced via hasMember." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 22 ;
+       fhir:index 39 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1041,7 +1299,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure>
        ]
      ], [
-       fhir:index 23 ;
+       fhir:index 40 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1055,7 +1313,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 24 ;
+       fhir:index 41 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1069,7 +1327,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal')." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 25 ;
+       fhir:index 42 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1085,7 +1343,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence>
        ]
      ], [
-       fhir:index 26 ;
+       fhir:index 43 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1101,7 +1359,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report>
        ]
      ], [
-       fhir:index 27 ;
+       fhir:index 44 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1117,7 +1375,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report>
        ]
      ], [
-       fhir:index 28 ;
+       fhir:index 45 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1133,7 +1391,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study>
        ]
      ], [
-       fhir:index 29 ;
+       fhir:index 46 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1149,7 +1407,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula>
        ]
      ], [
-       fhir:index 30 ;
+       fhir:index 47 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1165,7 +1423,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula>
        ]
      ], [
-       fhir:index 31 ;
+       fhir:index 48 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1181,7 +1439,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request>
        ]
      ], [
-       fhir:index 32 ;
+       fhir:index 49 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1197,7 +1455,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study>
        ]
      ], [
-       fhir:index 33 ;
+       fhir:index 50 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1213,7 +1471,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request>
        ]
      ], [
-       fhir:index 34 ;
+       fhir:index 51 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1229,7 +1487,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure>
        ]
      ], [
-       fhir:index 35 ;
+       fhir:index 52 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1245,7 +1503,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl>
        ]
      ], [
-       fhir:index 36 ;
+       fhir:index 53 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1261,7 +1519,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl>
        ]
      ], [
-       fhir:index 37 ;
+       fhir:index 54 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1277,7 +1535,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request>
        ]
      ], [
-       fhir:index 38 ;
+       fhir:index 55 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1293,7 +1551,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study>
        ]
      ], [
-       fhir:index 39 ;
+       fhir:index 56 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1309,7 +1567,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study>
        ]
      ], [
-       fhir:index 40 ;
+       fhir:index 57 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1323,7 +1581,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an anatomical ocular location, used throughout this guide to\nexpress laterality (right eye, left eye, or both eyes) for observations, conditions,\nprocedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care\nIG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location`\nelement identifying the anatomical structure, and a `locationQualifier` element carrying\nlaterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets\nfor these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for\nlocationQualifier), which are the intended reference terminology for this profile. However,\nbecause the HL7 Eye Care IG is not published as a usable FHIR package, those value sets\ncannot be formally imported here; this profile binds to SNOMED CT directly instead (see the\nTerminology page of this guide for the general rationale)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 41 ;
+       fhir:index 58 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1337,7 +1595,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the assessment of extraocular muscle function (hypofunction or\r\nhyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can\r\ndiffer between the two eyes independently." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 42 ;
+       fhir:index 59 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1353,7 +1611,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility>
        ]
      ], [
-       fhir:index 43 ;
+       fhir:index 60 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1369,7 +1627,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility>
        ]
      ], [
-       fhir:index 44 ;
+       fhir:index 61 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1383,7 +1641,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A long-term treatment scheme made up of repeated sessions or\nadministrations, rather than a single event. Covers two schemes identified in this guide's\nUse Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not\nevery planned session is necessarily scheduled at once: some sessions remain planned but\nunscheduled within the CarePlan (via activity), while each session that is actually\nperformed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via\nProcedure.basedOn." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 45 ;
+       fhir:index 62 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1397,7 +1655,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,\nopen to revision if a suitable external code is identified later." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 46 ;
+       fhir:index 63 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1411,7 +1669,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The formal, past or present clinical diagnosis of a specific ophthalmic\ncondition. Follows the same minimalist technical pattern as the HL7 Eye Care IG's\nequivalent profile (condition-base): only code, bodySite, and subject carry real\nconstraints; everything else in the base Condition resource is left as-is. See the\nProfiles page of this guide for the full design rationale, including a note on where\nFHIR4Eyes departs from the Eye Care IG's own narrative documentation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 47 ;
+       fhir:index 64 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1425,7 +1683,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An implanted ophthalmic device instance, such as an intraocular lens (IOL),\naffixed to a specific patient. Following the same pattern as US Core's Implantable Device\nProfile, this represents the specific unit already implanted, not a generic catalog item;\npatient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also\nreferences this Device from the implanting procedure, consistent with US Core's own\nguidance that a procedure involving an implantable device should reference it via\nfocalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for\nnow. See the Profiles page of this guide for the full design rationale, including a note\non other implantable devices (such as glaucoma drainage devices) that may also fit this\nprofile." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 48 ;
+       fhir:index 65 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1439,7 +1697,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 49 ;
+       fhir:index 66 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1453,7 +1711,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An ambulatory ophthalmology consultation encounter. Parented on the generic\r\nFHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean\r\ndependency belongs in the FHIR4Eyes CL extension, not this Core guide." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 50 ;
+       fhir:index 67 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-humphrey-visual-field" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Humphrey Visual Field" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 68 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1467,7 +1739,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "An ophthalmic imaging study, such as OCT, retinography, or angiography.\r\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\r\nrepresented both through the native series.bodySite/series.laterality Coding fields (for\r\nstandard DICOM/PACS compatibility) and through an additional extension referencing\r\nOcularBodyStructure (for structured cross-resource navigation, consistent with the rest of\r\nthis guide)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 51 ;
+       fhir:index 69 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1481,7 +1753,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A medication used in ophthalmology, such as an anti-VEGF agent for\r\nintravitreal injection." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 52 ;
+       fhir:index 70 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1495,7 +1767,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 53 ;
+       fhir:index 71 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1506,10 +1778,10 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-oct-macula" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic OCT Macula" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid\n(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are\nconfirmed for the center point, center subfield, and inner sectors; codes for the outer\nsectors were not found confirmed and are left open pending verification (see component\nnotes below)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 54 ;
+       fhir:index 72 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1520,10 +1792,24 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-oct-rnfl" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic OCT RNFL" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\r\nquadrant-level components and an overall classification, matching the structure of typical\r\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\r\nare laterality-specific (a different code for right vs. left eye); implementers should\r\nselect the correct code for the eye being examined when populating each component. See\r\nTerminology for the general LOINC-for-structured-panels strategy." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 55 ;
+       fhir:index 73 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-ocular-biometry" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Ocular Biometry" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 74 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1537,7 +1823,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Any ophthalmic procedure, from minor ambulatory surgeries to individual\nsessions within a longer treatment scheme, such as an intravitreal injection or a vision\ntherapy session. When a procedure involves administering a medication (e.g. an intravitreal\ninjection), the medication administration is recorded as a separate\nOphthalmicMedicationAdministration, linked back to this procedure via\nMedicationAdministration.partOf, not the other way around." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 56 ;
+       fhir:index 75 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1551,7 +1837,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A request for an ophthalmic examination and, where relevant, its\ninterpretation or treatment. Covers three scenarios: an order fulfilled locally, an order\nreferred from primary care to a hospital or reference center, and an order originating\ndirectly at a hospital. See the Use Cases and Profiles pages of this guide for the full\nclinical and design rationale." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 57 ;
+       fhir:index 76 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-specular-microscopy" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Specular Microscopy" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a corneal endothelial specular microscopy exam. Sourced directly\nfrom the FHIR4Eyes Observations catalog (Specular Microscopy section)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 77 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1565,7 +1865,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a visual acuity measurement, modeled as discrete, independently\r\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\r\nthan as a single pre-coordinated code that bundles all of these together. This follows a\r\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\r\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\r\n(2025), which favors flexible, independently recordable components over pre-coordinated\r\ncodes. See Terminology for the underlying terminology strategy, including the\r\nLowVisionAssessment value set for vision below what any chart can measure." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 58 ;
+       fhir:index 78 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1578,7 +1878,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "OphthalmologistExample" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 59 ;
+       fhir:index 79 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1592,7 +1892,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a corneal pachymetry measurement (corneal thickness), typically\r\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\r\ncorrecting an IOP reading for corneal thickness." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 60 ;
+       fhir:index 80 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1608,7 +1908,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry>
        ]
      ], [
-       fhir:index 61 ;
+       fhir:index 81 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1624,7 +1924,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry>
        ]
      ], [
-       fhir:index 62 ;
+       fhir:index 82 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1637,7 +1937,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PacienteEjemplo" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 63 ;
+       fhir:index 83 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1650,7 +1950,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PatientExample" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 64 ;
+       fhir:index 84 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1664,7 +1964,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 65 ;
+       fhir:index 85 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1680,7 +1980,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test>
        ]
      ], [
-       fhir:index 66 ;
+       fhir:index 86 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1696,7 +1996,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
        ]
      ], [
-       fhir:index 67 ;
+       fhir:index 87 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1710,7 +2010,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a red filter plus light test, assessing fusion, suppression, or\r\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent. Distance and correction status are recorded as components on this panel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 68 ;
+       fhir:index 88 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1726,7 +2026,23 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure>
        ]
      ], [
-       fhir:index 69 ;
+       fhir:index 89 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/SpecularMicroscopyRightEyeExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/SpecularMicroscopyRightEyeExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "SpecularMicroscopyRightEyeExample" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy>
+       ]
+     ], [
+       fhir:index 90 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1740,7 +2056,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\r\ntest used is recorded as a component, since several different stereopsis tests exist in\r\npractice and the test type affects how the result should be interpreted." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 70 ;
+       fhir:index 91 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1756,7 +2072,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test>
        ]
      ], [
-       fhir:index 71 ;
+       fhir:index 92 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1770,7 +2086,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a strabismus examination as a panel grouping together whichever\r\nsub-tests were actually performed for this patient (for example, cover test, motility,\r\nnear point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible\r\nsub-test is performed for every patient; this profile does not enforce a fixed checklist.\r\nEach sub-test is recorded as its own Observation, referenced here via hasMember." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 72 ;
+       fhir:index 93 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1786,7 +2102,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam>
        ]
      ], [
-       fhir:index 73 ;
+       fhir:index 94 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1800,7 +2116,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an ambulatory tension curve: several intraocular pressure\r\nreadings taken across a single day, grouped together as a single clinical concept rather\r\nthan recorded as unrelated, disconnected observations. This profile was already defined in\r\nan earlier version of this guide's design work and is carried forward here." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 74 ;
+       fhir:index 95 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1816,7 +2132,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
        ]
      ], [
-       fhir:index 75 ;
+       fhir:index 96 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1832,7 +2148,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
        ]
      ], [
-       fhir:index 76 ;
+       fhir:index 97 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1848,7 +2164,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
        ]
      ], [
-       fhir:index 77 ;
+       fhir:index 98 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1864,7 +2180,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve>
        ]
      ], [
-       fhir:index 78 ;
+       fhir:index 99 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1880,7 +2196,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
        ]
      ], [
-       fhir:index 79 ;
+       fhir:index 100 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1896,7 +2212,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
        ]
      ], [
-       fhir:index 80 ;
+       fhir:index 101 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1912,7 +2228,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
        ]
      ], [
-       fhir:index 81 ;
+       fhir:index 102 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1928,7 +2244,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
        ]
      ], [
-       fhir:index 82 ;
+       fhir:index 103 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1944,7 +2260,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity>
        ]
      ], [
-       fhir:index 83 ;
+       fhir:index 104 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2036,6 +2352,16 @@
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "security.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Security and Privacy" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 7 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "changes.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "changes.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Change History" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ] ;

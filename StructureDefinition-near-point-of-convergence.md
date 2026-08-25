@@ -1,4 +1,4 @@
-# Near Point of Convergence - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Near Point of Convergence - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:NearPointOfConvergence |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:NearPointOfConvergence |
 
  
 Represents the near point of convergence (PPC), recorded either as a numeric distance in centimetres, or, when a precise measurement isn't obtained, as a qualitative finding (e.g. 'nasal', 'near nasal'). 
@@ -37,11 +37,11 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
   "resourceType" : "StructureDefinition",
   "id" : "near-point-of-convergence",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "NearPointOfConvergence",
   "title" : "Near Point of Convergence",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

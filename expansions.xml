@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="ee45a58d-455b-460c-955e-272b50786dc0"/>
+  <id value="d7193626-f7c5-48ad-a1c9-7dd863a77041"/>
   <meta>
-    <lastUpdated value="2026-08-19T17:55:33.627+00:00"/>
+    <lastUpdated value="2026-08-25T00:41:24.033+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -142,11 +142,11 @@
           </div>
         </text>
         <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs"/>
-        <version value="0.1.0"/>
+        <version value="0.2.0"/>
         <name value="LowVisionAssessmentVS"/>
         <title value="Low Vision Assessment Value Set"/>
         <status value="draft"/>
-        <date value="2026-08-19T17:55:33+00:00"/>
+        <date value="2026-08-25T00:41:24+00:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -155,8 +155,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:c2041b3c-5b0e-4565-a321-ebd43d5b8781"/>
-          <timestamp value="2026-08-19T18:15:31+00:00"/>
+          <identifier value="urn:uuid:47cdcbe7-463c-47e3-ac52-aa851d3a5306"/>
+          <timestamp value="2026-08-25T01:20:04+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -225,9 +225,9 @@
           <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
             <p class="res-header-id"/>
             <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on 
-              <a href="CodeSystem-fhir4eyes-care-plan-category-cs.html">codesystem FHIR4Eyes Care Plan Category Code System v0.1.0 (CodeSystem)</a>
+              <a href="CodeSystem-fhir4eyes-care-plan-category-cs.html">codesystem FHIR4Eyes Care Plan Category Code System v0.2.0 (CodeSystem)</a>
               <span class="copy-text-inline">
-                <button data-clipboard-text="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs|0.1.0" title="Click to Copy URL" class="btn-copy"> </button>
+                <button data-clipboard-text="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs|0.2.0" title="Click to Copy URL" class="btn-copy"> </button>
               </span>
             </p>
             <p>This value set contains 2 concepts</p>
@@ -264,12 +264,12 @@
                 <td>A scheme of repeated intravitreal injections</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;intravitreal-injection-therapy&quot;, &quot;display&quot;: &quot;Intravitreal injection therapy&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;, &quot;version&quot;: &quot;0.2.0&quot;, &quot;code&quot;: &quot;intravitreal-injection-therapy&quot;, &quot;display&quot;: &quot;Intravitreal injection therapy&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;intravitreal-injection-therapy&quot;&gt;&lt;display value=&quot;Intravitreal injection therapy&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;&gt;&lt;version value=&quot;0.2.0&quot;&gt;&lt;code value=&quot;intravitreal-injection-therapy&quot;&gt;&lt;display value=&quot;Intravitreal injection therapy&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -285,12 +285,12 @@
                 <td>A scheme of repeated vision therapy or orthoptic sessions</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;functional-therapy&quot;, &quot;display&quot;: &quot;Functional therapy&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;, &quot;version&quot;: &quot;0.2.0&quot;, &quot;code&quot;: &quot;functional-therapy&quot;, &quot;display&quot;: &quot;Functional therapy&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;functional-therapy&quot;&gt;&lt;display value=&quot;Functional therapy&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs&quot;&gt;&lt;version value=&quot;0.2.0&quot;&gt;&lt;code value=&quot;functional-therapy&quot;&gt;&lt;display value=&quot;Functional therapy&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -298,11 +298,11 @@
           </div>
         </text>
         <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs"/>
-        <version value="0.1.0"/>
+        <version value="0.2.0"/>
         <name value="OphthalmicCarePlanCategoryVS"/>
         <title value="Ophthalmic Care Plan Category Value Set"/>
         <status value="draft"/>
-        <date value="2026-08-19T17:55:33+00:00"/>
+        <date value="2026-08-25T00:41:24+00:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -311,8 +311,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:c5904182-03dd-4899-9af2-9fd6e952e965"/>
-          <timestamp value="2026-08-19T18:15:57+00:00"/>
+          <identifier value="urn:uuid:1c8137a6-991b-43cc-b223-b15a674211da"/>
+          <timestamp value="2026-08-25T01:20:33+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -333,7 +333,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs|0.1.0"/>
+            <valueUri value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs|0.2.0"/>
           </parameter>
           <contains>
             <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs"/>

@@ -1,4 +1,4 @@
-# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,11 +8,11 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:OphthalmicOCTMacula |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:OphthalmicOCTMacula |
 
  
-Represents an OCT macular thickness analysis using the ETDRS 9-sector grid (center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are confirmed for the center point, center subfield, and inner sectors; codes for the outer sectors were not found confirmed and are left open pending verification (see component notes below). 
+Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
 
 **Usages:**
 
@@ -37,11 +37,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-oct-macula",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid\n(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are\nconfirmed for the center point, center subfield, and inner sectors; codes for the outer\nsectors were not found confirmed and are left open pending verification (see component\nnotes below).",
+  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -179,258 +179,444 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
           "path" : "code"
         }],
         "rules" : "open"
-      }
+      },
+      "min" : 1
     },
     {
-      "id" : "Observation.component:centerPoint",
+      "id" : "Observation.component:cmt",
       "path" : "Observation.component",
-      "sliceName" : "centerPoint",
-      "min" : 0,
+      "sliceName" : "cmt",
+      "min" : 1,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:centerPoint.code",
+      "id" : "Observation.component:cmt.code",
       "path" : "Observation.component.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "57108-3",
-          "display" : "Macular grid.center point thickness by OCT"
-        }]
-      }
+      "short" : "Central macular thickness (CMT) - central subfield thickness (1mm), primary variable"
     },
     {
-      "id" : "Observation.component:centerPoint.value[x]",
+      "id" : "Observation.component:cmt.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:centerSubfield",
+      "id" : "Observation.component:center",
       "path" : "Observation.component",
-      "sliceName" : "centerSubfield",
+      "sliceName" : "center",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:centerSubfield.code",
+      "id" : "Observation.component:center.code",
       "path" : "Observation.component.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "57109-1",
-          "display" : "Macular grid.center subfield thickness by OCT"
-        }]
-      }
+      "short" : "Center thickness - foveal center point thickness, from ETDRS grid"
     },
     {
-      "id" : "Observation.component:centerSubfield.value[x]",
+      "id" : "Observation.component:center.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:innerSuperior",
+      "id" : "Observation.component:centralMin",
       "path" : "Observation.component",
-      "sliceName" : "innerSuperior",
+      "sliceName" : "centralMin",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:innerSuperior.code",
+      "id" : "Observation.component:centralMin.code",
       "path" : "Observation.component.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "57110-9",
-          "display" : "Macular grid.inner superior subfield thickness by OCT"
-        }]
-      }
+      "short" : "Central Min - minimum thickness in central subfield"
     },
     {
-      "id" : "Observation.component:innerSuperior.value[x]",
+      "id" : "Observation.component:centralMin.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:innerNasal",
+      "id" : "Observation.component:centralMax",
       "path" : "Observation.component",
-      "sliceName" : "innerNasal",
+      "sliceName" : "centralMax",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:innerNasal.code",
+      "id" : "Observation.component:centralMax.code",
       "path" : "Observation.component.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "57111-7",
-          "display" : "Macular grid.inner nasal subfield thickness by OCT"
-        }]
-      }
+      "short" : "Central Max - maximum thickness in central subfield"
     },
     {
-      "id" : "Observation.component:innerNasal.value[x]",
+      "id" : "Observation.component:centralMax.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:innerInferior",
+      "id" : "Observation.component:innerSup",
       "path" : "Observation.component",
-      "sliceName" : "innerInferior",
+      "sliceName" : "innerSup",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:innerInferior.code",
+      "id" : "Observation.component:innerSup.code",
       "path" : "Observation.component.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "57112-5",
-          "display" : "Macular grid.inner inferior subfield thickness by OCT"
-        }]
-      }
+      "short" : "Inner Superior thickness - ETDRS inner ring superior subfield"
     },
     {
-      "id" : "Observation.component:innerInferior.value[x]",
+      "id" : "Observation.component:innerSup.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:innerTemporal",
+      "id" : "Observation.component:innerNas",
       "path" : "Observation.component",
-      "sliceName" : "innerTemporal",
+      "sliceName" : "innerNas",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:innerTemporal.code",
+      "id" : "Observation.component:innerNas.code",
       "path" : "Observation.component.code",
-      "short" : "LOINC code not confirmed; terminology to be verified"
+      "short" : "Inner Nasal thickness - ETDRS inner ring nasal subfield"
     },
     {
-      "id" : "Observation.component:innerTemporal.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Macular grid, inner temporal subfield thickness"
-    },
-    {
-      "id" : "Observation.component:innerTemporal.value[x]",
+      "id" : "Observation.component:innerNas.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:outerSuperior",
+      "id" : "Observation.component:innerInf",
       "path" : "Observation.component",
-      "sliceName" : "outerSuperior",
+      "sliceName" : "innerInf",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:outerSuperior.code",
+      "id" : "Observation.component:innerInf.code",
       "path" : "Observation.component.code",
-      "short" : "LOINC code not confirmed; terminology to be verified"
+      "short" : "Inner Inferior thickness - ETDRS inner ring inferior subfield"
     },
     {
-      "id" : "Observation.component:outerSuperior.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Macular grid, outer superior subfield thickness"
-    },
-    {
-      "id" : "Observation.component:outerSuperior.value[x]",
+      "id" : "Observation.component:innerInf.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:outerNasal",
+      "id" : "Observation.component:innerTemp",
       "path" : "Observation.component",
-      "sliceName" : "outerNasal",
+      "sliceName" : "innerTemp",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:outerNasal.code",
+      "id" : "Observation.component:innerTemp.code",
       "path" : "Observation.component.code",
-      "short" : "LOINC code not confirmed; terminology to be verified"
+      "short" : "Inner Temporal thickness - ETDRS inner ring temporal subfield"
     },
     {
-      "id" : "Observation.component:outerNasal.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Macular grid, outer nasal subfield thickness"
-    },
-    {
-      "id" : "Observation.component:outerNasal.value[x]",
+      "id" : "Observation.component:innerTemp.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:outerInferior",
+      "id" : "Observation.component:outerSup",
       "path" : "Observation.component",
-      "sliceName" : "outerInferior",
+      "sliceName" : "outerSup",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:outerInferior.code",
+      "id" : "Observation.component:outerSup.code",
       "path" : "Observation.component.code",
-      "short" : "LOINC code not confirmed; terminology to be verified"
+      "short" : "Outer Superior thickness - ETDRS outer ring superior subfield"
     },
     {
-      "id" : "Observation.component:outerInferior.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Macular grid, outer inferior subfield thickness"
-    },
-    {
-      "id" : "Observation.component:outerInferior.value[x]",
+      "id" : "Observation.component:outerSup.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
       }]
     },
     {
-      "id" : "Observation.component:outerTemporal",
+      "id" : "Observation.component:outerNas",
       "path" : "Observation.component",
-      "sliceName" : "outerTemporal",
+      "sliceName" : "outerNas",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:outerTemporal.code",
+      "id" : "Observation.component:outerNas.code",
       "path" : "Observation.component.code",
-      "short" : "LOINC code not confirmed; terminology to be verified"
+      "short" : "Outer Nasal thickness - ETDRS outer ring nasal subfield"
     },
     {
-      "id" : "Observation.component:outerTemporal.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Macular grid, outer temporal subfield thickness"
+      "id" : "Observation.component:outerNas.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
     },
     {
-      "id" : "Observation.component:outerTemporal.value[x]",
+      "id" : "Observation.component:outerInf",
+      "path" : "Observation.component",
+      "sliceName" : "outerInf",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:outerInf.code",
+      "path" : "Observation.component.code",
+      "short" : "Outer Inferior thickness - ETDRS outer ring inferior subfield"
+    },
+    {
+      "id" : "Observation.component:outerInf.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:outerTemp",
+      "path" : "Observation.component",
+      "sliceName" : "outerTemp",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:outerTemp.code",
+      "path" : "Observation.component.code",
+      "short" : "Outer Temporal thickness - ETDRS outer ring temporal subfield"
+    },
+    {
+      "id" : "Observation.component:outerTemp.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:centralVol",
+      "path" : "Observation.component",
+      "sliceName" : "centralVol",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:centralVol.code",
+      "path" : "Observation.component.code",
+      "short" : "Central subfield volume - volume of central 1mm subfield"
+    },
+    {
+      "id" : "Observation.component:centralVol.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:subfieldVol",
+      "path" : "Observation.component",
+      "sliceName" : "subfieldVol",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:subfieldVol.code",
+      "path" : "Observation.component.code",
+      "short" : "Total volume per subfield - volume per ETDRS subfield"
+    },
+    {
+      "id" : "Observation.component:subfieldVol.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:etdrsGrid",
+      "path" : "Observation.component",
+      "sliceName" : "etdrsGrid",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:etdrsGrid.code",
+      "path" : "Observation.component.code",
+      "short" : "ETDRS circle diameters - measurement grid diameters used, usually 1/3/6mm"
+    },
+    {
+      "id" : "Observation.component:etdrsGrid.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Observation.component:thicknessDef",
+      "path" : "Observation.component",
+      "sliceName" : "thicknessDef",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:thicknessDef.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM CID 4262, critical for device comparison"
+    },
+    {
+      "id" : "Observation.component:thicknessDef.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.component:deviationCategory",
+      "path" : "Observation.component",
+      "sliceName" : "deviationCategory",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:deviationCategory.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM CID 4265"
+    },
+    {
+      "id" : "Observation.component:deviationCategory.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.component:anatomicRef",
+      "path" : "Observation.component",
+      "sliceName" : "anatomicRef",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:anatomicRef.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM CID 4266"
+    },
+    {
+      "id" : "Observation.component:anatomicRef.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.component:pupilDilated",
+      "path" : "Observation.component",
+      "sliceName" : "pupilDilated",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:pupilDilated.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM (0022,000D)"
+    },
+    {
+      "id" : "Observation.component:pupilDilated.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.component:mydriaticAgent",
+      "path" : "Observation.component",
+      "sliceName" : "mydriaticAgent",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:mydriaticAgent.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM (0022,000E)"
+    },
+    {
+      "id" : "Observation.component:mydriaticAgent.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.component:dilationDegree",
+      "path" : "Observation.component",
+      "sliceName" : "dilationDegree",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:dilationDegree.code",
+      "path" : "Observation.component.code",
+      "short" : "DICOM (0022,000F)"
+    },
+    {
+      "id" : "Observation.component:dilationDegree.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:signalStrength",
+      "path" : "Observation.component",
+      "sliceName" : "signalStrength",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:signalStrength.code",
+      "path" : "Observation.component.code",
+      "short" : "Signal strength / Quality - scan quality index"
+    },
+    {
+      "id" : "Observation.component:signalStrength.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"

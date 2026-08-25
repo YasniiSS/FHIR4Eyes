@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem fhir4eyes-care-plan-category-cs</b></p><a name=\"fhir4eyes-care-plan-category-cs\"> </a><a name=\"hcfhir4eyes-care-plan-category-cs\"> </a><p>This  code system <code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">intravitreal-injection-therapy<a name=\"fhir4eyes-care-plan-category-cs-intravitreal-injection-therapy\"> </a></td><td>Intravitreal injection therapy</td><td>A scheme of repeated intravitreal injections</td></tr><tr><td style=\"white-space:nowrap\">functional-therapy<a name=\"fhir4eyes-care-plan-category-cs-functional-therapy\"> </a></td><td>Functional therapy</td><td>A scheme of repeated vision therapy or orthoptic sessions</td></tr></table></div>"
   },
   "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "FHIR4EyesCarePlanCategoryCS",
   "title" : "FHIR4Eyes Care Plan Category Code System",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

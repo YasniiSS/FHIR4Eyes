@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0</title>
+    <title>Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -105,6 +105,9 @@
     <a href="security.html">Security</a>
   </li>
   <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -139,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Use Cases</h2>
   
 
@@ -161,16 +164,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#actors-used-throughout-this-page" id="markdown-toc-actors-used-throughout-this-page">Actors used throughout this page</a></li>
       <li><a href="#baseline-resources-assumed-throughout" id="markdown-toc-baseline-resources-assumed-throughout">Baseline resources assumed throughout</a></li>
       <li><a href="#use-case-1-general-ophthalmology-encounter" id="markdown-toc-use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</a></li>
-      <li><a href="#use-case-2-diagnostic-examinations" id="markdown-toc-use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</a>        <ul>
-          <li><a href="#group-a-direct-observations" id="markdown-toc-group-a-direct-observations">Group A: Direct observations</a></li>
-          <li><a href="#group-b-imaging-studies-with-report" id="markdown-toc-group-b-imaging-studies-with-report">Group B: Imaging studies with report</a></li>
-        </ul>
-      </li>
+      <li><a href="#use-case-2-diagnostic-examinations" id="markdown-toc-use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</a></li>
+      <li><a href="#group-a-direct-observations" id="markdown-toc-group-a-direct-observations">Group A: Direct observations</a></li>
+      <li><a href="#group-b-imaging-studies-with-report" id="markdown-toc-group-b-imaging-studies-with-report">Group B: Imaging studies with report</a></li>
       <li><a href="#use-case-3-vision-therapy-and-rehabilitation" id="markdown-toc-use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</a></li>
-      <li><a href="#use-case-4-minor-ambulatory-surgical-procedures" id="markdown-toc-use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</a>        <ul>
-          <li><a href="#intravitreal-injection-treatment" id="markdown-toc-intravitreal-injection-treatment">Intravitreal injection treatment</a></li>
-        </ul>
-      </li>
+      <li><a href="#use-case-4-minor-ambulatory-surgical-procedures" id="markdown-toc-use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</a></li>
       <li><a href="#use-case-5-cataract-surgery-with-intraocular-lens-implantation" id="markdown-toc-use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</a></li>
       <li><a href="#use-case-6-teleophthalmology" id="markdown-toc-use-case-6-teleophthalmology">Use case 6: Teleophthalmology</a></li>
     </ul>
@@ -185,9 +183,9 @@ guide. Each use case lists the actors involved, the general flow, and the FHIR r
 that come into play. For the full technical detail of each profile, see
 <a href="profiles.html">Profiles</a>.</p>
 
-<h2 id="actors-used-throughout-this-page">Actors used throughout this page</h2>
+<h3 id="actors-used-throughout-this-page">Actors used throughout this page</h3>
 
-<p><a name="l343">​</a>To keep this guide usable across different health systems, the following generic actor
+<p><a name="l337">​</a>To keep this guide usable across different health systems, the following generic actor
 names are used instead of country-specific role titles (see the
 <a href="cl/index.html">FHIR4Eyes CL</a> extension for Chile-specific role mappings):</p>
 
@@ -202,7 +200,7 @@ medical technologist specialized in ophthalmology, depending on the country).</l
 equipment for an examination or procedure, without independently interpreting results.</li>
 </ul>
 
-<h2 id="baseline-resources-assumed-throughout">Baseline resources assumed throughout</h2>
+<h3 id="baseline-resources-assumed-throughout">Baseline resources assumed throughout</h3>
 
 <p>Every use case below produces at least an <code class="language-plaintext highlighter-rouge">Encounter</code>, representing the clinical visit
 itself. Many of the procedures and examinations described in this guide also follow a
@@ -219,7 +217,7 @@ are specific or structurally distinctive to that use case. They do not repeat <c
 or <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> in every table, even though both are typically present in the
 full chain leading up to the use case described.</p>
 
-<h2 id="use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</h2>
+<h3 id="use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</h3>
 
 <p>This is the baseline clinical encounter and does not, on its own, require anything beyond
 what FHIR already provides through generic resources. It is included here as the starting
@@ -272,7 +270,7 @@ develops further (for example, if an <code class="language-plaintext highlighter
 section will be updated to reference it.</p>
 </blockquote>
 
-<h2 id="use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</h2>
+<h3 id="use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</h3>
 
 <p>Ophthalmology relies on a wide range of diagnostic examinations, performed by the
 ophthalmologist or by an eye care professional. These examinations split naturally into two
@@ -440,7 +438,7 @@ plan, when applicable).</p>
 examination in this group depends on it to represent the interpretation step.</p>
 </blockquote>
 
-<h2 id="use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</h2>
+<h3 id="use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</h3>
 
 <p>Some conditions, such as strabismus or binocular vision disorders, are treated not with
 medication or surgery but with a structured program of repeated sessions: vision therapy
@@ -477,7 +475,7 @@ for intravitreal injection treatment, or require their own variation, is still t
 decided in <a href="profiles.html">Profiles</a>.</p>
 </blockquote>
 
-<h2 id="use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</h2>
+<h3 id="use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</h3>
 
 <p>Several ophthalmology treatments are performed as brief, ambulatory surgical procedures.
 This includes procedures such as panretinal photocoagulation, LASIK, PRK, and YAG
@@ -523,7 +521,7 @@ procedure is recorded with its laterality and any relevant clinical detail.</p>
   <p>This list is not exhaustive and is expected to grow as more procedures are documented.</p>
 </blockquote>
 
-<h3 id="intravitreal-injection-treatment">Intravitreal injection treatment</h3>
+<h4 id="intravitreal-injection-treatment">Intravitreal injection treatment</h4>
 
 <p>Intravitreal injections are treated separately from the procedures above because they are
 not a single event: they follow a long-term treatment scheme made up of repeated injection
@@ -578,7 +576,7 @@ medication administered during it.</p>
   </tbody>
 </table>
 
-<h2 id="use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</h2>
+<h3 id="use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</h3>
 
 <p>Cataract surgery involves removing the eye's clouded natural lens and replacing it with an
 intraocular lens (IOL). Unlike the procedures in <a href="#use-case-4-minor-ambulatory-surgical-procedures">use case 4</a>,
@@ -627,7 +625,7 @@ implants the selected lens, which is recorded as the focal device of the procedu
 The <code class="language-plaintext highlighter-rouge">Device</code> resource itself is not linked to the patient.</p>
 </blockquote>
 
-<h2 id="use-case-6-teleophthalmology">Use case 6: Teleophthalmology</h2>
+<h3 id="use-case-6-teleophthalmology">Use case 6: Teleophthalmology</h3>
 
 <p>In many health systems, imaging studies are acquired at a primary care facility, while
 interpretation is performed remotely by an ophthalmologist based at a hospital or reference
@@ -687,7 +685,7 @@ designed.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 19, 2026 17:55+0000">2026-08-19</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

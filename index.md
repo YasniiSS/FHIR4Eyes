@@ -1,4 +1,4 @@
-# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:FHIR4Eyes |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:FHIR4Eyes |
 
 # FHIR4Eyes
 
@@ -57,7 +57,7 @@ This is an early-stage, community-driven guide. Feedback, questions, and contrib
 
 Medical Technologist in Ophthalmology and Optometry, Universidad de Chile Master's in Medical Informatics, Universidad de Chile, in collaboration with Universidad de Heidelberg Civil Informatics Engineering student, Universidad San Sebastián
 
-I worked for five years in clinical and hospital settings within ophthalmology units, performing a wide range of specialty examinations. I then moved into medical informatics, where my first contribution was standardizing ophthalmic imaging toward the PACS system at Hospital San José, in Independencia, Santiago de Chile. I continue working toward the greatest possible standardization of ophthalmology data, aiming for an interoperable path that allows modality neutrality and a more standardized flow of ophthalmic procedures and records.
+I worked for five years in clinical and hospital settings within ophthalmology units, performing a wide range of specialty examinations and five years in Medical Informatics. I then moved into medical informatics,where my first contribution was standardizing ophthalmic imaging toward the PACS system at Hospital San José, in Independencia, Santiago de Chile. I continue working toward the greatest possible standardization of ophthalmology data, aiming for an interoperable path that allows modality neutrality and a more standardized flow of ophthalmic procedures and records.
 
 
 
@@ -68,11 +68,11 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "resourceType" : "ImplementationGuide",
   "id" : "fhir4eyes.core",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -723,6 +723,21 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BiometryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BiometryRightEyeExample"
+      },
+      "name" : "BiometryRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
       },
       {
@@ -765,6 +780,148 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "ConvergenceAssessmentExample",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-anterior-chamber.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-anterior-chamber"
+      },
+      "name" : "Corneal Tomography - Anterior Chamber",
+      "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-anterior-surface.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-anterior-surface"
+      },
+      "name" : "Corneal Tomography - Anterior Surface",
+      "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-densitometry.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-densitometry"
+      },
+      "name" : "Corneal Tomography - Densitometry",
+      "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-keratoconus-indices.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-keratoconus-indices"
+      },
+      "name" : "Corneal Tomography - Keratoconus Indices",
+      "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-pachymetry.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-pachymetry"
+      },
+      "name" : "Corneal Tomography - Pachymetry",
+      "description" : "Represents the pachymetry (corneal thickness) component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nDistinct from the standalone Pachymetry profile used for simple central corneal thickness\nmeasurements outside the tomography context (see Profiles); this profile captures the\nfuller thickness map data a tomography device produces. Sourced directly from the\nFHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ct-posterior-surface.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ct-posterior-surface"
+      },
+      "name" : "Corneal Tomography - Posterior Surface",
+      "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-corneal-tomography-report.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/corneal-tomography-report"
+      },
+      "name" : "Corneal Tomography Report",
+      "description" : "A specialization of OphthalmicDiagnosticReport for corneal tomography exams\n(e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses\n(CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber,\nCTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport\ngrouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula).\n\nOpen question, not yet resolved: in practice, a tomography device may print these as\nseparate reports or 'maps' (an anterior surface map, a posterior surface map, and so on)\nrather than a single integrated report. For now, this guide captures all six as results\nunder a single combined report, since the current priority is representing the underlying\ndata correctly rather than resolving the exact report/printout structure a given device\nproduces. Whether this should instead be split into multiple report profiles is left open\nfor future review.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DiagnosticReport-CornealTomographyReportRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/CornealTomographyReportRightEyeExample"
+      },
+      "name" : "CornealTomographyReportRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-CornealTomographyServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/CornealTomographyServiceRequestExample"
+      },
+      "name" : "CornealTomographyServiceRequestExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
     },
     {
       "extension" : [{
@@ -846,6 +1003,96 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTAnteriorChamberRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTAnteriorChamberRightEyeExample"
+      },
+      "name" : "CTAnteriorChamberRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTAnteriorSurfaceRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTAnteriorSurfaceRightEyeExample"
+      },
+      "name" : "CTAnteriorSurfaceRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTDensitometryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTDensitometryRightEyeExample"
+      },
+      "name" : "CTDensitometryRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTKeratoconusIndicesRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTKeratoconusIndicesRightEyeExample"
+      },
+      "name" : "CTKeratoconusIndicesRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTPachymetryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTPachymetryRightEyeExample"
+      },
+      "name" : "CTPachymetryRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTPosteriorSurfaceRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTPosteriorSurfaceRightEyeExample"
+      },
+      "name" : "CTPosteriorSurfaceRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
       },
       {
@@ -920,6 +1167,21 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "name" : "Hirschberg Test",
       "description" : "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HumphreyVFRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HumphreyVFRightEyeExample"
+      },
+      "name" : "HumphreyVFRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field"
     },
     {
       "extension" : [{
@@ -1450,6 +1712,22 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-humphrey-visual-field.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-humphrey-visual-field"
+      },
+      "name" : "Ophthalmic Humphrey Visual Field",
+      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-ophthalmic-imaging-study.html"
       }],
       "reference" : {
@@ -1504,7 +1782,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-macula"
       },
       "name" : "Ophthalmic OCT Macula",
-      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid\n(center, 4 inner, 4 outer subfields), matching typical vendor reports. Real LOINC codes are\nconfirmed for the center point, center subfield, and inner sectors; codes for the outer\nsectors were not found confirmed and are left open pending verification (see component\nnotes below).",
+      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
       "exampleBoolean" : false
     },
     {
@@ -1520,7 +1798,23 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
       },
       "name" : "Ophthalmic OCT RNFL",
-      "description" : "Represents an OCT retinal nerve fiber layer (RNFL) thickness analysis, with\r\nquadrant-level components and an overall classification, matching the structure of typical\r\nvendor reports (e.g. Heidelberg Spectralis). Real LOINC codes exist for each quadrant, but\r\nare laterality-specific (a different code for right vs. left eye); implementers should\r\nselect the correct code for the eye being examined when populating each component. See\r\nTerminology for the general LOINC-for-structured-panels strategy.",
+      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-ocular-biometry.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-ocular-biometry"
+      },
+      "name" : "Ophthalmic Ocular Biometry",
+      "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted.",
       "exampleBoolean" : false
     },
     {
@@ -1553,6 +1847,22 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Ophthalmic Service Request",
       "description" : "A request for an ophthalmic examination and, where relevant, its\ninterpretation or treatment. Covers three scenarios: an order fulfilled locally, an order\nreferred from primary care to a hospital or reference center, and an order originating\ndirectly at a hospital. See the Use Cases and Profiles pages of this guide for the full\nclinical and design rationale.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-specular-microscopy.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-specular-microscopy"
+      },
+      "name" : "Ophthalmic Specular Microscopy",
+      "description" : "Represents a corneal endothelial specular microscopy exam. Sourced directly\nfrom the FHIR4Eyes Observations catalog (Specular Microscopy section).",
       "exampleBoolean" : false
     },
     {
@@ -1738,6 +2048,21 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "RightEyeStructureExample",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-SpecularMicroscopyRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/SpecularMicroscopyRightEyeExample"
+      },
+      "name" : "SpecularMicroscopyRightEyeExample",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy"
     },
     {
       "extension" : [{
@@ -2037,6 +2362,15 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         }],
         "nameUrl" : "security.html",
         "title" : "Security and Privacy",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "changes.html"
+        }],
+        "nameUrl" : "changes.html",
+        "title" : "Change History",
         "generation" : "markdown"
       }]
     },

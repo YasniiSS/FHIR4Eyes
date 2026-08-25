@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet low-vision-assessment-vs</b></p><a name=\"low-vision-assessment-vs\"> </a><a name=\"hclow-vision-assessment-vs\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/422256009\">422256009</a></td><td>Counts fingers - distance vision (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/260295004\">260295004</a></td><td>Sees hand movements (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/260297007\">260297007</a></td><td>Visual acuity perception of light - accurate projection (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/264943005\">264943005</a></td><td>Visual acuity perception of light - inaccurate projection (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/63063006\">63063006</a></td><td>Visual acuity, no light perception (finding)</td></tr></table></li></ul></div>"
   },
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "LowVisionAssessmentVS",
   "title" : "Low Vision Assessment Value Set",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

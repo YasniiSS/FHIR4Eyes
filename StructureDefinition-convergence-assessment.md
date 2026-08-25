@@ -1,4 +1,4 @@
-# Convergence Assessment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Convergence Assessment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:ConvergenceAssessment |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:ConvergenceAssessment |
 
  
 Represents a qualitative assessment of convergence ability (good, fair, insufficient, poor). 
@@ -37,11 +37,11 @@ Other representations of profile: [CSV](StructureDefinition-convergence-assessme
   "resourceType" : "StructureDefinition",
   "id" : "convergence-assessment",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "ConvergenceAssessment",
   "title" : "Convergence Assessment",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

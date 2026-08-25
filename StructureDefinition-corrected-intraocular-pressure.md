@@ -1,4 +1,4 @@
-# Corrected Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.1.0
+# Corrected Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure | *Version*:0.1.0 |
-| Draft as of 2026-08-19 | *Computable Name*:CorrectedIntraocularPressure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure | *Version*:0.2.0 |
+| Draft as of 2026-08-25 | *Computable Name*:CorrectedIntraocularPressure |
 
  
 Represents an intraocular pressure reading corrected for corneal thickness (pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing both the IOP and pachymetry measurements it was derived from via derivedFrom. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
   "resourceType" : "StructureDefinition",
   "id" : "corrected-intraocular-pressure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "CorrectedIntraocularPressure",
   "title" : "Corrected Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-08-19T17:55:33+00:00",
+  "date" : "2026-08-25T00:41:24+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

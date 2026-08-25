@@ -10,14 +10,14 @@
   fhir:Resource.id [ fhir:value "ophthalmic-care-plan-category-vs"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ophthalmic-care-plan-category-vs</b></p><a name=\"ophthalmic-care-plan-category-vs\"> </a><a name=\"hcophthalmic-care-plan-category-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-fhir4eyes-care-plan-category-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ophthalmic-care-plan-category-vs</b></p><a name=\"ophthalmic-care-plan-category-vs\"> </a><a name=\"hcophthalmic-care-plan-category-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-fhir4eyes-care-plan-category-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.2.0</span></li></ul></div>"
   ] ;
   fhir:ValueSet.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs"] ;
-  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.version [ fhir:value "0.2.0"] ;
   fhir:ValueSet.name [ fhir:value "OphthalmicCarePlanCategoryVS"] ;
   fhir:ValueSet.title [ fhir:value "Ophthalmic Care Plan Category Value Set"] ;
   fhir:ValueSet.status [ fhir:value "draft"] ;
-  fhir:ValueSet.date [ fhir:value "2026-08-19T17:55:33+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.date [ fhir:value "2026-08-25T00:41:24+00:00"^^xsd:dateTime] ;
   fhir:ValueSet.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:ValueSet.contact [
      fhir:index 0 ;
