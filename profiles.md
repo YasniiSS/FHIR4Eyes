@@ -121,9 +121,27 @@ This profile is not yet formally defined in FSH. This page currently documents t
 
 > In clinical practice, a tension curve typically consists of three readings taken across the day, though this varies by site. This is noted here as clinical context, not enforced as a fixed cardinality in the profile.
 
+**Worked example: combining readings with corrected values.** `TensionCurve.hasMember` accepts **either** `IntraocularPressure` or `CorrectedIntraocularPressure` as its members, since a single curve may mix plain and corrected readings depending on whether pachymetry was available for each reading:
+
+* `TensionCurve` groups several readings across the day via `hasMember`.
+* Each member is either a plain `IntraocularPressure` reading, or a `CorrectedIntraocularPressure` reading.
+* A `CorrectedIntraocularPressure` instance is never a standalone measurement: it always references, via `derivedFrom`, the specific `IntraocularPressure` reading and `Pachymetry` measurement it was calculated from.
+
+So a single curve reading can carry a two-level chain: the curve references the corrected reading, and the corrected reading itself references the two measurements it was derived from.
+
+```
+graph TD
+    TC[TensionCurve<br/>panel] -->|hasMember| IOP1[IntraocularPressure<br/>08:00]
+    TC -->|hasMember| IOP2[IntraocularPressure<br/>12:00]
+    TC -->|hasMember| CIOP[CorrectedIntraocularPressure<br/>14:00]
+    CIOP -->|derivedFrom| IOP3[IntraocularPressure<br/>base reading]
+    CIOP -->|derivedFrom| PACHY[Pachymetry<br/>corneal thickness]
+
+```
+
 ### Status
 
-This profile is not yet formally defined in FSH. This page currently documents the design decisions reached so far; the StructureDefinition itself is the next step.
+This profile is formally defined in FSH.
 
 ## StrabismusExam
 
@@ -144,6 +162,24 @@ The sub-tests fall into two groups, based on their structure:
 `GazePositionMeasurement` supports two kinds of per-position result through optional components: a quantitative prism diopter deviation (`horizontalDeviation`, `verticalDeviation`), used by `PrismCoverTest` and `KrimskyTest`; and a qualitative `finding` (for example fusion, suppression, diplopia), used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`. A single shared pattern is used for both cases, rather than two separate profiles, since only the choice of component differs.
 
 > This list of sub-tests is not exhaustive. Other tests exist in practice (for example, additional stereopsis test types beyond what this guide currently distinguishes) and may be added to this guide over time, following the same patterns established here.
+
+```
+graph TD
+    SE[StrabismusExam<br/>panel] -->|hasMember| CT[CoverTest]
+    SE -->|hasMember| OM[OcularMotility]
+    SE -->|hasMember| PPC[NearPointOfConvergence]
+    SE -->|hasMember| CA[ConvergenceAssessment]
+    SE -->|hasMember| ST[StereopsisTest]
+    SE -->|hasMember| PCT[PrismCoverTest]
+    SE -->|hasMember| KT[KrimskyTest]
+
+    PCT -->|hasMember| GPM1[GazePositionMeasurement<br/>primary position]
+    PCT -->|hasMember| GPM2[GazePositionMeasurement<br/>right gaze]
+    KT -->|hasMember| GPM3[GazePositionMeasurement<br/>primary position]
+
+    GPM1 -.-> COMP1["fixatingEye, horizontalDeviation,<br/>verticalDeviation"]
+
+```
 
 ### Design decisions
 
@@ -259,13 +295,24 @@ This profile is not yet formally defined in FSH. This page currently documents t
 
 **FHIR resource:** `Observation`, both
 
-**Motivation:** Represent, respectively, an OCT retinal nerve fiber layer (RNFL) thickness analysis and an OCT macular thickness analysis, matching the structure of typical vendor reports (for example, Heidelberg Spectralis), which present a quadrant or sector breakdown alongside an overall classification.
+**Motivation:** Represent, respectively, an OCT optic nerve head (ONH)/retinal nerve fiber layer (RNFL) analysis and an OCT macular thickness analysis, each grouped under a `DiagnosticReport` together with the imaging study they were derived from. Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL and OCT Macula sections).
+
+```
+graph TD
+    R[OphthalmicDiagnosticReport<br/>OCT report] -->|imagingStudy| S[OphthalmicImagingStudy<br/>RNFL + Macula series]
+    R -->|result| RNFL[OphthalmicOCTRNFL<br/>25 components]
+    R -->|result| MAC[OphthalmicOCTMacula<br/>22 components]
+
+    RNFL -.-> RNFLG["cup/disc geometry, DDLS,<br/>TSNIT mean/SD"]
+    MAC -.-> MACG["ETDRS 9-sector grid,<br/>acquisition metadata"]
+
+```
 
 ### Design decisions
 
-**Component-based, diverging from the HL7 Eye Care IG's atomic pattern.** The HL7 Eye Care IG represents each individual sector value (for example, "RNFL superior thickness") as its own separate `Observation`, each with a single LOINC code and a single value. This guide instead represents each full analysis (all quadrants or sectors from one scan) as a single `Observation` with multiple `component` entries, one per sector.
+**Component-based, diverging from the HL7 Eye Care IG's atomic pattern.** The HL7 Eye Care IG represents each individual sector value (for example, "RNFL superior thickness") as its own separate `Observation`, each with a single LOINC code and a single value. This guide instead represents each full analysis as a single `Observation` with multiple `component` entries, one per measurement.
 
-This is a deliberate divergence, not an oversight: the sector values from a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
+This is a deliberate divergence, not an oversight: the values produced by a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
 
 **Real LOINC codes, where they exist, are laterality-specific.** The HL7 Eye Care IG's RNFL and macula value sets use **different** LOINC codes for the right versus left eye (for example, `86276-3` for right eye superior RNFL thickness, `86277-1` for left eye). Because this guide's `component[x].code` is fixed once per profile (not per instance), it cannot be pre-bound to a single laterality-specific code that would work for both eyes. Instead, each affected component documents both real codes in its `^short` text, and implementers select the correct one for the eye being examined (indicated via `bodySite`) when populating an instance.
 

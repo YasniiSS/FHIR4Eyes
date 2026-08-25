@@ -31,7 +31,7 @@ Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an extern
   "name" : "FHIR4EyesCarePlanCategoryCS",
   "title" : "FHIR4Eyes Care Plan Category Code System",
   "status" : "draft",
-  "date" : "2026-08-25T00:41:24+00:00",
+  "date" : "2026-08-25T02:25:39+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

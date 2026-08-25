@@ -482,10 +482,35 @@ the day, though this varies by site. This is noted here as clinical context, not
 enforced as a fixed cardinality in the profile.</p>
 </blockquote>
 
+<p><strong>Worked example: combining readings with corrected values.</strong> <code class="language-plaintext highlighter-rouge">TensionCurve.hasMember</code>
+accepts <em>either</em> <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> or <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> as its members,
+since a single curve may mix plain and corrected readings depending on whether pachymetry
+was available for each reading:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TensionCurve</code> groups several readings across the day via <code class="language-plaintext highlighter-rouge">hasMember</code>.</li>
+  <li>Each member is either a plain <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading, or a
+<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> reading.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> instance is never a standalone measurement: it always
+references, via <code class="language-plaintext highlighter-rouge">derivedFrom</code>, the specific <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading and
+<code class="language-plaintext highlighter-rouge">Pachymetry</code> measurement it was calculated from.</li>
+</ul>
+
+<p>So a single curve reading can carry a two-level chain: the curve references the corrected
+reading, and the corrected reading itself references the two measurements it was derived
+from.</p>
+
+<pre><code class="language-mermaid">graph TD
+    TC[TensionCurve&lt;br/&gt;panel] --&gt;|hasMember| IOP1[IntraocularPressure&lt;br/&gt;08:00]
+    TC --&gt;|hasMember| IOP2[IntraocularPressure&lt;br/&gt;12:00]
+    TC --&gt;|hasMember| CIOP[CorrectedIntraocularPressure&lt;br/&gt;14:00]
+    CIOP --&gt;|derivedFrom| IOP3[IntraocularPressure&lt;br/&gt;base reading]
+    CIOP --&gt;|derivedFrom| PACHY[Pachymetry&lt;br/&gt;corneal thickness]
+</code></pre>
+
 <h3 id="status-3">Status</h3>
 
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
+<p>This profile is formally defined in FSH.</p>
 
 <h2 id="strabismusexam">StrabismusExam</h2>
 
@@ -530,6 +555,22 @@ rather than two separate profiles, since only the choice of component differs.</
 additional stereopsis test types beyond what this guide currently distinguishes) and may
 be added to this guide over time, following the same patterns established here.</p>
 </blockquote>
+
+<pre><code class="language-mermaid">graph TD
+    SE[StrabismusExam&lt;br/&gt;panel] --&gt;|hasMember| CT[CoverTest]
+    SE --&gt;|hasMember| OM[OcularMotility]
+    SE --&gt;|hasMember| PPC[NearPointOfConvergence]
+    SE --&gt;|hasMember| CA[ConvergenceAssessment]
+    SE --&gt;|hasMember| ST[StereopsisTest]
+    SE --&gt;|hasMember| PCT[PrismCoverTest]
+    SE --&gt;|hasMember| KT[KrimskyTest]
+
+    PCT --&gt;|hasMember| GPM1[GazePositionMeasurement&lt;br/&gt;primary position]
+    PCT --&gt;|hasMember| GPM2[GazePositionMeasurement&lt;br/&gt;right gaze]
+    KT --&gt;|hasMember| GPM3[GazePositionMeasurement&lt;br/&gt;primary position]
+
+    GPM1 -.-&gt; COMP1["fixatingEye, horizontalDeviation,&lt;br/&gt;verticalDeviation"]
+</code></pre>
 
 <h3 id="design-decisions-4">Design decisions</h3>
 
@@ -797,20 +838,29 @@ decisions reached so far; the StructureDefinition itself is the next step.</p>
 
 <p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code>, both</p>
 
-<p><strong>Motivation:</strong> Represent, respectively, an OCT retinal nerve fiber layer (RNFL) thickness
-analysis and an OCT macular thickness analysis, matching the structure of typical vendor
-reports (for example, Heidelberg Spectralis), which present a quadrant or sector breakdown
-alongside an overall classification.</p>
+<p><strong>Motivation:</strong> Represent, respectively, an OCT optic nerve head (ONH)/retinal nerve fiber
+layer (RNFL) analysis and an OCT macular thickness analysis, each grouped under a
+<code class="language-plaintext highlighter-rouge">DiagnosticReport</code> together with the imaging study they were derived from. Sourced directly
+from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL and OCT Macula sections).</p>
+
+<pre><code class="language-mermaid">graph TD
+    R[OphthalmicDiagnosticReport&lt;br/&gt;OCT report] --&gt;|imagingStudy| S[OphthalmicImagingStudy&lt;br/&gt;RNFL + Macula series]
+    R --&gt;|result| RNFL[OphthalmicOCTRNFL&lt;br/&gt;25 components]
+    R --&gt;|result| MAC[OphthalmicOCTMacula&lt;br/&gt;22 components]
+
+    RNFL -.-&gt; RNFLG["cup/disc geometry, DDLS,&lt;br/&gt;TSNIT mean/SD"]
+    MAC -.-&gt; MACG["ETDRS 9-sector grid,&lt;br/&gt;acquisition metadata"]
+</code></pre>
 
 <h3 id="design-decisions-9">Design decisions</h3>
 
 <p><strong>Component-based, diverging from the HL7 Eye Care IG's atomic pattern.</strong> The HL7 Eye Care
 IG represents each individual sector value (for example, "RNFL superior thickness") as its
 own separate <code class="language-plaintext highlighter-rouge">Observation</code>, each with a single LOINC code and a single value. This guide
-instead represents each full analysis (all quadrants or sectors from one scan) as a single
-<code class="language-plaintext highlighter-rouge">Observation</code> with multiple <code class="language-plaintext highlighter-rouge">component</code> entries, one per sector.</p>
+instead represents each full analysis as a single <code class="language-plaintext highlighter-rouge">Observation</code> with multiple <code class="language-plaintext highlighter-rouge">component</code>
+entries, one per measurement.</p>
 
-<p>This is a deliberate divergence, not an oversight: the sector values from a single OCT scan
+<p>This is a deliberate divergence, not an oversight: the values produced by a single OCT scan
 are, by FHIR's own definition of <code class="language-plaintext highlighter-rouge">component</code>, "multiple component observations for a
 single measurement" (the same pattern used for systolic/diastolic blood pressure). They are
 produced together, from the same scan, at the same instant, for the same eye; modeling them
@@ -956,7 +1006,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 02:25+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

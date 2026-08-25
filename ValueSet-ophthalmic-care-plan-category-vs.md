@@ -50,7 +50,7 @@ The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes, open to 
   "name" : "OphthalmicCarePlanCategoryVS",
   "title" : "Ophthalmic Care Plan Category Value Set",
   "status" : "draft",
-  "date" : "2026-08-25T00:41:24+00:00",
+  "date" : "2026-08-25T02:25:39+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

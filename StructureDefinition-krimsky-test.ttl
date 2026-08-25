@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "KrimskyTest"] ;
   fhir:StructureDefinition.title [ fhir:value "Krimsky Test"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-08-25T00:41:24+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-08-25T02:25:39+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;

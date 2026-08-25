@@ -72,7 +72,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-08-25T00:41:24+00:00",
+  "date" : "2026-08-25T02:25:39+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

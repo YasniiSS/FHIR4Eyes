@@ -65,56 +65,7 @@ Several profiles represent a **panel**: a parent `Observation` that has no value
 
 In both cases, the panel itself sets `value[x] 0..0`: the panel carries no value, only `hasMember` references.
 
-### Worked example: TensionCurve with corrected readings
-
-`TensionCurve.hasMember` accepts **either** `IntraocularPressure` or `CorrectedIntraocularPressure` as its members, since a single curve may mix plain and corrected readings depending on whether pachymetry was available for each reading. This illustrates how the panel pattern and the `derivedFrom` pattern combine:
-
-* `TensionCurve` groups several readings across the day via `hasMember`.
-* Each member is either a plain `IntraocularPressure` reading, or a `CorrectedIntraocularPressure` reading.
-* A `CorrectedIntraocularPressure` instance is never a standalone measurement: it always references, via `derivedFrom`, the specific `IntraocularPressure` reading and `Pachymetry` measurement it was calculated from.
-
-So a single curve reading can carry a two-level chain: the curve references the corrected reading, and the corrected reading itself references the two measurements it was derived from. Implementers should expect to traverse both levels when they need the full detail behind a corrected value (for example, to show the original uncorrected IOP alongside the correction).
-
-```
-graph TD
-    TC[TensionCurve<br/>panel] -->|hasMember| IOP1[IntraocularPressure<br/>08:00]
-    TC -->|hasMember| IOP2[IntraocularPressure<br/>12:00]
-    TC -->|hasMember| CIOP[CorrectedIntraocularPressure<br/>14:00]
-    CIOP -->|derivedFrom| IOP3[IntraocularPressure<br/>base reading]
-    CIOP -->|derivedFrom| PACHY[Pachymetry<br/>corneal thickness]
-
-```
-
-### Worked example: StrabismusExam's two-tier structure
-
-`StrabismusExam` is the most elaborate panel in this guide, combining both the fixed and flexible variants of the pattern described above, across two tiers:
-
-**Tier 1 (the top-level panel).** `StrabismusExam.hasMember` is open (`0..*`), grouping whichever sub-tests were actually performed. These sub-tests fall into two groups:
-
-* Direct sub-tests, which produce a single result and don't vary by gaze position: `CoverTest`, `OcularMotility`, `NearPointOfConvergence`, `ConvergenceAssessment`, `StereopsisTest`.
-* Position-based sub-tests, which are themselves small panels (see Tier 2 below): `PrismCoverTest`, `KrimskyTest`, `HirschbergTest`, `RedFilterLightTest`, `Worth4DotTest`.
-
-**Tier 2 (position-based sub-test panels).** Each position-based sub-test groups one `GazePositionMeasurement` per gaze position tested, via its own `hasMember`. `GazePositionMeasurement` is a single shared pattern used by all five position-based sub-tests, with optional components for two different kinds of per-position result: `horizontalDeviation`/`verticalDeviation` (Quantity, prism diopters, used by `PrismCoverTest` and `KrimskyTest`), or `finding` (CodeableConcept, used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`). Each `GazePositionMeasurement` also carries a `fixatingEye` component, kept explicitly separate from `bodySite` (the measured eye) to avoid the "FOD/FOI" ambiguity described earlier on this page.
-
-Traversing a full `StrabismusExam` therefore means walking `hasMember` at the top level, and, for any position-based sub-test found there, walking its own nested `hasMember` down to the individual `GazePositionMeasurement` instances. See the example instances bundled with this guide for a complete worked case.
-
-```
-graph TD
-    SE[StrabismusExam<br/>panel] -->|hasMember| CT[CoverTest]
-    SE -->|hasMember| OM[OcularMotility]
-    SE -->|hasMember| PPC[NearPointOfConvergence]
-    SE -->|hasMember| CA[ConvergenceAssessment]
-    SE -->|hasMember| ST[StereopsisTest]
-    SE -->|hasMember| PCT[PrismCoverTest]
-    SE -->|hasMember| KT[KrimskyTest]
-
-    PCT -->|hasMember| GPM1[GazePositionMeasurement<br/>primary position]
-    PCT -->|hasMember| GPM2[GazePositionMeasurement<br/>right gaze]
-    KT -->|hasMember| GPM3[GazePositionMeasurement<br/>primary position]
-
-    GPM1 -.-> COMP1["fixatingEye, horizontalDeviation,<br/>verticalDeviation"]
-
-```
+For worked, diagrammed examples of this pattern (including how `TensionCurve` combines it with the `derivedFrom` pattern, and how `StrabismusExam` nests it two tiers deep), see the `TensionCurve` and `StrabismusExam` sections of [Profiles](profiles.md).
 
 ## The granular-components pattern
 

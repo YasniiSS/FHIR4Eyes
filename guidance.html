@@ -158,26 +158,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#guidance" id="markdown-toc-guidance">Guidance</a>    <ul>
-      <li><a href="#what-must-support-means-here" id="markdown-toc-what-must-support-means-here">What "Must Support" means here</a></li>
-      <li><a href="#the-laterality-pattern-bodysite-with-a-bodystructure-reference" id="markdown-toc-the-laterality-pattern-bodysite-with-a-bodystructure-reference">The laterality pattern: <code class="language-plaintext highlighter-rouge">bodySite</code> with a <code class="language-plaintext highlighter-rouge">BodyStructure</code> reference</a></li>
-      <li><a href="#the-study--series--instance-hierarchy" id="markdown-toc-the-study--series--instance-hierarchy">The Study / Series / Instance hierarchy</a></li>
-      <li><a href="#the-panel-pattern-grouping-related-observations-with-hasmember" id="markdown-toc-the-panel-pattern-grouping-related-observations-with-hasmember">The panel pattern: grouping related observations with <code class="language-plaintext highlighter-rouge">hasMember</code></a>        <ul>
-          <li><a href="#worked-example-tensioncurve-with-corrected-readings" id="markdown-toc-worked-example-tensioncurve-with-corrected-readings">Worked example: TensionCurve with corrected readings</a></li>
-          <li><a href="#worked-example-strabismusexams-two-tier-structure" id="markdown-toc-worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</a></li>
-        </ul>
-      </li>
-      <li><a href="#the-granular-components-pattern" id="markdown-toc-the-granular-components-pattern">The granular-components pattern</a></li>
-      <li><a href="#fixating-eye-vs-measured-eye" id="markdown-toc-fixating-eye-vs-measured-eye">Fixating eye vs. measured eye</a></li>
-      <li><a href="#chaining-resources-through-a-clinical-episode" id="markdown-toc-chaining-resources-through-a-clinical-episode">Chaining resources through a clinical episode</a></li>
-      <li><a href="#terminology-strategy-summary" id="markdown-toc-terminology-strategy-summary">Terminology strategy summary</a></li>
-      <li><a href="#a-note-on-how-this-guide-was-built" id="markdown-toc-a-note-on-how-this-guide-was-built">A note on how this guide was built</a></li>
-    </ul>
-  </li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h1 id="guidance">Guidance</h1>
 
@@ -279,83 +261,9 @@ position tested.</p>
 <p>In both cases, the panel itself sets <code class="language-plaintext highlighter-rouge">value[x] 0..0</code>: the panel carries no value, only
 <code class="language-plaintext highlighter-rouge">hasMember</code> references.</p>
 
-<h3 id="worked-example-tensioncurve-with-corrected-readings">Worked example: TensionCurve with corrected readings</h3>
-
-<p><code class="language-plaintext highlighter-rouge">TensionCurve.hasMember</code> accepts <em>either</em> <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> or
-<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> as its members, since a single curve may mix plain and
-corrected readings depending on whether pachymetry was available for each reading. This
-illustrates how the panel pattern and the <code class="language-plaintext highlighter-rouge">derivedFrom</code> pattern combine:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">TensionCurve</code> groups several readings across the day via <code class="language-plaintext highlighter-rouge">hasMember</code>.</li>
-  <li>Each member is either a plain <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading, or a
-<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> reading.</li>
-  <li>A <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> instance is never a standalone measurement: it always
-references, via <code class="language-plaintext highlighter-rouge">derivedFrom</code>, the specific <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading and
-<code class="language-plaintext highlighter-rouge">Pachymetry</code> measurement it was calculated from.</li>
-</ul>
-
-<p>So a single curve reading can carry a two-level chain: the curve references the corrected
-reading, and the corrected reading itself references the two measurements it was derived
-from. Implementers should expect to traverse both levels when they need the full detail
-behind a corrected value (for example, to show the original uncorrected IOP alongside the
-correction).</p>
-
-<pre><code class="language-mermaid">graph TD
-    TC[TensionCurve&lt;br/&gt;panel] --&gt;|hasMember| IOP1[IntraocularPressure&lt;br/&gt;08:00]
-    TC --&gt;|hasMember| IOP2[IntraocularPressure&lt;br/&gt;12:00]
-    TC --&gt;|hasMember| CIOP[CorrectedIntraocularPressure&lt;br/&gt;14:00]
-    CIOP --&gt;|derivedFrom| IOP3[IntraocularPressure&lt;br/&gt;base reading]
-    CIOP --&gt;|derivedFrom| PACHY[Pachymetry&lt;br/&gt;corneal thickness]
-</code></pre>
-
-<h3 id="worked-example-strabismusexams-two-tier-structure">Worked example: StrabismusExam's two-tier structure</h3>
-
-<p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is the most elaborate panel in this guide, combining both the fixed and
-flexible variants of the pattern described above, across two tiers:</p>
-
-<p><strong>Tier 1 (the top-level panel).</strong> <code class="language-plaintext highlighter-rouge">StrabismusExam.hasMember</code> is open (<code class="language-plaintext highlighter-rouge">0..*</code>), grouping
-whichever sub-tests were actually performed. These sub-tests fall into two groups:</p>
-
-<ul>
-  <li>Direct sub-tests, which produce a single result and don't vary by gaze position:
-<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>, <code class="language-plaintext highlighter-rouge">NearPointOfConvergence</code>, <code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>,
-<code class="language-plaintext highlighter-rouge">StereopsisTest</code>.</li>
-  <li>Position-based sub-tests, which are themselves small panels (see Tier 2 below):
-<code class="language-plaintext highlighter-rouge">PrismCoverTest</code>, <code class="language-plaintext highlighter-rouge">KrimskyTest</code>, <code class="language-plaintext highlighter-rouge">HirschbergTest</code>, <code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>,
-<code class="language-plaintext highlighter-rouge">Worth4DotTest</code>.</li>
-</ul>
-
-<p><strong>Tier 2 (position-based sub-test panels).</strong> Each position-based sub-test groups one
-<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> per gaze position tested, via its own <code class="language-plaintext highlighter-rouge">hasMember</code>.
-<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> is a single shared pattern used by all five position-based
-sub-tests, with optional components for two different kinds of per-position result:
-<code class="language-plaintext highlighter-rouge">horizontalDeviation</code>/<code class="language-plaintext highlighter-rouge">verticalDeviation</code> (Quantity, prism diopters, used by
-<code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code>), or <code class="language-plaintext highlighter-rouge">finding</code> (CodeableConcept, used by
-<code class="language-plaintext highlighter-rouge">HirschbergTest</code>, <code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, and <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>). Each <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>
-also carries a <code class="language-plaintext highlighter-rouge">fixatingEye</code> component, kept explicitly separate from <code class="language-plaintext highlighter-rouge">bodySite</code> (the
-measured eye) to avoid the "FOD/FOI" ambiguity described earlier on this page.</p>
-
-<p>Traversing a full <code class="language-plaintext highlighter-rouge">StrabismusExam</code> therefore means walking <code class="language-plaintext highlighter-rouge">hasMember</code> at the top level,
-and, for any position-based sub-test found there, walking its own nested <code class="language-plaintext highlighter-rouge">hasMember</code> down
-to the individual <code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> instances. See the example instances bundled
-with this guide for a complete worked case.</p>
-
-<pre><code class="language-mermaid">graph TD
-    SE[StrabismusExam&lt;br/&gt;panel] --&gt;|hasMember| CT[CoverTest]
-    SE --&gt;|hasMember| OM[OcularMotility]
-    SE --&gt;|hasMember| PPC[NearPointOfConvergence]
-    SE --&gt;|hasMember| CA[ConvergenceAssessment]
-    SE --&gt;|hasMember| ST[StereopsisTest]
-    SE --&gt;|hasMember| PCT[PrismCoverTest]
-    SE --&gt;|hasMember| KT[KrimskyTest]
-
-    PCT --&gt;|hasMember| GPM1[GazePositionMeasurement&lt;br/&gt;primary position]
-    PCT --&gt;|hasMember| GPM2[GazePositionMeasurement&lt;br/&gt;right gaze]
-    KT --&gt;|hasMember| GPM3[GazePositionMeasurement&lt;br/&gt;primary position]
-
-    GPM1 -.-&gt; COMP1["fixatingEye, horizontalDeviation,&lt;br/&gt;verticalDeviation"]
-</code></pre>
+<p>For worked, diagrammed examples of this pattern (including how <code class="language-plaintext highlighter-rouge">TensionCurve</code> combines it
+with the <code class="language-plaintext highlighter-rouge">derivedFrom</code> pattern, and how <code class="language-plaintext highlighter-rouge">StrabismusExam</code> nests it two tiers deep), see the
+<code class="language-plaintext highlighter-rouge">TensionCurve</code> and <code class="language-plaintext highlighter-rouge">StrabismusExam</code> sections of <a href="profiles.html">Profiles</a>.</p>
 
 <h2 id="the-granular-components-pattern">The granular-components pattern</h2>
 
@@ -446,7 +354,7 @@ element as provisional and check for updates.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 00:41+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 02:25+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
