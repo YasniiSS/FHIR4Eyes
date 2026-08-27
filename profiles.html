@@ -218,6 +218,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <li><a href="#status-10" id="markdown-toc-status-10">Status</a></li>
         </ul>
       </li>
+      <li><a href="#ophthalmicocularbiometry-and-iolformularesult" id="markdown-toc-ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</a>        <ul>
+          <li><a href="#design-decisions-11" id="markdown-toc-design-decisions-11">Design decisions</a></li>
+          <li><a href="#status-11" id="markdown-toc-status-11">Status</a></li>
+        </ul>
+      </li>
       <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
     </ul>
   </li>
@@ -259,11 +264,15 @@ finally the treatment plan.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Observation</code></td>
-      <td><a href="#ophthalmicvisualacuity">OphthalmicVisualAcuity</a>, <a href="#tensioncurve">TensionCurve</a>, IntraocularPressure, CorrectedIntraocularPressure, Pachymetry, <a href="#strabismusexam">StrabismusExam</a> and its sub-test family (see below), <a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a></td>
+      <td><a href="#ophthalmicvisualacuity">OphthalmicVisualAcuity</a>, <a href="#tensioncurve">TensionCurve</a>, IntraocularPressure, CorrectedIntraocularPressure, Pachymetry, <a href="#strabismusexam">StrabismusExam</a> and its sub-test family (see below), <a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a>, <a href="#corneal-tomography-six-observations-under-one-report">Corneal Tomography's six profiles</a>, <a href="#ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</a>, OphthalmicHumphreyVisualField, OphthalmicSpecularMicroscopy</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Observation</code> (StrabismusExam sub-test family)</td>
       <td>GazePositionMeasurement, CoverTest, OcularMotility, NearPointOfConvergence, ConvergenceAssessment, StereopsisTest, PrismCoverTest, KrimskyTest, HirschbergTest, RedFilterLightTest, Worth4DotTest</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Observation</code> (Corneal Tomography family)</td>
+      <td>CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ImagingStudy</code></td>
@@ -271,7 +280,7 @@ finally the treatment plan.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">DiagnosticReport</code></td>
-      <td><a href="#ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</a></td>
+      <td><a href="#ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</a>, CornealTomographyReport</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">CarePlan</code></td>
@@ -966,6 +975,46 @@ terminology rigor (see <a href="terminology.html">Terminology</a>).</p>
 
 <p>All six Observation profiles and <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> are formally defined in FSH.</p>
 
+<h2 id="ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</h2>
+
+<p><strong>FHIR resources:</strong> <code class="language-plaintext highlighter-rouge">Observation</code>, both</p>
+
+<p><strong>Motivation:</strong> Represents an ocular biometry exam used for IOL power calculation ahead of
+cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular
+Biometry section), DICOM-aligned per CIDs 4230-4243.</p>
+
+<pre><code class="language-mermaid">graph TD
+    B[OphthalmicOcularBiometry&lt;br/&gt;26 shared components:&lt;br/&gt;AL, ACD, LT, K1/K2, WTW...] --&gt;|hasMember| F1[IOLFormulaResult&lt;br/&gt;Barrett Universal II]
+    B --&gt;|hasMember| F2[IOLFormulaResult&lt;br/&gt;SRK/T]
+    B --&gt;|hasMember| F3[IOLFormulaResult&lt;br/&gt;Holladay 2 ...]
+
+    F1 -.-&gt; D1["lens model, IOL power,&lt;br/&gt;expected refraction"]
+</code></pre>
+
+<h3 id="design-decisions-11">Design decisions</h3>
+
+<p><strong>Shared measurements as components, each formula as a separate Observation.</strong> A single
+biometry exam produces one set of shared measurements (axial length, keratometry, anterior
+chamber depth, and so on), but is typically run through <em>several</em> IOL power formulas for
+comparison (for example Barrett Universal II, SRK/T, Holladay 2), each producing its own
+suggested lens, power, and expected refractive outcome. Rather than fixing two hardcoded
+"formula 1" / "formula 2" component slots on the biometry Observation itself, this guide
+represents each formula's result as a separate <code class="language-plaintext highlighter-rouge">IOLFormulaResult</code> instance, referenced via
+<code class="language-plaintext highlighter-rouge">hasMember</code>. This allows any number of formulas to be recorded, and keeps each formula's
+full result (constant, lens, power, expected refraction) together as its own coherent unit,
+following the same "different object/analysis gets its own Observation" principle used
+throughout this guide (see the Corneal Tomography section above).</p>
+
+<p><strong>Formula-specific fields live only on <code class="language-plaintext highlighter-rouge">IOLFormulaResult</code>.</strong> <code class="language-plaintext highlighter-rouge">formula</code>, <code class="language-plaintext highlighter-rouge">lensConstantType</code>,
+<code class="language-plaintext highlighter-rouge">lensConstantValue</code>, <code class="language-plaintext highlighter-rouge">iolModel</code>, <code class="language-plaintext highlighter-rouge">iolPower</code>, <code class="language-plaintext highlighter-rouge">expectedRef</code>, and <code class="language-plaintext highlighter-rouge">iolTable</code> are components of
+<code class="language-plaintext highlighter-rouge">IOLFormulaResult</code>, not of <code class="language-plaintext highlighter-rouge">OphthalmicOcularBiometry</code>. The biometry Observation holds only
+the measurements that are shared and independent of which formula is later applied to
+them.</p>
+
+<h3 id="status-11">Status</h3>
+
+<p>Both profiles are formally defined in FSH.</p>
+
 <h2 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h2>
 
 <p>The following profiles remain lower priority and are deliberately left undesigned in this
@@ -1006,7 +1055,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 02:25+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 18:52+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

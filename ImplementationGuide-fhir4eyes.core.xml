@@ -11,7 +11,7 @@
   <name value="FHIR4Eyes"/>
   <title value="FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"/>
   <status value="draft"/>
-  <date value="2026-08-25T02:25:39+00:00"/>
+  <date value="2026-08-25T18:52:20+00:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -858,6 +858,37 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/iol-formula-result"/>
+      </reference>
+      <name value="IOL Formula Result"/>
+      <description value="Represents the result of a single IOL power calculation formula (e.g.&#xA;Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected&#xA;refraction. Not intended to be used standalone: always referenced via hasMember from an&#xA;OphthalmicOcularBiometry instance, since one biometry exam typically has its shared&#xA;measurements calculated through several formulas, each with its own suggested lens."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/IOLFormulaBarrettExample"/>
+      </reference>
+      <name value="IOLFormulaBarrettExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/IOLFormulaSRKTExample"/>
+      </reference>
+      <name value="IOLFormulaSRKTExample"/>
+      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/krimsky-test"/>
       </reference>
       <name value="Krimsky Test"/>
@@ -1228,7 +1259,7 @@
         <reference value="StructureDefinition/ophthalmic-ocular-biometry"/>
       </reference>
       <name value="Ophthalmic Ocular Biometry"/>
-      <description value="Represents an ocular biometry exam (optical or ultrasonic), used primarily&#xA;for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes&#xA;Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a&#xA;CID reference is noted."/>
+      <description value="Represents an ocular biometry exam (optical or ultrasonic), used primarily&#xA;for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes&#xA;Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a&#xA;CID reference is noted. Holds the shared measurements common to the whole exam (axial&#xA;length, keratometry, and so on) as components; each formula calculated from those shared&#xA;measurements, with its own suggested IOL and expected outcome, is a separate&#xA;IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically&#xA;run through several formulas."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

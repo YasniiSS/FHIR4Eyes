@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="IOLFormulaSRKTExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation IOLFormulaSRKTExample</b></p><a name="IOLFormulaSRKTExample"> </a><a name="hcIOLFormulaSRKTExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-iol-formula-result.html">IOL Formula Result</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">IOL formula result: SRK/T</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IOL formula name</span></p><p><b>value</b>: <span title="Codes:">SRK/T</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Lens constant type</span></p><p><b>value</b>: <span title="Codes:">A-constant</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Lens constant value</span></p><p><b>value</b>: 118.7 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Suggested IOL model</span></p><p><b>value</b>: Alcon AcrySof IQ SN60WF</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Recommended IOL power</span></p><p><b>value</b>: 21.5 D<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Expected refraction</span></p><p><b>value</b>: -0.31 D<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeD = 'D')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <text value="IOL formula result: SRK/T"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <component>
+    <code>
+      <text value="IOL formula name"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="SRK/T"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Lens constant type"/>
+    </code>
+    <valueCodeableConcept>
+      <text value="A-constant"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <text value="Lens constant value"/>
+    </code>
+    <valueQuantity>
+      <value value="118.7"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Suggested IOL model"/>
+    </code>
+    <valueString value="Alcon AcrySof IQ SN60WF"/>
+  </component>
+  <component>
+    <code>
+      <text value="Recommended IOL power"/>
+    </code>
+    <valueQuantity>
+      <value value="21.5"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="D"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <text value="Expected refraction"/>
+    </code>
+    <valueQuantity>
+      <value value="-0.31"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="D"/>
+    </valueQuantity>
+  </component>
+</Observation>

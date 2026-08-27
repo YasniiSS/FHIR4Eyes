@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-procedure
   "name" : "OphthalmicProcedure",
   "title" : "Ophthalmic Procedure",
   "status" : "draft",
-  "date" : "2026-08-25T02:25:39+00:00",
+  "date" : "2026-08-25T18:52:20+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

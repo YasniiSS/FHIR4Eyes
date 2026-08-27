@@ -12,7 +12,7 @@
 | Draft as of 2026-08-25 | *Computable Name*:OphthalmicOcularBiometry |
 
  
-Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted. 
+Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted. Holds the shared measurements common to the whole exam (axial length, keratometry, and so on) as components; each formula calculated from those shared measurements, with its own suggested IOL and expected outcome, is a separate IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically run through several formulas. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
   "name" : "OphthalmicOcularBiometry",
   "title" : "Ophthalmic Ocular Biometry",
   "status" : "draft",
-  "date" : "2026-08-25T02:25:39+00:00",
+  "date" : "2026-08-25T18:52:20+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted.",
+  "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -178,6 +178,16 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "mustSupport" : true
     },
     {
+      "id" : "Observation.hasMember",
+      "path" : "Observation.hasMember",
+      "short" : "Each IOL formula calculated from this biometry exam, with its own suggested lens",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.component",
       "path" : "Observation.component",
       "slicing" : {
@@ -200,7 +210,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:al.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM tag (0022,1019)"
+      "short" : "Axial length (AL) - anteroposterior eye distance. DICOM tag (0022,1019)"
     },
     {
       "id" : "Observation.component:al.value[x]",
@@ -220,7 +230,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:alType.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4230"
+      "short" : "AL measurement type - optical, ultrasonic immersion, or ultrasonic contact. DICOM CID 4230"
     },
     {
       "id" : "Observation.component:alType.value[x]",
@@ -240,7 +250,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:alSNR.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4243, quality metric"
+      "short" : "AL signal-to-noise ratio (SNR) - quality of AL measurement, >2.0 acceptable. DICOM CID 4243"
     },
     {
       "id" : "Observation.component:alSNR.value[x]",
@@ -260,7 +270,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:alSelection.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4241"
+      "short" : "AL selection method - how axial length was selected. DICOM CID 4241"
     },
     {
       "id" : "Observation.component:alSelection.value[x]",
@@ -300,7 +310,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:acdDef.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4239"
+      "short" : "ACD definition - endothelium to lens or epithelium to lens. DICOM CID 4239"
     },
     {
       "id" : "Observation.component:acdDef.value[x]",
@@ -340,7 +350,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:lensStatus.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4231"
+      "short" : "Lens status - phakic, pseudophakic, or aphakic. DICOM CID 4231"
     },
     {
       "id" : "Observation.component:lensStatus.value[x]",
@@ -360,7 +370,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:vitreousStatus.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4232"
+      "short" : "Vitreous status. DICOM CID 4232"
     },
     {
       "id" : "Observation.component:vitreousStatus.value[x]",
@@ -380,7 +390,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:k1.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4235"
+      "short" : "K1 (flat keratometry) - flat meridian K with axis. DICOM CID 4235"
     },
     {
       "id" : "Observation.component:k1.value[x]",
@@ -420,7 +430,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:k2.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4235"
+      "short" : "K2 (steep keratometry) - steep meridian K with axis. DICOM CID 4235"
     },
     {
       "id" : "Observation.component:k2.value[x]",
@@ -460,7 +470,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:rse.code",
       "path" : "Observation.component.code",
-      "short" : "R/SE (mean radius / sph equiv) - mean corneal radius or spherical equivalent"
+      "short" : "R/SE (mean radius / sph equiv)"
     },
     {
       "id" : "Observation.component:rse.value[x]",
@@ -540,7 +550,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:pupilDiam.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil diameter - pupil size at measurement"
+      "short" : "Pupil diameter"
     },
     {
       "id" : "Observation.component:pupilDiam.value[x]",
@@ -560,7 +570,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:mydriaticAgent.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0022,000D)"
+      "short" : "Mydriatic agent used, if applicable. DICOM (0022,000D)"
     },
     {
       "id" : "Observation.component:mydriaticAgent.value[x]",
@@ -600,7 +610,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:refSurgeryHx.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4234"
+      "short" : "Refractive surgery history - critical for formula selection. DICOM CID 4234"
     },
     {
       "id" : "Observation.component:refSurgeryHx.value[x]",
@@ -630,166 +640,6 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       }]
     },
     {
-      "id" : "Observation.component:iolModel",
-      "path" : "Observation.component",
-      "sliceName" : "iolModel",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:iolModel.code",
-      "path" : "Observation.component.code",
-      "short" : "Links to Device"
-    },
-    {
-      "id" : "Observation.component:iolModel.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "string"
-      }]
-    },
-    {
-      "id" : "Observation.component:formula1",
-      "path" : "Observation.component",
-      "sliceName" : "formula1",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:formula1.code",
-      "path" : "Observation.component.code",
-      "short" : "DICOM CID 4236, standardized formula codes"
-    },
-    {
-      "id" : "Observation.component:formula1.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "Observation.component:formula2",
-      "path" : "Observation.component",
-      "sliceName" : "formula2",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:formula2.code",
-      "path" : "Observation.component.code",
-      "short" : "DICOM CID 4236"
-    },
-    {
-      "id" : "Observation.component:formula2.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "Observation.component:lensConstantType",
-      "path" : "Observation.component",
-      "sliceName" : "lensConstantType",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:lensConstantType.code",
-      "path" : "Observation.component.code",
-      "short" : "DICOM CID 4237"
-    },
-    {
-      "id" : "Observation.component:lensConstantType.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "Observation.component:lensConstantValue",
-      "path" : "Observation.component",
-      "sliceName" : "lensConstantValue",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:lensConstantValue.code",
-      "path" : "Observation.component.code",
-      "short" : "DICOM CID 4237"
-    },
-    {
-      "id" : "Observation.component:lensConstantValue.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Observation.component:iolPower",
-      "path" : "Observation.component",
-      "sliceName" : "iolPower",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:iolPower.code",
-      "path" : "Observation.component.code",
-      "short" : "Recommended IOL power - calculated dioptric power for IOL"
-    },
-    {
-      "id" : "Observation.component:iolPower.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Observation.component:expectedRef",
-      "path" : "Observation.component",
-      "sliceName" : "expectedRef",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:expectedRef.code",
-      "path" : "Observation.component.code",
-      "short" : "Expected refraction - predicted refractive outcome for chosen IOL"
-    },
-    {
-      "id" : "Observation.component:expectedRef.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Observation.component:iolTable",
-      "path" : "Observation.component",
-      "sliceName" : "iolTable",
-      "min" : 0,
-      "max" : "*",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:iolTable.code",
-      "path" : "Observation.component.code",
-      "short" : "IOL power table - range of IOL powers with predicted refractions, full table from report"
-    },
-    {
-      "id" : "Observation.component:iolTable.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "string"
-      }]
-    },
-    {
       "id" : "Observation.component:refErrorType",
       "path" : "Observation.component",
       "sliceName" : "refErrorType",
@@ -800,7 +650,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:refErrorType.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4238"
+      "short" : "Refractive error type. DICOM CID 4238"
     },
     {
       "id" : "Observation.component:refErrorType.value[x]",
@@ -820,7 +670,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:dataSource.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4240"
+      "short" : "Data source - origin of measurement data. DICOM CID 4240"
     },
     {
       "id" : "Observation.component:dataSource.value[x]",

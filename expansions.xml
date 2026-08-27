@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="4abd73b9-4db5-407d-9bd7-e97328002c6b"/>
+  <id value="9647beb7-881d-4b5c-b1ca-bc76e9e1aa09"/>
   <meta>
-    <lastUpdated value="2026-08-25T02:25:39.694+00:00"/>
+    <lastUpdated value="2026-08-25T18:52:20.952+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -146,7 +146,7 @@
         <name value="LowVisionAssessmentVS"/>
         <title value="Low Vision Assessment Value Set"/>
         <status value="draft"/>
-        <date value="2026-08-25T02:25:39+00:00"/>
+        <date value="2026-08-25T18:52:20+00:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -155,8 +155,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:1ea8930f-23d3-4986-8a10-9f9bb5a9012e"/>
-          <timestamp value="2026-08-25T03:04:27+00:00"/>
+          <identifier value="urn:uuid:2ed4d4be-1b95-40b0-8faf-e09fbb34b07d"/>
+          <timestamp value="2026-08-25T19:37:19+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -302,7 +302,7 @@
         <name value="OphthalmicCarePlanCategoryVS"/>
         <title value="Ophthalmic Care Plan Category Value Set"/>
         <status value="draft"/>
-        <date value="2026-08-25T02:25:39+00:00"/>
+        <date value="2026-08-25T18:52:20+00:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -311,8 +311,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:add0b948-2b15-4ac1-bb95-ee5f5008dbe0"/>
-          <timestamp value="2026-08-25T03:04:52+00:00"/>
+          <identifier value="urn:uuid:e1bacc1d-82dd-41aa-b08c-0189dadc54d7"/>
+          <timestamp value="2026-08-25T19:37:55+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>

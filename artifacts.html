@@ -342,6 +342,19 @@ referenced here via hasMember, using its qualitative finding component.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-iol-formula-result.html"
+                  title="StructureDefinition/iol-formula-result">IOL Formula Result</a>
+            </td>
+            <td>
+<p>Represents the result of a single IOL power calculation formula (e.g.
+Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected
+refraction. Not intended to be used standalone: always referenced via hasMember from an
+OphthalmicOcularBiometry instance, since one biometry exam typically has its shared
+measurements calculated through several formulas, each with its own suggested lens.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-intraocular-pressure.html"
                   title="StructureDefinition/intraocular-pressure">Intraocular Pressure</a>
             </td>
@@ -557,7 +570,11 @@ earlier, quadrant-thickness-only version of this profile.</p>
 <p>Represents an ocular biometry exam (optical or ultrasonic), used primarily
 for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes
 Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a
-CID reference is noted.</p>
+CID reference is noted. Holds the shared measurements common to the whole exam (axial
+length, keratometry, and so on) as components; each formula calculated from those shared
+measurements, with its own suggested IOL and expected outcome, is a separate
+IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically
+run through several formulas.</p>
 </td>
          </tr>
          <tr>
@@ -930,6 +947,24 @@ external terminology. See the Profiles page of this guide for the design rationa
             <td style="column-width:30%">
                <a href="Observation-HumphreyVFRightEyeExample.html"
                   title="Observation/HumphreyVFRightEyeExample">HumphreyVFRightEyeExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-IOLFormulaBarrettExample.html"
+                  title="Observation/IOLFormulaBarrettExample">IOLFormulaBarrettExample</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-IOLFormulaSRKTExample.html"
+                  title="Observation/IOLFormulaSRKTExample">IOLFormulaSRKTExample</a>
             </td>
             <td>
 
@@ -1331,7 +1366,7 @@ external terminology. See the Profiles page of this guide for the design rationa
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 02:25+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 18:52+0000">2026-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

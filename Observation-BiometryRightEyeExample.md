@@ -20,12 +20,17 @@ Profile: [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biom
 
 > 
 
-Example based on typical IOLMaster 700 biometry report
+Example based on typical IOLMaster 700 biometry report, comparing two formulas
 
 
 **bodySite**: 
 
 **method**: Optical biometry (IOLMaster)
+
+**hasMember**: 
+
+* [Barrett Universal II - AcrySof IQ SN60WF 21.0D](Observation-IOLFormulaBarrettExample.md)
+* [SRK/T - AcrySof IQ SN60WF 21.5D](Observation-IOLFormulaSRKTExample.md)
 
 > **component****code**: Axial length (AL)**value**: 23.45 mm (Details: UCUM codemm = 'mm')
 
@@ -63,20 +68,6 @@ Example based on typical IOLMaster 700 biometry report
 
 > **component****code**: Target refraction**value**: -0.25 D (Details: UCUM codeD = 'D')
 
-> **component****code**: IOL model**value**: Alcon AcrySof IQ SN60WF
-
-> **component****code**: IOL formula 1**value**: Barrett Universal II
-
-> **component****code**: IOL formula 2**value**: SRK/T
-
-> **component****code**: Lens constant type**value**: A-constant
-
-> **component****code**: Lens constant value**value**: 119 1 (Details: UCUM code1 = '1')
-
-> **component****code**: Recommended IOL power**value**: 21 D (Details: UCUM codeD = 'D')
-
-> **component****code**: Expected refraction**value**: -0.18 D (Details: UCUM codeD = 'D')
-
 > **component****code**: Vertex distance**value**: 12 mm (Details: UCUM codemm = 'mm')
 
 
@@ -105,7 +96,7 @@ Example based on typical IOLMaster 700 biometry report
     "reference" : "Patient/PatientExample"
   },
   "note" : [{
-    "text" : "Example based on typical IOLMaster 700 biometry report"
+    "text" : "Example based on typical IOLMaster 700 biometry report, comparing two formulas"
   }],
   "bodySite" : {
     "extension" : [{
@@ -118,6 +109,14 @@ Example based on typical IOLMaster 700 biometry report
   "method" : {
     "text" : "Optical biometry (IOLMaster)"
   },
+  "hasMember" : [{
+    "reference" : "Observation/IOLFormulaBarrettExample",
+    "display" : "Barrett Universal II - AcrySof IQ SN60WF 21.0D"
+  },
+  {
+    "reference" : "Observation/IOLFormulaSRKTExample",
+    "display" : "SRK/T - AcrySof IQ SN60WF 21.5D"
+  }],
   "component" : [{
     "code" : {
       "text" : "Axial length (AL)"
@@ -284,66 +283,6 @@ Example based on typical IOLMaster 700 biometry report
     },
     "valueQuantity" : {
       "value" : -0.25,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "D"
-    }
-  },
-  {
-    "code" : {
-      "text" : "IOL model"
-    },
-    "valueString" : "Alcon AcrySof IQ SN60WF"
-  },
-  {
-    "code" : {
-      "text" : "IOL formula 1"
-    },
-    "valueCodeableConcept" : {
-      "text" : "Barrett Universal II"
-    }
-  },
-  {
-    "code" : {
-      "text" : "IOL formula 2"
-    },
-    "valueCodeableConcept" : {
-      "text" : "SRK/T"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Lens constant type"
-    },
-    "valueCodeableConcept" : {
-      "text" : "A-constant"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Lens constant value"
-    },
-    "valueQuantity" : {
-      "value" : 119,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Recommended IOL power"
-    },
-    "valueQuantity" : {
-      "value" : 21,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "D"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Expected refraction"
-    },
-    "valueQuantity" : {
-      "value" : -0.18,
       "system" : "http://unitsofmeasure.org",
       "code" : "D"
     }

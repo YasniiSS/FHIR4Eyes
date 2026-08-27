@@ -18,10 +18,11 @@ Profiles below are presented in the chronological order they typically appear wi
 | `ServiceRequest` | [OphthalmicServiceRequest](#ophthalmicservicerequest) |
 | `Condition` | [OphthalmicCondition](#ophthalmiccondition) |
 | `Procedure` | [OphthalmicProcedure](#ophthalmicprocedure) |
-| `Observation` | [OphthalmicVisualAcuity](#ophthalmicvisualacuity),[TensionCurve](#tensioncurve), IntraocularPressure, CorrectedIntraocularPressure, Pachymetry,[StrabismusExam](#strabismusexam)and its sub-test family (see below),[OphthalmicOCTRNFL and OphthalmicOCTMacula](#ophthalmicoctrnfl-and-ophthalmicoctmacula) |
+| `Observation` | [OphthalmicVisualAcuity](#ophthalmicvisualacuity),[TensionCurve](#tensioncurve), IntraocularPressure, CorrectedIntraocularPressure, Pachymetry,[StrabismusExam](#strabismusexam)and its sub-test family (see below),[OphthalmicOCTRNFL and OphthalmicOCTMacula](#ophthalmicoctrnfl-and-ophthalmicoctmacula),[Corneal Tomography's six profiles](#corneal-tomography-six-observations-under-one-report),[OphthalmicOcularBiometry and IOLFormulaResult](#ophthalmicocularbiometry-and-iolformularesult), OphthalmicHumphreyVisualField, OphthalmicSpecularMicroscopy |
 | `Observation`(StrabismusExam sub-test family) | GazePositionMeasurement, CoverTest, OcularMotility, NearPointOfConvergence, ConvergenceAssessment, StereopsisTest, PrismCoverTest, KrimskyTest, HirschbergTest, RedFilterLightTest, Worth4DotTest |
+| `Observation`(Corneal Tomography family) | CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry |
 | `ImagingStudy` | [OphthalmicImagingStudy](#ophthalmicimagingstudy) |
-| `DiagnosticReport` | [OphthalmicDiagnosticReport](#ophthalmicdiagnosticreport) |
+| `DiagnosticReport` | [OphthalmicDiagnosticReport](#ophthalmicdiagnosticreport), CornealTomographyReport |
 | `CarePlan` | [OphthalmicCarePlan](#ophthalmiccareplan) |
 | `Device` | OphthalmicDevice (referenced from OphthalmicProcedure) |
 | `Encounter` | OphthalmicEncounter |
@@ -356,6 +357,32 @@ graph TD
 ### Status
 
 All six Observation profiles and `CornealTomographyReport` are formally defined in FSH.
+
+## OphthalmicOcularBiometry and IOLFormulaResult
+
+**FHIR resources:** `Observation`, both
+
+**Motivation:** Represents an ocular biometry exam used for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243.
+
+```
+graph TD
+    B[OphthalmicOcularBiometry<br/>26 shared components:<br/>AL, ACD, LT, K1/K2, WTW...] -->|hasMember| F1[IOLFormulaResult<br/>Barrett Universal II]
+    B -->|hasMember| F2[IOLFormulaResult<br/>SRK/T]
+    B -->|hasMember| F3[IOLFormulaResult<br/>Holladay 2 ...]
+
+    F1 -.-> D1["lens model, IOL power,<br/>expected refraction"]
+
+```
+
+### Design decisions
+
+**Shared measurements as components, each formula as a separate Observation.** A single biometry exam produces one set of shared measurements (axial length, keratometry, anterior chamber depth, and so on), but is typically run through **several** IOL power formulas for comparison (for example Barrett Universal II, SRK/T, Holladay 2), each producing its own suggested lens, power, and expected refractive outcome. Rather than fixing two hardcoded "formula 1" / "formula 2" component slots on the biometry Observation itself, this guide represents each formula's result as a separate `IOLFormulaResult` instance, referenced via `hasMember`. This allows any number of formulas to be recorded, and keeps each formula's full result (constant, lens, power, expected refraction) together as its own coherent unit, following the same "different object/analysis gets its own Observation" principle used throughout this guide (see the Corneal Tomography section above).
+
+**Formula-specific fields live only on `IOLFormulaResult`.** `formula`, `lensConstantType`, `lensConstantValue`, `iolModel`, `iolPower`, `expectedRef`, and `iolTable` are components of `IOLFormulaResult`, not of `OphthalmicOcularBiometry`. The biometry Observation holds only the measurements that are shared and independent of which formula is later applied to them.
+
+### Status
+
+Both profiles are formally defined in FSH.
 
 ## Profiles pending clinical validation
 

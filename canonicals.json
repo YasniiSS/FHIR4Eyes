@@ -104,6 +104,13 @@
   "name" : "IntraocularPressure"
 },
 {
+  "id" : "iol-formula-result",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result",
+  "version" : "0.2.0",
+  "name" : "IOLFormulaResult"
+},
+{
   "id" : "krimsky-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test",

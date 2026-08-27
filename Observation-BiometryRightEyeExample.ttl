@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BiometryRightEyeExample</b></p><a name=\"BiometryRightEyeExample\"> </a><a name=\"hcBiometryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-ocular-biometry.html\">Ophthalmic Ocular Biometry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Ocular biometry for IOL power calculation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical IOLMaster 700 biometry report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Optical biometry (IOLMaster)</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Axial length (AL)</span></p><p><b>value</b>: 23.45 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL measurement type</span></p><p><b>value</b>: <span title=\"Codes:\">Optical</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL signal-to-noise ratio (SNR)</span></p><p><b>value</b>: 3.2 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Anterior chamber depth (ACD)</span></p><p><b>value</b>: 3.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">ACD definition</span></p><p><b>value</b>: <span title=\"Codes:\">Epithelium to lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens thickness (LT)</span></p><p><b>value</b>: 4.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens status</span></p><p><b>value</b>: <span title=\"Codes:\">Phakic</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat keratometry)</span></p><p><b>value</b>: 43.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep keratometry)</span></p><p><b>value</b>: 44.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: 1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index (n)</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">White-to-white (WTW)</span></p><p><b>value</b>: 11.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil diameter</span></p><p><b>value</b>: 3.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Refractive surgery history</span></p><p><b>value</b>: <span title=\"Codes:\">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Target refraction</span></p><p><b>value</b>: -0.25 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">IOL model</span></p><p><b>value</b>: Alcon AcrySof IQ SN60WF</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">IOL formula 1</span></p><p><b>value</b>: <span title=\"Codes:\">Barrett Universal II</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">IOL formula 2</span></p><p><b>value</b>: <span title=\"Codes:\">SRK/T</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant type</span></p><p><b>value</b>: <span title=\"Codes:\">A-constant</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant value</span></p><p><b>value</b>: 119 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Recommended IOL power</span></p><p><b>value</b>: 21 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Expected refraction</span></p><p><b>value</b>: -0.18 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Vertex distance</span></p><p><b>value</b>: 12 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BiometryRightEyeExample</b></p><a name=\"BiometryRightEyeExample\"> </a><a name=\"hcBiometryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-ocular-biometry.html\">Ophthalmic Ocular Biometry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Ocular biometry for IOL power calculation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical IOLMaster 700 biometry report, comparing two formulas</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Optical biometry (IOLMaster)</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-IOLFormulaBarrettExample.html\">Barrett Universal II - AcrySof IQ SN60WF 21.0D</a></li><li><a href=\"Observation-IOLFormulaSRKTExample.html\">SRK/T - AcrySof IQ SN60WF 21.5D</a></li></ul><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Axial length (AL)</span></p><p><b>value</b>: 23.45 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL measurement type</span></p><p><b>value</b>: <span title=\"Codes:\">Optical</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL signal-to-noise ratio (SNR)</span></p><p><b>value</b>: 3.2 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Anterior chamber depth (ACD)</span></p><p><b>value</b>: 3.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">ACD definition</span></p><p><b>value</b>: <span title=\"Codes:\">Epithelium to lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens thickness (LT)</span></p><p><b>value</b>: 4.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens status</span></p><p><b>value</b>: <span title=\"Codes:\">Phakic</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat keratometry)</span></p><p><b>value</b>: 43.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep keratometry)</span></p><p><b>value</b>: 44.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: 1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index (n)</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">White-to-white (WTW)</span></p><p><b>value</b>: 11.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil diameter</span></p><p><b>value</b>: 3.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Refractive surgery history</span></p><p><b>value</b>: <span title=\"Codes:\">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Target refraction</span></p><p><b>value</b>: -0.25 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Vertex distance</span></p><p><b>value</b>: 12 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -38,7 +38,7 @@
   ] ;
   fhir:Observation.note [
      fhir:index 0 ;
-     fhir:Annotation.text [ fhir:value "Example based on typical IOLMaster 700 biometry report" ]
+     fhir:Annotation.text [ fhir:value "Example based on typical IOLMaster 700 biometry report, comparing two formulas" ]
   ] ;
   fhir:Observation.bodySite [
      fhir:Element.extension [
@@ -52,6 +52,17 @@
   ] ;
   fhir:Observation.method [
      fhir:CodeableConcept.text [ fhir:value "Optical biometry (IOLMaster)" ]
+  ] ;
+  fhir:Observation.hasMember [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/IOLFormulaBarrettExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/IOLFormulaBarrettExample" ] ;
+     fhir:Reference.display [ fhir:value "Barrett Universal II - AcrySof IQ SN60WF 21.0D" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/IOLFormulaSRKTExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/IOLFormulaSRKTExample" ] ;
+     fhir:Reference.display [ fhir:value "SRK/T - AcrySof IQ SN60WF 21.5D" ]
   ] ;
   fhir:Observation.component [
      fhir:index 0 ;
@@ -225,66 +236,6 @@
      ]
   ], [
      fhir:index 18 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "IOL model" ]
-     ] ;
-     fhir:Observation.component.valueString [ fhir:value "Alcon AcrySof IQ SN60WF" ]
-  ], [
-     fhir:index 19 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "IOL formula 1" ]
-     ] ;
-     fhir:Observation.component.valueCodeableConcept [
-       fhir:CodeableConcept.text [ fhir:value "Barrett Universal II" ]
-     ]
-  ], [
-     fhir:index 20 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "IOL formula 2" ]
-     ] ;
-     fhir:Observation.component.valueCodeableConcept [
-       fhir:CodeableConcept.text [ fhir:value "SRK/T" ]
-     ]
-  ], [
-     fhir:index 21 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Lens constant type" ]
-     ] ;
-     fhir:Observation.component.valueCodeableConcept [
-       fhir:CodeableConcept.text [ fhir:value "A-constant" ]
-     ]
-  ], [
-     fhir:index 22 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Lens constant value" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "119"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "1" ]
-     ]
-  ], [
-     fhir:index 23 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Recommended IOL power" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "21"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
-     ]
-  ], [
-     fhir:index 24 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Expected refraction" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "-0.18"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
-     ]
-  ], [
-     fhir:index 25 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Vertex distance" ]
      ] ;
