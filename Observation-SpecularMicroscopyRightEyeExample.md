@@ -1,4 +1,4 @@
-# SpecularMicroscopyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# SpecularMicroscopyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specula
 
 **code**: Corneal endothelial specular microscopy
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **note**: 
 

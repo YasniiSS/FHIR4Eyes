@@ -1,4 +1,4 @@
-# PrismCoverTestPrimaryPositionExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# PrismCoverTestPrimaryPositionExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,13 +14,13 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
 
 **code**: Primary position
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **bodySite**: 
 
 > **component****code**: Fixating eye**value**: Left
 
-> **component****code**: Horizontal deviation**value**: -30 prism diopter (Details: UCUM codeprism diopter = 'prism diopter')
+> **component****code**: Horizontal deviation**value**: -30 prism diopter (Details: UCUM code[p'diop] = '[p'diop]')
 
 
 
@@ -73,8 +73,9 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
     },
     "valueQuantity" : {
       "value" : -30,
+      "unit" : "prism diopter",
       "system" : "http://unitsofmeasure.org",
-      "code" : "prism diopter"
+      "code" : "[p'diop]"
     }
   }]
 }

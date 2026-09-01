@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PrismCoverTestPrimaryPositionExample</b></p><a name=\"PrismCoverTestPrimaryPositionExample\"> </a><a name=\"hcPrismCoverTestPrimaryPositionExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-gaze-position-measurement.html\">Gaze Position Measurement</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Primary position</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Fixating eye</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 7771000}\">Left</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Horizontal deviation</span></p><p><b>value</b>: -30 prism diopter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeprism diopter = 'prism diopter')</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PrismCoverTestPrimaryPositionExample</b></p><a name=\"PrismCoverTestPrimaryPositionExample\"> </a><a name=\"hcPrismCoverTestPrimaryPositionExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-gaze-position-measurement.html\">Gaze Position Measurement</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Primary position</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Fixating eye</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 7771000}\">Left</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Horizontal deviation</span></p><p><b>value</b>: -30 prism diopter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[p'diop] = '[p'diop]')</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -48,8 +48,9 @@
     },
     "valueQuantity" : {
       "value" : -30,
+      "unit" : "prism diopter",
       "system" : "http://unitsofmeasure.org",
-      "code" : "prism diopter"
+      "code" : "[p'diop]"
     }
   }]
 }

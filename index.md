@@ -1,4 +1,4 @@
-# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:FHIR4Eyes |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:FHIR4Eyes |
 
 # FHIR4Eyes
 
@@ -68,11 +68,11 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "resourceType" : "ImplementationGuide",
   "id" : "fhir4eyes.core",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -1139,6 +1139,22 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-FHIR4EyesCapabilityStatement.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/FHIR4EyesCapabilityStatement"
+      },
+      "name" : "FHIR4Eyes Server Capability Statement",
+      "description" : "Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic clinical data exchange",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -1870,6 +1886,22 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-patient.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-patient"
+      },
+      "name" : "Ophthalmic Patient",
+      "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith identifier slices for the Chilean national identifier (RUT) and passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-ophthalmic-procedure.html"
       }],
       "reference" : {
@@ -2001,7 +2033,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "Patient/PacienteEjemplo"
       },
       "name" : "PacienteEjemplo",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"
     },
     {
       "extension" : [{
@@ -2016,7 +2048,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "Patient/PatientExample"
       },
       "name" : "PatientExample",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"
     },
     {
       "extension" : [{
@@ -2094,6 +2126,118 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "RightEyeStructureExample",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-condition-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-condition-eye"
+      },
+      "name" : "sp-condition-eye",
+      "description" : "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-diagnosticreport-imaging-study.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-diagnosticreport-imaging-study"
+      },
+      "name" : "sp-diagnosticreport-imaging-study",
+      "description" : "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-encounter-appointment.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-encounter-appointment"
+      },
+      "name" : "sp-encounter-appointment",
+      "description" : "Search ophthalmic encounters by the appointment that led to them.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-imagingstudy-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-imagingstudy-eye"
+      },
+      "name" : "sp-imagingstudy-eye",
+      "description" : "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-imagingstudy-modality.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-imagingstudy-modality"
+      },
+      "name" : "sp-imagingstudy-modality",
+      "description" : "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-observation-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-observation-eye"
+      },
+      "name" : "sp-observation-eye",
+      "description" : "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-procedure-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-procedure-eye"
+      },
+      "name" : "sp-procedure-eye",
+      "description" : "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

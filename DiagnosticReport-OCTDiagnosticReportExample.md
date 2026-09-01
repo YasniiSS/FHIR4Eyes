@@ -1,4 +1,4 @@
-# OCTDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# OCTDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,8 +12,8 @@ Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnosti
 
 | | |
 | :--- | :--- |
-| Subject | Patient Example Female, DoB: 1990-01-01 |
-| Relevant Time | 2018-02-06 09:15:00+0000 |
+| Subject | Patient Example Female, DoB: 1990-01-01 ( PA1234567) |
+| Relevant Time | 2026-08-18 09:15:00+0000 |
 | Performer | [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md) |
 
 **Report Details**
@@ -72,7 +72,7 @@ Right eye ONH borderline, left eye ONH outside normal limits with increased cup-
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "effectiveDateTime" : "2018-02-06T09:15:00Z",
+  "effectiveDateTime" : "2026-08-18T09:15:00Z",
   "performer" : [{
     "reference" : "Practitioner/OphthalmologistExample"
   }],

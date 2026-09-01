@@ -1,4 +1,4 @@
-# OCTRNFLRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# OCTRNFLRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md)
 
 **code**: OCT optic disc / RNFL analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **interpretation**: Borderline
 
@@ -26,6 +26,8 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 
 **bodySite**: 
+
+> **component****code**: Signal strength**value**: 8 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Cup area**value**: 0.32 mm2 (Details: UCUM codemm2 = 'mm2')
 
@@ -68,8 +70,6 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 > **component****code**: Mean TSNIT**value**: 92 um (Details: UCUM codeum = 'um')
 
 > **component****code**: TSNIT std deviation**value**: 12 um (Details: UCUM codeum = 'um')
-
-> **component****code**: Signal strength**value**: 8 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Retinal thickness definition**value**: ILM to RNFL boundary
 
@@ -115,6 +115,16 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
     }]
   },
   "component" : [{
+    "code" : {
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
     "code" : {
       "text" : "Cup area"
     },
@@ -318,16 +328,6 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
       "value" : 12,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 8,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
     }
   },
   {

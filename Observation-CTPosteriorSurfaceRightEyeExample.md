@@ -1,4 +1,4 @@
-# CTPosteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# CTPosteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,19 +14,19 @@ Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posteri
 
 **code**: Corneal tomography, posterior surface analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **bodySite**: 
 
 **device**: Pentacam AXL
 
-> **component****code**: Posterior K1 (flat)**value**: 6.32 D (Details: UCUM codeD = 'D')
+> **component****code**: Posterior K1 (flat)**value**: 6.32 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Posterior K2 (steep)**value**: 6.58 D (Details: UCUM codeD = 'D')
+> **component****code**: Posterior K2 (steep)**value**: 6.58 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Posterior Km**value**: 6.45 D (Details: UCUM codeD = 'D')
+> **component****code**: Posterior Km**value**: 6.45 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Back astigmatism**value**: 0.26 D (Details: UCUM codeD = 'D')
+> **component****code**: Back astigmatism**value**: 0.26 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Posterior Q-value**value**: -0.32 1 (Details: UCUM code1 = '1')
 
@@ -77,7 +77,7 @@ Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posteri
     "valueQuantity" : {
       "value" : 6.32,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -87,7 +87,7 @@ Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posteri
     "valueQuantity" : {
       "value" : 6.58,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -97,7 +97,7 @@ Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posteri
     "valueQuantity" : {
       "value" : 6.45,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -107,7 +107,7 @@ Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posteri
     "valueQuantity" : {
       "value" : 0.26,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {

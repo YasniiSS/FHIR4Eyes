@@ -1,6 +1,6 @@
 {
   "package": "fhir4eyes.core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "001",
   "extensions": [],
@@ -95,6 +95,12 @@
       {
         "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration",
         "title": "Ophthalmic Medication Administration"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
+        "title": "Ophthalmic Patient"
       }
     ],
     "Procedure": [

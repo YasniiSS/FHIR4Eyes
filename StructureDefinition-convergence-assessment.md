@@ -1,4 +1,4 @@
-# Convergence Assessment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Convergence Assessment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:ConvergenceAssessment |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:ConvergenceAssessment |
 
  
 Represents a qualitative assessment of convergence ability (good, fair, insufficient, poor). 
@@ -17,6 +17,7 @@ Represents a qualitative assessment of convergence ability (good, fair, insuffic
 **Usages:**
 
 * Examples for this Profile: [Observation/ConvergenceAssessmentExample](Observation-ConvergenceAssessmentExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-convergence-assessment.json)
 
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-convergence-assessme
   "resourceType" : "StructureDefinition",
   "id" : "convergence-assessment",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "ConvergenceAssessment",
   "title" : "Convergence Assessment",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

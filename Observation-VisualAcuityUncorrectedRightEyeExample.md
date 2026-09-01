@@ -1,4 +1,4 @@
-# VisualAcuityUncorrectedRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# VisualAcuityUncorrectedRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,9 +14,9 @@ Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity
 
 **code**: Distance visual acuity
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
-**value**: 20 ft (Details: UCUM codeft = 'ft')/40 ft (Details: UCUM codeft = 'ft')
+**value**: 20 [ft_i] (Details: UCUM code[ft_i] = '[ft_i]')/40 [ft_i] (Details: UCUM code[ft_i] = '[ft_i]')
 
 **bodySite**: 
 
@@ -57,12 +57,12 @@ Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity
     "numerator" : {
       "value" : 20,
       "system" : "http://unitsofmeasure.org",
-      "code" : "ft"
+      "code" : "[ft_i]"
     },
     "denominator" : {
       "value" : 40,
       "system" : "http://unitsofmeasure.org",
-      "code" : "ft"
+      "code" : "[ft_i]"
     }
   },
   "bodySite" : {

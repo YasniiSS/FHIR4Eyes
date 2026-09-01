@@ -1,4 +1,4 @@
-# Artifacts Summary - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Artifacts Summary - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**
@@ -6,6 +6,28 @@
 ## Artifacts Summary
 
 This page provides a list of the FHIR artifacts defined as part of this implementation guide.
+
+### Behavior: Capability Statements 
+
+The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+
+| | |
+| :--- | :--- |
+| [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md) | Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic clinical data exchange |
+
+### Behavior: Search Parameters 
+
+These define the properties by which a RESTful server can be searched. They can also be used for sorting and including related resources.
+
+| | |
+| :--- | :--- |
+| [sp-condition-eye](SearchParameter-sp-condition-eye.md) | Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. |
+| [sp-diagnosticreport-imaging-study](SearchParameter-sp-diagnosticreport-imaging-study.md) | Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret. |
+| [sp-encounter-appointment](SearchParameter-sp-encounter-appointment.md) | Search ophthalmic encounters by the appointment that led to them. |
+| [sp-imagingstudy-eye](SearchParameter-sp-imagingstudy-eye.md) | Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance. |
+| [sp-imagingstudy-modality](SearchParameter-sp-imagingstudy-modality.md) | Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR). |
+| [sp-observation-eye](SearchParameter-sp-observation-eye.md) | Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. |
+| [sp-procedure-eye](SearchParameter-sp-procedure-eye.md) | Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. |
 
 ### Structures: Resource Profiles 
 
@@ -43,6 +65,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md) | Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. |
 | [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md) | Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL) analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics, alongside acquisition metadata and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile. |
 | [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biometry.md) | Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted. Holds the shared measurements common to the whole exam (axial length, keratometry, and so on) as components; each formula calculated from those shared measurements, with its own suggested IOL and expected outcome, is a separate IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically run through several formulas. |
+| [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Represents a patient receiving eye care, extending the base Patient resource with identifier slices for the Chilean national identifier (RUT) and passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. |
 | [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md) | Any ophthalmic procedure, from minor ambulatory surgeries to individual sessions within a longer treatment scheme, such as an intravitreal injection or a vision therapy session. When a procedure involves administering a medication (e.g. an intravitreal injection), the medication administration is recorded as a separate OphthalmicMedicationAdministration, linked back to this procedure via MedicationAdministration.partOf, not the other way around. |
 | [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md) | A request for an ophthalmic examination and, where relevant, its interpretation or treatment. Covers three scenarios: an order fulfilled locally, an order referred from primary care to a hospital or reference center, and an order originating directly at a hospital. See the Use Cases and Profiles pages of this guide for the full clinical and design rationale. |
 | [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specular-microscopy.md) | Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). |

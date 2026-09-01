@@ -1,4 +1,4 @@
-# FHIR4Eyes Care Plan Category Code System - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# FHIR4Eyes Care Plan Category Code System - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:FHIR4EyesCarePlanCategoryCS |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:FHIR4EyesCarePlanCategoryCS |
 
  
 Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an external terminology. See the Profiles page of this guide for the design rationale. 
@@ -27,11 +27,11 @@ Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an extern
   "resourceType" : "CodeSystem",
   "id" : "fhir4eyes-care-plan-category-cs",
   "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "FHIR4EyesCarePlanCategoryCS",
   "title" : "FHIR4Eyes Care Plan Category Code System",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

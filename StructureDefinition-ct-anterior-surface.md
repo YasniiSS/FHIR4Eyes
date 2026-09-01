@@ -1,4 +1,4 @@
-# Corneal Tomography - Anterior Surface - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Corneal Tomography - Anterior Surface - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,17 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:CTAnteriorSurface |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:CTAnteriorSurface |
 
  
 Represents the anterior corneal surface analysis component of a corneal tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Anterior Surface section). Component codes are left as open text for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC codes were not identified for these device-specific indices (see Terminology); a handful of components reference specific DICOM Sup 168 tags directly in their terminology, noted in the catalog. 
 
 **Usages:**
 
+* Refer to this Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-report.md)
 * Examples for this Profile: [Observation/CTAnteriorSurfaceRightEyeExample](Observation-CTAnteriorSurfaceRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ct-anterior-surface.json)
 
@@ -37,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
   "resourceType" : "StructureDefinition",
   "id" : "ct-anterior-surface",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTAnteriorSurface",
   "title" : "Corneal Tomography - Anterior Surface",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -138,6 +140,20 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
       "mustSupport" : true
     },
     {
@@ -1098,7 +1114,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:vertexLoc.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0202)"
+      "short" : "Corneal vertex location - corneal vertex position coordinates. DICOM (0046,0202)"
     },
     {
       "id" : "Observation.component:vertexLoc.value[x]",
@@ -1118,7 +1134,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:pupilCentroidX.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0203)"
+      "short" : "Pupil centroid X - X-coordinate of pupil center. DICOM (0046,0203)"
     },
     {
       "id" : "Observation.component:pupilCentroidX.value[x]",
@@ -1138,7 +1154,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:pupilCentroidY.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0204)"
+      "short" : "Pupil centroid Y - Y-coordinate of pupil center. DICOM (0046,0204)"
     },
     {
       "id" : "Observation.component:pupilCentroidY.value[x]",
@@ -1158,7 +1174,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:pupilRadius.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0205)"
+      "short" : "Equivalent pupil radius - radius of equivalent circular pupil. DICOM (0046,0205)"
     },
     {
       "id" : "Observation.component:pupilRadius.value[x]",
@@ -1178,7 +1194,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:mapType.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0207)"
+      "short" : "Map type - type of topographic map encoded (axial, tangential, elevation, refractive, pachymetry). DICOM (0046,0207)"
     },
     {
       "id" : "Observation.component:mapType.value[x]",
@@ -1198,7 +1214,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:analyzedArea.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0227)"
+      "short" : "Analyzed area - total area of cornea analyzed. DICOM (0046,0227)"
     },
     {
       "id" : "Observation.component:analyzedArea.value[x]",
@@ -1218,7 +1234,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:eccentricity.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0234)"
+      "short" : "Corneal eccentricity index - corneal eccentricity (shape factor). DICOM (0046,0234)"
     },
     {
       "id" : "Observation.component:eccentricity.value[x]",
@@ -1238,7 +1254,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:kpi.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0236)"
+      "short" : "Keratoconus prediction index (KPI) - corneal KC prediction index, different from KISA%. DICOM (0046,0236)"
     },
     {
       "id" : "Observation.component:kpi.value[x]",
@@ -1258,7 +1274,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:potentialVA.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0046,0238)"
+      "short" : "Decimal potential visual acuity - estimated potential VA from corneal surface. DICOM (0046,0238)"
     },
     {
       "id" : "Observation.component:potentialVA.value[x]",

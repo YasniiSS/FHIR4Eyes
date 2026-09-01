@@ -1,2 +1,2 @@
 URL,Version,Status,OIDs,Name,Title,Description,Used
-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs,0.2.0,draft,,FHIR4EyesCarePlanCategoryCS,FHIR4Eyes Care Plan Category Code System,"Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an external terminology. See the Profiles page of this guide for the design rationale.",
+https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs,0.3.0,draft,,FHIR4EyesCarePlanCategoryCS,FHIR4Eyes Care Plan Category Code System,"Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an external terminology. See the Profiles page of this guide for the design rationale.",

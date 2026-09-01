@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation IOLFormulaSRKTExample</b></p><a name=\"IOLFormulaSRKTExample\"> </a><a name=\"hcIOLFormulaSRKTExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-iol-formula-result.html\">IOL Formula Result</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">IOL formula result: SRK/T</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">IOL formula name</span></p><p><b>value</b>: <span title=\"Codes:\">SRK/T</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant type</span></p><p><b>value</b>: <span title=\"Codes:\">A-constant</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant value</span></p><p><b>value</b>: 118.7 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Suggested IOL model</span></p><p><b>value</b>: Alcon AcrySof IQ SN60WF</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Recommended IOL power</span></p><p><b>value</b>: 21.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Expected refraction</span></p><p><b>value</b>: -0.31 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation IOLFormulaSRKTExample</b></p><a name=\"IOLFormulaSRKTExample\"> </a><a name=\"hcIOLFormulaSRKTExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-iol-formula-result.html\">IOL Formula Result</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">IOL formula result: SRK/T</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">IOL formula name</span></p><p><b>value</b>: <span title=\"Codes:\">SRK/T</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant type</span></p><p><b>value</b>: <span title=\"Codes:\">A-constant</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens constant value</span></p><p><b>value</b>: 118.7 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Suggested IOL model</span></p><p><b>value</b>: Alcon AcrySof IQ SN60WF</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Recommended IOL power</span></p><p><b>value</b>: 21.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Expected refraction</span></p><p><b>value</b>: -0.31 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -76,7 +76,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "21.5"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 5 ;
@@ -86,7 +86,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "-0.31"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ] .
 

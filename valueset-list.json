@@ -1,7 +1,7 @@
 {
   "codeSystems" : [{
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
-    "version" : "0.2.0",
+    "version" : "0.3.0",
     "status" : "draft",
     "name" : "LowVisionAssessmentVS",
     "title" : "Low Vision Assessment Value Set",
@@ -10,7 +10,7 @@
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
-    "version" : "0.2.0",
+    "version" : "0.3.0",
     "status" : "draft",
     "name" : "OphthalmicCarePlanCategoryVS",
     "title" : "Ophthalmic Care Plan Category Value Set",

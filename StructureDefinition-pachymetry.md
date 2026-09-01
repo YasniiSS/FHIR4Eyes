@@ -1,4 +1,4 @@
-# Pachymetry - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Pachymetry - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:Pachymetry |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:Pachymetry |
 
  
 Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when correcting an IOP reading for corneal thickness. 
@@ -18,6 +18,7 @@ Represents a corneal pachymetry measurement (corneal thickness), typically in mi
 
 * Refer to this Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocular-pressure.md)
 * Examples for this Profile: [Observation/PachymetryLeftEyeExample](Observation-PachymetryLeftEyeExample.md) and [Observation/PachymetryRightEyeExample](Observation-PachymetryRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-pachymetry.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
   "resourceType" : "StructureDefinition",
   "id" : "pachymetry",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "Pachymetry",
   "title" : "Pachymetry",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

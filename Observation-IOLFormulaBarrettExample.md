@@ -1,4 +1,4 @@
-# IOLFormulaBarrettExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# IOLFormulaBarrettExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
 
 **code**: IOL formula result: Barrett Universal II
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 > **component****code**: IOL formula name**value**: Barrett Universal II
 
@@ -24,9 +24,9 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
 
 > **component****code**: Suggested IOL model**value**: Alcon AcrySof IQ SN60WF
 
-> **component****code**: Recommended IOL power**value**: 21 D (Details: UCUM codeD = 'D')
+> **component****code**: Recommended IOL power**value**: 21 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Expected refraction**value**: -0.18 D (Details: UCUM codeD = 'D')
+> **component****code**: Expected refraction**value**: -0.18 [diop] (Details: UCUM code[diop] = '[diop]')
 
 
 
@@ -92,7 +92,7 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
     "valueQuantity" : {
       "value" : 21,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -102,7 +102,7 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
     "valueQuantity" : {
       "value" : -0.18,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   }]
 }

@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLLeftEyeExample</b></p><a name=\"OCTRNFLLeftEyeExample\"> </a><a name=\"hcOCTRNFLLeftEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT optic disc / RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>interpretation</b>: <span title=\"Codes:\">Outside Normal Limits</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup area</span></p><p><b>value</b>: 0.58 mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm2 = 'mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup volume</span></p><p><b>value</b>: 0.16 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim volume</span></p><p><b>value</b>: 0.21 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D horizontal</span></p><p><b>value</b>: 0.61 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D vertical</span></p><p><b>value</b>: 0.64 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter horizontal</span></p><p><b>value</b>: 1.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter vertical</span></p><p><b>value</b>: 1.9 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter mean</span></p><p><b>value</b>: 1.85 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter horizontal</span></p><p><b>value</b>: 1.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter vertical</span></p><p><b>value</b>: 1.16 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter mean</span></p><p><b>value</b>: 1.13 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean cup depth</span></p><p><b>value</b>: 0.29 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Max cup depth</span></p><p><b>value</b>: 0.52 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc vert/horiz ratio</span></p><p><b>value</b>: 1.06 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup vert/horiz ratio</span></p><p><b>value</b>: 1.05 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim/Disc ratio</span></p><p><b>value</b>: 0.39 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim absence</span></p><p><b>value</b>: 15 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">DDLS</span></p><p><b>value</b>: 5</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL Symmetry</span></p><p><b>value</b>: 88 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean TSNIT</span></p><p><b>value</b>: 76 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">TSNIT std deviation</span></p><p><b>value</b>: 18 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 8 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RNFL boundary</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLLeftEyeExample</b></p><a name=\"OCTRNFLLeftEyeExample\"> </a><a name=\"hcOCTRNFLLeftEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">OCT optic disc / RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>interpretation</b>: <span title=\"Codes:\">Outside Normal Limits</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 8 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup area</span></p><p><b>value</b>: 0.58 mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm2 = 'mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup volume</span></p><p><b>value</b>: 0.16 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim volume</span></p><p><b>value</b>: 0.21 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D horizontal</span></p><p><b>value</b>: 0.61 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D vertical</span></p><p><b>value</b>: 0.64 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter horizontal</span></p><p><b>value</b>: 1.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter vertical</span></p><p><b>value</b>: 1.9 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter mean</span></p><p><b>value</b>: 1.85 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter horizontal</span></p><p><b>value</b>: 1.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter vertical</span></p><p><b>value</b>: 1.16 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter mean</span></p><p><b>value</b>: 1.13 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean cup depth</span></p><p><b>value</b>: 0.29 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Max cup depth</span></p><p><b>value</b>: 0.52 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc vert/horiz ratio</span></p><p><b>value</b>: 1.06 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup vert/horiz ratio</span></p><p><b>value</b>: 1.05 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim/Disc ratio</span></p><p><b>value</b>: 0.39 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim absence</span></p><p><b>value</b>: 15 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">DDLS</span></p><p><b>value</b>: 5</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL Symmetry</span></p><p><b>value</b>: 88 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean TSNIT</span></p><p><b>value</b>: 76 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">TSNIT std deviation</span></p><p><b>value</b>: 18 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RNFL boundary</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -57,6 +57,16 @@
   fhir:Observation.component [
      fhir:index 0 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.text [ fhir:value "Signal strength" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "8"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup area" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -65,7 +75,7 @@
        fhir:Quantity.code [ fhir:value "mm2" ]
      ]
   ], [
-     fhir:index 1 ;
+     fhir:index 2 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup volume" ]
      ] ;
@@ -75,7 +85,7 @@
        fhir:Quantity.code [ fhir:value "mm3" ]
      ]
   ], [
-     fhir:index 2 ;
+     fhir:index 3 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Rim volume" ]
      ] ;
@@ -85,7 +95,7 @@
        fhir:Quantity.code [ fhir:value "mm3" ]
      ]
   ], [
-     fhir:index 3 ;
+     fhir:index 4 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "C/D horizontal" ]
      ] ;
@@ -95,7 +105,7 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 4 ;
+     fhir:index 5 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "C/D vertical" ]
      ] ;
@@ -105,7 +115,7 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 5 ;
+     fhir:index 6 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Disc diameter horizontal" ]
      ] ;
@@ -115,7 +125,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 6 ;
+     fhir:index 7 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Disc diameter vertical" ]
      ] ;
@@ -125,7 +135,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 7 ;
+     fhir:index 8 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Disc diameter mean" ]
      ] ;
@@ -135,7 +145,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 8 ;
+     fhir:index 9 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup diameter horizontal" ]
      ] ;
@@ -145,7 +155,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 9 ;
+     fhir:index 10 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup diameter vertical" ]
      ] ;
@@ -155,7 +165,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 10 ;
+     fhir:index 11 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup diameter mean" ]
      ] ;
@@ -165,7 +175,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 11 ;
+     fhir:index 12 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Mean cup depth" ]
      ] ;
@@ -175,7 +185,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 12 ;
+     fhir:index 13 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Max cup depth" ]
      ] ;
@@ -185,7 +195,7 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 13 ;
+     fhir:index 14 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Disc vert/horiz ratio" ]
      ] ;
@@ -195,7 +205,7 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 14 ;
+     fhir:index 15 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Cup vert/horiz ratio" ]
      ] ;
@@ -205,7 +215,7 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 15 ;
+     fhir:index 16 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Rim/Disc ratio" ]
      ] ;
@@ -215,7 +225,7 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 16 ;
+     fhir:index 17 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Rim absence" ]
      ] ;
@@ -225,13 +235,13 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 17 ;
+     fhir:index 18 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "DDLS" ]
      ] ;
      fhir:Observation.component.valueInteger [ fhir:value "5"^^xsd:integer ]
   ], [
-     fhir:index 18 ;
+     fhir:index 19 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "RNFL Symmetry" ]
      ] ;
@@ -241,7 +251,7 @@
        fhir:Quantity.code [ fhir:value "%" ]
      ]
   ], [
-     fhir:index 19 ;
+     fhir:index 20 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "Mean TSNIT" ]
      ] ;
@@ -251,7 +261,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 20 ;
+     fhir:index 21 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.text [ fhir:value "TSNIT std deviation" ]
      ] ;
@@ -259,16 +269,6 @@
        fhir:Quantity.value [ fhir:value "18"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "um" ]
-     ]
-  ], [
-     fhir:index 21 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Signal strength" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "8"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
      fhir:index 22 ;

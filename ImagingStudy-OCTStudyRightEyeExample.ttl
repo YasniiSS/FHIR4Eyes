@@ -1,6 +1,7 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -17,20 +18,20 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImagingStudy OCTStudyRightEyeExample</b></p><a name=\"OCTStudyRightEyeExample\"> </a><a name=\"hcOCTStudyRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-imaging-study.html\">Ophthalmic Imaging Study</a></p></div><p><b>status</b>: Available</p><p><b>modality</b>: unknown: OCT (Optical Coherence Tomography Scanner)</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>started</b>: 2018-02-06 09:00:00+0000</p><p><b>basedOn</b>: <a href=\"ServiceRequest-OCTServiceRequestExample.html\">ServiceRequest </a></p><p><b>numberOfSeries</b>: 2</p><p><b>numberOfInstances</b>: 2</p><blockquote><p><b>series</b></p><p><b>BodyStructure Reference</b>: <a href=\"BodyStructure-RightEyeStructureExample.html\">BodyStructure: location = Structure of eye proper; locationQualifier = Right</a></p><p><b>uid</b>: 1.2.840.10008.oct.rnfl.right.example</p><p><b>modality</b>: unknown: OCT (Optical Coherence Tomography Scanner)</p><p><b>bodySite</b>: [not stated]:  (Optic disc / RNFL)</p><p><b>laterality</b>: [not stated]:  (Right)</p><h3>Instances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uid</b></td><td><b>SopClass</b></td></tr><tr><td style=\"display: none\">*</td><td>1.2.840.10008.oct.rnfl.right.example.instance1</td><td>unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)</td></tr></table></blockquote><blockquote><p><b>series</b></p><p><b>BodyStructure Reference</b>: <a href=\"BodyStructure-RightEyeStructureExample.html\">BodyStructure: location = Structure of eye proper; locationQualifier = Right</a></p><p><b>uid</b>: 1.2.840.10008.oct.macula.right.example</p><p><b>modality</b>: unknown: OCT (Optical Coherence Tomography Scanner)</p><p><b>bodySite</b>: [not stated]:  (Macula)</p><p><b>laterality</b>: [not stated]:  (Right)</p><h3>Instances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uid</b></td><td><b>SopClass</b></td></tr><tr><td style=\"display: none\">*</td><td>1.2.840.10008.oct.macula.right.example.instance1</td><td>unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)</td></tr></table></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImagingStudy OCTStudyRightEyeExample</b></p><a name=\"OCTStudyRightEyeExample\"> </a><a name=\"hcOCTStudyRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-imaging-study.html\">Ophthalmic Imaging Study</a></p></div><p><b>status</b>: Available</p><p><b>modality</b>: unknown: OPT (Ophthalmic Tomography)</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>started</b>: 2026-08-18 09:00:00+0000</p><p><b>basedOn</b>: <a href=\"ServiceRequest-OCTServiceRequestExample.html\">ServiceRequest </a></p><p><b>numberOfSeries</b>: 2</p><p><b>numberOfInstances</b>: 2</p><blockquote><p><b>series</b></p><p><b>BodyStructure Reference</b>: <a href=\"BodyStructure-RightEyeStructureExample.html\">BodyStructure: location = Structure of eye proper; locationQualifier = Right</a></p><p><b>uid</b>: 1.2.840.10008.oct.rnfl.right.example</p><p><b>modality</b>: unknown: OPT (Ophthalmic Tomography)</p><p><b>bodySite</b>: <a href=\"http://snomed.info/id/81016008\">SNOMED CT: 81016008</a> (Optic disc)</p><p><b>laterality</b>: <a href=\"http://snomed.info/id/24028007\">SNOMED CT: 24028007</a> (Right)</p><h3>Instances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uid</b></td><td><b>SopClass</b></td></tr><tr><td style=\"display: none\">*</td><td>1.2.840.10008.oct.rnfl.right.example.instance1</td><td>unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)</td></tr></table></blockquote><blockquote><p><b>series</b></p><p><b>BodyStructure Reference</b>: <a href=\"BodyStructure-RightEyeStructureExample.html\">BodyStructure: location = Structure of eye proper; locationQualifier = Right</a></p><p><b>uid</b>: 1.2.840.10008.oct.macula.right.example</p><p><b>modality</b>: unknown: OPT (Ophthalmic Tomography)</p><p><b>bodySite</b>: <a href=\"http://snomed.info/id/39021009\">SNOMED CT: 39021009</a> (Retina)</p><p><b>laterality</b>: <a href=\"http://snomed.info/id/24028007\">SNOMED CT: 24028007</a> (Right)</p><h3>Instances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uid</b></td><td><b>SopClass</b></td></tr><tr><td style=\"display: none\">*</td><td>1.2.840.10008.oct.macula.right.example.instance1</td><td>unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)</td></tr></table></blockquote></div>"
   ] ;
   fhir:ImagingStudy.status [ fhir:value "available"] ;
   fhir:ImagingStudy.modality [
      fhir:index 0 ;
      fhir:Coding.system [ fhir:value "urn:oid:1.2.840.10008.2.16.4" ] ;
-     fhir:Coding.code [ fhir:value "OCT" ] ;
-     fhir:Coding.display [ fhir:value "Optical Coherence Tomography Scanner" ]
+     fhir:Coding.code [ fhir:value "OPT" ] ;
+     fhir:Coding.display [ fhir:value "Ophthalmic Tomography" ]
   ] ;
   fhir:ImagingStudy.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
   ] ;
-  fhir:ImagingStudy.started [ fhir:value "2018-02-06T09:00:00Z"^^xsd:dateTime] ;
+  fhir:ImagingStudy.started [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
   fhir:ImagingStudy.basedOn [
      fhir:index 0 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/ServiceRequest/OCTServiceRequestExample> ;
@@ -51,13 +52,19 @@
      fhir:ImagingStudy.series.uid [ fhir:value "1.2.840.10008.oct.rnfl.right.example" ] ;
      fhir:ImagingStudy.series.modality [
        fhir:Coding.system [ fhir:value "urn:oid:1.2.840.10008.2.16.4" ] ;
-       fhir:Coding.code [ fhir:value "OCT" ] ;
-       fhir:Coding.display [ fhir:value "Optical Coherence Tomography Scanner" ]
+       fhir:Coding.code [ fhir:value "OPT" ] ;
+       fhir:Coding.display [ fhir:value "Ophthalmic Tomography" ]
      ] ;
      fhir:ImagingStudy.series.bodySite [
-       fhir:Coding.display [ fhir:value "Optic disc / RNFL" ]
+       a sct:81016008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "81016008" ] ;
+       fhir:Coding.display [ fhir:value "Optic disc" ]
      ] ;
      fhir:ImagingStudy.series.laterality [
+       a sct:24028007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "24028007" ] ;
        fhir:Coding.display [ fhir:value "Right" ]
      ] ;
      fhir:ImagingStudy.series.instance [
@@ -81,13 +88,19 @@
      fhir:ImagingStudy.series.uid [ fhir:value "1.2.840.10008.oct.macula.right.example" ] ;
      fhir:ImagingStudy.series.modality [
        fhir:Coding.system [ fhir:value "urn:oid:1.2.840.10008.2.16.4" ] ;
-       fhir:Coding.code [ fhir:value "OCT" ] ;
-       fhir:Coding.display [ fhir:value "Optical Coherence Tomography Scanner" ]
+       fhir:Coding.code [ fhir:value "OPT" ] ;
+       fhir:Coding.display [ fhir:value "Ophthalmic Tomography" ]
      ] ;
      fhir:ImagingStudy.series.bodySite [
-       fhir:Coding.display [ fhir:value "Macula" ]
+       a sct:39021009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "39021009" ] ;
+       fhir:Coding.display [ fhir:value "Retina" ]
      ] ;
      fhir:ImagingStudy.series.laterality [
+       a sct:24028007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "24028007" ] ;
        fhir:Coding.display [ fhir:value "Right" ]
      ] ;
      fhir:ImagingStudy.series.instance [

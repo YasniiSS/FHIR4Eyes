@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Change History - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
+    <title>Change History - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.3.0 - ci-build
 
 
 
@@ -142,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.3.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Change History</h2>
   
 
@@ -162,6 +162,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h1 id="change-history">Change History</h1>
+
+<h2 id="030">0.3.0</h2>
+
+<p>Corrective release following a multi-agent audit of the guide (2026-09-01).</p>
+
+<p><strong>Fixed: UCUM unit codes.</strong> Corrected invalid or non-standard UCUM codes used across
+profiles and examples: dioptric power <code class="language-plaintext highlighter-rouge">D</code> → <code class="language-plaintext highlighter-rouge">[diop]</code>, prism dioptric power (cover test /
+prism cover test family) → <code class="language-plaintext highlighter-rouge">[p'diop]</code>, and distance in feet <code class="language-plaintext highlighter-rouge">ft</code> → <code class="language-plaintext highlighter-rouge">[ft_i]</code> (international
+foot).</p>
+
+<p><strong>Fixed: DICOM modality code.</strong> OCT-related profiles and examples now consistently use the
+correct DICOM modality code <code class="language-plaintext highlighter-rouge">OPT</code> (Ophthalmic Tomography) instead of the invalid <code class="language-plaintext highlighter-rouge">OCT</code>.</p>
+
+<p><strong>Fixed: duplicate <code class="language-plaintext highlighter-rouge">^short</code> captions.</strong> Removed duplicate <code class="language-plaintext highlighter-rouge">^short</code> caption assignments
+introduced across several profiles during the 0.2.0 expansion.</p>
+
+<p><strong>Fixed: example timeline inconsistencies.</strong> Corrected example instances where
+<code class="language-plaintext highlighter-rouge">effectiveDateTime</code>/<code class="language-plaintext highlighter-rouge">Period</code> values did not align with the surrounding clinical narrative.</p>
+
+<p><strong>Housekeeping.</strong> Renamed <code class="language-plaintext highlighter-rouge">gitignore</code> to <code class="language-plaintext highlighter-rouge">.gitignore</code>, and moved <code class="language-plaintext highlighter-rouge">patient-ejemplo.fsh</code> from
+<code class="language-plaintext highlighter-rouge">input/fsh/profiles/</code> to <code class="language-plaintext highlighter-rouge">input/fsh/examples/</code>, consistent with the ADR-003 file
+organization convention (profiles vs. examples).</p>
+
+<p><strong>Documentation.</strong> Refreshed <code class="language-plaintext highlighter-rouge">fhir4eyes-gap-analysis.md</code>, <code class="language-plaintext highlighter-rouge">usecases.md</code>, and
+<code class="language-plaintext highlighter-rouge">fhir4eyes-decisions.md</code>, which had fallen out of date relative to the profile set: they now
+correctly reflect that <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>, <code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code>,
+<code class="language-plaintext highlighter-rouge">OphthalmicCondition</code>, and <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> are implemented, and record new gaps
+identified by the audit (terminology binding for <code class="language-plaintext highlighter-rouge">component.code</code>, UCUM enforcement in
+profiles rather than only examples, SearchParameters/CapabilityStatement, a Core Patient
+profile with identifier systems, a Goal profile, MedicationRequest/MedicationStatement for
+chronic therapy, FHIRPath invariants, a Refraction profile, a VisionPrescription profile,
+OCT fluid status (SRF/IRF/PED), RNFL quadrant/clock-hour thickness, VF reliability indices
+and GHT, and a Device profile for acquisition equipment).</p>
 
 <h2 id="020">0.2.0</h2>
 
@@ -233,7 +266,7 @@ pattern, and the granular-components pattern).</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 18:52+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 17:43+0000">2026-09-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

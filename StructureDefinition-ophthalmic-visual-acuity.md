@@ -1,4 +1,4 @@
-# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicVisualAcuity |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicVisualAcuity |
 
  
 Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. 
@@ -18,6 +18,7 @@ Represents a visual acuity measurement, modeled as discrete, independently combi
 
 * Refer to this Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md)
 * Examples for this Profile: [Observation/VisualAcuityBinocularExample](Observation-VisualAcuityBinocularExample.md), [Observation/VisualAcuityCorrectedLeftEyeExample](Observation-VisualAcuityCorrectedLeftEyeExample.md), [Observation/VisualAcuityCountingFingersRightEyeExample](Observation-VisualAcuityCountingFingersRightEyeExample.md), [Observation/VisualAcuityPinholeRightEyeExample](Observation-VisualAcuityPinholeRightEyeExample.md) and [Observation/VisualAcuityUncorrectedRightEyeExample](Observation-VisualAcuityUncorrectedRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-visual-acuity.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-visual-acuity",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicVisualAcuity",
   "title" : "Ophthalmic Visual Acuity",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -105,7 +106,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "differential" : {
     "element" : [{
       "id" : "Observation",
-      "path" : "Observation"
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "inv-va-laterality",
+        "severity" : "warning",
+        "human" : "Visual Acuity should have a bodySite indicating which eye (may be absent for binocular measurements)",
+        "expression" : "bodySite.exists()",
+        "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      }]
     },
     {
       "id" : "Observation.status",
@@ -188,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
         "code" : "CodeableConcept"
       }],
       "binding" : {
-        "strength" : "extensible",
+        "strength" : "required",
         "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs"
       }
     },

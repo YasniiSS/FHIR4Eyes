@@ -1,4 +1,4 @@
-# Ophthalmic Diagnostic Report - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Diagnostic Report - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicDiagnosticReport |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicDiagnosticReport |
 
  
 Represents the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset. Unlike a radiology report, this is not limited to describing imaging findings: the same clinical act typically also reaches a diagnosis and defines a treatment plan, recorded as separate Condition and CarePlan resources referencing this report. 
@@ -19,6 +19,7 @@ Represents the findings, diagnosis, and treatment plan reached after reviewing a
 * Derived from this Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-report.md)
 * Refer to this Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 * Examples for this Profile: [DiagnosticReport/OCTDiagnosticReportExample](DiagnosticReport-OCTDiagnosticReportExample.md) and [DiagnosticReport/OCTMaculaDiagnosticReportExample](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-diagnostic-report.json)
 
@@ -39,11 +40,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-diagnostic-report",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicDiagnosticReport",
   "title" : "Ophthalmic Diagnostic Report",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -160,7 +161,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
       "mustSupport" : true,
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://terminology.hl7.org/CodeSystem/v2-0074"
+        "valueSet" : "http://terminology.hl7.org/ValueSet/v2-0074"
       }
     },
     {

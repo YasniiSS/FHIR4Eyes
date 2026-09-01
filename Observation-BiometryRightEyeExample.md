@@ -1,4 +1,4 @@
-# BiometryRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# BiometryRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biom
 
 **code**: Ocular biometry for IOL power calculation
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -46,15 +46,15 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
 
 > **component****code**: Lens status**value**: Phakic
 
-> **component****code**: K1 (flat keratometry)**value**: 43.2 D (Details: UCUM codeD = 'D')
+> **component****code**: K1 (flat keratometry)**value**: 43.2 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: K1 radius**value**: 7.81 mm (Details: UCUM codemm = 'mm')
 
-> **component****code**: K2 (steep keratometry)**value**: 44.6 D (Details: UCUM codeD = 'D')
+> **component****code**: K2 (steep keratometry)**value**: 44.6 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: K2 radius**value**: 7.56 mm (Details: UCUM codemm = 'mm')
 
-> **component****code**: Corneal cylinder**value**: 1.4 D (Details: UCUM codeD = 'D')
+> **component****code**: Corneal cylinder**value**: 1.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Keratometric index (n)**value**: 1.3375 1 (Details: UCUM code1 = '1')
 
@@ -66,7 +66,7 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
 
 > **component****code**: Refractive surgery history**value**: None
 
-> **component****code**: Target refraction**value**: -0.25 D (Details: UCUM codeD = 'D')
+> **component****code**: Target refraction**value**: -0.25 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Vertex distance**value**: 12 mm (Details: UCUM codemm = 'mm')
 
@@ -188,7 +188,7 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
     "valueQuantity" : {
       "value" : 43.2,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -208,7 +208,7 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
     "valueQuantity" : {
       "value" : 44.6,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -228,7 +228,7 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
     "valueQuantity" : {
       "value" : 1.4,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -284,7 +284,7 @@ Example based on typical IOLMaster 700 biometry report, comparing two formulas
     "valueQuantity" : {
       "value" : -0.25,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {

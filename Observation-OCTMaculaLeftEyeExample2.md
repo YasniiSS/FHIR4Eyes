@@ -1,4 +1,4 @@
-# OCTMaculaLeftEyeExample2 - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# OCTMaculaLeftEyeExample2 - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md)
 
 **code**: OCT macula analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -24,6 +24,8 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 
 **bodySite**: 
+
+> **component****code**: Signal strength**value**: 9 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Central macular thickness (CMT)**value**: 271 um (Details: UCUM codeum = 'um')
 
@@ -56,8 +58,6 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 > **component****code**: Retinal thickness definition**value**: ILM to RPE
 
 > **component****code**: Pupil dilated**value**: No
-
-> **component****code**: Signal strength**value**: 9 1 (Details: UCUM code1 = '1')
 
 
 
@@ -96,6 +96,16 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
     }]
   },
   "component" : [{
+    "code" : {
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
     "code" : {
       "text" : "Central macular thickness (CMT)"
     },
@@ -245,16 +255,6 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
     },
     "valueCodeableConcept" : {
       "text" : "No"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 9,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
     }
   }]
 }

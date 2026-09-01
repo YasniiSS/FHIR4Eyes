@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="FHIR4EyesCapabilityStatement"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement FHIR4EyesCapabilityStatement</b></p><a name="FHIR4EyesCapabilityStatement"> </a><a name="hcFHIR4EyesCapabilityStatement"> </a><h2 id="title">FHIR4Eyes Server Capability Statement</h2><ul><li>Implementation Guide Version: 0.3.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>json</code>, <code>xml</code></li><li>Published on: 2026-09-01 </li><li>Published by: FHIR4Eyes Project </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div><p>A conformant FHIR4Eyes server SHALL support read, search-type, create and update interactions for the resource types and profiles listed below, and SHALL support the listed search parameters at a minimum.</p>
+</div></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Patient1-1">Patient</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-patient.html">Ophthalmic Patient</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>identifier, name, birthdate</td><td/><td/><td/></tr><tr><td><a href="#Encounter1-2">Encounter</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-encounter.html">Ophthalmic Encounter</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, date, status</td><td/><td/><td/></tr><tr><td><a href="#Observation1-3">Observation</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-visual-acuity.html">Ophthalmic Visual Acuity</a><br/>  <a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a><br/>  <a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a><br/>  <a href="StructureDefinition-pachymetry.html">Pachymetry</a><br/>  <a href="StructureDefinition-tension-curve.html">Tension Curve</a><br/>  <a href="StructureDefinition-ophthalmic-oct-macula.html">Ophthalmic OCT Macula</a><br/>  <a href="StructureDefinition-ophthalmic-oct-rnfl.html">Ophthalmic OCT RNFL</a><br/>  <a href="StructureDefinition-ophthalmic-humphrey-visual-field.html">Ophthalmic Humphrey Visual Field</a><br/>  <a href="StructureDefinition-ophthalmic-specular-microscopy.html">Ophthalmic Specular Microscopy</a><br/>  <a href="StructureDefinition-ophthalmic-ocular-biometry.html">Ophthalmic Ocular Biometry</a><br/>  <a href="StructureDefinition-iol-formula-result.html">IOL Formula Result</a><br/>  <a href="StructureDefinition-ct-anterior-surface.html">Corneal Tomography - Anterior Surface</a><br/>  <a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a><br/>  <a href="StructureDefinition-ct-pachymetry.html">Corneal Tomography - Pachymetry</a><br/>  <a href="StructureDefinition-ct-anterior-chamber.html">Corneal Tomography - Anterior Chamber</a><br/>  <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a><br/>  <a href="StructureDefinition-ct-densitometry.html">Corneal Tomography - Densitometry</a><br/>  <a href="StructureDefinition-strabismus-exam.html">Strabismus Exam</a><br/>  <a href="StructureDefinition-cover-test.html">Cover Test</a><br/>  <a href="StructureDefinition-ocular-motility.html">Ocular Motility</a><br/>  <a href="StructureDefinition-near-point-of-convergence.html">Near Point of Convergence</a><br/>  <a href="StructureDefinition-convergence-assessment.html">Convergence Assessment</a><br/>  <a href="StructureDefinition-prism-cover-test.html">Prism Cover Test</a><br/>  <a href="StructureDefinition-krimsky-test.html">Krimsky Test</a><br/>  <a href="StructureDefinition-hirschberg-test.html">Hirschberg Test</a><br/>  <a href="StructureDefinition-red-filter-light-test.html">Red Filter Light Test</a><br/>  <a href="StructureDefinition-worth-4-dot-test.html">Worth 4 Dot Test</a><br/>  <a href="StructureDefinition-stereopsis-test.html">Stereopsis Test</a><br/>  <a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, date, code, category, encounter, status</td><td/><td/><td/></tr><tr><td><a href="#Condition1-4">Condition</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-condition.html">Ophthalmic Condition</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, code, encounter, clinical-status</td><td/><td/><td/></tr><tr><td><a href="#Procedure1-5">Procedure</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-procedure.html">Ophthalmic Procedure</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, date, code, status</td><td/><td/><td/></tr><tr><td><a href="#ServiceRequest1-6">ServiceRequest</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-service-request.html">Ophthalmic Service Request</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, code, encounter, status</td><td/><td/><td/></tr><tr><td><a href="#DiagnosticReport1-7">DiagnosticReport</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a><br/>  <a href="StructureDefinition-corneal-tomography-report.html">Corneal Tomography Report</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, date, code, category, status</td><td/><td/><td/></tr><tr><td><a href="#ImagingStudy1-8">ImagingStudy</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-imaging-study.html">Ophthalmic Imaging Study</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, started, status</td><td/><td/><td/></tr><tr><td><a href="#MedicationAdministration1-9">MedicationAdministration</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-medication-administration.html">Ophthalmic Medication Administration</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, code, encounter, status</td><td/><td/><td/></tr><tr><td><a href="#Medication1-10">Medication</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-medication.html">Ophthalmic Medication</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>code, status</td><td/><td/><td/></tr><tr><td><a href="#CarePlan1-11">CarePlan</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-care-plan.html">Ophthalmic Care Plan</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, category, date, status</td><td/><td/><td/></tr><tr><td><a href="#Device1-12">Device</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ophthalmic-device.html">Ophthalmic Device</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, type, status</td><td/><td/><td/></tr><tr><td><a href="#BodyStructure1-13">BodyStructure</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ocular-body-structure.html">Ocular Body Structure</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>patient, morphology</td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Patient1-1" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Patient</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-patient.html">Ophthalmic Patient</a></p></div></div><p/><div class="row"><div class="col-12"><span class="lead">Documentation</span><blockquote><div><p>Patient demographics with Chilean RUT and passport identifier slices.</p>
+</div></blockquote></div></div><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>birthdate</td><td><code>date</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Encounter1-2" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Encounter</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-encounter.html">Ophthalmic Encounter</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Observation1-3" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Observation</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/observation.html">Observation</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-visual-acuity.html">Ophthalmic Visual Acuity</a><br/><a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a><br/><a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a><br/><a href="StructureDefinition-pachymetry.html">Pachymetry</a><br/><a href="StructureDefinition-tension-curve.html">Tension Curve</a><br/><a href="StructureDefinition-ophthalmic-oct-macula.html">Ophthalmic OCT Macula</a><br/><a href="StructureDefinition-ophthalmic-oct-rnfl.html">Ophthalmic OCT RNFL</a><br/><a href="StructureDefinition-ophthalmic-humphrey-visual-field.html">Ophthalmic Humphrey Visual Field</a><br/><a href="StructureDefinition-ophthalmic-specular-microscopy.html">Ophthalmic Specular Microscopy</a><br/><a href="StructureDefinition-ophthalmic-ocular-biometry.html">Ophthalmic Ocular Biometry</a><br/><a href="StructureDefinition-iol-formula-result.html">IOL Formula Result</a><br/><a href="StructureDefinition-ct-anterior-surface.html">Corneal Tomography - Anterior Surface</a><br/><a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a><br/><a href="StructureDefinition-ct-pachymetry.html">Corneal Tomography - Pachymetry</a><br/><a href="StructureDefinition-ct-anterior-chamber.html">Corneal Tomography - Anterior Chamber</a><br/><a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a><br/><a href="StructureDefinition-ct-densitometry.html">Corneal Tomography - Densitometry</a><br/><a href="StructureDefinition-strabismus-exam.html">Strabismus Exam</a><br/><a href="StructureDefinition-cover-test.html">Cover Test</a><br/><a href="StructureDefinition-ocular-motility.html">Ocular Motility</a><br/><a href="StructureDefinition-near-point-of-convergence.html">Near Point of Convergence</a><br/><a href="StructureDefinition-convergence-assessment.html">Convergence Assessment</a><br/><a href="StructureDefinition-prism-cover-test.html">Prism Cover Test</a><br/><a href="StructureDefinition-krimsky-test.html">Krimsky Test</a><br/><a href="StructureDefinition-hirschberg-test.html">Hirschberg Test</a><br/><a href="StructureDefinition-red-filter-light-test.html">Red Filter Light Test</a><br/><a href="StructureDefinition-worth-4-dot-test.html">Worth 4 Dot Test</a><br/><a href="StructureDefinition-stereopsis-test.html">Stereopsis Test</a><br/><a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Condition1-4" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Condition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/condition.html">Condition</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-condition.html">Ophthalmic Condition</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>clinical-status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Procedure1-5" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Procedure</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-procedure.html">Ophthalmic Procedure</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="ServiceRequest1-6" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>ServiceRequest</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-service-request.html">Ophthalmic Service Request</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="DiagnosticReport1-7" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>DiagnosticReport</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/diagnosticreport.html">DiagnosticReport</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a><br/><a href="StructureDefinition-corneal-tomography-report.html">Corneal Tomography Report</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="ImagingStudy1-8" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>ImagingStudy</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/imagingstudy.html">ImagingStudy</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-imaging-study.html">Ophthalmic Imaging Study</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>started</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="MedicationAdministration1-9" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>MedicationAdministration</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-medication-administration.html">Ophthalmic Medication Administration</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Medication1-10" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Medication</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medication.html">Medication</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-medication.html">Ophthalmic Medication</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="CarePlan1-11" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>CarePlan</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/careplan.html">CarePlan</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-care-plan.html">Ophthalmic Care Plan</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Device1-12" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>Device</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/device.html">Device</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ophthalmic-device.html">Ophthalmic Device</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="BodyStructure1-13" class="panel-title"><span style="float: right;">Resource Conformance: unspecified </span>BodyStructure</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/bodystructure.html">BodyStructure</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>, <code>create</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ocular-body-structure.html">Ocular Body Structure</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>morphology</td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server"/>
+  <version value="0.3.0"/>
+  <name value="FHIR4EyesServer"/>
+  <title value="FHIR4Eyes Server Capability Statement"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-09-01"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic clinical data exchange"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="json"/>
+  <format value="xml"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="A conformant FHIR4Eyes server SHALL support read, search-type, create and update interactions for the resource types and profiles listed below, and SHALL support the listed search parameters at a minimum."/>
+    <resource>
+      <type value="Patient"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"/>
+      <documentation value="Patient demographics with Chilean RUT and passport identifier slices."/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+      </searchParam>
+      <searchParam>
+        <name value="birthdate"/>
+        <type value="date"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Encounter"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Observation"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Condition"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="clinical-status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Procedure"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="ServiceRequest"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="DiagnosticReport"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="ImagingStudy"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="started"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="MedicationAdministration"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Medication"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="CarePlan"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Device"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="BodyStructure"/>
+      <supportedProfile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="morphology"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+  </rest>
+</CapabilityStatement>

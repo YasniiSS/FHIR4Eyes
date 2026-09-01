@@ -1,4 +1,4 @@
-# Stereopsis Test - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Stereopsis Test - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:StereopsisTest |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:StereopsisTest |
 
  
 Represents a stereoacuity test result (e.g. Titmus, Randot). The specific test used is recorded as a component, since several different stereopsis tests exist in practice and the test type affects how the result should be interpreted. 
@@ -17,6 +17,7 @@ Represents a stereoacuity test result (e.g. Titmus, Randot). The specific test u
 **Usages:**
 
 * Examples for this Profile: [Observation/StereopsisTestExample](Observation-StereopsisTestExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-stereopsis-test.json)
 
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
   "resourceType" : "StructureDefinition",
   "id" : "stereopsis-test",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "StereopsisTest",
   "title" : "Stereopsis Test",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

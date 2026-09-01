@@ -1,4 +1,4 @@
-# Ophthalmic Medication - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Medication - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicMedication |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicMedication |
 
  
 A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. 
@@ -18,6 +18,7 @@ A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal 
 
 * Refer to this Profile: [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md)
 * Examples for this Profile: [Medication/AvastinMedicationExample](Medication-AvastinMedicationExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-medication.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-medication",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicMedication",
   "title" : "Ophthalmic Medication",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

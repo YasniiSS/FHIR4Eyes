@@ -3,14 +3,14 @@
   "id" : "ophthalmic-care-plan-category-vs",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ophthalmic-care-plan-category-vs</b></p><a name=\"ophthalmic-care-plan-category-vs\"> </a><a name=\"hcophthalmic-care-plan-category-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-fhir4eyes-care-plan-category-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.2.0</span></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ophthalmic-care-plan-category-vs</b></p><a name=\"ophthalmic-care-plan-category-vs\"> </a><a name=\"hcophthalmic-care-plan-category-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-fhir4eyes-care-plan-category-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.3.0</span></li></ul></div>"
   },
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicCarePlanCategoryVS",
   "title" : "Ophthalmic Care Plan Category Value Set",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

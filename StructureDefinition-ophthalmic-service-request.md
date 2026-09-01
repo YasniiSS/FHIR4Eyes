@@ -1,4 +1,4 @@
-# Ophthalmic Service Request - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Service Request - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicServiceRequest |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicServiceRequest |
 
  
 A request for an ophthalmic examination and, where relevant, its interpretation or treatment. Covers three scenarios: an order fulfilled locally, an order referred from primary care to a hospital or reference center, and an order originating directly at a hospital. See the Use Cases and Profiles pages of this guide for the full clinical and design rationale. 
@@ -18,6 +18,7 @@ A request for an ophthalmic examination and, where relevant, its interpretation 
 
 * Refer to this Profile: [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md), [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnostic-report.md), [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) and [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study.md)
 * Examples for this Profile: [ServiceRequest/CornealTomographyServiceRequestExample](ServiceRequest-CornealTomographyServiceRequestExample.md), [ServiceRequest/OCTMaculaServiceRequestExample](ServiceRequest-OCTMaculaServiceRequestExample.md), [ServiceRequest/OCTOpticDiscServiceRequestExample](ServiceRequest-OCTOpticDiscServiceRequestExample.md) and [ServiceRequest/OCTServiceRequestExample](ServiceRequest-OCTServiceRequestExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-service-request.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-service-r
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-service-request",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicServiceRequest",
   "title" : "Ophthalmic Service Request",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

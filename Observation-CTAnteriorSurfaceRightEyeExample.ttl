@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTAnteriorSurfaceRightEyeExample</b></p><a name=\"CTAnteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTAnteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-anterior-surface.html\">Corneal Tomography - Anterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, anterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Pentacam-style anterior surface report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat axis)</span></p><p><b>value</b>: 43.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep axis)</span></p><p><b>value</b>: 44.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Km (average)</span></p><p><b>value</b>: 43.9 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal astigmatism</span></p><p><b>value</b>: 1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: -1.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K Max (front)</span></p><p><b>value</b>: 45.8 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SimK steep/flat</span></p><p><b>value</b>: 44.1 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rh (horizontal radius)</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rv (vertical radius)</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rmin (minimum radius)</span></p><p><b>value</b>: 7.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Q-value front</span></p><p><b>value</b>: -0.24 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation front BFS</span></p><p><b>value</b>: 4 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius front</span></p><p><b>value</b>: 7.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Regularity Index (SRI)</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Asymmetry Index (SAI)</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">I-S value</span></p><p><b>value</b>: 0.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">KISA% index</span></p><p><b>value</b>: 12.4 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Topographic pattern</span></p><p><b>value</b>: <span title=\"Codes:\">Regular</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total Corneal Refractive Power (TCRP)</span></p><p><b>value</b>: 43.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">True Net Power (TNP)</span></p><p><b>value</b>: 43.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 1.0mm zone</span></p><p><b>value</b>: 43.7 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 3.0mm zone</span></p><p><b>value</b>: 43.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 4.5mm zone</span></p><p><b>value</b>: 43.1 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Mean Power</span></p><p><b>value</b>: 43.8 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Astig Power</span></p><p><b>value</b>: 1.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Steep Axis</span></p><p><b>value</b>: 100 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Flat Axis</span></p><p><b>value</b>: 10 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Mean Power</span></p><p><b>value</b>: 43.6 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Astig Power</span></p><p><b>value</b>: 1.5 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Steep Axis</span></p><p><b>value</b>: 103 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Flat Axis</span></p><p><b>value</b>: 13 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal astigmatism (tWFA)</span></p><p><b>value</b>: 1.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal irregular astigmatism</span></p><p><b>value</b>: 0.2 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal HOA RMS</span></p><p><b>value</b>: 0.31 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa angle</span></p><p><b>value</b>: 4.2 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa intercept</span></p><p><b>value</b>: x: 0.18mm, y: -0.06mm</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SIA (Surgically Induced Astigmatism)</span></p><p><b>value</b>: 0.3 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Predicted post-op corneal astigmatism</span></p><p><b>value</b>: 0.4 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Optimal toric IOL axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">QS (quality score)</span></p><p><b>value</b>: <span title=\"Codes:\">OK</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTAnteriorSurfaceRightEyeExample</b></p><a name=\"CTAnteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTAnteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-anterior-surface.html\">Corneal Tomography - Anterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, anterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Pentacam-style anterior surface report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat axis)</span></p><p><b>value</b>: 43.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep axis)</span></p><p><b>value</b>: 44.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Km (average)</span></p><p><b>value</b>: 43.9 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal astigmatism</span></p><p><b>value</b>: 1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: -1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K Max (front)</span></p><p><b>value</b>: 45.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SimK steep/flat</span></p><p><b>value</b>: 44.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rh (horizontal radius)</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rv (vertical radius)</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rmin (minimum radius)</span></p><p><b>value</b>: 7.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Q-value front</span></p><p><b>value</b>: -0.24 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation front BFS</span></p><p><b>value</b>: 4 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius front</span></p><p><b>value</b>: 7.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Regularity Index (SRI)</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Asymmetry Index (SAI)</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">I-S value</span></p><p><b>value</b>: 0.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">KISA% index</span></p><p><b>value</b>: 12.4 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Topographic pattern</span></p><p><b>value</b>: <span title=\"Codes:\">Regular</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total Corneal Refractive Power (TCRP)</span></p><p><b>value</b>: 43.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">True Net Power (TNP)</span></p><p><b>value</b>: 43.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 1.0mm zone</span></p><p><b>value</b>: 43.7 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 3.0mm zone</span></p><p><b>value</b>: 43.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 4.5mm zone</span></p><p><b>value</b>: 43.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Mean Power</span></p><p><b>value</b>: 43.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Astig Power</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Steep Axis</span></p><p><b>value</b>: 100 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Flat Axis</span></p><p><b>value</b>: 10 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Mean Power</span></p><p><b>value</b>: 43.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Astig Power</span></p><p><b>value</b>: 1.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Steep Axis</span></p><p><b>value</b>: 103 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Flat Axis</span></p><p><b>value</b>: 13 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal astigmatism (tWFA)</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal irregular astigmatism</span></p><p><b>value</b>: 0.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal HOA RMS</span></p><p><b>value</b>: 0.31 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa angle</span></p><p><b>value</b>: 4.2 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa intercept</span></p><p><b>value</b>: x: 0.18mm, y: -0.06mm</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SIA (Surgically Induced Astigmatism)</span></p><p><b>value</b>: 0.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Predicted post-op corneal astigmatism</span></p><p><b>value</b>: 0.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Optimal toric IOL axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">QS (quality score)</span></p><p><b>value</b>: <span title=\"Codes:\">OK</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -61,7 +61,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.2"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 1 ;
@@ -91,7 +91,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "44.6"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 4 ;
@@ -121,7 +121,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.9"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 7 ;
@@ -131,7 +131,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "1.4"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 8 ;
@@ -141,7 +141,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "-1.4"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 9 ;
@@ -151,7 +151,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "45.8"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 10 ;
@@ -161,7 +161,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "44.1"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 11 ;
@@ -251,7 +251,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "0.6"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 20 ;
@@ -289,7 +289,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.5"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 24 ;
@@ -299,7 +299,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.3"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 25 ;
@@ -309,7 +309,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.7"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 26 ;
@@ -319,7 +319,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.4"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 27 ;
@@ -329,7 +329,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.1"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 28 ;
@@ -339,7 +339,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.8"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 29 ;
@@ -349,7 +349,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "1.3"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 30 ;
@@ -379,7 +379,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "43.6"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 33 ;
@@ -389,7 +389,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "1.5"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 34 ;
@@ -419,7 +419,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "1.3"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 37 ;
@@ -429,7 +429,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "0.2"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 38 ;
@@ -465,7 +465,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "0.3"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 42 ;
@@ -475,7 +475,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "0.4"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 43 ;

@@ -1,4 +1,4 @@
-# Ophthalmic Humphrey Visual Field - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Humphrey Visual Field - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicHumphreyVisualField |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicHumphreyVisualField |
 
  
 Represents an automated static perimetry (Humphrey field analyzer) exam. Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey) section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted. 
@@ -17,6 +17,7 @@ Represents an automated static perimetry (Humphrey field analyzer) exam. Sourced
 **Usages:**
 
 * Examples for this Profile: [Observation/HumphreyVFRightEyeExample](Observation-HumphreyVFRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-humphrey-visual-field.json)
 
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-humphrey-visual-field",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicHumphreyVisualField",
   "title" : "Ophthalmic Humphrey Visual Field",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -141,6 +142,20 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "mustSupport" : true
     },
     {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.note",
       "path" : "Observation.note",
       "mustSupport" : true
@@ -175,6 +190,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.method",
       "short" : "Threshold strategy: SITA Standard, SITA Fast, SITA Faster, or Full Threshold",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "short" : "Acquisition device (manufacturer, model, software version)",
       "mustSupport" : true
     },
     {
@@ -280,7 +301,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:screeningMode.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4252"
+      "short" : "Screening test mode - type of screening test. DICOM CID 4252"
     },
     {
       "id" : "Observation.component:screeningMode.value[x]",
@@ -300,7 +321,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:fixationStrategy.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4253"
+      "short" : "Fixation strategy - how fixation was monitored. DICOM CID 4253"
     },
     {
       "id" : "Observation.component:fixationStrategy.value[x]",
@@ -320,7 +341,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:stimulusSize.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0025)"
+      "short" : "Stimulus size - Goldmann stimulus size used, usually Goldmann III. DICOM (0024,0025)"
     },
     {
       "id" : "Observation.component:stimulusSize.value[x]",
@@ -340,7 +361,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:stimulusColor.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4255 / (0024,0021)"
+      "short" : "Stimulus color - color of stimulus light. DICOM CID 4255 / (0024,0021)"
     },
     {
       "id" : "Observation.component:stimulusColor.value[x]",
@@ -360,7 +381,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:bgLuminance.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0020)"
+      "short" : "Background luminance - background bowl luminance, standard 31.5 asb. DICOM (0024,0020)"
     },
     {
       "id" : "Observation.component:bgLuminance.value[x]",
@@ -380,7 +401,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:maxLuminance.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0018)"
+      "short" : "Maximum stimulus luminance - maximum stimulus intensity. DICOM (0024,0018)"
     },
     {
       "id" : "Observation.component:maxLuminance.value[x]",
@@ -400,7 +421,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:stimulusDuration.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0028)"
+      "short" : "Stimulus duration - presentation time, standard 200ms. DICOM (0024,0028)"
     },
     {
       "id" : "Observation.component:stimulusDuration.value[x]",
@@ -420,7 +441,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:hExtent.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0010)"
+      "short" : "Visual field horizontal extent - horizontal extent of tested field. DICOM (0024,0010)"
     },
     {
       "id" : "Observation.component:hExtent.value[x]",
@@ -440,7 +461,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:vExtent.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0011)"
+      "short" : "Visual field vertical extent - vertical extent of tested field. DICOM (0024,0011)"
     },
     {
       "id" : "Observation.component:vExtent.value[x]",
@@ -460,7 +481,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:fieldShape.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0024,0012)"
+      "short" : "Visual field shape - shape of tested field (circle or rectangle). DICOM (0024,0012)"
     },
     {
       "id" : "Observation.component:fieldShape.value[x]",
@@ -540,7 +561,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
     {
       "id" : "Observation.component:correctionLens.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4256, Procedure Modifier"
+      "short" : "Correction lens used - whether correction lens was used during test. DICOM CID 4256, Procedure Modifier"
     },
     {
       "id" : "Observation.component:correctionLens.value[x]",

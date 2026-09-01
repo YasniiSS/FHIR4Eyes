@@ -1,4 +1,4 @@
-# CornealTomographyReportRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# CornealTomographyReportRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-repo
 
 | | |
 | :--- | :--- |
-| Subject | Patient Example Female, DoB: 1990-01-01 |
+| Subject | Patient Example Female, DoB: 1990-01-01 ( PA1234567) |
 | Relevant Time | 2026-08-20 10:00:00+0000 |
 | Performer | [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md) |
 

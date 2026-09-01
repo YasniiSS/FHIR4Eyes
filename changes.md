@@ -1,4 +1,4 @@
-# Change History - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Change History - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * **Change History**
@@ -6,6 +6,22 @@
 ## Change History
 
 # Change History
+
+## 0.3.0
+
+Corrective release following a multi-agent audit of the guide (2026-09-01).
+
+**Fixed: UCUM unit codes.** Corrected invalid or non-standard UCUM codes used across profiles and examples: dioptric power `D` → `[diop]`, prism dioptric power (cover test / prism cover test family) → `[p'diop]`, and distance in feet `ft` → `[ft_i]` (international foot).
+
+**Fixed: DICOM modality code.** OCT-related profiles and examples now consistently use the correct DICOM modality code `OPT` (Ophthalmic Tomography) instead of the invalid `OCT`.
+
+**Fixed: duplicate `^short` captions.** Removed duplicate `^short` caption assignments introduced across several profiles during the 0.2.0 expansion.
+
+**Fixed: example timeline inconsistencies.** Corrected example instances where `effectiveDateTime`/`Period` values did not align with the surrounding clinical narrative.
+
+**Housekeeping.** Renamed `gitignore` to `.gitignore`, and moved `patient-ejemplo.fsh` from `input/fsh/profiles/` to `input/fsh/examples/`, consistent with the ADR-003 file organization convention (profiles vs. examples).
+
+**Documentation.** Refreshed `fhir4eyes-gap-analysis.md`, `usecases.md`, and `fhir4eyes-decisions.md`, which had fallen out of date relative to the profile set: they now correctly reflect that `OphthalmicServiceRequest`, `OphthalmicDiagnosticReport`, `OphthalmicCondition`, and `CornealTomographyReport` are implemented, and record new gaps identified by the audit (terminology binding for `component.code`, UCUM enforcement in profiles rather than only examples, SearchParameters/CapabilityStatement, a Core Patient profile with identifier systems, a Goal profile, MedicationRequest/MedicationStatement for chronic therapy, FHIRPath invariants, a Refraction profile, a VisionPrescription profile, OCT fluid status (SRF/IRF/PED), RNFL quadrant/clock-hour thickness, VF reliability indices and GHT, and a Device profile for acquisition equipment).
 
 ## 0.2.0
 

@@ -1,4 +1,4 @@
-# IOL Formula Result - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# IOL Formula Result - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:IOLFormulaResult |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:IOLFormulaResult |
 
  
 Represents the result of a single IOL power calculation formula (e.g. Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected refraction. Not intended to be used standalone: always referenced via hasMember from an OphthalmicOcularBiometry instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. 
@@ -18,6 +18,7 @@ Represents the result of a single IOL power calculation formula (e.g. Barrett Un
 
 * Refer to this Profile: [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biometry.md)
 * Examples for this Profile: [Observation/IOLFormulaBarrettExample](Observation-IOLFormulaBarrettExample.md) and [Observation/IOLFormulaSRKTExample](Observation-IOLFormulaSRKTExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-iol-formula-result.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
   "resourceType" : "StructureDefinition",
   "id" : "iol-formula-result",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "IOLFormulaResult",
   "title" : "IOL Formula Result",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -139,6 +140,20 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
       "mustSupport" : true
     },
     {

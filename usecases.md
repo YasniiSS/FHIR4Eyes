@@ -1,4 +1,4 @@
-# Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * **Use Cases**
@@ -53,7 +53,7 @@ sequenceDiagram
 
 ```
 
-> This use case does not currently require any FHIR4Eyes-specific profile. As the guide develops further (for example, if an `OphthalmicCondition` profile is defined), this section will be updated to reference it.
+> The diagnosis reached during this encounter can be recorded using `OphthalmicCondition` (see [Profiles](profiles.md)), now defined by this guide.
 
 ### Use case 2: Diagnostic examinations
 
@@ -111,7 +111,7 @@ sequenceDiagram
 
 ```
 
-**FHIR resources involved:** `ImagingStudy` (the acquired study), `DiagnosticReport` (the findings), `Condition` (the diagnosis reached), and `CarePlan` (the resulting treatment plan, when applicable).
+**FHIR resources involved:** `ImagingStudy` (the acquired study), `DiagnosticReport` (the findings, covered by `OphthalmicDiagnosticReport`), `Condition` (the diagnosis reached, covered by `OphthalmicCondition`), and `CarePlan` (the resulting treatment plan, when applicable).
 
 | | |
 | :--- | :--- |
@@ -128,7 +128,7 @@ sequenceDiagram
 | Meibography |   |
 | Specular microscopy |   |
 
-> `OphthalmicDiagnosticReport` is not yet built (see the profiles inventory in [Background](background.md)); it is a high-priority item for this guide, since every examination in this group depends on it to represent the interpretation step.
+> `OphthalmicDiagnosticReport` is now defined by this guide (see [Profiles](profiles.md)), since every examination in this group depends on it to represent the interpretation step.
 
 ### Use case 3: Vision therapy and rehabilitation
 
@@ -256,7 +256,7 @@ sequenceDiagram
 
 ```
 
-**FHIR resources involved:** `ServiceRequest` (the request for remote interpretation, not yet covered by a dedicated profile), plus the same resources as [use case 2, group B](#group-b-imaging-studies-with-report) (`ImagingStudy`, `DiagnosticReport`, `Condition`, `CarePlan`).
+**FHIR resources involved:** `ServiceRequest` (the request for remote interpretation, now covered by `OphthalmicServiceRequest`), plus the same resources as [use case 2, group B](#group-b-imaging-studies-with-report) (`ImagingStudy`, `DiagnosticReport`, `Condition`, `CarePlan`).
 
-> This use case is an open opportunity for this guide. `OphthalmicServiceRequest` is listed as a medium-priority profile to build (see [Background](background.md)), and the full detail of how the remote request and response should be structured is still to be designed.
+> `OphthalmicServiceRequest` is now defined by this guide (see [Profiles](profiles.md)) and can be used to represent the request for remote interpretation described in this use case.
 

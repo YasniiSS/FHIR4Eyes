@@ -1,4 +1,4 @@
-# OCTStudyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# OCTStudyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -10,11 +10,11 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
 
 **status**: Available
 
-**modality**: unknown: OCT (Optical Coherence Tomography Scanner)
+**modality**: unknown: OPT (Ophthalmic Tomography)
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
-**started**: 2018-02-06 09:00:00+0000
+**started**: 2026-08-18 09:00:00+0000
 
 **basedOn**: [ServiceRequest ](ServiceRequest-OCTServiceRequestExample.md)
 
@@ -22,7 +22,7 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
 
 **numberOfInstances**: 2
 
-> **series****BodyStructure Reference**: [BodyStructure: location = Structure of eye proper; locationQualifier = Right](BodyStructure-RightEyeStructureExample.md)**uid**: 1.2.840.10008.oct.rnfl.right.example**modality**: unknown: OCT (Optical Coherence Tomography Scanner)**bodySite**: [not stated]: (Optic disc / RNFL)**laterality**: [not stated]: (Right)
+> **series****BodyStructure Reference**: [BodyStructure: location = Structure of eye proper; locationQualifier = Right](BodyStructure-RightEyeStructureExample.md)**uid**: 1.2.840.10008.oct.rnfl.right.example**modality**: unknown: OPT (Ophthalmic Tomography)**bodySite**: [SNOMED CT: 81016008](http://snomed.info/id/81016008) (Optic disc)**laterality**: [SNOMED CT: 24028007](http://snomed.info/id/24028007) (Right)
 
 ### Instances
 
@@ -32,7 +32,7 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
 | * | 1.2.840.10008.oct.rnfl.right.example.instance1 | unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4) |
 
 
-> **series****BodyStructure Reference**: [BodyStructure: location = Structure of eye proper; locationQualifier = Right](BodyStructure-RightEyeStructureExample.md)**uid**: 1.2.840.10008.oct.macula.right.example**modality**: unknown: OCT (Optical Coherence Tomography Scanner)**bodySite**: [not stated]: (Macula)**laterality**: [not stated]: (Right)
+> **series****BodyStructure Reference**: [BodyStructure: location = Structure of eye proper; locationQualifier = Right](BodyStructure-RightEyeStructureExample.md)**uid**: 1.2.840.10008.oct.macula.right.example**modality**: unknown: OPT (Ophthalmic Tomography)**bodySite**: [SNOMED CT: 39021009](http://snomed.info/id/39021009) (Retina)**laterality**: [SNOMED CT: 24028007](http://snomed.info/id/24028007) (Right)
 
 ### Instances
 
@@ -56,13 +56,13 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
   "status" : "available",
   "modality" : [{
     "system" : "urn:oid:1.2.840.10008.2.16.4",
-    "code" : "OCT",
-    "display" : "Optical Coherence Tomography Scanner"
+    "code" : "OPT",
+    "display" : "Ophthalmic Tomography"
   }],
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "started" : "2018-02-06T09:00:00Z",
+  "started" : "2026-08-18T09:00:00Z",
   "basedOn" : [{
     "reference" : "ServiceRequest/OCTServiceRequestExample"
   }],
@@ -78,13 +78,17 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
     "uid" : "1.2.840.10008.oct.rnfl.right.example",
     "modality" : {
       "system" : "urn:oid:1.2.840.10008.2.16.4",
-      "code" : "OCT",
-      "display" : "Optical Coherence Tomography Scanner"
+      "code" : "OPT",
+      "display" : "Ophthalmic Tomography"
     },
     "bodySite" : {
-      "display" : "Optic disc / RNFL"
+      "system" : "http://snomed.info/sct",
+      "code" : "81016008",
+      "display" : "Optic disc"
     },
     "laterality" : {
+      "system" : "http://snomed.info/sct",
+      "code" : "24028007",
       "display" : "Right"
     },
     "instance" : [{
@@ -105,13 +109,17 @@ Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study
     "uid" : "1.2.840.10008.oct.macula.right.example",
     "modality" : {
       "system" : "urn:oid:1.2.840.10008.2.16.4",
-      "code" : "OCT",
-      "display" : "Optical Coherence Tomography Scanner"
+      "code" : "OPT",
+      "display" : "Ophthalmic Tomography"
     },
     "bodySite" : {
-      "display" : "Macula"
+      "system" : "http://snomed.info/sct",
+      "code" : "39021009",
+      "display" : "Retina"
     },
     "laterality" : {
+      "system" : "http://snomed.info/sct",
+      "code" : "24028007",
       "display" : "Right"
     },
     "instance" : [{

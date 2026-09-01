@@ -12,8 +12,20 @@
     "ValueSet-low-vision-assessment-vs.html" : "Low Vision Assessment Value Set"
   },
   {
+    "url" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "DiagnosticServiceSectionId",
+    "title" : "diagnosticServiceSectionId",
+    "description" : "HL7-defined code system of concepts which specify a section of a diagnostic service where the observation may be performed.  Used in HL7 Version 2.x messaging in the OBR and OM4 segments.",
+    "oids" : ["2.16.840.1.113883.18.29"],
+    "uses" : {
+    },
+    "http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" : "hl7VS-diagnosticServiceSectionId"
+  },
+  {
     "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
-    "version" : "0.2.0",
+    "version" : "0.3.0",
     "status" : "draft",
     "name" : "FHIR4EyesCarePlanCategoryCS",
     "title" : "FHIR4Eyes Care Plan Category Code System",

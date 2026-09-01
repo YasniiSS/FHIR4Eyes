@@ -1,4 +1,4 @@
-# Worth 4 Dot Test - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Worth 4 Dot Test - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,14 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:Worth4DotTest |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:Worth4DotTest |
 
  
 Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia. Performed across multiple gaze positions; each position is recorded as a separate GazePositionMeasurement, referenced here via hasMember, using its qualitative finding component. 
 
 **Usages:**
 
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 * This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-worth-4-dot-test.json)
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-worth-4-dot-test.csv
   "resourceType" : "StructureDefinition",
   "id" : "worth-4-dot-test",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "Worth4DotTest",
   "title" : "Worth 4 Dot Test",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

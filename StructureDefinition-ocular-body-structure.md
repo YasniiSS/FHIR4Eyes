@@ -1,4 +1,4 @@
-# Ocular Body Structure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ocular Body Structure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OcularBodyStructure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OcularBodyStructure |
 
  
 Represents an anatomical ocular location, used throughout this guide to express laterality (right eye, left eye, or both eyes) for observations, conditions, procedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care IG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location` element identifying the anatomical structure, and a `locationQualifier` element carrying laterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets for these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for locationQualifier), which are the intended reference terminology for this profile. However, because the HL7 Eye Care IG is not published as a usable FHIR package, those value sets cannot be formally imported here; this profile binds to SNOMED CT directly instead (see the Terminology page of this guide for the general rationale). 
@@ -18,6 +18,7 @@ Represents an anatomical ocular location, used throughout this guide to express 
 
 * Refer to this Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocular-pressure.md), [Cover Test](StructureDefinition-cover-test.md), [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior-chamber.md), [Corneal Tomography - Anterior Surface](StructureDefinition-ct-anterior-surface.md)... Show 19 more, [Corneal Tomography - Densitometry](StructureDefinition-ct-densitometry.md), [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-keratoconus-indices.md), [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md), [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posterior-surface.md), [Gaze Position Measurement](StructureDefinition-gaze-position-measurement.md), [Intraocular Pressure](StructureDefinition-intraocular-pressure.md), [Ocular Motility](StructureDefinition-ocular-motility.md), [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md), [Ophthalmic Humphrey Visual Field](StructureDefinition-ophthalmic-humphrey-visual-field.md), [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study.md), [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md), [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md), [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md), [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biometry.md), [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md), [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specular-microscopy.md), [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md), [Pachymetry](StructureDefinition-pachymetry.md) and [Tension Curve](StructureDefinition-tension-curve.md)
 * Examples for this Profile: [BodyStructure/LeftEyeStructureExample](BodyStructure-LeftEyeStructureExample.md) and [BodyStructure/RightEyeStructureExample](BodyStructure-RightEyeStructureExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ocular-body-structure.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ocular-body-structur
   "resourceType" : "StructureDefinition",
   "id" : "ocular-body-structure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OcularBodyStructure",
   "title" : "Ocular Body Structure",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

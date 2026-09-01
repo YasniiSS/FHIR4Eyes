@@ -1,4 +1,4 @@
-# Ophthalmic Procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicProcedure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicProcedure |
 
  
 Any ophthalmic procedure, from minor ambulatory surgeries to individual sessions within a longer treatment scheme, such as an intravitreal injection or a vision therapy session. When a procedure involves administering a medication (e.g. an intravitreal injection), the medication administration is recorded as a separate OphthalmicMedicationAdministration, linked back to this procedure via MedicationAdministration.partOf, not the other way around. 
@@ -18,6 +18,7 @@ Any ophthalmic procedure, from minor ambulatory surgeries to individual sessions
 
 * Refer to this Profile: [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md)
 * Examples for this Profile: [Procedure/CataractSurgeryProcedureExample](Procedure-CataractSurgeryProcedureExample.md), [Procedure/IntravitrealInjectionProcedureExample](Procedure-IntravitrealInjectionProcedureExample.md) and [Procedure/OCTProcedureExample](Procedure-OCTProcedureExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-procedure.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-procedure
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-procedure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicProcedure",
   "title" : "Ophthalmic Procedure",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

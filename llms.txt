@@ -1,4 +1,4 @@
-# fhir4eyes.core#0.2.0: FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology
+# fhir4eyes.core#0.3.0: FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology
 
 ## Pages
 
@@ -55,6 +55,7 @@
 * [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md)
 * [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md)
 * [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biometry.md)
+* [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md)
 * [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 * [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md)
 * [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specular-microscopy.md)
@@ -67,9 +68,23 @@
 * [Tension Curve](StructureDefinition-tension-curve.md)
 * [Worth 4 Dot Test](StructureDefinition-worth-4-dot-test.md)
 
+### CapabilityStatements
+
+* [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
+
 ### ImplementationGuides
 
 * [FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology](index.md)
+
+### SearchParameters
+
+* [ConditionEye](SearchParameter-sp-condition-eye.md)
+* [DiagnosticReportImagingStudy](SearchParameter-sp-diagnosticreport-imaging-study.md)
+* [EncounterAppointment](SearchParameter-sp-encounter-appointment.md)
+* [ImagingStudyEye](SearchParameter-sp-imagingstudy-eye.md)
+* [ImagingStudyModality](SearchParameter-sp-imagingstudy-modality.md)
+* [ObservationEye](SearchParameter-sp-observation-eye.md)
+* [ProcedureEye](SearchParameter-sp-procedure-eye.md)
 
 ### Examples
 

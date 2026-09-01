@@ -1,4 +1,4 @@
-# Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:IntraocularPressure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:IntraocularPressure |
 
  
 Represents a single intraocular pressure (IOP) reading, in mmHg. Code is fixed to SNOMED CT 41633001 (Intraocular pressure). 
@@ -18,6 +18,7 @@ Represents a single intraocular pressure (IOP) reading, in mmHg. Code is fixed t
 
 * Refer to this Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocular-pressure.md) and [Tension Curve](StructureDefinition-tension-curve.md)
 * Examples for this Profile: [Observation/IntraocularPressureLeftEyeExample](Observation-IntraocularPressureLeftEyeExample.md), [Observation/IntraocularPressureRightEyeExample](Observation-IntraocularPressureRightEyeExample.md), [Observation/TensionCurveRightEye0800Example](Observation-TensionCurveRightEye0800Example.md), [Observation/TensionCurveRightEye1200Example](Observation-TensionCurveRightEye1200Example.md) and [Observation/TensionCurveRightEye1400Example](Observation-TensionCurveRightEye1400Example.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-intraocular-pressure.json)
 
@@ -38,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
   "resourceType" : "StructureDefinition",
   "id" : "intraocular-pressure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "IntraocularPressure",
   "title" : "Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -105,7 +106,14 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
   "differential" : {
     "element" : [{
       "id" : "Observation",
-      "path" : "Observation"
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "inv-iop-range",
+        "severity" : "error",
+        "human" : "IOP value must be between 0 and 80 mmHg",
+        "expression" : "valueQuantity.value >= 0 and valueQuantity.value <= 80",
+        "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
+      }]
     },
     {
       "id" : "Observation.status",

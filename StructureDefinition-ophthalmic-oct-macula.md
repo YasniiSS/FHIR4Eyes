@@ -1,4 +1,4 @@
-# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicOCTMacula |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicOCTMacula |
 
  
 Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
@@ -17,6 +17,7 @@ Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus
 **Usages:**
 
 * Examples for this Profile: [Observation/OCTMaculaLeftEyeExample2](Observation-OCTMaculaLeftEyeExample2.md) and [Observation/OCTMaculaRightEyeExample](Observation-OCTMaculaRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-oct-macula.json)
 
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-oct-macula",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -104,7 +105,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "differential" : {
     "element" : [{
       "id" : "Observation",
-      "path" : "Observation"
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "inv-oct-signal",
+        "severity" : "warning",
+        "human" : "OCT signal strength should be documented",
+        "expression" : "component.where(code.text = 'Signal strength').exists()",
+        "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
+      }]
     },
     {
       "id" : "Observation.status",
@@ -141,6 +149,20 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "mustSupport" : true
     },
     {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.note",
       "path" : "Observation.note",
       "mustSupport" : true
@@ -169,6 +191,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
         "code" : "Reference",
         "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"]
       }]
+    },
+    {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "short" : "Acquisition device (manufacturer, model, software version)",
+      "mustSupport" : true
     },
     {
       "id" : "Observation.component",
@@ -493,7 +521,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:thicknessDef.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4262, critical for device comparison"
+      "short" : "Retinal thickness definition - how thickness is defined (ILM to RPE or ILM to BM). DICOM CID 4262, critical for device comparison"
     },
     {
       "id" : "Observation.component:thicknessDef.value[x]",
@@ -513,7 +541,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:deviationCategory.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4265"
+      "short" : "Thickness deviation category - normative database classification per subfield. DICOM CID 4265"
     },
     {
       "id" : "Observation.component:deviationCategory.value[x]",
@@ -533,7 +561,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:anatomicRef.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM CID 4266"
+      "short" : "Anatomic reference point - structure used as reference (fovea or disc center). DICOM CID 4266"
     },
     {
       "id" : "Observation.component:anatomicRef.value[x]",
@@ -553,7 +581,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:pupilDilated.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0022,000D)"
+      "short" : "Pupil dilated - whether pupil was dilated. DICOM (0022,000D)"
     },
     {
       "id" : "Observation.component:pupilDilated.value[x]",
@@ -573,7 +601,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:mydriaticAgent.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0022,000E)"
+      "short" : "Mydriatic agent - dilating agent used. DICOM (0022,000E)"
     },
     {
       "id" : "Observation.component:mydriaticAgent.value[x]",
@@ -593,7 +621,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:dilationDegree.code",
       "path" : "Observation.component.code",
-      "short" : "DICOM (0022,000F)"
+      "short" : "Degree of dilation - pupil dilation in mm. DICOM (0022,000F)"
     },
     {
       "id" : "Observation.component:dilationDegree.value[x]",
@@ -614,6 +642,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "id" : "Observation.component:signalStrength.code",
       "path" : "Observation.component.code",
       "short" : "Signal strength / Quality - scan quality index"
+    },
+    {
+      "id" : "Observation.component:signalStrength.code.text",
+      "path" : "Observation.component.code.text",
+      "patternString" : "Signal strength"
     },
     {
       "id" : "Observation.component:signalStrength.value[x]",

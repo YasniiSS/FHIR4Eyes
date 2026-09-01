@@ -1,4 +1,4 @@
-# HumphreyVFRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# HumphreyVFRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Ophthalmic Humphrey Visual Field](StructureDefinition-ophthalmic-humph
 
 **code**: Automated static perimetry, right eye
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -41,7 +41,7 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
 
 > **component****code**: Stimulus color**value**: White
 
-> **component****code**: Background luminance**value**: 31.5 asb (Details: UCUM codeasb = 'asb')
+> **component****code**: Background luminance**value**: 31.5 asb
 
 > **component****code**: Stimulus duration**value**: 200 ms (Details: UCUM codems = 'ms')
 
@@ -53,7 +53,7 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
 
 > **component****code**: Correction lens used**value**: Yes, near correction trial lens
 
-> **component****code**: Correction lens power**value**: 2.5 D (Details: UCUM codeD = 'D')
+> **component****code**: Correction lens power**value**: 2.5 [diop] (Details: UCUM code[diop] = '[diop]')
 
 
 
@@ -160,8 +160,7 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
     },
     "valueQuantity" : {
       "value" : 31.5,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "asb"
+      "unit" : "asb"
     }
   },
   {
@@ -219,7 +218,7 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
     "valueQuantity" : {
       "value" : 2.5,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   }]
 }

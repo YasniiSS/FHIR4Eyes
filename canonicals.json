@@ -1,315 +1,378 @@
 [{
+  "id" : "sp-condition-eye",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/condition-eye",
+  "version" : "0.3.0",
+  "name" : "ConditionEye"
+},
+{
+  "id" : "sp-diagnosticreport-imaging-study",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/diagnosticreport-imaging-study",
+  "version" : "0.3.0",
+  "name" : "DiagnosticReportImagingStudy"
+},
+{
+  "id" : "sp-encounter-appointment",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/encounter-appointment",
+  "version" : "0.3.0",
+  "name" : "EncounterAppointment"
+},
+{
+  "id" : "sp-imagingstudy-eye",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-eye",
+  "version" : "0.3.0",
+  "name" : "ImagingStudyEye"
+},
+{
+  "id" : "sp-imagingstudy-modality",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-modality",
+  "version" : "0.3.0",
+  "name" : "ImagingStudyModality"
+},
+{
+  "id" : "sp-observation-eye",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/observation-eye",
+  "version" : "0.3.0",
+  "name" : "ObservationEye"
+},
+{
+  "id" : "sp-procedure-eye",
+  "type" : "SearchParameter",
+  "url" : "http://fhir4eyes.org/SearchParameter/procedure-eye",
+  "version" : "0.3.0",
+  "name" : "ProcedureEye"
+},
+{
+  "id" : "FHIR4EyesCapabilityStatement",
+  "type" : "CapabilityStatement",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server",
+  "version" : "0.3.0",
+  "name" : "FHIR4EyesServer"
+},
+{
   "id" : "fhir4eyes-care-plan-category-cs",
   "type" : "CodeSystem",
   "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "FHIR4EyesCarePlanCategoryCS"
 },
 {
   "id" : "fhir4eyes.core",
   "type" : "ImplementationGuide",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "FHIR4Eyes"
 },
 {
   "id" : "convergence-assessment",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "ConvergenceAssessment"
 },
 {
   "id" : "corneal-tomography-report",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CornealTomographyReport"
 },
 {
   "id" : "corrected-intraocular-pressure",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CorrectedIntraocularPressure"
 },
 {
   "id" : "cover-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CoverTest"
 },
 {
   "id" : "ct-anterior-chamber",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTAnteriorChamber"
 },
 {
   "id" : "ct-anterior-surface",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTAnteriorSurface"
 },
 {
   "id" : "ct-densitometry",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTDensitometry"
 },
 {
   "id" : "ct-keratoconus-indices",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTKeratoconusIndices"
 },
 {
   "id" : "ct-pachymetry",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTPachymetry"
 },
 {
   "id" : "ct-posterior-surface",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTPosteriorSurface"
 },
 {
   "id" : "gaze-position-measurement",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "GazePositionMeasurement"
 },
 {
   "id" : "hirschberg-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "HirschbergTest"
 },
 {
   "id" : "intraocular-pressure",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "IntraocularPressure"
 },
 {
   "id" : "iol-formula-result",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "IOLFormulaResult"
 },
 {
   "id" : "krimsky-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "KrimskyTest"
 },
 {
   "id" : "near-point-of-convergence",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "NearPointOfConvergence"
 },
 {
   "id" : "ocular-body-structure",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OcularBodyStructure"
 },
 {
   "id" : "ocular-motility",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OcularMotility"
 },
 {
   "id" : "ophthalmic-care-plan",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicCarePlan"
 },
 {
   "id" : "ophthalmic-condition",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicCondition"
 },
 {
   "id" : "ophthalmic-device",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicDevice"
 },
 {
   "id" : "ophthalmic-diagnostic-report",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicDiagnosticReport"
 },
 {
   "id" : "ophthalmic-encounter",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicEncounter"
 },
 {
   "id" : "ophthalmic-humphrey-visual-field",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicHumphreyVisualField"
 },
 {
   "id" : "ophthalmic-imaging-study",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicImagingStudy"
 },
 {
   "id" : "ophthalmic-medication",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicMedication"
 },
 {
   "id" : "ophthalmic-medication-administration",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicMedicationAdministration"
 },
 {
   "id" : "ophthalmic-oct-macula",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicOCTMacula"
 },
 {
   "id" : "ophthalmic-oct-rnfl",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicOCTRNFL"
 },
 {
   "id" : "ophthalmic-ocular-biometry",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicOcularBiometry"
+},
+{
+  "id" : "ophthalmic-patient",
+  "type" : "StructureDefinition",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
+  "version" : "0.3.0",
+  "name" : "OphthalmicPatient"
 },
 {
   "id" : "ophthalmic-procedure",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicProcedure"
 },
 {
   "id" : "ophthalmic-service-request",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicServiceRequest"
 },
 {
   "id" : "ophthalmic-specular-microscopy",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicSpecularMicroscopy"
 },
 {
   "id" : "ophthalmic-visual-acuity",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicVisualAcuity"
 },
 {
   "id" : "pachymetry",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "Pachymetry"
 },
 {
   "id" : "prism-cover-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "PrismCoverTest"
 },
 {
   "id" : "red-filter-light-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "RedFilterLightTest"
 },
 {
   "id" : "stereopsis-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "StereopsisTest"
 },
 {
   "id" : "strabismus-exam",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "StrabismusExam"
 },
 {
   "id" : "tension-curve",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "TensionCurve"
 },
 {
   "id" : "worth-4-dot-test",
   "type" : "StructureDefinition",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "Worth4DotTest"
 },
 {
   "id" : "low-vision-assessment-vs",
   "type" : "ValueSet",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "LowVisionAssessmentVS"
 },
 {
   "id" : "ophthalmic-care-plan-category-vs",
   "type" : "ValueSet",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicCarePlanCategoryVS"
 }]

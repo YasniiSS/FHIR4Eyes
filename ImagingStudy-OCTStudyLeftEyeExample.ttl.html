@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>OCTStudyLeftEyeExample - TTL Representation - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
+    <title>OCTStudyLeftEyeExample - TTL Representation - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.85"}
-    h3,h4,h5,h6{--heading-prefix:"9.85"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.94"}
+    h3,h4,h5,h6{--heading-prefix:"9.94"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -54,7 +54,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.3.0 - ci-build
 
 
 
@@ -137,7 +137,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.3.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://YasniiSS.github.io/fhir4eyes/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -197,6 +197,7 @@
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sct: &lt;http://snomed.info/id/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
@@ -213,20 +214,20 @@
   ] ;
   <a href="http://hl7.org/fhir/R4/domainresource.html#ImagingStudy.text">fhir:DomainResource.text</a> [
      <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;extensions&quot; ] ;
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ImagingStudy OCTStudyLeftEyeExample&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;OCTStudyLeftEyeExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcOCTStudyLeftEyeExample\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-ophthalmic-imaging-study.html\&quot;&gt;Ophthalmic Imaging Study&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Available&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OCT (Optical Coherence Tomography Scanner)&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-PatientExample.html\&quot;&gt;Patient Example  Female, DoB: 1990-01-01&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;started&lt;/b&gt;: 2018-02-06 09:05:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;basedOn&lt;/b&gt;: &lt;a href=\&quot;ServiceRequest-OCTServiceRequestExample.html\&quot;&gt;ServiceRequest &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfSeries&lt;/b&gt;: 2&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 2&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;BodyStructure Reference&lt;/b&gt;: &lt;a href=\&quot;BodyStructure-LeftEyeStructureExample.html\&quot;&gt;BodyStructure: location = Structure of eye proper; locationQualifier = Left&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 1.2.840.10008.oct.rnfl.left.example&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OCT (Optical Coherence Tomography Scanner)&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: [not stated]:  (Optic disc / RNFL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;laterality&lt;/b&gt;: [not stated]:  (Left)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;1.2.840.10008.oct.rnfl.left.example.instance1&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;BodyStructure Reference&lt;/b&gt;: &lt;a href=\&quot;BodyStructure-LeftEyeStructureExample.html\&quot;&gt;BodyStructure: location = Structure of eye proper; locationQualifier = Left&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 1.2.840.10008.oct.macula.left.example&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OCT (Optical Coherence Tomography Scanner)&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: [not stated]:  (Macula)&lt;/p&gt;&lt;p&gt;&lt;b&gt;laterality&lt;/b&gt;: [not stated]:  (Left)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;1.2.840.10008.oct.macula.left.example.instance1&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ImagingStudy OCTStudyLeftEyeExample&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;OCTStudyLeftEyeExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcOCTStudyLeftEyeExample\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-ophthalmic-imaging-study.html\&quot;&gt;Ophthalmic Imaging Study&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Available&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OPT (Ophthalmic Tomography)&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-PatientExample.html\&quot;&gt;Patient Example  Female, DoB: 1990-01-01 ( PA1234567)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;started&lt;/b&gt;: 2026-08-18 09:05:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;basedOn&lt;/b&gt;: &lt;a href=\&quot;ServiceRequest-OCTServiceRequestExample.html\&quot;&gt;ServiceRequest &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfSeries&lt;/b&gt;: 2&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 2&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;BodyStructure Reference&lt;/b&gt;: &lt;a href=\&quot;BodyStructure-LeftEyeStructureExample.html\&quot;&gt;BodyStructure: location = Structure of eye proper; locationQualifier = Left&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 1.2.840.10008.oct.rnfl.left.example&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OPT (Ophthalmic Tomography)&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/81016008\&quot;&gt;SNOMED CT: 81016008&lt;/a&gt; (Optic disc)&lt;/p&gt;&lt;p&gt;&lt;b&gt;laterality&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/7771000\&quot;&gt;SNOMED CT: 7771000&lt;/a&gt; (Left)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;1.2.840.10008.oct.rnfl.left.example.instance1&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;BodyStructure Reference&lt;/b&gt;: &lt;a href=\&quot;BodyStructure-LeftEyeStructureExample.html\&quot;&gt;BodyStructure: location = Structure of eye proper; locationQualifier = Left&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 1.2.840.10008.oct.macula.left.example&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: unknown: OPT (Ophthalmic Tomography)&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/39021009\&quot;&gt;SNOMED CT: 39021009&lt;/a&gt; (Retina)&lt;/p&gt;&lt;p&gt;&lt;b&gt;laterality&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/7771000\&quot;&gt;SNOMED CT: 7771000&lt;/a&gt; (Left)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;1.2.840.10008.oct.macula.left.example.instance1&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4 (urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
   ] ;
   <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.status">fhir:ImagingStudy.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;available&quot;] ;
   <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.modality">fhir:ImagingStudy.modality</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
      <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:oid:1.2.840.10008.2.16.4&quot; ] ;
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OCT&quot; ] ;
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Optical Coherence Tomography Scanner&quot; ]
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OPT&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Ophthalmic Tomography&quot; ]
   ] ;
   <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.subject">fhir:ImagingStudy.subject</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Patient/PatientExample&gt; ;
      <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patient/PatientExample&quot; ]
   ] ;
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.started">fhir:ImagingStudy.started</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2018-02-06T09:05:00Z&quot;^^xsd:dateTime] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.started">fhir:ImagingStudy.started</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2026-08-18T09:05:00Z&quot;^^xsd:dateTime] ;
   <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.basedOn">fhir:ImagingStudy.basedOn</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
      <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/ServiceRequest/OCTServiceRequestExample&gt; ;
@@ -247,13 +248,19 @@
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.uid">fhir:ImagingStudy.series.uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;1.2.840.10008.oct.rnfl.left.example&quot; ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.modality">fhir:ImagingStudy.series.modality</a> [
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:oid:1.2.840.10008.2.16.4&quot; ] ;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OCT&quot; ] ;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Optical Coherence Tomography Scanner&quot; ]
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OPT&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Ophthalmic Tomography&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.bodySite">fhir:ImagingStudy.series.bodySite</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Optic disc / RNFL&quot; ]
+       a sct:81016008 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;81016008&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Optic disc&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.laterality">fhir:ImagingStudy.series.laterality</a> [
+       a sct:7771000 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;7771000&quot; ] ;
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Left&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance">fhir:ImagingStudy.series.instance</a> [
@@ -277,13 +284,19 @@
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.uid">fhir:ImagingStudy.series.uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;1.2.840.10008.oct.macula.left.example&quot; ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.modality">fhir:ImagingStudy.series.modality</a> [
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:oid:1.2.840.10008.2.16.4&quot; ] ;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OCT&quot; ] ;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Optical Coherence Tomography Scanner&quot; ]
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;OPT&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Ophthalmic Tomography&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.bodySite">fhir:ImagingStudy.series.bodySite</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Macula&quot; ]
+       a sct:39021009 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;39021009&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Retina&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.laterality">fhir:ImagingStudy.series.laterality</a> [
+       a sct:7771000 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;7771000&quot; ] ;
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Left&quot; ]
      ] ;
      <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance">fhir:ImagingStudy.series.instance</a> [
@@ -333,7 +346,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 18:52+0000">2026-08-25</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 17:43+0000">2026-09-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

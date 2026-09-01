@@ -1,7 +1,21 @@
 {
   "codeSystems" : [{
+    "url" : "http://terminology.hl7.org/ValueSet/v2-0074",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "Hl7VSDiagnosticServiceSectionId",
+    "title" : "hl7VS-diagnosticServiceSectionId",
+    "description" : "Concepts which specify a section of a diagnostic service where the observation may be performed.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0074"],
+    "oids" : ["2.16.840.1.113883.21.32"],
+    "sources" : ["2.16.840.1.113883.21.32"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
+  },
+  {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
-    "version" : "0.2.0",
+    "version" : "0.3.0",
     "status" : "draft",
     "name" : "LowVisionAssessmentVS",
     "title" : "Low Vision Assessment Value Set",
@@ -13,7 +27,7 @@
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
-    "version" : "0.2.0",
+    "version" : "0.3.0",
     "status" : "draft",
     "name" : "OphthalmicCarePlanCategoryVS",
     "title" : "Ophthalmic Care Plan Category Value Set",

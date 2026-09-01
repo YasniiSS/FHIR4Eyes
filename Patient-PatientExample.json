@@ -1,14 +1,29 @@
 {
   "resourceType" : "Patient",
   "id" : "PatientExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"]
+  },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientExample</b></p><a name=\"PatientExample\"> </a><a name=\"hcPatientExample\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Patient Example  Female, DoB: 1990-01-01</p><hr/></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientExample</b></p><a name=\"PatientExample\"> </a><a name=\"hcPatientExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-patient.html\">Ophthalmic Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"tel:+56912345678\">+56912345678</a></li><li>123 Example Street Santiago CL </li></ul></td></tr></table></div>"
   },
+  "identifier" : [{
+    "value" : "PA1234567"
+  }],
   "name" : [{
     "family" : "Example",
     "given" : ["Patient"]
   }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "+56912345678"
+  }],
   "gender" : "female",
-  "birthDate" : "1990-01-01"
+  "birthDate" : "1990-01-01",
+  "address" : [{
+    "line" : ["123 Example Street"],
+    "city" : "Santiago",
+    "country" : "CL"
+  }]
 }

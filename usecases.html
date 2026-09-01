@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0</title>
+    <title>Use Cases - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,7 +52,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.3.0 - ci-build
 
 
 
@@ -142,7 +142,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.2.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology - Local Development build (v0.3.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://YasniiSS.github.io/fhir4eyes/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Use Cases</h2>
   
 
@@ -265,9 +265,8 @@ examines the patient, may request or perform diagnostic procedures (see
 </code></pre>
 
 <blockquote>
-  <p>This use case does not currently require any FHIR4Eyes-specific profile. As the guide
-develops further (for example, if an <code class="language-plaintext highlighter-rouge">OphthalmicCondition</code> profile is defined), this
-section will be updated to reference it.</p>
+  <p>The diagnosis reached during this encounter can be recorded using <code class="language-plaintext highlighter-rouge">OphthalmicCondition</code>
+(see <a href="profiles.html">Profiles</a>), now defined by this guide.</p>
 </blockquote>
 
 <h3 id="use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</h3>
@@ -369,8 +368,9 @@ imaging pathway from radiology (see <a href="background.html">Background</a>).</
     O-&gt;&gt;O: Defines a treatment plan (CarePlan)
 </code></pre>
 
-<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ImagingStudy</code> (the acquired study), <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> (the
-findings), <code class="language-plaintext highlighter-rouge">Condition</code> (the diagnosis reached), and <code class="language-plaintext highlighter-rouge">CarePlan</code> (the resulting treatment
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ImagingStudy</code> (the acquired study), <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>
+(the findings, covered by <code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code>), <code class="language-plaintext highlighter-rouge">Condition</code> (the diagnosis
+reached, covered by <code class="language-plaintext highlighter-rouge">OphthalmicCondition</code>), and <code class="language-plaintext highlighter-rouge">CarePlan</code> (the resulting treatment
 plan, when applicable).</p>
 
 <table>
@@ -433,9 +433,9 @@ plan, when applicable).</p>
 </table>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code> is not yet built (see the profiles inventory in
-<a href="background.html">Background</a>); it is a high-priority item for this guide, since every
-examination in this group depends on it to represent the interpretation step.</p>
+  <p><code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code> is now defined by this guide (see
+<a href="profiles.html">Profiles</a>), since every examination in this group depends on it to
+represent the interpretation step.</p>
 </blockquote>
 
 <h3 id="use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</h3>
@@ -654,16 +654,15 @@ imaging study, but without being physically present with the patient.</p>
     O-&gt;&gt;O: Records DiagnosticReport, Condition, CarePlan as applicable
 </code></pre>
 
-<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (the request for remote interpretation, not
-yet covered by a dedicated profile), plus the same resources as
+<p><strong>FHIR resources involved:</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (the request for remote interpretation, now
+covered by <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>), plus the same resources as
 <a href="#group-b-imaging-studies-with-report">use case 2, group B</a> (<code class="language-plaintext highlighter-rouge">ImagingStudy</code>,
 <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Condition</code>, <code class="language-plaintext highlighter-rouge">CarePlan</code>).</p>
 
 <blockquote>
-  <p>This use case is an open opportunity for this guide. <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> is listed
-as a medium-priority profile to build (see <a href="background.html">Background</a>), and the full
-detail of how the remote request and response should be structured is still to be
-designed.</p>
+  <p><code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> is now defined by this guide (see <a href="profiles.html">Profiles</a>)
+and can be used to represent the request for remote interpretation described in this use
+case.</p>
 </blockquote>
 
 
@@ -685,7 +684,7 @@ designed.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2026 18:52+0000">2026-08-25</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 17:43+0000">2026-09-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

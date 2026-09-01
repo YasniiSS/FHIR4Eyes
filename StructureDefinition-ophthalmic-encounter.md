@@ -1,4 +1,4 @@
-# Ophthalmic Encounter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Encounter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,17 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicEncounter |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicEncounter |
 
  
 An ambulatory ophthalmology consultation encounter. Parented on the generic FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean dependency belongs in the FHIR4Eyes CL extension, not this Core guide. 
 
 **Usages:**
 
+* Refer to this Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior-chamber.md), [Corneal Tomography - Anterior Surface](StructureDefinition-ct-anterior-surface.md), [Corneal Tomography - Densitometry](StructureDefinition-ct-densitometry.md), [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-keratoconus-indices.md)... Show 8 more, [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md), [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posterior-surface.md), [IOL Formula Result](StructureDefinition-iol-formula-result.md), [Ophthalmic Humphrey Visual Field](StructureDefinition-ophthalmic-humphrey-visual-field.md), [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md), [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md), [Ophthalmic Ocular Biometry](StructureDefinition-ophthalmic-ocular-biometry.md) and [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specular-microscopy.md)
 * Examples for this Profile: [Encounter/EncounterExample](Encounter-EncounterExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-encounter.json)
 
@@ -37,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-encounter
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-encounter",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicEncounter",
   "title" : "Ophthalmic Encounter",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

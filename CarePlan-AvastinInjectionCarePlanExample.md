@@ -1,4 +1,4 @@
-# Avastin injection scheme - left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Avastin injection scheme - left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -18,7 +18,7 @@ Profile: [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md)
 
 **description**: 3 monthly intravitreal Avastin injections for diabetic macular edema
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **period**: 2026-08-18 --> 2026-10-18
 

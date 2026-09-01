@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name=\"CTPosteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTPosteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-posterior-surface.html\">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01</a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K1 (flat)</span></p><p><b>value</b>: 6.32 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K2 (steep)</span></p><p><b>value</b>: 6.58 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Km</span></p><p><b>value</b>: 6.45 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Back astigmatism</span></p><p><b>value</b>: 0.26 D<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeD = 'D')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name=\"CTPosteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTPosteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-posterior-surface.html\">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K1 (flat)</span></p><p><b>value</b>: 6.32 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K2 (steep)</span></p><p><b>value</b>: 6.58 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Km</span></p><p><b>value</b>: 6.45 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Back astigmatism</span></p><p><b>value</b>: 0.26 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -57,7 +57,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "6.32"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 1 ;
@@ -67,7 +67,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "6.58"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 2 ;
@@ -77,7 +77,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "6.45"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 3 ;
@@ -87,7 +87,7 @@
      fhir:Observation.component.valueQuantity [
        fhir:Quantity.value [ fhir:value "0.26"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "D" ]
+       fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 4 ;

@@ -1,6 +1,6 @@
 {
-  "version" : "0.2.0",
-  "date" : "20260825185220",
+  "version" : "0.3.0",
+  "date" : "20260901174323",
   "notForPublication" : true,
   "name" : "fhir4eyes.core.r4"
 }

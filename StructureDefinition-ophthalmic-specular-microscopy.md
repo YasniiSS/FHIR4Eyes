@@ -1,4 +1,4 @@
-# Ophthalmic Specular Microscopy - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Ophthalmic Specular Microscopy - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:OphthalmicSpecularMicroscopy |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:OphthalmicSpecularMicroscopy |
 
  
 Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). 
@@ -17,6 +17,7 @@ Represents a corneal endothelial specular microscopy exam. Sourced directly from
 **Usages:**
 
 * Examples for this Profile: [Observation/SpecularMicroscopyRightEyeExample](Observation-SpecularMicroscopyRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-specular-microscopy.json)
 
@@ -37,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-specular-microscopy",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "OphthalmicSpecularMicroscopy",
   "title" : "Ophthalmic Specular Microscopy",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -138,6 +139,20 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
       "mustSupport" : true
     },
     {

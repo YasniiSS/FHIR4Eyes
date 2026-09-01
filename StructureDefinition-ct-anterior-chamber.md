@@ -1,4 +1,4 @@
-# Corneal Tomography - Anterior Chamber - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# Corneal Tomography - Anterior Chamber - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,17 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber | *Version*:0.2.0 |
-| Draft as of 2026-08-25 | *Computable Name*:CTAnteriorChamber |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber | *Version*:0.3.0 |
+| Draft as of 2026-09-01 | *Computable Name*:CTAnteriorChamber |
 
  
 Represents the anterior chamber analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are left as open text for now, following this guide's terminology rigor: no confirmed SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
 
 **Usages:**
 
+* Refer to this Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-report.md)
 * Examples for this Profile: [Observation/CTAnteriorChamberRightEyeExample](Observation-CTAnteriorChamberRightEyeExample.md)
+* CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ct-anterior-chamber.json)
 
@@ -37,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
   "resourceType" : "StructureDefinition",
   "id" : "ct-anterior-chamber",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "CTAnteriorChamber",
   "title" : "Corneal Tomography - Anterior Chamber",
   "status" : "draft",
-  "date" : "2026-08-25T18:52:20+00:00",
+  "date" : "2026-09-01T17:43:23+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -138,6 +140,20 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
       "mustSupport" : true
     },
     {

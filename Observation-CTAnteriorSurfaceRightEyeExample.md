@@ -1,4 +1,4 @@
-# CTAnteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.2.0
+# CTAnteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -14,7 +14,7 @@ Profile: [Corneal Tomography - Anterior Surface](StructureDefinition-ct-anterior
 
 **code**: Corneal tomography, anterior surface analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -27,27 +27,27 @@ Example based on typical Pentacam-style anterior surface report
 
 **device**: Pentacam AXL
 
-> **component****code**: K1 (flat axis)**value**: 43.2 D (Details: UCUM codeD = 'D')
+> **component****code**: K1 (flat axis)**value**: 43.2 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: K1 axis**value**: 12 deg (Details: UCUM codedeg = 'deg')
 
 > **component****code**: K1 radius**value**: 7.81 mm (Details: UCUM codemm = 'mm')
 
-> **component****code**: K2 (steep axis)**value**: 44.6 D (Details: UCUM codeD = 'D')
+> **component****code**: K2 (steep axis)**value**: 44.6 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: K2 axis**value**: 102 deg (Details: UCUM codedeg = 'deg')
 
 > **component****code**: K2 radius**value**: 7.56 mm (Details: UCUM codemm = 'mm')
 
-> **component****code**: Km (average)**value**: 43.9 D (Details: UCUM codeD = 'D')
+> **component****code**: Km (average)**value**: 43.9 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Corneal astigmatism**value**: 1.4 D (Details: UCUM codeD = 'D')
+> **component****code**: Corneal astigmatism**value**: 1.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Corneal cylinder**value**: -1.4 D (Details: UCUM codeD = 'D')
+> **component****code**: Corneal cylinder**value**: -1.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: K Max (front)**value**: 45.8 D (Details: UCUM codeD = 'D')
+> **component****code**: K Max (front)**value**: 45.8 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: SimK steep/flat**value**: 44.1 D (Details: UCUM codeD = 'D')
+> **component****code**: SimK steep/flat**value**: 44.1 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Rh (horizontal radius)**value**: 7.81 mm (Details: UCUM codemm = 'mm')
 
@@ -65,7 +65,7 @@ Example based on typical Pentacam-style anterior surface report
 
 > **component****code**: Surface Asymmetry Index (SAI)**value**: 0.38 1 (Details: UCUM code1 = '1')
 
-> **component****code**: I-S value**value**: 0.6 D (Details: UCUM codeD = 'D')
+> **component****code**: I-S value**value**: 0.6 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: KISA% index**value**: 12.4 % (Details: UCUM code% = '%')
 
@@ -73,35 +73,35 @@ Example based on typical Pentacam-style anterior surface report
 
 > **component****code**: Topographic pattern**value**: Regular
 
-> **component****code**: Total Corneal Refractive Power (TCRP)**value**: 43.5 D (Details: UCUM codeD = 'D')
+> **component****code**: Total Corneal Refractive Power (TCRP)**value**: 43.5 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: True Net Power (TNP)**value**: 43.3 D (Details: UCUM codeD = 'D')
+> **component****code**: True Net Power (TNP)**value**: 43.3 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: EKR 1.0mm zone**value**: 43.7 D (Details: UCUM codeD = 'D')
+> **component****code**: EKR 1.0mm zone**value**: 43.7 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: EKR 3.0mm zone**value**: 43.4 D (Details: UCUM codeD = 'D')
+> **component****code**: EKR 3.0mm zone**value**: 43.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: EKR 4.5mm zone**value**: 43.1 D (Details: UCUM codeD = 'D')
+> **component****code**: EKR 4.5mm zone**value**: 43.1 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: 3mm zone Mean Power**value**: 43.8 D (Details: UCUM codeD = 'D')
+> **component****code**: 3mm zone Mean Power**value**: 43.8 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: 3mm zone Astig Power**value**: 1.3 D (Details: UCUM codeD = 'D')
+> **component****code**: 3mm zone Astig Power**value**: 1.3 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: 3mm zone Steep Axis**value**: 100 deg (Details: UCUM codedeg = 'deg')
 
 > **component****code**: 3mm zone Flat Axis**value**: 10 deg (Details: UCUM codedeg = 'deg')
 
-> **component****code**: 5mm zone Mean Power**value**: 43.6 D (Details: UCUM codeD = 'D')
+> **component****code**: 5mm zone Mean Power**value**: 43.6 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: 5mm zone Astig Power**value**: 1.5 D (Details: UCUM codeD = 'D')
+> **component****code**: 5mm zone Astig Power**value**: 1.5 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: 5mm zone Steep Axis**value**: 103 deg (Details: UCUM codedeg = 'deg')
 
 > **component****code**: 5mm zone Flat Axis**value**: 13 deg (Details: UCUM codedeg = 'deg')
 
-> **component****code**: Total corneal astigmatism (tWFA)**value**: 1.3 D (Details: UCUM codeD = 'D')
+> **component****code**: Total corneal astigmatism (tWFA)**value**: 1.3 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Total corneal irregular astigmatism**value**: 0.2 D (Details: UCUM codeD = 'D')
+> **component****code**: Total corneal irregular astigmatism**value**: 0.2 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Corneal HOA RMS**value**: 0.31 um (Details: UCUM codeum = 'um')
 
@@ -109,9 +109,9 @@ Example based on typical Pentacam-style anterior surface report
 
 > **component****code**: Kappa intercept**value**: x: 0.18mm, y: -0.06mm
 
-> **component****code**: SIA (Surgically Induced Astigmatism)**value**: 0.3 D (Details: UCUM codeD = 'D')
+> **component****code**: SIA (Surgically Induced Astigmatism)**value**: 0.3 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Predicted post-op corneal astigmatism**value**: 0.4 D (Details: UCUM codeD = 'D')
+> **component****code**: Predicted post-op corneal astigmatism**value**: 0.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: Optimal toric IOL axis**value**: 102 deg (Details: UCUM codedeg = 'deg')
 
@@ -163,7 +163,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.2,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -193,7 +193,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 44.6,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -223,7 +223,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.9,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -233,7 +233,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 1.4,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -243,7 +243,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : -1.4,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -253,7 +253,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 45.8,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -263,7 +263,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 44.1,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -353,7 +353,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 0.6,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -391,7 +391,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.5,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -401,7 +401,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.3,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -411,7 +411,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.7,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -421,7 +421,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.4,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -431,7 +431,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.1,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -441,7 +441,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.8,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -451,7 +451,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 1.3,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -481,7 +481,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 43.6,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -491,7 +491,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 1.5,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -521,7 +521,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 1.3,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -531,7 +531,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 0.2,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -567,7 +567,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 0.3,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
@@ -577,7 +577,7 @@ Example based on typical Pentacam-style anterior surface report
     "valueQuantity" : {
       "value" : 0.4,
       "system" : "http://unitsofmeasure.org",
-      "code" : "D"
+      "code" : "[diop]"
     }
   },
   {
