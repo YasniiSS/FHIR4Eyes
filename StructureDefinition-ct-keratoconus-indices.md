@@ -1,4 +1,4 @@
-# Corneal Tomography - Keratoconus Indices - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Corneal Tomography - Keratoconus Indices - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:CTKeratoconusIndices |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:CTKeratoconusIndices |
 
  
 Represents the keratoconus screening/classification indices component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Keratoconus Indices section). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
   "resourceType" : "StructureDefinition",
   "id" : "ct-keratoconus-indices",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "CTKeratoconusIndices",
   "title" : "Corneal Tomography - Keratoconus Indices",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

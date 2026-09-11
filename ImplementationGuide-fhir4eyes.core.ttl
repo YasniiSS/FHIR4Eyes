@@ -13,11 +13,11 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir4eyes.core</b></p><a name=\"fhir4eyes.core\"> </a><a name=\"hcfhir4eyes.core\"> </a><h2>FHIR4Eyes</h2><p>The official URL for this implementation guide is: </p><pre>https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core</pre><div><p>A proposed international FHIR R4 Implementation Guide for eye care interoperability</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core"] ;
-  fhir:ImplementationGuide.version [ fhir:value "0.3.0"] ;
+  fhir:ImplementationGuide.version [ fhir:value "0.4.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "FHIR4Eyes"] ;
   fhir:ImplementationGuide.title [ fhir:value "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-09-01T17:43:23+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-09-11T00:16:12+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;

@@ -1,4 +1,4 @@
-# sp-procedure-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# sp-procedure-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/procedure-eye | *Version*:0.3.0 |
+| *Official URL*:http://fhir4eyes.org/SearchParameter/procedure-eye | *Version*:0.4.0 |
 | Active as of 2026-09-01 | *Computable Name*:ProcedureEye |
 
  
@@ -23,7 +23,7 @@ Search ophthalmic procedures by eye laterality, expressed via the bodySite exten
   "resourceType" : "SearchParameter",
   "id" : "sp-procedure-eye",
   "url" : "http://fhir4eyes.org/SearchParameter/procedure-eye",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "ProcedureEye",
   "status" : "active",
   "experimental" : false,

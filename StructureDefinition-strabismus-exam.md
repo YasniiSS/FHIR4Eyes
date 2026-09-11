@@ -1,4 +1,4 @@
-# Strabismus Exam - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Strabismus Exam - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:StrabismusExam |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:StrabismusExam |
 
  
 Represents a strabismus examination as a panel grouping together whichever sub-tests were actually performed for this patient (for example, cover test, motility, near point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible sub-test is performed for every patient; this profile does not enforce a fixed checklist. Each sub-test is recorded as its own Observation, referenced here via hasMember. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
   "resourceType" : "StructureDefinition",
   "id" : "strabismus-exam",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "StrabismusExam",
   "title" : "Strabismus Exam",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

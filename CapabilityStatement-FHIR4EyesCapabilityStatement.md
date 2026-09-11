@@ -1,4 +1,4 @@
-# FHIR4Eyes Server Capability Statement - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# FHIR4Eyes Server Capability Statement - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server | *Version*:0.3.0 |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server | *Version*:0.4.0 |
 | Draft as of 2026-09-01 | *Computable Name*:FHIR4EyesServer |
 
  
@@ -25,7 +25,7 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
   "resourceType" : "CapabilityStatement",
   "id" : "FHIR4EyesCapabilityStatement",
   "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "FHIR4EyesServer",
   "title" : "FHIR4Eyes Server Capability Statement",
   "status" : "draft",
@@ -56,7 +56,7 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
   }],
   "kind" : "requirements",
   "fhirVersion" : "4.0.1",
-  "format" : ["json", "xml"],
+  "format" : ["application/fhir+json", "application/fhir+xml"],
   "rest" : [{
     "mode" : "server",
     "documentation" : "A conformant FHIR4Eyes server SHALL support read, search-type, create and update interactions for the resource types and profiles listed below, and SHALL support the listed search parameters at a minimum.",

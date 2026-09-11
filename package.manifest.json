@@ -1,7 +1,7 @@
 {
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "fhirVersion" : ["4.0.1"],
-  "date" : "20260901174323",
+  "date" : "20260911001612",
   "name" : "fhir4eyes.core",
   "jurisdiction" : "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 }

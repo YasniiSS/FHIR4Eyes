@@ -1,4 +1,4 @@
-# Tension Curve - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Tension Curve - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:TensionCurve |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:TensionCurve |
 
  
 Represents an ambulatory tension curve: several intraocular pressure readings taken across a single day, grouped together as a single clinical concept rather than recorded as unrelated, disconnected observations. This profile was already defined in an earlier version of this guide's design work and is carried forward here. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
   "resourceType" : "StructureDefinition",
   "id" : "tension-curve",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "TensionCurve",
   "title" : "Tension Curve",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

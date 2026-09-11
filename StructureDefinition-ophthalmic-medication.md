@@ -1,4 +1,4 @@
-# Ophthalmic Medication - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Medication - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicMedication |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicMedication |
 
  
 A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-medication",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicMedication",
   "title" : "Ophthalmic Medication",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

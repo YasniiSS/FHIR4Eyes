@@ -1,4 +1,4 @@
-# fhir4eyes.core#0.3.0: FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology
+# fhir4eyes.core#0.4.0: FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology
 
 ## Pages
 

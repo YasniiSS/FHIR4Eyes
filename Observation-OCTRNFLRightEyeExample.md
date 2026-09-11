@@ -1,4 +1,4 @@
-# OCTRNFLRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# OCTRNFLRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -95,6 +95,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "86291-2",
+      "display" : "Retina Retinal nerve fiber layer panel by OCT"
+    }],
     "text" : "OCT optic disc / RNFL analysis"
   },
   "subject" : {

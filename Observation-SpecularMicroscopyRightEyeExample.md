@@ -1,4 +1,4 @@
-# SpecularMicroscopyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# SpecularMicroscopyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -29,8 +29,6 @@ Example based on typical Topcon SP-1P specular microscopy report
 
 **device**: Topcon SP-1P
 
-> **component****code**: Capture position**value**: Central
-
 > **component****code**: Endothelial cell density (CD)**value**: 2456 /mm2 (Details: UCUM code/mm2 = '/mm2')
 
 > **component****code**: Number of cells analyzed (N)**value**: 98 1 (Details: UCUM code1 = '1')
@@ -48,6 +46,8 @@ Example based on typical Topcon SP-1P specular microscopy report
 > **component****code**: Average cell area (AVG)**value**: 407 um2 (Details: UCUM codeum2 = 'um2')
 
 > **component****code**: Cell area SD**value**: 89 um2 (Details: UCUM codeum2 = 'um2')
+
+> **component****code**: Capture position**value**: Central
 
 
 
@@ -93,14 +93,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   "component" : [{
     "code" : {
-      "text" : "Capture position"
-    },
-    "valueCodeableConcept" : {
-      "text" : "Central"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100070-2",
+        "display" : "Right cornea Cell density"
+      }],
       "text" : "Endothelial cell density (CD)"
     },
     "valueQuantity" : {
@@ -111,6 +108,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100076-9",
+        "display" : "Right cornea Endothelial cells counted"
+      }],
       "text" : "Number of cells analyzed (N)"
     },
     "valueQuantity" : {
@@ -121,6 +123,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100072-8",
+        "display" : "Right cornea Coefficient of variation"
+      }],
       "text" : "Coefficient of variation (CV)"
     },
     "valueQuantity" : {
@@ -131,6 +138,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100074-4",
+        "display" : "Right cornea Hexagonality"
+      }],
       "text" : "Hexagonality (HEX)"
     },
     "valueQuantity" : {
@@ -141,6 +153,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "79825-6",
+        "display" : "Right cornea Central corneal thickness Pachymetry"
+      }],
       "text" : "Central corneal thickness (CCT)"
     },
     "valueQuantity" : {
@@ -151,6 +168,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100078-5",
+        "display" : "Right cornea Endothelial cell area.min"
+      }],
       "text" : "Minimum cell area (MIN)"
     },
     "valueQuantity" : {
@@ -161,6 +183,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100080-1",
+        "display" : "Right cornea Endothelial cell area.max"
+      }],
       "text" : "Maximum cell area (MAX)"
     },
     "valueQuantity" : {
@@ -171,6 +198,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100082-7",
+        "display" : "Right cornea Endothelial cell area.mean"
+      }],
       "text" : "Average cell area (AVG)"
     },
     "valueQuantity" : {
@@ -181,12 +213,25 @@ Example based on typical Topcon SP-1P specular microscopy report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100084-3",
+        "display" : "Right cornea Cell area.standard deviation"
+      }],
       "text" : "Cell area SD"
     },
     "valueQuantity" : {
       "value" : 89,
       "system" : "http://unitsofmeasure.org",
       "code" : "um2"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Capture position"
+    },
+    "valueCodeableConcept" : {
+      "text" : "Central"
     }
   }]
 }

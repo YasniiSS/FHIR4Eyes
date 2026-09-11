@@ -1,4 +1,4 @@
-# Ocular Motility - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ocular Motility - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OcularMotility |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OcularMotility |
 
  
 Represents the assessment of extraocular muscle function (hypofunction or hyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can differ between the two eyes independently. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
   "resourceType" : "StructureDefinition",
   "id" : "ocular-motility",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OcularMotility",
   "title" : "Ocular Motility",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

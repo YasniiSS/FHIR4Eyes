@@ -1,4 +1,4 @@
-# sp-condition-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# sp-condition-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/condition-eye | *Version*:0.3.0 |
+| *Official URL*:http://fhir4eyes.org/SearchParameter/condition-eye | *Version*:0.4.0 |
 | Active as of 2026-09-01 | *Computable Name*:ConditionEye |
 
  
@@ -23,7 +23,7 @@ Search ophthalmic conditions/diagnoses by eye laterality, expressed via the body
   "resourceType" : "SearchParameter",
   "id" : "sp-condition-eye",
   "url" : "http://fhir4eyes.org/SearchParameter/condition-eye",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "ConditionEye",
   "status" : "active",
   "experimental" : false,

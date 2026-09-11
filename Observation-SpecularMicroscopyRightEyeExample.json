@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation SpecularMicroscopyRightEyeExample</b></p><a name=\"SpecularMicroscopyRightEyeExample\"> </a><a name=\"hcSpecularMicroscopyRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-specular-microscopy.html\">Ophthalmic Specular Microscopy</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal endothelial specular microscopy</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Topcon SP-1P specular microscopy report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Automated</span></p><p><b>device</b>: Topcon SP-1P</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Capture position</span></p><p><b>value</b>: <span title=\"Codes:\">Central</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Endothelial cell density (CD)</span></p><p><b>value</b>: 2456 /mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/mm2 = '/mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Number of cells analyzed (N)</span></p><p><b>value</b>: 98 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Coefficient of variation (CV)</span></p><p><b>value</b>: 32 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Hexagonality (HEX)</span></p><p><b>value</b>: 58 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Central corneal thickness (CCT)</span></p><p><b>value</b>: 542 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Minimum cell area (MIN)</span></p><p><b>value</b>: 218 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Maximum cell area (MAX)</span></p><p><b>value</b>: 645 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Average cell area (AVG)</span></p><p><b>value</b>: 407 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cell area SD</span></p><p><b>value</b>: 89 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation SpecularMicroscopyRightEyeExample</b></p><a name=\"SpecularMicroscopyRightEyeExample\"> </a><a name=\"hcSpecularMicroscopyRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-specular-microscopy.html\">Ophthalmic Specular Microscopy</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal endothelial specular microscopy</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Topcon SP-1P specular microscopy report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Automated</span></p><p><b>device</b>: Topcon SP-1P</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100070-2}\">Endothelial cell density (CD)</span></p><p><b>value</b>: 2456 /mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/mm2 = '/mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100076-9}\">Number of cells analyzed (N)</span></p><p><b>value</b>: 98 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100072-8}\">Coefficient of variation (CV)</span></p><p><b>value</b>: 32 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100074-4}\">Hexagonality (HEX)</span></p><p><b>value</b>: 58 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 79825-6}\">Central corneal thickness (CCT)</span></p><p><b>value</b>: 542 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100078-5}\">Minimum cell area (MIN)</span></p><p><b>value</b>: 218 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100080-1}\">Maximum cell area (MAX)</span></p><p><b>value</b>: 645 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100082-7}\">Average cell area (AVG)</span></p><p><b>value</b>: 407 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 100084-3}\">Cell area SD</span></p><p><b>value</b>: 89 um2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum2 = 'um2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Capture position</span></p><p><b>value</b>: <span title=\"Codes:\">Central</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -41,14 +41,11 @@
   },
   "component" : [{
     "code" : {
-      "text" : "Capture position"
-    },
-    "valueCodeableConcept" : {
-      "text" : "Central"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100070-2",
+        "display" : "Right cornea Cell density"
+      }],
       "text" : "Endothelial cell density (CD)"
     },
     "valueQuantity" : {
@@ -59,6 +56,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100076-9",
+        "display" : "Right cornea Endothelial cells counted"
+      }],
       "text" : "Number of cells analyzed (N)"
     },
     "valueQuantity" : {
@@ -69,6 +71,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100072-8",
+        "display" : "Right cornea Coefficient of variation"
+      }],
       "text" : "Coefficient of variation (CV)"
     },
     "valueQuantity" : {
@@ -79,6 +86,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100074-4",
+        "display" : "Right cornea Hexagonality"
+      }],
       "text" : "Hexagonality (HEX)"
     },
     "valueQuantity" : {
@@ -89,6 +101,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "79825-6",
+        "display" : "Right cornea Central corneal thickness Pachymetry"
+      }],
       "text" : "Central corneal thickness (CCT)"
     },
     "valueQuantity" : {
@@ -99,6 +116,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100078-5",
+        "display" : "Right cornea Endothelial cell area.min"
+      }],
       "text" : "Minimum cell area (MIN)"
     },
     "valueQuantity" : {
@@ -109,6 +131,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100080-1",
+        "display" : "Right cornea Endothelial cell area.max"
+      }],
       "text" : "Maximum cell area (MAX)"
     },
     "valueQuantity" : {
@@ -119,6 +146,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100082-7",
+        "display" : "Right cornea Endothelial cell area.mean"
+      }],
       "text" : "Average cell area (AVG)"
     },
     "valueQuantity" : {
@@ -129,12 +161,25 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "100084-3",
+        "display" : "Right cornea Cell area.standard deviation"
+      }],
       "text" : "Cell area SD"
     },
     "valueQuantity" : {
       "value" : 89,
       "system" : "http://unitsofmeasure.org",
       "code" : "um2"
+    }
+  },
+  {
+    "code" : {
+      "text" : "Capture position"
+    },
+    "valueCodeableConcept" : {
+      "text" : "Central"
     }
   }]
 }

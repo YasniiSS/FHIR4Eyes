@@ -1,4 +1,4 @@
-# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic OCT Macula - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicOCTMacula |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicOCTMacula |
 
  
 Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-oct-macula",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -135,7 +135,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Identifies this as an OCT macula analysis",
+      "short" : "LOINC 57119-0 — OCT macular analysis panel",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57119-0",
+          "display" : "Optical coherence tomography panel"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -221,7 +228,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:cmt.code",
       "path" : "Observation.component.code",
-      "short" : "Central macular thickness (CMT) - central subfield thickness (1mm), primary variable"
+      "short" : "Central macular thickness (CMT) - central subfield thickness (1mm), primary variable",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57109-1",
+          "display" : "Macular grid.center subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cmt.value[x]",
@@ -241,7 +255,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:center.code",
       "path" : "Observation.component.code",
-      "short" : "Center thickness - foveal center point thickness, from ETDRS grid"
+      "short" : "Center thickness - foveal center point thickness, from ETDRS grid",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57108-3",
+          "display" : "Macular grid.center point thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:center.value[x]",
@@ -301,7 +322,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:innerSup.code",
       "path" : "Observation.component.code",
-      "short" : "Inner Superior thickness - ETDRS inner ring superior subfield"
+      "short" : "Inner Superior thickness - ETDRS inner ring superior subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57110-9",
+          "display" : "Macular grid.inner superior subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:innerSup.value[x]",
@@ -321,7 +349,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:innerNas.code",
       "path" : "Observation.component.code",
-      "short" : "Inner Nasal thickness - ETDRS inner ring nasal subfield"
+      "short" : "Inner Nasal thickness - ETDRS inner ring nasal subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57111-7",
+          "display" : "Macular grid.inner nasal subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:innerNas.value[x]",
@@ -341,7 +376,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:innerInf.code",
       "path" : "Observation.component.code",
-      "short" : "Inner Inferior thickness - ETDRS inner ring inferior subfield"
+      "short" : "Inner Inferior thickness - ETDRS inner ring inferior subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57112-5",
+          "display" : "Macular grid.inner inferior subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:innerInf.value[x]",
@@ -361,7 +403,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:innerTemp.code",
       "path" : "Observation.component.code",
-      "short" : "Inner Temporal thickness - ETDRS inner ring temporal subfield"
+      "short" : "Inner Temporal thickness - ETDRS inner ring temporal subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57113-3",
+          "display" : "Macular grid.inner temporal subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:innerTemp.value[x]",
@@ -381,7 +430,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:outerSup.code",
       "path" : "Observation.component.code",
-      "short" : "Outer Superior thickness - ETDRS outer ring superior subfield"
+      "short" : "Outer Superior thickness - ETDRS outer ring superior subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57114-1",
+          "display" : "Macular grid.outer superior subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:outerSup.value[x]",
@@ -401,7 +457,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:outerNas.code",
       "path" : "Observation.component.code",
-      "short" : "Outer Nasal thickness - ETDRS outer ring nasal subfield"
+      "short" : "Outer Nasal thickness - ETDRS outer ring nasal subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57115-8",
+          "display" : "Macular grid.outer nasal subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:outerNas.value[x]",
@@ -421,7 +484,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:outerInf.code",
       "path" : "Observation.component.code",
-      "short" : "Outer Inferior thickness - ETDRS outer ring inferior subfield"
+      "short" : "Outer Inferior thickness - ETDRS outer ring inferior subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57116-6",
+          "display" : "Macular grid.outer inferior subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:outerInf.value[x]",
@@ -441,7 +511,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:outerTemp.code",
       "path" : "Observation.component.code",
-      "short" : "Outer Temporal thickness - ETDRS outer ring temporal subfield"
+      "short" : "Outer Temporal thickness - ETDRS outer ring temporal subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57117-4",
+          "display" : "Macular grid.outer temporal subfield thickness by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:outerTemp.value[x]",
@@ -461,7 +538,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:centralVol.code",
       "path" : "Observation.component.code",
-      "short" : "Central subfield volume - volume of central 1mm subfield"
+      "short" : "Central subfield volume - total volume from ETDRS grid",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "57118-2",
+          "display" : "Macular grid.total volume by OCT"
+        }]
+      }
     },
     {
       "id" : "Observation.component:centralVol.value[x]",

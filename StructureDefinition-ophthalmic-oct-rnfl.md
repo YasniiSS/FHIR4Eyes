@@ -1,4 +1,4 @@
-# Ophthalmic OCT RNFL - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic OCT RNFL - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicOCTRNFL |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicOCTRNFL |
 
  
 Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL) analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics, alongside acquisition metadata and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-oct-rnfl",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicOCTRNFL",
   "title" : "Ophthalmic OCT RNFL",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -135,7 +135,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Identifies this as an OCT optic disc / RNFL analysis",
+      "short" : "LOINC 86291-2 — RNFL panel by OCT",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "86291-2",
+          "display" : "Retina Retinal nerve fiber layer panel by OCT"
+        }]
+      },
       "mustSupport" : true
     },
     {

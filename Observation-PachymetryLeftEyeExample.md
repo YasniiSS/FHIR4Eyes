@@ -1,4 +1,4 @@
-# PachymetryLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# PachymetryLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -40,6 +40,11 @@ Profile: [Pachymetry](StructureDefinition-pachymetry.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "79825-6",
+      "display" : "Right cornea Central corneal thickness Pachymetry"
+    }],
     "text" : "Central corneal thickness"
   },
   "subject" : {

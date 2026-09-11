@@ -1,4 +1,4 @@
-# Ocular Body Structure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ocular Body Structure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OcularBodyStructure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OcularBodyStructure |
 
  
 Represents an anatomical ocular location, used throughout this guide to express laterality (right eye, left eye, or both eyes) for observations, conditions, procedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care IG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location` element identifying the anatomical structure, and a `locationQualifier` element carrying laterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets for these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for locationQualifier), which are the intended reference terminology for this profile. However, because the HL7 Eye Care IG is not published as a usable FHIR package, those value sets cannot be formally imported here; this profile binds to SNOMED CT directly instead (see the Terminology page of this guide for the general rationale). 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ocular-body-structur
   "resourceType" : "StructureDefinition",
   "id" : "ocular-body-structure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OcularBodyStructure",
   "title" : "Ocular Body Structure",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

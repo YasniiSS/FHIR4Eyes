@@ -1,4 +1,4 @@
-# sp-imagingstudy-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# sp-imagingstudy-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-eye | *Version*:0.3.0 |
+| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-eye | *Version*:0.4.0 |
 | Active as of 2026-09-01 | *Computable Name*:ImagingStudyEye |
 
  
@@ -23,7 +23,7 @@ Search ophthalmic imaging studies by the laterality of an examined series, expre
   "resourceType" : "SearchParameter",
   "id" : "sp-imagingstudy-eye",
   "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-eye",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "ImagingStudyEye",
   "status" : "active",
   "experimental" : false,

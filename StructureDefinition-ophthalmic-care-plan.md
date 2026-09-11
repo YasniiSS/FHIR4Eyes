@@ -1,4 +1,4 @@
-# Ophthalmic Care Plan - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Care Plan - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicCarePlan |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicCarePlan |
 
  
 A long-term treatment scheme made up of repeated sessions or administrations, rather than a single event. Covers two schemes identified in this guide's Use Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not every planned session is necessarily scheduled at once: some sessions remain planned but unscheduled within the CarePlan (via activity), while each session that is actually performed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via Procedure.basedOn. 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-care-plan
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-care-plan",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicCarePlan",
   "title" : "Ophthalmic Care Plan",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

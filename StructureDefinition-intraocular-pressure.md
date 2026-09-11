@@ -1,4 +1,4 @@
-# Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Intraocular Pressure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:IntraocularPressure |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:IntraocularPressure |
 
  
 Represents a single intraocular pressure (IOP) reading, in mmHg. Code is fixed to SNOMED CT 41633001 (Intraocular pressure). 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
   "resourceType" : "StructureDefinition",
   "id" : "intraocular-pressure",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "IntraocularPressure",
   "title" : "Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -214,7 +214,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
     {
       "id" : "Observation.method",
       "path" : "Observation.method",
-      "short" : "The tonometry method used (e.g. applanation, non-contact)",
+      "short" : "The tonometry method used (e.g. applanation, non-contact) — LOINC 79764-7",
       "mustSupport" : true
     }]
   }

@@ -1,4 +1,4 @@
-# Pachymetry - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Pachymetry - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:Pachymetry |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:Pachymetry |
 
  
 Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when correcting an IOP reading for corneal thickness. 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
   "resourceType" : "StructureDefinition",
   "id" : "pachymetry",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "Pachymetry",
   "title" : "Pachymetry",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -129,7 +129,14 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Identifies this as a corneal pachymetry measurement",
+      "short" : "LOINC 79825-6 — Central corneal thickness by pachymetry",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "79825-6",
+          "display" : "Right cornea Central corneal thickness Pachymetry"
+        }]
+      },
       "mustSupport" : true
     },
     {

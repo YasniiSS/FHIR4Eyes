@@ -1,4 +1,4 @@
-# sp-encounter-appointment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# sp-encounter-appointment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/encounter-appointment | *Version*:0.3.0 |
+| *Official URL*:http://fhir4eyes.org/SearchParameter/encounter-appointment | *Version*:0.4.0 |
 | Active as of 2026-09-01 | *Computable Name*:EncounterAppointment |
 
  
@@ -23,7 +23,7 @@ Search ophthalmic encounters by the appointment that led to them.
   "resourceType" : "SearchParameter",
   "id" : "sp-encounter-appointment",
   "url" : "http://fhir4eyes.org/SearchParameter/encounter-appointment",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "EncounterAppointment",
   "status" : "active",
   "experimental" : false,

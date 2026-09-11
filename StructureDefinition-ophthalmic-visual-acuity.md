@@ -1,4 +1,4 @@
-# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Visual Acuity - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicVisualAcuity |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicVisualAcuity |
 
  
 Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-visual-acuity",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicVisualAcuity",
   "title" : "Ophthalmic Visual Acuity",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -136,7 +136,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Fixed to the generic Visual acuity concept; specific detail lives in the discrete components below, not in code",
+      "short" : "LOINC 98497-1 — Visual acuity panel; specific detail lives in the discrete components below",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "98497-1",
+          "display" : "Visual acuity panel"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -320,12 +327,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.component:chart.code",
       "path" : "Observation.component.code",
-      "short" : "The chart or optotype used (e.g. Snellen, ETDRS, LogMAR chart)"
-    },
-    {
-      "id" : "Observation.component:chart.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Chart"
+      "short" : "LOINC 79908-0 — chart or optotype used (Snellen, ETDRS, LogMAR chart)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "79908-0",
+          "display" : "Type of Visual acuity exam method"
+        }]
+      }
     },
     {
       "id" : "Observation.component:chart.value[x]",

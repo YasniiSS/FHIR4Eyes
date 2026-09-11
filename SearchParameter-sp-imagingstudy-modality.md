@@ -1,4 +1,4 @@
-# sp-imagingstudy-modality - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# sp-imagingstudy-modality - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-modality | *Version*:0.3.0 |
+| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-modality | *Version*:0.4.0 |
 | Active as of 2026-09-01 | *Computable Name*:ImagingStudyModality |
 
  
@@ -23,7 +23,7 @@ Search ophthalmic imaging studies by the DICOM acquisition modality of their ser
   "resourceType" : "SearchParameter",
   "id" : "sp-imagingstudy-modality",
   "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-modality",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "ImagingStudyModality",
   "status" : "active",
   "experimental" : false,

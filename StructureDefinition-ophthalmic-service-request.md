@@ -1,4 +1,4 @@
-# Ophthalmic Service Request - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Service Request - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicServiceRequest |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicServiceRequest |
 
  
 A request for an ophthalmic examination and, where relevant, its interpretation or treatment. Covers three scenarios: an order fulfilled locally, an order referred from primary care to a hospital or reference center, and an order originating directly at a hospital. See the Use Cases and Profiles pages of this guide for the full clinical and design rationale. 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-service-r
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-service-request",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicServiceRequest",
   "title" : "Ophthalmic Service Request",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

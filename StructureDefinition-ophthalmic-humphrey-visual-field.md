@@ -1,4 +1,4 @@
-# Ophthalmic Humphrey Visual Field - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Humphrey Visual Field - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicHumphreyVisualField |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicHumphreyVisualField |
 
  
 Represents an automated static perimetry (Humphrey field analyzer) exam. Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey) section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-humphrey-visual-field",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicHumphreyVisualField",
   "title" : "Ophthalmic Humphrey Visual Field",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

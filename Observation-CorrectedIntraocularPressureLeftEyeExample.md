@@ -1,4 +1,4 @@
-# CorrectedIntraocularPressureLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# CorrectedIntraocularPressureLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -23,7 +23,7 @@ Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocu
 **derivedFrom**: 
 
 * [Observation Intraocular pressure](Observation-IntraocularPressureLeftEyeExample.md)
-* [Observation ](Observation-PachymetryLeftEyeExample.md)
+* [Observation Right cornea Central corneal thickness Pachymetry](Observation-PachymetryLeftEyeExample.md)
 
 
 

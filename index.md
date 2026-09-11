@@ -1,4 +1,4 @@
-# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Home - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:FHIR4Eyes |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:FHIR4Eyes |
 
 # FHIR4Eyes
 
@@ -68,11 +68,11 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "resourceType" : "ImplementationGuide",
   "id" : "fhir4eyes.core",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

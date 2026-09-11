@@ -1,4 +1,4 @@
-# Ophthalmic Specular Microscopy - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Specular Microscopy - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicSpecularMicroscopy |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicSpecularMicroscopy |
 
  
 Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-specular-microscopy",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicSpecularMicroscopy",
   "title" : "Ophthalmic Specular Microscopy",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -230,6 +230,33 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       }]
     },
     {
+      "id" : "Observation.component:analysisMethod",
+      "path" : "Observation.component",
+      "sliceName" : "analysisMethod",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:analysisMethod.code",
+      "path" : "Observation.component.code",
+      "short" : "Analysis method type - LOINC 100086-8 (OD) / 100155-1 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100086-8",
+          "display" : "Right cornea Type of Analysis method by Specular microscopy"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:analysisMethod.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
       "id" : "Observation.component:density",
       "path" : "Observation.component",
       "sliceName" : "density",
@@ -240,7 +267,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:density.code",
       "path" : "Observation.component.code",
-      "short" : "Endothelial cell density (CD) - endothelial cell count"
+      "short" : "Endothelial cell density (CD) - LOINC 100070-2 (OD) / 100071-0 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100070-2",
+          "display" : "Right cornea Cell density"
+        }]
+      }
     },
     {
       "id" : "Observation.component:density.value[x]",
@@ -260,7 +294,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cellCount.code",
       "path" : "Observation.component.code",
-      "short" : "Number of cells analyzed (N) - total cells counted in analysis area"
+      "short" : "Number of cells analyzed (N) - LOINC 100076-9 (OD) / 100077-7 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100076-9",
+          "display" : "Right cornea Endothelial cells counted"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cellCount.value[x]",
@@ -280,7 +321,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cv.code",
       "path" : "Observation.component.code",
-      "short" : "Coefficient of variation (CV) - cell size variability (polymegathism), normal <40%"
+      "short" : "Coefficient of variation (CV) - LOINC 100072-8 (OD) / 100073-6 (OS), normal <40%",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100072-8",
+          "display" : "Right cornea Coefficient of variation"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cv.value[x]",
@@ -300,7 +348,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:hexagonality.code",
       "path" : "Observation.component.code",
-      "short" : "Hexagonality (HEX) - percentage of hexagonal cells (pleomorphism), normal >50%"
+      "short" : "Hexagonality (HEX) - LOINC 100074-4 (OD) / 100075-1 (OS), normal >50%",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100074-4",
+          "display" : "Right cornea Hexagonality"
+        }]
+      }
     },
     {
       "id" : "Observation.component:hexagonality.value[x]",
@@ -320,7 +375,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cct.code",
       "path" : "Observation.component.code",
-      "short" : "Central corneal thickness (CCT) - CCT measured by specular"
+      "short" : "Central corneal thickness (CCT) - LOINC 79825-6 (OD) / 79826-4 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "79825-6",
+          "display" : "Right cornea Central corneal thickness Pachymetry"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cct.value[x]",
@@ -340,7 +402,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:minArea.code",
       "path" : "Observation.component.code",
-      "short" : "Minimum cell area (MIN) - smallest cell area measured"
+      "short" : "Minimum cell area (MIN) - LOINC 100078-5 (OD) / 100079-3 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100078-5",
+          "display" : "Right cornea Endothelial cell area.min"
+        }]
+      }
     },
     {
       "id" : "Observation.component:minArea.value[x]",
@@ -360,7 +429,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:maxArea.code",
       "path" : "Observation.component.code",
-      "short" : "Maximum cell area (MAX) - largest cell area measured"
+      "short" : "Maximum cell area (MAX) - LOINC 100080-1 (OD) / 100081-9 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100080-1",
+          "display" : "Right cornea Endothelial cell area.max"
+        }]
+      }
     },
     {
       "id" : "Observation.component:maxArea.value[x]",
@@ -380,7 +456,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:avgArea.code",
       "path" : "Observation.component.code",
-      "short" : "Average cell area (AVG) - mean cell area"
+      "short" : "Average cell area (AVG) - LOINC 100082-7 (OD) / 100083-5 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100082-7",
+          "display" : "Right cornea Endothelial cell area.mean"
+        }]
+      }
     },
     {
       "id" : "Observation.component:avgArea.value[x]",
@@ -400,7 +483,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:sdArea.code",
       "path" : "Observation.component.code",
-      "short" : "Cell area SD - standard deviation of cell area"
+      "short" : "Cell area SD - LOINC 100084-3 (OD) / 100085-0 (OS)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "100084-3",
+          "display" : "Right cornea Cell area.standard deviation"
+        }]
+      }
     },
     {
       "id" : "Observation.component:sdArea.value[x]",

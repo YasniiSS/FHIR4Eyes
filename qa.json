@@ -5,15 +5,15 @@
   "description" : "A proposed international FHIR R4 Implementation Guide for eye care interoperability",
   "status" : "draft",
   "package-id" : "fhir4eyes.core",
-  "ig-ver" : "0.3.0",
-  "date" : "Tue, 01 Sep, 2026 17:43:23 +0000",
-  "dateISO8601" : "2026-09-01T17:43:23+00:00",
-  "errs" : 5961,
+  "ig-ver" : "0.4.0",
+  "date" : "Fri, 11 Sep, 2026 00:16:12 +0000",
+  "dateISO8601" : "2026-09-11T00:16:12+00:00",
+  "errs" : 5484,
   "warnings" : 220,
-  "hints" : 144,
+  "hints" : 141,
   "suppressed-hints" : 0,
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 1611240240
+  "maxMemory" : 1637925504
 }

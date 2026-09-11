@@ -1,4 +1,4 @@
-# VisualAcuityUncorrectedRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# VisualAcuityUncorrectedRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -48,6 +48,11 @@ Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "98497-1",
+      "display" : "Visual acuity panel"
+    }],
     "text" : "Distance visual acuity"
   },
   "subject" : {
@@ -93,6 +98,11 @@ Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "79908-0",
+        "display" : "Type of Visual acuity exam method"
+      }],
       "text" : "Chart"
     },
     "valueCodeableConcept" : {

@@ -1,4 +1,4 @@
-# Ophthalmic Patient - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Ophthalmic Patient - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:OphthalmicPatient |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:OphthalmicPatient |
 
  
 Represents a patient receiving eye care, extending the base Patient resource with identifier slices for the Chilean national identifier (RUT) and passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
   "resourceType" : "StructureDefinition",
   "id" : "ophthalmic-patient",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "OphthalmicPatient",
   "title" : "Ophthalmic Patient",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

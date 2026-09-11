@@ -1,4 +1,4 @@
-# Corneal Tomography Report - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.3.0
+# Corneal Tomography Report - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report | *Version*:0.3.0 |
-| Draft as of 2026-09-01 | *Computable Name*:CornealTomographyReport |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report | *Version*:0.4.0 |
+| Draft as of 2026-09-11 | *Computable Name*:CornealTomographyReport |
 
  
 A specialization of OphthalmicDiagnosticReport for corneal tomography exams (e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses (CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport grouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula). 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-corneal-tomography-r
   "resourceType" : "StructureDefinition",
   "id" : "corneal-tomography-report",
   "url" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "CornealTomographyReport",
   "title" : "Corneal Tomography Report",
   "status" : "draft",
-  "date" : "2026-09-01T17:43:23+00:00",
+  "date" : "2026-09-11T00:16:12+00:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
