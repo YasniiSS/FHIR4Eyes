@@ -1,17 +1,40 @@
 {
   "codeSystems" : [{
-    "url" : "http://terminology.hl7.org/ValueSet/v2-0074",
-    "version" : "3.0.0",
-    "status" : "active",
-    "name" : "Hl7VSDiagnosticServiceSectionId",
-    "title" : "hl7VS-diagnosticServiceSectionId",
-    "description" : "Concepts which specify a section of a diagnostic service where the observation may be performed.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0074"],
-    "oids" : ["2.16.840.1.113883.21.32"],
-    "sources" : ["2.16.840.1.113883.21.32"],
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "BinocularFindingVS",
+    "title" : "Binocular Finding Value Set",
+    "description" : "Qualitative findings recorded at a gaze position: sensory responses on the red\nfilter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or\nuncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test\n(centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed).\nThe binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test)\nmay be used when no concept here applies.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+    "http://snomed.info/sct"],
     "uses" : {
     },
-    "StructureDefinition-ophthalmic-diagnostic-report.html" : "Ophthalmic Diagnostic Report"
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "GazePositionVS",
+    "title" : "Gaze Position Value Set",
+    "description" : "The nine diagnostic positions of gaze at which a strabismus measurement or\nbinocular finding is recorded: primary position, the four secondary positions (up gaze /\nsupraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion)\nand the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze\ndirections hierarchy.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "HorizontalDeviationDirectionVS",
+    "title" : "Horizontal Deviation Direction Value Set",
+    "description" : "Direction of a horizontal ocular deviation at a gaze position: esodeviation,\nexodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias\nand phorias; the magnitude is recorded separately as a positive value.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement"
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
@@ -26,6 +49,19 @@
     "StructureDefinition-ophthalmic-visual-acuity.html" : "Ophthalmic Visual Acuity"
   },
   {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "NormativeClassificationVS",
+    "title" : "Normative Classification Value Set",
+    "description" : "Classification of an ophthalmic measurement or analysis against the device\nnormative (age-matched reference) database: within normal limits, borderline, or outside\nnormal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve\nhead analyses, and for the per-subfield deviation category of the OCT macula profile.\nBindings are extensible, so device-specific percentile categories (e.g. p<5%, p<1%) may be\nused when no concept here applies.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-ophthalmic-oct-rnfl.html" : "Ophthalmic OCT RNFL",
+    "StructureDefinition-ophthalmic-oct-macula.html" : "Ophthalmic OCT Macula"
+  },
+  {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
     "version" : "0.4.0",
     "status" : "draft",
@@ -36,5 +72,33 @@
     "uses" : {
     },
     "StructureDefinition-ophthalmic-care-plan.html" : "Ophthalmic Care Plan"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "TestDistanceCategoryVS",
+    "title" : "Test Distance Category Value Set",
+    "description" : "Categorical testing distance of a strabismus or binocular vision test: near\n(about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories\n(e.g. intermediate) may be used when needed.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-cover-test.html" : "Cover Test",
+    "StructureDefinition-krimsky-test.html" : "Krimsky Test",
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
+    "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "VerticalDeviationDirectionVS",
+    "title" : "Vertical Deviation Direction Value Set",
+    "description" : "Direction of a vertical ocular deviation of the deviating eye at a gaze\nposition: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is\nrecorded separately as a positive value.",
+    "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-gaze-position-measurement.html" : "Gaze Position Measurement"
   }]
 }

@@ -14,7 +14,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **code**: Intravitreal injection
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **performed**: 2026-08-18 09:00:00+0000
 

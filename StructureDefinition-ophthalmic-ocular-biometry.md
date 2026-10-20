@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicOcularBiometry |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicOcularBiometry |
 
  
-Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted. Holds the shared measurements common to the whole exam (axial length, keratometry, and so on) as components; each formula calculated from those shared measurements, with its own suggested IOL and expected outcome, is a separate IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically run through several formulas. 
+Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), with informative DICOM correspondences given in the DICOM mapping. Holds the shared measurements common to the whole exam (axial length, keratometry, and so on) as components; each formula calculated from those shared measurements, with its own suggested IOL and expected outcome, is a separate IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically run through several formulas. 
 
-Represents an ocular biometry exam (optical or ultrasonic, recorded in the required `method`), used for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted.
+Represents an ocular biometry exam (optical or ultrasonic, recorded in the required `method`), used for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a CID reference is noted. `code` and all components use local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code.
 
 ```
 graph TD
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
   "name" : "OphthalmicOcularBiometry",
   "title" : "Ophthalmic Ocular Biometry",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
+  "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), with informative DICOM correspondences\ngiven in the DICOM mapping. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -88,6 +88,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "dicom",
+    "uri" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html",
+    "name" : "DICOM",
+    "comment" : "Informative correspondence between this profile's components and DICOM attributes / context groups. Not a conformance requirement."
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -135,7 +141,22 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -149,6 +170,13 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as an ocular biometry exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "ocular-biometry",
+          "display" : "Ocular biometry"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -164,10 +192,6 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -193,7 +217,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -208,9 +232,13 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.method",
       "path" : "Observation.method",
-      "short" : "Biometry type: optical (IOLMaster, Lenstar) or ultrasonic (A-scan). DICOM CID 4240 (Data Source)",
+      "short" : "Biometry device type: optical (e.g. IOLMaster, Lenstar) or ultrasonic (A-scan)",
       "min" : 1,
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1009) Ophthalmic Axial Measurements Device Type"
+      }]
     },
     {
       "id" : "Observation.device",
@@ -246,12 +274,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "al",
       "min" : 1,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1019) Ophthalmic Axial Length"
+      }]
     },
     {
       "id" : "Observation.component:al.code",
       "path" : "Observation.component.code",
-      "short" : "Axial length (AL) - anteroposterior eye distance. DICOM tag (0022,1019)"
+      "short" : "Axial length (AL) - anteroposterior eye distance",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "axial-length",
+          "display" : "Axial length"
+        }]
+      }
     },
     {
       "id" : "Observation.component:al.value[x]",
@@ -266,12 +305,24 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "alType",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4230 Ophthalmic Ultrasound Axial Measurements Type",
+        "comment" : "Covers ultrasound contact / immersion only; optical vs ultrasound is (0022,1009)"
+      }]
     },
     {
       "id" : "Observation.component:alType.code",
       "path" : "Observation.component.code",
-      "short" : "AL measurement type - optical, ultrasonic immersion, or ultrasonic contact. DICOM CID 4230"
+      "short" : "AL measurement type - optical, ultrasonic immersion, or ultrasonic contact",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "axial-length-measurement-type",
+          "display" : "Axial length measurement type"
+        }]
+      }
     },
     {
       "id" : "Observation.component:alType.value[x]",
@@ -286,12 +337,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "alSNR",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1155) Signal to Noise Ratio"
+      }]
     },
     {
       "id" : "Observation.component:alSNR.code",
       "path" : "Observation.component.code",
-      "short" : "AL signal-to-noise ratio (SNR) - quality of AL measurement, >2.0 acceptable. DICOM CID 4243"
+      "short" : "AL signal-to-noise ratio (SNR) - quality of AL measurement, >2.0 acceptable",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "axial-length-snr",
+          "display" : "Axial length signal-to-noise ratio"
+        }]
+      }
     },
     {
       "id" : "Observation.component:alSNR.value[x]",
@@ -306,12 +368,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "alSelection",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4241 Ophthalmic Axial Length Selection Method"
+      }]
     },
     {
       "id" : "Observation.component:alSelection.code",
       "path" : "Observation.component.code",
-      "short" : "AL selection method - how axial length was selected. DICOM CID 4241"
+      "short" : "AL selection method - how axial length was selected",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "axial-length-selection-method",
+          "display" : "Axial length selection method"
+        }]
+      }
     },
     {
       "id" : "Observation.component:alSelection.value[x]",
@@ -326,12 +399,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "acd",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1131) Anterior Chamber Depth"
+      }]
     },
     {
       "id" : "Observation.component:acd.code",
       "path" : "Observation.component.code",
-      "short" : "Anterior chamber depth (ACD)"
+      "short" : "Anterior chamber depth (ACD)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anterior-chamber-depth",
+          "display" : "Anterior chamber depth"
+        }]
+      }
     },
     {
       "id" : "Observation.component:acd.value[x]",
@@ -346,12 +430,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "acdDef",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4239 Anterior Chamber Depth Definition"
+      }]
     },
     {
       "id" : "Observation.component:acdDef.code",
       "path" : "Observation.component.code",
-      "short" : "ACD definition - endothelium to lens or epithelium to lens. DICOM CID 4239"
+      "short" : "ACD definition - endothelium to lens or epithelium to lens",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anterior-chamber-depth-definition",
+          "display" : "Anterior chamber depth definition"
+        }]
+      }
     },
     {
       "id" : "Observation.component:acdDef.value[x]",
@@ -366,12 +461,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "lt",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1130) Lens Thickness"
+      }]
     },
     {
       "id" : "Observation.component:lt.code",
       "path" : "Observation.component.code",
-      "short" : "Lens thickness (LT) - crystalline lens thickness"
+      "short" : "Lens thickness (LT) - crystalline lens thickness",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "lens-thickness",
+          "display" : "Lens thickness"
+        }]
+      }
     },
     {
       "id" : "Observation.component:lt.value[x]",
@@ -386,12 +492,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "lensStatus",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4231 Lens Status"
+      }]
     },
     {
       "id" : "Observation.component:lensStatus.code",
       "path" : "Observation.component.code",
-      "short" : "Lens status - phakic, pseudophakic, or aphakic. DICOM CID 4231"
+      "short" : "Lens status - phakic, pseudophakic, or aphakic",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "lens-status",
+          "display" : "Lens status"
+        }]
+      }
     },
     {
       "id" : "Observation.component:lensStatus.value[x]",
@@ -406,12 +523,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "vitreousStatus",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4232 Vitreous Status"
+      }]
     },
     {
       "id" : "Observation.component:vitreousStatus.code",
       "path" : "Observation.component.code",
-      "short" : "Vitreous status. DICOM CID 4232"
+      "short" : "Vitreous status",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "vitreous-status",
+          "display" : "Vitreous status"
+        }]
+      }
     },
     {
       "id" : "Observation.component:vitreousStatus.value[x]",
@@ -426,15 +554,59 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "k1",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0076) Keratometric Power",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k1.code",
       "path" : "Observation.component.code",
-      "short" : "K1 (flat keratometry) - flat meridian K with axis. DICOM CID 4235"
+      "short" : "K1 (flat keratometry) - flat meridian K, in dioptres; its axis is in k1Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1",
+          "display" : "Keratometry K1 (flat)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k1.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:k1Axis",
+      "path" : "Observation.component",
+      "sliceName" : "k1Axis",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0077) Keratometric Axis",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
+    },
+    {
+      "id" : "Observation.component:k1Axis.code",
+      "path" : "Observation.component.code",
+      "short" : "K1 axis - flat meridian orientation, in degrees",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1-axis",
+          "display" : "Keratometry K1 axis"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:k1Axis.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
@@ -446,12 +618,24 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "k1Radius",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0075) Radius of Curvature",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k1Radius.code",
       "path" : "Observation.component.code",
-      "short" : "K1 radius - flat meridian radius"
+      "short" : "K1 radius - flat meridian radius",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1-radius",
+          "display" : "Keratometry K1 radius of curvature"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k1Radius.value[x]",
@@ -466,15 +650,59 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "k2",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0076) Keratometric Power",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k2.code",
       "path" : "Observation.component.code",
-      "short" : "K2 (steep keratometry) - steep meridian K with axis. DICOM CID 4235"
+      "short" : "K2 (steep keratometry) - steep meridian K, in dioptres; its axis is in k2Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2",
+          "display" : "Keratometry K2 (steep)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k2.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:k2Axis",
+      "path" : "Observation.component",
+      "sliceName" : "k2Axis",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0077) Keratometric Axis",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
+    },
+    {
+      "id" : "Observation.component:k2Axis.code",
+      "path" : "Observation.component.code",
+      "short" : "K2 axis - steep meridian orientation, in degrees (K1 axis +/- 90)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2-axis",
+          "display" : "Keratometry K2 axis"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:k2Axis.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
@@ -486,15 +714,54 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "k2Radius",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0075) Radius of Curvature",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k2Radius.code",
       "path" : "Observation.component.code",
-      "short" : "K2 radius - steep meridian radius"
+      "short" : "K2 radius - steep meridian radius",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2-radius",
+          "display" : "Keratometry K2 radius of curvature"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k2Radius.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:km",
+      "path" : "Observation.component",
+      "sliceName" : "km",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:km.code",
+      "path" : "Observation.component.code",
+      "short" : "Km (mean keratometry) - mean corneal power, (K1+K2)/2, in dioptres (the SE of the biometer's R/SE field)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-km",
+          "display" : "Keratometry Km (mean)"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:km.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
@@ -511,7 +778,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:rse.code",
       "path" : "Observation.component.code",
-      "short" : "R/SE (mean radius / sph equiv)"
+      "short" : "R/SE mean radius - mean anterior corneal radius of curvature in mm, (K1 radius + K2 radius)/2; the dioptric mean (SE) is reported in km",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-mean-radius",
+          "display" : "Keratometry mean radius of curvature (R/SE)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:rse.value[x]",
@@ -531,7 +805,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
     {
       "id" : "Observation.component:cornealCyl.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal cylinder - corneal astigmatism from biometer"
+      "short" : "Corneal cylinder - corneal astigmatism from biometer, K2 minus K1 in dioptres, reported as a positive magnitude (plus-cylinder notation) at the steep meridian (K2 axis)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-astigmatism",
+          "display" : "Corneal astigmatism (cylinder)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cornealCyl.value[x]",
@@ -546,12 +827,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "keratIndex",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1033) Keratometer Index"
+      }]
     },
     {
       "id" : "Observation.component:keratIndex.code",
       "path" : "Observation.component.code",
-      "short" : "Keratometric index (n) - refractive index for K conversion"
+      "short" : "Keratometric index (n) - refractive index for K conversion",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometric-index",
+          "display" : "Keratometric index"
+        }]
+      }
     },
     {
       "id" : "Observation.component:keratIndex.value[x]",
@@ -566,12 +858,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "wtw",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0046) Corneal Size"
+      }]
     },
     {
       "id" : "Observation.component:wtw.code",
       "path" : "Observation.component.code",
-      "short" : "White-to-white (WTW) - horizontal corneal diameter"
+      "short" : "White-to-white (WTW) - horizontal corneal diameter",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "white-to-white",
+          "display" : "White-to-white corneal diameter"
+        }]
+      }
     },
     {
       "id" : "Observation.component:wtw.value[x]",
@@ -586,12 +889,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "pupilDiam",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0044) Pupil Size"
+      }]
     },
     {
       "id" : "Observation.component:pupilDiam.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil diameter"
+      "short" : "Pupil diameter",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-diameter",
+          "display" : "Pupil diameter"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilDiam.value[x]",
@@ -606,12 +920,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "mydriaticAgent",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,001C) Mydriatic Agent Code Sequence"
+      }]
     },
     {
       "id" : "Observation.component:mydriaticAgent.code",
       "path" : "Observation.component.code",
-      "short" : "Mydriatic agent used, if applicable. DICOM (0022,000D)"
+      "short" : "Mydriatic agent used, if applicable",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "mydriatic-agent",
+          "display" : "Mydriatic agent"
+        }]
+      }
     },
     {
       "id" : "Observation.component:mydriaticAgent.value[x]",
@@ -626,12 +951,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "pupilDilated",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,000D) Pupil Dilated"
+      }]
     },
     {
       "id" : "Observation.component:pupilDilated.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil dilated - whether pupil was dilated"
+      "short" : "Pupil dilated - whether pupil was dilated",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-dilated",
+          "display" : "Pupil dilated"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilDilated.value[x]",
@@ -646,12 +982,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "refSurgeryHx",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4234 Refractive Surgery Type"
+      }]
     },
     {
       "id" : "Observation.component:refSurgeryHx.code",
       "path" : "Observation.component.code",
-      "short" : "Refractive surgery history - critical for formula selection. DICOM CID 4234"
+      "short" : "Refractive surgery history - critical for formula selection",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "refractive-surgery-history",
+          "display" : "Refractive surgery history"
+        }]
+      }
     },
     {
       "id" : "Observation.component:refSurgeryHx.value[x]",
@@ -666,12 +1013,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "targetRef",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1037) Target Refraction"
+      }]
     },
     {
       "id" : "Observation.component:targetRef.code",
       "path" : "Observation.component.code",
-      "short" : "Target refraction - desired post-surgical refraction"
+      "short" : "Target refraction - desired post-surgical refraction",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "target-refraction",
+          "display" : "Target refraction"
+        }]
+      }
     },
     {
       "id" : "Observation.component:targetRef.value[x]",
@@ -686,12 +1044,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "refErrorType",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4238 Refractive Error Type"
+      }]
     },
     {
       "id" : "Observation.component:refErrorType.code",
       "path" : "Observation.component.code",
-      "short" : "Refractive error type. DICOM CID 4238"
+      "short" : "Refractive error type",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "refractive-error-type",
+          "display" : "Refractive error type"
+        }]
+      }
     },
     {
       "id" : "Observation.component:refErrorType.value[x]",
@@ -706,12 +1075,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "dataSource",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4240 Ophthalmic Measurement or Calculation Data Source"
+      }]
     },
     {
       "id" : "Observation.component:dataSource.code",
       "path" : "Observation.component.code",
-      "short" : "Data source - origin of measurement data. DICOM CID 4240"
+      "short" : "Data source - provenance of the measurement or calculation input (measured on this device, manual entry, external source or imported record); distinct from the device type in method",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "measurement-data-source",
+          "display" : "Measurement data source"
+        }]
+      }
     },
     {
       "id" : "Observation.component:dataSource.value[x]",
@@ -726,12 +1106,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "sliceName" : "vertex",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,000F) Vertex Distance"
+      }]
     },
     {
       "id" : "Observation.component:vertex.code",
       "path" : "Observation.component.code",
-      "short" : "Vertex distance - distance from lens to cornea"
+      "short" : "Vertex distance - distance from lens to cornea",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "vertex-distance",
+          "display" : "Vertex distance"
+        }]
+      }
     },
     {
       "id" : "Observation.component:vertex.value[x]",

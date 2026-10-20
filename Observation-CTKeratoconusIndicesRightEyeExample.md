@@ -14,7 +14,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
 
 **code**: Corneal tomography, keratoconus indices
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
@@ -78,11 +82,20 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "keratoconus-indices",
+      "display" : "Keratoconus indices"
+    }],
     "text" : "Corneal tomography, keratoconus indices"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
@@ -96,6 +109,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-d",
+        "display" : "Belin-Ambrosio total deviation (BAD-D)"
+      }],
       "text" : "BAD-D (final D)"
     },
     "valueQuantity" : {
@@ -106,6 +124,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-df",
+        "display" : "Belin-Ambrosio front elevation deviation (Df)"
+      }],
       "text" : "BAD Df (front deviation)"
     },
     "valueQuantity" : {
@@ -116,6 +139,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-db",
+        "display" : "Belin-Ambrosio back elevation deviation (Db)"
+      }],
       "text" : "BAD Db (back deviation)"
     },
     "valueQuantity" : {
@@ -126,6 +154,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pachymetric-progression",
+        "display" : "Pachymetric progression index (BAD Dp)"
+      }],
       "text" : "BAD Dp (pachymetric deviation)"
     },
     "valueQuantity" : {
@@ -136,6 +169,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-dt",
+        "display" : "Belin-Ambrosio thinnest point deviation (Dt)"
+      }],
       "text" : "BAD Dt (thinnest deviation)"
     },
     "valueQuantity" : {
@@ -146,6 +184,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-dy",
+        "display" : "Belin-Ambrosio vertical asymmetry deviation (Dy)"
+      }],
       "text" : "BAD Dy (vertical asymmetry)"
     },
     "valueQuantity" : {
@@ -156,6 +199,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "bad-classification",
+        "display" : "Belin-Ambrosio classification"
+      }],
       "text" : "BAD classification"
     },
     "valueCodeableConcept" : {
@@ -164,6 +212,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "enhanced-best-fit-sphere-radius-anterior",
+        "display" : "Enhanced best fit sphere radius, anterior surface"
+      }],
       "text" : "Enhanced BFS radius front"
     },
     "valueQuantity" : {
@@ -174,6 +227,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "enhanced-best-fit-sphere-radius-posterior",
+        "display" : "Enhanced best fit sphere radius, posterior surface"
+      }],
       "text" : "Enhanced BFS radius back"
     },
     "valueQuantity" : {
@@ -184,6 +242,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "amsler-krumeich-stage",
+        "display" : "Amsler-Krumeich keratoconus stage"
+      }],
       "text" : "Amsler-Krumeich stage"
     },
     "valueCodeableConcept" : {
@@ -192,12 +255,22 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "belin-abcd-grade",
+        "display" : "Belin ABCD keratoconus grade"
+      }],
       "text" : "ABCD grading (Belin)"
     },
     "valueString" : "A0/B0/C0/D0"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "index-surface-variance",
+        "display" : "Index of surface variance (ISV)"
+      }],
       "text" : "ISV (Index Surface Variance)"
     },
     "valueQuantity" : {
@@ -208,6 +281,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "index-vertical-asymmetry",
+        "display" : "Index of vertical asymmetry (IVA)"
+      }],
       "text" : "IVA (Index Vertical Asymmetry)"
     },
     "valueQuantity" : {
@@ -218,6 +296,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratoconus-index",
+        "display" : "Keratoconus index (KI)"
+      }],
       "text" : "KI (Keratoconus Index)"
     },
     "valueQuantity" : {
@@ -228,6 +311,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "center-keratoconus-index",
+        "display" : "Center keratoconus index (CKI)"
+      }],
       "text" : "CKI (Center Keratoconus Index)"
     },
     "valueQuantity" : {
@@ -238,6 +326,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "index-height-asymmetry",
+        "display" : "Index of height asymmetry (IHA)"
+      }],
       "text" : "IHA (Index Height Asymmetry)"
     },
     "valueQuantity" : {
@@ -248,6 +341,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "index-height-decentration",
+        "display" : "Index of height decentration (IHD)"
+      }],
       "text" : "IHD (Index Height Decentration)"
     },
     "valueQuantity" : {
@@ -258,6 +356,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "radius-minimum-sagittal",
+        "display" : "Minimum sagittal radius of curvature (Rmin)"
+      }],
       "text" : "Rmin (minimum sagittal curvature)"
     },
     "valueQuantity" : {
@@ -268,6 +371,11 @@ Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-kerat
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "topographic-keratoconus-classification",
+        "display" : "Topographic keratoconus classification (TKC)"
+      }],
       "text" : "TKC (topographic KC classification)"
     },
     "valueCodeableConcept" : {

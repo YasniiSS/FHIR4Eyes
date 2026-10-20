@@ -14,7 +14,11 @@ Profile: [Corneal Tomography - Anterior Surface](StructureDefinition-ct-anterior
 
 **code**: Corneal tomography, anterior surface analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **note**: 
 
@@ -43,15 +47,13 @@ Example based on typical Pentacam-style anterior surface report
 
 > **component****code**: Corneal astigmatism**value**: 1.4 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Corneal cylinder**value**: -1.4 [diop] (Details: UCUM code[diop] = '[diop]')
-
 > **component****code**: K Max (front)**value**: 45.8 [diop] (Details: UCUM code[diop] = '[diop]')
 
 > **component****code**: SimK steep/flat**value**: 44.1 [diop] (Details: UCUM code[diop] = '[diop]')
 
-> **component****code**: Rh (horizontal radius)**value**: 7.81 mm (Details: UCUM codemm = 'mm')
+> **component****code**: Rh (horizontal radius)**value**: 7.8 mm (Details: UCUM codemm = 'mm')
 
-> **component****code**: Rv (vertical radius)**value**: 7.56 mm (Details: UCUM codemm = 'mm')
+> **component****code**: Rv (vertical radius)**value**: 7.58 mm (Details: UCUM codemm = 'mm')
 
 > **component****code**: Rmin (minimum radius)**value**: 7.4 mm (Details: UCUM codemm = 'mm')
 
@@ -137,11 +139,20 @@ Example based on typical Pentacam-style anterior surface report
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "corneal-tomography-anterior-surface",
+      "display" : "Corneal tomography, anterior surface analysis"
+    }],
     "text" : "Corneal tomography, anterior surface analysis"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "note" : [{
     "text" : "Example based on typical Pentacam-style anterior surface report"
   }],
@@ -158,6 +169,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1",
+        "display" : "Keratometry K1 (flat)"
+      }],
       "text" : "K1 (flat axis)"
     },
     "valueQuantity" : {
@@ -168,6 +184,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1-axis",
+        "display" : "Keratometry K1 axis"
+      }],
       "text" : "K1 axis"
     },
     "valueQuantity" : {
@@ -178,6 +199,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1-radius",
+        "display" : "Keratometry K1 radius of curvature"
+      }],
       "text" : "K1 radius"
     },
     "valueQuantity" : {
@@ -188,6 +214,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2",
+        "display" : "Keratometry K2 (steep)"
+      }],
       "text" : "K2 (steep axis)"
     },
     "valueQuantity" : {
@@ -198,6 +229,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2-axis",
+        "display" : "Keratometry K2 axis"
+      }],
       "text" : "K2 axis"
     },
     "valueQuantity" : {
@@ -208,6 +244,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2-radius",
+        "display" : "Keratometry K2 radius of curvature"
+      }],
       "text" : "K2 radius"
     },
     "valueQuantity" : {
@@ -218,6 +259,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-km",
+        "display" : "Keratometry Km (mean)"
+      }],
       "text" : "Km (average)"
     },
     "valueQuantity" : {
@@ -228,6 +274,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-astigmatism",
+        "display" : "Corneal astigmatism (cylinder)"
+      }],
       "text" : "Corneal astigmatism"
     },
     "valueQuantity" : {
@@ -238,16 +289,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
-      "text" : "Corneal cylinder"
-    },
-    "valueQuantity" : {
-      "value" : -1.4,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "[diop]"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-kmax",
+        "display" : "Maximum keratometry (Kmax)"
+      }],
       "text" : "K Max (front)"
     },
     "valueQuantity" : {
@@ -258,6 +304,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "simulated-keratometry",
+        "display" : "Simulated keratometry (SimK)"
+      }],
       "text" : "SimK steep/flat"
     },
     "valueQuantity" : {
@@ -268,26 +319,41 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-radius-horizontal",
+        "display" : "Horizontal corneal radius of curvature (Rh)"
+      }],
       "text" : "Rh (horizontal radius)"
     },
     "valueQuantity" : {
-      "value" : 7.81,
+      "value" : 7.8,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-radius-vertical",
+        "display" : "Vertical corneal radius of curvature (Rv)"
+      }],
       "text" : "Rv (vertical radius)"
     },
     "valueQuantity" : {
-      "value" : 7.56,
+      "value" : 7.58,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "radius-minimum-curvature",
+        "display" : "Minimum radius of curvature (Rmin)"
+      }],
       "text" : "Rmin (minimum radius)"
     },
     "valueQuantity" : {
@@ -298,6 +364,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-asphericity-q-anterior",
+        "display" : "Corneal asphericity (Q-value), anterior surface"
+      }],
       "text" : "Q-value front"
     },
     "valueQuantity" : {
@@ -308,6 +379,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "elevation-anterior",
+        "display" : "Corneal elevation relative to best fit sphere, anterior surface"
+      }],
       "text" : "Elevation front BFS"
     },
     "valueQuantity" : {
@@ -318,6 +394,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "best-fit-sphere-radius-anterior",
+        "display" : "Best fit sphere radius, anterior surface"
+      }],
       "text" : "BFS radius front"
     },
     "valueQuantity" : {
@@ -328,6 +409,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "surface-regularity-index",
+        "display" : "Surface Regularity Index (SRI)"
+      }],
       "text" : "Surface Regularity Index (SRI)"
     },
     "valueQuantity" : {
@@ -338,6 +424,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "surface-asymmetry-index",
+        "display" : "Surface Asymmetry Index (SAI)"
+      }],
       "text" : "Surface Asymmetry Index (SAI)"
     },
     "valueQuantity" : {
@@ -348,6 +439,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "inferior-superior-asymmetry",
+        "display" : "Inferior-superior asymmetry value (I-S)"
+      }],
       "text" : "I-S value"
     },
     "valueQuantity" : {
@@ -358,6 +454,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "kisa-index",
+        "display" : "KISA% index"
+      }],
       "text" : "KISA% index"
     },
     "valueQuantity" : {
@@ -368,6 +469,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometric-index",
+        "display" : "Keratometric index"
+      }],
       "text" : "Keratometric index"
     },
     "valueQuantity" : {
@@ -378,6 +484,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "topographic-pattern",
+        "display" : "Topographic pattern"
+      }],
       "text" : "Topographic pattern"
     },
     "valueCodeableConcept" : {
@@ -386,6 +497,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "total-corneal-refractive-power",
+        "display" : "Total corneal refractive power (TCRP)"
+      }],
       "text" : "Total Corneal Refractive Power (TCRP)"
     },
     "valueQuantity" : {
@@ -396,6 +512,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "true-net-power",
+        "display" : "True net corneal power (TNP)"
+      }],
       "text" : "True Net Power (TNP)"
     },
     "valueQuantity" : {
@@ -406,6 +527,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "equivalent-keratometry-1mm",
+        "display" : "Equivalent K reading (EKR), 1.0 mm zone"
+      }],
       "text" : "EKR 1.0mm zone"
     },
     "valueQuantity" : {
@@ -416,6 +542,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "equivalent-keratometry-3mm",
+        "display" : "Equivalent K reading (EKR), 3.0 mm zone"
+      }],
       "text" : "EKR 3.0mm zone"
     },
     "valueQuantity" : {
@@ -426,6 +557,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "equivalent-keratometry-4-5mm",
+        "display" : "Equivalent K reading (EKR), 4.5 mm zone"
+      }],
       "text" : "EKR 4.5mm zone"
     },
     "valueQuantity" : {
@@ -436,6 +572,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-mean-power-3mm-zone",
+        "display" : "Mean corneal power, 3 mm zone"
+      }],
       "text" : "3mm zone Mean Power"
     },
     "valueQuantity" : {
@@ -446,6 +587,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-astigmatism-power-3mm-zone",
+        "display" : "Corneal astigmatism power, 3 mm zone"
+      }],
       "text" : "3mm zone Astig Power"
     },
     "valueQuantity" : {
@@ -456,6 +602,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-steep-axis-3mm-zone",
+        "display" : "Corneal steep axis, 3 mm zone"
+      }],
       "text" : "3mm zone Steep Axis"
     },
     "valueQuantity" : {
@@ -466,6 +617,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-flat-axis-3mm-zone",
+        "display" : "Corneal flat axis, 3 mm zone"
+      }],
       "text" : "3mm zone Flat Axis"
     },
     "valueQuantity" : {
@@ -476,6 +632,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-mean-power-5mm-zone",
+        "display" : "Mean corneal power, 5 mm zone"
+      }],
       "text" : "5mm zone Mean Power"
     },
     "valueQuantity" : {
@@ -486,6 +647,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-astigmatism-power-5mm-zone",
+        "display" : "Corneal astigmatism power, 5 mm zone"
+      }],
       "text" : "5mm zone Astig Power"
     },
     "valueQuantity" : {
@@ -496,6 +662,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-steep-axis-5mm-zone",
+        "display" : "Corneal steep axis, 5 mm zone"
+      }],
       "text" : "5mm zone Steep Axis"
     },
     "valueQuantity" : {
@@ -506,6 +677,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-flat-axis-5mm-zone",
+        "display" : "Corneal flat axis, 5 mm zone"
+      }],
       "text" : "5mm zone Flat Axis"
     },
     "valueQuantity" : {
@@ -516,6 +692,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "total-corneal-astigmatism",
+        "display" : "Total corneal astigmatism (tWFA)"
+      }],
       "text" : "Total corneal astigmatism (tWFA)"
     },
     "valueQuantity" : {
@@ -526,6 +707,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-irregular-astigmatism",
+        "display" : "Total corneal irregular astigmatism"
+      }],
       "text" : "Total corneal irregular astigmatism"
     },
     "valueQuantity" : {
@@ -536,6 +722,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-hoa-rms",
+        "display" : "Corneal higher-order aberrations RMS"
+      }],
       "text" : "Corneal HOA RMS"
     },
     "valueQuantity" : {
@@ -546,6 +737,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "angle-kappa",
+        "display" : "Angle kappa"
+      }],
       "text" : "Kappa angle"
     },
     "valueQuantity" : {
@@ -556,12 +752,22 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "angle-kappa-intercept",
+        "display" : "Angle kappa intercept"
+      }],
       "text" : "Kappa intercept"
     },
     "valueString" : "x: 0.18mm, y: -0.06mm"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "surgically-induced-astigmatism",
+        "display" : "Surgically induced astigmatism (SIA)"
+      }],
       "text" : "SIA (Surgically Induced Astigmatism)"
     },
     "valueQuantity" : {
@@ -572,6 +778,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "predicted-postoperative-corneal-astigmatism",
+        "display" : "Predicted postoperative corneal astigmatism"
+      }],
       "text" : "Predicted post-op corneal astigmatism"
     },
     "valueQuantity" : {
@@ -582,6 +793,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "toric-iol-optimal-axis",
+        "display" : "Optimal toric IOL axis"
+      }],
       "text" : "Optimal toric IOL axis"
     },
     "valueQuantity" : {
@@ -592,6 +808,11 @@ Example based on typical Pentacam-style anterior surface report
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "signal-strength",
+        "display" : "Scan signal strength / quality"
+      }],
       "text" : "QS (quality score)"
     },
     "valueCodeableConcept" : {

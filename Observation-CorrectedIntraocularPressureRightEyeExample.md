@@ -14,7 +14,11 @@ Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocu
 
 **code**: Corrected intraocular pressure
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **value**: 15 mm[Hg] (Details: UCUM codemm[Hg] = 'mm[Hg]')
 
@@ -23,7 +27,7 @@ Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocu
 **derivedFrom**: 
 
 * [Observation Intraocular pressure](Observation-IntraocularPressureRightEyeExample.md)
-* [Observation Right cornea Central corneal thickness Pachymetry](Observation-PachymetryRightEyeExample.md)
+* [Observation Central corneal thickness](Observation-PachymetryRightEyeExample.md)
 
 
 
@@ -45,11 +49,20 @@ Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocu
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "corrected-intraocular-pressure",
+      "display" : "Intraocular pressure corrected for central corneal thickness"
+    }],
     "text" : "Corrected intraocular pressure"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "valueQuantity" : {
     "value" : 15,
     "system" : "http://unitsofmeasure.org",

@@ -34,7 +34,7 @@
   <name value="OphthalmicProcedure"/>
   <title value="Ophthalmic Procedure"/>
   <status value="draft"/>
-  <date value="2026-10-19T22:17:00-03:00"/>
+  <date value="2026-10-20T20:13:11-03:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -1532,7 +1532,7 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/bodySite"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2331,7 +2331,7 @@
       <max value="*"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/bodySite"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"/>
       </type>
       <mustSupport value="true"/>
     </element>

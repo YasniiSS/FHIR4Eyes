@@ -9,10 +9,10 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicOCTMacula |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicOCTMacula |
 
  
-Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
+Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned classification fields (thickness definition, per-subfield deviation category, anatomic reference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
 
 Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). It is grouped under an [OphthalmicDiagnosticReport](StructureDefinition-ophthalmic-diagnostic-report.md) together with the [OphthalmicImagingStudy](StructureDefinition-ophthalmic-imaging-study.md) it was derived from, alongside its companion optic nerve head/RNFL analysis, [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section).
 
@@ -33,7 +33,7 @@ graph TD
 
 This is a deliberate divergence, not an oversight: the values produced by a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
 
-**LOINC codes for the ETDRS grid.** The profile's own `code` is fixed to LOINC `57119-0` (Optical coherence tomography panel). LOINC component codes are assigned for the center subfield thickness (`cmt`, `57109-1`, required), the center point thickness (`57108-3`), the four inner and four outer ETDRS sectors (`57110-9` to `57117-4`), and the total grid volume (`57118-2`). The remaining components (for example central minimum/maximum, volume per subfield, the DICOM classification fields, and dilation metadata) are left with open `CodeableConcept` codes rather than guessing at a code, consistent with this guide's terminology rigor (see [Terminology](terminology.md)).
+**LOINC codes for the ETDRS grid.** The profile's own `code` is fixed to LOINC `57119-0` (Optical coherence tomography panel). LOINC component codes are assigned for the center subfield thickness (`cmt`, `57109-1`, required), the center point thickness (`57108-3`), the four inner and four outer ETDRS sectors (`57110-9` to `57117-4`), and the total grid volume (`57118-2`). The remaining components (for example central minimum/maximum, volume per subfield, ETDRS grid diameters, the DICOM classification fields, dilation metadata and signal strength) use local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code, rather than guessing at one, consistent with this guide's terminology rigor (see [Terminology](terminology.md)).
 
 **Signal strength.** The `inv-oct-signal` invariant raises a warning when the `signalStrength` component is absent.
 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -83,7 +83,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
+  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\r\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\r\nclassification fields (thickness definition, per-subfield deviation category, anatomic\r\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\r\nreplacing an earlier, less complete version of this profile.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -93,6 +93,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "dicom",
+    "uri" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html",
+    "name" : "DICOM",
+    "comment" : "Informative correspondence between this profile's components and DICOM attributes / context groups. Not a conformance requirement."
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -135,7 +141,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
         "key" : "inv-oct-signal",
         "severity" : "warning",
         "human" : "OCT signal strength should be documented",
-        "expression" : "component.where(code.text = 'Signal strength').exists()",
+        "expression" : "component.where(code.coding.where(system = 'https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs' and code = 'signal-strength').exists()).exists()",
         "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
       }]
     },
@@ -147,7 +153,22 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -183,16 +204,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
       "id" : "Observation.effective[x]",
       "path" : "Observation.effective[x]",
       "mustSupport" : true
+    },
+    {
+      "id" : "Observation.interpretation",
+      "path" : "Observation.interpretation",
+      "short" : "Overall normative database classification of this analysis",
+      "max" : "1",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs"
+      }
     },
     {
       "id" : "Observation.note",
@@ -212,7 +240,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -307,7 +335,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:centralMin.code",
       "path" : "Observation.component.code",
-      "short" : "Central Min - minimum thickness in central subfield"
+      "short" : "Central Min - minimum thickness in central subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "central-subfield-thickness-min",
+          "display" : "Central subfield thickness, minimum"
+        }]
+      }
     },
     {
       "id" : "Observation.component:centralMin.value[x]",
@@ -327,7 +362,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:centralMax.code",
       "path" : "Observation.component.code",
-      "short" : "Central Max - maximum thickness in central subfield"
+      "short" : "Central Max - maximum thickness in central subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "central-subfield-thickness-max",
+          "display" : "Central subfield thickness, maximum"
+        }]
+      }
     },
     {
       "id" : "Observation.component:centralMax.value[x]",
@@ -553,17 +595,17 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       }]
     },
     {
-      "id" : "Observation.component:centralVol",
+      "id" : "Observation.component:totalVol",
       "path" : "Observation.component",
-      "sliceName" : "centralVol",
+      "sliceName" : "totalVol",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:centralVol.code",
+      "id" : "Observation.component:totalVol.code",
       "path" : "Observation.component.code",
-      "short" : "Central subfield volume - total volume from ETDRS grid",
+      "short" : "Total macular grid volume",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://loinc.org",
@@ -573,7 +615,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       }
     },
     {
-      "id" : "Observation.component:centralVol.value[x]",
+      "id" : "Observation.component:totalVol.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
@@ -590,7 +632,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:subfieldVol.code",
       "path" : "Observation.component.code",
-      "short" : "Total volume per subfield - volume per ETDRS subfield"
+      "short" : "Total volume per subfield - volume per ETDRS subfield",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "macular-subfield-volume",
+          "display" : "Macular ETDRS subfield volume"
+        }]
+      }
     },
     {
       "id" : "Observation.component:subfieldVol.value[x]",
@@ -610,7 +659,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
     {
       "id" : "Observation.component:etdrsGrid.code",
       "path" : "Observation.component.code",
-      "short" : "ETDRS circle diameters - measurement grid diameters used, usually 1/3/6mm"
+      "short" : "ETDRS circle diameters - measurement grid diameters used, usually 1/3/6mm",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "etdrs-grid-diameters",
+          "display" : "ETDRS grid circle diameters"
+        }]
+      }
     },
     {
       "id" : "Observation.component:etdrsGrid.value[x]",
@@ -625,12 +681,27 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "thicknessDef",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1445) Retinal Thickness Definition Code Sequence"
+      },
+      {
+        "identity" : "dicom",
+        "map" : "CID 4262 Retinal Thickness Definition"
+      }]
     },
     {
       "id" : "Observation.component:thicknessDef.code",
       "path" : "Observation.component.code",
-      "short" : "Retinal thickness definition - how thickness is defined (ILM to RPE or ILM to BM). DICOM CID 4262, critical for device comparison"
+      "short" : "Retinal thickness definition - how thickness is defined (ILM to RPE or ILM to BM), critical for device comparison",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "retinal-thickness-definition",
+          "display" : "Retinal thickness definition"
+        }]
+      }
     },
     {
       "id" : "Observation.component:thicknessDef.value[x]",
@@ -645,19 +716,34 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "deviationCategory",
       "min" : 0,
       "max" : "*",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4265 Ophthalmic Thickness Deviation Category"
+      }]
     },
     {
       "id" : "Observation.component:deviationCategory.code",
       "path" : "Observation.component.code",
-      "short" : "Thickness deviation category - normative database classification per subfield. DICOM CID 4265"
+      "short" : "Thickness deviation category - per-subfield detail of the normative database classification (the overall result goes in interpretation)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "normative-deviation-category",
+          "display" : "Normative database deviation category"
+        }]
+      }
     },
     {
       "id" : "Observation.component:deviationCategory.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs"
+      }
     },
     {
       "id" : "Observation.component:anatomicRef",
@@ -665,12 +751,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "anatomicRef",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4266 Ophthalmic Anatomic Structure Reference Point"
+      }]
     },
     {
       "id" : "Observation.component:anatomicRef.code",
       "path" : "Observation.component.code",
-      "short" : "Anatomic reference point - structure used as reference (fovea or disc center). DICOM CID 4266"
+      "short" : "Anatomic reference point - structure used as reference (fovea or disc center)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anatomic-reference-point",
+          "display" : "Ophthalmic anatomic reference point"
+        }]
+      }
     },
     {
       "id" : "Observation.component:anatomicRef.value[x]",
@@ -685,12 +782,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "pupilDilated",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,000D) Pupil Dilated"
+      }]
     },
     {
       "id" : "Observation.component:pupilDilated.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil dilated - whether pupil was dilated. DICOM (0022,000D)"
+      "short" : "Pupil dilated - whether pupil was dilated",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-dilated",
+          "display" : "Pupil dilated"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilDilated.value[x]",
@@ -705,12 +813,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "mydriaticAgent",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,001C) Mydriatic Agent Code Sequence"
+      }]
     },
     {
       "id" : "Observation.component:mydriaticAgent.code",
       "path" : "Observation.component.code",
-      "short" : "Mydriatic agent - dilating agent used. DICOM (0022,000E)"
+      "short" : "Mydriatic agent - dilating agent used",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "mydriatic-agent",
+          "display" : "Mydriatic agent"
+        }]
+      }
     },
     {
       "id" : "Observation.component:mydriaticAgent.value[x]",
@@ -725,12 +844,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "dilationDegree",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,000E) Degree of Dilation"
+      }]
     },
     {
       "id" : "Observation.component:dilationDegree.code",
       "path" : "Observation.component.code",
-      "short" : "Degree of dilation - pupil dilation in mm. DICOM (0022,000F)"
+      "short" : "Degree of dilation - pupil dilation in mm",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-dilation-degree",
+          "display" : "Degree of pupil dilation"
+        }]
+      }
     },
     {
       "id" : "Observation.component:dilationDegree.value[x]",
@@ -745,17 +875,23 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "sliceName" : "signalStrength",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1470) Ophthalmic Thickness Map Quality Rating Sequence"
+      }]
     },
     {
       "id" : "Observation.component:signalStrength.code",
       "path" : "Observation.component.code",
-      "short" : "Signal strength / Quality - scan quality index"
-    },
-    {
-      "id" : "Observation.component:signalStrength.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Signal strength"
+      "short" : "Scan quality / signal strength as reported by the device; scale is device-specific",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "signal-strength",
+          "display" : "Scan signal strength / quality"
+        }]
+      }
     },
     {
       "id" : "Observation.component:signalStrength.value[x]",

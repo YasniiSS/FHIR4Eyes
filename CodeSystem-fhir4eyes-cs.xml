@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="fhir4eyes-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem fhir4eyes-cs</b></p><a name="fhir4eyes-cs"> </a><a name="hcfhir4eyes-cs"> </a><p>This case-sensitive code system <code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">central-corneal-thickness<a name="fhir4eyes-cs-central-corneal-thickness"> </a></td><td>Central corneal thickness</td><td>Central corneal thickness, independent of the eye measured. Eye-specific LOINC: 79825-6 (right) / 79826-4 (left).</td></tr><tr><td style="white-space:nowrap">specular-microscopy-panel<a name="fhir4eyes-cs-specular-microscopy-panel"> </a></td><td>Corneal endothelial specular microscopy</td><td>Panel code for a corneal endothelial specular microscopy exam.</td></tr><tr><td style="white-space:nowrap">specular-capture-position<a name="fhir4eyes-cs-specular-capture-position"> </a></td><td>Specular microscopy capture position</td><td>Location of the corneal capture (central, paracentral, peripheral).</td></tr><tr><td style="white-space:nowrap">specular-analysis-method<a name="fhir4eyes-cs-specular-analysis-method"> </a></td><td>Specular microscopy analysis method</td><td>Type of analysis method. Eye-specific LOINC: 100086-8 (right) / 100155-1 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-density<a name="fhir4eyes-cs-endothelial-cell-density"> </a></td><td>Corneal endothelial cell density</td><td>Eye-specific LOINC: 100070-2 (right) / 100071-0 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cells-counted<a name="fhir4eyes-cs-endothelial-cells-counted"> </a></td><td>Corneal endothelial cells counted</td><td>Eye-specific LOINC: 100076-9 (right) / 100077-7 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-area-cv<a name="fhir4eyes-cs-endothelial-cell-area-cv"> </a></td><td>Corneal endothelial cell area coefficient of variation</td><td>Eye-specific LOINC: 100072-8 (right) / 100073-6 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-hexagonality<a name="fhir4eyes-cs-endothelial-hexagonality"> </a></td><td>Corneal endothelial hexagonality</td><td>Eye-specific LOINC: 100074-4 (right) / 100075-1 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-area-min<a name="fhir4eyes-cs-endothelial-cell-area-min"> </a></td><td>Corneal endothelial cell area, minimum</td><td>Eye-specific LOINC: 100078-5 (right) / 100079-3 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-area-max<a name="fhir4eyes-cs-endothelial-cell-area-max"> </a></td><td>Corneal endothelial cell area, maximum</td><td>Eye-specific LOINC: 100080-1 (right) / 100081-9 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-area-mean<a name="fhir4eyes-cs-endothelial-cell-area-mean"> </a></td><td>Corneal endothelial cell area, mean</td><td>Eye-specific LOINC: 100082-7 (right) / 100083-5 (left).</td></tr><tr><td style="white-space:nowrap">endothelial-cell-area-sd<a name="fhir4eyes-cs-endothelial-cell-area-sd"> </a></td><td>Corneal endothelial cell area, standard deviation</td><td>Eye-specific LOINC: 100084-3 (right) / 100085-0 (left).</td></tr><tr><td style="white-space:nowrap">axial-length<a name="fhir4eyes-cs-axial-length"> </a></td><td>Axial length</td><td>Anteroposterior length of the eye (corneal vertex to retina/RPE), e.g. by optical or ultrasound biometry.</td></tr><tr><td style="white-space:nowrap">anterior-chamber-depth<a name="fhir4eyes-cs-anterior-chamber-depth"> </a></td><td>Anterior chamber depth</td><td>Distance from the cornea to the anterior lens surface.</td></tr><tr><td style="white-space:nowrap">lens-thickness<a name="fhir4eyes-cs-lens-thickness"> </a></td><td>Lens thickness</td><td>Axial thickness of the crystalline lens.</td></tr><tr><td style="white-space:nowrap">white-to-white<a name="fhir4eyes-cs-white-to-white"> </a></td><td>White-to-white corneal diameter</td><td>Horizontal visible corneal diameter (limbus to limbus).</td></tr><tr><td style="white-space:nowrap">keratometry-k1<a name="fhir4eyes-cs-keratometry-k1"> </a></td><td>Keratometry K1 (flat)</td><td>Corneal power of the flattest meridian of the anterior corneal surface, in dioptres.</td></tr><tr><td style="white-space:nowrap">keratometry-k2<a name="fhir4eyes-cs-keratometry-k2"> </a></td><td>Keratometry K2 (steep)</td><td>Corneal power of the steepest meridian of the anterior corneal surface, in dioptres.</td></tr><tr><td style="white-space:nowrap">keratometry-k1-radius<a name="fhir4eyes-cs-keratometry-k1-radius"> </a></td><td>Keratometry K1 radius of curvature</td><td>Radius of curvature of the flattest meridian of the anterior corneal surface, in millimetres.</td></tr><tr><td style="white-space:nowrap">keratometry-k2-radius<a name="fhir4eyes-cs-keratometry-k2-radius"> </a></td><td>Keratometry K2 radius of curvature</td><td>Radius of curvature of the steepest meridian of the anterior corneal surface, in millimetres.</td></tr><tr><td style="white-space:nowrap">corneal-astigmatism<a name="fhir4eyes-cs-corneal-astigmatism"> </a></td><td>Corneal astigmatism (cylinder)</td><td>Corneal (keratometric) astigmatism, the difference between steep and flat meridian powers (K2 - K1) in dioptres, reported as a positive magnitude (plus-cylinder notation) at the steep meridian.</td></tr><tr><td style="white-space:nowrap">keratometric-index<a name="fhir4eyes-cs-keratometric-index"> </a></td><td>Keratometric index</td><td>Refractive index used to convert corneal radius of curvature into corneal power (e.g. 1.3375).</td></tr><tr><td style="white-space:nowrap">pupil-diameter<a name="fhir4eyes-cs-pupil-diameter"> </a></td><td>Pupil diameter</td><td>Diameter of the pupil at the time of the measurement.</td></tr><tr><td style="white-space:nowrap">pupil-dilated<a name="fhir4eyes-cs-pupil-dilated"> </a></td><td>Pupil dilated</td><td>Whether the pupil was pharmacologically dilated at the time of the measurement.</td></tr><tr><td style="white-space:nowrap">mydriatic-agent<a name="fhir4eyes-cs-mydriatic-agent"> </a></td><td>Mydriatic agent</td><td>Mydriatic agent used to dilate the pupil, if any.</td></tr><tr><td style="white-space:nowrap">test-distance<a name="fhir4eyes-cs-test-distance"> </a></td><td>Testing distance</td><td>Distance between the patient and the test target (chart, fixation target) during the test, as a measured quantity. For a near/far category use test-distance-category.</td></tr><tr><td style="white-space:nowrap">correction-status<a name="fhir4eyes-cs-correction-status"> </a></td><td>Refractive correction status during test</td><td>Whether the test was performed with or without the patient's refractive correction.</td></tr><tr><td style="white-space:nowrap">ocular-biometry<a name="fhir4eyes-cs-ocular-biometry"> </a></td><td>Ocular biometry</td><td>Panel code for an ocular biometry exam (optical or ultrasound), typically for IOL power calculation. Formula results are separate IOL formula result observations.</td></tr><tr><td style="white-space:nowrap">axial-length-measurement-type<a name="fhir4eyes-cs-axial-length-measurement-type"> </a></td><td>Axial length measurement type</td><td>Technique used to measure axial length: optical, ultrasound immersion or ultrasound contact.</td></tr><tr><td style="white-space:nowrap">axial-length-snr<a name="fhir4eyes-cs-axial-length-snr"> </a></td><td>Axial length signal-to-noise ratio</td><td>Signal-to-noise ratio of the optical axial length measurement, a quality indicator.</td></tr><tr><td style="white-space:nowrap">axial-length-selection-method<a name="fhir4eyes-cs-axial-length-selection-method"> </a></td><td>Axial length selection method</td><td>Method used to select the reported axial length from multiple measurements.</td></tr><tr><td style="white-space:nowrap">anterior-chamber-depth-definition<a name="fhir4eyes-cs-anterior-chamber-depth-definition"> </a></td><td>Anterior chamber depth definition</td><td>Reference surfaces used for the ACD measurement (corneal epithelium or endothelium to anterior lens).</td></tr><tr><td style="white-space:nowrap">lens-status<a name="fhir4eyes-cs-lens-status"> </a></td><td>Lens status</td><td>Status of the crystalline lens: phakic, pseudophakic or aphakic.</td></tr><tr><td style="white-space:nowrap">vitreous-status<a name="fhir4eyes-cs-vitreous-status"> </a></td><td>Vitreous status</td><td>Status of the vitreous body, relevant to the sound velocity used in ultrasound biometry.</td></tr><tr><td style="white-space:nowrap">keratometry-mean-radius<a name="fhir4eyes-cs-keratometry-mean-radius"> </a></td><td>Keratometry mean radius of curvature (R/SE)</td><td>Mean radius of curvature of the anterior corneal surface in mm, (K1 radius + K2 radius)/2, as reported in the R part of the biometer R/SE field. The dioptric mean (SE) is keratometry-km.</td></tr><tr><td style="white-space:nowrap">refractive-surgery-history<a name="fhir4eyes-cs-refractive-surgery-history"> </a></td><td>Refractive surgery history</td><td>Prior corneal or refractive surgery of the eye, critical for IOL formula selection.</td></tr><tr><td style="white-space:nowrap">target-refraction<a name="fhir4eyes-cs-target-refraction"> </a></td><td>Target refraction</td><td>Desired postoperative refraction used for IOL power calculation.</td></tr><tr><td style="white-space:nowrap">refractive-error-type<a name="fhir4eyes-cs-refractive-error-type"> </a></td><td>Refractive error type</td><td>Type of refractive error of the eye.</td></tr><tr><td style="white-space:nowrap">measurement-data-source<a name="fhir4eyes-cs-measurement-data-source"> </a></td><td>Measurement data source</td><td>Origin of the biometry measurement data (e.g. automatic, manually entered, from another device).</td></tr><tr><td style="white-space:nowrap">vertex-distance<a name="fhir4eyes-cs-vertex-distance"> </a></td><td>Vertex distance</td><td>Distance between the back surface of a spectacle lens and the corneal apex.</td></tr><tr><td style="white-space:nowrap">iol-formula-result<a name="fhir4eyes-cs-iol-formula-result"> </a></td><td>IOL power calculation formula result</td><td>Panel code for the result of one IOL power calculation formula applied to an ocular biometry exam.</td></tr><tr><td style="white-space:nowrap">iol-formula<a name="fhir4eyes-cs-iol-formula"> </a></td><td>IOL power calculation formula</td><td>Formula used for the IOL power calculation (e.g. Barrett Universal II, SRK/T, Holladay 2, Kane).</td></tr><tr><td style="white-space:nowrap">iol-lens-constant-type<a name="fhir4eyes-cs-iol-lens-constant-type"> </a></td><td>IOL lens constant type</td><td>Type of IOL optimization constant (e.g. A-constant, surgeon factor, ACD constant).</td></tr><tr><td style="white-space:nowrap">iol-lens-constant-value<a name="fhir4eyes-cs-iol-lens-constant-value"> </a></td><td>IOL lens constant value</td><td>Value of the IOL optimization constant used for the calculation.</td></tr><tr><td style="white-space:nowrap">iol-model<a name="fhir4eyes-cs-iol-model"> </a></td><td>Suggested IOL model</td><td>Intraocular lens model suggested by this formula calculation.</td></tr><tr><td style="white-space:nowrap">iol-power<a name="fhir4eyes-cs-iol-power"> </a></td><td>Recommended IOL power</td><td>IOL power, in dioptres, recommended by this formula calculation.</td></tr><tr><td style="white-space:nowrap">iol-expected-refraction<a name="fhir4eyes-cs-iol-expected-refraction"> </a></td><td>Predicted postoperative refraction</td><td>Refraction predicted by the formula for the recommended IOL power.</td></tr><tr><td style="white-space:nowrap">iol-power-table<a name="fhir4eyes-cs-iol-power-table"> </a></td><td>IOL power table</td><td>Range of IOL powers with the predicted refraction for each, as listed in the biometry report for this formula.</td></tr><tr><td style="white-space:nowrap">visual-acuity-scale<a name="fhir4eyes-cs-visual-acuity-scale"> </a></td><td>Visual acuity notation scale</td><td>Notation in which the visual acuity value is expressed (e.g. Snellen fraction, decimal, LogMAR).</td></tr><tr><td style="white-space:nowrap">pinhole-used<a name="fhir4eyes-cs-pinhole-used"> </a></td><td>Pinhole occluder used</td><td>Whether the visual acuity measurement was taken through a pinhole occluder.</td></tr><tr><td style="white-space:nowrap">corrected-intraocular-pressure<a name="fhir4eyes-cs-corrected-intraocular-pressure"> </a></td><td>Intraocular pressure corrected for central corneal thickness</td><td>Intraocular pressure adjusted for central corneal thickness, derived from an IOP reading and a pachymetry measurement. LOINC 96093-0/96092-2 (compensated IOP) exist but may not be equivalent to CCT-based correction; not used.</td></tr><tr><td style="white-space:nowrap">tension-curve<a name="fhir4eyes-cs-tension-curve"> </a></td><td>Diurnal intraocular pressure tension curve</td><td>Panel grouping several intraocular pressure readings taken across a single day (diurnal / ambulatory tension curve).</td></tr><tr><td style="white-space:nowrap">corneal-tomography-anterior-surface<a name="fhir4eyes-cs-corneal-tomography-anterior-surface"> </a></td><td>Corneal tomography, anterior surface analysis</td><td>Anterior corneal surface analysis component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">keratometry-kmax<a name="fhir4eyes-cs-keratometry-kmax"> </a></td><td>Maximum keratometry (Kmax)</td><td>Maximum keratometric power on the anterior corneal surface; key parameter for keratoconus detection and progression.</td></tr><tr><td style="white-space:nowrap">simulated-keratometry<a name="fhir4eyes-cs-simulated-keratometry"> </a></td><td>Simulated keratometry (SimK)</td><td>Simulated keratometry values (steep/flat) derived from the topographic/tomographic map.</td></tr><tr><td style="white-space:nowrap">corneal-radius-horizontal<a name="fhir4eyes-cs-corneal-radius-horizontal"> </a></td><td>Horizontal corneal radius of curvature (Rh)</td><td>Corneal radius of curvature along the horizontal (0-180 degree) meridian; not necessarily a principal (K1/K2) meridian.</td></tr><tr><td style="white-space:nowrap">corneal-radius-vertical<a name="fhir4eyes-cs-corneal-radius-vertical"> </a></td><td>Vertical corneal radius of curvature (Rv)</td><td>Corneal radius of curvature along the vertical (90 degree) meridian; not necessarily a principal (K1/K2) meridian.</td></tr><tr><td style="white-space:nowrap">corneal-asphericity-q-anterior<a name="fhir4eyes-cs-corneal-asphericity-q-anterior"> </a></td><td>Corneal asphericity (Q-value), anterior surface</td><td>Asphericity (Q-value) of the anterior corneal surface; typical normal value about -0.26.</td></tr><tr><td style="white-space:nowrap">elevation-anterior<a name="fhir4eyes-cs-elevation-anterior"> </a></td><td>Corneal elevation relative to best fit sphere, anterior surface</td><td>Elevation of the anterior corneal surface relative to its best fit sphere.</td></tr><tr><td style="white-space:nowrap">best-fit-sphere-radius-anterior<a name="fhir4eyes-cs-best-fit-sphere-radius-anterior"> </a></td><td>Best fit sphere radius, anterior surface</td><td>Radius of the best fit sphere of the anterior corneal surface.</td></tr><tr><td style="white-space:nowrap">surface-regularity-index<a name="fhir4eyes-cs-surface-regularity-index"> </a></td><td>Surface Regularity Index (SRI)</td><td>Topographic index of local corneal surface regularity within the central zone.</td></tr><tr><td style="white-space:nowrap">surface-asymmetry-index<a name="fhir4eyes-cs-surface-asymmetry-index"> </a></td><td>Surface Asymmetry Index (SAI)</td><td>Topographic index of corneal power asymmetry between opposite hemimeridians.</td></tr><tr><td style="white-space:nowrap">inferior-superior-asymmetry<a name="fhir4eyes-cs-inferior-superior-asymmetry"> </a></td><td>Inferior-superior asymmetry value (I-S)</td><td>Difference in mean corneal power between inferior and superior regions; keratoconus screening value.</td></tr><tr><td style="white-space:nowrap">kisa-index<a name="fhir4eyes-cs-kisa-index"> </a></td><td>KISA% index</td><td>KISA% keratoconus screening index combining central K, I-S value, astigmatism and skewed radial axis.</td></tr><tr><td style="white-space:nowrap">topographic-pattern<a name="fhir4eyes-cs-topographic-pattern"> </a></td><td>Topographic pattern</td><td>Classification of the corneal topographic map pattern (regular, irregular, keratoconus, pellucid, post-LASIK, forme fruste).</td></tr><tr><td style="white-space:nowrap">total-corneal-refractive-power<a name="fhir4eyes-cs-total-corneal-refractive-power"> </a></td><td>Total corneal refractive power (TCRP)</td><td>Total corneal refractive power calculated by ray tracing through anterior and posterior corneal surfaces.</td></tr><tr><td style="white-space:nowrap">true-net-power<a name="fhir4eyes-cs-true-net-power"> </a></td><td>True net corneal power (TNP)</td><td>True net corneal power calculated from anterior and posterior corneal curvature using Gaussian optics.</td></tr><tr><td style="white-space:nowrap">equivalent-keratometry-1mm<a name="fhir4eyes-cs-equivalent-keratometry-1mm"> </a></td><td>Equivalent K reading (EKR), 1.0 mm zone</td><td>Holladay equivalent keratometry reading over a 1.0 mm zone.</td></tr><tr><td style="white-space:nowrap">equivalent-keratometry-3mm<a name="fhir4eyes-cs-equivalent-keratometry-3mm"> </a></td><td>Equivalent K reading (EKR), 3.0 mm zone</td><td>Holladay equivalent keratometry reading over a 3.0 mm zone.</td></tr><tr><td style="white-space:nowrap">equivalent-keratometry-4-5mm<a name="fhir4eyes-cs-equivalent-keratometry-4-5mm"> </a></td><td>Equivalent K reading (EKR), 4.5 mm zone</td><td>Holladay equivalent keratometry reading over a 4.5 mm zone; used for IOL calculation after refractive surgery.</td></tr><tr><td style="white-space:nowrap">corneal-mean-power-3mm-zone<a name="fhir4eyes-cs-corneal-mean-power-3mm-zone"> </a></td><td>Mean corneal power, 3 mm zone</td><td>Mean corneal power within the central 3 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-astigmatism-power-3mm-zone<a name="fhir4eyes-cs-corneal-astigmatism-power-3mm-zone"> </a></td><td>Corneal astigmatism power, 3 mm zone</td><td>Corneal astigmatism power within the central 3 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-steep-axis-3mm-zone<a name="fhir4eyes-cs-corneal-steep-axis-3mm-zone"> </a></td><td>Corneal steep axis, 3 mm zone</td><td>Steep meridian axis within the central 3 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-flat-axis-3mm-zone<a name="fhir4eyes-cs-corneal-flat-axis-3mm-zone"> </a></td><td>Corneal flat axis, 3 mm zone</td><td>Flat meridian axis within the central 3 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-mean-power-5mm-zone<a name="fhir4eyes-cs-corneal-mean-power-5mm-zone"> </a></td><td>Mean corneal power, 5 mm zone</td><td>Mean corneal power within the central 5 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-astigmatism-power-5mm-zone<a name="fhir4eyes-cs-corneal-astigmatism-power-5mm-zone"> </a></td><td>Corneal astigmatism power, 5 mm zone</td><td>Corneal astigmatism power within the central 5 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-steep-axis-5mm-zone<a name="fhir4eyes-cs-corneal-steep-axis-5mm-zone"> </a></td><td>Corneal steep axis, 5 mm zone</td><td>Steep meridian axis within the central 5 mm zone.</td></tr><tr><td style="white-space:nowrap">corneal-flat-axis-5mm-zone<a name="fhir4eyes-cs-corneal-flat-axis-5mm-zone"> </a></td><td>Corneal flat axis, 5 mm zone</td><td>Flat meridian axis within the central 5 mm zone.</td></tr><tr><td style="white-space:nowrap">total-corneal-astigmatism<a name="fhir4eyes-cs-total-corneal-astigmatism"> </a></td><td>Total corneal astigmatism (tWFA)</td><td>Total corneal astigmatism including the posterior surface, derived from corneal wavefront analysis.</td></tr><tr><td style="white-space:nowrap">corneal-irregular-astigmatism<a name="fhir4eyes-cs-corneal-irregular-astigmatism"> </a></td><td>Total corneal irregular astigmatism</td><td>Higher-order (irregular) component of total corneal astigmatism.</td></tr><tr><td style="white-space:nowrap">corneal-hoa-rms<a name="fhir4eyes-cs-corneal-hoa-rms"> </a></td><td>Corneal higher-order aberrations RMS</td><td>Root mean square of corneal higher-order wavefront aberrations.</td></tr><tr><td style="white-space:nowrap">angle-kappa<a name="fhir4eyes-cs-angle-kappa"> </a></td><td>Angle kappa</td><td>Angle between the visual axis and the pupillary axis.</td></tr><tr><td style="white-space:nowrap">angle-kappa-intercept<a name="fhir4eyes-cs-angle-kappa-intercept"> </a></td><td>Angle kappa intercept</td><td>Coordinates (x,y) of the angle kappa intercept relative to the pupil centre.</td></tr><tr><td style="white-space:nowrap">surgically-induced-astigmatism<a name="fhir4eyes-cs-surgically-induced-astigmatism"> </a></td><td>Surgically induced astigmatism (SIA)</td><td>Expected corneal astigmatism induced by the surgical incision, used in surgical planning.</td></tr><tr><td style="white-space:nowrap">predicted-postoperative-corneal-astigmatism<a name="fhir4eyes-cs-predicted-postoperative-corneal-astigmatism"> </a></td><td>Predicted postoperative corneal astigmatism</td><td>Expected residual corneal astigmatism after surgery, used in toric IOL planning.</td></tr><tr><td style="white-space:nowrap">toric-iol-optimal-axis<a name="fhir4eyes-cs-toric-iol-optimal-axis"> </a></td><td>Optimal toric IOL axis</td><td>Recommended implantation axis for a toric intraocular lens.</td></tr><tr><td style="white-space:nowrap">corneal-vertex-location<a name="fhir4eyes-cs-corneal-vertex-location"> </a></td><td>Corneal vertex location</td><td>Position coordinates of the corneal vertex.</td></tr><tr><td style="white-space:nowrap">pupil-centroid-x<a name="fhir4eyes-cs-pupil-centroid-x"> </a></td><td>Pupil centroid X coordinate</td><td>X-coordinate of the pupil centre.</td></tr><tr><td style="white-space:nowrap">pupil-centroid-y<a name="fhir4eyes-cs-pupil-centroid-y"> </a></td><td>Pupil centroid Y coordinate</td><td>Y-coordinate of the pupil centre.</td></tr><tr><td style="white-space:nowrap">equivalent-pupil-radius<a name="fhir4eyes-cs-equivalent-pupil-radius"> </a></td><td>Equivalent pupil radius</td><td>Radius of the equivalent circular pupil.</td></tr><tr><td style="white-space:nowrap">corneal-topography-map-type<a name="fhir4eyes-cs-corneal-topography-map-type"> </a></td><td>Corneal topography map type</td><td>Type of topographic map encoded (axial, tangential, elevation, refractive, pachymetry).</td></tr><tr><td style="white-space:nowrap">corneal-analyzed-area<a name="fhir4eyes-cs-corneal-analyzed-area"> </a></td><td>Corneal analyzed area</td><td>Total area of the cornea analyzed.</td></tr><tr><td style="white-space:nowrap">corneal-eccentricity-index<a name="fhir4eyes-cs-corneal-eccentricity-index"> </a></td><td>Corneal eccentricity index</td><td>Corneal eccentricity (shape factor).</td></tr><tr><td style="white-space:nowrap">keratoconus-prediction-index<a name="fhir4eyes-cs-keratoconus-prediction-index"> </a></td><td>Keratoconus prediction index (KPI)</td><td>Corneal keratoconus prediction index, distinct from KISA%.</td></tr><tr><td style="white-space:nowrap">potential-visual-acuity-decimal<a name="fhir4eyes-cs-potential-visual-acuity-decimal"> </a></td><td>Decimal potential visual acuity</td><td>Estimated potential visual acuity (decimal) from the corneal surface.</td></tr><tr><td style="white-space:nowrap">corneal-tomography-posterior-surface<a name="fhir4eyes-cs-corneal-tomography-posterior-surface"> </a></td><td>Corneal tomography, posterior surface analysis</td><td>Posterior corneal surface analysis component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">posterior-keratometry-k1<a name="fhir4eyes-cs-posterior-keratometry-k1"> </a></td><td>Posterior keratometry K1 (flat)</td><td>Keratometric power of the flattest meridian of the posterior corneal surface; a negative value in dioptres.</td></tr><tr><td style="white-space:nowrap">posterior-keratometry-k2<a name="fhir4eyes-cs-posterior-keratometry-k2"> </a></td><td>Posterior keratometry K2 (steep)</td><td>Keratometric power of the steepest meridian of the posterior corneal surface; a negative value in dioptres.</td></tr><tr><td style="white-space:nowrap">posterior-keratometry-km<a name="fhir4eyes-cs-posterior-keratometry-km"> </a></td><td>Posterior keratometry Km (mean)</td><td>Mean keratometric power of the posterior corneal surface; a negative value in dioptres.</td></tr><tr><td style="white-space:nowrap">corneal-astigmatism-posterior<a name="fhir4eyes-cs-corneal-astigmatism-posterior"> </a></td><td>Corneal astigmatism, posterior surface</td><td>Astigmatism of the posterior corneal surface, reported as a positive magnitude in dioptres (difference between posterior K2 and K1) with the posterior steep meridian as axis.</td></tr><tr><td style="white-space:nowrap">corneal-asphericity-q-posterior<a name="fhir4eyes-cs-corneal-asphericity-q-posterior"> </a></td><td>Corneal asphericity (Q-value), posterior surface</td><td>Asphericity (Q-value) of the posterior corneal surface.</td></tr><tr><td style="white-space:nowrap">elevation-posterior<a name="fhir4eyes-cs-elevation-posterior"> </a></td><td>Corneal elevation relative to best fit sphere, posterior surface</td><td>Elevation of the posterior corneal surface relative to its best fit sphere.</td></tr><tr><td style="white-space:nowrap">best-fit-sphere-radius-posterior<a name="fhir4eyes-cs-best-fit-sphere-radius-posterior"> </a></td><td>Best fit sphere radius, posterior surface</td><td>Radius of the best fit sphere of the posterior corneal surface.</td></tr><tr><td style="white-space:nowrap">corneal-tomography-pachymetry<a name="fhir4eyes-cs-corneal-tomography-pachymetry"> </a></td><td>Corneal tomography, pachymetry analysis</td><td>Pachymetry (corneal thickness map) component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">corneal-thickness-pupil-centre<a name="fhir4eyes-cs-corneal-thickness-pupil-centre"> </a></td><td>Corneal thickness at pupil centre</td><td>Corneal thickness measured at the pupil centre; may differ from the thickness at the corneal apex.</td></tr><tr><td style="white-space:nowrap">corneal-thickness-thinnest<a name="fhir4eyes-cs-corneal-thickness-thinnest"> </a></td><td>Thinnest corneal thickness</td><td>Corneal thickness at the thinnest point of the pachymetry map.</td></tr><tr><td style="white-space:nowrap">corneal-thinnest-point-location<a name="fhir4eyes-cs-corneal-thinnest-point-location"> </a></td><td>Thinnest corneal point location</td><td>Location (x,y) of the thinnest corneal point relative to the reference centre.</td></tr><tr><td style="white-space:nowrap">corneal-volume<a name="fhir4eyes-cs-corneal-volume"> </a></td><td>Corneal volume</td><td>Total corneal volume within the analysed diameter.</td></tr><tr><td style="white-space:nowrap">corneal-tomography-anterior-chamber<a name="fhir4eyes-cs-corneal-tomography-anterior-chamber"> </a></td><td>Corneal tomography, anterior chamber analysis</td><td>Anterior chamber analysis component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">anterior-chamber-volume<a name="fhir4eyes-cs-anterior-chamber-volume"> </a></td><td>Anterior chamber volume</td><td>Volume of the anterior chamber.</td></tr><tr><td style="white-space:nowrap">anterior-chamber-angle<a name="fhir4eyes-cs-anterior-chamber-angle"> </a></td><td>Anterior chamber angle</td><td>Iridocorneal (anterior chamber) angle width in degrees, as measured by the tomographer.</td></tr><tr><td style="white-space:nowrap">keratoconus-indices<a name="fhir4eyes-cs-keratoconus-indices"> </a></td><td>Keratoconus indices</td><td>Keratoconus screening and classification indices component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">bad-d<a name="fhir4eyes-cs-bad-d"> </a></td><td>Belin-Ambrosio total deviation (BAD-D)</td><td>Final overall deviation index (D) of the Belin-Ambrosio Enhanced Ectasia Display; key keratoconus screening index.</td></tr><tr><td style="white-space:nowrap">bad-df<a name="fhir4eyes-cs-bad-df"> </a></td><td>Belin-Ambrosio front elevation deviation (Df)</td><td>Deviation of anterior elevation relative to the enhanced best fit sphere (BAD component Df).</td></tr><tr><td style="white-space:nowrap">bad-db<a name="fhir4eyes-cs-bad-db"> </a></td><td>Belin-Ambrosio back elevation deviation (Db)</td><td>Deviation of posterior elevation relative to the enhanced best fit sphere (BAD component Db).</td></tr><tr><td style="white-space:nowrap">bad-dt<a name="fhir4eyes-cs-bad-dt"> </a></td><td>Belin-Ambrosio thinnest point deviation (Dt)</td><td>Deviation of the thinnest corneal thickness from normal (BAD component Dt).</td></tr><tr><td style="white-space:nowrap">bad-dy<a name="fhir4eyes-cs-bad-dy"> </a></td><td>Belin-Ambrosio vertical asymmetry deviation (Dy)</td><td>Deviation of the Y-coordinate (vertical displacement) of the thinnest point (BAD component Dy).</td></tr><tr><td style="white-space:nowrap">bad-classification<a name="fhir4eyes-cs-bad-classification"> </a></td><td>Belin-Ambrosio classification</td><td>Classification of the Belin-Ambrosio display result (normal, suspicious, abnormal).</td></tr><tr><td style="white-space:nowrap">enhanced-best-fit-sphere-radius-anterior<a name="fhir4eyes-cs-enhanced-best-fit-sphere-radius-anterior"> </a></td><td>Enhanced best fit sphere radius, anterior surface</td><td>Radius of the enhanced best fit sphere of the anterior corneal surface (BAD enhanced reference).</td></tr><tr><td style="white-space:nowrap">enhanced-best-fit-sphere-radius-posterior<a name="fhir4eyes-cs-enhanced-best-fit-sphere-radius-posterior"> </a></td><td>Enhanced best fit sphere radius, posterior surface</td><td>Radius of the enhanced best fit sphere of the posterior corneal surface (BAD enhanced reference).</td></tr><tr><td style="white-space:nowrap">amsler-krumeich-stage<a name="fhir4eyes-cs-amsler-krumeich-stage"> </a></td><td>Amsler-Krumeich keratoconus stage</td><td>Classic Amsler-Krumeich keratoconus staging (I-IV).</td></tr><tr><td style="white-space:nowrap">belin-abcd-grade<a name="fhir4eyes-cs-belin-abcd-grade"> </a></td><td>Belin ABCD keratoconus grade</td><td>Belin ABCD keratoconus grading (anterior and posterior radius of curvature, thinnest pachymetry, distance visual acuity).</td></tr><tr><td style="white-space:nowrap">index-surface-variance<a name="fhir4eyes-cs-index-surface-variance"> </a></td><td>Index of surface variance (ISV)</td><td>Topometric index of the deviation of individual corneal radii from the mean.</td></tr><tr><td style="white-space:nowrap">index-vertical-asymmetry<a name="fhir4eyes-cs-index-vertical-asymmetry"> </a></td><td>Index of vertical asymmetry (IVA)</td><td>Topometric index of superior-inferior corneal curvature asymmetry.</td></tr><tr><td style="white-space:nowrap">keratoconus-index<a name="fhir4eyes-cs-keratoconus-index"> </a></td><td>Keratoconus index (KI)</td><td>Topometric ratio of central to peripheral corneal curvature.</td></tr><tr><td style="white-space:nowrap">center-keratoconus-index<a name="fhir4eyes-cs-center-keratoconus-index"> </a></td><td>Center keratoconus index (CKI)</td><td>Topometric central corneal curvature index.</td></tr><tr><td style="white-space:nowrap">index-height-asymmetry<a name="fhir4eyes-cs-index-height-asymmetry"> </a></td><td>Index of height asymmetry (IHA)</td><td>Topometric index of superior-inferior corneal elevation asymmetry.</td></tr><tr><td style="white-space:nowrap">index-height-decentration<a name="fhir4eyes-cs-index-height-decentration"> </a></td><td>Index of height decentration (IHD)</td><td>Topometric index of the degree of vertical decentration of corneal elevation.</td></tr><tr><td style="white-space:nowrap">topographic-keratoconus-classification<a name="fhir4eyes-cs-topographic-keratoconus-classification"> </a></td><td>Topographic keratoconus classification (TKC)</td><td>Automated topographic keratoconus classification provided by the tomographer.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry<a name="fhir4eyes-cs-corneal-densitometry"> </a></td><td>Corneal densitometry</td><td>Corneal densitometry (light backscatter) component of a corneal tomography exam.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-zone-0-2mm<a name="fhir4eyes-cs-corneal-densitometry-zone-0-2mm"> </a></td><td>Corneal densitometry, 0-2 mm zone</td><td>Corneal light backscatter (densitometry, grayscale units) in the central 0-2 mm annular zone.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-zone-2-6mm<a name="fhir4eyes-cs-corneal-densitometry-zone-2-6mm"> </a></td><td>Corneal densitometry, 2-6 mm zone</td><td>Corneal light backscatter (densitometry, grayscale units) in the paracentral 2-6 mm annular zone.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-zone-6-10mm<a name="fhir4eyes-cs-corneal-densitometry-zone-6-10mm"> </a></td><td>Corneal densitometry, 6-10 mm zone</td><td>Corneal light backscatter (densitometry, grayscale units) in the peripheral 6-10 mm annular zone.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-total<a name="fhir4eyes-cs-corneal-densitometry-total"> </a></td><td>Corneal densitometry, total</td><td>Overall corneal light backscatter (densitometry, grayscale units).</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-anterior-layer<a name="fhir4eyes-cs-corneal-densitometry-anterior-layer"> </a></td><td>Corneal densitometry, anterior layer</td><td>Corneal light backscatter (densitometry, grayscale units) of the anterior 120 um layer.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-central-layer<a name="fhir4eyes-cs-corneal-densitometry-central-layer"> </a></td><td>Corneal densitometry, central layer</td><td>Corneal light backscatter (densitometry, grayscale units) of the central stromal layer.</td></tr><tr><td style="white-space:nowrap">corneal-densitometry-posterior-layer<a name="fhir4eyes-cs-corneal-densitometry-posterior-layer"> </a></td><td>Corneal densitometry, posterior layer</td><td>Corneal light backscatter (densitometry, grayscale units) of the posterior 60 um layer.</td></tr><tr><td style="white-space:nowrap">keratometry-k1-axis<a name="fhir4eyes-cs-keratometry-k1-axis"> </a></td><td>Keratometry K1 axis</td><td>Orientation of the flat meridian.</td></tr><tr><td style="white-space:nowrap">keratometry-k2-axis<a name="fhir4eyes-cs-keratometry-k2-axis"> </a></td><td>Keratometry K2 axis</td><td>Orientation of the steep meridian.</td></tr><tr><td style="white-space:nowrap">keratometry-km<a name="fhir4eyes-cs-keratometry-km"> </a></td><td>Keratometry Km (mean)</td><td>Mean keratometry, (K1+K2)/2.</td></tr><tr><td style="white-space:nowrap">pachymetric-progression<a name="fhir4eyes-cs-pachymetric-progression"> </a></td><td>Pachymetric progression index (BAD Dp)</td><td>Rate of corneal thickness increase from the thinnest point toward the periphery; the pachymetric progression deviation (Dp) of the Belin-Ambrosio display.</td></tr><tr><td style="white-space:nowrap">radius-minimum-curvature<a name="fhir4eyes-cs-radius-minimum-curvature"> </a></td><td>Minimum radius of curvature (Rmin)</td><td>Radius of curvature at the steepest point of the corneal surface.</td></tr><tr><td style="white-space:nowrap">radius-minimum-sagittal<a name="fhir4eyes-cs-radius-minimum-sagittal"> </a></td><td>Minimum sagittal radius of curvature (Rmin)</td><td>Minimum radius of sagittal (axial) curvature, i.e. the steepest point of the sagittal curvature map (Pentacam topometric index Rmin).</td></tr><tr><td style="white-space:nowrap">signal-strength<a name="fhir4eyes-cs-signal-strength"> </a></td><td>Scan signal strength / quality</td><td>Device-reported scan signal strength or quality score.</td></tr><tr><td style="white-space:nowrap">retinal-thickness-definition<a name="fhir4eyes-cs-retinal-thickness-definition"> </a></td><td>Retinal thickness definition</td><td>Boundaries used to define a retinal or RNFL thickness measurement (e.g. ILM to RPE, ILM to Bruch's membrane, ILM to RNFL outer boundary).</td></tr><tr><td style="white-space:nowrap">normative-deviation-category<a name="fhir4eyes-cs-normative-deviation-category"> </a></td><td>Normative database deviation category</td><td>Classification of a measurement against the device normative database (e.g. within normal limits, borderline, outside normal limits).</td></tr><tr><td style="white-space:nowrap">pupil-dilation-degree<a name="fhir4eyes-cs-pupil-dilation-degree"> </a></td><td>Degree of pupil dilation</td><td>Degree of pupil dilation, expressed as pupil diameter in mm.</td></tr><tr><td style="white-space:nowrap">central-subfield-thickness-min<a name="fhir4eyes-cs-central-subfield-thickness-min"> </a></td><td>Central subfield thickness, minimum</td><td>Minimum retinal thickness measured within the central (1 mm) ETDRS subfield.</td></tr><tr><td style="white-space:nowrap">central-subfield-thickness-max<a name="fhir4eyes-cs-central-subfield-thickness-max"> </a></td><td>Central subfield thickness, maximum</td><td>Maximum retinal thickness measured within the central (1 mm) ETDRS subfield.</td></tr><tr><td style="white-space:nowrap">macular-subfield-volume<a name="fhir4eyes-cs-macular-subfield-volume"> </a></td><td>Macular ETDRS subfield volume</td><td>Retinal volume of a single ETDRS grid subfield; the subfield is identified by the component context. For the total grid volume use LOINC 57118-2.</td></tr><tr><td style="white-space:nowrap">etdrs-grid-diameters<a name="fhir4eyes-cs-etdrs-grid-diameters"> </a></td><td>ETDRS grid circle diameters</td><td>Diameters of the concentric circles of the ETDRS measurement grid used for the analysis (usually 1, 3 and 6 mm).</td></tr><tr><td style="white-space:nowrap">anatomic-reference-point<a name="fhir4eyes-cs-anatomic-reference-point"> </a></td><td>Ophthalmic anatomic reference point</td><td>Anatomic structure used as the reference point to centre the measurement grid (e.g. fovea, optic disc centre).</td></tr><tr><td style="white-space:nowrap">optic-cup-area<a name="fhir4eyes-cs-optic-cup-area"> </a></td><td>Optic cup area</td><td>Area of the optic cup from optic nerve head analysis, in mm2.</td></tr><tr><td style="white-space:nowrap">optic-cup-volume<a name="fhir4eyes-cs-optic-cup-volume"> </a></td><td>Optic cup volume</td><td>Volume of the optic cup from optic nerve head analysis, in mm3.</td></tr><tr><td style="white-space:nowrap">neuroretinal-rim-volume<a name="fhir4eyes-cs-neuroretinal-rim-volume"> </a></td><td>Neuroretinal rim volume</td><td>Volume of the neuroretinal rim from optic nerve head analysis, in mm3.</td></tr><tr><td style="white-space:nowrap">cup-disc-ratio-horizontal<a name="fhir4eyes-cs-cup-disc-ratio-horizontal"> </a></td><td>Cup-to-disc ratio, horizontal</td><td>Ratio of horizontal optic cup diameter to horizontal optic disc diameter.</td></tr><tr><td style="white-space:nowrap">cup-disc-ratio-vertical<a name="fhir4eyes-cs-cup-disc-ratio-vertical"> </a></td><td>Cup-to-disc ratio, vertical</td><td>Ratio of vertical optic cup diameter to vertical optic disc diameter.</td></tr><tr><td style="white-space:nowrap">optic-disc-diameter-horizontal<a name="fhir4eyes-cs-optic-disc-diameter-horizontal"> </a></td><td>Optic disc diameter, horizontal</td><td>Horizontal diameter of the optic disc, in mm.</td></tr><tr><td style="white-space:nowrap">optic-disc-diameter-vertical<a name="fhir4eyes-cs-optic-disc-diameter-vertical"> </a></td><td>Optic disc diameter, vertical</td><td>Vertical diameter of the optic disc, in mm.</td></tr><tr><td style="white-space:nowrap">optic-disc-diameter-mean<a name="fhir4eyes-cs-optic-disc-diameter-mean"> </a></td><td>Optic disc diameter, mean</td><td>Mean diameter of the optic disc, in mm.</td></tr><tr><td style="white-space:nowrap">optic-cup-diameter-horizontal<a name="fhir4eyes-cs-optic-cup-diameter-horizontal"> </a></td><td>Optic cup diameter, horizontal</td><td>Horizontal diameter of the optic cup, in mm.</td></tr><tr><td style="white-space:nowrap">optic-cup-diameter-vertical<a name="fhir4eyes-cs-optic-cup-diameter-vertical"> </a></td><td>Optic cup diameter, vertical</td><td>Vertical diameter of the optic cup, in mm.</td></tr><tr><td style="white-space:nowrap">optic-cup-diameter-mean<a name="fhir4eyes-cs-optic-cup-diameter-mean"> </a></td><td>Optic cup diameter, mean</td><td>Mean diameter of the optic cup, in mm.</td></tr><tr><td style="white-space:nowrap">optic-cup-depth-mean<a name="fhir4eyes-cs-optic-cup-depth-mean"> </a></td><td>Optic cup depth, mean</td><td>Mean depth of the optic cup from optic nerve head analysis, in mm.</td></tr><tr><td style="white-space:nowrap">optic-cup-depth-max<a name="fhir4eyes-cs-optic-cup-depth-max"> </a></td><td>Optic cup depth, maximum</td><td>Maximum depth of the optic cup from optic nerve head analysis, in mm.</td></tr><tr><td style="white-space:nowrap">optic-disc-vertical-horizontal-ratio<a name="fhir4eyes-cs-optic-disc-vertical-horizontal-ratio"> </a></td><td>Optic disc vertical-to-horizontal diameter ratio</td><td>Ratio of vertical to horizontal optic disc diameter (disc ovality).</td></tr><tr><td style="white-space:nowrap">optic-cup-vertical-horizontal-ratio<a name="fhir4eyes-cs-optic-cup-vertical-horizontal-ratio"> </a></td><td>Optic cup vertical-to-horizontal diameter ratio</td><td>Ratio of vertical to horizontal optic cup diameter.</td></tr><tr><td style="white-space:nowrap">rim-disc-area-ratio<a name="fhir4eyes-cs-rim-disc-area-ratio"> </a></td><td>Neuroretinal rim-to-disc area ratio</td><td>Ratio of neuroretinal rim area to optic disc area.</td></tr><tr><td style="white-space:nowrap">neuroretinal-rim-absence-extent<a name="fhir4eyes-cs-neuroretinal-rim-absence-extent"> </a></td><td>Angular extent of neuroretinal rim absence</td><td>Angular (circumferential) extent, in degrees, over which the neuroretinal rim is absent; input to DDLS staging.</td></tr><tr><td style="white-space:nowrap">disc-damage-likelihood-scale<a name="fhir4eyes-cs-disc-damage-likelihood-scale"> </a></td><td>Disc Damage Likelihood Scale (DDLS) stage</td><td>Disc Damage Likelihood Scale stage (1-10), based on the narrowest rim width or angular extent of rim absence, adjusted for disc size.</td></tr><tr><td style="white-space:nowrap">rnfl-symmetry<a name="fhir4eyes-cs-rnfl-symmetry"> </a></td><td>RNFL inter-eye symmetry</td><td>Symmetry of the RNFL thickness profile between right and left eyes (e.g. Cirrus RNFL symmetry).</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-mean-tsnit<a name="fhir4eyes-cs-rnfl-thickness-mean-tsnit"> </a></td><td>Mean RNFL thickness (TSNIT average)</td><td>Average peripapillary RNFL thickness across the temporal-superior-nasal-inferior-temporal (TSNIT) profile, laterality-neutral. Instances may add an eye-specific LOINC as an optional second coding (candidates 86301-9 right / 86290-4 left, to be verified).</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-tsnit-sd<a name="fhir4eyes-cs-rnfl-thickness-tsnit-sd"> </a></td><td>RNFL TSNIT profile standard deviation</td><td>Standard deviation of peripapillary RNFL thickness across the TSNIT profile.</td></tr><tr><td style="white-space:nowrap">visual-field-static-perimetry<a name="fhir4eyes-cs-visual-field-static-perimetry"> </a></td><td>Automated static perimetry (visual field)</td><td>Panel code for an automated static threshold perimetry exam (e.g. Humphrey Field Analyzer).</td></tr><tr><td style="white-space:nowrap">visual-field-test-pattern<a name="fhir4eyes-cs-visual-field-test-pattern"> </a></td><td>Visual field test pattern</td><td>Pattern of tested points (e.g. 24-2, 30-2, 10-2, Esterman).</td></tr><tr><td style="white-space:nowrap">visual-field-mean-deviation<a name="fhir4eyes-cs-visual-field-mean-deviation"> </a></td><td>Visual field mean deviation (MD)</td><td>Weighted average deviation of measured threshold sensitivity from age-corrected normal values, in dB.</td></tr><tr><td style="white-space:nowrap">visual-field-pattern-standard-deviation<a name="fhir4eyes-cs-visual-field-pattern-standard-deviation"> </a></td><td>Visual field pattern standard deviation (PSD)</td><td>Index of localized sensitivity loss (non-uniformity of the deviation from normal), in dB.</td></tr><tr><td style="white-space:nowrap">visual-field-index<a name="fhir4eyes-cs-visual-field-index"> </a></td><td>Visual field index (VFI)</td><td>Global index of visual function expressed as a percentage of age-normal field.</td></tr><tr><td style="white-space:nowrap">visual-field-screening-mode<a name="fhir4eyes-cs-visual-field-screening-mode"> </a></td><td>Visual field screening test mode</td><td>Type of screening test mode used.</td></tr><tr><td style="white-space:nowrap">visual-field-fixation-strategy<a name="fhir4eyes-cs-visual-field-fixation-strategy"> </a></td><td>Visual field fixation strategy</td><td>Method used to monitor patient fixation (e.g. blind spot monitoring, gaze tracking).</td></tr><tr><td style="white-space:nowrap">perimetry-stimulus-size<a name="fhir4eyes-cs-perimetry-stimulus-size"> </a></td><td>Perimetry stimulus size</td><td>Size of the test stimulus (e.g. Goldmann III).</td></tr><tr><td style="white-space:nowrap">perimetry-stimulus-color<a name="fhir4eyes-cs-perimetry-stimulus-color"> </a></td><td>Perimetry stimulus color</td><td>Color of the test stimulus light.</td></tr><tr><td style="white-space:nowrap">perimetry-background-luminance<a name="fhir4eyes-cs-perimetry-background-luminance"> </a></td><td>Perimetry background luminance</td><td>Luminance of the perimeter bowl background (standard 31.5 asb).</td></tr><tr><td style="white-space:nowrap">perimetry-max-stimulus-luminance<a name="fhir4eyes-cs-perimetry-max-stimulus-luminance"> </a></td><td>Perimetry maximum stimulus luminance</td><td>Maximum luminance of the test stimulus.</td></tr><tr><td style="white-space:nowrap">perimetry-stimulus-duration<a name="fhir4eyes-cs-perimetry-stimulus-duration"> </a></td><td>Perimetry stimulus presentation time</td><td>Presentation time of each stimulus (standard 200 ms).</td></tr><tr><td style="white-space:nowrap">visual-field-horizontal-extent<a name="fhir4eyes-cs-visual-field-horizontal-extent"> </a></td><td>Visual field horizontal extent</td><td>Horizontal extent of the tested visual field, in degrees.</td></tr><tr><td style="white-space:nowrap">visual-field-vertical-extent<a name="fhir4eyes-cs-visual-field-vertical-extent"> </a></td><td>Visual field vertical extent</td><td>Vertical extent of the tested visual field, in degrees.</td></tr><tr><td style="white-space:nowrap">visual-field-shape<a name="fhir4eyes-cs-visual-field-shape"> </a></td><td>Visual field shape</td><td>Shape of the tested visual field (circle or rectangle).</td></tr><tr><td style="white-space:nowrap">foveal-sensitivity<a name="fhir4eyes-cs-foveal-sensitivity"> </a></td><td>Foveal threshold sensitivity</td><td>Threshold sensitivity measured at the fovea, in dB.</td></tr><tr><td style="white-space:nowrap">visual-field-test-duration<a name="fhir4eyes-cs-visual-field-test-duration"> </a></td><td>Visual field test duration</td><td>Total duration of the visual field test.</td></tr><tr><td style="white-space:nowrap">visual-field-test-point-count<a name="fhir4eyes-cs-visual-field-test-point-count"> </a></td><td>Number of visual field test points</td><td>Total number of points tested; depends on the test pattern.</td></tr><tr><td style="white-space:nowrap">correction-lens-power<a name="fhir4eyes-cs-correction-lens-power"> </a></td><td>Correction lens power</td><td>Spherical power of the trial/correction lens used during the test, in diopters.</td></tr><tr><td style="white-space:nowrap">fixating-eye<a name="fhir4eyes-cs-fixating-eye"> </a></td><td>Fixating eye</td><td>The eye that was fixating the target during the measurement. Answer is the eye (e.g. SNOMED CT 24028007 Right / 7771000 Left).</td></tr><tr><td style="white-space:nowrap">strabismus-exam<a name="fhir4eyes-cs-strabismus-exam"> </a></td><td>Strabismus examination</td><td>Panel code for a strabismus examination grouping whichever sub-tests were performed (cover test, motility, near point of convergence, stereopsis, prism cover test, Krimsky, etc.) via hasMember.</td></tr><tr><td style="white-space:nowrap">cover-test<a name="fhir4eyes-cs-cover-test"> </a></td><td>Cover test</td><td>Cover test (cover-uncover and/or alternate cover) assessing the presence and type of manifest or latent ocular deviation.</td></tr><tr><td style="white-space:nowrap">ocular-motility<a name="fhir4eyes-cs-ocular-motility"> </a></td><td>Ocular motility assessment</td><td>Assessment of extraocular muscle function (e.g. hypofunction or hyperfunction) of a specific muscle of one eye.</td></tr><tr><td style="white-space:nowrap">near-point-of-convergence<a name="fhir4eyes-cs-near-point-of-convergence"> </a></td><td>Near point of convergence</td><td>Near point of convergence (PPC), recorded as a distance in centimetres or as a qualitative finding.</td></tr><tr><td style="white-space:nowrap">convergence-assessment<a name="fhir4eyes-cs-convergence-assessment"> </a></td><td>Convergence assessment</td><td>Qualitative assessment of convergence ability (e.g. good, fair, insufficient, poor).</td></tr><tr><td style="white-space:nowrap">stereopsis-test<a name="fhir4eyes-cs-stereopsis-test"> </a></td><td>Stereopsis test</td><td>Stereoacuity test result (e.g. Titmus, Randot), qualitative or in seconds of arc.</td></tr><tr><td style="white-space:nowrap">prism-cover-test<a name="fhir4eyes-cs-prism-cover-test"> </a></td><td>Prism cover test</td><td>Panel code for a prism cover test measuring ocular deviation in prism diopters across one or more gaze positions.</td></tr><tr><td style="white-space:nowrap">krimsky-test<a name="fhir4eyes-cs-krimsky-test"> </a></td><td>Krimsky test</td><td>Panel code for a Krimsky test (corneal light reflex centred with prisms) measuring ocular deviation in prism diopters across one or more gaze positions.</td></tr><tr><td style="white-space:nowrap">hirschberg-test<a name="fhir4eyes-cs-hirschberg-test"> </a></td><td>Hirschberg test</td><td>Panel code for a Hirschberg corneal light reflex test estimating the angle of deviation across one or more gaze positions.</td></tr><tr><td style="white-space:nowrap">red-filter-light-test<a name="fhir4eyes-cs-red-filter-light-test"> </a></td><td>Red filter plus light test</td><td>Panel code for a red filter plus light test assessing fusion, suppression or diplopia across one or more gaze positions.</td></tr><tr><td style="white-space:nowrap">worth-4-dot-test<a name="fhir4eyes-cs-worth-4-dot-test"> </a></td><td>Worth 4 dot test</td><td>Panel code for a Worth 4 dot test assessing fusion, suppression or diplopia across one or more gaze positions.</td></tr><tr><td style="white-space:nowrap">gaze-position-measurement<a name="fhir4eyes-cs-gaze-position-measurement"> </a></td><td>Gaze position measurement</td><td>A single measurement or finding taken at one gaze position (e.g. primary position, right gaze) within a prism cover, Krimsky, Hirschberg, red filter or Worth 4 dot test.</td></tr><tr><td style="white-space:nowrap">extraocular-muscle<a name="fhir4eyes-cs-extraocular-muscle"> </a></td><td>Extraocular muscle assessed</td><td>The extraocular muscle being assessed (one of the four rectus or two oblique muscles). Answer is a CodeableConcept naming the muscle.</td></tr><tr><td style="white-space:nowrap">extraocular-muscle-function<a name="fhir4eyes-cs-extraocular-muscle-function"> </a></td><td>Extraocular muscle function</td><td>Functional finding for the assessed extraocular muscle (e.g. normal, hypofunction, hyperfunction).</td></tr><tr><td style="white-space:nowrap">stereopsis-test-type<a name="fhir4eyes-cs-stereopsis-test-type"> </a></td><td>Stereopsis test type</td><td>Which stereoacuity test was used (e.g. Titmus fly, Randot, Lang, TNO); affects interpretation of the result.</td></tr><tr><td style="white-space:nowrap">horizontal-deviation<a name="fhir4eyes-cs-horizontal-deviation"> </a></td><td>Horizontal ocular deviation</td><td>Magnitude of the horizontal ocular deviation at a gaze position, always a positive magnitude, in prism diopters (or degrees for a Hirschberg estimate); the direction (eso/exo) is recorded separately.</td></tr><tr><td style="white-space:nowrap">vertical-deviation<a name="fhir4eyes-cs-vertical-deviation"> </a></td><td>Vertical ocular deviation</td><td>Magnitude of the vertical ocular deviation at a gaze position, always a positive magnitude, in prism diopters; the direction (hyper/hypo) is recorded separately.</td></tr><tr><td style="white-space:nowrap">gaze-position<a name="fhir4eyes-cs-gaze-position"> </a></td><td>Gaze position</td><td>The gaze position (direction of gaze) at which a strabismus measurement was taken, e.g. primary position, right gaze, up-and-right gaze.</td></tr><tr><td style="white-space:nowrap">gaze-position-finding<a name="fhir4eyes-cs-gaze-position-finding"> </a></td><td>Finding at gaze position</td><td>Qualitative finding at a gaze position (e.g. Hirschberg reflex displacement, fusion, suppression or diplopia on red filter or Worth 4 dot testing).</td></tr><tr><td style="white-space:nowrap">within-normal-limits<a name="fhir4eyes-cs-within-normal-limits"> </a></td><td>Within normal limits</td><td>The measurement or analysis falls within the normal range of the device normative (age-matched reference) database (typically p &gt;= 5%).</td></tr><tr><td style="white-space:nowrap">borderline<a name="fhir4eyes-cs-borderline"> </a></td><td>Borderline</td><td>The measurement or analysis falls in the borderline range of the device normative database (typically 1% &lt;= p &lt; 5%).</td></tr><tr><td style="white-space:nowrap">outside-normal-limits<a name="fhir4eyes-cs-outside-normal-limits"> </a></td><td>Outside normal limits</td><td>The measurement or analysis falls outside the normal range of the device normative database (typically p &lt; 1%).</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-superior<a name="fhir4eyes-cs-rnfl-thickness-superior"> </a></td><td>RNFL average thickness, superior quadrant</td><td>Average peripapillary retinal nerve fiber layer thickness in the superior quadrant of the circumpapillary scan.</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-inferior<a name="fhir4eyes-cs-rnfl-thickness-inferior"> </a></td><td>RNFL average thickness, inferior quadrant</td><td>Average peripapillary retinal nerve fiber layer thickness in the inferior quadrant of the circumpapillary scan.</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-nasal<a name="fhir4eyes-cs-rnfl-thickness-nasal"> </a></td><td>RNFL average thickness, nasal quadrant</td><td>Average peripapillary retinal nerve fiber layer thickness in the nasal quadrant of the circumpapillary scan.</td></tr><tr><td style="white-space:nowrap">rnfl-thickness-temporal<a name="fhir4eyes-cs-rnfl-thickness-temporal"> </a></td><td>RNFL average thickness, temporal quadrant</td><td>Average peripapillary retinal nerve fiber layer thickness in the temporal quadrant of the circumpapillary scan.</td></tr><tr><td style="white-space:nowrap">glaucoma-hemifield-test<a name="fhir4eyes-cs-glaucoma-hemifield-test"> </a></td><td>Glaucoma Hemifield Test result</td><td>Result of the Glaucoma Hemifield Test, comparing mirror-image superior and inferior sectors of the visual field (within normal limits, borderline, outside normal limits, general reduction of sensitivity, abnormally high sensitivity).</td></tr><tr><td style="white-space:nowrap">fixation-losses<a name="fhir4eyes-cs-fixation-losses"> </a></td><td>Fixation losses</td><td>Number of fixation losses (responses to stimuli presented in the physiological blind spot) relative to the number of fixation checks performed.</td></tr><tr><td style="white-space:nowrap">false-positive-errors<a name="fhir4eyes-cs-false-positive-errors"> </a></td><td>False positive errors</td><td>Percentage of false positive responses (responses without a stimulus being presented); a reliability index of the visual field test.</td></tr><tr><td style="white-space:nowrap">false-negative-errors<a name="fhir4eyes-cs-false-negative-errors"> </a></td><td>False negative errors</td><td>Percentage of false negative responses (no response to a supra-threshold stimulus at a previously seen location); a reliability index of the visual field test.</td></tr><tr><td style="white-space:nowrap">test-distance-category<a name="fhir4eyes-cs-test-distance-category"> </a></td><td>Testing distance category (near/far)</td><td>Categorical testing distance (near or far) at which a strabismus or binocular vision test was performed. Answer is a CodeableConcept (near / far). Distinct from test-distance, which records the testing distance as a Quantity.</td></tr><tr><td style="white-space:nowrap">near<a name="fhir4eyes-cs-near"> </a></td><td>Near</td><td>Near testing distance, approximately 33-40 cm.</td></tr><tr><td style="white-space:nowrap">far<a name="fhir4eyes-cs-far"> </a></td><td>Far</td><td>Far (distance) testing distance, approximately 6 m (20 ft).</td></tr><tr><td style="white-space:nowrap">horizontal-deviation-direction<a name="fhir4eyes-cs-horizontal-deviation-direction"> </a></td><td>Horizontal deviation direction</td><td>Direction of the horizontal ocular deviation at a gaze position (esodeviation, exodeviation, or orthophoria when no horizontal deviation is present). The magnitude is recorded separately as a positive value in horizontal-deviation.</td></tr><tr><td style="white-space:nowrap">vertical-deviation-direction<a name="fhir4eyes-cs-vertical-deviation-direction"> </a></td><td>Vertical deviation direction</td><td>Direction of the vertical ocular deviation of the deviating eye at a gaze position (hyperdeviation or hypodeviation). The magnitude is recorded separately as a positive value in vertical-deviation.</td></tr><tr><td style="white-space:nowrap">esodeviation<a name="fhir4eyes-cs-esodeviation"> </a></td><td>Esodeviation</td><td>Inward (nasal) horizontal deviation of the eye; covers esotropia and esophoria.</td></tr><tr><td style="white-space:nowrap">exodeviation<a name="fhir4eyes-cs-exodeviation"> </a></td><td>Exodeviation</td><td>Outward (temporal) horizontal deviation of the eye; covers exotropia and exophoria.</td></tr><tr><td style="white-space:nowrap">orthophoria<a name="fhir4eyes-cs-orthophoria"> </a></td><td>Orthophoria</td><td>Absence of any manifest or latent ocular deviation; the visual axes remain aligned under cover testing.</td></tr><tr><td style="white-space:nowrap">hyperdeviation<a name="fhir4eyes-cs-hyperdeviation"> </a></td><td>Hyperdeviation</td><td>Upward vertical deviation of the deviating eye relative to the fellow eye; covers hypertropia and hyperphoria.</td></tr><tr><td style="white-space:nowrap">hypodeviation<a name="fhir4eyes-cs-hypodeviation"> </a></td><td>Hypodeviation</td><td>Downward vertical deviation of the deviating eye relative to the fellow eye; covers hypotropia and hypophoria.</td></tr><tr><td style="white-space:nowrap">fusion<a name="fhir4eyes-cs-fusion"> </a></td><td>Fusion</td><td>Sensory fusion: the images of both eyes are combined into a single percept (e.g. a single pinkish light on the red filter plus light test, four lights on the Worth 4 dot test). SNOMED CT 78513008 Fusion binocular vision is an observable entity, not a finding, so it is not used as an answer.</td></tr><tr><td style="white-space:nowrap">corneal-reflex-centered<a name="fhir4eyes-cs-corneal-reflex-centered"> </a></td><td>Corneal light reflex centered</td><td>On corneal light reflex (Hirschberg) testing, the reflex is centered on the pupil of the eye assessed, consistent with no manifest deviation of that eye.</td></tr><tr><td style="white-space:nowrap">corneal-reflex-displaced-nasal<a name="fhir4eyes-cs-corneal-reflex-displaced-nasal"> </a></td><td>Corneal light reflex displaced nasally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced nasally from the pupil centre, indicating an exodeviation of that eye.</td></tr><tr><td style="white-space:nowrap">corneal-reflex-displaced-temporal<a name="fhir4eyes-cs-corneal-reflex-displaced-temporal"> </a></td><td>Corneal light reflex displaced temporally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced temporally from the pupil centre, indicating an esodeviation of that eye.</td></tr><tr><td style="white-space:nowrap">corneal-reflex-displaced-superior<a name="fhir4eyes-cs-corneal-reflex-displaced-superior"> </a></td><td>Corneal light reflex displaced superiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced superiorly from the pupil centre, indicating a hypodeviation of that eye.</td></tr><tr><td style="white-space:nowrap">corneal-reflex-displaced-inferior<a name="fhir4eyes-cs-corneal-reflex-displaced-inferior"> </a></td><td>Corneal light reflex displaced inferiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced inferiorly from the pupil centre, indicating a hyperdeviation of that eye.</td></tr></table></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+  <version value="0.4.0"/>
+  <name value="FHIR4EyesCS"/>
+  <title value="FHIR4Eyes Code System"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T20:13:11-03:00"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Local, laterality-neutral codes for ophthalmic observations and components&#xA;defined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been&#xA;verified. Open to replacement as external codes become available."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="239"/>
+  <concept>
+    <code value="central-corneal-thickness"/>
+    <display value="Central corneal thickness"/>
+    <definition value="Central corneal thickness, independent of the eye measured. Eye-specific LOINC: 79825-6 (right) / 79826-4 (left)."/>
+  </concept>
+  <concept>
+    <code value="specular-microscopy-panel"/>
+    <display value="Corneal endothelial specular microscopy"/>
+    <definition value="Panel code for a corneal endothelial specular microscopy exam."/>
+  </concept>
+  <concept>
+    <code value="specular-capture-position"/>
+    <display value="Specular microscopy capture position"/>
+    <definition value="Location of the corneal capture (central, paracentral, peripheral)."/>
+  </concept>
+  <concept>
+    <code value="specular-analysis-method"/>
+    <display value="Specular microscopy analysis method"/>
+    <definition value="Type of analysis method. Eye-specific LOINC: 100086-8 (right) / 100155-1 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-density"/>
+    <display value="Corneal endothelial cell density"/>
+    <definition value="Eye-specific LOINC: 100070-2 (right) / 100071-0 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cells-counted"/>
+    <display value="Corneal endothelial cells counted"/>
+    <definition value="Eye-specific LOINC: 100076-9 (right) / 100077-7 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-area-cv"/>
+    <display value="Corneal endothelial cell area coefficient of variation"/>
+    <definition value="Eye-specific LOINC: 100072-8 (right) / 100073-6 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-hexagonality"/>
+    <display value="Corneal endothelial hexagonality"/>
+    <definition value="Eye-specific LOINC: 100074-4 (right) / 100075-1 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-area-min"/>
+    <display value="Corneal endothelial cell area, minimum"/>
+    <definition value="Eye-specific LOINC: 100078-5 (right) / 100079-3 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-area-max"/>
+    <display value="Corneal endothelial cell area, maximum"/>
+    <definition value="Eye-specific LOINC: 100080-1 (right) / 100081-9 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-area-mean"/>
+    <display value="Corneal endothelial cell area, mean"/>
+    <definition value="Eye-specific LOINC: 100082-7 (right) / 100083-5 (left)."/>
+  </concept>
+  <concept>
+    <code value="endothelial-cell-area-sd"/>
+    <display value="Corneal endothelial cell area, standard deviation"/>
+    <definition value="Eye-specific LOINC: 100084-3 (right) / 100085-0 (left)."/>
+  </concept>
+  <concept>
+    <code value="axial-length"/>
+    <display value="Axial length"/>
+    <definition value="Anteroposterior length of the eye (corneal vertex to retina/RPE), e.g. by optical or ultrasound biometry."/>
+  </concept>
+  <concept>
+    <code value="anterior-chamber-depth"/>
+    <display value="Anterior chamber depth"/>
+    <definition value="Distance from the cornea to the anterior lens surface."/>
+  </concept>
+  <concept>
+    <code value="lens-thickness"/>
+    <display value="Lens thickness"/>
+    <definition value="Axial thickness of the crystalline lens."/>
+  </concept>
+  <concept>
+    <code value="white-to-white"/>
+    <display value="White-to-white corneal diameter"/>
+    <definition value="Horizontal visible corneal diameter (limbus to limbus)."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k1"/>
+    <display value="Keratometry K1 (flat)"/>
+    <definition value="Corneal power of the flattest meridian of the anterior corneal surface, in dioptres."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k2"/>
+    <display value="Keratometry K2 (steep)"/>
+    <definition value="Corneal power of the steepest meridian of the anterior corneal surface, in dioptres."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k1-radius"/>
+    <display value="Keratometry K1 radius of curvature"/>
+    <definition value="Radius of curvature of the flattest meridian of the anterior corneal surface, in millimetres."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k2-radius"/>
+    <display value="Keratometry K2 radius of curvature"/>
+    <definition value="Radius of curvature of the steepest meridian of the anterior corneal surface, in millimetres."/>
+  </concept>
+  <concept>
+    <code value="corneal-astigmatism"/>
+    <display value="Corneal astigmatism (cylinder)"/>
+    <definition value="Corneal (keratometric) astigmatism, the difference between steep and flat meridian powers (K2 - K1) in dioptres, reported as a positive magnitude (plus-cylinder notation) at the steep meridian."/>
+  </concept>
+  <concept>
+    <code value="keratometric-index"/>
+    <display value="Keratometric index"/>
+    <definition value="Refractive index used to convert corneal radius of curvature into corneal power (e.g. 1.3375)."/>
+  </concept>
+  <concept>
+    <code value="pupil-diameter"/>
+    <display value="Pupil diameter"/>
+    <definition value="Diameter of the pupil at the time of the measurement."/>
+  </concept>
+  <concept>
+    <code value="pupil-dilated"/>
+    <display value="Pupil dilated"/>
+    <definition value="Whether the pupil was pharmacologically dilated at the time of the measurement."/>
+  </concept>
+  <concept>
+    <code value="mydriatic-agent"/>
+    <display value="Mydriatic agent"/>
+    <definition value="Mydriatic agent used to dilate the pupil, if any."/>
+  </concept>
+  <concept>
+    <code value="test-distance"/>
+    <display value="Testing distance"/>
+    <definition value="Distance between the patient and the test target (chart, fixation target) during the test, as a measured quantity. For a near/far category use test-distance-category."/>
+  </concept>
+  <concept>
+    <code value="correction-status"/>
+    <display value="Refractive correction status during test"/>
+    <definition value="Whether the test was performed with or without the patient's refractive correction."/>
+  </concept>
+  <concept>
+    <code value="ocular-biometry"/>
+    <display value="Ocular biometry"/>
+    <definition value="Panel code for an ocular biometry exam (optical or ultrasound), typically for IOL power calculation. Formula results are separate IOL formula result observations."/>
+  </concept>
+  <concept>
+    <code value="axial-length-measurement-type"/>
+    <display value="Axial length measurement type"/>
+    <definition value="Technique used to measure axial length: optical, ultrasound immersion or ultrasound contact."/>
+  </concept>
+  <concept>
+    <code value="axial-length-snr"/>
+    <display value="Axial length signal-to-noise ratio"/>
+    <definition value="Signal-to-noise ratio of the optical axial length measurement, a quality indicator."/>
+  </concept>
+  <concept>
+    <code value="axial-length-selection-method"/>
+    <display value="Axial length selection method"/>
+    <definition value="Method used to select the reported axial length from multiple measurements."/>
+  </concept>
+  <concept>
+    <code value="anterior-chamber-depth-definition"/>
+    <display value="Anterior chamber depth definition"/>
+    <definition value="Reference surfaces used for the ACD measurement (corneal epithelium or endothelium to anterior lens)."/>
+  </concept>
+  <concept>
+    <code value="lens-status"/>
+    <display value="Lens status"/>
+    <definition value="Status of the crystalline lens: phakic, pseudophakic or aphakic."/>
+  </concept>
+  <concept>
+    <code value="vitreous-status"/>
+    <display value="Vitreous status"/>
+    <definition value="Status of the vitreous body, relevant to the sound velocity used in ultrasound biometry."/>
+  </concept>
+  <concept>
+    <code value="keratometry-mean-radius"/>
+    <display value="Keratometry mean radius of curvature (R/SE)"/>
+    <definition value="Mean radius of curvature of the anterior corneal surface in mm, (K1 radius + K2 radius)/2, as reported in the R part of the biometer R/SE field. The dioptric mean (SE) is keratometry-km."/>
+  </concept>
+  <concept>
+    <code value="refractive-surgery-history"/>
+    <display value="Refractive surgery history"/>
+    <definition value="Prior corneal or refractive surgery of the eye, critical for IOL formula selection."/>
+  </concept>
+  <concept>
+    <code value="target-refraction"/>
+    <display value="Target refraction"/>
+    <definition value="Desired postoperative refraction used for IOL power calculation."/>
+  </concept>
+  <concept>
+    <code value="refractive-error-type"/>
+    <display value="Refractive error type"/>
+    <definition value="Type of refractive error of the eye."/>
+  </concept>
+  <concept>
+    <code value="measurement-data-source"/>
+    <display value="Measurement data source"/>
+    <definition value="Origin of the biometry measurement data (e.g. automatic, manually entered, from another device)."/>
+  </concept>
+  <concept>
+    <code value="vertex-distance"/>
+    <display value="Vertex distance"/>
+    <definition value="Distance between the back surface of a spectacle lens and the corneal apex."/>
+  </concept>
+  <concept>
+    <code value="iol-formula-result"/>
+    <display value="IOL power calculation formula result"/>
+    <definition value="Panel code for the result of one IOL power calculation formula applied to an ocular biometry exam."/>
+  </concept>
+  <concept>
+    <code value="iol-formula"/>
+    <display value="IOL power calculation formula"/>
+    <definition value="Formula used for the IOL power calculation (e.g. Barrett Universal II, SRK/T, Holladay 2, Kane)."/>
+  </concept>
+  <concept>
+    <code value="iol-lens-constant-type"/>
+    <display value="IOL lens constant type"/>
+    <definition value="Type of IOL optimization constant (e.g. A-constant, surgeon factor, ACD constant)."/>
+  </concept>
+  <concept>
+    <code value="iol-lens-constant-value"/>
+    <display value="IOL lens constant value"/>
+    <definition value="Value of the IOL optimization constant used for the calculation."/>
+  </concept>
+  <concept>
+    <code value="iol-model"/>
+    <display value="Suggested IOL model"/>
+    <definition value="Intraocular lens model suggested by this formula calculation."/>
+  </concept>
+  <concept>
+    <code value="iol-power"/>
+    <display value="Recommended IOL power"/>
+    <definition value="IOL power, in dioptres, recommended by this formula calculation."/>
+  </concept>
+  <concept>
+    <code value="iol-expected-refraction"/>
+    <display value="Predicted postoperative refraction"/>
+    <definition value="Refraction predicted by the formula for the recommended IOL power."/>
+  </concept>
+  <concept>
+    <code value="iol-power-table"/>
+    <display value="IOL power table"/>
+    <definition value="Range of IOL powers with the predicted refraction for each, as listed in the biometry report for this formula."/>
+  </concept>
+  <concept>
+    <code value="visual-acuity-scale"/>
+    <display value="Visual acuity notation scale"/>
+    <definition value="Notation in which the visual acuity value is expressed (e.g. Snellen fraction, decimal, LogMAR)."/>
+  </concept>
+  <concept>
+    <code value="pinhole-used"/>
+    <display value="Pinhole occluder used"/>
+    <definition value="Whether the visual acuity measurement was taken through a pinhole occluder."/>
+  </concept>
+  <concept>
+    <code value="corrected-intraocular-pressure"/>
+    <display value="Intraocular pressure corrected for central corneal thickness"/>
+    <definition value="Intraocular pressure adjusted for central corneal thickness, derived from an IOP reading and a pachymetry measurement. LOINC 96093-0/96092-2 (compensated IOP) exist but may not be equivalent to CCT-based correction; not used."/>
+  </concept>
+  <concept>
+    <code value="tension-curve"/>
+    <display value="Diurnal intraocular pressure tension curve"/>
+    <definition value="Panel grouping several intraocular pressure readings taken across a single day (diurnal / ambulatory tension curve)."/>
+  </concept>
+  <concept>
+    <code value="corneal-tomography-anterior-surface"/>
+    <display value="Corneal tomography, anterior surface analysis"/>
+    <definition value="Anterior corneal surface analysis component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="keratometry-kmax"/>
+    <display value="Maximum keratometry (Kmax)"/>
+    <definition value="Maximum keratometric power on the anterior corneal surface; key parameter for keratoconus detection and progression."/>
+  </concept>
+  <concept>
+    <code value="simulated-keratometry"/>
+    <display value="Simulated keratometry (SimK)"/>
+    <definition value="Simulated keratometry values (steep/flat) derived from the topographic/tomographic map."/>
+  </concept>
+  <concept>
+    <code value="corneal-radius-horizontal"/>
+    <display value="Horizontal corneal radius of curvature (Rh)"/>
+    <definition value="Corneal radius of curvature along the horizontal (0-180 degree) meridian; not necessarily a principal (K1/K2) meridian."/>
+  </concept>
+  <concept>
+    <code value="corneal-radius-vertical"/>
+    <display value="Vertical corneal radius of curvature (Rv)"/>
+    <definition value="Corneal radius of curvature along the vertical (90 degree) meridian; not necessarily a principal (K1/K2) meridian."/>
+  </concept>
+  <concept>
+    <code value="corneal-asphericity-q-anterior"/>
+    <display value="Corneal asphericity (Q-value), anterior surface"/>
+    <definition value="Asphericity (Q-value) of the anterior corneal surface; typical normal value about -0.26."/>
+  </concept>
+  <concept>
+    <code value="elevation-anterior"/>
+    <display value="Corneal elevation relative to best fit sphere, anterior surface"/>
+    <definition value="Elevation of the anterior corneal surface relative to its best fit sphere."/>
+  </concept>
+  <concept>
+    <code value="best-fit-sphere-radius-anterior"/>
+    <display value="Best fit sphere radius, anterior surface"/>
+    <definition value="Radius of the best fit sphere of the anterior corneal surface."/>
+  </concept>
+  <concept>
+    <code value="surface-regularity-index"/>
+    <display value="Surface Regularity Index (SRI)"/>
+    <definition value="Topographic index of local corneal surface regularity within the central zone."/>
+  </concept>
+  <concept>
+    <code value="surface-asymmetry-index"/>
+    <display value="Surface Asymmetry Index (SAI)"/>
+    <definition value="Topographic index of corneal power asymmetry between opposite hemimeridians."/>
+  </concept>
+  <concept>
+    <code value="inferior-superior-asymmetry"/>
+    <display value="Inferior-superior asymmetry value (I-S)"/>
+    <definition value="Difference in mean corneal power between inferior and superior regions; keratoconus screening value."/>
+  </concept>
+  <concept>
+    <code value="kisa-index"/>
+    <display value="KISA% index"/>
+    <definition value="KISA% keratoconus screening index combining central K, I-S value, astigmatism and skewed radial axis."/>
+  </concept>
+  <concept>
+    <code value="topographic-pattern"/>
+    <display value="Topographic pattern"/>
+    <definition value="Classification of the corneal topographic map pattern (regular, irregular, keratoconus, pellucid, post-LASIK, forme fruste)."/>
+  </concept>
+  <concept>
+    <code value="total-corneal-refractive-power"/>
+    <display value="Total corneal refractive power (TCRP)"/>
+    <definition value="Total corneal refractive power calculated by ray tracing through anterior and posterior corneal surfaces."/>
+  </concept>
+  <concept>
+    <code value="true-net-power"/>
+    <display value="True net corneal power (TNP)"/>
+    <definition value="True net corneal power calculated from anterior and posterior corneal curvature using Gaussian optics."/>
+  </concept>
+  <concept>
+    <code value="equivalent-keratometry-1mm"/>
+    <display value="Equivalent K reading (EKR), 1.0 mm zone"/>
+    <definition value="Holladay equivalent keratometry reading over a 1.0 mm zone."/>
+  </concept>
+  <concept>
+    <code value="equivalent-keratometry-3mm"/>
+    <display value="Equivalent K reading (EKR), 3.0 mm zone"/>
+    <definition value="Holladay equivalent keratometry reading over a 3.0 mm zone."/>
+  </concept>
+  <concept>
+    <code value="equivalent-keratometry-4-5mm"/>
+    <display value="Equivalent K reading (EKR), 4.5 mm zone"/>
+    <definition value="Holladay equivalent keratometry reading over a 4.5 mm zone; used for IOL calculation after refractive surgery."/>
+  </concept>
+  <concept>
+    <code value="corneal-mean-power-3mm-zone"/>
+    <display value="Mean corneal power, 3 mm zone"/>
+    <definition value="Mean corneal power within the central 3 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-astigmatism-power-3mm-zone"/>
+    <display value="Corneal astigmatism power, 3 mm zone"/>
+    <definition value="Corneal astigmatism power within the central 3 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-steep-axis-3mm-zone"/>
+    <display value="Corneal steep axis, 3 mm zone"/>
+    <definition value="Steep meridian axis within the central 3 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-flat-axis-3mm-zone"/>
+    <display value="Corneal flat axis, 3 mm zone"/>
+    <definition value="Flat meridian axis within the central 3 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-mean-power-5mm-zone"/>
+    <display value="Mean corneal power, 5 mm zone"/>
+    <definition value="Mean corneal power within the central 5 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-astigmatism-power-5mm-zone"/>
+    <display value="Corneal astigmatism power, 5 mm zone"/>
+    <definition value="Corneal astigmatism power within the central 5 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-steep-axis-5mm-zone"/>
+    <display value="Corneal steep axis, 5 mm zone"/>
+    <definition value="Steep meridian axis within the central 5 mm zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-flat-axis-5mm-zone"/>
+    <display value="Corneal flat axis, 5 mm zone"/>
+    <definition value="Flat meridian axis within the central 5 mm zone."/>
+  </concept>
+  <concept>
+    <code value="total-corneal-astigmatism"/>
+    <display value="Total corneal astigmatism (tWFA)"/>
+    <definition value="Total corneal astigmatism including the posterior surface, derived from corneal wavefront analysis."/>
+  </concept>
+  <concept>
+    <code value="corneal-irregular-astigmatism"/>
+    <display value="Total corneal irregular astigmatism"/>
+    <definition value="Higher-order (irregular) component of total corneal astigmatism."/>
+  </concept>
+  <concept>
+    <code value="corneal-hoa-rms"/>
+    <display value="Corneal higher-order aberrations RMS"/>
+    <definition value="Root mean square of corneal higher-order wavefront aberrations."/>
+  </concept>
+  <concept>
+    <code value="angle-kappa"/>
+    <display value="Angle kappa"/>
+    <definition value="Angle between the visual axis and the pupillary axis."/>
+  </concept>
+  <concept>
+    <code value="angle-kappa-intercept"/>
+    <display value="Angle kappa intercept"/>
+    <definition value="Coordinates (x,y) of the angle kappa intercept relative to the pupil centre."/>
+  </concept>
+  <concept>
+    <code value="surgically-induced-astigmatism"/>
+    <display value="Surgically induced astigmatism (SIA)"/>
+    <definition value="Expected corneal astigmatism induced by the surgical incision, used in surgical planning."/>
+  </concept>
+  <concept>
+    <code value="predicted-postoperative-corneal-astigmatism"/>
+    <display value="Predicted postoperative corneal astigmatism"/>
+    <definition value="Expected residual corneal astigmatism after surgery, used in toric IOL planning."/>
+  </concept>
+  <concept>
+    <code value="toric-iol-optimal-axis"/>
+    <display value="Optimal toric IOL axis"/>
+    <definition value="Recommended implantation axis for a toric intraocular lens."/>
+  </concept>
+  <concept>
+    <code value="corneal-vertex-location"/>
+    <display value="Corneal vertex location"/>
+    <definition value="Position coordinates of the corneal vertex."/>
+  </concept>
+  <concept>
+    <code value="pupil-centroid-x"/>
+    <display value="Pupil centroid X coordinate"/>
+    <definition value="X-coordinate of the pupil centre."/>
+  </concept>
+  <concept>
+    <code value="pupil-centroid-y"/>
+    <display value="Pupil centroid Y coordinate"/>
+    <definition value="Y-coordinate of the pupil centre."/>
+  </concept>
+  <concept>
+    <code value="equivalent-pupil-radius"/>
+    <display value="Equivalent pupil radius"/>
+    <definition value="Radius of the equivalent circular pupil."/>
+  </concept>
+  <concept>
+    <code value="corneal-topography-map-type"/>
+    <display value="Corneal topography map type"/>
+    <definition value="Type of topographic map encoded (axial, tangential, elevation, refractive, pachymetry)."/>
+  </concept>
+  <concept>
+    <code value="corneal-analyzed-area"/>
+    <display value="Corneal analyzed area"/>
+    <definition value="Total area of the cornea analyzed."/>
+  </concept>
+  <concept>
+    <code value="corneal-eccentricity-index"/>
+    <display value="Corneal eccentricity index"/>
+    <definition value="Corneal eccentricity (shape factor)."/>
+  </concept>
+  <concept>
+    <code value="keratoconus-prediction-index"/>
+    <display value="Keratoconus prediction index (KPI)"/>
+    <definition value="Corneal keratoconus prediction index, distinct from KISA%."/>
+  </concept>
+  <concept>
+    <code value="potential-visual-acuity-decimal"/>
+    <display value="Decimal potential visual acuity"/>
+    <definition value="Estimated potential visual acuity (decimal) from the corneal surface."/>
+  </concept>
+  <concept>
+    <code value="corneal-tomography-posterior-surface"/>
+    <display value="Corneal tomography, posterior surface analysis"/>
+    <definition value="Posterior corneal surface analysis component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="posterior-keratometry-k1"/>
+    <display value="Posterior keratometry K1 (flat)"/>
+    <definition value="Keratometric power of the flattest meridian of the posterior corneal surface; a negative value in dioptres."/>
+  </concept>
+  <concept>
+    <code value="posterior-keratometry-k2"/>
+    <display value="Posterior keratometry K2 (steep)"/>
+    <definition value="Keratometric power of the steepest meridian of the posterior corneal surface; a negative value in dioptres."/>
+  </concept>
+  <concept>
+    <code value="posterior-keratometry-km"/>
+    <display value="Posterior keratometry Km (mean)"/>
+    <definition value="Mean keratometric power of the posterior corneal surface; a negative value in dioptres."/>
+  </concept>
+  <concept>
+    <code value="corneal-astigmatism-posterior"/>
+    <display value="Corneal astigmatism, posterior surface"/>
+    <definition value="Astigmatism of the posterior corneal surface, reported as a positive magnitude in dioptres (difference between posterior K2 and K1) with the posterior steep meridian as axis."/>
+  </concept>
+  <concept>
+    <code value="corneal-asphericity-q-posterior"/>
+    <display value="Corneal asphericity (Q-value), posterior surface"/>
+    <definition value="Asphericity (Q-value) of the posterior corneal surface."/>
+  </concept>
+  <concept>
+    <code value="elevation-posterior"/>
+    <display value="Corneal elevation relative to best fit sphere, posterior surface"/>
+    <definition value="Elevation of the posterior corneal surface relative to its best fit sphere."/>
+  </concept>
+  <concept>
+    <code value="best-fit-sphere-radius-posterior"/>
+    <display value="Best fit sphere radius, posterior surface"/>
+    <definition value="Radius of the best fit sphere of the posterior corneal surface."/>
+  </concept>
+  <concept>
+    <code value="corneal-tomography-pachymetry"/>
+    <display value="Corneal tomography, pachymetry analysis"/>
+    <definition value="Pachymetry (corneal thickness map) component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="corneal-thickness-pupil-centre"/>
+    <display value="Corneal thickness at pupil centre"/>
+    <definition value="Corneal thickness measured at the pupil centre; may differ from the thickness at the corneal apex."/>
+  </concept>
+  <concept>
+    <code value="corneal-thickness-thinnest"/>
+    <display value="Thinnest corneal thickness"/>
+    <definition value="Corneal thickness at the thinnest point of the pachymetry map."/>
+  </concept>
+  <concept>
+    <code value="corneal-thinnest-point-location"/>
+    <display value="Thinnest corneal point location"/>
+    <definition value="Location (x,y) of the thinnest corneal point relative to the reference centre."/>
+  </concept>
+  <concept>
+    <code value="corneal-volume"/>
+    <display value="Corneal volume"/>
+    <definition value="Total corneal volume within the analysed diameter."/>
+  </concept>
+  <concept>
+    <code value="corneal-tomography-anterior-chamber"/>
+    <display value="Corneal tomography, anterior chamber analysis"/>
+    <definition value="Anterior chamber analysis component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="anterior-chamber-volume"/>
+    <display value="Anterior chamber volume"/>
+    <definition value="Volume of the anterior chamber."/>
+  </concept>
+  <concept>
+    <code value="anterior-chamber-angle"/>
+    <display value="Anterior chamber angle"/>
+    <definition value="Iridocorneal (anterior chamber) angle width in degrees, as measured by the tomographer."/>
+  </concept>
+  <concept>
+    <code value="keratoconus-indices"/>
+    <display value="Keratoconus indices"/>
+    <definition value="Keratoconus screening and classification indices component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="bad-d"/>
+    <display value="Belin-Ambrosio total deviation (BAD-D)"/>
+    <definition value="Final overall deviation index (D) of the Belin-Ambrosio Enhanced Ectasia Display; key keratoconus screening index."/>
+  </concept>
+  <concept>
+    <code value="bad-df"/>
+    <display value="Belin-Ambrosio front elevation deviation (Df)"/>
+    <definition value="Deviation of anterior elevation relative to the enhanced best fit sphere (BAD component Df)."/>
+  </concept>
+  <concept>
+    <code value="bad-db"/>
+    <display value="Belin-Ambrosio back elevation deviation (Db)"/>
+    <definition value="Deviation of posterior elevation relative to the enhanced best fit sphere (BAD component Db)."/>
+  </concept>
+  <concept>
+    <code value="bad-dt"/>
+    <display value="Belin-Ambrosio thinnest point deviation (Dt)"/>
+    <definition value="Deviation of the thinnest corneal thickness from normal (BAD component Dt)."/>
+  </concept>
+  <concept>
+    <code value="bad-dy"/>
+    <display value="Belin-Ambrosio vertical asymmetry deviation (Dy)"/>
+    <definition value="Deviation of the Y-coordinate (vertical displacement) of the thinnest point (BAD component Dy)."/>
+  </concept>
+  <concept>
+    <code value="bad-classification"/>
+    <display value="Belin-Ambrosio classification"/>
+    <definition value="Classification of the Belin-Ambrosio display result (normal, suspicious, abnormal)."/>
+  </concept>
+  <concept>
+    <code value="enhanced-best-fit-sphere-radius-anterior"/>
+    <display value="Enhanced best fit sphere radius, anterior surface"/>
+    <definition value="Radius of the enhanced best fit sphere of the anterior corneal surface (BAD enhanced reference)."/>
+  </concept>
+  <concept>
+    <code value="enhanced-best-fit-sphere-radius-posterior"/>
+    <display value="Enhanced best fit sphere radius, posterior surface"/>
+    <definition value="Radius of the enhanced best fit sphere of the posterior corneal surface (BAD enhanced reference)."/>
+  </concept>
+  <concept>
+    <code value="amsler-krumeich-stage"/>
+    <display value="Amsler-Krumeich keratoconus stage"/>
+    <definition value="Classic Amsler-Krumeich keratoconus staging (I-IV)."/>
+  </concept>
+  <concept>
+    <code value="belin-abcd-grade"/>
+    <display value="Belin ABCD keratoconus grade"/>
+    <definition value="Belin ABCD keratoconus grading (anterior and posterior radius of curvature, thinnest pachymetry, distance visual acuity)."/>
+  </concept>
+  <concept>
+    <code value="index-surface-variance"/>
+    <display value="Index of surface variance (ISV)"/>
+    <definition value="Topometric index of the deviation of individual corneal radii from the mean."/>
+  </concept>
+  <concept>
+    <code value="index-vertical-asymmetry"/>
+    <display value="Index of vertical asymmetry (IVA)"/>
+    <definition value="Topometric index of superior-inferior corneal curvature asymmetry."/>
+  </concept>
+  <concept>
+    <code value="keratoconus-index"/>
+    <display value="Keratoconus index (KI)"/>
+    <definition value="Topometric ratio of central to peripheral corneal curvature."/>
+  </concept>
+  <concept>
+    <code value="center-keratoconus-index"/>
+    <display value="Center keratoconus index (CKI)"/>
+    <definition value="Topometric central corneal curvature index."/>
+  </concept>
+  <concept>
+    <code value="index-height-asymmetry"/>
+    <display value="Index of height asymmetry (IHA)"/>
+    <definition value="Topometric index of superior-inferior corneal elevation asymmetry."/>
+  </concept>
+  <concept>
+    <code value="index-height-decentration"/>
+    <display value="Index of height decentration (IHD)"/>
+    <definition value="Topometric index of the degree of vertical decentration of corneal elevation."/>
+  </concept>
+  <concept>
+    <code value="topographic-keratoconus-classification"/>
+    <display value="Topographic keratoconus classification (TKC)"/>
+    <definition value="Automated topographic keratoconus classification provided by the tomographer."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry"/>
+    <display value="Corneal densitometry"/>
+    <definition value="Corneal densitometry (light backscatter) component of a corneal tomography exam."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-zone-0-2mm"/>
+    <display value="Corneal densitometry, 0-2 mm zone"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) in the central 0-2 mm annular zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-zone-2-6mm"/>
+    <display value="Corneal densitometry, 2-6 mm zone"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) in the paracentral 2-6 mm annular zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-zone-6-10mm"/>
+    <display value="Corneal densitometry, 6-10 mm zone"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) in the peripheral 6-10 mm annular zone."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-total"/>
+    <display value="Corneal densitometry, total"/>
+    <definition value="Overall corneal light backscatter (densitometry, grayscale units)."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-anterior-layer"/>
+    <display value="Corneal densitometry, anterior layer"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) of the anterior 120 um layer."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-central-layer"/>
+    <display value="Corneal densitometry, central layer"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) of the central stromal layer."/>
+  </concept>
+  <concept>
+    <code value="corneal-densitometry-posterior-layer"/>
+    <display value="Corneal densitometry, posterior layer"/>
+    <definition value="Corneal light backscatter (densitometry, grayscale units) of the posterior 60 um layer."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k1-axis"/>
+    <display value="Keratometry K1 axis"/>
+    <definition value="Orientation of the flat meridian."/>
+  </concept>
+  <concept>
+    <code value="keratometry-k2-axis"/>
+    <display value="Keratometry K2 axis"/>
+    <definition value="Orientation of the steep meridian."/>
+  </concept>
+  <concept>
+    <code value="keratometry-km"/>
+    <display value="Keratometry Km (mean)"/>
+    <definition value="Mean keratometry, (K1+K2)/2."/>
+  </concept>
+  <concept>
+    <code value="pachymetric-progression"/>
+    <display value="Pachymetric progression index (BAD Dp)"/>
+    <definition value="Rate of corneal thickness increase from the thinnest point toward the periphery; the pachymetric progression deviation (Dp) of the Belin-Ambrosio display."/>
+  </concept>
+  <concept>
+    <code value="radius-minimum-curvature"/>
+    <display value="Minimum radius of curvature (Rmin)"/>
+    <definition value="Radius of curvature at the steepest point of the corneal surface."/>
+  </concept>
+  <concept>
+    <code value="radius-minimum-sagittal"/>
+    <display value="Minimum sagittal radius of curvature (Rmin)"/>
+    <definition value="Minimum radius of sagittal (axial) curvature, i.e. the steepest point of the sagittal curvature map (Pentacam topometric index Rmin)."/>
+  </concept>
+  <concept>
+    <code value="signal-strength"/>
+    <display value="Scan signal strength / quality"/>
+    <definition value="Device-reported scan signal strength or quality score."/>
+  </concept>
+  <concept>
+    <code value="retinal-thickness-definition"/>
+    <display value="Retinal thickness definition"/>
+    <definition value="Boundaries used to define a retinal or RNFL thickness measurement (e.g. ILM to RPE, ILM to Bruch's membrane, ILM to RNFL outer boundary)."/>
+  </concept>
+  <concept>
+    <code value="normative-deviation-category"/>
+    <display value="Normative database deviation category"/>
+    <definition value="Classification of a measurement against the device normative database (e.g. within normal limits, borderline, outside normal limits)."/>
+  </concept>
+  <concept>
+    <code value="pupil-dilation-degree"/>
+    <display value="Degree of pupil dilation"/>
+    <definition value="Degree of pupil dilation, expressed as pupil diameter in mm."/>
+  </concept>
+  <concept>
+    <code value="central-subfield-thickness-min"/>
+    <display value="Central subfield thickness, minimum"/>
+    <definition value="Minimum retinal thickness measured within the central (1 mm) ETDRS subfield."/>
+  </concept>
+  <concept>
+    <code value="central-subfield-thickness-max"/>
+    <display value="Central subfield thickness, maximum"/>
+    <definition value="Maximum retinal thickness measured within the central (1 mm) ETDRS subfield."/>
+  </concept>
+  <concept>
+    <code value="macular-subfield-volume"/>
+    <display value="Macular ETDRS subfield volume"/>
+    <definition value="Retinal volume of a single ETDRS grid subfield; the subfield is identified by the component context. For the total grid volume use LOINC 57118-2."/>
+  </concept>
+  <concept>
+    <code value="etdrs-grid-diameters"/>
+    <display value="ETDRS grid circle diameters"/>
+    <definition value="Diameters of the concentric circles of the ETDRS measurement grid used for the analysis (usually 1, 3 and 6 mm)."/>
+  </concept>
+  <concept>
+    <code value="anatomic-reference-point"/>
+    <display value="Ophthalmic anatomic reference point"/>
+    <definition value="Anatomic structure used as the reference point to centre the measurement grid (e.g. fovea, optic disc centre)."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-area"/>
+    <display value="Optic cup area"/>
+    <definition value="Area of the optic cup from optic nerve head analysis, in mm2."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-volume"/>
+    <display value="Optic cup volume"/>
+    <definition value="Volume of the optic cup from optic nerve head analysis, in mm3."/>
+  </concept>
+  <concept>
+    <code value="neuroretinal-rim-volume"/>
+    <display value="Neuroretinal rim volume"/>
+    <definition value="Volume of the neuroretinal rim from optic nerve head analysis, in mm3."/>
+  </concept>
+  <concept>
+    <code value="cup-disc-ratio-horizontal"/>
+    <display value="Cup-to-disc ratio, horizontal"/>
+    <definition value="Ratio of horizontal optic cup diameter to horizontal optic disc diameter."/>
+  </concept>
+  <concept>
+    <code value="cup-disc-ratio-vertical"/>
+    <display value="Cup-to-disc ratio, vertical"/>
+    <definition value="Ratio of vertical optic cup diameter to vertical optic disc diameter."/>
+  </concept>
+  <concept>
+    <code value="optic-disc-diameter-horizontal"/>
+    <display value="Optic disc diameter, horizontal"/>
+    <definition value="Horizontal diameter of the optic disc, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-disc-diameter-vertical"/>
+    <display value="Optic disc diameter, vertical"/>
+    <definition value="Vertical diameter of the optic disc, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-disc-diameter-mean"/>
+    <display value="Optic disc diameter, mean"/>
+    <definition value="Mean diameter of the optic disc, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-diameter-horizontal"/>
+    <display value="Optic cup diameter, horizontal"/>
+    <definition value="Horizontal diameter of the optic cup, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-diameter-vertical"/>
+    <display value="Optic cup diameter, vertical"/>
+    <definition value="Vertical diameter of the optic cup, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-diameter-mean"/>
+    <display value="Optic cup diameter, mean"/>
+    <definition value="Mean diameter of the optic cup, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-depth-mean"/>
+    <display value="Optic cup depth, mean"/>
+    <definition value="Mean depth of the optic cup from optic nerve head analysis, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-depth-max"/>
+    <display value="Optic cup depth, maximum"/>
+    <definition value="Maximum depth of the optic cup from optic nerve head analysis, in mm."/>
+  </concept>
+  <concept>
+    <code value="optic-disc-vertical-horizontal-ratio"/>
+    <display value="Optic disc vertical-to-horizontal diameter ratio"/>
+    <definition value="Ratio of vertical to horizontal optic disc diameter (disc ovality)."/>
+  </concept>
+  <concept>
+    <code value="optic-cup-vertical-horizontal-ratio"/>
+    <display value="Optic cup vertical-to-horizontal diameter ratio"/>
+    <definition value="Ratio of vertical to horizontal optic cup diameter."/>
+  </concept>
+  <concept>
+    <code value="rim-disc-area-ratio"/>
+    <display value="Neuroretinal rim-to-disc area ratio"/>
+    <definition value="Ratio of neuroretinal rim area to optic disc area."/>
+  </concept>
+  <concept>
+    <code value="neuroretinal-rim-absence-extent"/>
+    <display value="Angular extent of neuroretinal rim absence"/>
+    <definition value="Angular (circumferential) extent, in degrees, over which the neuroretinal rim is absent; input to DDLS staging."/>
+  </concept>
+  <concept>
+    <code value="disc-damage-likelihood-scale"/>
+    <display value="Disc Damage Likelihood Scale (DDLS) stage"/>
+    <definition value="Disc Damage Likelihood Scale stage (1-10), based on the narrowest rim width or angular extent of rim absence, adjusted for disc size."/>
+  </concept>
+  <concept>
+    <code value="rnfl-symmetry"/>
+    <display value="RNFL inter-eye symmetry"/>
+    <definition value="Symmetry of the RNFL thickness profile between right and left eyes (e.g. Cirrus RNFL symmetry)."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-mean-tsnit"/>
+    <display value="Mean RNFL thickness (TSNIT average)"/>
+    <definition value="Average peripapillary RNFL thickness across the temporal-superior-nasal-inferior-temporal (TSNIT) profile, laterality-neutral. Instances may add an eye-specific LOINC as an optional second coding (candidates 86301-9 right / 86290-4 left, to be verified)."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-tsnit-sd"/>
+    <display value="RNFL TSNIT profile standard deviation"/>
+    <definition value="Standard deviation of peripapillary RNFL thickness across the TSNIT profile."/>
+  </concept>
+  <concept>
+    <code value="visual-field-static-perimetry"/>
+    <display value="Automated static perimetry (visual field)"/>
+    <definition value="Panel code for an automated static threshold perimetry exam (e.g. Humphrey Field Analyzer)."/>
+  </concept>
+  <concept>
+    <code value="visual-field-test-pattern"/>
+    <display value="Visual field test pattern"/>
+    <definition value="Pattern of tested points (e.g. 24-2, 30-2, 10-2, Esterman)."/>
+  </concept>
+  <concept>
+    <code value="visual-field-mean-deviation"/>
+    <display value="Visual field mean deviation (MD)"/>
+    <definition value="Weighted average deviation of measured threshold sensitivity from age-corrected normal values, in dB."/>
+  </concept>
+  <concept>
+    <code value="visual-field-pattern-standard-deviation"/>
+    <display value="Visual field pattern standard deviation (PSD)"/>
+    <definition value="Index of localized sensitivity loss (non-uniformity of the deviation from normal), in dB."/>
+  </concept>
+  <concept>
+    <code value="visual-field-index"/>
+    <display value="Visual field index (VFI)"/>
+    <definition value="Global index of visual function expressed as a percentage of age-normal field."/>
+  </concept>
+  <concept>
+    <code value="visual-field-screening-mode"/>
+    <display value="Visual field screening test mode"/>
+    <definition value="Type of screening test mode used."/>
+  </concept>
+  <concept>
+    <code value="visual-field-fixation-strategy"/>
+    <display value="Visual field fixation strategy"/>
+    <definition value="Method used to monitor patient fixation (e.g. blind spot monitoring, gaze tracking)."/>
+  </concept>
+  <concept>
+    <code value="perimetry-stimulus-size"/>
+    <display value="Perimetry stimulus size"/>
+    <definition value="Size of the test stimulus (e.g. Goldmann III)."/>
+  </concept>
+  <concept>
+    <code value="perimetry-stimulus-color"/>
+    <display value="Perimetry stimulus color"/>
+    <definition value="Color of the test stimulus light."/>
+  </concept>
+  <concept>
+    <code value="perimetry-background-luminance"/>
+    <display value="Perimetry background luminance"/>
+    <definition value="Luminance of the perimeter bowl background (standard 31.5 asb)."/>
+  </concept>
+  <concept>
+    <code value="perimetry-max-stimulus-luminance"/>
+    <display value="Perimetry maximum stimulus luminance"/>
+    <definition value="Maximum luminance of the test stimulus."/>
+  </concept>
+  <concept>
+    <code value="perimetry-stimulus-duration"/>
+    <display value="Perimetry stimulus presentation time"/>
+    <definition value="Presentation time of each stimulus (standard 200 ms)."/>
+  </concept>
+  <concept>
+    <code value="visual-field-horizontal-extent"/>
+    <display value="Visual field horizontal extent"/>
+    <definition value="Horizontal extent of the tested visual field, in degrees."/>
+  </concept>
+  <concept>
+    <code value="visual-field-vertical-extent"/>
+    <display value="Visual field vertical extent"/>
+    <definition value="Vertical extent of the tested visual field, in degrees."/>
+  </concept>
+  <concept>
+    <code value="visual-field-shape"/>
+    <display value="Visual field shape"/>
+    <definition value="Shape of the tested visual field (circle or rectangle)."/>
+  </concept>
+  <concept>
+    <code value="foveal-sensitivity"/>
+    <display value="Foveal threshold sensitivity"/>
+    <definition value="Threshold sensitivity measured at the fovea, in dB."/>
+  </concept>
+  <concept>
+    <code value="visual-field-test-duration"/>
+    <display value="Visual field test duration"/>
+    <definition value="Total duration of the visual field test."/>
+  </concept>
+  <concept>
+    <code value="visual-field-test-point-count"/>
+    <display value="Number of visual field test points"/>
+    <definition value="Total number of points tested; depends on the test pattern."/>
+  </concept>
+  <concept>
+    <code value="correction-lens-power"/>
+    <display value="Correction lens power"/>
+    <definition value="Spherical power of the trial/correction lens used during the test, in diopters."/>
+  </concept>
+  <concept>
+    <code value="fixating-eye"/>
+    <display value="Fixating eye"/>
+    <definition value="The eye that was fixating the target during the measurement. Answer is the eye (e.g. SNOMED CT 24028007 Right / 7771000 Left)."/>
+  </concept>
+  <concept>
+    <code value="strabismus-exam"/>
+    <display value="Strabismus examination"/>
+    <definition value="Panel code for a strabismus examination grouping whichever sub-tests were performed (cover test, motility, near point of convergence, stereopsis, prism cover test, Krimsky, etc.) via hasMember."/>
+  </concept>
+  <concept>
+    <code value="cover-test"/>
+    <display value="Cover test"/>
+    <definition value="Cover test (cover-uncover and/or alternate cover) assessing the presence and type of manifest or latent ocular deviation."/>
+  </concept>
+  <concept>
+    <code value="ocular-motility"/>
+    <display value="Ocular motility assessment"/>
+    <definition value="Assessment of extraocular muscle function (e.g. hypofunction or hyperfunction) of a specific muscle of one eye."/>
+  </concept>
+  <concept>
+    <code value="near-point-of-convergence"/>
+    <display value="Near point of convergence"/>
+    <definition value="Near point of convergence (PPC), recorded as a distance in centimetres or as a qualitative finding."/>
+  </concept>
+  <concept>
+    <code value="convergence-assessment"/>
+    <display value="Convergence assessment"/>
+    <definition value="Qualitative assessment of convergence ability (e.g. good, fair, insufficient, poor)."/>
+  </concept>
+  <concept>
+    <code value="stereopsis-test"/>
+    <display value="Stereopsis test"/>
+    <definition value="Stereoacuity test result (e.g. Titmus, Randot), qualitative or in seconds of arc."/>
+  </concept>
+  <concept>
+    <code value="prism-cover-test"/>
+    <display value="Prism cover test"/>
+    <definition value="Panel code for a prism cover test measuring ocular deviation in prism diopters across one or more gaze positions."/>
+  </concept>
+  <concept>
+    <code value="krimsky-test"/>
+    <display value="Krimsky test"/>
+    <definition value="Panel code for a Krimsky test (corneal light reflex centred with prisms) measuring ocular deviation in prism diopters across one or more gaze positions."/>
+  </concept>
+  <concept>
+    <code value="hirschberg-test"/>
+    <display value="Hirschberg test"/>
+    <definition value="Panel code for a Hirschberg corneal light reflex test estimating the angle of deviation across one or more gaze positions."/>
+  </concept>
+  <concept>
+    <code value="red-filter-light-test"/>
+    <display value="Red filter plus light test"/>
+    <definition value="Panel code for a red filter plus light test assessing fusion, suppression or diplopia across one or more gaze positions."/>
+  </concept>
+  <concept>
+    <code value="worth-4-dot-test"/>
+    <display value="Worth 4 dot test"/>
+    <definition value="Panel code for a Worth 4 dot test assessing fusion, suppression or diplopia across one or more gaze positions."/>
+  </concept>
+  <concept>
+    <code value="gaze-position-measurement"/>
+    <display value="Gaze position measurement"/>
+    <definition value="A single measurement or finding taken at one gaze position (e.g. primary position, right gaze) within a prism cover, Krimsky, Hirschberg, red filter or Worth 4 dot test."/>
+  </concept>
+  <concept>
+    <code value="extraocular-muscle"/>
+    <display value="Extraocular muscle assessed"/>
+    <definition value="The extraocular muscle being assessed (one of the four rectus or two oblique muscles). Answer is a CodeableConcept naming the muscle."/>
+  </concept>
+  <concept>
+    <code value="extraocular-muscle-function"/>
+    <display value="Extraocular muscle function"/>
+    <definition value="Functional finding for the assessed extraocular muscle (e.g. normal, hypofunction, hyperfunction)."/>
+  </concept>
+  <concept>
+    <code value="stereopsis-test-type"/>
+    <display value="Stereopsis test type"/>
+    <definition value="Which stereoacuity test was used (e.g. Titmus fly, Randot, Lang, TNO); affects interpretation of the result."/>
+  </concept>
+  <concept>
+    <code value="horizontal-deviation"/>
+    <display value="Horizontal ocular deviation"/>
+    <definition value="Magnitude of the horizontal ocular deviation at a gaze position, always a positive magnitude, in prism diopters (or degrees for a Hirschberg estimate); the direction (eso/exo) is recorded separately."/>
+  </concept>
+  <concept>
+    <code value="vertical-deviation"/>
+    <display value="Vertical ocular deviation"/>
+    <definition value="Magnitude of the vertical ocular deviation at a gaze position, always a positive magnitude, in prism diopters; the direction (hyper/hypo) is recorded separately."/>
+  </concept>
+  <concept>
+    <code value="gaze-position"/>
+    <display value="Gaze position"/>
+    <definition value="The gaze position (direction of gaze) at which a strabismus measurement was taken, e.g. primary position, right gaze, up-and-right gaze."/>
+  </concept>
+  <concept>
+    <code value="gaze-position-finding"/>
+    <display value="Finding at gaze position"/>
+    <definition value="Qualitative finding at a gaze position (e.g. Hirschberg reflex displacement, fusion, suppression or diplopia on red filter or Worth 4 dot testing)."/>
+  </concept>
+  <concept>
+    <code value="within-normal-limits"/>
+    <display value="Within normal limits"/>
+    <definition value="The measurement or analysis falls within the normal range of the device normative (age-matched reference) database (typically p &gt;= 5%)."/>
+  </concept>
+  <concept>
+    <code value="borderline"/>
+    <display value="Borderline"/>
+    <definition value="The measurement or analysis falls in the borderline range of the device normative database (typically 1% &lt;= p &lt; 5%)."/>
+  </concept>
+  <concept>
+    <code value="outside-normal-limits"/>
+    <display value="Outside normal limits"/>
+    <definition value="The measurement or analysis falls outside the normal range of the device normative database (typically p &lt; 1%)."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-superior"/>
+    <display value="RNFL average thickness, superior quadrant"/>
+    <definition value="Average peripapillary retinal nerve fiber layer thickness in the superior quadrant of the circumpapillary scan."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-inferior"/>
+    <display value="RNFL average thickness, inferior quadrant"/>
+    <definition value="Average peripapillary retinal nerve fiber layer thickness in the inferior quadrant of the circumpapillary scan."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-nasal"/>
+    <display value="RNFL average thickness, nasal quadrant"/>
+    <definition value="Average peripapillary retinal nerve fiber layer thickness in the nasal quadrant of the circumpapillary scan."/>
+  </concept>
+  <concept>
+    <code value="rnfl-thickness-temporal"/>
+    <display value="RNFL average thickness, temporal quadrant"/>
+    <definition value="Average peripapillary retinal nerve fiber layer thickness in the temporal quadrant of the circumpapillary scan."/>
+  </concept>
+  <concept>
+    <code value="glaucoma-hemifield-test"/>
+    <display value="Glaucoma Hemifield Test result"/>
+    <definition value="Result of the Glaucoma Hemifield Test, comparing mirror-image superior and inferior sectors of the visual field (within normal limits, borderline, outside normal limits, general reduction of sensitivity, abnormally high sensitivity)."/>
+  </concept>
+  <concept>
+    <code value="fixation-losses"/>
+    <display value="Fixation losses"/>
+    <definition value="Number of fixation losses (responses to stimuli presented in the physiological blind spot) relative to the number of fixation checks performed."/>
+  </concept>
+  <concept>
+    <code value="false-positive-errors"/>
+    <display value="False positive errors"/>
+    <definition value="Percentage of false positive responses (responses without a stimulus being presented); a reliability index of the visual field test."/>
+  </concept>
+  <concept>
+    <code value="false-negative-errors"/>
+    <display value="False negative errors"/>
+    <definition value="Percentage of false negative responses (no response to a supra-threshold stimulus at a previously seen location); a reliability index of the visual field test."/>
+  </concept>
+  <concept>
+    <code value="test-distance-category"/>
+    <display value="Testing distance category (near/far)"/>
+    <definition value="Categorical testing distance (near or far) at which a strabismus or binocular vision test was performed. Answer is a CodeableConcept (near / far). Distinct from test-distance, which records the testing distance as a Quantity."/>
+  </concept>
+  <concept>
+    <code value="near"/>
+    <display value="Near"/>
+    <definition value="Near testing distance, approximately 33-40 cm."/>
+  </concept>
+  <concept>
+    <code value="far"/>
+    <display value="Far"/>
+    <definition value="Far (distance) testing distance, approximately 6 m (20 ft)."/>
+  </concept>
+  <concept>
+    <code value="horizontal-deviation-direction"/>
+    <display value="Horizontal deviation direction"/>
+    <definition value="Direction of the horizontal ocular deviation at a gaze position (esodeviation, exodeviation, or orthophoria when no horizontal deviation is present). The magnitude is recorded separately as a positive value in horizontal-deviation."/>
+  </concept>
+  <concept>
+    <code value="vertical-deviation-direction"/>
+    <display value="Vertical deviation direction"/>
+    <definition value="Direction of the vertical ocular deviation of the deviating eye at a gaze position (hyperdeviation or hypodeviation). The magnitude is recorded separately as a positive value in vertical-deviation."/>
+  </concept>
+  <concept>
+    <code value="esodeviation"/>
+    <display value="Esodeviation"/>
+    <definition value="Inward (nasal) horizontal deviation of the eye; covers esotropia and esophoria."/>
+  </concept>
+  <concept>
+    <code value="exodeviation"/>
+    <display value="Exodeviation"/>
+    <definition value="Outward (temporal) horizontal deviation of the eye; covers exotropia and exophoria."/>
+  </concept>
+  <concept>
+    <code value="orthophoria"/>
+    <display value="Orthophoria"/>
+    <definition value="Absence of any manifest or latent ocular deviation; the visual axes remain aligned under cover testing."/>
+  </concept>
+  <concept>
+    <code value="hyperdeviation"/>
+    <display value="Hyperdeviation"/>
+    <definition value="Upward vertical deviation of the deviating eye relative to the fellow eye; covers hypertropia and hyperphoria."/>
+  </concept>
+  <concept>
+    <code value="hypodeviation"/>
+    <display value="Hypodeviation"/>
+    <definition value="Downward vertical deviation of the deviating eye relative to the fellow eye; covers hypotropia and hypophoria."/>
+  </concept>
+  <concept>
+    <code value="fusion"/>
+    <display value="Fusion"/>
+    <definition value="Sensory fusion: the images of both eyes are combined into a single percept (e.g. a single pinkish light on the red filter plus light test, four lights on the Worth 4 dot test). SNOMED CT 78513008 Fusion binocular vision is an observable entity, not a finding, so it is not used as an answer."/>
+  </concept>
+  <concept>
+    <code value="corneal-reflex-centered"/>
+    <display value="Corneal light reflex centered"/>
+    <definition value="On corneal light reflex (Hirschberg) testing, the reflex is centered on the pupil of the eye assessed, consistent with no manifest deviation of that eye."/>
+  </concept>
+  <concept>
+    <code value="corneal-reflex-displaced-nasal"/>
+    <display value="Corneal light reflex displaced nasally"/>
+    <definition value="On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced nasally from the pupil centre, indicating an exodeviation of that eye."/>
+  </concept>
+  <concept>
+    <code value="corneal-reflex-displaced-temporal"/>
+    <display value="Corneal light reflex displaced temporally"/>
+    <definition value="On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced temporally from the pupil centre, indicating an esodeviation of that eye."/>
+  </concept>
+  <concept>
+    <code value="corneal-reflex-displaced-superior"/>
+    <display value="Corneal light reflex displaced superiorly"/>
+    <definition value="On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced superiorly from the pupil centre, indicating a hypodeviation of that eye."/>
+  </concept>
+  <concept>
+    <code value="corneal-reflex-displaced-inferior"/>
+    <display value="Corneal light reflex displaced inferiorly"/>
+    <definition value="On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced inferiorly from the pupil centre, indicating a hyperdeviation of that eye."/>
+  </concept>
+</CodeSystem>

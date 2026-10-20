@@ -357,10 +357,9 @@ MedicationAdministration.partOf, not the other way around.</p>
             <td>
 <p>An ophthalmic imaging study, such as OCT, retinography, or angiography.
 Always traceable back to the medical order that led to it via basedOn. Laterality is
-represented both through the native series.bodySite/series.laterality Coding fields (for
-standard DICOM/PACS compatibility) and through an additional extension referencing
-OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of
-this guide).</p>
+represented through the native series.bodySite/series.laterality Coding fields (for
+standard DICOM/PACS compatibility); the core bodySite extension is not allowed on
+ImagingStudy.series in FHIR R4.</p>
 </td>
          </tr>
          <tr>
@@ -468,10 +467,10 @@ an earlier version of this guide's design work and is carried forward here.</p>
             <td>
 <p>Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)
 analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),
-and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,
-alongside acquisition metadata and an overall normative classification. Sourced directly
-from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an
-earlier, quadrant-thickness-only version of this profile.</p>
+the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and
+the quadrant average RNFL thicknesses, alongside acquisition metadata and an overall
+normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT
+Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.</p>
 </td>
          </tr>
          <tr>
@@ -481,9 +480,9 @@ earlier, quadrant-thickness-only version of this profile.</p>
             </td>
             <td>
 <p>Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,
-plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152
-classification fields (thickness definition, deviation category, anatomic reference
-point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),
+plus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned
+classification fields (thickness definition, per-subfield deviation category, anatomic
+reference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),
 replacing an earlier, less complete version of this profile.</p>
 </td>
          </tr>
@@ -525,11 +524,7 @@ for future review.</p>
 <p>Represents the anterior corneal surface analysis component of a corneal
 tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped
 under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations
-catalog (Corneal Topography: Anterior Surface section). Component codes are left as open
-text for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC
-codes were not identified for these device-specific indices (see Terminology); a handful
-of components reference specific DICOM Sup 168 tags directly in their terminology, noted
-in the catalog.</p>
+catalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping.</p>
 </td>
          </tr>
          <tr>
@@ -541,8 +536,7 @@ in the catalog.</p>
 <p>Represents the posterior corneal surface analysis component of a corneal
 tomography exam, one of six Observations grouped under a single CornealTomographyReport.
 Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior
-Surface section). Component codes are left as open text for now, following this guide's
-terminology rigor (see Terminology).</p>
+Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).</p>
 </td>
          </tr>
          <tr>
@@ -566,10 +560,7 @@ FHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section).</p>
             </td>
             <td>
 <p>Represents the anterior chamber analysis component of a corneal tomography
-exam, one of six Observations grouped under a single CornealTomographyReport. Component
-codes are left as open text for now, following this guide's terminology rigor: no
-confirmed SNOMED CT/LOINC codes were identified for these device-specific measurements
-(see Terminology).</p>
+exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).</p>
 </td>
          </tr>
          <tr>
@@ -581,8 +572,7 @@ confirmed SNOMED CT/LOINC codes were identified for these device-specific measur
 <p>Represents the keratoconus screening/classification indices component of a
 corneal tomography exam, one of six Observations grouped under a single
 CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog
-(Corneal Topography: Keratoconus Indices section). Component codes are left as open text
-for now, following this guide's terminology rigor (see Terminology).</p>
+(Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).</p>
 </td>
          </tr>
          <tr>
@@ -595,8 +585,7 @@ for now, following this guide's terminology rigor (see Terminology).</p>
 corneal tomography exam, one of six Observations grouped under a single
 CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog
 (Corneal Topography: Densitometry section): three radial zones plus total, and a
-per-layer breakdown (anterior, central, posterior). Component codes are left as open
-text for now, following this guide's terminology rigor (see Terminology).</p>
+per-layer breakdown (anterior, central, posterior). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).</p>
 </td>
          </tr>
       </tbody>
@@ -615,7 +604,9 @@ text for now, following this guide's terminology rigor (see Terminology).</p>
             <td>
 <p>Represents an automated static perimetry (Humphrey field analyzer) exam.
 Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)
-section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.</p>
+section), with reliability indices (fixation losses, false positive and false negative
+errors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for
+informative correspondences.</p>
 </td>
          </tr>
          <tr>
@@ -644,8 +635,8 @@ from the FHIR4Eyes Observations catalog (Specular Microscopy section).</p>
             <td>
 <p>Represents an ocular biometry exam (optical or ultrasonic), used primarily
 for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes
-Observations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a
-CID reference is noted. Holds the shared measurements common to the whole exam (axial
+Observations catalog (Ocular Biometry section), with informative DICOM correspondences
+given in the DICOM mapping. Holds the shared measurements common to the whole exam (axial
 length, keratometry, and so on) as components; each formula calculated from those shared
 measurements, with its own suggested IOL and expected outcome, is a separate
 IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically
@@ -793,7 +784,10 @@ GazePositionMeasurement, referenced via hasMember.</p>
 <p>Represents a Hirschberg corneal light reflex test, used to estimate the
 angle of deviation when other tests aren't feasible (e.g. young children). Performed across
 multiple gaze positions; each position is recorded as a separate GazePositionMeasurement,
-referenced here via hasMember, using its qualitative finding component.</p>
+referenced here via hasMember, using its qualitative finding component. When a
+quantitative estimate is made, the per-position horizontalDeviation component (positive
+magnitude, in degrees or prism diopters, with its direction in horizontalDirection) may be
+used for the estimated deviation, in addition to the finding.</p>
 </td>
          </tr>
          <tr>
@@ -817,7 +811,7 @@ component. Distance and correction status are recorded as components on this pan
 <p>Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.
 Performed across multiple gaze positions; each position is recorded as a separate
 GazePositionMeasurement, referenced here via hasMember, using its qualitative finding
-component.</p>
+component. Distance and correction status are recorded as components on this panel.</p>
 </td>
          </tr>
          <tr>
@@ -828,7 +822,8 @@ component.</p>
             <td>
 <p>A reusable pattern for a single measurement or finding taken at one gaze
 position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and
-KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,
+KrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude
+plus a separate direction component, never as a signed value), and by HirschbergTest,
 RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test
 uses only the components relevant to it; all components are optional. Not intended to be
 used standalone; always referenced via hasMember from one of those panels.</p>
@@ -899,7 +894,7 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-observation-eye.html"
-                  title="SearchParameter/sp-observation-eye">sp-observation-eye</a>
+                  title="SearchParameter/sp-observation-eye">Observation eye (laterality) search parameter</a>
             </td>
             <td>
 <p>Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.</p>
@@ -908,7 +903,7 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-condition-eye.html"
-                  title="SearchParameter/sp-condition-eye">sp-condition-eye</a>
+                  title="SearchParameter/sp-condition-eye">Condition eye (laterality) search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.</p>
@@ -917,7 +912,7 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-procedure-eye.html"
-                  title="SearchParameter/sp-procedure-eye">sp-procedure-eye</a>
+                  title="SearchParameter/sp-procedure-eye">Procedure eye (laterality) search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.</p>
@@ -926,16 +921,16 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-imagingstudy-eye.html"
-                  title="SearchParameter/sp-imagingstudy-eye">sp-imagingstudy-eye</a>
+                  title="SearchParameter/sp-imagingstudy-eye">ImagingStudy eye (laterality) search parameter</a>
             </td>
             <td>
-<p>Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.</p>
+<p>Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left).</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-imagingstudy-modality.html"
-                  title="SearchParameter/sp-imagingstudy-modality">sp-imagingstudy-modality</a>
+                  title="SearchParameter/sp-imagingstudy-modality">ImagingStudy modality search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).</p>
@@ -944,7 +939,7 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-diagnosticreport-imaging-study.html"
-                  title="SearchParameter/sp-diagnosticreport-imaging-study">sp-diagnosticreport-imaging-study</a>
+                  title="SearchParameter/sp-diagnosticreport-imaging-study">DiagnosticReport imaging study search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.</p>
@@ -953,7 +948,7 @@ this is a component' pattern.</p>
          <tr>
             <td style="column-width:30%">
                <a href="SearchParameter-sp-encounter-appointment.html"
-                  title="SearchParameter/sp-encounter-appointment">sp-encounter-appointment</a>
+                  title="SearchParameter/sp-encounter-appointment">Encounter appointment search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic encounters by the appointment that led to them.</p>
@@ -999,6 +994,89 @@ SNOMED CT concepts, verified directly against the SNOMED CT browser. See Termino
 the full clinical and terminology rationale. The counting-fingers concept below uses the
 generic code by default; the more specific distance-based codes may be used instead when
 that detail is known.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-fhir4eyes-cs.html" title="CodeSystem/fhir4eyes-cs">FHIR4Eyes Code System</a>
+            </td>
+            <td>
+<p>Local, laterality-neutral codes for ophthalmic observations and components
+defined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been
+verified. Open to replacement as external codes become available.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-normative-classification-vs.html"
+                  title="ValueSet/normative-classification-vs">Normative Classification Value Set</a>
+            </td>
+            <td>
+<p>Classification of an ophthalmic measurement or analysis against the device
+normative (age-matched reference) database: within normal limits, borderline, or outside
+normal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve
+head analyses, and for the per-subfield deviation category of the OCT macula profile.
+Bindings are extensible, so device-specific percentile categories (e.g. p&lt;5%, p&lt;1%) may be
+used when no concept here applies.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-gaze-position-vs.html" title="ValueSet/gaze-position-vs">Gaze Position Value Set</a>
+            </td>
+            <td>
+<p>The nine diagnostic positions of gaze at which a strabismus measurement or
+binocular finding is recorded: primary position, the four secondary positions (up gaze /
+supraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion)
+and the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze
+directions hierarchy.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-binocular-finding-vs.html"
+                  title="ValueSet/binocular-finding-vs">Binocular Finding Value Set</a>
+            </td>
+            <td>
+<p>Qualitative findings recorded at a gaze position: sensory responses on the red
+filter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or
+uncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test
+(centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed).
+The binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test)
+may be used when no concept here applies.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-horizontal-deviation-direction-vs.html"
+                  title="ValueSet/horizontal-deviation-direction-vs">Horizontal Deviation Direction Value Set</a>
+            </td>
+            <td>
+<p>Direction of a horizontal ocular deviation at a gaze position: esodeviation,
+exodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias
+and phorias; the magnitude is recorded separately as a positive value.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vertical-deviation-direction-vs.html"
+                  title="ValueSet/vertical-deviation-direction-vs">Vertical Deviation Direction Value Set</a>
+            </td>
+            <td>
+<p>Direction of a vertical ocular deviation of the deviating eye at a gaze
+position: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is
+recorded separately as a positive value.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-test-distance-category-vs.html"
+                  title="ValueSet/test-distance-category-vs">Test Distance Category Value Set</a>
+            </td>
+            <td>
+<p>Categorical testing distance of a strabismus or binocular vision test: near
+(about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories
+(e.g. intermediate) may be used when needed.</p>
 </td>
          </tr>
       </tbody>
@@ -1059,6 +1137,15 @@ that detail is known.</p>
             </td>
             <td>
 <p>OcularBodyStructure for the left eye, referenced via bodySite for laterality.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="BodyStructure-BothEyesStructureExample.html"
+                  title="BodyStructure/BothEyesStructureExample">Both eyes (laterality)</a>
+            </td>
+            <td>
+<p>OcularBodyStructure for both eyes, referenced via bodySite for binocular measurements.</p>
 </td>
          </tr>
       </tbody>
@@ -1525,10 +1612,19 @@ that detail is known.</p>
          <tr>
             <td style="column-width:30%">
                <a href="Observation-CoverTestExample.html"
-                  title="Observation/CoverTestExample">Cover test</a>
+                  title="Observation/CoverTestExample">Cover test: near</a>
             </td>
             <td>
-<p>Cover test result.</p>
+<p>Cover test result at near distance.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CoverTestFarExample.html"
+                  title="Observation/CoverTestFarExample">Cover test: far</a>
+            </td>
+            <td>
+<p>Cover test result at far distance.</p>
 </td>
          </tr>
          <tr>
@@ -1592,6 +1688,240 @@ that detail is known.</p>
             </td>
             <td>
 <p>GazePositionMeasurement for the primary gaze position.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyTestExample.html"
+                  title="Observation/KrimskyTestExample">Krimsky test panel</a>
+            </td>
+            <td>
+<p>Krimsky test at far, with correction, in the five principal gaze positions fixating each eye: 30 PD exodeviation fixating the right eye (FOD) and 25 PD fixating the left eye (FOI), comitant across positions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyPrimaryFODExample.html"
+                  title="Observation/KrimskyPrimaryFODExample">Krimsky test: primary position, FOD</a>
+            </td>
+            <td>
+<p>Krimsky test, primary position, fixating right eye (FOD): 30 PD exodeviation of the left eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyPrimaryFOIExample.html"
+                  title="Observation/KrimskyPrimaryFOIExample">Krimsky test: primary position, FOI</a>
+            </td>
+            <td>
+<p>Krimsky test, primary position, fixating left eye (FOI): 25 PD exodeviation of the right eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyUpFODExample.html"
+                  title="Observation/KrimskyUpFODExample">Krimsky test: up gaze, FOD</a>
+            </td>
+            <td>
+<p>Krimsky test, up gaze (supraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyUpFOIExample.html"
+                  title="Observation/KrimskyUpFOIExample">Krimsky test: up gaze, FOI</a>
+            </td>
+            <td>
+<p>Krimsky test, up gaze (supraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyDownFODExample.html"
+                  title="Observation/KrimskyDownFODExample">Krimsky test: down gaze, FOD</a>
+            </td>
+            <td>
+<p>Krimsky test, down gaze (infraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyDownFOIExample.html"
+                  title="Observation/KrimskyDownFOIExample">Krimsky test: down gaze, FOI</a>
+            </td>
+            <td>
+<p>Krimsky test, down gaze (infraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyRightFODExample.html"
+                  title="Observation/KrimskyRightFODExample">Krimsky test: right gaze, FOD</a>
+            </td>
+            <td>
+<p>Krimsky test, right gaze (dextroversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyRightFOIExample.html"
+                  title="Observation/KrimskyRightFOIExample">Krimsky test: right gaze, FOI</a>
+            </td>
+            <td>
+<p>Krimsky test, right gaze (dextroversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyLeftFODExample.html"
+                  title="Observation/KrimskyLeftFODExample">Krimsky test: left gaze, FOD</a>
+            </td>
+            <td>
+<p>Krimsky test, left gaze (levoversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-KrimskyLeftFOIExample.html"
+                  title="Observation/KrimskyLeftFOIExample">Krimsky test: left gaze, FOI</a>
+            </td>
+            <td>
+<p>Krimsky test, left gaze (levoversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergTestExample.html"
+                  title="Observation/HirschbergTestExample">Hirschberg test panel</a>
+            </td>
+            <td>
+<p>Hirschberg corneal light reflex test in the five principal gaze positions fixating each eye: about 15 degrees of exodeviation fixating either eye (FODI).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergPrimaryFODExample.html"
+                  title="Observation/HirschbergPrimaryFODExample">Hirschberg test: primary position, FOD</a>
+            </td>
+            <td>
+<p>Hirschberg test, primary position, fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergPrimaryFOIExample.html"
+                  title="Observation/HirschbergPrimaryFOIExample">Hirschberg test: primary position, FOI</a>
+            </td>
+            <td>
+<p>Hirschberg test, primary position, fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergUpFODExample.html"
+                  title="Observation/HirschbergUpFODExample">Hirschberg test: up gaze, FOD</a>
+            </td>
+            <td>
+<p>Hirschberg test, up gaze (supraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergUpFOIExample.html"
+                  title="Observation/HirschbergUpFOIExample">Hirschberg test: up gaze, FOI</a>
+            </td>
+            <td>
+<p>Hirschberg test, up gaze (supraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergDownFODExample.html"
+                  title="Observation/HirschbergDownFODExample">Hirschberg test: down gaze, FOD</a>
+            </td>
+            <td>
+<p>Hirschberg test, down gaze (infraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergDownFOIExample.html"
+                  title="Observation/HirschbergDownFOIExample">Hirschberg test: down gaze, FOI</a>
+            </td>
+            <td>
+<p>Hirschberg test, down gaze (infraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergRightFODExample.html"
+                  title="Observation/HirschbergRightFODExample">Hirschberg test: right gaze, FOD</a>
+            </td>
+            <td>
+<p>Hirschberg test, right gaze (dextroversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergRightFOIExample.html"
+                  title="Observation/HirschbergRightFOIExample">Hirschberg test: right gaze, FOI</a>
+            </td>
+            <td>
+<p>Hirschberg test, right gaze (dextroversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergLeftFODExample.html"
+                  title="Observation/HirschbergLeftFODExample">Hirschberg test: left gaze, FOD</a>
+            </td>
+            <td>
+<p>Hirschberg test, left gaze (levoversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-HirschbergLeftFOIExample.html"
+                  title="Observation/HirschbergLeftFOIExample">Hirschberg test: left gaze, FOI</a>
+            </td>
+            <td>
+<p>Hirschberg test, left gaze (levoversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-RedFilterLightTestExample.html"
+                  title="Observation/RedFilterLightTestExample">Red filter light test panel</a>
+            </td>
+            <td>
+<p>Red filter plus light test at near, with correction, grouping its per-gaze-position assessments.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-RedFilterPrimaryPositionExample.html"
+                  title="Observation/RedFilterPrimaryPositionExample">Red filter light test: primary position</a>
+            </td>
+            <td>
+<p>GazePositionMeasurement for the red filter plus light test in primary position at near: single light seen (fusion).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-Worth4DotTestExample.html"
+                  title="Observation/Worth4DotTestExample">Worth 4 dot test panel</a>
+            </td>
+            <td>
+<p>Worth 4 dot test at far, with correction, grouping its per-gaze-position assessments.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-Worth4DotPrimaryPositionExample.html"
+                  title="Observation/Worth4DotPrimaryPositionExample">Worth 4 dot test: primary position</a>
+            </td>
+            <td>
+<p>GazePositionMeasurement for the Worth 4 dot test in primary position at far: three green lights seen (right eye suppression).</p>
 </td>
          </tr>
       </tbody>
@@ -1667,7 +1997,7 @@ that detail is known.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

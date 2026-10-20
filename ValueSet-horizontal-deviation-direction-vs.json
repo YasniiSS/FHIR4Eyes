@@ -1,0 +1,55 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "horizontal-deviation-direction-vs",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet horizontal-deviation-direction-vs</b></p><a name=\"horizontal-deviation-direction-vs\"> </a><a name=\"hchorizontal-deviation-direction-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-fhir4eyes-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.4.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-esodeviation\">esodeviation</a></td><td>Esodeviation</td><td>Inward (nasal) horizontal deviation of the eye; covers esotropia and esophoria.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-exodeviation\">exodeviation</a></td><td>Exodeviation</td><td>Outward (temporal) horizontal deviation of the eye; covers exotropia and exophoria.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-orthophoria\">orthophoria</a></td><td>Orthophoria</td><td>Absence of any manifest or latent ocular deviation; the visual axes remain aligned under cover testing.</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs",
+  "version" : "0.4.0",
+  "name" : "HorizontalDeviationDirectionVS",
+  "title" : "Horizontal Deviation Direction Value Set",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-10-20T20:13:11-03:00",
+  "publisher" : "FHIR4Eyes Project",
+  "contact" : [{
+    "name" : "FHIR4Eyes Project",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  },
+  {
+    "name" : "Yasna Soto",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  }],
+  "description" : "Direction of a horizontal ocular deviation at a gaze position: esodeviation,\nexodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias\nand phorias; the magnitude is recorded separately as a positive value.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "concept" : [{
+        "code" : "esodeviation",
+        "display" : "Esodeviation"
+      },
+      {
+        "code" : "exodeviation",
+        "display" : "Exodeviation"
+      },
+      {
+        "code" : "orthophoria",
+        "display" : "Orthophoria"
+      }]
+    }]
+  }
+}

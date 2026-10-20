@@ -1,0 +1,108 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "binocular-finding-vs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet binocular-finding-vs</b></p><a name=\"binocular-finding-vs\"> </a><a name=\"hcbinocular-finding-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"CodeSystem-fhir4eyes-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.4.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-fusion\">fusion</a></td><td>Fusion</td><td>Sensory fusion: the images of both eyes are combined into a single percept (e.g. a single pinkish light on the red filter plus light test, four lights on the Worth 4 dot test). SNOMED CT 78513008 Fusion binocular vision is an observable entity, not a finding, so it is not used as an answer.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-centered\">corneal-reflex-centered</a></td><td>Corneal light reflex centered</td><td>On corneal light reflex (Hirschberg) testing, the reflex is centered on the pupil of the eye assessed, consistent with no manifest deviation of that eye.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-nasal\">corneal-reflex-displaced-nasal</a></td><td>Corneal light reflex displaced nasally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced nasally from the pupil centre, indicating an exodeviation of that eye.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-temporal\">corneal-reflex-displaced-temporal</a></td><td>Corneal light reflex displaced temporally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced temporally from the pupil centre, indicating an esodeviation of that eye.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-superior\">corneal-reflex-displaced-superior</a></td><td>Corneal light reflex displaced superiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced superiorly from the pupil centre, indicating a hypodeviation of that eye.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-inferior\">corneal-reflex-displaced-inferior</a></td><td>Corneal light reflex displaced inferiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced inferiorly from the pupil centre, indicating a hyperdeviation of that eye.</td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/1052232003\">1052232003</a></td><td>Suppression of visual signal of right eye</td></tr><tr><td><a href=\"http://snomed.info/id/1052231005\">1052231005</a></td><td>Suppression of visual signal of left eye</td></tr><tr><td><a href=\"http://snomed.info/id/251756006\">251756006</a></td><td>Heteronymous diplopia</td></tr><tr><td><a href=\"http://snomed.info/id/251755005\">251755005</a></td><td>Homonymous diplopia</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs"] ;
+  fhir:ValueSet.version [ fhir:value "0.4.0"] ;
+  fhir:ValueSet.name [ fhir:value "BinocularFindingVS"] ;
+  fhir:ValueSet.title [ fhir:value "Binocular Finding Value Set"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-20T20:13:11-03:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "FHIR4Eyes Project"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "FHIR4Eyes Project" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Yasna Soto" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Qualitative findings recorded at a gaze position: sensory responses on the red\nfilter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or\nuncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test\n(centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed).\nThe binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test)\nmay be used when no concept here applies."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ] ;
+       fhir:Coding.display [ fhir:value "World" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "fusion" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Fusion" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "corneal-reflex-centered" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Corneal light reflex centered" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "corneal-reflex-displaced-nasal" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Corneal light reflex displaced nasally" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "corneal-reflex-displaced-temporal" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Corneal light reflex displaced temporally" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "corneal-reflex-displaced-superior" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Corneal light reflex displaced superiorly" ]
+       ], [
+         fhir:index 5 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "corneal-reflex-displaced-inferior" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Corneal light reflex displaced inferiorly" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1052232003" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Suppression of visual signal of right eye" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1052231005" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Suppression of visual signal of left eye" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "251756006" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Heteronymous diplopia" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "251755005" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Homonymous diplopia" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

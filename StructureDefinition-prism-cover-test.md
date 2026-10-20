@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:PrismCoverTest |
+| Draft as of 2026-10-20 | *Computable Name*:PrismCoverTest |
 
  
 Represents a prism cover test, measuring ocular deviation in prism diopters across multiple gaze positions. Each gaze position is recorded as a separate GazePositionMeasurement, referenced here via hasMember. Distance and correction status are recorded as components on this panel, following the same granular pattern used for OphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code. 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
   "name" : "PrismCoverTest",
   "title" : "Prism Cover Test",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
+  "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\nacross multiple gaze positions. Each gaze position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\nrecorded as components on this panel, following the same granular pattern used for\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -121,7 +121,22 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -135,6 +150,13 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a prism cover test",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "prism-cover-test",
+          "display" : "Prism cover test"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -190,14 +212,25 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
     {
       "id" : "Observation.component:testDistance.code",
       "path" : "Observation.component.code",
-      "short" : "Near or far"
+      "short" : "Near or far (categorical; near about 33-40 cm, far about 6 m / 20 ft)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "test-distance-category",
+          "display" : "Testing distance category (near/far)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:testDistance.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs"
+      }
     },
     {
       "id" : "Observation.component:correctionStatus",
@@ -210,7 +243,14 @@ Other representations of profile: [CSV](StructureDefinition-prism-cover-test.csv
     {
       "id" : "Observation.component:correctionStatus.code",
       "path" : "Observation.component.code",
-      "short" : "With or without correction"
+      "short" : "With or without correction",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "correction-status",
+          "display" : "Refractive correction status during test"
+        }]
+      }
     },
     {
       "id" : "Observation.component:correctionStatus.value[x]",

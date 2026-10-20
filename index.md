@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:FHIR4Eyes |
+| Draft as of 2026-10-20 | *Computable Name*:FHIR4Eyes |
 
 ## What is this guide for?
 
@@ -98,7 +98,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -165,6 +165,17 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "pin-canonicals"
+      },
+      {
+        "url" : "value",
+        "valueString" : "pin-multiples"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -444,6 +455,17 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "pin-canonicals"
+      },
+      {
+        "url" : "value",
+        "valueString" : "pin-multiples"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -920,7 +942,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-imaging-study"
       },
       "name" : "Ophthalmic Imaging Study",
-      "description" : "An ophthalmic imaging study, such as OCT, retinography, or angiography.\r\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\r\nrepresented both through the native series.bodySite/series.laterality Coding fields (for\r\nstandard DICOM/PACS compatibility) and through an additional extension referencing\r\nOcularBodyStructure (for structured cross-resource navigation, consistent with the rest of\r\nthis guide).",
+      "description" : "An ophthalmic imaging study, such as OCT, retinography, or angiography.\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\nrepresented through the native series.bodySite/series.laterality Coding fields (for\nstandard DICOM/PACS compatibility); the core bodySite extension is not allowed on\nImagingStudy.series in FHIR R4.",
       "exampleBoolean" : false,
       "groupingId" : "GroupWorkflow"
     },
@@ -937,7 +959,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-diagnostic-report"
       },
       "name" : "Ophthalmic Diagnostic Report",
-      "description" : "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report.",
+      "description" : "Represents the findings, diagnosis, and treatment plan reached after\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\nthis is not limited to describing imaging findings: the same clinical act typically also\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\nCarePlan resources referencing this report.",
       "exampleBoolean" : false,
       "groupingId" : "GroupWorkflow"
     },
@@ -954,7 +976,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-visual-acuity"
       },
       "name" : "Ophthalmic Visual Acuity",
-      "description" : "Represents a visual acuity measurement, modeled as discrete, independently\r\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\r\nthan as a single pre-coordinated code that bundles all of these together. This follows a\r\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\r\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\r\n(2025), which favors flexible, independently recordable components over pre-coordinated\r\ncodes. See Terminology for the underlying terminology strategy, including the\r\nLowVisionAssessment value set for vision below what any chart can measure.",
+      "description" : "Represents a visual acuity measurement, modeled as discrete, independently\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\nthan as a single pre-coordinated code that bundles all of these together. This follows a\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\n(2025), which favors flexible, independently recordable components over pre-coordinated\ncodes. See Terminology for the underlying terminology strategy, including the\nLowVisionAssessment value set for vision below what any chart can measure.",
       "exampleBoolean" : false,
       "groupingId" : "GroupVisualAcuity"
     },
@@ -988,7 +1010,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/pachymetry"
       },
       "name" : "Pachymetry",
-      "description" : "Represents a corneal pachymetry measurement (corneal thickness), typically\r\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\r\ncorrecting an IOP reading for corneal thickness.",
+      "description" : "Represents a corneal pachymetry measurement (corneal thickness), typically\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\ncorrecting an IOP reading for corneal thickness.",
       "exampleBoolean" : false,
       "groupingId" : "GroupIOP"
     },
@@ -1039,7 +1061,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
       },
       "name" : "Ophthalmic OCT RNFL",
-      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile.",
+      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\r\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\r\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\r\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\r\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\r\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOCT"
     },
@@ -1056,7 +1078,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-macula"
       },
       "name" : "Ophthalmic OCT Macula",
-      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
+      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\r\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\r\nclassification fields (thickness definition, per-subfield deviation category, anatomic\r\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\r\nreplacing an earlier, less complete version of this profile.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOCT"
     },
@@ -1090,7 +1112,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ct-anterior-surface"
       },
       "name" : "Corneal Tomography - Anterior Surface",
-      "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog.",
+      "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCornealTomography"
     },
@@ -1107,7 +1129,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ct-posterior-surface"
       },
       "name" : "Corneal Tomography - Posterior Surface",
-      "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology).",
+      "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCornealTomography"
     },
@@ -1141,7 +1163,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ct-anterior-chamber"
       },
       "name" : "Corneal Tomography - Anterior Chamber",
-      "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology).",
+      "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCornealTomography"
     },
@@ -1158,7 +1180,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ct-keratoconus-indices"
       },
       "name" : "Corneal Tomography - Keratoconus Indices",
-      "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology).",
+      "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCornealTomography"
     },
@@ -1175,7 +1197,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ct-densitometry"
       },
       "name" : "Corneal Tomography - Densitometry",
-      "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology).",
+      "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCornealTomography"
     },
@@ -1192,7 +1214,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-humphrey-visual-field"
       },
       "name" : "Ophthalmic Humphrey Visual Field",
-      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.",
+      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\r\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\r\nsection), with reliability indices (fixation losses, false positive and false negative\r\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\r\ninformative correspondences.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOtherTests"
     },
@@ -1226,7 +1248,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-ocular-biometry"
       },
       "name" : "Ophthalmic Ocular Biometry",
-      "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
+      "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), with informative DICOM correspondences\ngiven in the DICOM mapping. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
       "exampleBoolean" : false,
       "groupingId" : "GroupBiometry"
     },
@@ -1294,7 +1316,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/cover-test"
       },
       "name" : "Cover Test",
-      "description" : "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet.",
+      "description" : "Represents a cover test result, performed with or without correction, at\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\nbeen verified for these specific findings yet.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1328,7 +1350,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/near-point-of-convergence"
       },
       "name" : "Near Point of Convergence",
-      "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
+      "description" : "Represents the near point of convergence (PPC), recorded either as a\r\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\r\nqualitative finding (e.g. 'nasal', 'near nasal').",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1345,7 +1367,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/convergence-assessment"
       },
       "name" : "Convergence Assessment",
-      "description" : "Represents a qualitative assessment of convergence ability (good, fair,\ninsufficient, poor).",
+      "description" : "Represents a qualitative assessment of convergence ability (good, fair,\r\ninsufficient, poor).",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1379,7 +1401,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/prism-cover-test"
       },
       "name" : "Prism Cover Test",
-      "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
+      "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\nacross multiple gaze positions. Each gaze position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\nrecorded as components on this panel, following the same granular pattern used for\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1396,7 +1418,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/krimsky-test"
       },
       "name" : "Krimsky Test",
-      "description" : "Represents a Krimsky test (corneal light reflex test with prism), measuring\r\nocular deviation in prism diopters across multiple gaze positions. Follows the same\r\nstructural pattern as PrismCoverTest: each gaze position is a separate\r\nGazePositionMeasurement, referenced via hasMember.",
+      "description" : "Represents a Krimsky test (corneal light reflex test with prism), measuring\nocular deviation in prism diopters across multiple gaze positions. Follows the same\nstructural pattern as PrismCoverTest: each gaze position is a separate\nGazePositionMeasurement, referenced via hasMember.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1413,7 +1435,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/hirschberg-test"
       },
       "name" : "Hirschberg Test",
-      "description" : "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component.",
+      "description" : "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component. When a\r\nquantitative estimate is made, the per-position horizontalDeviation component (positive\r\nmagnitude, in degrees or prism diopters, with its direction in horizontalDirection) may be\r\nused for the estimated deviation, in addition to the finding.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1430,7 +1452,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/red-filter-light-test"
       },
       "name" : "Red Filter Light Test",
-      "description" : "Represents a red filter plus light test, assessing fusion, suppression, or\r\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent. Distance and correction status are recorded as components on this panel.",
+      "description" : "Represents a red filter plus light test, assessing fusion, suppression, or\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\ncomponent. Distance and correction status are recorded as components on this panel.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1447,7 +1469,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/worth-4-dot-test"
       },
       "name" : "Worth 4 Dot Test",
-      "description" : "Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.\r\nPerformed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent.",
+      "description" : "Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.\nPerformed across multiple gaze positions; each position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\ncomponent. Distance and correction status are recorded as components on this panel.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1464,7 +1486,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/gaze-position-measurement"
       },
       "name" : "Gaze Position Measurement",
-      "description" : "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels.",
+      "description" : "A reusable pattern for a single measurement or finding taken at one gaze\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\nKrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude\nplus a separate direction component, never as a signed value), and by HirschbergTest,\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\nuses only the components relevant to it; all components are optional. Not intended to be\nused standalone; always referenced via hasMember from one of those panels.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1515,7 +1537,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-medication-administration"
       },
       "name" : "Ophthalmic Medication Administration",
-      "description" : "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern.",
+      "description" : "Records the administration of a medication during an ophthalmic procedure,\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\nthis is a component' pattern.",
       "exampleBoolean" : false,
       "groupingId" : "GroupTreatment"
     },
@@ -1548,7 +1570,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-observation-eye"
       },
-      "name" : "sp-observation-eye",
+      "name" : "Observation eye (laterality) search parameter",
       "description" : "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1565,7 +1587,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-condition-eye"
       },
-      "name" : "sp-condition-eye",
+      "name" : "Condition eye (laterality) search parameter",
       "description" : "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1582,7 +1604,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-procedure-eye"
       },
-      "name" : "sp-procedure-eye",
+      "name" : "Procedure eye (laterality) search parameter",
       "description" : "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1599,8 +1621,8 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-imagingstudy-eye"
       },
-      "name" : "sp-imagingstudy-eye",
-      "description" : "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.",
+      "name" : "ImagingStudy eye (laterality) search parameter",
+      "description" : "Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
     },
@@ -1616,7 +1638,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-imagingstudy-modality"
       },
-      "name" : "sp-imagingstudy-modality",
+      "name" : "ImagingStudy modality search parameter",
       "description" : "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1633,7 +1655,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-diagnosticreport-imaging-study"
       },
-      "name" : "sp-diagnosticreport-imaging-study",
+      "name" : "DiagnosticReport imaging study search parameter",
       "description" : "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1650,7 +1672,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "SearchParameter/sp-encounter-appointment"
       },
-      "name" : "sp-encounter-appointment",
+      "name" : "Encounter appointment search parameter",
       "description" : "Search ophthalmic encounters by the appointment that led to them.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
@@ -1703,6 +1725,125 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Low Vision Assessment Value Set",
       "description" : "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-fhir4eyes-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/fhir4eyes-cs"
+      },
+      "name" : "FHIR4Eyes Code System",
+      "description" : "Local, laterality-neutral codes for ophthalmic observations and components\ndefined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been\nverified. Open to replacement as external codes become available.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-normative-classification-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/normative-classification-vs"
+      },
+      "name" : "Normative Classification Value Set",
+      "description" : "Classification of an ophthalmic measurement or analysis against the device\nnormative (age-matched reference) database: within normal limits, borderline, or outside\nnormal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve\nhead analyses, and for the per-subfield deviation category of the OCT macula profile.\nBindings are extensible, so device-specific percentile categories (e.g. p<5%, p<1%) may be\nused when no concept here applies.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-gaze-position-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/gaze-position-vs"
+      },
+      "name" : "Gaze Position Value Set",
+      "description" : "The nine diagnostic positions of gaze at which a strabismus measurement or\nbinocular finding is recorded: primary position, the four secondary positions (up gaze /\nsupraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion)\nand the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze\ndirections hierarchy.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-binocular-finding-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/binocular-finding-vs"
+      },
+      "name" : "Binocular Finding Value Set",
+      "description" : "Qualitative findings recorded at a gaze position: sensory responses on the red\nfilter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or\nuncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test\n(centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed).\nThe binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test)\nmay be used when no concept here applies.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-horizontal-deviation-direction-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/horizontal-deviation-direction-vs"
+      },
+      "name" : "Horizontal Deviation Direction Value Set",
+      "description" : "Direction of a horizontal ocular deviation at a gaze position: esodeviation,\nexodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias\nand phorias; the magnitude is recorded separately as a positive value.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vertical-deviation-direction-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vertical-deviation-direction-vs"
+      },
+      "name" : "Vertical Deviation Direction Value Set",
+      "description" : "Direction of a vertical ocular deviation of the deviating eye at a gaze\nposition: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is\nrecorded separately as a positive value.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-test-distance-category-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/test-distance-category-vs"
+      },
+      "name" : "Test Distance Category Value Set",
+      "description" : "Categorical testing distance of a strabismus or binocular vision test: near\n(about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories\n(e.g. intermediate) may be used when needed.",
       "exampleBoolean" : false,
       "groupingId" : "GroupTerminology"
     },
@@ -1805,6 +1946,23 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Left eye (laterality)",
       "description" : "OcularBodyStructure for the left eye, referenced via bodySite for laterality.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "BodyStructure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "BodyStructure-BothEyesStructureExample.html"
+      }],
+      "reference" : {
+        "reference" : "BodyStructure/BothEyesStructureExample"
+      },
+      "name" : "Both eyes (laterality)",
+      "description" : "OcularBodyStructure for both eyes, referenced via bodySite for binocular measurements.",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
       "groupingId" : "GroupExFoundation"
     },
@@ -2585,8 +2743,25 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       "reference" : {
         "reference" : "Observation/CoverTestExample"
       },
-      "name" : "Cover test",
-      "description" : "Cover test result.",
+      "name" : "Cover test: near",
+      "description" : "Cover test result at near distance.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CoverTestFarExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CoverTestFarExample"
+      },
+      "name" : "Cover test: far",
+      "description" : "Cover test result at far distance.",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test",
       "groupingId" : "GroupExStrabismus"
     },
@@ -2706,6 +2881,448 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Prism cover test: primary position",
       "description" : "GazePositionMeasurement for the primary gaze position.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyTestExample"
+      },
+      "name" : "Krimsky test panel",
+      "description" : "Krimsky test at far, with correction, in the five principal gaze positions fixating each eye: 30 PD exodeviation fixating the right eye (FOD) and 25 PD fixating the left eye (FOI), comitant across positions.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyPrimaryFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyPrimaryFODExample"
+      },
+      "name" : "Krimsky test: primary position, FOD",
+      "description" : "Krimsky test, primary position, fixating right eye (FOD): 30 PD exodeviation of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyPrimaryFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyPrimaryFOIExample"
+      },
+      "name" : "Krimsky test: primary position, FOI",
+      "description" : "Krimsky test, primary position, fixating left eye (FOI): 25 PD exodeviation of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyUpFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyUpFODExample"
+      },
+      "name" : "Krimsky test: up gaze, FOD",
+      "description" : "Krimsky test, up gaze (supraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyUpFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyUpFOIExample"
+      },
+      "name" : "Krimsky test: up gaze, FOI",
+      "description" : "Krimsky test, up gaze (supraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyDownFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyDownFODExample"
+      },
+      "name" : "Krimsky test: down gaze, FOD",
+      "description" : "Krimsky test, down gaze (infraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyDownFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyDownFOIExample"
+      },
+      "name" : "Krimsky test: down gaze, FOI",
+      "description" : "Krimsky test, down gaze (infraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyRightFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyRightFODExample"
+      },
+      "name" : "Krimsky test: right gaze, FOD",
+      "description" : "Krimsky test, right gaze (dextroversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyRightFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyRightFOIExample"
+      },
+      "name" : "Krimsky test: right gaze, FOI",
+      "description" : "Krimsky test, right gaze (dextroversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyLeftFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyLeftFODExample"
+      },
+      "name" : "Krimsky test: left gaze, FOD",
+      "description" : "Krimsky test, left gaze (levoversion), fixating right eye (FOD): 30 PD exodeviation of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-KrimskyLeftFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/KrimskyLeftFOIExample"
+      },
+      "name" : "Krimsky test: left gaze, FOI",
+      "description" : "Krimsky test, left gaze (levoversion), fixating left eye (FOI): 25 PD exodeviation of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergTestExample"
+      },
+      "name" : "Hirschberg test panel",
+      "description" : "Hirschberg corneal light reflex test in the five principal gaze positions fixating each eye: about 15 degrees of exodeviation fixating either eye (FODI).",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergPrimaryFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergPrimaryFODExample"
+      },
+      "name" : "Hirschberg test: primary position, FOD",
+      "description" : "Hirschberg test, primary position, fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergPrimaryFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergPrimaryFOIExample"
+      },
+      "name" : "Hirschberg test: primary position, FOI",
+      "description" : "Hirschberg test, primary position, fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergUpFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergUpFODExample"
+      },
+      "name" : "Hirschberg test: up gaze, FOD",
+      "description" : "Hirschberg test, up gaze (supraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergUpFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergUpFOIExample"
+      },
+      "name" : "Hirschberg test: up gaze, FOI",
+      "description" : "Hirschberg test, up gaze (supraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergDownFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergDownFODExample"
+      },
+      "name" : "Hirschberg test: down gaze, FOD",
+      "description" : "Hirschberg test, down gaze (infraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergDownFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergDownFOIExample"
+      },
+      "name" : "Hirschberg test: down gaze, FOI",
+      "description" : "Hirschberg test, down gaze (infraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergRightFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergRightFODExample"
+      },
+      "name" : "Hirschberg test: right gaze, FOD",
+      "description" : "Hirschberg test, right gaze (dextroversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergRightFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergRightFOIExample"
+      },
+      "name" : "Hirschberg test: right gaze, FOI",
+      "description" : "Hirschberg test, right gaze (dextroversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergLeftFODExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergLeftFODExample"
+      },
+      "name" : "Hirschberg test: left gaze, FOD",
+      "description" : "Hirschberg test, left gaze (levoversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HirschbergLeftFOIExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HirschbergLeftFOIExample"
+      },
+      "name" : "Hirschberg test: left gaze, FOI",
+      "description" : "Hirschberg test, left gaze (levoversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-RedFilterLightTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/RedFilterLightTestExample"
+      },
+      "name" : "Red filter light test panel",
+      "description" : "Red filter plus light test at near, with correction, grouping its per-gaze-position assessments.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-RedFilterPrimaryPositionExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/RedFilterPrimaryPositionExample"
+      },
+      "name" : "Red filter light test: primary position",
+      "description" : "GazePositionMeasurement for the red filter plus light test in primary position at near: single light seen (fusion).",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Worth4DotTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Worth4DotTestExample"
+      },
+      "name" : "Worth 4 dot test panel",
+      "description" : "Worth 4 dot test at far, with correction, grouping its per-gaze-position assessments.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Worth4DotPrimaryPositionExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Worth4DotPrimaryPositionExample"
+      },
+      "name" : "Worth 4 dot test: primary position",
+      "description" : "GazePositionMeasurement for the Worth 4 dot test in primary position at far: three green lights seen (right eye suppression).",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
       "groupingId" : "GroupExStrabismus"
     },

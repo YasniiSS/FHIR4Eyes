@@ -205,8 +205,9 @@ introducing an intermediate value set of its own. This keeps FHIR4Eyes decoupled
 unpublished guide while still remaining aligned with how eye care terminology is generally
 represented internationally.</p>
 
-<p>New value sets are only introduced by FHIR4Eyes where there is a real terminology gap, not
-otherwise covered by SNOMED CT or by the HL7 Eye Care IG.</p>
+<p>New value sets and codes are only introduced by FHIR4Eyes where there is a real terminology
+gap, not otherwise covered by SNOMED CT, LOINC or the HL7 Eye Care IG. Those local codes live
+in a single code system, described <a href="#fhir4eyes-local-code-system">below</a>.</p>
 
 <table>
   <thead>
@@ -231,6 +232,10 @@ otherwise covered by SNOMED CT or by the HL7 Eye Care IG.</p>
     <tr>
       <td>Laterality</td>
       <td>Represented using <code class="language-plaintext highlighter-rouge">BodyStructure</code> (see <a href="background.html">Background</a>); no dedicated value set needed</td>
+    </tr>
+    <tr>
+      <td>Observation and component codes with no side-neutral external code</td>
+      <td>FHIR4Eyes local code system (<a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a>)</td>
     </tr>
   </tbody>
 </table>
@@ -268,8 +273,8 @@ examination not explicitly listed here.</p>
   <tbody>
     <tr>
       <td>Visual acuity (observable entity and chart/method)</td>
-      <td>SNOMED CT</td>
-      <td>Descendants of <code class="language-plaintext highlighter-rouge">363983007</code> and <code class="language-plaintext highlighter-rouge">400912000</code></td>
+      <td>SNOMED CT (code), LOINC and FHIR4Eyes (components)</td>
+      <td><code class="language-plaintext highlighter-rouge">Observation.code</code> is SNOMED CT <code class="language-plaintext highlighter-rouge">363983007</code> (Visual acuity); instances may add a specific LOINC as a second coding (for example <code class="language-plaintext highlighter-rouge">98505-1</code>). The chart/method component uses LOINC <code class="language-plaintext highlighter-rouge">79908-0</code>; the other components use FHIR4Eyes codes</td>
     </tr>
     <tr>
       <td>Ophthalmic procedures</td>
@@ -282,29 +287,34 @@ examination not explicitly listed here.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>OCT (macula and RNFL)</td>
+      <td>OCT macula</td>
       <td>LOINC</td>
-      <td>Device produces a structured parametric report</td>
+      <td>Panel <code class="language-plaintext highlighter-rouge">57119-0</code>; thickness subfields <code class="language-plaintext highlighter-rouge">57108-3</code>..<code class="language-plaintext highlighter-rouge">57117-4</code> and total volume <code class="language-plaintext highlighter-rouge">57118-2</code>. Components without a LOINC code (subfield volume, scan and dilation metadata) use FHIR4Eyes codes</td>
+    </tr>
+    <tr>
+      <td>OCT RNFL / optic nerve head</td>
+      <td>LOINC (panel) and FHIR4Eyes (components)</td>
+      <td>Panel <code class="language-plaintext highlighter-rouge">86291-2</code>; the optic nerve head and TSNIT components use FHIR4Eyes codes</td>
     </tr>
     <tr>
       <td>Specular microscopy</td>
-      <td>LOINC</td>
-      <td>Device produces a structured parametric report (for example endothelial cell density, morphology)</td>
+      <td>FHIR4Eyes, plus eye-specific LOINC</td>
+      <td>Laterality-neutral FHIR4Eyes codes are fixed in the profile; instances add the eye-specific LOINC (<code class="language-plaintext highlighter-rouge">100070-2</code> family) as a second coding</td>
     </tr>
     <tr>
-      <td>Computerized and Goldmann visual field</td>
-      <td>LOINC</td>
-      <td>Follows the same parametric-panel logic as OCT</td>
+      <td>Computerized visual field</td>
+      <td>FHIR4Eyes</td>
+      <td>No verified LOINC panel for the parametric results; FHIR4Eyes codes for the exam and its components</td>
     </tr>
     <tr>
-      <td>Corneal topography</td>
-      <td>LOINC</td>
-      <td>Follows the same parametric-panel logic as OCT</td>
+      <td>Corneal tomography</td>
+      <td>FHIR4Eyes</td>
+      <td>No verified LOINC coverage; FHIR4Eyes codes for each tomography observation and its components</td>
     </tr>
     <tr>
-      <td>Ocular biometry</td>
-      <td>LOINC</td>
-      <td>Follows the same parametric-panel logic as OCT</td>
+      <td>Ocular biometry and IOL formula results</td>
+      <td>FHIR4Eyes</td>
+      <td>No verified LOINC coverage; FHIR4Eyes codes for the exam and its components</td>
     </tr>
     <tr>
       <td>Retinography</td>
@@ -317,9 +327,29 @@ examination not explicitly listed here.</p>
       <td>Same reasoning as retinography: findings are recorded by the ophthalmologist, not output as a structured device report</td>
     </tr>
     <tr>
-      <td>Tonometry, pachymetry, tension curve, autorefractometry, pupillometry</td>
+      <td>Tonometry (intraocular pressure)</td>
       <td>SNOMED CT</td>
-      <td>Single or few discrete values, not a structured panel</td>
+      <td><code class="language-plaintext highlighter-rouge">Observation.code</code> is <code class="language-plaintext highlighter-rouge">41633001</code> (Intraocular pressure); the tonometer type in <code class="language-plaintext highlighter-rouge">method</code> follows LOINC <code class="language-plaintext highlighter-rouge">79764-7</code> (Type of Tonometer)</td>
+    </tr>
+    <tr>
+      <td>Corrected IOP, tension curve</td>
+      <td>FHIR4Eyes</td>
+      <td>Laterality-neutral FHIR4Eyes codes; corrected IOP instances may add the eye-specific LOINC (<code class="language-plaintext highlighter-rouge">96093-0</code> / <code class="language-plaintext highlighter-rouge">96092-2</code>, still to be verified) as a second coding</td>
+    </tr>
+    <tr>
+      <td>Pachymetry</td>
+      <td>FHIR4Eyes, plus eye-specific LOINC</td>
+      <td>Laterality-neutral <code class="language-plaintext highlighter-rouge">central-corneal-thickness</code>; instances add <code class="language-plaintext highlighter-rouge">79825-6</code> (right) / <code class="language-plaintext highlighter-rouge">79826-4</code> (left) as a second coding</td>
+    </tr>
+    <tr>
+      <td>Strabismus exam and sub-tests</td>
+      <td>FHIR4Eyes</td>
+      <td>FHIR4Eyes codes for each test and its components</td>
+    </tr>
+    <tr>
+      <td>Autorefractometry, pupillometry</td>
+      <td>SNOMED CT</td>
+      <td>Single or few discrete values, not a structured panel (no profile yet)</td>
     </tr>
     <tr>
       <td>Low vision (below chart-measurable range)</td>
@@ -329,11 +359,33 @@ examination not explicitly listed here.</p>
   </tbody>
 </table>
 
-<blockquote>
-  <p>The exact LOINC codes to use for OCT, visual field, topography, and biometry are to be
-identified when each of these profiles is built, following the pattern above rather than
-reproducing a full code list here.</p>
-</blockquote>
+<h2 id="fhir4eyes-local-code-system">FHIR4Eyes local code system</h2>
+
+<p>LOINC codes for many eye examinations are defined per eye (for example <code class="language-plaintext highlighter-rouge">79825-6</code> "Right
+cornea Central corneal thickness" and <code class="language-plaintext highlighter-rouge">79826-4</code> for the left cornea). In FHIR4Eyes,
+laterality is carried by <code class="language-plaintext highlighter-rouge">bodySite</code>, so a profile cannot fix one of these codes without
+also fixing the eye. For other concepts (corneal tomography, biometry, visual field,
+strabismus sub-tests, much of the OCT optic nerve head and scan metadata) no LOINC or
+SNOMED CT code has been verified at all.</p>
+
+<p>For these cases this guide defines its own codes in the
+<a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a>. Local codes are used only when:</p>
+
+<ul>
+  <li>no side-neutral LOINC or SNOMED CT code is available for the concept; and</li>
+  <li>the concept is needed as a fixed <code class="language-plaintext highlighter-rouge">Observation.code</code> or as the code that identifies a
+<code class="language-plaintext highlighter-rouge">component</code> slice.</li>
+</ul>
+
+<p>Where an eye-specific LOINC code exists, the FHIR4Eyes code is the one fixed in the profile,
+and instances <strong>add</strong> the eye-specific LOINC as a second coding in the same
+<code class="language-plaintext highlighter-rouge">CodeableConcept</code> (for example, pachymetry carries <code class="language-plaintext highlighter-rouge">central-corneal-thickness</code> plus
+<code class="language-plaintext highlighter-rouge">79825-6</code> for a right-eye measurement). Receivers that understand LOINC can still use it,
+while the profile stays valid for either eye.</p>
+
+<p>The code system is intended as a bridge, not a replacement: codes are laterality-neutral,
+in English and kebab-case, and are open to replacement as suitable external codes are
+verified.</p>
 
 <h2 id="fhir4eyes-value-sets">FHIR4Eyes value sets</h2>
 
@@ -413,8 +465,9 @@ clinicians instead record it using the qualitative scale below.</p>
 
 <h4 id="terminology-basis">Terminology basis</h4>
 
-<p>All five codes below have a confirmed match in SNOMED CT, verified directly against the
-SNOMED CT browser.</p>
+<p>All five concepts below have a confirmed match in SNOMED CT, verified directly against the
+SNOMED CT browser. The value set includes every SNOMED CT code listed in the table,
+including the distance-specific counting-fingers codes.</p>
 
 <table>
   <thead>
@@ -454,10 +507,10 @@ SNOMED CT browser.</p>
 </table>
 
 <blockquote>
-  <p><strong>Design note:</strong> for <code class="language-plaintext highlighter-rouge">counting-fingers</code>, this guide uses the generic <code class="language-plaintext highlighter-rouge">422256009</code> code by
-default, since the specific testing distance is not always recorded. When the distance is
-known and clinically relevant, implementers may use the more specific distance-based codes
-instead.</p>
+  <p><strong>Design note:</strong> for <code class="language-plaintext highlighter-rouge">counting-fingers</code>, both options are allowed by the value set. The
+generic <code class="language-plaintext highlighter-rouge">422256009</code> code is the default, since the specific testing distance is not always
+recorded. When the distance is known and clinically relevant, implementers may use the
+distance-specific codes (<code class="language-plaintext highlighter-rouge">260292001</code>, <code class="language-plaintext highlighter-rouge">260293006</code>, <code class="language-plaintext highlighter-rouge">260294000</code>) instead.</p>
 </blockquote>
 
 <p>The distinction between good and poor projection matters clinically: both indicate that
@@ -480,6 +533,11 @@ projection.</p>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a></td>
+      <td>CodeSystem</td>
+      <td>Fixed <code class="language-plaintext highlighter-rouge">Observation.code</code> and <code class="language-plaintext highlighter-rouge">component</code> slice codes across the observation profiles (see <a href="#fhir4eyes-local-code-system">above</a>)</td>
+    </tr>
     <tr>
       <td><a href="ValueSet-low-vision-assessment-vs.html">Low Vision Assessment Value Set</a></td>
       <td>ValueSet</td>
@@ -517,7 +575,7 @@ projection.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

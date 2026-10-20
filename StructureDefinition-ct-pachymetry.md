@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTPachymetry |
+| Draft as of 2026-10-20 | *Computable Name*:CTPachymetry |
 
  
 Represents the pachymetry (corneal thickness) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Distinct from the standalone Pachymetry profile used for simple central corneal thickness measurements outside the tomography context (see Profiles); this profile captures the fuller thickness map data a tomography device produces. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section). 
 
-Represents the pachymetry (corneal thickness map) analysis of a corneal tomography exam: central corneal thickness at the apex (the only required component) and at the pupil center, the thinnest point value and location, corneal volume, and the pachymetry progression index. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. It is distinct from the standalone [Pachymetry](StructureDefinition-pachymetry.md) profile, used for simple central corneal thickness measurements outside the tomography context.
+Represents the pachymetry (corneal thickness map) analysis of a corneal tomography exam: central corneal thickness at the apex (the only required component) and at the pupil center, the thinnest point value and location, corneal volume, and the pachymetry progression index. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. It is distinct from the standalone [Pachymetry](StructureDefinition-pachymetry.md) profile, used for simple central corneal thickness measurements outside the tomography context; the apex thickness shares the same local `central-corneal-thickness` code. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code.
 
 **Examples:** [CT pachymetry: right eye](Observation-CTPachymetryRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
   "name" : "CTPachymetry",
   "title" : "Corneal Tomography - Pachymetry",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -120,7 +120,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +149,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the pachymetry component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-tomography-pachymetry",
+          "display" : "Corneal tomography, pachymetry analysis"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +171,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -219,7 +237,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:cctApex.code",
       "path" : "Observation.component.code",
-      "short" : "CCT at apex - central corneal thickness at corneal apex"
+      "short" : "CCT at apex - central corneal thickness at corneal apex",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "central-corneal-thickness",
+          "display" : "Central corneal thickness"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cctApex.value[x]",
@@ -239,7 +264,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:cctPupil.code",
       "path" : "Observation.component.code",
-      "short" : "CCT at pupil center - corneal thickness at pupil center, may differ from apex"
+      "short" : "CCT at pupil center - corneal thickness at pupil center, may differ from apex",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-thickness-pupil-centre",
+          "display" : "Corneal thickness at pupil centre"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cctPupil.value[x]",
@@ -259,7 +291,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:thinnest.code",
       "path" : "Observation.component.code",
-      "short" : "Thinnest point value - thickness at thinnest corneal point, critical for keratoconus"
+      "short" : "Thinnest point value - thickness at thinnest corneal point, critical for keratoconus",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-thickness-thinnest",
+          "display" : "Thinnest corneal thickness"
+        }]
+      }
     },
     {
       "id" : "Observation.component:thinnest.value[x]",
@@ -279,7 +318,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:thinnestLoc.code",
       "path" : "Observation.component.code",
-      "short" : "Thinnest point location (x,y) - location of thinnest point from center"
+      "short" : "Thinnest point location (x,y) - location of thinnest point from center",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-thinnest-point-location",
+          "display" : "Thinnest corneal point location"
+        }]
+      }
     },
     {
       "id" : "Observation.component:thinnestLoc.value[x]",
@@ -299,7 +345,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:cornealVol.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal volume - total corneal volume"
+      "short" : "Corneal volume - total corneal volume",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-volume",
+          "display" : "Corneal volume"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cornealVol.value[x]",
@@ -319,7 +372,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
     {
       "id" : "Observation.component:pachyProgression.code",
       "path" : "Observation.component.code",
-      "short" : "Pachymetry progression index - rate of thickness change from thinnest point (BAD component Dp)"
+      "short" : "Pachymetry progression index - rate of thickness change from thinnest point (BAD component Dp)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pachymetric-progression",
+          "display" : "Pachymetric progression index (BAD Dp)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pachyProgression.value[x]",

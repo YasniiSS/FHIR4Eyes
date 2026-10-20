@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OcularMotility |
+| Draft as of 2026-10-20 | *Computable Name*:OcularMotility |
 
  
 Represents the assessment of extraocular muscle function (hypofunction or hyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can differ between the two eyes independently. 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
   "name" : "OcularMotility",
   "title" : "Ocular Motility",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -121,7 +121,22 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -135,6 +150,13 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as an ocular motility assessment",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "ocular-motility",
+          "display" : "Ocular motility assessment"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -172,7 +194,7 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -207,7 +229,14 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
     {
       "id" : "Observation.component:muscle.code",
       "path" : "Observation.component.code",
-      "short" : "Which of the six extraocular muscles is being assessed"
+      "short" : "Which of the six extraocular muscles is being assessed",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "extraocular-muscle",
+          "display" : "Extraocular muscle assessed"
+        }]
+      }
     },
     {
       "id" : "Observation.component:muscle.value[x]",
@@ -227,7 +256,14 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
     {
       "id" : "Observation.component:finding.code",
       "path" : "Observation.component.code",
-      "short" : "Hypofunction or hyperfunction; terminology to be confirmed"
+      "short" : "Hypofunction or hyperfunction; terminology to be confirmed",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "extraocular-muscle-function",
+          "display" : "Extraocular muscle function"
+        }]
+      }
     },
     {
       "id" : "Observation.component:finding.value[x]",

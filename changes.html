@@ -208,6 +208,64 @@ reference each other.</li>
   <li>All examples now have a title and description.</li>
 </ul>
 
+<p><strong>Terminology and validation fixes</strong>:</p>
+
+<ul>
+  <li>New <a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a> (<code class="language-plaintext highlighter-rouge">FHIR4EyesCS</code>, about 213
+laterality-neutral codes). Every <code class="language-plaintext highlighter-rouge">component</code> slice is now identified by a fixed code
+(LOINC or SNOMED CT where verified, otherwise FHIR4EyesCS), and most <code class="language-plaintext highlighter-rouge">Observation.code</code>
+values are fixed as well. IG Publisher QA errors dropped from about 5478 to
+0 (excluding the two known links to the future FHIR4Eyes CL guide).</li>
+  <li>Pachymetry and specular microscopy use laterality-neutral FHIR4EyesCS codes; instances add
+the eye-specific LOINC (for example <code class="language-plaintext highlighter-rouge">79825-6</code> / <code class="language-plaintext highlighter-rouge">79826-4</code>) as a second coding.</li>
+  <li><code class="language-plaintext highlighter-rouge">OphthalmicVisualAcuity.code</code> is now SNOMED CT <code class="language-plaintext highlighter-rouge">363983007</code> (Visual acuity); instances may
+add a specific LOINC (for example <code class="language-plaintext highlighter-rouge">98505-1</code>) as a second coding.</li>
+  <li><code class="language-plaintext highlighter-rouge">OphthalmicOCTMacula</code>: the <code class="language-plaintext highlighter-rouge">centralVol</code> slice was renamed <code class="language-plaintext highlighter-rouge">totalVol</code>, matching LOINC
+<code class="language-plaintext highlighter-rouge">57118-2</code> (Macular grid.total volume by OCT).</li>
+  <li>SNOMED CT <code class="language-plaintext highlighter-rouge">39021009</code> was replaced by <code class="language-plaintext highlighter-rouge">82859000</code> (Macula lutea structure) in imaging series
+body sites.</li>
+  <li>SearchParameter and CapabilityStatement canonical URLs now follow the IG canonical, with
+version 0.4.0.</li>
+  <li><code class="language-plaintext highlighter-rouge">OphthalmicDiagnosticReport</code> adds an optional <code class="language-plaintext highlighter-rouge">IMG</code> (Diagnostic Imaging, v2-0074) category
+slice for image-based exams.</li>
+  <li><code class="language-plaintext highlighter-rouge">OphthalmicPatient</code> identifier slices are now discriminated by <code class="language-plaintext highlighter-rouge">type</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">bodySiteEye</code> extension was removed from <code class="language-plaintext highlighter-rouge">ImagingStudy.series</code> (laterality uses the
+native <code class="language-plaintext highlighter-rouge">series.laterality</code>, and the <code class="language-plaintext highlighter-rouge">eye</code> search parameter now searches it as a token) and
+added to <code class="language-plaintext highlighter-rouge">MedicationAdministration.dosage</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> records the gaze position in a dedicated <code class="language-plaintext highlighter-rouge">gazePosition</code>
+component.</li>
+  <li>DICOM modality codes use the DICOM system (<code class="language-plaintext highlighter-rouge">http://dicom.nema.org/resources/ontology/DCM</code>).</li>
+  <li><a href="ValueSet-low-vision-assessment-vs.html">Low Vision Assessment Value Set</a>: displays
+corrected, and the distance-specific counting-fingers codes (<code class="language-plaintext highlighter-rouge">260292001</code>, <code class="language-plaintext highlighter-rouge">260293006</code>,
+<code class="language-plaintext highlighter-rouge">260294000</code>) added as members.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">input/ignoreWarnings.txt</code> for documented, intentional publisher warnings.</li>
+</ul>
+
+<p><strong>DICOM mappings and clinical consistency</strong>:</p>
+
+<ul>
+  <li>DICOM tags and context groups removed from element descriptions and FHIR4EyesCS
+definitions; verified correspondences are now informative <code class="language-plaintext highlighter-rouge">Mapping</code>s (Mappings tab of
+biometry, IOL formula, OCT macula, OCT RNFL, visual field, corneal anterior surface and
+anterior chamber). Several wrong tags were corrected (see the DICOM mapping notes).</li>
+  <li>Strabismus: deviations are positive magnitudes with a separate direction component
+(eso/exo, hyper/hypo); testing distance near/far uses its own code; Worth 4 dot test gains
+correction status; the cover test example is split into near and far.</li>
+  <li>OCT: one normative classification value set for RNFL and macula (<code class="language-plaintext highlighter-rouge">interpretation</code>);
+RNFL quadrant thicknesses added; examples made internally consistent.</li>
+  <li>Visual field: Glaucoma Hemifield Test, fixation losses and false positive/negative errors
+added; luminance in UCUM <code class="language-plaintext highlighter-rouge">cd/m2</code>.</li>
+  <li>Corneal tomography: posterior corneal power is negative; duplicated corneal cylinder
+removed. Biometry: Km and K axes added.</li>
+  <li>Binocular measurements reference a both-eyes OcularBodyStructure; all Observation
+examples carry performer and effective time.</li>
+</ul>
+
+<p><strong>Generic patient and encounter references</strong>: Core profiles reference a generic <code class="language-plaintext highlighter-rouge">Patient</code>
+and <code class="language-plaintext highlighter-rouge">Encounter</code> (12 profiles previously required <code class="language-plaintext highlighter-rouge">OphthalmicEncounter</code>). The patient and
+encounter profiles are inherited from the international context or, in Chile, from FHIR4Eyes
+CL. Internal working notes remain outside the published navigation.</p>
+
 <h2 id="030">0.3.0</h2>
 
 <p>Corrective release following a multi-agent audit of the guide (2026-09-01).</p>
@@ -311,7 +369,7 @@ pattern, and the granular-components pattern).</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

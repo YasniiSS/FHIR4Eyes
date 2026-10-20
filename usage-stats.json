@@ -119,8 +119,13 @@
   "usage": {
     "http://hl7.org/fhir/StructureDefinition/bodySite": [
       "Condition.bodySite",
-      "ImagingStudy.series",
-      "MedicationAdministration.dosage.site",
+      "MedicationAdministration.dosage",
+      "Observation.bodySite",
+      "Procedure.bodySite"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0": [
+      "Condition.bodySite",
+      "MedicationAdministration.dosage",
       "Observation.bodySite",
       "Procedure.bodySite"
     ],

@@ -14,7 +14,11 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
 
 **code**: IOL formula result: Barrett Universal II
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 > **component****code**: IOL formula name**value**: Barrett Universal II
 
@@ -48,13 +52,27 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "iol-formula-result",
+      "display" : "IOL power calculation formula result"
+    }],
     "text" : "IOL formula result: Barrett Universal II"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-formula",
+        "display" : "IOL power calculation formula"
+      }],
       "text" : "IOL formula name"
     },
     "valueCodeableConcept" : {
@@ -63,6 +81,11 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-lens-constant-type",
+        "display" : "IOL lens constant type"
+      }],
       "text" : "Lens constant type"
     },
     "valueCodeableConcept" : {
@@ -71,6 +94,11 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-lens-constant-value",
+        "display" : "IOL lens constant value"
+      }],
       "text" : "Lens constant value"
     },
     "valueQuantity" : {
@@ -81,12 +109,22 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-model",
+        "display" : "Suggested IOL model"
+      }],
       "text" : "Suggested IOL model"
     },
     "valueString" : "Alcon AcrySof IQ SN60WF"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-power",
+        "display" : "Recommended IOL power"
+      }],
       "text" : "Recommended IOL power"
     },
     "valueQuantity" : {
@@ -97,6 +135,11 @@ Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "iol-expected-refraction",
+        "display" : "Predicted postoperative refraction"
+      }],
       "text" : "Expected refraction"
     },
     "valueQuantity" : {

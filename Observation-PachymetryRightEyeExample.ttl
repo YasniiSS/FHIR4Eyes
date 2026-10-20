@@ -18,7 +18,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PachymetryRightEyeExample</b></p><a name=\"PachymetryRightEyeExample\"> </a><a name=\"hcPachymetryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pachymetry.html\">Pachymetry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 79825-6}\">Central corneal thickness</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>value</b>: 540 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PachymetryRightEyeExample</b></p><a name=\"PachymetryRightEyeExample\"> </a><a name=\"hcPachymetryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pachymetry.html\">Pachymetry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs central-corneal-thickness}, {http://loinc.org 79825-6}\">Central corneal thickness</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>value</b>: 540 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -33,6 +33,11 @@
   fhir:Observation.code [
      fhir:CodeableConcept.coding [
        fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "central-corneal-thickness" ] ;
+       fhir:Coding.display [ fhir:value "Central corneal thickness" ]
+     ], [
+       fhir:index 1 ;
        a loinc:79825-6 ;
        fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
        fhir:Coding.code [ fhir:value "79825-6" ] ;
@@ -43,6 +48,12 @@
   fhir:Observation.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
   ] ;
   fhir:Observation.valueQuantity [
      fhir:Quantity.value [ fhir:value "540"^^xsd:decimal ] ;

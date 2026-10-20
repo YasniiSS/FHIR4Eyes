@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vertical-deviation-direction-vs"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet vertical-deviation-direction-vs</b></p><a name="vertical-deviation-direction-vs"> </a><a name="hcvertical-deviation-direction-vs"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-fhir4eyes-cs.html"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.4.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hyperdeviation">hyperdeviation</a></td><td>Hyperdeviation</td><td>Upward vertical deviation of the deviating eye relative to the fellow eye; covers hypertropia and hyperphoria.</td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hypodeviation">hypodeviation</a></td><td>Hypodeviation</td><td>Downward vertical deviation of the deviating eye relative to the fellow eye; covers hypotropia and hypophoria.</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs"/>
+  <version value="0.4.0"/>
+  <name value="VerticalDeviationDirectionVS"/>
+  <title value="Vertical Deviation Direction Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T20:13:11-03:00"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Direction of a vertical ocular deviation of the deviating eye at a gaze&#xA;position: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is&#xA;recorded separately as a positive value."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <concept>
+        <code value="hyperdeviation"/>
+        <display value="Hyperdeviation"/>
+      </concept>
+      <concept>
+        <code value="hypodeviation"/>
+        <display value="Hypodeviation"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

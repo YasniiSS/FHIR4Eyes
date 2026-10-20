@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicSpecularMicroscopy |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicSpecularMicroscopy |
 
  
 Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). 
 
 Represents a corneal endothelial specular microscopy exam, as a single `Observation` with one `component` per reported value. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section).
 
-Endothelial cell density (`density`) is the only required component; the others cover the capture position, analysis method, number of cells analyzed, coefficient of variation, hexagonality, central corneal thickness, and minimum, maximum, average, and standard deviation of cell area. Most components carry LOINC codes, which are laterality-specific: each component's short description documents both the right eye (OD) and left eye (OS) codes, following the same approach described on [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md). Laterality uses the standard `bodySite` extension referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md); the microscope model may be recorded in `device` and the cell counting method in `method`.
+Endothelial cell density (`density`) is the only required component; the others cover the capture position, analysis method, number of cells analyzed, coefficient of variation, hexagonality, central corneal thickness, and minimum, maximum, average, and standard deviation of cell area. `code` and every component use a laterality-neutral local FHIR4Eyes code ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)), since the only LOINC codes for these concepts are eye-specific. For all components except the capture position, instances add the eye-specific LOINC as a second coding; each component's short description documents both the right eye (OD) and left eye (OS) codes, following the same approach described on [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md). Laterality uses the standard `bodySite` extension referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md); the microscope model may be recorded in `device` and the cell counting method in `method`.
 
 **Examples:** [Specular microscopy: right eye](Observation-SpecularMicroscopyRightEyeExample.md)
 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
   "name" : "OphthalmicSpecularMicroscopy",
   "title" : "Ophthalmic Specular Microscopy",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -121,7 +121,22 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -135,6 +150,13 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a specular microscopy exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "specular-microscopy-panel",
+          "display" : "Corneal endothelial specular microscopy"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -150,10 +172,6 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -179,7 +197,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -226,7 +244,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:capturePos.code",
       "path" : "Observation.component.code",
-      "short" : "Capture position - location of corneal capture (center, paracentral, peripheral)"
+      "short" : "Capture position - location of corneal capture (center, paracentral, peripheral)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "specular-capture-position",
+          "display" : "Specular microscopy capture position"
+        }]
+      }
     },
     {
       "id" : "Observation.component:capturePos.value[x]",
@@ -246,12 +271,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:analysisMethod.code",
       "path" : "Observation.component.code",
-      "short" : "Analysis method type - LOINC 100086-8 (OD) / 100155-1 (OS)",
+      "short" : "Analysis method type. Instances add the eye-specific LOINC as a second coding: 100086-8 (OD) / 100155-1 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100086-8",
-          "display" : "Right cornea Type of Analysis method by Specular microscopy"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "specular-analysis-method",
+          "display" : "Specular microscopy analysis method"
         }]
       }
     },
@@ -273,12 +298,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:density.code",
       "path" : "Observation.component.code",
-      "short" : "Endothelial cell density (CD) - LOINC 100070-2 (OD) / 100071-0 (OS)",
+      "short" : "Endothelial cell density (CD). Instances add the eye-specific LOINC as a second coding: 100070-2 (OD) / 100071-0 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100070-2",
-          "display" : "Right cornea Cell density"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-density",
+          "display" : "Corneal endothelial cell density"
         }]
       }
     },
@@ -300,12 +325,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cellCount.code",
       "path" : "Observation.component.code",
-      "short" : "Number of cells analyzed (N) - LOINC 100076-9 (OD) / 100077-7 (OS)",
+      "short" : "Number of cells analyzed (N). Instances add the eye-specific LOINC as a second coding: 100076-9 (OD) / 100077-7 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100076-9",
-          "display" : "Right cornea Endothelial cells counted"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cells-counted",
+          "display" : "Corneal endothelial cells counted"
         }]
       }
     },
@@ -327,12 +352,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cv.code",
       "path" : "Observation.component.code",
-      "short" : "Coefficient of variation (CV) - LOINC 100072-8 (OD) / 100073-6 (OS), normal <40%",
+      "short" : "Coefficient of variation (CV). Instances add the eye-specific LOINC as a second coding: 100072-8 (OD) / 100073-6 (OS), normal <40%",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100072-8",
-          "display" : "Right cornea Coefficient of variation"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-area-cv",
+          "display" : "Corneal endothelial cell area coefficient of variation"
         }]
       }
     },
@@ -354,12 +379,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:hexagonality.code",
       "path" : "Observation.component.code",
-      "short" : "Hexagonality (HEX) - LOINC 100074-4 (OD) / 100075-1 (OS), normal >50%",
+      "short" : "Hexagonality (HEX). Instances add the eye-specific LOINC as a second coding: 100074-4 (OD) / 100075-1 (OS), normal >50%",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100074-4",
-          "display" : "Right cornea Hexagonality"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-hexagonality",
+          "display" : "Corneal endothelial hexagonality"
         }]
       }
     },
@@ -381,12 +406,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:cct.code",
       "path" : "Observation.component.code",
-      "short" : "Central corneal thickness (CCT) - LOINC 79825-6 (OD) / 79826-4 (OS)",
+      "short" : "Central corneal thickness (CCT). Instances add the eye-specific LOINC as a second coding: 79825-6 (OD) / 79826-4 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "79825-6",
-          "display" : "Right cornea Central corneal thickness Pachymetry"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "central-corneal-thickness",
+          "display" : "Central corneal thickness"
         }]
       }
     },
@@ -408,12 +433,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:minArea.code",
       "path" : "Observation.component.code",
-      "short" : "Minimum cell area (MIN) - LOINC 100078-5 (OD) / 100079-3 (OS)",
+      "short" : "Minimum cell area (MIN). Instances add the eye-specific LOINC as a second coding: 100078-5 (OD) / 100079-3 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100078-5",
-          "display" : "Right cornea Endothelial cell area.min"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-area-min",
+          "display" : "Corneal endothelial cell area, minimum"
         }]
       }
     },
@@ -435,12 +460,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:maxArea.code",
       "path" : "Observation.component.code",
-      "short" : "Maximum cell area (MAX) - LOINC 100080-1 (OD) / 100081-9 (OS)",
+      "short" : "Maximum cell area (MAX). Instances add the eye-specific LOINC as a second coding: 100080-1 (OD) / 100081-9 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100080-1",
-          "display" : "Right cornea Endothelial cell area.max"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-area-max",
+          "display" : "Corneal endothelial cell area, maximum"
         }]
       }
     },
@@ -462,12 +487,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:avgArea.code",
       "path" : "Observation.component.code",
-      "short" : "Average cell area (AVG) - LOINC 100082-7 (OD) / 100083-5 (OS)",
+      "short" : "Average cell area (AVG). Instances add the eye-specific LOINC as a second coding: 100082-7 (OD) / 100083-5 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100082-7",
-          "display" : "Right cornea Endothelial cell area.mean"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-area-mean",
+          "display" : "Corneal endothelial cell area, mean"
         }]
       }
     },
@@ -489,12 +514,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
     {
       "id" : "Observation.component:sdArea.code",
       "path" : "Observation.component.code",
-      "short" : "Cell area SD - LOINC 100084-3 (OD) / 100085-0 (OS)",
+      "short" : "Cell area SD. Instances add the eye-specific LOINC as a second coding: 100084-3 (OD) / 100085-0 (OS)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "100084-3",
-          "display" : "Right cornea Cell area.standard deviation"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "endothelial-cell-area-sd",
+          "display" : "Corneal endothelial cell area, standard deviation"
         }]
       }
     },

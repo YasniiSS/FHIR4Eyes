@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:StereopsisTest |
+| Draft as of 2026-10-20 | *Computable Name*:StereopsisTest |
 
  
 Represents a stereoacuity test result (e.g. Titmus, Randot). The specific test used is recorded as a component, since several different stereopsis tests exist in practice and the test type affects how the result should be interpreted. 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
   "name" : "StereopsisTest",
   "title" : "Stereopsis Test",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -121,7 +121,22 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -135,6 +150,13 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a stereopsis test",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "stereopsis-test",
+          "display" : "Stereopsis test"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -187,7 +209,14 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
     {
       "id" : "Observation.component:testType.code",
       "path" : "Observation.component.code",
-      "short" : "Which stereopsis test was used (e.g. Titmus, Randot); catalog to be built out"
+      "short" : "Which stereopsis test was used (e.g. Titmus, Randot); catalog to be built out",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "stereopsis-test-type",
+          "display" : "Stereopsis test type"
+        }]
+      }
     },
     {
       "id" : "Observation.component:testType.value[x]",

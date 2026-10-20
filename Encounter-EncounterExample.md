@@ -16,7 +16,7 @@ Profile: [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md)
 
 **serviceType**: Ophthalmology
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 ### Participants
 

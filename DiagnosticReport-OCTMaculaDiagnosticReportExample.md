@@ -12,7 +12,7 @@ Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnosti
 
 | | |
 | :--- | :--- |
-| Subject | Patient Example Female, DoB: 1990-01-01 ( PA1234567) |
+| Subject | Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567) |
 | Relevant Time | 2026-08-18 10:05:00+0000 |
 | Performer | [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md) |
 

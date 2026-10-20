@@ -1,24 +1,25 @@
 {
   "resourceType" : "Bundle",
-  "id" : "12d35e6b-dd8a-48ae-b83c-e96e21ce5a8e",
+  "id" : "860602db-e5ca-45c4-b700-7751ed5f1de1",
   "meta" : {
-    "lastUpdated" : "2026-10-19T22:17:00.417-03:00"
+    "lastUpdated" : "2026-10-20T20:13:11.158-03:00"
   },
   "type" : "collection",
   "entry" : [{
-    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs",
     "resource" : {
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on SNOMED CT International edition 01-feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 5 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-422256009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/422256009\">422256009</a></td><td>Counts fingers - distance vision</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;422256009&quot;, &quot;display&quot;: &quot;Counts fingers - distance vision&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;422256009&quot;&gt;&lt;display value=&quot;Counts fingers - distance vision&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260295004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260295004\">260295004</a></td><td>Sees hand movements</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260295004&quot;, &quot;display&quot;: &quot;Sees hand movements&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260295004&quot;&gt;&lt;display value=&quot;Sees hand movements&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260297007\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260297007\">260297007</a></td><td>Perception of light - accurate projection</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260297007&quot;, &quot;display&quot;: &quot;Perception of light - accurate projection&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260297007&quot;&gt;&lt;display value=&quot;Perception of light - accurate projection&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-264943005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/264943005\">264943005</a></td><td>Visual acuity PL - inaccurate projection</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;264943005&quot;, &quot;display&quot;: &quot;Visual acuity PL - inaccurate projection&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;264943005&quot;&gt;&lt;display value=&quot;Visual acuity PL - inaccurate projection&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-63063006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/63063006\">63063006</a></td><td>Visual acuity, no light perception</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;63063006&quot;, &quot;display&quot;: &quot;Visual acuity, no light perception&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;63063006&quot;&gt;&lt;display value=&quot;Visual acuity, no light perception&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>SNOMED CT International edition 01-feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li><li><a href=\"CodeSystem-fhir4eyes-cs.html\">codesystem FHIR4Eyes Code System v0.4.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></li></ul></div><p>This value set contains 10 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-fusion\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-fusion\">fusion</a></td><td>Fusion</td><td>Sensory fusion: the images of both eyes are combined into a single percept (e.g. a single pinkish light on the red filter plus light test, four lights on the Worth 4 dot test). SNOMED CT 78513008 Fusion binocular vision is an observable entity, not a finding, so it is not used as an answer.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;fusion&quot;, &quot;display&quot;: &quot;Fusion&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;fusion&quot;&gt;&lt;display value=&quot;Fusion&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-corneal-reflex-centered\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-centered\">corneal-reflex-centered</a></td><td>Corneal light reflex centered</td><td>On corneal light reflex (Hirschberg) testing, the reflex is centered on the pupil of the eye assessed, consistent with no manifest deviation of that eye.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;corneal-reflex-centered&quot;, &quot;display&quot;: &quot;Corneal light reflex centered&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;corneal-reflex-centered&quot;&gt;&lt;display value=&quot;Corneal light reflex centered&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-corneal-reflex-displaced-nasal\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-nasal\">corneal-reflex-displaced-nasal</a></td><td>Corneal light reflex displaced nasally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced nasally from the pupil centre, indicating an exodeviation of that eye.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;corneal-reflex-displaced-nasal&quot;, &quot;display&quot;: &quot;Corneal light reflex displaced nasally&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;corneal-reflex-displaced-nasal&quot;&gt;&lt;display value=&quot;Corneal light reflex displaced nasally&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-corneal-reflex-displaced-temporal\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-temporal\">corneal-reflex-displaced-temporal</a></td><td>Corneal light reflex displaced temporally</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced temporally from the pupil centre, indicating an esodeviation of that eye.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;corneal-reflex-displaced-temporal&quot;, &quot;display&quot;: &quot;Corneal light reflex displaced temporally&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;corneal-reflex-displaced-temporal&quot;&gt;&lt;display value=&quot;Corneal light reflex displaced temporally&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-corneal-reflex-displaced-superior\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-superior\">corneal-reflex-displaced-superior</a></td><td>Corneal light reflex displaced superiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced superiorly from the pupil centre, indicating a hypodeviation of that eye.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;corneal-reflex-displaced-superior&quot;, &quot;display&quot;: &quot;Corneal light reflex displaced superiorly&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;corneal-reflex-displaced-superior&quot;&gt;&lt;display value=&quot;Corneal light reflex displaced superiorly&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-corneal-reflex-displaced-inferior\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-corneal-reflex-displaced-inferior\">corneal-reflex-displaced-inferior</a></td><td>Corneal light reflex displaced inferiorly</td><td>On corneal light reflex (Hirschberg) testing, the reflex in the eye assessed is displaced inferiorly from the pupil centre, indicating a hyperdeviation of that eye.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;corneal-reflex-displaced-inferior&quot;, &quot;display&quot;: &quot;Corneal light reflex displaced inferiorly&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;corneal-reflex-displaced-inferior&quot;&gt;&lt;display value=&quot;Corneal light reflex displaced inferiorly&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-1052232003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/1052232003\">1052232003</a></td><td>Suppression of visual signal of right eye</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;1052232003&quot;, &quot;display&quot;: &quot;Suppression of visual signal of right eye&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;1052232003&quot;&gt;&lt;display value=&quot;Suppression of visual signal of right eye&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-1052231005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/1052231005\">1052231005</a></td><td>Suppression of visual signal of left eye</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;1052231005&quot;, &quot;display&quot;: &quot;Suppression of visual signal of left eye&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;1052231005&quot;&gt;&lt;display value=&quot;Suppression of visual signal of left eye&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-251756006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/251756006\">251756006</a></td><td>Heteronymous diplopia</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;251756006&quot;, &quot;display&quot;: &quot;Heteronymous diplopia&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;251756006&quot;&gt;&lt;display value=&quot;Heteronymous diplopia&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-251755005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/251755005\">251755005</a></td><td>Homonymous diplopia</td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;251755005&quot;, &quot;display&quot;: &quot;Homonymous diplopia&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;251755005&quot;&gt;&lt;display value=&quot;Homonymous diplopia&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
       },
-      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs",
       "version" : "0.4.0",
-      "name" : "LowVisionAssessmentVS",
-      "title" : "Low Vision Assessment Value Set",
+      "name" : "BinocularFindingVS",
+      "title" : "Binocular Finding Value Set",
       "status" : "draft",
-      "date" : "2026-10-19T22:17:00-03:00",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -27,9 +28,293 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:04e8a519-4ea4-4948-be69-8182c19464a0",
-        "timestamp" : "2026-10-19T22:19:51-03:00",
-        "total" : 5,
+        "identifier" : "urn:uuid:4c2f057e-0bd7-41f3-977c-5733e4c0c6fa",
+        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "total" : 10,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0"
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "fusion",
+          "display" : "Fusion"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-reflex-centered",
+          "display" : "Corneal light reflex centered"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-reflex-displaced-nasal",
+          "display" : "Corneal light reflex displaced nasally"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-reflex-displaced-temporal",
+          "display" : "Corneal light reflex displaced temporally"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-reflex-displaced-superior",
+          "display" : "Corneal light reflex displaced superiorly"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-reflex-displaced-inferior",
+          "display" : "Corneal light reflex displaced inferiorly"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1052232003",
+          "display" : "Suppression of visual signal of right eye"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1052231005",
+          "display" : "Suppression of visual signal of left eye"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "251756006",
+          "display" : "Heteronymous diplopia"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "251755005",
+          "display" : "Homonymous diplopia"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on SNOMED CT International edition 01-feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 9 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-408744005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/408744005\">408744005</a></td><td>Primary gaze</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;408744005&quot;, &quot;display&quot;: &quot;Primary gaze&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;408744005&quot;&gt;&lt;display value=&quot;Primary gaze&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255533007\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255533007\">255533007</a></td><td>Upward gaze</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255533007&quot;, &quot;display&quot;: &quot;Upward gaze&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255533007&quot;&gt;&lt;display value=&quot;Upward gaze&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255521002\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255521002\">255521002</a></td><td>Downward gaze</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255521002&quot;, &quot;display&quot;: &quot;Downward gaze&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255521002&quot;&gt;&lt;display value=&quot;Downward gaze&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255531009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255531009\">255531009</a></td><td>Right gaze</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255531009&quot;, &quot;display&quot;: &quot;Right gaze&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255531009&quot;&gt;&lt;display value=&quot;Right gaze&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255530005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255530005\">255530005</a></td><td>Left gaze</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255530005&quot;, &quot;display&quot;: &quot;Left gaze&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255530005&quot;&gt;&lt;display value=&quot;Left gaze&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255526007\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255526007\">255526007</a></td><td>Gaze up and right</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255526007&quot;, &quot;display&quot;: &quot;Gaze up and right&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255526007&quot;&gt;&lt;display value=&quot;Gaze up and right&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255525006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255525006\">255525006</a></td><td>Gaze up and left</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255525006&quot;, &quot;display&quot;: &quot;Gaze up and left&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255525006&quot;&gt;&lt;display value=&quot;Gaze up and left&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255524005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255524005\">255524005</a></td><td>Gaze down and right</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255524005&quot;, &quot;display&quot;: &quot;Gaze down and right&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255524005&quot;&gt;&lt;display value=&quot;Gaze down and right&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-255523004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/255523004\">255523004</a></td><td>Gaze down and left</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;255523004&quot;, &quot;display&quot;: &quot;Gaze down and left&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;255523004&quot;&gt;&lt;display value=&quot;Gaze down and left&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs",
+      "version" : "0.4.0",
+      "name" : "GazePositionVS",
+      "title" : "Gaze Position Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:86215cc9-02e5-4e4e-af98-5ea45beca80d",
+        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "total" : 9,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "includeDefinition",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
+        }],
+        "contains" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "408744005",
+          "display" : "Primary gaze"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255533007",
+          "display" : "Upward gaze"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255521002",
+          "display" : "Downward gaze"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255531009",
+          "display" : "Right gaze"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255530005",
+          "display" : "Left gaze"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255526007",
+          "display" : "Gaze up and right"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255525006",
+          "display" : "Gaze up and left"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255524005",
+          "display" : "Gaze down and right"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "255523004",
+          "display" : "Gaze down and left"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fhir4eyes-cs.html\">codesystem FHIR4Eyes Code System v0.4.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-esodeviation\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-esodeviation\">esodeviation</a></td><td>Esodeviation</td><td>Inward (nasal) horizontal deviation of the eye; covers esotropia and esophoria.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;esodeviation&quot;, &quot;display&quot;: &quot;Esodeviation&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;esodeviation&quot;&gt;&lt;display value=&quot;Esodeviation&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-exodeviation\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-exodeviation\">exodeviation</a></td><td>Exodeviation</td><td>Outward (temporal) horizontal deviation of the eye; covers exotropia and exophoria.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;exodeviation&quot;, &quot;display&quot;: &quot;Exodeviation&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;exodeviation&quot;&gt;&lt;display value=&quot;Exodeviation&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-orthophoria\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-orthophoria\">orthophoria</a></td><td>Orthophoria</td><td>Absence of any manifest or latent ocular deviation; the visual axes remain aligned under cover testing.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;orthophoria&quot;, &quot;display&quot;: &quot;Orthophoria&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;orthophoria&quot;&gt;&lt;display value=&quot;Orthophoria&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs",
+      "version" : "0.4.0",
+      "name" : "HorizontalDeviationDirectionVS",
+      "title" : "Horizontal Deviation Direction Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:ca752bb3-de60-49bc-ba10-65bd4cb4ddfc",
+        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0"
+        }],
+        "contains" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "esodeviation",
+          "display" : "Esodeviation"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "exodeviation",
+          "display" : "Exodeviation"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "orthophoria",
+          "display" : "Orthophoria"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on SNOMED CT International edition 01-feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 9 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-422256009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/422256009\">422256009</a></td><td>Counts fingers - distance vision</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;422256009&quot;, &quot;display&quot;: &quot;Counts fingers - distance vision&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;422256009&quot;&gt;&lt;display value=&quot;Counts fingers - distance vision&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260292001\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260292001\">260292001</a></td><td>Counts fingers - 1 meter</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260292001&quot;, &quot;display&quot;: &quot;Counts fingers - 1 meter&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260292001&quot;&gt;&lt;display value=&quot;Counts fingers - 1 meter&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260293006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260293006\">260293006</a></td><td>Counts fingers - 1/2 meter</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260293006&quot;, &quot;display&quot;: &quot;Counts fingers - 1/2 meter&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260293006&quot;&gt;&lt;display value=&quot;Counts fingers - 1/2 meter&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260294000\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260294000\">260294000</a></td><td>Counts fingers - 1/3 meter</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260294000&quot;, &quot;display&quot;: &quot;Counts fingers - 1/3 meter&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260294000&quot;&gt;&lt;display value=&quot;Counts fingers - 1/3 meter&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260295004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260295004\">260295004</a></td><td>Sees hand movements</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260295004&quot;, &quot;display&quot;: &quot;Sees hand movements&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260295004&quot;&gt;&lt;display value=&quot;Sees hand movements&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-260297007\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/260297007\">260297007</a></td><td>Perception of light - accurate projection</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;260297007&quot;, &quot;display&quot;: &quot;Perception of light - accurate projection&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;260297007&quot;&gt;&lt;display value=&quot;Perception of light - accurate projection&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-264944004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/264944004\">264944004</a></td><td>Visual acuity PL - accurate projection</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;264944004&quot;, &quot;display&quot;: &quot;Visual acuity PL - accurate projection&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;264944004&quot;&gt;&lt;display value=&quot;Visual acuity PL - accurate projection&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-264943005\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/264943005\">264943005</a></td><td>Visual acuity PL - inaccurate projection</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;264943005&quot;, &quot;display&quot;: &quot;Visual acuity PL - inaccurate projection&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;264943005&quot;&gt;&lt;display value=&quot;Visual acuity PL - inaccurate projection&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-63063006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/63063006\">63063006</a></td><td>Visual acuity, no light perception</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;63063006&quot;, &quot;display&quot;: &quot;Visual acuity, no light perception&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;63063006&quot;&gt;&lt;display value=&quot;Visual acuity, no light perception&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
+      "version" : "0.4.0",
+      "name" : "LowVisionAssessmentVS",
+      "title" : "Low Vision Assessment Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:6e03d50c-ba95-4f3b-8796-8d5654ccf3fa",
+        "timestamp" : "2026-10-20T20:16:03-03:00",
+        "total" : 9,
         "offset" : 0,
         "parameter" : [{
           "name" : "displayLanguage",
@@ -66,6 +351,21 @@
         },
         {
           "system" : "http://snomed.info/sct",
+          "code" : "260292001",
+          "display" : "Counts fingers - 1 meter"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "260293006",
+          "display" : "Counts fingers - 1/2 meter"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "260294000",
+          "display" : "Counts fingers - 1/3 meter"
+        },
+        {
+          "system" : "http://snomed.info/sct",
           "code" : "260295004",
           "display" : "Sees hand movements"
         },
@@ -76,6 +376,11 @@
         },
         {
           "system" : "http://snomed.info/sct",
+          "code" : "264944004",
+          "display" : "Visual acuity PL - accurate projection"
+        },
+        {
+          "system" : "http://snomed.info/sct",
           "code" : "264943005",
           "display" : "Visual acuity PL - inaccurate projection"
         },
@@ -83,6 +388,71 @@
           "system" : "http://snomed.info/sct",
           "code" : "63063006",
           "display" : "Visual acuity, no light perception"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fhir4eyes-cs.html\">codesystem FHIR4Eyes Code System v0.4.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 3 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-within-normal-limits\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-within-normal-limits\">within-normal-limits</a></td><td>Within normal limits</td><td>The measurement or analysis falls within the normal range of the device normative (age-matched reference) database (typically p &gt;= 5%).</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;within-normal-limits&quot;, &quot;display&quot;: &quot;Within normal limits&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;within-normal-limits&quot;&gt;&lt;display value=&quot;Within normal limits&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-borderline\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-borderline\">borderline</a></td><td>Borderline</td><td>The measurement or analysis falls in the borderline range of the device normative database (typically 1% &lt;= p &lt; 5%).</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;borderline&quot;, &quot;display&quot;: &quot;Borderline&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;borderline&quot;&gt;&lt;display value=&quot;Borderline&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-outside-normal-limits\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-outside-normal-limits\">outside-normal-limits</a></td><td>Outside normal limits</td><td>The measurement or analysis falls outside the normal range of the device normative database (typically p &lt; 1%).</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;outside-normal-limits&quot;, &quot;display&quot;: &quot;Outside normal limits&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;outside-normal-limits&quot;&gt;&lt;display value=&quot;Outside normal limits&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs",
+      "version" : "0.4.0",
+      "name" : "NormativeClassificationVS",
+      "title" : "Normative Classification Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:51e8fff3-f92b-48f2-8596-d3ba62c0392e",
+        "timestamp" : "2026-10-20T20:15:51-03:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0"
+        }],
+        "contains" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "within-normal-limits",
+          "display" : "Within normal limits"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "borderline",
+          "display" : "Borderline"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "outside-normal-limits",
+          "display" : "Outside normal limits"
         }]
       }
     }
@@ -100,7 +470,8 @@
       "name" : "OphthalmicCarePlanCategoryVS",
       "title" : "Ophthalmic Care Plan Category Value Set",
       "status" : "draft",
-      "date" : "2026-10-19T22:17:00-03:00",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -109,8 +480,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:01690f94-3bd2-4f90-be75-a6be575c631e",
-        "timestamp" : "2026-10-19T22:19:55-03:00",
+        "identifier" : "urn:uuid:19497d9e-6176-4a81-8b26-98308cdfbd3a",
+        "timestamp" : "2026-10-20T20:16:11-03:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -142,6 +513,126 @@
           "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
           "code" : "functional-therapy",
           "display" : "Functional therapy"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fhir4eyes-cs.html\">codesystem FHIR4Eyes Code System v0.4.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-near\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-near\">near</a></td><td>Near</td><td>Near testing distance, approximately 33-40 cm.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;near&quot;, &quot;display&quot;: &quot;Near&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;near&quot;&gt;&lt;display value=&quot;Near&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-far\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-far\">far</a></td><td>Far</td><td>Far (distance) testing distance, approximately 6 m (20 ft).</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;far&quot;, &quot;display&quot;: &quot;Far&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;far&quot;&gt;&lt;display value=&quot;Far&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs",
+      "version" : "0.4.0",
+      "name" : "TestDistanceCategoryVS",
+      "title" : "Test Distance Category Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:f42dde77-c625-4970-b08a-6a3771702ece",
+        "timestamp" : "2026-10-20T20:15:25-03:00",
+        "total" : 2,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0"
+        }],
+        "contains" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "near",
+          "display" : "Near"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "far",
+          "display" : "Far"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion performed internally based on <a href=\"CodeSystem-fhir4eyes-cs.html\">codesystem FHIR4Eyes Code System v0.4.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0\" title=\"Click to Copy URL\" class=\"btn-copy\"> </button></span></p><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-hyperdeviation\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hyperdeviation\">hyperdeviation</a></td><td>Hyperdeviation</td><td>Upward vertical deviation of the deviating eye relative to the fellow eye; covers hypertropia and hyperphoria.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;hyperdeviation&quot;, &quot;display&quot;: &quot;Hyperdeviation&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;hyperdeviation&quot;&gt;&lt;display value=&quot;Hyperdeviation&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr><tr><td><a name=\"x-https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs-hypodeviation\"> </a><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hypodeviation\">hypodeviation</a></td><td>Hypodeviation</td><td>Downward vertical deviation of the deviating eye relative to the fellow eye; covers hypotropia and hypophoria.</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;, &quot;version&quot;: &quot;0.4.0&quot;, &quot;code&quot;: &quot;hypodeviation&quot;, &quot;display&quot;: &quot;Hypodeviation&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs&quot;&gt;&lt;version value=&quot;0.4.0&quot;&gt;&lt;code value=&quot;hypodeviation&quot;&gt;&lt;display value=&quot;Hypodeviation&quot;&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\"> </button></span></td></tr></table></div>"
+      },
+      "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs",
+      "version" : "0.4.0",
+      "name" : "VerticalDeviationDirectionVS",
+      "title" : "Vertical Deviation Direction Value Set",
+      "status" : "draft",
+      "experimental" : false,
+      "date" : "2026-10-20T20:13:11-03:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001",
+          "display" : "World"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:577ba54d-daba-4b40-a8e9-638dab483743",
+        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "total" : 2,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "displayLanguage",
+          "valueCode" : "en"
+        },
+        {
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0"
+        }],
+        "contains" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "hyperdeviation",
+          "display" : "Hyperdeviation"
+        },
+        {
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "hypodeviation",
+          "display" : "Hypodeviation"
         }]
       }
     }

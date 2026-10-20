@@ -1,15 +1,15 @@
-# sp-condition-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Condition eye (laterality) search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-condition-eye**
+* **Condition eye (laterality) search parameter**
 
-## SearchParameter: sp-condition-eye 
+## SearchParameter: Condition eye (laterality) search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/condition-eye | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:ConditionEye |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-condition-eye | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:ConditionEye |
 
  
 Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. 
@@ -22,11 +22,11 @@ Search ophthalmic conditions/diagnoses by eye laterality, expressed via the body
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-condition-eye",
-  "url" : "http://fhir4eyes.org/SearchParameter/condition-eye",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-condition-eye",
   "version" : "0.4.0",
   "name" : "ConditionEye",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{

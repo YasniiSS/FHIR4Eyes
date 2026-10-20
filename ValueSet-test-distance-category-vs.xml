@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="test-distance-category-vs"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet test-distance-category-vs</b></p><a name="test-distance-category-vs"> </a><a name="hctest-distance-category-vs"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-fhir4eyes-cs.html"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.4.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-near">near</a></td><td>Near</td><td>Near testing distance, approximately 33-40 cm.</td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-far">far</a></td><td>Far</td><td>Far (distance) testing distance, approximately 6 m (20 ft).</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs"/>
+  <version value="0.4.0"/>
+  <name value="TestDistanceCategoryVS"/>
+  <title value="Test Distance Category Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T20:13:11-03:00"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Categorical testing distance of a strabismus or binocular vision test: near&#xA;(about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories&#xA;(e.g. intermediate) may be used when needed."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <concept>
+        <code value="near"/>
+        <display value="Near"/>
+      </concept>
+      <concept>
+        <code value="far"/>
+        <display value="Far"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

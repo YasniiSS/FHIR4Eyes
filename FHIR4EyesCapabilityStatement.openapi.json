@@ -14,7 +14,7 @@
     }
   },
   "externalDocs": {
-    "url": "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server",
+    "url": "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/FHIR4EyesCapabilityStatement",
     "description": "FHIR CapabilityStatement"
   },
   "paths": {

@@ -15,7 +15,7 @@ Within each domain, profiles are listed in the order they typically appear in a 
 | :--- | :--- | :--- | :--- |
 | [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient | A patient receiving eye care | [Patient (international)](Patient-PatientExample.md),[Patient (Chile)](Patient-PacienteEjemplo.md) |
 | [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) | Encounter | An ambulatory ophthalmology consultation | [Encounter](Encounter-EncounterExample.md) |
-| [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | BodyStructure | The eye or ocular location, referenced from`bodySite`to express laterality | [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md) |
+| [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | BodyStructure | The eye or ocular location, referenced from`bodySite`to express laterality | [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md),[Both eyes](BodyStructure-BothEyesStructureExample.md) |
 
 ### Clinical workflow: orders, diagnoses, procedures, imaging and reports
 
@@ -83,16 +83,16 @@ Within each domain, profiles are listed in the order they typically appear in a 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | [Strabismus Exam](StructureDefinition-strabismus-exam.md) | Observation (panel) | Panel | [Strabismus exam](Observation-StrabismusExamExample.md) |
-| [Cover Test](StructureDefinition-cover-test.md) | Observation | Direct | [Cover test](Observation-CoverTestExample.md) |
+| [Cover Test](StructureDefinition-cover-test.md) | Observation | Direct | [Near](Observation-CoverTestExample.md),[Far](Observation-CoverTestFarExample.md) |
 | [Ocular Motility](StructureDefinition-ocular-motility.md) | Observation | Direct | [Right eye](Observation-OcularMotilityRightEyeExample.md),[Left eye](Observation-OcularMotilityLeftEyeExample.md) |
 | [Near Point of Convergence](StructureDefinition-near-point-of-convergence.md) | Observation | Direct | [Example](Observation-NearPointOfConvergenceExample.md) |
 | [Convergence Assessment](StructureDefinition-convergence-assessment.md) | Observation | Direct | [Example](Observation-ConvergenceAssessmentExample.md) |
 | [Stereopsis Test](StructureDefinition-stereopsis-test.md) | Observation | Direct | [Example](Observation-StereopsisTestExample.md) |
 | [Prism Cover Test](StructureDefinition-prism-cover-test.md) | Observation (panel) | Position-based | [Prism cover test](Observation-PrismCoverTestExample.md) |
-| [Krimsky Test](StructureDefinition-krimsky-test.md) | Observation (panel) | Position-based | - |
-| [Hirschberg Test](StructureDefinition-hirschberg-test.md) | Observation (panel) | Position-based | - |
-| [Red Filter Light Test](StructureDefinition-red-filter-light-test.md) | Observation (panel) | Position-based | - |
-| [Worth 4 Dot Test](StructureDefinition-worth-4-dot-test.md) | Observation (panel) | Position-based | - |
+| [Krimsky Test](StructureDefinition-krimsky-test.md) | Observation (panel) | Position-based | [Krimsky test](Observation-KrimskyTestExample.md) |
+| [Hirschberg Test](StructureDefinition-hirschberg-test.md) | Observation (panel) | Position-based | [Hirschberg test](Observation-HirschbergTestExample.md) |
+| [Red Filter Light Test](StructureDefinition-red-filter-light-test.md) | Observation (panel) | Position-based | [Red filter test](Observation-RedFilterLightTestExample.md) |
+| [Worth 4 Dot Test](StructureDefinition-worth-4-dot-test.md) | Observation (panel) | Position-based | [Worth 4 dot test](Observation-Worth4DotTestExample.md) |
 | [Gaze Position Measurement](StructureDefinition-gaze-position-measurement.md) | Observation | Reusable per-position result | [Primary position](Observation-PrismCoverTestPrimaryPositionExample.md) |
 
 ### Treatment: care plans and medications

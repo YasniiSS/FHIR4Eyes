@@ -20,11 +20,18 @@
 ### CodeSystems
 
 * [FHIR4Eyes Care Plan Category Code System](CodeSystem-fhir4eyes-care-plan-category-cs.md)
+* [FHIR4Eyes Code System](CodeSystem-fhir4eyes-cs.md)
 
 ### ValueSets
 
+* [Binocular Finding Value Set](ValueSet-binocular-finding-vs.md)
+* [Gaze Position Value Set](ValueSet-gaze-position-vs.md)
+* [Horizontal Deviation Direction Value Set](ValueSet-horizontal-deviation-direction-vs.md)
 * [Low Vision Assessment Value Set](ValueSet-low-vision-assessment-vs.md)
+* [Normative Classification Value Set](ValueSet-normative-classification-vs.md)
 * [Ophthalmic Care Plan Category Value Set](ValueSet-ophthalmic-care-plan-category-vs.md)
+* [Test Distance Category Value Set](ValueSet-test-distance-category-vs.md)
+* [Vertical Deviation Direction Value Set](ValueSet-vertical-deviation-direction-vs.md)
 
 ### Resource Profiles
 
@@ -91,6 +98,7 @@
 
 ### Examples
 
+* [BothEyesStructureExample (BodyStructure)](BodyStructure-BothEyesStructureExample.md)
 * [LeftEyeStructureExample (BodyStructure)](BodyStructure-LeftEyeStructureExample.md)
 * [RightEyeStructureExample (BodyStructure)](BodyStructure-RightEyeStructureExample.md)
 * [Avastin injection scheme - left eye (CarePlan)](CarePlan-AvastinInjectionCarePlanExample.md)
@@ -117,11 +125,34 @@
 * [CorrectedIntraocularPressureLeftEyeExample (Observation)](Observation-CorrectedIntraocularPressureLeftEyeExample.md)
 * [CorrectedIntraocularPressureRightEyeExample (Observation)](Observation-CorrectedIntraocularPressureRightEyeExample.md)
 * [CoverTestExample (Observation)](Observation-CoverTestExample.md)
+* [CoverTestFarExample (Observation)](Observation-CoverTestFarExample.md)
+* [HirschbergDownFODExample (Observation)](Observation-HirschbergDownFODExample.md)
+* [HirschbergDownFOIExample (Observation)](Observation-HirschbergDownFOIExample.md)
+* [HirschbergLeftFODExample (Observation)](Observation-HirschbergLeftFODExample.md)
+* [HirschbergLeftFOIExample (Observation)](Observation-HirschbergLeftFOIExample.md)
+* [HirschbergPrimaryFODExample (Observation)](Observation-HirschbergPrimaryFODExample.md)
+* [HirschbergPrimaryFOIExample (Observation)](Observation-HirschbergPrimaryFOIExample.md)
+* [HirschbergRightFODExample (Observation)](Observation-HirschbergRightFODExample.md)
+* [HirschbergRightFOIExample (Observation)](Observation-HirschbergRightFOIExample.md)
+* [HirschbergTestExample (Observation)](Observation-HirschbergTestExample.md)
+* [HirschbergUpFODExample (Observation)](Observation-HirschbergUpFODExample.md)
+* [HirschbergUpFOIExample (Observation)](Observation-HirschbergUpFOIExample.md)
 * [HumphreyVFRightEyeExample (Observation)](Observation-HumphreyVFRightEyeExample.md)
 * [IOLFormulaBarrettExample (Observation)](Observation-IOLFormulaBarrettExample.md)
 * [IOLFormulaSRKTExample (Observation)](Observation-IOLFormulaSRKTExample.md)
 * [IntraocularPressureLeftEyeExample (Observation)](Observation-IntraocularPressureLeftEyeExample.md)
 * [IntraocularPressureRightEyeExample (Observation)](Observation-IntraocularPressureRightEyeExample.md)
+* [KrimskyDownFODExample (Observation)](Observation-KrimskyDownFODExample.md)
+* [KrimskyDownFOIExample (Observation)](Observation-KrimskyDownFOIExample.md)
+* [KrimskyLeftFODExample (Observation)](Observation-KrimskyLeftFODExample.md)
+* [KrimskyLeftFOIExample (Observation)](Observation-KrimskyLeftFOIExample.md)
+* [KrimskyPrimaryFODExample (Observation)](Observation-KrimskyPrimaryFODExample.md)
+* [KrimskyPrimaryFOIExample (Observation)](Observation-KrimskyPrimaryFOIExample.md)
+* [KrimskyRightFODExample (Observation)](Observation-KrimskyRightFODExample.md)
+* [KrimskyRightFOIExample (Observation)](Observation-KrimskyRightFOIExample.md)
+* [KrimskyTestExample (Observation)](Observation-KrimskyTestExample.md)
+* [KrimskyUpFODExample (Observation)](Observation-KrimskyUpFODExample.md)
+* [KrimskyUpFOIExample (Observation)](Observation-KrimskyUpFOIExample.md)
 * [NearPointOfConvergenceExample (Observation)](Observation-NearPointOfConvergenceExample.md)
 * [OCTMaculaLeftEyeExample2 (Observation)](Observation-OCTMaculaLeftEyeExample2.md)
 * [OCTMaculaRightEyeExample (Observation)](Observation-OCTMaculaRightEyeExample.md)
@@ -133,6 +164,8 @@
 * [PachymetryRightEyeExample (Observation)](Observation-PachymetryRightEyeExample.md)
 * [PrismCoverTestExample (Observation)](Observation-PrismCoverTestExample.md)
 * [PrismCoverTestPrimaryPositionExample (Observation)](Observation-PrismCoverTestPrimaryPositionExample.md)
+* [RedFilterLightTestExample (Observation)](Observation-RedFilterLightTestExample.md)
+* [RedFilterPrimaryPositionExample (Observation)](Observation-RedFilterPrimaryPositionExample.md)
 * [SpecularMicroscopyRightEyeExample (Observation)](Observation-SpecularMicroscopyRightEyeExample.md)
 * [StereopsisTestExample (Observation)](Observation-StereopsisTestExample.md)
 * [StrabismusExamExample (Observation)](Observation-StrabismusExamExample.md)
@@ -145,6 +178,8 @@
 * [VisualAcuityCountingFingersRightEyeExample (Observation)](Observation-VisualAcuityCountingFingersRightEyeExample.md)
 * [VisualAcuityPinholeRightEyeExample (Observation)](Observation-VisualAcuityPinholeRightEyeExample.md)
 * [VisualAcuityUncorrectedRightEyeExample (Observation)](Observation-VisualAcuityUncorrectedRightEyeExample.md)
+* [Worth4DotPrimaryPositionExample (Observation)](Observation-Worth4DotPrimaryPositionExample.md)
+* [Worth4DotTestExample (Observation)](Observation-Worth4DotTestExample.md)
 * [PacienteEjemplo (Patient)](Patient-PacienteEjemplo.md)
 * [PatientExample (Patient)](Patient-PatientExample.md)
 * [OphthalmologistExample (Practitioner)](Practitioner-OphthalmologistExample.md)

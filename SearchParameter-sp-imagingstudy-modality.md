@@ -1,15 +1,15 @@
-# sp-imagingstudy-modality - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# ImagingStudy modality search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-imagingstudy-modality**
+* **ImagingStudy modality search parameter**
 
-## SearchParameter: sp-imagingstudy-modality 
+## SearchParameter: ImagingStudy modality search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-modality | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:ImagingStudyModality |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-modality | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:ImagingStudyModality |
 
  
 Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR). 
@@ -22,11 +22,11 @@ Search ophthalmic imaging studies by the DICOM acquisition modality of their ser
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-imagingstudy-modality",
-  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-modality",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-modality",
   "version" : "0.4.0",
   "name" : "ImagingStudyModality",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{

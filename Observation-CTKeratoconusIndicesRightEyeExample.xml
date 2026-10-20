@@ -6,7 +6,7 @@
     <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation CTKeratoconusIndicesRightEyeExample</b></p><a name="CTKeratoconusIndicesRightEyeExample"> </a><a name="hcCTKeratoconusIndicesRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Corneal tomography, keratoconus indices</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD-D (final D)</span></p><p><b>value</b>: 1.2 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Df (front deviation)</span></p><p><b>value</b>: 0.9 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Db (back deviation)</span></p><p><b>value</b>: 1 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dp (pachymetric deviation)</span></p><p><b>value</b>: 0.8 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dt (thinnest deviation)</span></p><p><b>value</b>: 0.7 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD Dy (vertical asymmetry)</span></p><p><b>value</b>: 0.5 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BAD classification</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Enhanced BFS radius front</span></p><p><b>value</b>: 7.8 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Enhanced BFS radius back</span></p><p><b>value</b>: 6.42 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Amsler-Krumeich stage</span></p><p><b>value</b>: <span title="Codes:">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">ABCD grading (Belin)</span></p><p><b>value</b>: A0/B0/C0/D0</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">ISV (Index Surface Variance)</span></p><p><b>value</b>: 18 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IVA (Index Vertical Asymmetry)</span></p><p><b>value</b>: 0.15 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">KI (Keratoconus Index)</span></p><p><b>value</b>: 1.02 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">CKI (Center Keratoconus Index)</span></p><p><b>value</b>: 1.01 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IHA (Index Height Asymmetry)</span></p><p><b>value</b>: 8 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">IHD (Index Height Decentration)</span></p><p><b>value</b>: 0.008 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Rmin (minimum sagittal curvature)</span></p><p><b>value</b>: 7.4 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">TKC (topographic KC classification)</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation CTKeratoconusIndicesRightEyeExample</b></p><a name="CTKeratoconusIndicesRightEyeExample"> </a><a name="hcCTKeratoconusIndicesRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratoconus-indices}">Corneal tomography, keratoconus indices</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href="Practitioner-OphthalmologistExample.html">Practitioner Ophthalmologist Example </a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-d}">BAD-D (final D)</span></p><p><b>value</b>: 1.2 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-df}">BAD Df (front deviation)</span></p><p><b>value</b>: 0.9 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-db}">BAD Db (back deviation)</span></p><p><b>value</b>: 1 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pachymetric-progression}">BAD Dp (pachymetric deviation)</span></p><p><b>value</b>: 0.8 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-dt}">BAD Dt (thinnest deviation)</span></p><p><b>value</b>: 0.7 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-dy}">BAD Dy (vertical asymmetry)</span></p><p><b>value</b>: 0.5 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs bad-classification}">BAD classification</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs enhanced-best-fit-sphere-radius-anterior}">Enhanced BFS radius front</span></p><p><b>value</b>: 7.8 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs enhanced-best-fit-sphere-radius-posterior}">Enhanced BFS radius back</span></p><p><b>value</b>: 6.42 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs amsler-krumeich-stage}">Amsler-Krumeich stage</span></p><p><b>value</b>: <span title="Codes:">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs belin-abcd-grade}">ABCD grading (Belin)</span></p><p><b>value</b>: A0/B0/C0/D0</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs index-surface-variance}">ISV (Index Surface Variance)</span></p><p><b>value</b>: 18 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs index-vertical-asymmetry}">IVA (Index Vertical Asymmetry)</span></p><p><b>value</b>: 0.15 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratoconus-index}">KI (Keratoconus Index)</span></p><p><b>value</b>: 1.02 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs center-keratoconus-index}">CKI (Center Keratoconus Index)</span></p><p><b>value</b>: 1.01 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs index-height-asymmetry}">IHA (Index Height Asymmetry)</span></p><p><b>value</b>: 8 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs index-height-decentration}">IHD (Index Height Decentration)</span></p><p><b>value</b>: 0.008 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs radius-minimum-sagittal}">Rmin (minimum sagittal curvature)</span></p><p><b>value</b>: 7.4 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs topographic-keratoconus-classification}">TKC (topographic KC classification)</span></p><p><b>value</b>: <span title="Codes:">Normal</span></p></blockquote></div>
   </text>
   <status value="final"/>
   <category>
@@ -17,11 +17,20 @@
     </coding>
   </category>
   <code>
+    <coding>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <code value="keratoconus-indices"/>
+      <display value="Keratoconus indices"/>
+    </coding>
     <text value="Corneal tomography, keratoconus indices"/>
   </code>
   <subject>
     <reference value="Patient/PatientExample"/>
   </subject>
+  <effectiveDateTime value="2026-08-18T09:00:00Z"/>
+  <performer>
+    <reference value="Practitioner/OphthalmologistExample"/>
+  </performer>
   <bodySite>
     <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
       <valueReference>
@@ -34,6 +43,11 @@
   </device>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-d"/>
+        <display value="Belin-Ambrosio total deviation (BAD-D)"/>
+      </coding>
       <text value="BAD-D (final D)"/>
     </code>
     <valueQuantity>
@@ -44,6 +58,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-df"/>
+        <display value="Belin-Ambrosio front elevation deviation (Df)"/>
+      </coding>
       <text value="BAD Df (front deviation)"/>
     </code>
     <valueQuantity>
@@ -54,6 +73,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-db"/>
+        <display value="Belin-Ambrosio back elevation deviation (Db)"/>
+      </coding>
       <text value="BAD Db (back deviation)"/>
     </code>
     <valueQuantity>
@@ -64,6 +88,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="pachymetric-progression"/>
+        <display value="Pachymetric progression index (BAD Dp)"/>
+      </coding>
       <text value="BAD Dp (pachymetric deviation)"/>
     </code>
     <valueQuantity>
@@ -74,6 +103,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-dt"/>
+        <display value="Belin-Ambrosio thinnest point deviation (Dt)"/>
+      </coding>
       <text value="BAD Dt (thinnest deviation)"/>
     </code>
     <valueQuantity>
@@ -84,6 +118,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-dy"/>
+        <display value="Belin-Ambrosio vertical asymmetry deviation (Dy)"/>
+      </coding>
       <text value="BAD Dy (vertical asymmetry)"/>
     </code>
     <valueQuantity>
@@ -94,6 +133,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="bad-classification"/>
+        <display value="Belin-Ambrosio classification"/>
+      </coding>
       <text value="BAD classification"/>
     </code>
     <valueCodeableConcept>
@@ -102,6 +146,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="enhanced-best-fit-sphere-radius-anterior"/>
+        <display value="Enhanced best fit sphere radius, anterior surface"/>
+      </coding>
       <text value="Enhanced BFS radius front"/>
     </code>
     <valueQuantity>
@@ -112,6 +161,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="enhanced-best-fit-sphere-radius-posterior"/>
+        <display value="Enhanced best fit sphere radius, posterior surface"/>
+      </coding>
       <text value="Enhanced BFS radius back"/>
     </code>
     <valueQuantity>
@@ -122,6 +176,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="amsler-krumeich-stage"/>
+        <display value="Amsler-Krumeich keratoconus stage"/>
+      </coding>
       <text value="Amsler-Krumeich stage"/>
     </code>
     <valueCodeableConcept>
@@ -130,12 +189,22 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="belin-abcd-grade"/>
+        <display value="Belin ABCD keratoconus grade"/>
+      </coding>
       <text value="ABCD grading (Belin)"/>
     </code>
     <valueString value="A0/B0/C0/D0"/>
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="index-surface-variance"/>
+        <display value="Index of surface variance (ISV)"/>
+      </coding>
       <text value="ISV (Index Surface Variance)"/>
     </code>
     <valueQuantity>
@@ -146,6 +215,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="index-vertical-asymmetry"/>
+        <display value="Index of vertical asymmetry (IVA)"/>
+      </coding>
       <text value="IVA (Index Vertical Asymmetry)"/>
     </code>
     <valueQuantity>
@@ -156,6 +230,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="keratoconus-index"/>
+        <display value="Keratoconus index (KI)"/>
+      </coding>
       <text value="KI (Keratoconus Index)"/>
     </code>
     <valueQuantity>
@@ -166,6 +245,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="center-keratoconus-index"/>
+        <display value="Center keratoconus index (CKI)"/>
+      </coding>
       <text value="CKI (Center Keratoconus Index)"/>
     </code>
     <valueQuantity>
@@ -176,6 +260,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="index-height-asymmetry"/>
+        <display value="Index of height asymmetry (IHA)"/>
+      </coding>
       <text value="IHA (Index Height Asymmetry)"/>
     </code>
     <valueQuantity>
@@ -186,6 +275,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="index-height-decentration"/>
+        <display value="Index of height decentration (IHD)"/>
+      </coding>
       <text value="IHD (Index Height Decentration)"/>
     </code>
     <valueQuantity>
@@ -196,6 +290,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="radius-minimum-sagittal"/>
+        <display value="Minimum sagittal radius of curvature (Rmin)"/>
+      </coding>
       <text value="Rmin (minimum sagittal curvature)"/>
     </code>
     <valueQuantity>
@@ -206,6 +305,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="topographic-keratoconus-classification"/>
+        <display value="Topographic keratoconus classification (TKC)"/>
+      </coding>
       <text value="TKC (topographic KC classification)"/>
     </code>
     <valueCodeableConcept>

@@ -14,9 +14,11 @@ Profile: [Tension Curve](StructureDefinition-tension-curve.md)
 
 **code**: Ambulatory tension curve
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **effective**: 2026-08-18 08:00:00+0000 --> 2026-08-18 14:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
@@ -46,6 +48,11 @@ Profile: [Tension Curve](StructureDefinition-tension-curve.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "tension-curve",
+      "display" : "Diurnal intraocular pressure tension curve"
+    }],
     "text" : "Ambulatory tension curve"
   },
   "subject" : {
@@ -55,6 +62,9 @@ Profile: [Tension Curve](StructureDefinition-tension-curve.md)
     "start" : "2026-08-18T08:00:00Z",
     "end" : "2026-08-18T14:00:00Z"
   },
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:FHIR4EyesCarePlanCategoryCS |
+| Draft as of 2026-10-20 | *Computable Name*:FHIR4EyesCarePlanCategoryCS |
 
  
 Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an external terminology. See the Profiles page of this guide for the design rationale. 
@@ -31,7 +31,8 @@ Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an extern
   "name" : "FHIR4EyesCarePlanCategoryCS",
   "title" : "FHIR4Eyes Care Plan Category Code System",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "experimental" : false,
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -55,6 +56,7 @@ Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an extern
       "display" : "World"
     }]
   }],
+  "caseSensitive" : true,
   "content" : "complete",
   "count" : 2,
   "concept" : [{

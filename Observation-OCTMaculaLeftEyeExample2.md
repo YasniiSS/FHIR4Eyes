@@ -14,7 +14,13 @@ Profile: [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md)
 
 **code**: OCT macula analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
+
+**interpretation**: Within normal limits
 
 **note**: 
 
@@ -27,7 +33,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 > **component****code**: Central macular thickness (CMT)**value**: 271 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Center thickness**value**: 191 um (Details: UCUM codeum = 'um')
+> **component****code**: Center thickness**value**: 238 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Central Min**value**: 232 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Central Max**value**: 305 um (Details: UCUM codeum = 'um')
 
 > **component****code**: Inner Superior thickness**value**: 315 um (Details: UCUM codeum = 'um')
 
@@ -45,19 +55,15 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 > **component****code**: Outer Temporal thickness**value**: 242 um (Details: UCUM codeum = 'um')
 
-> **component****code**: Central subfield volume**value**: 0.27 mm3 (Details: UCUM codemm3 = 'mm3')
-
-> **component****code**: Signal strength**value**: 9 1 (Details: UCUM code1 = '1')
-
-> **component****code**: Central Min**value**: 189 um (Details: UCUM codeum = 'um')
-
-> **component****code**: Central Max**value**: 244 um (Details: UCUM codeum = 'um')
+> **component****code**: Total macular grid volume**value**: 8.5 mm3 (Details: UCUM codemm3 = 'mm3')
 
 > **component****code**: ETDRS circle diameters**value**: 1, 3, 6 mm ETDRS
 
 > **component****code**: Retinal thickness definition**value**: ILM to RPE
 
 > **component****code**: Pupil dilated**value**: No
+
+> **component****code**: Signal strength**value**: 9 1 (Details: UCUM code1 = '1')
 
 
 
@@ -89,6 +95,18 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
+  "interpretation" : [{
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "within-normal-limits",
+      "display" : "Within normal limits"
+    }],
+    "text" : "Within normal limits"
+  }],
   "note" : [{
     "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
   }],
@@ -125,7 +143,37 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
       "text" : "Center thickness"
     },
     "valueQuantity" : {
-      "value" : 191,
+      "value" : 238,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-subfield-thickness-min",
+        "display" : "Central subfield thickness, minimum"
+      }],
+      "text" : "Central Min"
+    },
+    "valueQuantity" : {
+      "value" : 232,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-subfield-thickness-max",
+        "display" : "Central subfield thickness, maximum"
+      }],
+      "text" : "Central Max"
+    },
+    "valueQuantity" : {
+      "value" : 305,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
@@ -257,52 +305,32 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
         "code" : "57118-2",
         "display" : "Macular grid.total volume by OCT"
       }],
-      "text" : "Central subfield volume"
+      "text" : "Total macular grid volume"
     },
     "valueQuantity" : {
-      "value" : 0.27,
+      "value" : 8.5,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm3"
     }
   },
   {
     "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 9,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Central Min"
-    },
-    "valueQuantity" : {
-      "value" : 189,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Central Max"
-    },
-    "valueQuantity" : {
-      "value" : 244,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "etdrs-grid-diameters",
+        "display" : "ETDRS grid circle diameters"
+      }],
       "text" : "ETDRS circle diameters"
     },
     "valueString" : "1, 3, 6 mm ETDRS"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "retinal-thickness-definition",
+        "display" : "Retinal thickness definition"
+      }],
       "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
@@ -311,10 +339,30 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-dilated",
+        "display" : "Pupil dilated"
+      }],
       "text" : "Pupil dilated"
     },
     "valueCodeableConcept" : {
       "text" : "No"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "signal-strength",
+        "display" : "Scan signal strength / quality"
+      }],
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
     }
   }]
 }

@@ -1,0 +1,79 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "gaze-position-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet gaze-position-vs</b></p><a name=\"gaze-position-vs\"> </a><a name=\"hcgaze-position-vs\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/408744005\">408744005</a></td><td>Primary gaze</td></tr><tr><td><a href=\"http://snomed.info/id/255533007\">255533007</a></td><td>Upward gaze</td></tr><tr><td><a href=\"http://snomed.info/id/255521002\">255521002</a></td><td>Downward gaze</td></tr><tr><td><a href=\"http://snomed.info/id/255531009\">255531009</a></td><td>Right gaze</td></tr><tr><td><a href=\"http://snomed.info/id/255530005\">255530005</a></td><td>Left gaze</td></tr><tr><td><a href=\"http://snomed.info/id/255526007\">255526007</a></td><td>Gaze up and right</td></tr><tr><td><a href=\"http://snomed.info/id/255525006\">255525006</a></td><td>Gaze up and left</td></tr><tr><td><a href=\"http://snomed.info/id/255524005\">255524005</a></td><td>Gaze down and right</td></tr><tr><td><a href=\"http://snomed.info/id/255523004\">255523004</a></td><td>Gaze down and left</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs",
+  "version" : "0.4.0",
+  "name" : "GazePositionVS",
+  "title" : "Gaze Position Value Set",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-10-20T20:13:11-03:00",
+  "publisher" : "FHIR4Eyes Project",
+  "contact" : [{
+    "name" : "FHIR4Eyes Project",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  },
+  {
+    "name" : "Yasna Soto",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://YasniiSS.github.io/fhir4eyes"
+    }]
+  }],
+  "description" : "The nine diagnostic positions of gaze at which a strabismus measurement or\nbinocular finding is recorded: primary position, the four secondary positions (up gaze /\nsupraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion)\nand the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze\ndirections hierarchy.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001",
+      "display" : "World"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "408744005",
+        "display" : "Primary gaze"
+      },
+      {
+        "code" : "255533007",
+        "display" : "Upward gaze"
+      },
+      {
+        "code" : "255521002",
+        "display" : "Downward gaze"
+      },
+      {
+        "code" : "255531009",
+        "display" : "Right gaze"
+      },
+      {
+        "code" : "255530005",
+        "display" : "Left gaze"
+      },
+      {
+        "code" : "255526007",
+        "display" : "Gaze up and right"
+      },
+      {
+        "code" : "255525006",
+        "display" : "Gaze up and left"
+      },
+      {
+        "code" : "255524005",
+        "display" : "Gaze down and right"
+      },
+      {
+        "code" : "255523004",
+        "display" : "Gaze down and left"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "vertical-deviation-direction-vs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet vertical-deviation-direction-vs</b></p><a name=\"vertical-deviation-direction-vs\"> </a><a name=\"hcvertical-deviation-direction-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-fhir4eyes-cs.html\"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.4.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hyperdeviation\">hyperdeviation</a></td><td>Hyperdeviation</td><td>Upward vertical deviation of the deviating eye relative to the fellow eye; covers hypertropia and hyperphoria.</td></tr><tr><td><a href=\"CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-hypodeviation\">hypodeviation</a></td><td>Hypodeviation</td><td>Downward vertical deviation of the deviating eye relative to the fellow eye; covers hypotropia and hypophoria.</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs"] ;
+  fhir:ValueSet.version [ fhir:value "0.4.0"] ;
+  fhir:ValueSet.name [ fhir:value "VerticalDeviationDirectionVS"] ;
+  fhir:ValueSet.title [ fhir:value "Vertical Deviation Direction Value Set"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-20T20:13:11-03:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "FHIR4Eyes Project"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "FHIR4Eyes Project" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Yasna Soto" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://YasniiSS.github.io/fhir4eyes" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Direction of a vertical ocular deviation of the deviating eye at a gaze\nposition: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is\nrecorded separately as a positive value."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ] ;
+       fhir:Coding.display [ fhir:value "World" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "hyperdeviation" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Hyperdeviation" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "hypodeviation" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Hypodeviation" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

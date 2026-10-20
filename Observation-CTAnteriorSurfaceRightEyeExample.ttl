@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTAnteriorSurfaceRightEyeExample</b></p><a name=\"CTAnteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTAnteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-anterior-surface.html\">Corneal Tomography - Anterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, anterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Pentacam-style anterior surface report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat axis)</span></p><p><b>value</b>: 43.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep axis)</span></p><p><b>value</b>: 44.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Km (average)</span></p><p><b>value</b>: 43.9 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal astigmatism</span></p><p><b>value</b>: 1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: -1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K Max (front)</span></p><p><b>value</b>: 45.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SimK steep/flat</span></p><p><b>value</b>: 44.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rh (horizontal radius)</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rv (vertical radius)</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rmin (minimum radius)</span></p><p><b>value</b>: 7.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Q-value front</span></p><p><b>value</b>: -0.24 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation front BFS</span></p><p><b>value</b>: 4 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius front</span></p><p><b>value</b>: 7.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Regularity Index (SRI)</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Surface Asymmetry Index (SAI)</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">I-S value</span></p><p><b>value</b>: 0.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">KISA% index</span></p><p><b>value</b>: 12.4 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Topographic pattern</span></p><p><b>value</b>: <span title=\"Codes:\">Regular</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total Corneal Refractive Power (TCRP)</span></p><p><b>value</b>: 43.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">True Net Power (TNP)</span></p><p><b>value</b>: 43.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 1.0mm zone</span></p><p><b>value</b>: 43.7 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 3.0mm zone</span></p><p><b>value</b>: 43.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">EKR 4.5mm zone</span></p><p><b>value</b>: 43.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Mean Power</span></p><p><b>value</b>: 43.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Astig Power</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Steep Axis</span></p><p><b>value</b>: 100 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">3mm zone Flat Axis</span></p><p><b>value</b>: 10 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Mean Power</span></p><p><b>value</b>: 43.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Astig Power</span></p><p><b>value</b>: 1.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Steep Axis</span></p><p><b>value</b>: 103 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">5mm zone Flat Axis</span></p><p><b>value</b>: 13 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal astigmatism (tWFA)</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Total corneal irregular astigmatism</span></p><p><b>value</b>: 0.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal HOA RMS</span></p><p><b>value</b>: 0.31 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa angle</span></p><p><b>value</b>: 4.2 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Kappa intercept</span></p><p><b>value</b>: x: 0.18mm, y: -0.06mm</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">SIA (Surgically Induced Astigmatism)</span></p><p><b>value</b>: 0.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Predicted post-op corneal astigmatism</span></p><p><b>value</b>: 0.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Optimal toric IOL axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">QS (quality score)</span></p><p><b>value</b>: <span title=\"Codes:\">OK</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTAnteriorSurfaceRightEyeExample</b></p><a name=\"CTAnteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTAnteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-anterior-surface.html\">Corneal Tomography - Anterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-tomography-anterior-surface}\">Corneal tomography, anterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical Pentacam-style anterior surface report</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1}\">K1 (flat axis)</span></p><p><b>value</b>: 43.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1-axis}\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1-radius}\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2}\">K2 (steep axis)</span></p><p><b>value</b>: 44.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2-axis}\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2-radius}\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-km}\">Km (average)</span></p><p><b>value</b>: 43.9 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism}\">Corneal astigmatism</span></p><p><b>value</b>: 1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-kmax}\">K Max (front)</span></p><p><b>value</b>: 45.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs simulated-keratometry}\">SimK steep/flat</span></p><p><b>value</b>: 44.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-radius-horizontal}\">Rh (horizontal radius)</span></p><p><b>value</b>: 7.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-radius-vertical}\">Rv (vertical radius)</span></p><p><b>value</b>: 7.58 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs radius-minimum-curvature}\">Rmin (minimum radius)</span></p><p><b>value</b>: 7.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-asphericity-q-anterior}\">Q-value front</span></p><p><b>value</b>: -0.24 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs elevation-anterior}\">Elevation front BFS</span></p><p><b>value</b>: 4 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs best-fit-sphere-radius-anterior}\">BFS radius front</span></p><p><b>value</b>: 7.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs surface-regularity-index}\">Surface Regularity Index (SRI)</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs surface-asymmetry-index}\">Surface Asymmetry Index (SAI)</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs inferior-superior-asymmetry}\">I-S value</span></p><p><b>value</b>: 0.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs kisa-index}\">KISA% index</span></p><p><b>value</b>: 12.4 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometric-index}\">Keratometric index</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs topographic-pattern}\">Topographic pattern</span></p><p><b>value</b>: <span title=\"Codes:\">Regular</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs total-corneal-refractive-power}\">Total Corneal Refractive Power (TCRP)</span></p><p><b>value</b>: 43.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs true-net-power}\">True Net Power (TNP)</span></p><p><b>value</b>: 43.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs equivalent-keratometry-1mm}\">EKR 1.0mm zone</span></p><p><b>value</b>: 43.7 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs equivalent-keratometry-3mm}\">EKR 3.0mm zone</span></p><p><b>value</b>: 43.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs equivalent-keratometry-4-5mm}\">EKR 4.5mm zone</span></p><p><b>value</b>: 43.1 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-mean-power-3mm-zone}\">3mm zone Mean Power</span></p><p><b>value</b>: 43.8 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism-power-3mm-zone}\">3mm zone Astig Power</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-steep-axis-3mm-zone}\">3mm zone Steep Axis</span></p><p><b>value</b>: 100 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-flat-axis-3mm-zone}\">3mm zone Flat Axis</span></p><p><b>value</b>: 10 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-mean-power-5mm-zone}\">5mm zone Mean Power</span></p><p><b>value</b>: 43.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism-power-5mm-zone}\">5mm zone Astig Power</span></p><p><b>value</b>: 1.5 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-steep-axis-5mm-zone}\">5mm zone Steep Axis</span></p><p><b>value</b>: 103 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-flat-axis-5mm-zone}\">5mm zone Flat Axis</span></p><p><b>value</b>: 13 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs total-corneal-astigmatism}\">Total corneal astigmatism (tWFA)</span></p><p><b>value</b>: 1.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-irregular-astigmatism}\">Total corneal irregular astigmatism</span></p><p><b>value</b>: 0.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-hoa-rms}\">Corneal HOA RMS</span></p><p><b>value</b>: 0.31 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs angle-kappa}\">Kappa angle</span></p><p><b>value</b>: 4.2 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs angle-kappa-intercept}\">Kappa intercept</span></p><p><b>value</b>: x: 0.18mm, y: -0.06mm</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs surgically-induced-astigmatism}\">SIA (Surgically Induced Astigmatism)</span></p><p><b>value</b>: 0.3 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs predicted-postoperative-corneal-astigmatism}\">Predicted post-op corneal astigmatism</span></p><p><b>value</b>: 0.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs toric-iol-optimal-axis}\">Optimal toric IOL axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs signal-strength}\">QS (quality score)</span></p><p><b>value</b>: <span title=\"Codes:\">OK</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -30,11 +30,23 @@
      ]
   ] ;
   fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "corneal-tomography-anterior-surface" ] ;
+       fhir:Coding.display [ fhir:value "Corneal tomography, anterior surface analysis" ]
+     ] ;
      fhir:CodeableConcept.text [ fhir:value "Corneal tomography, anterior surface analysis" ]
   ] ;
   fhir:Observation.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
   ] ;
   fhir:Observation.note [
      fhir:index 0 ;
@@ -56,6 +68,12 @@
   fhir:Observation.component [
      fhir:index 0 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k1" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K1 (flat)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K1 (flat axis)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -66,6 +84,12 @@
   ], [
      fhir:index 1 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k1-axis" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K1 axis" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K1 axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -76,6 +100,12 @@
   ], [
      fhir:index 2 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k1-radius" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K1 radius of curvature" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K1 radius" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -86,6 +116,12 @@
   ], [
      fhir:index 3 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k2" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K2 (steep)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K2 (steep axis)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -96,6 +132,12 @@
   ], [
      fhir:index 4 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k2-axis" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K2 axis" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K2 axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -106,6 +148,12 @@
   ], [
      fhir:index 5 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-k2-radius" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry K2 radius of curvature" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K2 radius" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -116,6 +164,12 @@
   ], [
      fhir:index 6 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-km" ] ;
+         fhir:Coding.display [ fhir:value "Keratometry Km (mean)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Km (average)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -126,6 +180,12 @@
   ], [
      fhir:index 7 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-astigmatism" ] ;
+         fhir:Coding.display [ fhir:value "Corneal astigmatism (cylinder)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Corneal astigmatism" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -136,16 +196,12 @@
   ], [
      fhir:index 8 ;
      fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Corneal cylinder" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "-1.4"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "[diop]" ]
-     ]
-  ], [
-     fhir:index 9 ;
-     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometry-kmax" ] ;
+         fhir:Coding.display [ fhir:value "Maximum keratometry (Kmax)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "K Max (front)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -154,8 +210,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 10 ;
+     fhir:index 9 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "simulated-keratometry" ] ;
+         fhir:Coding.display [ fhir:value "Simulated keratometry (SimK)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "SimK steep/flat" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -164,28 +226,46 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 11 ;
+     fhir:index 10 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-radius-horizontal" ] ;
+         fhir:Coding.display [ fhir:value "Horizontal corneal radius of curvature (Rh)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Rh (horizontal radius)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "7.81"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "7.8"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm" ]
+     ]
+  ], [
+     fhir:index 11 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-radius-vertical" ] ;
+         fhir:Coding.display [ fhir:value "Vertical corneal radius of curvature (Rv)" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Rv (vertical radius)" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "7.58"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
      fhir:index 12 ;
      fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Rv (vertical radius)" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "7.56"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "mm" ]
-     ]
-  ], [
-     fhir:index 13 ;
-     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "radius-minimum-curvature" ] ;
+         fhir:Coding.display [ fhir:value "Minimum radius of curvature (Rmin)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Rmin (minimum radius)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -194,8 +274,14 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 14 ;
+     fhir:index 13 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-asphericity-q-anterior" ] ;
+         fhir:Coding.display [ fhir:value "Corneal asphericity (Q-value), anterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Q-value front" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -204,8 +290,14 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 15 ;
+     fhir:index 14 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "elevation-anterior" ] ;
+         fhir:Coding.display [ fhir:value "Corneal elevation relative to best fit sphere, anterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Elevation front BFS" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -214,8 +306,14 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 16 ;
+     fhir:index 15 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "best-fit-sphere-radius-anterior" ] ;
+         fhir:Coding.display [ fhir:value "Best fit sphere radius, anterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "BFS radius front" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -224,8 +322,14 @@
        fhir:Quantity.code [ fhir:value "mm" ]
      ]
   ], [
-     fhir:index 17 ;
+     fhir:index 16 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "surface-regularity-index" ] ;
+         fhir:Coding.display [ fhir:value "Surface Regularity Index (SRI)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Surface Regularity Index (SRI)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -234,8 +338,14 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 18 ;
+     fhir:index 17 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "surface-asymmetry-index" ] ;
+         fhir:Coding.display [ fhir:value "Surface Asymmetry Index (SAI)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Surface Asymmetry Index (SAI)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -244,8 +354,14 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 19 ;
+     fhir:index 18 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "inferior-superior-asymmetry" ] ;
+         fhir:Coding.display [ fhir:value "Inferior-superior asymmetry value (I-S)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "I-S value" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -254,8 +370,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 20 ;
+     fhir:index 19 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "kisa-index" ] ;
+         fhir:Coding.display [ fhir:value "KISA% index" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "KISA% index" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -264,8 +386,14 @@
        fhir:Quantity.code [ fhir:value "%" ]
      ]
   ], [
-     fhir:index 21 ;
+     fhir:index 20 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "keratometric-index" ] ;
+         fhir:Coding.display [ fhir:value "Keratometric index" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Keratometric index" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -274,16 +402,28 @@
        fhir:Quantity.code [ fhir:value "1" ]
      ]
   ], [
-     fhir:index 22 ;
+     fhir:index 21 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "topographic-pattern" ] ;
+         fhir:Coding.display [ fhir:value "Topographic pattern" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Topographic pattern" ]
      ] ;
      fhir:Observation.component.valueCodeableConcept [
        fhir:CodeableConcept.text [ fhir:value "Regular" ]
      ]
   ], [
-     fhir:index 23 ;
+     fhir:index 22 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "total-corneal-refractive-power" ] ;
+         fhir:Coding.display [ fhir:value "Total corneal refractive power (TCRP)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Total Corneal Refractive Power (TCRP)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -292,8 +432,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 24 ;
+     fhir:index 23 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "true-net-power" ] ;
+         fhir:Coding.display [ fhir:value "True net corneal power (TNP)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "True Net Power (TNP)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -302,8 +448,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 25 ;
+     fhir:index 24 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "equivalent-keratometry-1mm" ] ;
+         fhir:Coding.display [ fhir:value "Equivalent K reading (EKR), 1.0 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "EKR 1.0mm zone" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -312,8 +464,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 26 ;
+     fhir:index 25 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "equivalent-keratometry-3mm" ] ;
+         fhir:Coding.display [ fhir:value "Equivalent K reading (EKR), 3.0 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "EKR 3.0mm zone" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -322,8 +480,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 27 ;
+     fhir:index 26 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "equivalent-keratometry-4-5mm" ] ;
+         fhir:Coding.display [ fhir:value "Equivalent K reading (EKR), 4.5 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "EKR 4.5mm zone" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -332,8 +496,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 28 ;
+     fhir:index 27 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-mean-power-3mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Mean corneal power, 3 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "3mm zone Mean Power" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -342,8 +512,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 29 ;
+     fhir:index 28 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-astigmatism-power-3mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal astigmatism power, 3 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "3mm zone Astig Power" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -352,8 +528,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 30 ;
+     fhir:index 29 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-steep-axis-3mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal steep axis, 3 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "3mm zone Steep Axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -362,8 +544,14 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 31 ;
+     fhir:index 30 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-flat-axis-3mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal flat axis, 3 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "3mm zone Flat Axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -372,8 +560,14 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 32 ;
+     fhir:index 31 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-mean-power-5mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Mean corneal power, 5 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "5mm zone Mean Power" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -382,8 +576,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 33 ;
+     fhir:index 32 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-astigmatism-power-5mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal astigmatism power, 5 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "5mm zone Astig Power" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -392,8 +592,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 34 ;
+     fhir:index 33 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-steep-axis-5mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal steep axis, 5 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "5mm zone Steep Axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -402,8 +608,14 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 35 ;
+     fhir:index 34 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-flat-axis-5mm-zone" ] ;
+         fhir:Coding.display [ fhir:value "Corneal flat axis, 5 mm zone" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "5mm zone Flat Axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -412,8 +624,14 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 36 ;
+     fhir:index 35 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "total-corneal-astigmatism" ] ;
+         fhir:Coding.display [ fhir:value "Total corneal astigmatism (tWFA)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Total corneal astigmatism (tWFA)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -422,8 +640,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 37 ;
+     fhir:index 36 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-irregular-astigmatism" ] ;
+         fhir:Coding.display [ fhir:value "Total corneal irregular astigmatism" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Total corneal irregular astigmatism" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -432,8 +656,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 38 ;
+     fhir:index 37 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-hoa-rms" ] ;
+         fhir:Coding.display [ fhir:value "Corneal higher-order aberrations RMS" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Corneal HOA RMS" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -442,8 +672,14 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 39 ;
+     fhir:index 38 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "angle-kappa" ] ;
+         fhir:Coding.display [ fhir:value "Angle kappa" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Kappa angle" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -452,14 +688,26 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 40 ;
+     fhir:index 39 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "angle-kappa-intercept" ] ;
+         fhir:Coding.display [ fhir:value "Angle kappa intercept" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Kappa intercept" ]
      ] ;
      fhir:Observation.component.valueString [ fhir:value "x: 0.18mm, y: -0.06mm" ]
   ], [
-     fhir:index 41 ;
+     fhir:index 40 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "surgically-induced-astigmatism" ] ;
+         fhir:Coding.display [ fhir:value "Surgically induced astigmatism (SIA)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "SIA (Surgically Induced Astigmatism)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -468,8 +716,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 42 ;
+     fhir:index 41 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "predicted-postoperative-corneal-astigmatism" ] ;
+         fhir:Coding.display [ fhir:value "Predicted postoperative corneal astigmatism" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Predicted post-op corneal astigmatism" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -478,8 +732,14 @@
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
-     fhir:index 43 ;
+     fhir:index 42 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "toric-iol-optimal-axis" ] ;
+         fhir:Coding.display [ fhir:value "Optimal toric IOL axis" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Optimal toric IOL axis" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -488,8 +748,14 @@
        fhir:Quantity.code [ fhir:value "deg" ]
      ]
   ], [
-     fhir:index 44 ;
+     fhir:index 43 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "signal-strength" ] ;
+         fhir:Coding.display [ fhir:value "Scan signal strength / quality" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "QS (quality score)" ]
      ] ;
      fhir:Observation.component.valueCodeableConcept [

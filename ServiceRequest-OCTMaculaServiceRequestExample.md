@@ -16,7 +16,7 @@ Profile: [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-req
 
 **code**: Optical coherence tomography, macula
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **requester**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 

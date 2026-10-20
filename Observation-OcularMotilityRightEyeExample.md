@@ -14,11 +14,15 @@ Profile: [Ocular Motility](StructureDefinition-ocular-motility.md)
 
 **code**: Ocular motility
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
-> **component****code**: Superior oblique
+> **component****code**: Muscle**value**: Superior oblique
 
 > **component****code**: Function**value**: Hyperfunction
 
@@ -42,11 +46,20 @@ Profile: [Ocular Motility](StructureDefinition-ocular-motility.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "ocular-motility",
+      "display" : "Ocular motility assessment"
+    }],
     "text" : "Ocular motility"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
@@ -57,11 +70,24 @@ Profile: [Ocular Motility](StructureDefinition-ocular-motility.md)
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "extraocular-muscle",
+        "display" : "Extraocular muscle assessed"
+      }],
+      "text" : "Muscle"
+    },
+    "valueCodeableConcept" : {
       "text" : "Superior oblique"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "extraocular-muscle-function",
+        "display" : "Extraocular muscle function"
+      }],
       "text" : "Function"
     },
     "valueCodeableConcept" : {

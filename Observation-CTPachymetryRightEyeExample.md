@@ -14,7 +14,11 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
 
 **code**: Corneal tomography, pachymetry analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
@@ -52,11 +56,20 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "corneal-tomography-pachymetry",
+      "display" : "Corneal tomography, pachymetry analysis"
+    }],
     "text" : "Corneal tomography, pachymetry analysis"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
@@ -70,6 +83,11 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-corneal-thickness",
+        "display" : "Central corneal thickness"
+      }],
       "text" : "CCT at apex"
     },
     "valueQuantity" : {
@@ -80,6 +98,11 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-thickness-pupil-centre",
+        "display" : "Corneal thickness at pupil centre"
+      }],
       "text" : "CCT at pupil center"
     },
     "valueQuantity" : {
@@ -90,6 +113,11 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-thickness-thinnest",
+        "display" : "Thinnest corneal thickness"
+      }],
       "text" : "Thinnest point value"
     },
     "valueQuantity" : {
@@ -100,12 +128,22 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-thinnest-point-location",
+        "display" : "Thinnest corneal point location"
+      }],
       "text" : "Thinnest point location"
     },
     "valueString" : "x: -0.4mm, y: 0.2mm"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-volume",
+        "display" : "Corneal volume"
+      }],
       "text" : "Corneal volume"
     },
     "valueQuantity" : {
@@ -116,6 +154,11 @@ Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pachymetric-progression",
+        "display" : "Pachymetric progression index (BAD Dp)"
+      }],
       "text" : "Pachymetry progression index"
     },
     "valueQuantity" : {

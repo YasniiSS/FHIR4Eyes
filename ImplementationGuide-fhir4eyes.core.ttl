@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "FHIR4Eyes"] ;
   fhir:ImplementationGuide.title [ fhir:value "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-19T22:17:00-03:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-20T20:13:11-03:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -111,11 +111,11 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
-         fhir:Extension.valueString [ fhir:value "autoload-resources" ]
+         fhir:Extension.valueString [ fhir:value "pin-canonicals" ]
        ], [
          fhir:index 1 ;
          fhir:Extension.url [ fhir:value "value" ] ;
-         fhir:Extension.valueString [ fhir:value "true" ]
+         fhir:Extension.valueString [ fhir:value "pin-multiples" ]
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -123,11 +123,11 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
-         fhir:Extension.valueString [ fhir:value "path-liquid" ]
+         fhir:Extension.valueString [ fhir:value "autoload-resources" ]
        ], [
          fhir:index 1 ;
          fhir:Extension.url [ fhir:value "value" ] ;
-         fhir:Extension.valueString [ fhir:value "template/liquid" ]
+         fhir:Extension.valueString [ fhir:value "true" ]
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -139,11 +139,23 @@
        ], [
          fhir:index 1 ;
          fhir:Extension.url [ fhir:value "value" ] ;
-         fhir:Extension.valueString [ fhir:value "input/liquid" ]
+         fhir:Extension.valueString [ fhir:value "template/liquid" ]
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
        fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueString [ fhir:value "path-liquid" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "input/liquid" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -155,7 +167,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 6 ;
+       fhir:index 7 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -167,7 +179,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 7 ;
+       fhir:index 8 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -179,7 +191,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 8 ;
+       fhir:index 9 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -191,7 +203,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 9 ;
+       fhir:index 10 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -203,7 +215,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 10 ;
+       fhir:index 11 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -215,7 +227,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 11 ;
+       fhir:index 12 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -227,7 +239,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 12 ;
+       fhir:index 13 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -239,7 +251,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 13 ;
+       fhir:index 14 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -251,7 +263,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 14 ;
+       fhir:index 15 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -263,7 +275,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 15 ;
+       fhir:index 16 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -275,7 +287,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 16 ;
+       fhir:index 17 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -287,7 +299,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 17 ;
+       fhir:index 18 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -299,7 +311,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 18 ;
+       fhir:index 19 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -311,7 +323,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 19 ;
+       fhir:index 20 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -323,7 +335,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 20 ;
+       fhir:index 21 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -335,7 +347,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 21 ;
+       fhir:index 22 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -347,7 +359,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 22 ;
+       fhir:index 23 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -359,7 +371,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 23 ;
+       fhir:index 24 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -371,7 +383,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 24 ;
+       fhir:index 25 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -383,11 +395,11 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 25 ;
+       fhir:index 26 ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency" ] ;
        fhir:Extension.valueCode [ fhir:value "hl7.fhir.uv.tools.r4#1.1.2" ]
      ], [
-       fhir:index 26 ;
+       fhir:index 27 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -399,7 +411,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 27 ;
+       fhir:index 28 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -411,7 +423,19 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 28 ;
+       fhir:index 29 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "pin-canonicals" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "pin-multiples" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 30 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -423,7 +447,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 29 ;
+       fhir:index 31 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -435,7 +459,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 30 ;
+       fhir:index 32 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -447,7 +471,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 31 ;
+       fhir:index 33 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -459,7 +483,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 32 ;
+       fhir:index 34 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -471,7 +495,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 33 ;
+       fhir:index 35 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -483,7 +507,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 34 ;
+       fhir:index 36 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -495,7 +519,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 35 ;
+       fhir:index 37 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -507,7 +531,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 36 ;
+       fhir:index 38 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -519,7 +543,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 37 ;
+       fhir:index 39 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -531,7 +555,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 38 ;
+       fhir:index 40 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -543,7 +567,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 39 ;
+       fhir:index 41 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -555,7 +579,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 40 ;
+       fhir:index 42 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -567,7 +591,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 41 ;
+       fhir:index 43 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -579,7 +603,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 42 ;
+       fhir:index 44 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -591,7 +615,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 43 ;
+       fhir:index 45 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -603,7 +627,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 44 ;
+       fhir:index 46 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -615,7 +639,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 45 ;
+       fhir:index 47 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -627,7 +651,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 46 ;
+       fhir:index 48 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -639,7 +663,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 47 ;
+       fhir:index 49 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -651,7 +675,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 48 ;
+       fhir:index 50 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -663,7 +687,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 49 ;
+       fhir:index 51 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -675,7 +699,7 @@
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 50 ;
+       fhir:index 52 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "code" ] ;
@@ -895,7 +919,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-imaging-study" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Imaging Study" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An ophthalmic imaging study, such as OCT, retinography, or angiography.\r\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\r\nrepresented both through the native series.bodySite/series.laterality Coding fields (for\r\nstandard DICOM/PACS compatibility) and through an additional extension referencing\r\nOcularBodyStructure (for structured cross-resource navigation, consistent with the rest of\r\nthis guide)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An ophthalmic imaging study, such as OCT, retinography, or angiography.\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\nrepresented through the native series.bodySite/series.laterality Coding fields (for\nstandard DICOM/PACS compatibility); the core bodySite extension is not allowed on\nImagingStudy.series in FHIR R4." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupWorkflow" ]
      ], [
@@ -910,7 +934,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-diagnostic-report" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Diagnostic Report" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the findings, diagnosis, and treatment plan reached after\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\nthis is not limited to describing imaging findings: the same clinical act typically also\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\nCarePlan resources referencing this report." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupWorkflow" ]
      ], [
@@ -925,7 +949,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-visual-acuity" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Visual Acuity" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a visual acuity measurement, modeled as discrete, independently\r\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\r\nthan as a single pre-coordinated code that bundles all of these together. This follows a\r\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\r\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\r\n(2025), which favors flexible, independently recordable components over pre-coordinated\r\ncodes. See Terminology for the underlying terminology strategy, including the\r\nLowVisionAssessment value set for vision below what any chart can measure." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a visual acuity measurement, modeled as discrete, independently\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\nthan as a single pre-coordinated code that bundles all of these together. This follows a\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\n(2025), which favors flexible, independently recordable components over pre-coordinated\ncodes. See Terminology for the underlying terminology strategy, including the\nLowVisionAssessment value set for vision below what any chart can measure." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupVisualAcuity" ]
      ], [
@@ -955,7 +979,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/pachymetry" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Pachymetry" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a corneal pachymetry measurement (corneal thickness), typically\r\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\r\ncorrecting an IOP reading for corneal thickness." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a corneal pachymetry measurement (corneal thickness), typically\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\ncorrecting an IOP reading for corneal thickness." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupIOP" ]
      ], [
@@ -1000,7 +1024,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-oct-rnfl" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic OCT RNFL" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\r\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\r\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\r\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\r\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\r\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupOCT" ]
      ], [
@@ -1015,7 +1039,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-oct-macula" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic OCT Macula" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\r\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\r\nclassification fields (thickness definition, per-subfield deviation category, anatomic\r\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\r\nreplacing an earlier, less complete version of this profile." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupOCT" ]
      ], [
@@ -1045,7 +1069,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ct-anterior-surface" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Anterior Surface" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCornealTomography" ]
      ], [
@@ -1060,7 +1084,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ct-posterior-surface" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Posterior Surface" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCornealTomography" ]
      ], [
@@ -1090,7 +1114,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ct-anterior-chamber" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Anterior Chamber" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCornealTomography" ]
      ], [
@@ -1105,7 +1129,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ct-keratoconus-indices" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Keratoconus Indices" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCornealTomography" ]
      ], [
@@ -1120,7 +1144,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ct-densitometry" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Corneal Tomography - Densitometry" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCornealTomography" ]
      ], [
@@ -1135,7 +1159,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-humphrey-visual-field" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Humphrey Visual Field" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an automated static perimetry (Humphrey field analyzer) exam.\r\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\r\nsection), with reliability indices (fixation losses, false positive and false negative\r\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\r\ninformative correspondences." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupOtherTests" ]
      ], [
@@ -1165,7 +1189,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-ocular-biometry" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Ocular Biometry" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), with informative DICOM correspondences\ngiven in the DICOM mapping. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupBiometry" ]
      ], [
@@ -1225,7 +1249,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/cover-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Cover Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a cover test result, performed with or without correction, at\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\nbeen verified for these specific findings yet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1255,7 +1279,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/near-point-of-convergence" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Near Point of Convergence" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal')." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents the near point of convergence (PPC), recorded either as a\r\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\r\nqualitative finding (e.g. 'nasal', 'near nasal')." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1270,7 +1294,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/convergence-assessment" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Convergence Assessment" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a qualitative assessment of convergence ability (good, fair,\ninsufficient, poor)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a qualitative assessment of convergence ability (good, fair,\r\ninsufficient, poor)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1300,7 +1324,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/prism-cover-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Prism Cover Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a prism cover test, measuring ocular deviation in prism diopters\nacross multiple gaze positions. Each gaze position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\nrecorded as components on this panel, following the same granular pattern used for\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1315,7 +1339,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/krimsky-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Krimsky test (corneal light reflex test with prism), measuring\r\nocular deviation in prism diopters across multiple gaze positions. Follows the same\r\nstructural pattern as PrismCoverTest: each gaze position is a separate\r\nGazePositionMeasurement, referenced via hasMember." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Krimsky test (corneal light reflex test with prism), measuring\nocular deviation in prism diopters across multiple gaze positions. Follows the same\nstructural pattern as PrismCoverTest: each gaze position is a separate\nGazePositionMeasurement, referenced via hasMember." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1330,7 +1354,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/hirschberg-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component. When a\r\nquantitative estimate is made, the per-position horizontalDeviation component (positive\r\nmagnitude, in degrees or prism diopters, with its direction in horizontalDirection) may be\r\nused for the estimated deviation, in addition to the finding." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1345,7 +1369,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/red-filter-light-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Red Filter Light Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a red filter plus light test, assessing fusion, suppression, or\r\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent. Distance and correction status are recorded as components on this panel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a red filter plus light test, assessing fusion, suppression, or\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\ncomponent. Distance and correction status are recorded as components on this panel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1360,7 +1384,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/worth-4-dot-test" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Worth 4 Dot Test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.\r\nPerformed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.\nPerformed across multiple gaze positions; each position is recorded as a separate\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\ncomponent. Distance and correction status are recorded as components on this panel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1375,7 +1399,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/gaze-position-measurement" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Gaze Position Measurement" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A reusable pattern for a single measurement or finding taken at one gaze\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\nKrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude\nplus a separate direction component, never as a signed value), and by HirschbergTest,\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\nuses only the components relevant to it; all components are optional. Not intended to be\nused standalone; always referenced via hasMember from one of those panels." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupStrabismus" ]
      ], [
@@ -1420,7 +1444,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/ophthalmic-medication-administration" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Ophthalmic Medication Administration" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Records the administration of a medication during an ophthalmic procedure,\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\nthis is a component' pattern." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTreatment" ]
      ], [
@@ -1449,7 +1473,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-observation-eye> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-observation-eye" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-observation-eye" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation eye (laterality) search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1464,7 +1488,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-condition-eye> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-condition-eye" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-condition-eye" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Condition eye (laterality) search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1479,7 +1503,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-procedure-eye> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-procedure-eye" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-procedure-eye" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Procedure eye (laterality) search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1494,8 +1518,8 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-imagingstudy-eye" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-imagingstudy-eye" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ImagingStudy eye (laterality) search parameter" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
      ], [
@@ -1509,7 +1533,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-modality> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-imagingstudy-modality" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-imagingstudy-modality" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ImagingStudy modality search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1524,7 +1548,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-diagnosticreport-imaging-study> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-diagnosticreport-imaging-study" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-diagnosticreport-imaging-study" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DiagnosticReport imaging study search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1539,7 +1563,7 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-encounter-appointment> ;
          fhir:Reference.reference [ fhir:value "SearchParameter/sp-encounter-appointment" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "sp-encounter-appointment" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Encounter appointment search parameter" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Search ophthalmic encounters by the appointment that led to them." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupCapabilities" ]
@@ -1593,6 +1617,111 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs> ;
+         fhir:Reference.reference [ fhir:value "CodeSystem/fhir4eyes-cs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "FHIR4Eyes Code System" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Local, laterality-neutral codes for ophthalmic observations and components\ndefined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been\nverified. Open to replacement as external codes become available." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 54 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/normative-classification-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Normative Classification Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Classification of an ophthalmic measurement or analysis against the device\nnormative (age-matched reference) database: within normal limits, borderline, or outside\nnormal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve\nhead analyses, and for the per-subfield deviation category of the OCT macula profile.\nBindings are extensible, so device-specific percentile categories (e.g. p<5%, p<1%) may be\nused when no concept here applies." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 55 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/gaze-position-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Gaze Position Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The nine diagnostic positions of gaze at which a strabismus measurement or\nbinocular finding is recorded: primary position, the four secondary positions (up gaze /\nsupraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion)\nand the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze\ndirections hierarchy." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 56 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/binocular-finding-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Binocular Finding Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Qualitative findings recorded at a gaze position: sensory responses on the red\nfilter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or\nuncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test\n(centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed).\nThe binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test)\nmay be used when no concept here applies." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 57 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/horizontal-deviation-direction-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Horizontal Deviation Direction Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Direction of a horizontal ocular deviation at a gaze position: esodeviation,\nexodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias\nand phorias; the magnitude is recorded separately as a positive value." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 58 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/vertical-deviation-direction-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Vertical Deviation Direction Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Direction of a vertical ocular deviation of the deviating eye at a gaze\nposition: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is\nrecorded separately as a positive value." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 59 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/test-distance-category-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Test Distance Category Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Categorical testing distance of a strabismus or binocular vision test: near\n(about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories\n(e.g. intermediate) may be used when needed." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupTerminology" ]
+     ], [
+       fhir:index 60 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Patient" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1607,7 +1736,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 54 ;
+       fhir:index 61 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1625,7 +1754,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 55 ;
+       fhir:index 62 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1640,7 +1769,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 56 ;
+       fhir:index 63 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1658,7 +1787,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 57 ;
+       fhir:index 64 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1676,7 +1805,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 58 ;
+       fhir:index 65 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1694,7 +1823,25 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
      ], [
-       fhir:index 59 ;
+       fhir:index 66 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "BodyStructure" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/BodyStructure/BothEyesStructureExample> ;
+         fhir:Reference.reference [ fhir:value "BodyStructure/BothEyesStructureExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Both eyes (laterality)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "OcularBodyStructure for both eyes, referenced via bodySite for binocular measurements." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExFoundation" ]
+     ], [
+       fhir:index 67 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1712,7 +1859,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExVisualAcuity" ]
      ], [
-       fhir:index 60 ;
+       fhir:index 68 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1730,7 +1877,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExVisualAcuity" ]
      ], [
-       fhir:index 61 ;
+       fhir:index 69 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1748,7 +1895,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExVisualAcuity" ]
      ], [
-       fhir:index 62 ;
+       fhir:index 70 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1766,7 +1913,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExVisualAcuity" ]
      ], [
-       fhir:index 63 ;
+       fhir:index 71 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1784,7 +1931,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExVisualAcuity" ]
      ], [
-       fhir:index 64 ;
+       fhir:index 72 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1802,7 +1949,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 65 ;
+       fhir:index 73 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1820,7 +1967,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 66 ;
+       fhir:index 74 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1838,7 +1985,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 67 ;
+       fhir:index 75 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1856,7 +2003,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 68 ;
+       fhir:index 76 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1874,7 +2021,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 69 ;
+       fhir:index 77 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1892,7 +2039,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 70 ;
+       fhir:index 78 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1910,7 +2057,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 71 ;
+       fhir:index 79 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1928,7 +2075,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 72 ;
+       fhir:index 80 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1946,7 +2093,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 73 ;
+       fhir:index 81 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1964,7 +2111,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIOP" ]
      ], [
-       fhir:index 74 ;
+       fhir:index 82 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1982,7 +2129,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 75 ;
+       fhir:index 83 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2000,7 +2147,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 76 ;
+       fhir:index 84 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2018,7 +2165,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 77 ;
+       fhir:index 85 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2036,7 +2183,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 78 ;
+       fhir:index 86 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2054,7 +2201,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 79 ;
+       fhir:index 87 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2072,7 +2219,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 80 ;
+       fhir:index 88 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2090,7 +2237,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 81 ;
+       fhir:index 89 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2108,7 +2255,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 82 ;
+       fhir:index 90 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2126,7 +2273,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 83 ;
+       fhir:index 91 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2144,7 +2291,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 84 ;
+       fhir:index 92 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2162,7 +2309,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 85 ;
+       fhir:index 93 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2180,7 +2327,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 86 ;
+       fhir:index 94 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2198,7 +2345,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 87 ;
+       fhir:index 95 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2216,7 +2363,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOCT" ]
      ], [
-       fhir:index 88 ;
+       fhir:index 96 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2234,7 +2381,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 89 ;
+       fhir:index 97 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2252,7 +2399,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 90 ;
+       fhir:index 98 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2270,7 +2417,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 91 ;
+       fhir:index 99 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2288,7 +2435,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 92 ;
+       fhir:index 100 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2306,7 +2453,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 93 ;
+       fhir:index 101 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2324,7 +2471,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 94 ;
+       fhir:index 102 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2342,7 +2489,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 95 ;
+       fhir:index 103 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2360,7 +2507,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCornealTomography" ]
      ], [
-       fhir:index 96 ;
+       fhir:index 104 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2378,7 +2525,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOtherTests" ]
      ], [
-       fhir:index 97 ;
+       fhir:index 105 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2396,7 +2543,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExOtherTests" ]
      ], [
-       fhir:index 98 ;
+       fhir:index 106 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2414,7 +2561,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCataract" ]
      ], [
-       fhir:index 99 ;
+       fhir:index 107 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2432,7 +2579,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCataract" ]
      ], [
-       fhir:index 100 ;
+       fhir:index 108 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2450,7 +2597,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCataract" ]
      ], [
-       fhir:index 101 ;
+       fhir:index 109 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2468,7 +2615,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCataract" ]
      ], [
-       fhir:index 102 ;
+       fhir:index 110 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2486,7 +2633,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExCataract" ]
      ], [
-       fhir:index 103 ;
+       fhir:index 111 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2504,7 +2651,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 104 ;
+       fhir:index 112 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2514,15 +2661,33 @@
          fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CoverTestExample> ;
          fhir:Reference.reference [ fhir:value "Observation/CoverTestExample" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Cover test" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Cover test result." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Cover test: near" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Cover test result at near distance." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test" ;
          fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test>
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 105 ;
+       fhir:index 113 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CoverTestFarExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/CoverTestFarExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Cover test: far" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Cover test result at far distance." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 114 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2540,7 +2705,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 106 ;
+       fhir:index 115 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2558,7 +2723,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 107 ;
+       fhir:index 116 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2576,7 +2741,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 108 ;
+       fhir:index 117 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2594,7 +2759,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 109 ;
+       fhir:index 118 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2612,7 +2777,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 110 ;
+       fhir:index 119 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2630,7 +2795,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 111 ;
+       fhir:index 120 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2648,7 +2813,475 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
      ], [
-       fhir:index 112 ;
+       fhir:index 121 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyTestExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test panel" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test at far, with correction, in the five principal gaze positions fixating each eye: 30 PD exodeviation fixating the right eye (FOD) and 25 PD fixating the left eye (FOI), comitant across positions." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 122 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyPrimaryFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyPrimaryFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: primary position, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, primary position, fixating right eye (FOD): 30 PD exodeviation of the left eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 123 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyPrimaryFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyPrimaryFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: primary position, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, primary position, fixating left eye (FOI): 25 PD exodeviation of the right eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 124 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyUpFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyUpFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: up gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, up gaze (supraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 125 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyUpFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyUpFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: up gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, up gaze (supraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 126 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyDownFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyDownFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: down gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, down gaze (infraversion), fixating right eye (FOD): 30 PD exodeviation of the left eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 127 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyDownFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyDownFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: down gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, down gaze (infraversion), fixating left eye (FOI): 25 PD exodeviation of the right eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 128 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyRightFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyRightFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: right gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, right gaze (dextroversion), fixating right eye (FOD): 30 PD exodeviation of the left eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 129 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyRightFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyRightFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: right gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, right gaze (dextroversion), fixating left eye (FOI): 25 PD exodeviation of the right eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 130 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyLeftFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyLeftFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: left gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, left gaze (levoversion), fixating right eye (FOD): 30 PD exodeviation of the left eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 131 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyLeftFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/KrimskyLeftFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Krimsky test: left gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Krimsky test, left gaze (levoversion), fixating left eye (FOI): 25 PD exodeviation of the right eye." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 132 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergTestExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test panel" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg corneal light reflex test in the five principal gaze positions fixating each eye: about 15 degrees of exodeviation fixating either eye (FODI)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 133 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergPrimaryFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergPrimaryFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: primary position, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, primary position, fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 134 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergPrimaryFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergPrimaryFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: primary position, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, primary position, fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 135 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergUpFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergUpFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: up gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, up gaze (supraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 136 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergUpFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergUpFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: up gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, up gaze (supraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 137 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergDownFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergDownFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: down gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, down gaze (infraversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 138 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergDownFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergDownFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: down gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, down gaze (infraversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 139 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergRightFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergRightFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: right gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, right gaze (dextroversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 140 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergRightFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergRightFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: right gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, right gaze (dextroversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 141 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergLeftFODExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergLeftFODExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: left gaze, FOD" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, left gaze (levoversion), fixating right eye (FOD): corneal light reflex of the left eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 142 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergLeftFOIExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/HirschbergLeftFOIExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Hirschberg test: left gaze, FOI" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Hirschberg test, left gaze (levoversion), fixating left eye (FOI): corneal light reflex of the right eye displaced nasally, about 15 degrees of exodeviation." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 143 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/RedFilterLightTestExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/RedFilterLightTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Red filter light test panel" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Red filter plus light test at near, with correction, grouping its per-gaze-position assessments." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 144 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/RedFilterPrimaryPositionExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/RedFilterPrimaryPositionExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Red filter light test: primary position" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "GazePositionMeasurement for the red filter plus light test in primary position at near: single light seen (fusion)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 145 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/Worth4DotTestExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/Worth4DotTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Worth 4 dot test panel" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Worth 4 dot test at far, with correction, grouping its per-gaze-position assessments." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 146 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/Worth4DotPrimaryPositionExample> ;
+         fhir:Reference.reference [ fhir:value "Observation/Worth4DotPrimaryPositionExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Worth 4 dot test: primary position" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "GazePositionMeasurement for the Worth 4 dot test in primary position at far: three green lights seen (right eye suppression)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement" ;
+         fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement>
+       ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExStrabismus" ]
+     ], [
+       fhir:index 147 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2666,7 +3299,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIntravitreal" ]
      ], [
-       fhir:index 113 ;
+       fhir:index 148 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2684,7 +3317,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIntravitreal" ]
      ], [
-       fhir:index 114 ;
+       fhir:index 149 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2702,7 +3335,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIntravitreal" ]
      ], [
-       fhir:index 115 ;
+       fhir:index 150 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2720,7 +3353,7 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GroupExIntravitreal" ]
      ], [
-       fhir:index 116 ;
+       fhir:index 151 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;

@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTDensitometry |
+| Draft as of 2026-10-20 | *Computable Name*:CTDensitometry |
 
  
-Represents the corneal densitometry (light backscatter) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Densitometry section): three radial zones plus total, and a per-layer breakdown (anterior, central, posterior). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+Represents the corneal densitometry (light backscatter) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Densitometry section): three radial zones plus total, and a per-layer breakdown (anterior, central, posterior). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
 
-Represents the corneal densitometry (light backscatter) analysis of a corneal tomography exam: three radial zones (0-2 mm, 2-6 mm, 6-10 mm) plus total, and a per-layer breakdown (anterior, central, posterior). Densitometry describes a transparency/light-scatter property rather than a shape property, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open (see [Terminology](terminology.md)).
+Represents the corneal densitometry (light backscatter) analysis of a corneal tomography exam: three radial zones (0-2 mm, 2-6 mm, 6-10 mm) plus total, and a per-layer breakdown (anterior, central, posterior). Densitometry describes a transparency/light-scatter property rather than a shape property, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code (see [Terminology](terminology.md)).
 
 **Examples:** [CT densitometry: right eye](Observation-CTDensitometryRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
   "name" : "CTDensitometry",
   "title" : "Corneal Tomography - Densitometry",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology).",
+  "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -120,7 +120,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +149,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the densitometry component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry",
+          "display" : "Corneal densitometry"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +171,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -218,7 +236,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometry02.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry 0-2mm zone - central zone corneal transparency (Grayscale Units)"
+      "short" : "Densitometry 0-2mm zone - central zone corneal transparency (Grayscale Units)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-zone-0-2mm",
+          "display" : "Corneal densitometry, 0-2 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometry02.value[x]",
@@ -238,7 +263,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometry26.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry 2-6mm zone - paracentral zone transparency"
+      "short" : "Densitometry 2-6mm zone - paracentral zone transparency",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-zone-2-6mm",
+          "display" : "Corneal densitometry, 2-6 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometry26.value[x]",
@@ -258,7 +290,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometry610.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry 6-10mm zone - peripheral zone transparency"
+      "short" : "Densitometry 6-10mm zone - peripheral zone transparency",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-zone-6-10mm",
+          "display" : "Corneal densitometry, 6-10 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometry610.value[x]",
@@ -278,7 +317,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometryTotal.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry total - overall corneal transparency"
+      "short" : "Densitometry total - overall corneal transparency",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-total",
+          "display" : "Corneal densitometry, total"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometryTotal.value[x]",
@@ -298,7 +344,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometryAnt.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry anterior layer - anterior 120um layer transparency, by corneal layer"
+      "short" : "Densitometry anterior layer - anterior 120um layer transparency, by corneal layer",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-anterior-layer",
+          "display" : "Corneal densitometry, anterior layer"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometryAnt.value[x]",
@@ -318,7 +371,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometryCenter.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry central layer - central stromal layer transparency, by corneal layer"
+      "short" : "Densitometry central layer - central stromal layer transparency, by corneal layer",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-central-layer",
+          "display" : "Corneal densitometry, central layer"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometryCenter.value[x]",
@@ -338,7 +398,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
     {
       "id" : "Observation.component:densitometryPost.code",
       "path" : "Observation.component.code",
-      "short" : "Densitometry posterior layer - posterior 60um layer transparency, by corneal layer"
+      "short" : "Densitometry posterior layer - posterior 60um layer transparency, by corneal layer",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-densitometry-posterior-layer",
+          "display" : "Corneal densitometry, posterior layer"
+        }]
+      }
     },
     {
       "id" : "Observation.component:densitometryPost.value[x]",

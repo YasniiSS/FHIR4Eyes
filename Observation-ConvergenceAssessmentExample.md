@@ -14,7 +14,11 @@ Profile: [Convergence Assessment](StructureDefinition-convergence-assessment.md)
 
 **code**: Convergence assessment
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **value**: Good
 
@@ -38,11 +42,20 @@ Profile: [Convergence Assessment](StructureDefinition-convergence-assessment.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "convergence-assessment",
+      "display" : "Convergence assessment"
+    }],
     "text" : "Convergence assessment"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "valueCodeableConcept" : {
     "text" : "Good"
   }

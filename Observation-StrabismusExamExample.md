@@ -14,17 +14,26 @@ Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 
 **code**: Strabismus exam
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **hasMember**: 
 
-* [Cover test - alternating exotropia](Observation-CoverTestExample.md)
+* [Cover test, near - orthophoria](Observation-CoverTestExample.md)
+* [Cover test, far - alternating exotropia](Observation-CoverTestFarExample.md)
 * [Ocular motility, left inferior oblique - hypofunction](Observation-OcularMotilityLeftEyeExample.md)
 * [Ocular motility, right superior oblique - hyperfunction](Observation-OcularMotilityRightEyeExample.md)
 * [Near point of convergence - near nasal](Observation-NearPointOfConvergenceExample.md)
 * [Convergence assessment - good](Observation-ConvergenceAssessmentExample.md)
 * [Stereopsis (Titmus) - absent](Observation-StereopsisTestExample.md)
-* [Prism cover test - near, with correction](Observation-PrismCoverTestExample.md)
+* [Prism cover test - far, with correction](Observation-PrismCoverTestExample.md)
+* [Krimsky test - far, exo 30 PD FOD / 25 PD FOI](Observation-KrimskyTestExample.md)
+* [Hirschberg test - exo about 15 degrees FODI](Observation-HirschbergTestExample.md)
+* [Red filter plus light test - near, fusion](Observation-RedFilterLightTestExample.md)
+* [Worth 4 dot test - far, right eye suppression](Observation-Worth4DotTestExample.md)
 
 
 
@@ -46,14 +55,27 @@ Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "strabismus-exam",
+      "display" : "Strabismus examination"
+    }],
     "text" : "Strabismus exam"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "hasMember" : [{
     "reference" : "Observation/CoverTestExample",
-    "display" : "Cover test - alternating exotropia"
+    "display" : "Cover test, near - orthophoria"
+  },
+  {
+    "reference" : "Observation/CoverTestFarExample",
+    "display" : "Cover test, far - alternating exotropia"
   },
   {
     "reference" : "Observation/OcularMotilityLeftEyeExample",
@@ -77,7 +99,23 @@ Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
   },
   {
     "reference" : "Observation/PrismCoverTestExample",
-    "display" : "Prism cover test - near, with correction"
+    "display" : "Prism cover test - far, with correction"
+  },
+  {
+    "reference" : "Observation/KrimskyTestExample",
+    "display" : "Krimsky test - far, exo 30 PD FOD / 25 PD FOI"
+  },
+  {
+    "reference" : "Observation/HirschbergTestExample",
+    "display" : "Hirschberg test - exo about 15 degrees FODI"
+  },
+  {
+    "reference" : "Observation/RedFilterLightTestExample",
+    "display" : "Red filter plus light test - near, fusion"
+  },
+  {
+    "reference" : "Observation/Worth4DotTestExample",
+    "display" : "Worth 4 dot test - far, right eye suppression"
   }]
 }
 

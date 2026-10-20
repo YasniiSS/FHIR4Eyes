@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTMaculaRightEyeExample</b></p><a name=\"OCTMaculaRightEyeExample\"> </a><a name=\"hcOCTMaculaRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-macula.html\">Ophthalmic OCT Macula</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57119-0}\">OCT macula analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57109-1}\">Central macular thickness (CMT)</span></p><p><b>value</b>: 285 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57108-3}\">Center thickness</span></p><p><b>value</b>: 179 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57110-9}\">Inner Superior thickness</span></p><p><b>value</b>: 328 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57111-7}\">Inner Nasal thickness</span></p><p><b>value</b>: 339 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57112-5}\">Inner Inferior thickness</span></p><p><b>value</b>: 327 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57113-3}\">Inner Temporal thickness</span></p><p><b>value</b>: 299 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57114-1}\">Outer Superior thickness</span></p><p><b>value</b>: 276 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57115-8}\">Outer Nasal thickness</span></p><p><b>value</b>: 299 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57116-6}\">Outer Inferior thickness</span></p><p><b>value</b>: 264 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57117-4}\">Outer Temporal thickness</span></p><p><b>value</b>: 249 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57118-2}\">Central subfield volume</span></p><p><b>value</b>: 0.28 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 9 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Central Min</span></p><p><b>value</b>: 179 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Central Max</span></p><p><b>value</b>: 253 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">ETDRS circle diameters</span></p><p><b>value</b>: 1, 3, 6 mm ETDRS</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RPE</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTMaculaRightEyeExample</b></p><a name=\"OCTMaculaRightEyeExample\"> </a><a name=\"hcOCTMaculaRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-macula.html\">Ophthalmic OCT Macula</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57119-0}\">OCT macula analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>interpretation</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs within-normal-limits}\">Within normal limits</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57109-1}\">Central macular thickness (CMT)</span></p><p><b>value</b>: 285 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57108-3}\">Center thickness</span></p><p><b>value</b>: 250 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs central-subfield-thickness-min}\">Central Min</span></p><p><b>value</b>: 245 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs central-subfield-thickness-max}\">Central Max</span></p><p><b>value</b>: 318 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57110-9}\">Inner Superior thickness</span></p><p><b>value</b>: 328 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57111-7}\">Inner Nasal thickness</span></p><p><b>value</b>: 339 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57112-5}\">Inner Inferior thickness</span></p><p><b>value</b>: 327 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57113-3}\">Inner Temporal thickness</span></p><p><b>value</b>: 299 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57114-1}\">Outer Superior thickness</span></p><p><b>value</b>: 276 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57115-8}\">Outer Nasal thickness</span></p><p><b>value</b>: 299 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57116-6}\">Outer Inferior thickness</span></p><p><b>value</b>: 264 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57117-4}\">Outer Temporal thickness</span></p><p><b>value</b>: 249 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57118-2}\">Total macular grid volume</span></p><p><b>value</b>: 8.6 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs etdrs-grid-diameters}\">ETDRS circle diameters</span></p><p><b>value</b>: 1, 3, 6 mm ETDRS</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs retinal-thickness-definition}\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RPE</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pupil-dilated}\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs signal-strength}\">Signal strength</span></p><p><b>value</b>: 9 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -27,6 +27,18 @@
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
+  "interpretation" : [{
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "within-normal-limits",
+      "display" : "Within normal limits"
+    }],
+    "text" : "Within normal limits"
+  }],
   "note" : [{
     "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
   }],
@@ -63,7 +75,37 @@
       "text" : "Center thickness"
     },
     "valueQuantity" : {
-      "value" : 179,
+      "value" : 250,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-subfield-thickness-min",
+        "display" : "Central subfield thickness, minimum"
+      }],
+      "text" : "Central Min"
+    },
+    "valueQuantity" : {
+      "value" : 245,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-subfield-thickness-max",
+        "display" : "Central subfield thickness, maximum"
+      }],
+      "text" : "Central Max"
+    },
+    "valueQuantity" : {
+      "value" : 318,
       "system" : "http://unitsofmeasure.org",
       "code" : "um"
     }
@@ -195,52 +237,32 @@
         "code" : "57118-2",
         "display" : "Macular grid.total volume by OCT"
       }],
-      "text" : "Central subfield volume"
+      "text" : "Total macular grid volume"
     },
     "valueQuantity" : {
-      "value" : 0.28,
+      "value" : 8.6,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm3"
     }
   },
   {
     "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 9,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Central Min"
-    },
-    "valueQuantity" : {
-      "value" : 179,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Central Max"
-    },
-    "valueQuantity" : {
-      "value" : 253,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "um"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "etdrs-grid-diameters",
+        "display" : "ETDRS grid circle diameters"
+      }],
       "text" : "ETDRS circle diameters"
     },
     "valueString" : "1, 3, 6 mm ETDRS"
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "retinal-thickness-definition",
+        "display" : "Retinal thickness definition"
+      }],
       "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
@@ -249,10 +271,30 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-dilated",
+        "display" : "Pupil dilated"
+      }],
       "text" : "Pupil dilated"
     },
     "valueCodeableConcept" : {
       "text" : "No"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "signal-strength",
+        "display" : "Scan signal strength / quality"
+      }],
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
     }
   }]
 }

@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:TensionCurve |
+| Draft as of 2026-10-20 | *Computable Name*:TensionCurve |
 
  
 Represents an ambulatory tension curve: several intraocular pressure readings taken across a single day, grouped together as a single clinical concept rather than recorded as unrelated, disconnected observations. This profile was already defined in an earlier version of this guide's design work and is carried forward here. 
 
 ### Design decisions
 
-**Panel pattern.** This is a panel `Observation` using `hasMember` to group the individual readings, rather than holding a value itself (see the panel pattern in [Guidance](guidance.md)).
+**Panel pattern.** This is a panel `Observation` using `hasMember` to group the individual readings, rather than holding a value itself (see the panel pattern in [Guidance](guidance.md)). `code` is fixed to the local FHIR4Eyes code `tension-curve` ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)), pending an external code.
 
 **`value[x]`** is `0..0`. The panel itself has no value; the values live in each member reading.
 
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
   "name" : "TensionCurve",
   "title" : "Tension Curve",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -151,7 +151,22 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -165,6 +180,13 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a tension curve panel",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "tension-curve",
+          "display" : "Diurnal intraocular pressure tension curve"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -220,7 +242,7 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },

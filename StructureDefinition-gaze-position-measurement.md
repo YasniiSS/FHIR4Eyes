@@ -9,16 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:GazePositionMeasurement |
+| Draft as of 2026-10-20 | *Computable Name*:GazePositionMeasurement |
 
  
-A reusable pattern for a single measurement or finding taken at one gaze position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest, RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test uses only the components relevant to it; all components are optional. Not intended to be used standalone; always referenced via hasMember from one of those panels. 
+A reusable pattern for a single measurement or finding taken at one gaze position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and KrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude plus a separate direction component, never as a signed value), and by HirschbergTest, RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test uses only the components relevant to it; all components are optional. Not intended to be used standalone; always referenced via hasMember from one of those panels. 
 
-A reusable pattern for a single measurement or finding taken at one gaze position (for example primary position, right gaze, up-and-right gaze); `code` identifies the gaze position. It is not intended to be used standalone: it is always referenced via `hasMember` from one of the position-based sub-tests of a [StrabismusExam](StructureDefinition-strabismus-exam.md), and itself carries no value (`value[x]` is `0..0`).
+A reusable pattern for a single measurement or finding taken at one gaze position (for example primary position, right gaze, up-and-right gaze). `code` is fixed to the local code `gaze-position-measurement` ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)); the gaze position itself is recorded in the required `gazePosition` component (`1..1`). It is not intended to be used standalone: it is always referenced via `hasMember` from one of the position-based sub-tests of a [StrabismusExam](StructureDefinition-strabismus-exam.md), and itself carries no value (`value[x]` is `0..0`).
 
 ### Two kinds of per-position result
 
-All components are optional, and each test uses only the components relevant to it:
+Apart from `gazePosition`, all components (`fixatingEye`, `horizontalDeviation`, `verticalDeviation`, `finding`) are optional, and each test uses only the ones relevant to it:
 
 * **Quantitative deviation:** `horizontalDeviation` and `verticalDeviation`, in prism diopters, used by [PrismCoverTest](StructureDefinition-prism-cover-test.md) and [KrimskyTest](StructureDefinition-krimsky-test.md).
 * **Qualitative finding:** `finding` (for example fusion, suppression, diplopia), used by [HirschbergTest](StructureDefinition-hirschberg-test.md), [RedFilterLightTest](StructureDefinition-red-filter-light-test.md), and [Worth4DotTest](StructureDefinition-worth-4-dot-test.md).
@@ -34,7 +34,7 @@ A single shared pattern is used for both cases, rather than two separate profile
 **Usages:**
 
 * Refer to this Profile: [Hirschberg Test](StructureDefinition-hirschberg-test.md), [Krimsky Test](StructureDefinition-krimsky-test.md), [Prism Cover Test](StructureDefinition-prism-cover-test.md), [Red Filter Light Test](StructureDefinition-red-filter-light-test.md) and [Worth 4 Dot Test](StructureDefinition-worth-4-dot-test.md)
-* Examples for this Profile: [Observation/PrismCoverTestPrimaryPositionExample](Observation-PrismCoverTestPrimaryPositionExample.md)
+* Examples for this Profile: [Observation/HirschbergDownFODExample](Observation-HirschbergDownFODExample.md), [Observation/HirschbergDownFOIExample](Observation-HirschbergDownFOIExample.md), [Observation/HirschbergLeftFODExample](Observation-HirschbergLeftFODExample.md), [Observation/HirschbergLeftFOIExample](Observation-HirschbergLeftFOIExample.md)... Show 19 more, [Observation/HirschbergPrimaryFODExample](Observation-HirschbergPrimaryFODExample.md), [Observation/HirschbergPrimaryFOIExample](Observation-HirschbergPrimaryFOIExample.md), [Observation/HirschbergRightFODExample](Observation-HirschbergRightFODExample.md), [Observation/HirschbergRightFOIExample](Observation-HirschbergRightFOIExample.md), [Observation/HirschbergUpFODExample](Observation-HirschbergUpFODExample.md), [Observation/HirschbergUpFOIExample](Observation-HirschbergUpFOIExample.md), [Observation/KrimskyDownFODExample](Observation-KrimskyDownFODExample.md), [Observation/KrimskyDownFOIExample](Observation-KrimskyDownFOIExample.md), [Observation/KrimskyLeftFODExample](Observation-KrimskyLeftFODExample.md), [Observation/KrimskyLeftFOIExample](Observation-KrimskyLeftFOIExample.md), [Observation/KrimskyPrimaryFODExample](Observation-KrimskyPrimaryFODExample.md), [Observation/KrimskyPrimaryFOIExample](Observation-KrimskyPrimaryFOIExample.md), [Observation/KrimskyRightFODExample](Observation-KrimskyRightFODExample.md), [Observation/KrimskyRightFOIExample](Observation-KrimskyRightFOIExample.md), [Observation/KrimskyUpFODExample](Observation-KrimskyUpFODExample.md), [Observation/KrimskyUpFOIExample](Observation-KrimskyUpFOIExample.md), [Observation/PrismCoverTestPrimaryPositionExample](Observation-PrismCoverTestPrimaryPositionExample.md), [Observation/RedFilterPrimaryPositionExample](Observation-RedFilterPrimaryPositionExample.md) and [Observation/Worth4DotPrimaryPositionExample](Observation-Worth4DotPrimaryPositionExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-gaze-position-measurement.json)
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
   "name" : "GazePositionMeasurement",
   "title" : "Gaze Position Measurement",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels.",
+  "description" : "A reusable pattern for a single measurement or finding taken at one gaze\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\nKrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude\nplus a separate direction component, never as a signed value), and by HirschbergTest,\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\nuses only the components relevant to it; all components are optional. Not intended to be\nused standalone; always referenced via hasMember from one of those panels.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -133,7 +133,22 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -146,7 +161,14 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Identifies the gaze position this measurement was taken at (e.g. primary position, right gaze)",
+      "short" : "Identifies this as a gaze position measurement; the specific gaze position is recorded in the gazePosition component",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "gaze-position-measurement",
+          "display" : "Gaze position measurement"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -178,7 +200,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -199,6 +221,39 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
           "path" : "code"
         }],
         "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Observation.component:gazePosition",
+      "path" : "Observation.component",
+      "sliceName" : "gazePosition",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:gazePosition.code",
+      "path" : "Observation.component.code",
+      "short" : "The gaze position this measurement was taken at (e.g. primary position, right gaze, up-and-right gaze)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "gaze-position",
+          "display" : "Gaze position"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:gazePosition.value[x]",
+      "path" : "Observation.component.value[x]",
+      "short" : "One of the nine diagnostic gaze positions (SNOMED CT); text may carry the version term, e.g. right gaze (dextroversion)",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs"
       }
     },
     {
@@ -212,7 +267,14 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.component:fixatingEye.code",
       "path" : "Observation.component.code",
-      "short" : "The eye that was fixating during this measurement"
+      "short" : "The eye that was fixating during this measurement",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "fixating-eye",
+          "display" : "Fixating eye"
+        }]
+      }
     },
     {
       "id" : "Observation.component:fixatingEye.value[x]",
@@ -233,14 +295,54 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.component:horizontalDeviation.code",
       "path" : "Observation.component.code",
-      "short" : "Horizontal deviation, in prism diopters (used by PrismCoverTest, KrimskyTest)"
+      "short" : "Horizontal deviation magnitude, always positive, in prism diopters ([p'diop]) (used by PrismCoverTest, KrimskyTest; HirschbergTest may record its estimate in degrees or prism diopters). Direction (eso/exo) goes in horizontalDirection; tropia vs phoria may be recorded in the finding",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "horizontal-deviation",
+          "display" : "Horizontal ocular deviation"
+        }]
+      }
     },
     {
       "id" : "Observation.component:horizontalDeviation.value[x]",
       "path" : "Observation.component.value[x]",
+      "short" : "Positive magnitude; never signed",
       "type" : [{
         "code" : "Quantity"
       }]
+    },
+    {
+      "id" : "Observation.component:horizontalDirection",
+      "path" : "Observation.component",
+      "sliceName" : "horizontalDirection",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:horizontalDirection.code",
+      "path" : "Observation.component.code",
+      "short" : "Direction of the horizontal deviation: esodeviation or exodeviation (orthophoria when none); the magnitude is in horizontalDeviation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "horizontal-deviation-direction",
+          "display" : "Horizontal deviation direction"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:horizontalDirection.value[x]",
+      "path" : "Observation.component.value[x]",
+      "short" : "Esodeviation, exodeviation or orthophoria",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs"
+      }
     },
     {
       "id" : "Observation.component:verticalDeviation",
@@ -253,14 +355,54 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.component:verticalDeviation.code",
       "path" : "Observation.component.code",
-      "short" : "Vertical deviation, in prism diopters, when present (used by PrismCoverTest, KrimskyTest)"
+      "short" : "Vertical deviation magnitude, always positive, in prism diopters ([p'diop]), when present (used by PrismCoverTest, KrimskyTest). Direction (hyper/hypo) goes in verticalDirection; tropia vs phoria may be recorded in the finding",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "vertical-deviation",
+          "display" : "Vertical ocular deviation"
+        }]
+      }
     },
     {
       "id" : "Observation.component:verticalDeviation.value[x]",
       "path" : "Observation.component.value[x]",
+      "short" : "Positive magnitude; never signed",
       "type" : [{
         "code" : "Quantity"
       }]
+    },
+    {
+      "id" : "Observation.component:verticalDirection",
+      "path" : "Observation.component",
+      "sliceName" : "verticalDirection",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component:verticalDirection.code",
+      "path" : "Observation.component.code",
+      "short" : "Direction of the vertical deviation of the deviating eye (the eye in bodySite): hyperdeviation or hypodeviation; the magnitude is in verticalDeviation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "vertical-deviation-direction",
+          "display" : "Vertical deviation direction"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:verticalDirection.value[x]",
+      "path" : "Observation.component.value[x]",
+      "short" : "Hyperdeviation or hypodeviation",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs"
+      }
     },
     {
       "id" : "Observation.component:finding",
@@ -273,14 +415,26 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
     {
       "id" : "Observation.component:finding.code",
       "path" : "Observation.component.code",
-      "short" : "Qualitative finding at this position (used by HirschbergTest, RedFilterLightTest, Worth4DotTest)"
+      "short" : "Qualitative finding at this position (used by HirschbergTest, RedFilterLightTest, Worth4DotTest); may also state tropia vs phoria for PrismCoverTest/KrimskyTest",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "gaze-position-finding",
+          "display" : "Finding at gaze position"
+        }]
+      }
     },
     {
       "id" : "Observation.component:finding.value[x]",
       "path" : "Observation.component.value[x]",
+      "short" : "Fusion, suppression, diplopia or corneal light reflex position; free text may add detail",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs"
+      }
     }]
   }
 }

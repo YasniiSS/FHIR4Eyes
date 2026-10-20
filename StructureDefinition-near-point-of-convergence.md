@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:NearPointOfConvergence |
+| Draft as of 2026-10-20 | *Computable Name*:NearPointOfConvergence |
 
  
 Represents the near point of convergence (PPC), recorded either as a numeric distance in centimetres, or, when a precise measurement isn't obtained, as a qualitative finding (e.g. 'nasal', 'near nasal'). 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
   "name" : "NearPointOfConvergence",
   "title" : "Near Point of Convergence",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
+  "description" : "Represents the near point of convergence (PPC), recorded either as a\r\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\r\nqualitative finding (e.g. 'nasal', 'near nasal').",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -119,7 +119,22 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -133,6 +148,13 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a near point of convergence measurement",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "near-point-of-convergence",
+          "display" : "Near point of convergence"
+        }]
+      },
       "mustSupport" : true
     },
     {

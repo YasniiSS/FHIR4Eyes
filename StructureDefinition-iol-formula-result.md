@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:IOLFormulaResult |
+| Draft as of 2026-10-20 | *Computable Name*:IOLFormulaResult |
 
  
 Represents the result of a single IOL power calculation formula (e.g. Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected refraction. Not intended to be used standalone: always referenced via hasMember from an OphthalmicOcularBiometry instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. 
 
-Represents the result of a single IOL power calculation formula (for example Barrett Universal II, SRK/T, Holladay), including the lens constant, the suggested IOL model and power, the expected refraction, and optionally the full IOL power table from the report; the `formula` component is required. It is not intended to be used standalone: it is always referenced via `hasMember` from an [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. See [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) for the design rationale.
+Represents the result of a single IOL power calculation formula (for example Barrett Universal II, SRK/T, Holladay), including the lens constant, the suggested IOL model and power, the expected refraction, and optionally the full IOL power table from the report; the `formula` component is required. It is not intended to be used standalone: it is always referenced via `hasMember` from an [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. See [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) for the design rationale. `code` and all components use local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code.
 
 **Examples:** [IOL formula: Barrett Universal II](Observation-IOLFormulaBarrettExample.md), [IOL formula: SRK/T](Observation-IOLFormulaSRKTExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
   "name" : "IOLFormulaResult",
   "title" : "IOL Formula Result",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -73,6 +73,12 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "dicom",
+    "uri" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html",
+    "name" : "DICOM",
+    "comment" : "Informative correspondence between this profile's components and DICOM attributes / context groups. Not a conformance requirement."
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -120,7 +126,22 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +155,13 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as an IOL formula result",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-formula-result",
+          "display" : "IOL power calculation formula result"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +177,6 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -183,12 +207,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "formula",
       "min" : 1,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4236 IOL Calculation Formula"
+      }]
     },
     {
       "id" : "Observation.component:formula.code",
       "path" : "Observation.component.code",
-      "short" : "IOL formula name (e.g. Barrett Universal II, SRK/T, Holladay 2, Kane). DICOM CID 4236"
+      "short" : "IOL formula name (e.g. Barrett Universal II, SRK/T, Holladay 2, Kane)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-formula",
+          "display" : "IOL power calculation formula"
+        }]
+      }
     },
     {
       "id" : "Observation.component:formula.value[x]",
@@ -203,12 +238,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "lensConstantType",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "CID 4237 Lens Constant Type"
+      }]
     },
     {
       "id" : "Observation.component:lensConstantType.code",
       "path" : "Observation.component.code",
-      "short" : "Type of optimization constant. DICOM CID 4237"
+      "short" : "Type of optimization constant (e.g. A-constant, ACD constant, Haigis a0/a1/a2, surgeon factor)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-lens-constant-type",
+          "display" : "IOL lens constant type"
+        }]
+      }
     },
     {
       "id" : "Observation.component:lensConstantType.value[x]",
@@ -223,12 +269,24 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "lensConstantValue",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1092) Lens Constant Sequence",
+        "comment" : "Numeric value of the constant in the sequence item"
+      }]
     },
     {
       "id" : "Observation.component:lensConstantValue.code",
       "path" : "Observation.component.code",
-      "short" : "Optimization constant value for the IOL model. DICOM CID 4237"
+      "short" : "Optimization constant value for the IOL model",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-lens-constant-value",
+          "display" : "IOL lens constant value"
+        }]
+      }
     },
     {
       "id" : "Observation.component:lensConstantValue.value[x]",
@@ -243,12 +301,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "iolModel",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1095) Implant Name"
+      }]
     },
     {
       "id" : "Observation.component:iolModel.code",
       "path" : "Observation.component.code",
-      "short" : "The suggested IOL lens model for this formula"
+      "short" : "The suggested IOL lens model for this formula",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-model",
+          "display" : "Suggested IOL model"
+        }]
+      }
     },
     {
       "id" : "Observation.component:iolModel.value[x]",
@@ -263,12 +332,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "iolPower",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1053) IOL Power"
+      }]
     },
     {
       "id" : "Observation.component:iolPower.code",
       "path" : "Observation.component.code",
-      "short" : "Recommended IOL power for this formula"
+      "short" : "Recommended IOL power for this formula",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-power",
+          "display" : "Recommended IOL power"
+        }]
+      }
     },
     {
       "id" : "Observation.component:iolPower.value[x]",
@@ -283,12 +363,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "expectedRef",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1054) Predicted Refractive Error"
+      }]
     },
     {
       "id" : "Observation.component:expectedRef.code",
       "path" : "Observation.component.code",
-      "short" : "Predicted refractive outcome for this formula's suggested lens"
+      "short" : "Predicted refractive outcome for this formula's suggested lens",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-expected-refraction",
+          "display" : "Predicted postoperative refraction"
+        }]
+      }
     },
     {
       "id" : "Observation.component:expectedRef.value[x]",
@@ -303,12 +394,23 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "sliceName" : "iolTable",
       "min" : 0,
       "max" : "*",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1090) IOL Power Sequence"
+      }]
     },
     {
       "id" : "Observation.component:iolTable.code",
       "path" : "Observation.component.code",
-      "short" : "Range of IOL powers with predicted refractions for this formula, full table from report"
+      "short" : "Range of IOL powers with predicted refractions for this formula, full table from report",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "iol-power-table",
+          "display" : "IOL power table"
+        }]
+      }
     },
     {
       "id" : "Observation.component:iolTable.value[x]",

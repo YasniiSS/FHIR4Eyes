@@ -14,7 +14,11 @@ Profile: [Ophthalmic Humphrey Visual Field](StructureDefinition-ophthalmic-humph
 
 **code**: Automated static perimetry, right eye
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **note**: 
 
@@ -35,13 +39,21 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
 
 > **component****code**: Visual Field Index (VFI)**value**: 91 % (Details: UCUM code% = '%')
 
+> **component****code**: Glaucoma Hemifield Test (GHT)**value**: Borderline
+
+> **component****code**: Fixation losses**value**: 1 1 (Details: UCUM code1 = '1')/15 1 (Details: UCUM code1 = '1')
+
+> **component****code**: False positive errors**value**: 3 % (Details: UCUM code% = '%')
+
+> **component****code**: False negative errors**value**: 4 % (Details: UCUM code% = '%')
+
 > **component****code**: Fixation strategy**value**: Gaze tracking
 
 > **component****code**: Stimulus size**value**: Goldmann III
 
 > **component****code**: Stimulus color**value**: White
 
-> **component****code**: Background luminance**value**: 31.5 asb
+> **component****code**: Background luminance (31.5 asb)**value**: 10 cd/m2 (Details: UCUM codecd/m2 = 'cd/m2')
 
 > **component****code**: Stimulus duration**value**: 200 ms (Details: UCUM codems = 'ms')
 
@@ -75,11 +87,20 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "visual-field-static-perimetry",
+      "display" : "Automated static perimetry (visual field)"
+    }],
     "text" : "Automated static perimetry, right eye"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "note" : [{
     "text" : "Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Right eye borderline unreliable fixation losses within normal limits."
   }],
@@ -96,12 +117,29 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-test-pattern",
+        "display" : "Visual field test pattern"
+      }],
       "text" : "Test pattern"
     },
-    "valueString" : "24-2"
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "111800",
+        "display" : "Visual Field 24-2 Test Pattern"
+      }],
+      "text" : "24-2"
+    }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-mean-deviation",
+        "display" : "Visual field mean deviation (MD)"
+      }],
       "text" : "Mean Deviation (MD)"
     },
     "valueQuantity" : {
@@ -112,6 +150,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-pattern-standard-deviation",
+        "display" : "Visual field pattern standard deviation (PSD)"
+      }],
       "text" : "Pattern Standard Deviation (PSD)"
     },
     "valueQuantity" : {
@@ -122,6 +165,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-index",
+        "display" : "Visual field index (VFI)"
+      }],
       "text" : "Visual Field Index (VFI)"
     },
     "valueQuantity" : {
@@ -132,6 +180,81 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "glaucoma-hemifield-test",
+        "display" : "Glaucoma Hemifield Test result"
+      }],
+      "text" : "Glaucoma Hemifield Test (GHT)"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "111848",
+        "display" : "Borderline"
+      }],
+      "text" : "Borderline"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "fixation-losses",
+        "display" : "Fixation losses"
+      }],
+      "text" : "Fixation losses"
+    },
+    "valueRatio" : {
+      "numerator" : {
+        "value" : 1,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "1"
+      },
+      "denominator" : {
+        "value" : 15,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "1"
+      }
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "false-positive-errors",
+        "display" : "False positive errors"
+      }],
+      "text" : "False positive errors"
+    },
+    "valueQuantity" : {
+      "value" : 3,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "%"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "false-negative-errors",
+        "display" : "False negative errors"
+      }],
+      "text" : "False negative errors"
+    },
+    "valueQuantity" : {
+      "value" : 4,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "%"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-fixation-strategy",
+        "display" : "Visual field fixation strategy"
+      }],
       "text" : "Fixation strategy"
     },
     "valueCodeableConcept" : {
@@ -140,6 +263,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "perimetry-stimulus-size",
+        "display" : "Perimetry stimulus size"
+      }],
       "text" : "Stimulus size"
     },
     "valueCodeableConcept" : {
@@ -148,6 +276,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "perimetry-stimulus-color",
+        "display" : "Perimetry stimulus color"
+      }],
       "text" : "Stimulus color"
     },
     "valueCodeableConcept" : {
@@ -156,15 +289,27 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
-      "text" : "Background luminance"
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "perimetry-background-luminance",
+        "display" : "Perimetry background luminance"
+      }],
+      "text" : "Background luminance (31.5 asb)"
     },
     "valueQuantity" : {
-      "value" : 31.5,
-      "unit" : "asb"
+      "value" : 10,
+      "unit" : "cd/m2",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "cd/m2"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "perimetry-stimulus-duration",
+        "display" : "Perimetry stimulus presentation time"
+      }],
       "text" : "Stimulus duration"
     },
     "valueQuantity" : {
@@ -175,6 +320,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "foveal-sensitivity",
+        "display" : "Foveal threshold sensitivity"
+      }],
       "text" : "Foveal sensitivity"
     },
     "valueQuantity" : {
@@ -185,6 +335,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-test-duration",
+        "display" : "Visual field test duration"
+      }],
       "text" : "Test duration"
     },
     "valueQuantity" : {
@@ -195,6 +350,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "visual-field-test-point-count",
+        "display" : "Number of visual field test points"
+      }],
       "text" : "Number of test points"
     },
     "valueQuantity" : {
@@ -205,6 +365,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "correction-status",
+        "display" : "Refractive correction status during test"
+      }],
       "text" : "Correction lens used"
     },
     "valueCodeableConcept" : {
@@ -213,6 +378,11 @@ Example based on typical Humphrey Field Analyzer 24-2 SITA Standard report. Righ
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "correction-lens-power",
+        "display" : "Correction lens power"
+      }],
       "text" : "Correction lens power"
     },
     "valueQuantity" : {

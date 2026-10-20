@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BiometryRightEyeExample</b></p><a name=\"BiometryRightEyeExample\"> </a><a name=\"hcBiometryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-ocular-biometry.html\">Ophthalmic Ocular Biometry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Ocular biometry for IOL power calculation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical IOLMaster 700 biometry report, comparing two formulas</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Optical biometry (IOLMaster)</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-IOLFormulaBarrettExample.html\">Barrett Universal II - AcrySof IQ SN60WF 21.0D</a></li><li><a href=\"Observation-IOLFormulaSRKTExample.html\">SRK/T - AcrySof IQ SN60WF 21.5D</a></li></ul><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Axial length (AL)</span></p><p><b>value</b>: 23.45 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL measurement type</span></p><p><b>value</b>: <span title=\"Codes:\">Optical</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">AL signal-to-noise ratio (SNR)</span></p><p><b>value</b>: 3.2 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Anterior chamber depth (ACD)</span></p><p><b>value</b>: 3.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">ACD definition</span></p><p><b>value</b>: <span title=\"Codes:\">Epithelium to lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens thickness (LT)</span></p><p><b>value</b>: 4.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Lens status</span></p><p><b>value</b>: <span title=\"Codes:\">Phakic</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 (flat keratometry)</span></p><p><b>value</b>: 43.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 (steep keratometry)</span></p><p><b>value</b>: 44.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Corneal cylinder</span></p><p><b>value</b>: 1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Keratometric index (n)</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">White-to-white (WTW)</span></p><p><b>value</b>: 11.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil diameter</span></p><p><b>value</b>: 3.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Refractive surgery history</span></p><p><b>value</b>: <span title=\"Codes:\">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Target refraction</span></p><p><b>value</b>: -0.25 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Vertex distance</span></p><p><b>value</b>: 12 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BiometryRightEyeExample</b></p><a name=\"BiometryRightEyeExample\"> </a><a name=\"hcBiometryRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-ocular-biometry.html\">Ophthalmic Ocular Biometry</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs ocular-biometry}\">Ocular biometry for IOL power calculation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>note</b>: </p><blockquote><div><p>Example based on typical IOLMaster 700 biometry report, comparing two formulas</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>method</b>: <span title=\"Codes:\">Optical biometry (IOLMaster)</span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-IOLFormulaBarrettExample.html\">Barrett Universal II - AcrySof IQ SN60WF 21.0D</a></li><li><a href=\"Observation-IOLFormulaSRKTExample.html\">SRK/T - AcrySof IQ SN60WF 21.5D</a></li></ul><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs axial-length}\">Axial length (AL)</span></p><p><b>value</b>: 23.45 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs axial-length-measurement-type}\">AL measurement type</span></p><p><b>value</b>: <span title=\"Codes:\">Optical</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs axial-length-snr}\">AL signal-to-noise ratio (SNR)</span></p><p><b>value</b>: 3.2 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs anterior-chamber-depth}\">Anterior chamber depth (ACD)</span></p><p><b>value</b>: 3.1 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs anterior-chamber-depth-definition}\">ACD definition</span></p><p><b>value</b>: <span title=\"Codes:\">Epithelium to lens</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs lens-thickness}\">Lens thickness (LT)</span></p><p><b>value</b>: 4.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs lens-status}\">Lens status</span></p><p><b>value</b>: <span title=\"Codes:\">Phakic</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1}\">K1 (flat keratometry)</span></p><p><b>value</b>: 43.2 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1-axis}\">K1 axis</span></p><p><b>value</b>: 12 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k1-radius}\">K1 radius</span></p><p><b>value</b>: 7.81 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2}\">K2 (steep keratometry)</span></p><p><b>value</b>: 44.6 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2-axis}\">K2 axis</span></p><p><b>value</b>: 102 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-k2-radius}\">K2 radius</span></p><p><b>value</b>: 7.56 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-km}\">Km (mean keratometry)</span></p><p><b>value</b>: 43.9 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometry-mean-radius}\">R/SE mean radius</span></p><p><b>value</b>: 7.69 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism}\">Corneal cylinder</span></p><p><b>value</b>: 1.4 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs keratometric-index}\">Keratometric index (n)</span></p><p><b>value</b>: 1.3375 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs white-to-white}\">White-to-white (WTW)</span></p><p><b>value</b>: 11.8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pupil-diameter}\">Pupil diameter</span></p><p><b>value</b>: 3.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pupil-dilated}\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs refractive-surgery-history}\">Refractive surgery history</span></p><p><b>value</b>: <span title=\"Codes:\">None</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs target-refraction}\">Target refraction</span></p><p><b>value</b>: -0.25 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs vertex-distance}\">Vertex distance</span></p><p><b>value</b>: 12 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -17,11 +17,20 @@
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "ocular-biometry",
+      "display" : "Ocular biometry"
+    }],
     "text" : "Ocular biometry for IOL power calculation"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "note" : [{
     "text" : "Example based on typical IOLMaster 700 biometry report, comparing two formulas"
   }],
@@ -46,6 +55,11 @@
   }],
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "axial-length",
+        "display" : "Axial length"
+      }],
       "text" : "Axial length (AL)"
     },
     "valueQuantity" : {
@@ -56,6 +70,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "axial-length-measurement-type",
+        "display" : "Axial length measurement type"
+      }],
       "text" : "AL measurement type"
     },
     "valueCodeableConcept" : {
@@ -64,6 +83,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "axial-length-snr",
+        "display" : "Axial length signal-to-noise ratio"
+      }],
       "text" : "AL signal-to-noise ratio (SNR)"
     },
     "valueQuantity" : {
@@ -74,6 +98,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "anterior-chamber-depth",
+        "display" : "Anterior chamber depth"
+      }],
       "text" : "Anterior chamber depth (ACD)"
     },
     "valueQuantity" : {
@@ -84,6 +113,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "anterior-chamber-depth-definition",
+        "display" : "Anterior chamber depth definition"
+      }],
       "text" : "ACD definition"
     },
     "valueCodeableConcept" : {
@@ -92,6 +126,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "lens-thickness",
+        "display" : "Lens thickness"
+      }],
       "text" : "Lens thickness (LT)"
     },
     "valueQuantity" : {
@@ -102,6 +141,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "lens-status",
+        "display" : "Lens status"
+      }],
       "text" : "Lens status"
     },
     "valueCodeableConcept" : {
@@ -110,6 +154,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1",
+        "display" : "Keratometry K1 (flat)"
+      }],
       "text" : "K1 (flat keratometry)"
     },
     "valueQuantity" : {
@@ -120,6 +169,26 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1-axis",
+        "display" : "Keratometry K1 axis"
+      }],
+      "text" : "K1 axis"
+    },
+    "valueQuantity" : {
+      "value" : 12,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "deg"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k1-radius",
+        "display" : "Keratometry K1 radius of curvature"
+      }],
       "text" : "K1 radius"
     },
     "valueQuantity" : {
@@ -130,6 +199,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2",
+        "display" : "Keratometry K2 (steep)"
+      }],
       "text" : "K2 (steep keratometry)"
     },
     "valueQuantity" : {
@@ -140,6 +214,26 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2-axis",
+        "display" : "Keratometry K2 axis"
+      }],
+      "text" : "K2 axis"
+    },
+    "valueQuantity" : {
+      "value" : 102,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "deg"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-k2-radius",
+        "display" : "Keratometry K2 radius of curvature"
+      }],
       "text" : "K2 radius"
     },
     "valueQuantity" : {
@@ -150,6 +244,41 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-km",
+        "display" : "Keratometry Km (mean)"
+      }],
+      "text" : "Km (mean keratometry)"
+    },
+    "valueQuantity" : {
+      "value" : 43.9,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "[diop]"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometry-mean-radius",
+        "display" : "Keratometry mean radius of curvature (R/SE)"
+      }],
+      "text" : "R/SE mean radius"
+    },
+    "valueQuantity" : {
+      "value" : 7.69,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mm"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "corneal-astigmatism",
+        "display" : "Corneal astigmatism (cylinder)"
+      }],
       "text" : "Corneal cylinder"
     },
     "valueQuantity" : {
@@ -160,6 +289,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "keratometric-index",
+        "display" : "Keratometric index"
+      }],
       "text" : "Keratometric index (n)"
     },
     "valueQuantity" : {
@@ -170,6 +304,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "white-to-white",
+        "display" : "White-to-white corneal diameter"
+      }],
       "text" : "White-to-white (WTW)"
     },
     "valueQuantity" : {
@@ -180,6 +319,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-diameter",
+        "display" : "Pupil diameter"
+      }],
       "text" : "Pupil diameter"
     },
     "valueQuantity" : {
@@ -190,6 +334,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-dilated",
+        "display" : "Pupil dilated"
+      }],
       "text" : "Pupil dilated"
     },
     "valueCodeableConcept" : {
@@ -198,6 +347,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "refractive-surgery-history",
+        "display" : "Refractive surgery history"
+      }],
       "text" : "Refractive surgery history"
     },
     "valueCodeableConcept" : {
@@ -206,6 +360,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "target-refraction",
+        "display" : "Target refraction"
+      }],
       "text" : "Target refraction"
     },
     "valueQuantity" : {
@@ -216,6 +375,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "vertex-distance",
+        "display" : "Vertex distance"
+      }],
       "text" : "Vertex distance"
     },
     "valueQuantity" : {

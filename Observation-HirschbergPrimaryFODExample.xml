@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="HirschbergPrimaryFODExample"/>
+  <meta>
+    <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation HirschbergPrimaryFODExample</b></p><a name="HirschbergPrimaryFODExample"> </a><a name="hcHirschbergPrimaryFODExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs gaze-position-measurement}">Gaze position measurement</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href="Practitioner-OphthalmologistExample.html">Practitioner Ophthalmologist Example </a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs gaze-position}">Gaze position</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 408744005}">Primary position</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs fixating-eye}">Fixating eye</span></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 24028007}">Right</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs horizontal-deviation}">Estimated horizontal deviation</span></p><p><b>value</b>: 15 degree<span style="background: LightGoldenRodYellow"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs horizontal-deviation-direction}">Horizontal deviation direction</span></p><p><b>value</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs exodeviation}">Exodeviation</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs gaze-position-finding}">Corneal light reflex</span></p><p><b>value</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-reflex-displaced-nasal}">Reflex displaced nasally in the left eye (about 15 degrees)</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <code value="gaze-position-measurement"/>
+      <display value="Gaze position measurement"/>
+    </coding>
+    <text value="Gaze position measurement"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2026-08-18T09:00:00Z"/>
+  <performer>
+    <reference value="Practitioner/OphthalmologistExample"/>
+  </performer>
+  <bodySite>
+    <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
+      <valueReference>
+        <reference value="BodyStructure/LeftEyeStructureExample"/>
+      </valueReference>
+    </extension>
+  </bodySite>
+  <component>
+    <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="gaze-position"/>
+        <display value="Gaze position"/>
+      </coding>
+      <text value="Gaze position"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="408744005"/>
+        <display value="Primary gaze"/>
+      </coding>
+      <text value="Primary position"/>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="fixating-eye"/>
+        <display value="Fixating eye"/>
+      </coding>
+      <text value="Fixating eye"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="24028007"/>
+        <display value="Right"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="horizontal-deviation"/>
+        <display value="Horizontal ocular deviation"/>
+      </coding>
+      <text value="Estimated horizontal deviation"/>
+    </code>
+    <valueQuantity>
+      <value value="15"/>
+      <unit value="degree"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="deg"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="horizontal-deviation-direction"/>
+        <display value="Horizontal deviation direction"/>
+      </coding>
+      <text value="Horizontal deviation direction"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="exodeviation"/>
+        <display value="Exodeviation"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="gaze-position-finding"/>
+        <display value="Finding at gaze position"/>
+      </coding>
+      <text value="Corneal light reflex"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="corneal-reflex-displaced-nasal"/>
+        <display value="Corneal light reflex displaced nasally"/>
+      </coding>
+      <text value="Reflex displaced nasally in the left eye (about 15 degrees)"/>
+    </valueCodeableConcept>
+  </component>
+</Observation>

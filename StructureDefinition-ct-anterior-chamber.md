@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTAnteriorChamber |
+| Draft as of 2026-10-20 | *Computable Name*:CTAnteriorChamber |
 
  
-Represents the anterior chamber analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are left as open text for now, following this guide's terminology rigor: no confirmed SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
+Represents the anterior chamber analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
 
-Represents the anterior chamber analysis of a corneal tomography exam: anterior chamber depth, chamber volume, chamber angle, pupil diameter, and lens thickness. The anterior chamber is a different anatomical structure from the cornea, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open, since no confirmed SNOMED CT or LOINC codes were identified for these device-specific measurements (see [Terminology](terminology.md)).
+Represents the anterior chamber analysis of a corneal tomography exam: anterior chamber depth, chamber volume, chamber angle, pupil diameter, and lens thickness. The anterior chamber is a different anatomical structure from the cornea, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code, since no confirmed SNOMED CT or LOINC codes were identified for these device-specific measurements (see [Terminology](terminology.md)).
 
 **Examples:** [CT anterior chamber: right eye](Observation-CTAnteriorChamberRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
   "name" : "CTAnteriorChamber",
   "title" : "Corneal Tomography - Anterior Chamber",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology).",
+  "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -73,6 +73,12 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "dicom",
+    "uri" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html",
+    "name" : "DICOM",
+    "comment" : "Informative correspondence between this profile's components and DICOM attributes / context groups. Not a conformance requirement."
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -120,7 +126,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +155,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the anterior chamber component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-tomography-anterior-chamber",
+          "display" : "Corneal tomography, anterior chamber analysis"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +177,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +202,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -213,12 +237,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "sliceName" : "acd",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1131) Anterior Chamber Depth"
+      }]
     },
     {
       "id" : "Observation.component:acd.code",
       "path" : "Observation.component.code",
-      "short" : "Anterior chamber depth (ACD)"
+      "short" : "Anterior chamber depth (ACD)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anterior-chamber-depth",
+          "display" : "Anterior chamber depth"
+        }]
+      }
     },
     {
       "id" : "Observation.component:acd.value[x]",
@@ -238,7 +273,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
     {
       "id" : "Observation.component:chamberVolume.code",
       "path" : "Observation.component.code",
-      "short" : "Anterior chamber volume"
+      "short" : "Anterior chamber volume",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anterior-chamber-volume",
+          "display" : "Anterior chamber volume"
+        }]
+      }
     },
     {
       "id" : "Observation.component:chamberVolume.value[x]",
@@ -258,7 +300,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
     {
       "id" : "Observation.component:angle.code",
       "path" : "Observation.component.code",
-      "short" : "Anterior chamber angle"
+      "short" : "Anterior chamber angle",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "anterior-chamber-angle",
+          "display" : "Anterior chamber angle"
+        }]
+      }
     },
     {
       "id" : "Observation.component:angle.value[x]",
@@ -273,12 +322,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "sliceName" : "pupilDiameter",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0044) Pupil Size"
+      }]
     },
     {
       "id" : "Observation.component:pupilDiameter.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil diameter"
+      "short" : "Pupil diameter",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-diameter",
+          "display" : "Pupil diameter"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilDiameter.value[x]",
@@ -293,12 +353,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "sliceName" : "lensThickness",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1130) Lens Thickness"
+      }]
     },
     {
       "id" : "Observation.component:lensThickness.code",
       "path" : "Observation.component.code",
-      "short" : "Lens thickness"
+      "short" : "Lens thickness",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "lens-thickness",
+          "display" : "Lens thickness"
+        }]
+      }
     },
     {
       "id" : "Observation.component:lensThickness.value[x]",

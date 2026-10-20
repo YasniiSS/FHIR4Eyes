@@ -1,15 +1,15 @@
-# sp-diagnosticreport-imaging-study - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# DiagnosticReport imaging study search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-diagnosticreport-imaging-study**
+* **DiagnosticReport imaging study search parameter**
 
-## SearchParameter: sp-diagnosticreport-imaging-study 
+## SearchParameter: DiagnosticReport imaging study search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/diagnosticreport-imaging-study | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:DiagnosticReportImagingStudy |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-diagnosticreport-imaging-study | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:DiagnosticReportImagingStudy |
 
  
 Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret. 
@@ -22,11 +22,11 @@ Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpre
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-diagnosticreport-imaging-study",
-  "url" : "http://fhir4eyes.org/SearchParameter/diagnosticreport-imaging-study",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-diagnosticreport-imaging-study",
   "version" : "0.4.0",
   "name" : "DiagnosticReportImagingStudy",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{

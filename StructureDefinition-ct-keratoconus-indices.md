@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTKeratoconusIndices |
+| Draft as of 2026-10-20 | *Computable Name*:CTKeratoconusIndices |
 
  
-Represents the keratoconus screening/classification indices component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Keratoconus Indices section). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+Represents the keratoconus screening/classification indices component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
 
-Represents the keratoconus screening and classification indices of a corneal tomography exam: the Belin-Ambrósio (BAD) deviation indices and classification, enhanced best fit sphere radii, Amsler-Krumeich stage, ABCD grading, the topometric indices (ISV, IVA, KI, CKI, IHA, IHD), minimum sagittal curvature radius, and the topographic keratoconus classification. These are derived screening scores rather than raw measurements, so they form one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open (see [Terminology](terminology.md)).
+Represents the keratoconus screening and classification indices of a corneal tomography exam: the Belin-Ambrósio (BAD) deviation indices and classification, enhanced best fit sphere radii, Amsler-Krumeich stage, ABCD grading, the topometric indices (ISV, IVA, KI, CKI, IHA, IHD), minimum sagittal curvature radius, and the topographic keratoconus classification. These are derived screening scores rather than raw measurements, so they form one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code (see [Terminology](terminology.md)).
 
 **Examples:** [CT keratoconus indices: right eye](Observation-CTKeratoconusIndicesRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
   "name" : "CTKeratoconusIndices",
   "title" : "Corneal Tomography - Keratoconus Indices",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology).",
+  "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -120,7 +120,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +149,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the keratoconus indices component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratoconus-indices",
+          "display" : "Keratoconus indices"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +171,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -218,7 +236,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badD.code",
       "path" : "Observation.component.code",
-      "short" : "BAD-D (final D) - Belin-Ambrósio total deviation index, key KC screening index"
+      "short" : "BAD-D (final D) - Belin-Ambrósio total deviation index, key KC screening index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-d",
+          "display" : "Belin-Ambrosio total deviation (BAD-D)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badD.value[x]",
@@ -238,7 +263,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badDf.code",
       "path" : "Observation.component.code",
-      "short" : "BAD Df (front deviation) - anterior elevation deviation from enhanced BFS"
+      "short" : "BAD Df (front deviation) - anterior elevation deviation from enhanced BFS",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-df",
+          "display" : "Belin-Ambrosio front elevation deviation (Df)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badDf.value[x]",
@@ -258,7 +290,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badDb.code",
       "path" : "Observation.component.code",
-      "short" : "BAD Db (back deviation) - posterior elevation deviation from enhanced BFS"
+      "short" : "BAD Db (back deviation) - posterior elevation deviation from enhanced BFS",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-db",
+          "display" : "Belin-Ambrosio back elevation deviation (Db)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badDb.value[x]",
@@ -278,7 +317,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badDp.code",
       "path" : "Observation.component.code",
-      "short" : "BAD Dp (pachymetric deviation) - pachymetric progression deviation"
+      "short" : "BAD Dp (pachymetric deviation) - pachymetric progression deviation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pachymetric-progression",
+          "display" : "Pachymetric progression index (BAD Dp)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badDp.value[x]",
@@ -298,7 +344,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badDt.code",
       "path" : "Observation.component.code",
-      "short" : "BAD Dt (thinnest deviation) - thinnest point deviation"
+      "short" : "BAD Dt (thinnest deviation) - thinnest point deviation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-dt",
+          "display" : "Belin-Ambrosio thinnest point deviation (Dt)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badDt.value[x]",
@@ -318,7 +371,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badDy.code",
       "path" : "Observation.component.code",
-      "short" : "BAD Dy (vertical asymmetry) - Y-coordinate asymmetry deviation"
+      "short" : "BAD Dy (vertical asymmetry) - Y-coordinate asymmetry deviation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-dy",
+          "display" : "Belin-Ambrosio vertical asymmetry deviation (Dy)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badDy.value[x]",
@@ -338,7 +398,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:badClassif.code",
       "path" : "Observation.component.code",
-      "short" : "BAD classification - BAD result classification (normal/suspicious/abnormal), color-coded"
+      "short" : "BAD classification - BAD result classification (normal/suspicious/abnormal), color-coded",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "bad-classification",
+          "display" : "Belin-Ambrosio classification"
+        }]
+      }
     },
     {
       "id" : "Observation.component:badClassif.value[x]",
@@ -358,7 +425,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:enhBfsFront.code",
       "path" : "Observation.component.code",
-      "short" : "Enhanced BFS radius front - enhanced best fit sphere anterior, BAD enhanced reference"
+      "short" : "Enhanced BFS radius front - enhanced best fit sphere anterior, BAD enhanced reference",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "enhanced-best-fit-sphere-radius-anterior",
+          "display" : "Enhanced best fit sphere radius, anterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:enhBfsFront.value[x]",
@@ -378,7 +452,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:enhBfsBack.code",
       "path" : "Observation.component.code",
-      "short" : "Enhanced BFS radius back - enhanced best fit sphere posterior, BAD enhanced reference"
+      "short" : "Enhanced BFS radius back - enhanced best fit sphere posterior, BAD enhanced reference",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "enhanced-best-fit-sphere-radius-posterior",
+          "display" : "Enhanced best fit sphere radius, posterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:enhBfsBack.value[x]",
@@ -398,7 +479,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:amslerKrumeich.code",
       "path" : "Observation.component.code",
-      "short" : "Amsler-Krumeich stage - classic keratoconus staging (I-IV)"
+      "short" : "Amsler-Krumeich stage - classic keratoconus staging (I-IV)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "amsler-krumeich-stage",
+          "display" : "Amsler-Krumeich keratoconus stage"
+        }]
+      }
     },
     {
       "id" : "Observation.component:amslerKrumeich.value[x]",
@@ -418,7 +506,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:abcdGrading.code",
       "path" : "Observation.component.code",
-      "short" : "ABCD grading (Belin) - Belin ABCD keratoconus grading, modern grading"
+      "short" : "ABCD grading (Belin) - Belin ABCD keratoconus grading, modern grading",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "belin-abcd-grade",
+          "display" : "Belin ABCD keratoconus grade"
+        }]
+      }
     },
     {
       "id" : "Observation.component:abcdGrading.value[x]",
@@ -438,7 +533,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:isv.code",
       "path" : "Observation.component.code",
-      "short" : "ISV (Index Surface Variance) - deviation of corneal radii from mean, topometric index"
+      "short" : "ISV (Index Surface Variance) - deviation of corneal radii from mean, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "index-surface-variance",
+          "display" : "Index of surface variance (ISV)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:isv.value[x]",
@@ -458,7 +560,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:iva.code",
       "path" : "Observation.component.code",
-      "short" : "IVA (Index Vertical Asymmetry) - superior-inferior curvature asymmetry, topometric index"
+      "short" : "IVA (Index Vertical Asymmetry) - superior-inferior curvature asymmetry, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "index-vertical-asymmetry",
+          "display" : "Index of vertical asymmetry (IVA)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:iva.value[x]",
@@ -478,7 +587,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:ki.code",
       "path" : "Observation.component.code",
-      "short" : "KI (Keratoconus Index) - central-peripheral curvature ratio, topometric index"
+      "short" : "KI (Keratoconus Index) - central-peripheral curvature ratio, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratoconus-index",
+          "display" : "Keratoconus index (KI)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:ki.value[x]",
@@ -498,7 +614,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:cki.code",
       "path" : "Observation.component.code",
-      "short" : "CKI (Center Keratoconus Index) - central corneal curvature index, topometric index"
+      "short" : "CKI (Center Keratoconus Index) - central corneal curvature index, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "center-keratoconus-index",
+          "display" : "Center keratoconus index (CKI)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cki.value[x]",
@@ -518,7 +641,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:iha.code",
       "path" : "Observation.component.code",
-      "short" : "IHA (Index Height Asymmetry) - height decentration index, topometric index"
+      "short" : "IHA (Index Height Asymmetry) - height decentration index, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "index-height-asymmetry",
+          "display" : "Index of height asymmetry (IHA)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:iha.value[x]",
@@ -538,7 +668,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:ihd.code",
       "path" : "Observation.component.code",
-      "short" : "IHD (Index Height Decentration) - degree of vertical decentration, topometric index"
+      "short" : "IHD (Index Height Decentration) - degree of vertical decentration, topometric index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "index-height-decentration",
+          "display" : "Index of height decentration (IHD)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:ihd.value[x]",
@@ -558,7 +695,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:rminSag.code",
       "path" : "Observation.component.code",
-      "short" : "Rmin (minimum sagittal curvature) - steepest point radius"
+      "short" : "Rmin (minimum sagittal curvature) - steepest point radius",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "radius-minimum-sagittal",
+          "display" : "Minimum sagittal radius of curvature (Rmin)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:rminSag.value[x]",
@@ -578,7 +722,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
     {
       "id" : "Observation.component:tkc.code",
       "path" : "Observation.component.code",
-      "short" : "TKC (topographic KC classification) - Pentacam KC auto classification"
+      "short" : "TKC (topographic KC classification) - Pentacam KC auto classification",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "topographic-keratoconus-classification",
+          "display" : "Topographic keratoconus classification (TKC)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:tkc.value[x]",

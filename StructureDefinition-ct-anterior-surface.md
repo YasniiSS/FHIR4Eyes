@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTAnteriorSurface |
+| Draft as of 2026-10-20 | *Computable Name*:CTAnteriorSurface |
 
  
-Represents the anterior corneal surface analysis component of a corneal tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Anterior Surface section). Component codes are left as open text for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC codes were not identified for these device-specific indices (see Terminology); a handful of components reference specific DICOM Sup 168 tags directly in their terminology, noted in the catalog. 
+Represents the anterior corneal surface analysis component of a corneal tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping. 
 
-Represents the anterior corneal surface analysis of a corneal tomography exam: keratometry (K1, K2, Km, K Max and their axes and radii), asphericity, elevation from the best fit sphere, surface regularity and asymmetry indices, zonal powers, astigmatism and aberration values, surgical planning values, and a handful of components that reference specific DICOM Sup 168 tags. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTPosteriorSurface](StructureDefinition-ct-posterior-surface.md) because the two surfaces are optically and clinically distinct, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are left open where no confirmed SNOMED CT or LOINC code exists (see [Terminology](terminology.md)).
+Represents the anterior corneal surface analysis of a corneal tomography exam: keratometry (K1, K2, Km, K Max and their axes and radii), asphericity, elevation from the best fit sphere, surface regularity and asymmetry indices, zonal powers, astigmatism and aberration values, surgical planning values, and a handful of components that reference specific DICOM Sup 168 tags. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTPosteriorSurface](StructureDefinition-ct-posterior-surface.md) because the two surfaces are optically and clinically distinct, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code, since no confirmed SNOMED CT or LOINC code exists for these measurements (see [Terminology](terminology.md)).
 
 **Examples:** [CT anterior surface: right eye](Observation-CTAnteriorSurfaceRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
   "name" : "CTAnteriorSurface",
   "title" : "Corneal Tomography - Anterior Surface",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog.",
+  "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -73,6 +73,12 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "dicom",
+    "uri" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html",
+    "name" : "DICOM",
+    "comment" : "Informative correspondence between this profile's components and DICOM attributes / context groups. Not a conformance requirement."
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -120,7 +126,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +155,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the anterior surface component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-tomography-anterior-surface",
+          "display" : "Corneal tomography, anterior surface analysis"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +177,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +202,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -213,12 +237,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k1",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0076) Keratometric Power",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k1.code",
       "path" : "Observation.component.code",
-      "short" : "K1 (flat axis) - flat meridian keratometry"
+      "short" : "K1 (flat axis) - flat meridian keratometry",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1",
+          "display" : "Keratometry K1 (flat)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k1.value[x]",
@@ -233,12 +269,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k1Axis",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0077) Keratometric Axis",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k1Axis.code",
       "path" : "Observation.component.code",
-      "short" : "K1 axis - flat meridian orientation"
+      "short" : "K1 axis - flat meridian orientation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1-axis",
+          "display" : "Keratometry K1 axis"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k1Axis.value[x]",
@@ -253,12 +301,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k1Radius",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0075) Radius of Curvature",
+        "comment" : "Within (0046,0080) Flat Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k1Radius.code",
       "path" : "Observation.component.code",
-      "short" : "K1 radius - flat meridian radius of curvature"
+      "short" : "K1 radius - flat meridian radius of curvature",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k1-radius",
+          "display" : "Keratometry K1 radius of curvature"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k1Radius.value[x]",
@@ -273,12 +333,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k2",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0076) Keratometric Power",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k2.code",
       "path" : "Observation.component.code",
-      "short" : "K2 (steep axis) - steep meridian keratometry"
+      "short" : "K2 (steep axis) - steep meridian keratometry",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2",
+          "display" : "Keratometry K2 (steep)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k2.value[x]",
@@ -293,12 +365,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k2Axis",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0077) Keratometric Axis",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k2Axis.code",
       "path" : "Observation.component.code",
-      "short" : "K2 axis - steep meridian orientation"
+      "short" : "K2 axis - steep meridian orientation",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2-axis",
+          "display" : "Keratometry K2 axis"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k2Axis.value[x]",
@@ -313,12 +397,24 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "k2Radius",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0075) Radius of Curvature",
+        "comment" : "Within (0046,0074) Steep Keratometric Axis Sequence"
+      }]
     },
     {
       "id" : "Observation.component:k2Radius.code",
       "path" : "Observation.component.code",
-      "short" : "K2 radius - steep meridian radius of curvature"
+      "short" : "K2 radius - steep meridian radius of curvature",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-k2-radius",
+          "display" : "Keratometry K2 radius of curvature"
+        }]
+      }
     },
     {
       "id" : "Observation.component:k2Radius.value[x]",
@@ -338,7 +434,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:km.code",
       "path" : "Observation.component.code",
-      "short" : "Km (average) - average keratometry, calculated (K1+K2)/2"
+      "short" : "Km (average) - average keratometry, calculated (K1+K2)/2",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-km",
+          "display" : "Keratometry Km (mean)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:km.value[x]",
@@ -353,35 +456,26 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "cornealAstig",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0218) Simulated Keratometric Cylinder Sequence"
+      }]
     },
     {
       "id" : "Observation.component:cornealAstig.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal astigmatism - difference between K2 and K1, calculated K2-K1"
+      "short" : "Corneal astigmatism - K2 minus K1 in dioptres, reported as a positive magnitude (plus-cylinder notation) at the steep meridian (K2 axis)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-astigmatism",
+          "display" : "Corneal astigmatism (cylinder)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cornealAstig.value[x]",
-      "path" : "Observation.component.value[x]",
-      "type" : [{
-        "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Observation.component:cornealCyl",
-      "path" : "Observation.component",
-      "sliceName" : "cornealCyl",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Observation.component:cornealCyl.code",
-      "path" : "Observation.component.code",
-      "short" : "Corneal cylinder with axis"
-    },
-    {
-      "id" : "Observation.component:cornealCyl.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
@@ -393,12 +487,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "kMax",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0212) Maximum Corneal Curvature"
+      }]
     },
     {
       "id" : "Observation.component:kMax.code",
       "path" : "Observation.component.code",
-      "short" : "K Max (front) - maximum keratometry on anterior surface, critical for keratoconus"
+      "short" : "K Max (front) - maximum keratometry on anterior surface, critical for keratoconus",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometry-kmax",
+          "display" : "Maximum keratometry (Kmax)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:kMax.value[x]",
@@ -418,7 +523,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:simK.code",
       "path" : "Observation.component.code",
-      "short" : "SimK steep / flat - simulated keratometry values"
+      "short" : "SimK steep / flat - simulated keratometry values",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "simulated-keratometry",
+          "display" : "Simulated keratometry (SimK)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:simK.value[x]",
@@ -438,7 +550,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:rh.code",
       "path" : "Observation.component.code",
-      "short" : "Rh (horizontal radius) - horizontal corneal radius"
+      "short" : "Rh (horizontal radius) - corneal radius along the horizontal (0-180 degree) meridian; not necessarily a principal (K1/K2) meridian",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-radius-horizontal",
+          "display" : "Horizontal corneal radius of curvature (Rh)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:rh.value[x]",
@@ -458,7 +577,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:rv.code",
       "path" : "Observation.component.code",
-      "short" : "Rv (vertical radius) - vertical corneal radius"
+      "short" : "Rv (vertical radius) - corneal radius along the vertical (90 degree) meridian; not necessarily a principal (K1/K2) meridian",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-radius-vertical",
+          "display" : "Vertical corneal radius of curvature (Rv)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:rv.value[x]",
@@ -478,7 +604,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:rmin.code",
       "path" : "Observation.component.code",
-      "short" : "Rmin (minimum radius) - steepest corneal radius"
+      "short" : "Rmin (minimum radius) - steepest corneal radius",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "radius-minimum-curvature",
+          "display" : "Minimum radius of curvature (Rmin)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:rmin.value[x]",
@@ -498,7 +631,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:qFront.code",
       "path" : "Observation.component.code",
-      "short" : "Q-value front (asphericity) - anterior surface asphericity, normal ~ -0.26"
+      "short" : "Q-value front (asphericity) - anterior surface asphericity, normal ~ -0.26",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-asphericity-q-anterior",
+          "display" : "Corneal asphericity (Q-value), anterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:qFront.value[x]",
@@ -518,7 +658,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:elevFront.code",
       "path" : "Observation.component.code",
-      "short" : "Elevation front BFS - anterior elevation from Best Fit Sphere"
+      "short" : "Elevation front BFS - anterior elevation from Best Fit Sphere",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "elevation-anterior",
+          "display" : "Corneal elevation relative to best fit sphere, anterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:elevFront.value[x]",
@@ -538,7 +685,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:bfsRadiusFront.code",
       "path" : "Observation.component.code",
-      "short" : "BFS radius front - Best Fit Sphere radius anterior"
+      "short" : "BFS radius front - Best Fit Sphere radius anterior",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "best-fit-sphere-radius-anterior",
+          "display" : "Best fit sphere radius, anterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:bfsRadiusFront.value[x]",
@@ -553,12 +707,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "sri",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0230) Surface Regularity Index"
+      }]
     },
     {
       "id" : "Observation.component:sri.code",
       "path" : "Observation.component.code",
-      "short" : "Surface Regularity Index (SRI)"
+      "short" : "Surface Regularity Index (SRI)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "surface-regularity-index",
+          "display" : "Surface Regularity Index (SRI)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:sri.value[x]",
@@ -573,12 +738,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "sai",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0232) Surface Asymmetry Index"
+      }]
     },
     {
       "id" : "Observation.component:sai.code",
       "path" : "Observation.component.code",
-      "short" : "Surface Asymmetry Index (SAI)"
+      "short" : "Surface Asymmetry Index (SAI)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "surface-asymmetry-index",
+          "display" : "Surface Asymmetry Index (SAI)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:sai.value[x]",
@@ -593,12 +769,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "isValue",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0224) Corneal I-S Value"
+      }]
     },
     {
       "id" : "Observation.component:isValue.code",
       "path" : "Observation.component.code",
-      "short" : "I-S value - Inferior-Superior asymmetry value, keratoconus screening"
+      "short" : "I-S value - Inferior-Superior asymmetry value, keratoconus screening",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "inferior-superior-asymmetry",
+          "display" : "Inferior-superior asymmetry value (I-S)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:isValue.value[x]",
@@ -618,7 +805,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:kisa.code",
       "path" : "Observation.component.code",
-      "short" : "KISA% index - keratoconus screening index"
+      "short" : "KISA% index - keratoconus screening index",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "kisa-index",
+          "display" : "KISA% index"
+        }]
+      }
     },
     {
       "id" : "Observation.component:kisa.value[x]",
@@ -633,12 +827,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "keratIndex",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0022,1033) Keratometer Index"
+      }]
     },
     {
       "id" : "Observation.component:keratIndex.code",
       "path" : "Observation.component.code",
-      "short" : "Keratometric index - refractive index for diopter conversion, n=1.3375"
+      "short" : "Keratometric index - refractive index for diopter conversion, n=1.3375",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratometric-index",
+          "display" : "Keratometric index"
+        }]
+      }
     },
     {
       "id" : "Observation.component:keratIndex.value[x]",
@@ -658,7 +863,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:pattern.code",
       "path" : "Observation.component.code",
-      "short" : "Topographic pattern - map classification (regular, irregular, keratoconus, pellucid, post-LASIK, forme fruste)"
+      "short" : "Topographic pattern - map classification (regular, irregular, keratoconus, pellucid, post-LASIK, forme fruste)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "topographic-pattern",
+          "display" : "Topographic pattern"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pattern.value[x]",
@@ -678,7 +890,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:tcrp.code",
       "path" : "Observation.component.code",
-      "short" : "Total Corneal Refractive Power (TCRP) - true corneal power including posterior surface"
+      "short" : "Total Corneal Refractive Power (TCRP) - true corneal power including posterior surface",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "total-corneal-refractive-power",
+          "display" : "Total corneal refractive power (TCRP)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:tcrp.value[x]",
@@ -698,7 +917,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:tnp.code",
       "path" : "Observation.component.code",
-      "short" : "True Net Power (TNP) - true net corneal power anterior + posterior"
+      "short" : "True Net Power (TNP) - true net corneal power anterior + posterior",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "true-net-power",
+          "display" : "True net corneal power (TNP)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:tnp.value[x]",
@@ -718,7 +944,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:ekr10.code",
       "path" : "Observation.component.code",
-      "short" : "EKR 1.0mm zone - equivalent keratometry, Holladay EKR"
+      "short" : "EKR 1.0mm zone - equivalent keratometry, Holladay EKR",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "equivalent-keratometry-1mm",
+          "display" : "Equivalent K reading (EKR), 1.0 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:ekr10.value[x]",
@@ -738,7 +971,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:ekr30.code",
       "path" : "Observation.component.code",
-      "short" : "EKR 3.0mm zone - equivalent keratometry, Holladay EKR"
+      "short" : "EKR 3.0mm zone - equivalent keratometry, Holladay EKR",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "equivalent-keratometry-3mm",
+          "display" : "Equivalent K reading (EKR), 3.0 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:ekr30.value[x]",
@@ -758,7 +998,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:ekr45.code",
       "path" : "Observation.component.code",
-      "short" : "EKR 4.5mm zone - equivalent keratometry, Holladay EKR, post-refractive IOL calc"
+      "short" : "EKR 4.5mm zone - equivalent keratometry, Holladay EKR, post-refractive IOL calc",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "equivalent-keratometry-4-5mm",
+          "display" : "Equivalent K reading (EKR), 4.5 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:ekr45.value[x]",
@@ -778,7 +1025,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone3MeanPwr.code",
       "path" : "Observation.component.code",
-      "short" : "3mm zone Mean Power - mean corneal power in 3mm zone"
+      "short" : "3mm zone Mean Power - mean corneal power in 3mm zone",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-mean-power-3mm-zone",
+          "display" : "Mean corneal power, 3 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone3MeanPwr.value[x]",
@@ -798,7 +1052,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone3AstigPwr.code",
       "path" : "Observation.component.code",
-      "short" : "3mm zone Astig Power - astigmatism power in 3mm zone"
+      "short" : "3mm zone Astig Power - astigmatism power in 3mm zone",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-astigmatism-power-3mm-zone",
+          "display" : "Corneal astigmatism power, 3 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone3AstigPwr.value[x]",
@@ -818,7 +1079,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone3SteepAxis.code",
       "path" : "Observation.component.code",
-      "short" : "3mm zone Steep Axis"
+      "short" : "3mm zone Steep Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-steep-axis-3mm-zone",
+          "display" : "Corneal steep axis, 3 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone3SteepAxis.value[x]",
@@ -838,7 +1106,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone3FlatAxis.code",
       "path" : "Observation.component.code",
-      "short" : "3mm zone Flat Axis"
+      "short" : "3mm zone Flat Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-flat-axis-3mm-zone",
+          "display" : "Corneal flat axis, 3 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone3FlatAxis.value[x]",
@@ -858,7 +1133,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone5MeanPwr.code",
       "path" : "Observation.component.code",
-      "short" : "5mm zone Mean Power - mean corneal power in 5mm zone"
+      "short" : "5mm zone Mean Power - mean corneal power in 5mm zone",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-mean-power-5mm-zone",
+          "display" : "Mean corneal power, 5 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone5MeanPwr.value[x]",
@@ -878,7 +1160,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone5AstigPwr.code",
       "path" : "Observation.component.code",
-      "short" : "5mm zone Astig Power - astigmatism power in 5mm zone"
+      "short" : "5mm zone Astig Power - astigmatism power in 5mm zone",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-astigmatism-power-5mm-zone",
+          "display" : "Corneal astigmatism power, 5 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone5AstigPwr.value[x]",
@@ -898,7 +1187,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone5SteepAxis.code",
       "path" : "Observation.component.code",
-      "short" : "5mm zone Steep Axis"
+      "short" : "5mm zone Steep Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-steep-axis-5mm-zone",
+          "display" : "Corneal steep axis, 5 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone5SteepAxis.value[x]",
@@ -918,7 +1214,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:zone5FlatAxis.code",
       "path" : "Observation.component.code",
-      "short" : "5mm zone Flat Axis"
+      "short" : "5mm zone Flat Axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-flat-axis-5mm-zone",
+          "display" : "Corneal flat axis, 5 mm zone"
+        }]
+      }
     },
     {
       "id" : "Observation.component:zone5FlatAxis.value[x]",
@@ -938,7 +1241,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:totalCornealAstig.code",
       "path" : "Observation.component.code",
-      "short" : "Total corneal astigmatism (tWFA) - true corneal astigmatism from wavefront"
+      "short" : "Total corneal astigmatism (tWFA) - true corneal astigmatism from wavefront",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "total-corneal-astigmatism",
+          "display" : "Total corneal astigmatism (tWFA)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:totalCornealAstig.value[x]",
@@ -958,7 +1268,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:irregularAstig.code",
       "path" : "Observation.component.code",
-      "short" : "Total corneal irregular astigmatism - higher-order corneal irregularity"
+      "short" : "Total corneal irregular astigmatism - higher-order corneal irregularity",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-irregular-astigmatism",
+          "display" : "Total corneal irregular astigmatism"
+        }]
+      }
     },
     {
       "id" : "Observation.component:irregularAstig.value[x]",
@@ -978,7 +1295,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:cornealHOA.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal HOA RMS - corneal higher-order aberrations RMS"
+      "short" : "Corneal HOA RMS - corneal higher-order aberrations RMS",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-hoa-rms",
+          "display" : "Corneal higher-order aberrations RMS"
+        }]
+      }
     },
     {
       "id" : "Observation.component:cornealHOA.value[x]",
@@ -998,7 +1322,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:kappaAngle.code",
       "path" : "Observation.component.code",
-      "short" : "Kappa angle - angle between visual and pupillary axis"
+      "short" : "Kappa angle - angle between visual and pupillary axis",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "angle-kappa",
+          "display" : "Angle kappa"
+        }]
+      }
     },
     {
       "id" : "Observation.component:kappaAngle.value[x]",
@@ -1018,7 +1349,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:kappaIntercept.code",
       "path" : "Observation.component.code",
-      "short" : "Kappa intercept - kappa intercept coordinates (x,y)"
+      "short" : "Kappa intercept - kappa intercept coordinates (x,y)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "angle-kappa-intercept",
+          "display" : "Angle kappa intercept"
+        }]
+      }
     },
     {
       "id" : "Observation.component:kappaIntercept.value[x]",
@@ -1038,7 +1376,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:sia.code",
       "path" : "Observation.component.code",
-      "short" : "SIA (Surgically Induced Astigmatism) - expected astigmatism from incision, surgical planning"
+      "short" : "SIA (Surgically Induced Astigmatism) - expected astigmatism from incision, surgical planning",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "surgically-induced-astigmatism",
+          "display" : "Surgically induced astigmatism (SIA)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:sia.value[x]",
@@ -1058,7 +1403,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:predictedAstig.code",
       "path" : "Observation.component.code",
-      "short" : "Predicted post-op corneal astigmatism - expected residual astigmatism, toric IOL planning"
+      "short" : "Predicted post-op corneal astigmatism - expected residual astigmatism, toric IOL planning",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "predicted-postoperative-corneal-astigmatism",
+          "display" : "Predicted postoperative corneal astigmatism"
+        }]
+      }
     },
     {
       "id" : "Observation.component:predictedAstig.value[x]",
@@ -1078,7 +1430,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
     {
       "id" : "Observation.component:toricAxis.code",
       "path" : "Observation.component.code",
-      "short" : "Optimal toric IOL axis - recommended axis for toric IOL, toric IOL planning"
+      "short" : "Optimal toric IOL axis - recommended axis for toric IOL, toric IOL planning",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "toric-iol-optimal-axis",
+          "display" : "Optimal toric IOL axis"
+        }]
+      }
     },
     {
       "id" : "Observation.component:toricAxis.value[x]",
@@ -1093,12 +1452,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "qs",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0242) Corneal Topography Map Quality Evaluation"
+      }]
     },
     {
       "id" : "Observation.component:qs.code",
       "path" : "Observation.component.code",
-      "short" : "QS (quality score) - scan quality score, scan reliability"
+      "short" : "QS (quality score) - scan quality score, scan reliability",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "signal-strength",
+          "display" : "Scan signal strength / quality"
+        }]
+      }
     },
     {
       "id" : "Observation.component:qs.value[x]",
@@ -1113,12 +1483,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "vertexLoc",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0202) Corneal Vertex Location"
+      }]
     },
     {
       "id" : "Observation.component:vertexLoc.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal vertex location - corneal vertex position coordinates. DICOM (0046,0202)"
+      "short" : "Corneal vertex location - corneal vertex position coordinates",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-vertex-location",
+          "display" : "Corneal vertex location"
+        }]
+      }
     },
     {
       "id" : "Observation.component:vertexLoc.value[x]",
@@ -1133,12 +1514,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "pupilCentroidX",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0203) Pupil Centroid X-Coordinate"
+      }]
     },
     {
       "id" : "Observation.component:pupilCentroidX.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil centroid X - X-coordinate of pupil center. DICOM (0046,0203)"
+      "short" : "Pupil centroid X - X-coordinate of pupil center",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-centroid-x",
+          "display" : "Pupil centroid X coordinate"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilCentroidX.value[x]",
@@ -1153,12 +1545,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "pupilCentroidY",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0204) Pupil Centroid Y-Coordinate"
+      }]
     },
     {
       "id" : "Observation.component:pupilCentroidY.code",
       "path" : "Observation.component.code",
-      "short" : "Pupil centroid Y - Y-coordinate of pupil center. DICOM (0046,0204)"
+      "short" : "Pupil centroid Y - Y-coordinate of pupil center",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pupil-centroid-y",
+          "display" : "Pupil centroid Y coordinate"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilCentroidY.value[x]",
@@ -1173,12 +1576,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "pupilRadius",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0205) Equivalent Pupil Radius"
+      }]
     },
     {
       "id" : "Observation.component:pupilRadius.code",
       "path" : "Observation.component.code",
-      "short" : "Equivalent pupil radius - radius of equivalent circular pupil. DICOM (0046,0205)"
+      "short" : "Equivalent pupil radius - radius of equivalent circular pupil",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "equivalent-pupil-radius",
+          "display" : "Equivalent pupil radius"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pupilRadius.value[x]",
@@ -1193,12 +1607,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "mapType",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0207) Corneal Topography Map Type Code Sequence"
+      }]
     },
     {
       "id" : "Observation.component:mapType.code",
       "path" : "Observation.component.code",
-      "short" : "Map type - type of topographic map encoded (axial, tangential, elevation, refractive, pachymetry). DICOM (0046,0207)"
+      "short" : "Map type - type of topographic map encoded (axial, tangential, elevation, refractive, pachymetry)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-topography-map-type",
+          "display" : "Corneal topography map type"
+        }]
+      }
     },
     {
       "id" : "Observation.component:mapType.value[x]",
@@ -1213,12 +1638,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "analyzedArea",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0227) Analyzed Area"
+      }]
     },
     {
       "id" : "Observation.component:analyzedArea.code",
       "path" : "Observation.component.code",
-      "short" : "Analyzed area - total area of cornea analyzed. DICOM (0046,0227)"
+      "short" : "Analyzed area - total area of cornea analyzed",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-analyzed-area",
+          "display" : "Corneal analyzed area"
+        }]
+      }
     },
     {
       "id" : "Observation.component:analyzedArea.value[x]",
@@ -1233,12 +1669,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "eccentricity",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0234) Corneal Eccentricity Index"
+      }]
     },
     {
       "id" : "Observation.component:eccentricity.code",
       "path" : "Observation.component.code",
-      "short" : "Corneal eccentricity index - corneal eccentricity (shape factor). DICOM (0046,0234)"
+      "short" : "Corneal eccentricity index - corneal eccentricity (shape factor)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-eccentricity-index",
+          "display" : "Corneal eccentricity index"
+        }]
+      }
     },
     {
       "id" : "Observation.component:eccentricity.value[x]",
@@ -1253,12 +1700,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "kpi",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0236) Keratoconus Prediction Index"
+      }]
     },
     {
       "id" : "Observation.component:kpi.code",
       "path" : "Observation.component.code",
-      "short" : "Keratoconus prediction index (KPI) - corneal KC prediction index, different from KISA%. DICOM (0046,0236)"
+      "short" : "Keratoconus prediction index (KPI) - corneal KC prediction index, different from KISA%",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "keratoconus-prediction-index",
+          "display" : "Keratoconus prediction index (KPI)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:kpi.value[x]",
@@ -1273,12 +1731,23 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "sliceName" : "potentialVA",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "dicom",
+        "map" : "(0046,0238) Decimal Potential Visual Acuity"
+      }]
     },
     {
       "id" : "Observation.component:potentialVA.code",
       "path" : "Observation.component.code",
-      "short" : "Decimal potential visual acuity - estimated potential VA from corneal surface. DICOM (0046,0238)"
+      "short" : "Decimal potential visual acuity - estimated potential VA from corneal surface",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "potential-visual-acuity-decimal",
+          "display" : "Decimal potential visual acuity"
+        }]
+      }
     },
     {
       "id" : "Observation.component:potentialVA.value[x]",

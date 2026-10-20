@@ -27,7 +27,9 @@ Almost every clinical resource in this guide (`OphthalmicCondition`, `Ophthalmic
 
 Why a reference instead of a simple code? A `Reference` lets the same `OcularBodyStructure` instance (for example, "right eye" for a specific patient) be shared across multiple resources: a `Condition`, a `Procedure`, and an `Observation` can all point to the exact same structure instance, enabling queries like "what else references this eye" that a repeated plain code cannot support. See [Terminology](terminology.md) and [Background](background.md) for the full rationale, including where this guide follows the HL7 Eye Care IG's pattern and where it diverges.
 
-`ImagingStudy` is the one exception: its `series.bodySite` and `series.laterality` are native `Coding` fields (not references), for standard DICOM/PACS compatibility. This guide adds the same `bodySiteEye` extension alongside those native fields, so an imaging study can still be linked to the same shared `OcularBodyStructure` instance when needed. See `OphthalmicImagingStudy` in [Profiles](profiles.md).
+`ImagingStudy` is the one exception: its `series.bodySite` and `series.laterality` are native `Coding` fields (not references), for standard DICOM/PACS compatibility. This guide uses those native fields as they are, coded with SNOMED CT (for example `24028007` Right / `7771000` Left in `series.laterality`), and does **not** add the `bodySiteEye` extension on the series. The `eye` search parameter for `ImagingStudy` searches `series.laterality` directly (see [Search Parameters](search-parameters.md)). See `OphthalmicImagingStudy` in [Profiles](profiles.md).
+
+`OphthalmicMedicationAdministration` has no `bodySite` element of its own in R4; there the `bodySiteEye` extension is placed on `dosage`, to record which eye the medication was administered to.
 
 ## The Study / Series / Instance hierarchy
 
@@ -82,6 +84,8 @@ In FSH, this pattern always requires declaring the slicing discriminator explici
 
 ```
 
+Every component slice in this guide is identified by a fixed code, which is what the `pattern` discriminator on `code` matches. That code is LOINC or SNOMED CT where a suitable code has been verified (for example LOINC `79908-0` for the visual acuity chart), and otherwise a laterality-neutral code from the [FHIR4Eyes Code System](CodeSystem-fhir4eyes-cs.md) (see [Terminology](terminology.md)). Instances **must** carry that coding in `component.code` for the component to be recognized as the slice; additional codings (for example an eye-specific LOINC) may be added alongside it, but do not replace it.
+
 Implementers consuming these resources should read `component` as an open set of optional, independently meaningful facts about the measurement, not a fixed record structure: only the components relevant to the specific test performed will be present.
 
 ## Fixating eye vs. measured eye
@@ -98,7 +102,7 @@ When implementing a system against this guide, this chain is the backbone to bui
 
 ## Terminology strategy summary
 
-See [Terminology](terminology.md) for the full detail. In short: this guide binds directly to SNOMED CT and LOINC wherever possible, rather than depending on the HL7 Eye Care IG's own value sets (which cannot be formally imported, since that guide has no published FHIR package yet). New terminology (like `LowVisionAssessment`) is only introduced where a genuine, verified gap exists.
+See [Terminology](terminology.md) for the full detail. In short: this guide binds directly to SNOMED CT and LOINC wherever possible, rather than depending on the HL7 Eye Care IG's own value sets (which cannot be formally imported, since that guide has no published FHIR package yet). New terminology (like `LowVisionAssessment`, or the laterality-neutral codes in the [FHIR4Eyes Code System](CodeSystem-fhir4eyes-cs.md)) is only introduced where a genuine, verified gap exists.
 
 ## A note on how this guide was built
 

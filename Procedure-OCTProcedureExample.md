@@ -12,7 +12,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **code**: Optical coherence tomography
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **performed**: 2026-08-18 10:00:00+0000
 
@@ -25,7 +25,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **bodySite**: 
 
-**report**: [Diagnostic Report for '' for '->Patient Example Female, DoB: 1990-01-01 ( PA1234567)'](DiagnosticReport-OCTDiagnosticReportExample.md)
+**report**: [Diagnostic Report for '' for '->Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)'](DiagnosticReport-OCTDiagnosticReportExample.md)
 
 
 

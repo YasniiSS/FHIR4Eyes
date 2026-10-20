@@ -14,7 +14,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
 
 **code**: Corneal tomography, anterior chamber analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
@@ -50,11 +54,20 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "corneal-tomography-anterior-chamber",
+      "display" : "Corneal tomography, anterior chamber analysis"
+    }],
     "text" : "Corneal tomography, anterior chamber analysis"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
@@ -68,6 +81,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "anterior-chamber-depth",
+        "display" : "Anterior chamber depth"
+      }],
       "text" : "Anterior chamber depth (ACD)"
     },
     "valueQuantity" : {
@@ -78,6 +96,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "anterior-chamber-volume",
+        "display" : "Anterior chamber volume"
+      }],
       "text" : "Anterior chamber volume"
     },
     "valueQuantity" : {
@@ -88,6 +111,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "anterior-chamber-angle",
+        "display" : "Anterior chamber angle"
+      }],
       "text" : "Anterior chamber angle"
     },
     "valueQuantity" : {
@@ -98,6 +126,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-diameter",
+        "display" : "Pupil diameter"
+      }],
       "text" : "Pupil diameter"
     },
     "valueQuantity" : {
@@ -108,6 +141,11 @@ Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "lens-thickness",
+        "display" : "Lens thickness"
+      }],
       "text" : "Lens thickness"
     },
     "valueQuantity" : {

@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation TensionCurveRightEyeExample</b></p><a name=\"TensionCurveRightEyeExample\"> </a><a name=\"hcTensionCurveRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-tension-curve.html\">Tension Curve</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Ambulatory tension curve</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>effective</b>: 2026-08-18 08:00:00+0000 --&gt; 2026-08-18 14:00:00+0000</p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-TensionCurveRightEye0800Example.html\">IOP right eye 08:00 - 18 mmHg</a></li><li><a href=\"Observation-TensionCurveRightEye1200Example.html\">IOP right eye 12:00 - 20 mmHg</a></li><li><a href=\"Observation-TensionCurveRightEye1400Example.html\">IOP right eye 14:00 - 19 mmHg</a></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation TensionCurveRightEyeExample</b></p><a name=\"TensionCurveRightEyeExample\"> </a><a name=\"hcTensionCurveRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-tension-curve.html\">Tension Curve</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs tension-curve}\">Ambulatory tension curve</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 08:00:00+0000 --&gt; 2026-08-18 14:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-TensionCurveRightEye0800Example.html\">IOP right eye 08:00 - 18 mmHg</a></li><li><a href=\"Observation-TensionCurveRightEye1200Example.html\">IOP right eye 12:00 - 20 mmHg</a></li><li><a href=\"Observation-TensionCurveRightEye1400Example.html\">IOP right eye 14:00 - 19 mmHg</a></li></ul></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -30,6 +30,12 @@
      ]
   ] ;
   fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "tension-curve" ] ;
+       fhir:Coding.display [ fhir:value "Diurnal intraocular pressure tension curve" ]
+     ] ;
      fhir:CodeableConcept.text [ fhir:value "Ambulatory tension curve" ]
   ] ;
   fhir:Observation.subject [
@@ -39,6 +45,11 @@
   fhir:Observation.effectivePeriod [
      fhir:Period.start [ fhir:value "2026-08-18T08:00:00Z"^^xsd:dateTime ] ;
      fhir:Period.end [ fhir:value "2026-08-18T14:00:00Z"^^xsd:dateTime ]
+  ] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
   ] ;
   fhir:Observation.bodySite [
      fhir:Element.extension [

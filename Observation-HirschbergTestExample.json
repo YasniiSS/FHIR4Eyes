@@ -1,0 +1,77 @@
+{
+  "resourceType" : "Observation",
+  "id" : "HirschbergTestExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation HirschbergTestExample</b></p><a name=\"HirschbergTestExample\"> </a><a name=\"hcHirschbergTestExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-hirschberg-test.html\">Hirschberg Test</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs hirschberg-test}\">Hirschberg test</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>note</b>: </p><blockquote><div><p>Exotropia of about 15 degrees fixating either eye (FODI), comitant in the five principal gaze positions.</p>\n</div></blockquote><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-HirschbergPrimaryFODExample.html\">Primary position - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergPrimaryFOIExample.html\">Primary position - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergUpFODExample.html\">Up gaze (supraversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergUpFOIExample.html\">Up gaze (supraversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergDownFODExample.html\">Down gaze (infraversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergDownFOIExample.html\">Down gaze (infraversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergRightFODExample.html\">Right gaze (dextroversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergRightFOIExample.html\">Right gaze (dextroversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergLeftFODExample.html\">Left gaze (levoversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergLeftFOIExample.html\">Left gaze (levoversion) - FOI, about 15 degrees exodeviation</a></li></ul></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "exam",
+      "display" : "Exam"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "hirschberg-test",
+      "display" : "Hirschberg test"
+    }],
+    "text" : "Hirschberg test"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
+  "note" : [{
+    "text" : "Exotropia of about 15 degrees fixating either eye (FODI), comitant in the five principal gaze positions."
+  }],
+  "hasMember" : [{
+    "reference" : "Observation/HirschbergPrimaryFODExample",
+    "display" : "Primary position - FOD, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergPrimaryFOIExample",
+    "display" : "Primary position - FOI, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergUpFODExample",
+    "display" : "Up gaze (supraversion) - FOD, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergUpFOIExample",
+    "display" : "Up gaze (supraversion) - FOI, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergDownFODExample",
+    "display" : "Down gaze (infraversion) - FOD, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergDownFOIExample",
+    "display" : "Down gaze (infraversion) - FOI, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergRightFODExample",
+    "display" : "Right gaze (dextroversion) - FOD, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergRightFOIExample",
+    "display" : "Right gaze (dextroversion) - FOI, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergLeftFODExample",
+    "display" : "Left gaze (levoversion) - FOD, about 15 degrees exodeviation"
+  },
+  {
+    "reference" : "Observation/HirschbergLeftFOIExample",
+    "display" : "Left gaze (levoversion) - FOI, about 15 degrees exodeviation"
+  }]
+}

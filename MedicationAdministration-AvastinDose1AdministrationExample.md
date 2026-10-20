@@ -14,7 +14,7 @@ Profile: [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-m
 
 **medication**: [Medication ](Medication-AvastinMedicationExample.md)
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **effective**: 2026-08-18 09:00:00+0000
 
@@ -36,7 +36,7 @@ Primera dosis del esquema de inyecciones de Avastin
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| - | **Site** | **Route** | **Dose** |
+| - | **Extension** | **Route** | **Dose** |
 | * |  | Intravitreal | 1.25 mg (Details: UCUM codemg = 'mg') |
 
 
@@ -70,14 +70,12 @@ Primera dosis del esquema de inyecciones de Avastin
     "text" : "Primera dosis del esquema de inyecciones de Avastin"
   }],
   "dosage" : {
-    "site" : {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
-        "valueReference" : {
-          "reference" : "BodyStructure/LeftEyeStructureExample"
-        }
-      }]
-    },
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
+      "valueReference" : {
+        "reference" : "BodyStructure/LeftEyeStructureExample"
+      }
+    }],
     "route" : {
       "text" : "Intravitreal"
     },

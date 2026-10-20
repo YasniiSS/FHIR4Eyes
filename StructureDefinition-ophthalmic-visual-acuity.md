@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicVisualAcuity |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicVisualAcuity |
 
  
 Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. 
@@ -18,7 +18,7 @@ Represents a visual acuity measurement, modeled as discrete, independently combi
 
 ### Design decisions
 
-**Granular components, not a single pre-coordinated code.** The HL7 Eye Care IG's published (2021) approach captures distance and correction status entirely within `code` itself (for example, SNOMED CT `251739003`, "Distance visual acuity"), relying on SNOMED CT to provide a distinct, pre-coordinated concept for every possible combination. This guide instead follows a more granular pattern, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes: `code` is fixed to the generic LOINC `98497-1` "Visual acuity panel", and the specific detail is captured through separate components instead:
+**Granular components, not a single pre-coordinated code.** The HL7 Eye Care IG's published (2021) approach captures distance and correction status entirely within `code` itself (for example, SNOMED CT `251739003`, "Distance visual acuity"), relying on SNOMED CT to provide a distinct, pre-coordinated concept for every possible combination. This guide instead follows a more granular pattern, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes: `code` is fixed to the generic SNOMED CT `363983007` "Visual acuity" (instances may add a specific LOINC as a second coding, e.g. `98505-1` far uncorrected right eye), and the specific detail is captured through separate components instead:
 
 | | |
 | :--- | :--- |
@@ -28,7 +28,7 @@ Represents a visual acuity measurement, modeled as discrete, independently combi
 | `scale` | The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR). |
 | `pinhole` | A boolean: whether this specific measurement was taken through a pinhole occluder. |
 
-> The exact code system to use for the `distance` component's own code (and for `correctionStatus`, `scale`, and `pinhole`) is still to be identified; a text-only code is used for now (see the FSH source).
+> `distance`, `correctionStatus`, `scale` and `pinhole` use local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code; `chart` uses LOINC `79908-0`.
 
 **Value.** `value[x]` accepts `Ratio` (Snellen fractions), `Quantity` (decimal or LogMAR), or `CodeableConcept` (the qualitative [LowVisionAssessment](ValueSet-low-vision-assessment-vs.md) scale, for vision that falls below what any chart can measure; see [Terminology](terminology.md)).
 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "name" : "OphthalmicVisualAcuity",
   "title" : "Ophthalmic Visual Acuity",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -83,7 +83,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a visual acuity measurement, modeled as discrete, independently\r\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\r\nthan as a single pre-coordinated code that bundles all of these together. This follows a\r\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\r\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\r\n(2025), which favors flexible, independently recordable components over pre-coordinated\r\ncodes. See Terminology for the underlying terminology strategy, including the\r\nLowVisionAssessment value set for vision below what any chart can measure.",
+  "description" : "Represents a visual acuity measurement, modeled as discrete, independently\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\nthan as a single pre-coordinated code that bundles all of these together. This follows a\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\n(2025), which favors flexible, independently recordable components over pre-coordinated\ncodes. See Terminology for the underlying terminology strategy, including the\nLowVisionAssessment value set for vision below what any chart can measure.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -134,7 +134,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
       "constraint" : [{
         "key" : "inv-va-laterality",
         "severity" : "warning",
-        "human" : "Visual Acuity should have a bodySite indicating which eye (may be absent for binocular measurements)",
+        "human" : "Visual acuity should reference the eye(s) tested via bodySite; binocular measurements reference a both-eyes OcularBodyStructure",
         "expression" : "bodySite.exists()",
         "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
       }]
@@ -147,7 +147,22 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -160,12 +175,12 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "LOINC 98497-1 — Visual acuity panel; specific detail lives in the discrete components below",
+      "short" : "SNOMED CT 363983007 Visual acuity (generic); the specific detail lives in the discrete components below. Instances may add a specific LOINC as a second coding, e.g. 98505-1 / 98504-4 / 98506-9 (far uncorrected right / left / binocular) or 98512-7 / 98511-9 / 98513-5 (far best corrected)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "98497-1",
-          "display" : "Visual acuity panel"
+          "system" : "http://snomed.info/sct",
+          "code" : "363983007",
+          "display" : "Visual acuity"
         }]
       },
       "mustSupport" : true
@@ -255,7 +270,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -303,9 +318,16 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
       "mustSupport" : true
     },
     {
-      "id" : "Observation.component:distance.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Testing distance"
+      "id" : "Observation.component:distance.code",
+      "path" : "Observation.component.code",
+      "short" : "Testing distance (distance from the chart)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "test-distance",
+          "display" : "Testing distance"
+        }]
+      }
     },
     {
       "id" : "Observation.component:distance.value[x]",
@@ -326,12 +348,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.component:correctionStatus.code",
       "path" : "Observation.component.code",
-      "short" : "Correction status: only two states, corrected or uncorrected"
-    },
-    {
-      "id" : "Observation.component:correctionStatus.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Correction status"
+      "short" : "Correction status: only two states, corrected or uncorrected",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "correction-status",
+          "display" : "Refractive correction status during test"
+        }]
+      }
     },
     {
       "id" : "Observation.component:correctionStatus.value[x]",
@@ -378,12 +402,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.component:scale.code",
       "path" : "Observation.component.code",
-      "short" : "The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR)"
-    },
-    {
-      "id" : "Observation.component:scale.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Scale"
+      "short" : "The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "visual-acuity-scale",
+          "display" : "Visual acuity notation scale"
+        }]
+      }
     },
     {
       "id" : "Observation.component:scale.value[x]",
@@ -403,12 +429,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
     {
       "id" : "Observation.component:pinhole.code",
       "path" : "Observation.component.code",
-      "short" : "Whether this measurement was taken through a pinhole occluder"
-    },
-    {
-      "id" : "Observation.component:pinhole.code.text",
-      "path" : "Observation.component.code.text",
-      "patternString" : "Pinhole"
+      "short" : "Whether this measurement was taken through a pinhole occluder",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "pinhole-used",
+          "display" : "Pinhole occluder used"
+        }]
+      }
     },
     {
       "id" : "Observation.component:pinhole.value[x]",

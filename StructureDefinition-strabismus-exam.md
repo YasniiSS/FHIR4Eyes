@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:StrabismusExam |
+| Draft as of 2026-10-20 | *Computable Name*:StrabismusExam |
 
  
 Represents a strabismus examination as a panel grouping together whichever sub-tests were actually performed for this patient (for example, cover test, motility, near point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible sub-test is performed for every patient; this profile does not enforce a fixed checklist. Each sub-test is recorded as its own Observation, referenced here via hasMember. 
@@ -26,7 +26,7 @@ The sub-tests fall into two groups, based on their structure:
 
 **Position-based sub-tests** are performed across multiple gaze positions (primary position, right gaze, up-and-right gaze, and so on), with one measurement or finding recorded per position: [PrismCoverTest](StructureDefinition-prism-cover-test.md), [KrimskyTest](StructureDefinition-krimsky-test.md), [HirschbergTest](StructureDefinition-hirschberg-test.md), [RedFilterLightTest](StructureDefinition-red-filter-light-test.md), [Worth4DotTest](StructureDefinition-worth-4-dot-test.md). Each of these is itself a small panel: it groups its per-position results via `hasMember`, referencing a shared reusable pattern, [GazePositionMeasurement](StructureDefinition-gaze-position-measurement.md), once per gaze position tested.
 
-`GazePositionMeasurement` supports two kinds of per-position result through optional components: a quantitative prism diopter deviation (`horizontalDeviation`, `verticalDeviation`), used by `PrismCoverTest` and `KrimskyTest`; and a qualitative `finding` (for example fusion, suppression, diplopia), used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`. A single shared pattern is used for both cases, rather than two separate profiles, since only the choice of component differs.
+`GazePositionMeasurement` records the gaze position itself in a required `gazePosition` component, and supports two kinds of per-position result through optional components: a quantitative prism diopter deviation (`horizontalDeviation`, `verticalDeviation`), used by `PrismCoverTest` and `KrimskyTest`; and a qualitative `finding` (for example fusion, suppression, diplopia), used by `HirschbergTest`, `RedFilterLightTest`, and `Worth4DotTest`. A single shared pattern is used for both cases, rather than two separate profiles, since only the choice of component differs.
 
 > This list of sub-tests is not exhaustive. Other tests exist in practice (for example, additional stereopsis test types beyond what this guide currently distinguishes) and may be added to this guide over time, following the same patterns established here.
 
@@ -44,17 +44,17 @@ graph TD
     PCT -->|hasMember| GPM2[GazePositionMeasurement<br/>right gaze]
     KT -->|hasMember| GPM3[GazePositionMeasurement<br/>primary position]
 
-    GPM1 -.-> COMP1["fixatingEye, horizontalDeviation,<br/>verticalDeviation"]
+    GPM1 -.-> COMP1["gazePosition, fixatingEye,<br/>horizontalDeviation, verticalDeviation"]
 
 ```
 
 ### Design decisions
 
-**Fixating eye vs. measured eye.** A recurring source of confusion in strabismus testing is that measurements are described relative to which eye is fixating (for example "FOD", fixing with the right eye), while the actual deviation being measured belongs to the **other** eye. To avoid this ambiguity, this guide separates the two explicitly: `bodySite` (via the standard extension to [OcularBodyStructure](StructureDefinition-ocular-body-structure.md)) always identifies the eye being **measured** (the deviating eye), while a separate `fixatingEye` component (on `GazePositionMeasurement`) identifies which eye was **fixating** during that specific measurement. The two are never combined into a single field.
+**Fixating eye vs. measured eye.** A recurring source of confusion in strabismus testing is that measurements are described relative to which eye is fixating (for example "FOD", fixing with the right eye), while the actual deviation being measured belongs to the **other** eye. To avoid this ambiguity, this guide separates the two explicitly: on `GazePositionMeasurement`, `bodySite` (via the standard extension to [OcularBodyStructure](StructureDefinition-ocular-body-structure.md)) always identifies the eye being **measured** (the deviating eye), while a separate `fixatingEye` component identifies which eye was **fixating** during that specific measurement. The two are never combined into a single field. The position-based panels themselves, and the `StrabismusExam` panel, carry no `bodySite`; among the direct sub-tests, only `CoverTest` (`0..1`) and `OcularMotility` (`1..1`, the eye assessed) have one.
 
 **Flexible components, not a fixed checklist.** None of the sub-test profiles enforce a required set of components. Which aspects are assessed and recorded depends on the clinical case, the patient's age, and what equipment is available.
 
-**Open terminology.** Several sub-test profiles (`CoverTest`, `OcularMotility`, `ConvergenceAssessment`, and others) leave their finding values as an open `CodeableConcept`, explicitly noted as "terminology to be confirmed" in their FSH source. No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is left as an open item rather than guessing at codes.
+**Open terminology.** Every profile in this family has a fixed `code`, and every component a fixed code, using local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code. The finding **values**, however, are still open: several sub-test profiles (`CoverTest`, `OcularMotility`, `ConvergenceAssessment`, and others) leave them as an unbound `CodeableConcept`, explicitly noted as "terminology to be confirmed" in their FSH source. No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is left as an open item rather than guessing at codes.
 
 > This architecture was defined by the guide's author directly, as a case where enough clinical judgment was already available to model it without deferring to further ophthalmologist review (unlike the lower-priority profiles still pending clinical validation).
 
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
   "name" : "StrabismusExam",
   "title" : "Strabismus Exam",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -161,7 +161,22 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -175,6 +190,13 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a strabismus exam panel",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "strabismus-exam",
+          "display" : "Strabismus examination"
+        }]
+      },
       "mustSupport" : true
     },
     {

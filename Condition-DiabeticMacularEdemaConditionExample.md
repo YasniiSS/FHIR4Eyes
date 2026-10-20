@@ -12,7 +12,7 @@ Profile: [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md)
 
 **bodySite**: 
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 
 

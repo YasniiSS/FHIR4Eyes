@@ -14,9 +14,11 @@ Profile: [Intraocular Pressure](StructureDefinition-intraocular-pressure.md)
 
 **code**: Intraocular pressure
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **effective**: 2026-08-18 08:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **value**: 18 mm[Hg] (Details: UCUM codemm[Hg] = 'mm[Hg]')
 
@@ -54,6 +56,9 @@ Profile: [Intraocular Pressure](StructureDefinition-intraocular-pressure.md)
     "reference" : "Patient/PatientExample"
   },
   "effectiveDateTime" : "2026-08-18T08:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "valueQuantity" : {
     "value" : 18,
     "system" : "http://unitsofmeasure.org",

@@ -16,6 +16,33 @@
 * The [Artefacts Summary](artifacts.md) is grouped by clinical domain.
 * All examples now have a title and description.
 
+**Terminology and validation fixes**:
+
+* New [FHIR4Eyes Code System](CodeSystem-fhir4eyes-cs.md) (`FHIR4EyesCS`, about 213 laterality-neutral codes). Every `component` slice is now identified by a fixed code (LOINC or SNOMED CT where verified, otherwise FHIR4EyesCS), and most `Observation.code` values are fixed as well. IG Publisher QA errors dropped from about 5478 to 0 (excluding the two known links to the future FHIR4Eyes CL guide).
+* Pachymetry and specular microscopy use laterality-neutral FHIR4EyesCS codes; instances add the eye-specific LOINC (for example `79825-6` / `79826-4`) as a second coding.
+* `OphthalmicVisualAcuity.code` is now SNOMED CT `363983007` (Visual acuity); instances may add a specific LOINC (for example `98505-1`) as a second coding.
+* `OphthalmicOCTMacula`: the `centralVol` slice was renamed `totalVol`, matching LOINC `57118-2` (Macular grid.total volume by OCT).
+* SNOMED CT `39021009` was replaced by `82859000` (Macula lutea structure) in imaging series body sites.
+* SearchParameter and CapabilityStatement canonical URLs now follow the IG canonical, with version 0.4.0.
+* `OphthalmicDiagnosticReport` adds an optional `IMG` (Diagnostic Imaging, v2-0074) category slice for image-based exams.
+* `OphthalmicPatient` identifier slices are now discriminated by `type`.
+* The `bodySiteEye` extension was removed from `ImagingStudy.series` (laterality uses the native `series.laterality`, and the `eye` search parameter now searches it as a token) and added to `MedicationAdministration.dosage`.
+* `GazePositionMeasurement` records the gaze position in a dedicated `gazePosition` component.
+* DICOM modality codes use the DICOM system (`http://dicom.nema.org/resources/ontology/DCM`).
+* [Low Vision Assessment Value Set](ValueSet-low-vision-assessment-vs.md): displays corrected, and the distance-specific counting-fingers codes (`260292001`, `260293006`, `260294000`) added as members.
+* Added `input/ignoreWarnings.txt` for documented, intentional publisher warnings.
+
+**DICOM mappings and clinical consistency**:
+
+* DICOM tags and context groups removed from element descriptions and FHIR4EyesCS definitions; verified correspondences are now informative `Mapping`s (Mappings tab of biometry, IOL formula, OCT macula, OCT RNFL, visual field, corneal anterior surface and anterior chamber). Several wrong tags were corrected (see the DICOM mapping notes).
+* Strabismus: deviations are positive magnitudes with a separate direction component (eso/exo, hyper/hypo); testing distance near/far uses its own code; Worth 4 dot test gains correction status; the cover test example is split into near and far.
+* OCT: one normative classification value set for RNFL and macula (`interpretation`); RNFL quadrant thicknesses added; examples made internally consistent.
+* Visual field: Glaucoma Hemifield Test, fixation losses and false positive/negative errors added; luminance in UCUM `cd/m2`.
+* Corneal tomography: posterior corneal power is negative; duplicated corneal cylinder removed. Biometry: Km and K axes added.
+* Binocular measurements reference a both-eyes OcularBodyStructure; all Observation examples carry performer and effective time.
+
+**Generic patient and encounter references**: Core profiles reference a generic `Patient` and `Encounter` (12 profiles previously required `OphthalmicEncounter`). The patient and encounter profiles are inherited from the international context or, in Chile, from FHIR4Eyes CL. Internal working notes remain outside the published navigation.
+
 ## 0.3.0
 
 Corrective release following a multi-agent audit of the guide (2026-09-01).

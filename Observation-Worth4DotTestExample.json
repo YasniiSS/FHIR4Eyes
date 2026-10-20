@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Observation",
+  "id" : "Worth4DotTestExample",
+  "meta" : {
+    "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Worth4DotTestExample</b></p><a name=\"Worth4DotTestExample\"> </a><a name=\"hcWorth4DotTestExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-worth-4-dot-test.html\">Worth 4 Dot Test</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs worth-4-dot-test}\">Worth 4 dot test</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>hasMember</b>: <a href=\"Observation-Worth4DotPrimaryPositionExample.html\">Primary position - right eye suppression</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs test-distance-category}\">Test distance</span></p><p><b>value</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs far}\">Far</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs correction-status}\">Correction status</span></p><p><b>value</b>: <span title=\"Codes:\">With correction</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "exam",
+      "display" : "Exam"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "worth-4-dot-test",
+      "display" : "Worth 4 dot test"
+    }],
+    "text" : "Worth 4 dot test"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
+  "hasMember" : [{
+    "reference" : "Observation/Worth4DotPrimaryPositionExample",
+    "display" : "Primary position - right eye suppression"
+  }],
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "test-distance-category",
+        "display" : "Testing distance category (near/far)"
+      }],
+      "text" : "Test distance"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "far",
+        "display" : "Far"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "correction-status",
+        "display" : "Refractive correction status during test"
+      }],
+      "text" : "Correction status"
+    },
+    "valueCodeableConcept" : {
+      "text" : "With correction"
+    }
+  }]
+}

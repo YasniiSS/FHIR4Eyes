@@ -12,7 +12,7 @@ Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnosti
 
 | | |
 | :--- | :--- |
-| Subject | Patient Example Female, DoB: 1990-01-01 ( PA1234567) |
+| Subject | Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567) |
 | Relevant Time | 2026-08-18 09:15:00+0000 |
 | Performer | [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md) |
 
@@ -20,20 +20,24 @@ Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnosti
 
 * **Code**: [OCT optic disc / RNFL analysis](Observation-OCTRNFLRightEyeExample.md)()
   * **Value**: 
-  * **Flags**: Final,Borderline
+  * **Flags**: Final,Borderline (inferior quadrant borderline)
   * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [OCT optic disc / RNFL analysis](Observation-OCTRNFLLeftEyeExample.md)()
   * **Value**: 
-  * **Flags**: Final,Outside Normal Limits
+  * **Flags**: Final,Outside normal limits
   * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [OCT macula analysis](Observation-OCTMaculaRightEyeExample.md)()
   * **Value**: 
-  * **Flags**: Final
+  * **Flags**: Final,Within normal limits
   * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [OCT macula analysis](Observation-OCTMaculaLeftEyeExample2.md)()
   * **Value**: 
-  * **Flags**: Final
+  * **Flags**: Final,Within normal limits
   * **Note**: > Device: Heidelberg Spectralis SPIRIT tracking laser tomography
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 
 Right eye ONH borderline, left eye ONH outside normal limits with increased cup-to-disc ratio and DDLS stage 5, consistent with asymmetric glaucomatous damage. Macular thickness within expected range bilaterally, no evidence of macular edema.
 

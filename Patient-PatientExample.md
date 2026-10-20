@@ -8,7 +8,7 @@
 
 Profile: [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md)
 
-Patient Example Female, DoB: 1990-01-01 ( PA1234567)
+Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)
 
 -------
 
@@ -30,6 +30,13 @@ Patient Example Female, DoB: 1990-01-01 ( PA1234567)
     "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"]
   },
   "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PPN",
+        "display" : "Passport number"
+      }]
+    },
     "value" : "PA1234567"
   }],
   "name" : [{

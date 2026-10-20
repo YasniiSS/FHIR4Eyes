@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:LowVisionAssessmentVS |
+| Draft as of 2026-10-20 | *Computable Name*:LowVisionAssessmentVS |
 
  
 Qualitative visual acuity for patients whose vision falls below what any chart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed SNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for the full clinical and terminology rationale. The counting-fingers concept below uses the generic code by default; the more specific distance-based codes may be used instead when that detail is known. 
@@ -50,7 +50,8 @@ Qualitative visual acuity for patients whose vision falls below what any chart c
   "name" : "LowVisionAssessmentVS",
   "title" : "Low Vision Assessment Value Set",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "experimental" : false,
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -82,12 +83,28 @@ Qualitative visual acuity for patients whose vision falls below what any chart c
         "display" : "Counts fingers - distance vision (finding)"
       },
       {
+        "code" : "260292001",
+        "display" : "Counts fingers - 1 meter"
+      },
+      {
+        "code" : "260293006",
+        "display" : "Counts fingers - 1/2 meter"
+      },
+      {
+        "code" : "260294000",
+        "display" : "Counts fingers - 1/3 meter"
+      },
+      {
         "code" : "260295004",
         "display" : "Sees hand movements (finding)"
       },
       {
         "code" : "260297007",
-        "display" : "Visual acuity perception of light - accurate projection (finding)"
+        "display" : "Perception of light - accurate projection"
+      },
+      {
+        "code" : "264944004",
+        "display" : "Visual acuity PL - accurate projection"
       },
       {
         "code" : "264943005",

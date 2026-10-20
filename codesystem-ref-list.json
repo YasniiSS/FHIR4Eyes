@@ -9,19 +9,9 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
+    "ValueSet-binocular-finding-vs.html" : "Binocular Finding Value Set",
+    "ValueSet-gaze-position-vs.html" : "Gaze Position Value Set",
     "ValueSet-low-vision-assessment-vs.html" : "Low Vision Assessment Value Set"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/v2-0074",
-    "version" : "3.0.0",
-    "status" : "active",
-    "name" : "DiagnosticServiceSectionId",
-    "title" : "diagnosticServiceSectionId",
-    "description" : "HL7-defined code system of concepts which specify a section of a diagnostic service where the observation may be performed.  Used in HL7 Version 2.x messaging in the OBR and OM4 segments.",
-    "oids" : ["2.16.840.1.113883.18.29"],
-    "uses" : {
-    },
-    "http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" : "hl7VS-diagnosticServiceSectionId"
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",
@@ -33,5 +23,20 @@
     "uses" : {
     },
     "ValueSet-ophthalmic-care-plan-category-vs.html" : "Ophthalmic Care Plan Category Value Set"
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "FHIR4EyesCS",
+    "title" : "FHIR4Eyes Code System",
+    "description" : "Local, laterality-neutral codes for ophthalmic observations and components\ndefined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been\nverified. Open to replacement as external codes become available.",
+    "uses" : {
+    },
+    "ValueSet-horizontal-deviation-direction-vs.html" : "Horizontal Deviation Direction Value Set",
+    "ValueSet-binocular-finding-vs.html" : "Binocular Finding Value Set",
+    "ValueSet-vertical-deviation-direction-vs.html" : "Vertical Deviation Direction Value Set",
+    "ValueSet-test-distance-category-vs.html" : "Test Distance Category Value Set",
+    "ValueSet-normative-classification-vs.html" : "Normative Classification Value Set"
   }]
 }

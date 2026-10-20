@@ -12,7 +12,7 @@ Profile: [Ocular Body Structure](StructureDefinition-ocular-body-structure.md)
 
 **locationQualifier**: Right
 
-**patient**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**patient**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 
 

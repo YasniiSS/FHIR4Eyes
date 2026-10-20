@@ -1,56 +1,7 @@
 [{
-  "id" : "sp-condition-eye",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/condition-eye",
-  "version" : "0.4.0",
-  "name" : "ConditionEye"
-},
-{
-  "id" : "sp-diagnosticreport-imaging-study",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/diagnosticreport-imaging-study",
-  "version" : "0.4.0",
-  "name" : "DiagnosticReportImagingStudy"
-},
-{
-  "id" : "sp-encounter-appointment",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/encounter-appointment",
-  "version" : "0.4.0",
-  "name" : "EncounterAppointment"
-},
-{
-  "id" : "sp-imagingstudy-eye",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-eye",
-  "version" : "0.4.0",
-  "name" : "ImagingStudyEye"
-},
-{
-  "id" : "sp-imagingstudy-modality",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-modality",
-  "version" : "0.4.0",
-  "name" : "ImagingStudyModality"
-},
-{
-  "id" : "sp-observation-eye",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/observation-eye",
-  "version" : "0.4.0",
-  "name" : "ObservationEye"
-},
-{
-  "id" : "sp-procedure-eye",
-  "type" : "SearchParameter",
-  "url" : "http://fhir4eyes.org/SearchParameter/procedure-eye",
-  "version" : "0.4.0",
-  "name" : "ProcedureEye"
-},
-{
   "id" : "FHIR4EyesCapabilityStatement",
   "type" : "CapabilityStatement",
-  "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/FHIR4EyesCapabilityStatement",
   "version" : "0.4.0",
   "name" : "FHIR4EyesServer"
 },
@@ -62,11 +13,67 @@
   "name" : "FHIR4EyesCarePlanCategoryCS"
 },
 {
+  "id" : "fhir4eyes-cs",
+  "type" : "CodeSystem",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+  "version" : "0.4.0",
+  "name" : "FHIR4EyesCS"
+},
+{
   "id" : "fhir4eyes.core",
   "type" : "ImplementationGuide",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core",
   "version" : "0.4.0",
   "name" : "FHIR4Eyes"
+},
+{
+  "id" : "sp-condition-eye",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-condition-eye",
+  "version" : "0.4.0",
+  "name" : "ConditionEye"
+},
+{
+  "id" : "sp-diagnosticreport-imaging-study",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-diagnosticreport-imaging-study",
+  "version" : "0.4.0",
+  "name" : "DiagnosticReportImagingStudy"
+},
+{
+  "id" : "sp-encounter-appointment",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-encounter-appointment",
+  "version" : "0.4.0",
+  "name" : "EncounterAppointment"
+},
+{
+  "id" : "sp-imagingstudy-eye",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye",
+  "version" : "0.4.0",
+  "name" : "ImagingStudyEye"
+},
+{
+  "id" : "sp-imagingstudy-modality",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-modality",
+  "version" : "0.4.0",
+  "name" : "ImagingStudyModality"
+},
+{
+  "id" : "sp-observation-eye",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-observation-eye",
+  "version" : "0.4.0",
+  "name" : "ObservationEye"
+},
+{
+  "id" : "sp-procedure-eye",
+  "type" : "SearchParameter",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-procedure-eye",
+  "version" : "0.4.0",
+  "name" : "ProcedureEye"
 },
 {
   "id" : "convergence-assessment",
@@ -363,6 +370,27 @@
   "name" : "Worth4DotTest"
 },
 {
+  "id" : "binocular-finding-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs",
+  "version" : "0.4.0",
+  "name" : "BinocularFindingVS"
+},
+{
+  "id" : "gaze-position-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs",
+  "version" : "0.4.0",
+  "name" : "GazePositionVS"
+},
+{
+  "id" : "horizontal-deviation-direction-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs",
+  "version" : "0.4.0",
+  "name" : "HorizontalDeviationDirectionVS"
+},
+{
   "id" : "low-vision-assessment-vs",
   "type" : "ValueSet",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs",
@@ -370,9 +398,30 @@
   "name" : "LowVisionAssessmentVS"
 },
 {
+  "id" : "normative-classification-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs",
+  "version" : "0.4.0",
+  "name" : "NormativeClassificationVS"
+},
+{
   "id" : "ophthalmic-care-plan-category-vs",
   "type" : "ValueSet",
   "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
   "version" : "0.4.0",
   "name" : "OphthalmicCarePlanCategoryVS"
+},
+{
+  "id" : "test-distance-category-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs",
+  "version" : "0.4.0",
+  "name" : "TestDistanceCategoryVS"
+},
+{
+  "id" : "vertical-deviation-direction-vs",
+  "type" : "ValueSet",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs",
+  "version" : "0.4.0",
+  "name" : "VerticalDeviationDirectionVS"
 }]

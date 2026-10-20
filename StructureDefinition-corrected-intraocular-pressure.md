@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CorrectedIntraocularPressure |
+| Draft as of 2026-10-20 | *Computable Name*:CorrectedIntraocularPressure |
 
  
 Represents an intraocular pressure reading corrected for corneal thickness (pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing both the IOP and pachymetry measurements it was derived from via derivedFrom. 
 
-Represents an intraocular pressure reading corrected for corneal thickness (pachymetry), with the corrected value as a required `Quantity` in mmHg. It is recorded as a separate `Observation` from the plain IOP reading, rather than overwriting or annotating it.
+Represents an intraocular pressure reading corrected for corneal thickness (pachymetry), with the corrected value as a required `Quantity` in mmHg. It is recorded as a separate `Observation` from the plain IOP reading, rather than overwriting or annotating it. `code` is fixed to the laterality-neutral local code `corrected-intraocular-pressure` ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)); instances may add the eye-specific LOINC as a second coding (`96093-0` right eye / `96092-2` left eye, compensated IOP, calculated).
 
 ### Usage
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
   "name" : "CorrectedIntraocularPressure",
   "title" : "Corrected Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -130,7 +130,22 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -143,7 +158,14 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "Identifies this as a corrected IOP reading",
+      "short" : "Identifies this as a corrected IOP reading. LOINC 96093-0/96092-2 (compensated IOP) exist but may not be equivalent to CCT-based correction; not used",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corrected-intraocular-pressure",
+          "display" : "Intraocular pressure corrected for central corneal thickness"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -200,7 +222,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },

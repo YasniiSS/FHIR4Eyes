@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicDiagnosticReport |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicDiagnosticReport |
 
  
 Represents the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset. Unlike a radiology report, this is not limited to describing imaging findings: the same clinical act typically also reaches a diagnosis and defines a treatment plan, recorded as separate Condition and CarePlan resources referencing this report. 
@@ -23,7 +23,7 @@ Every examination in [use case 2, group B](usecases.md#group-b-imaging-studies-w
 | | | |
 | :--- | :--- | :--- |
 | `specialty` | 1..1 (always present) | SNOMED CT`394594003`(Ophthalmology, qualifier value) |
-| `imagingType` | 0..1 (only when applicable) | `IMG`(Diagnostic Imaging), used only when the examination produces an image in the strict sense (for example OCT, angiography, retinography, topography); omitted for examinations that produce structured data without a photographic image |
+| `imagingType` | 0..1 (only when applicable) | Fixed to`v2-0074#IMG`(Diagnostic Imaging) when present; used only when the examination produces an image in the strict sense (for example OCT, angiography, retinography, topography); omitted for examinations that produce structured data without a photographic image |
 
 > **Open discussion, not yet resolved:** whether to add a third, more granular classification level for subspecialty (for example Retina, Glaucoma) is a design question left open for a future iteration of this guide. It is noted here so it is not lost, but is intentionally out of scope for the current version.
 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
   "name" : "OphthalmicDiagnosticReport",
   "title" : "Ophthalmic Diagnostic Report",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -83,7 +83,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report.",
+  "description" : "Represents the findings, diagnosis, and treatment plan reached after\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\nthis is not limited to describing imaging findings: the same clinical act typically also\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\nCarePlan resources referencing this report.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -177,11 +177,14 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
       "short" : "IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "extensible",
-        "valueSet" : "http://terminology.hl7.org/ValueSet/v2-0074"
-      }
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code" : "IMG",
+          "display" : "Diagnostic Imaging"
+        }]
+      },
+      "mustSupport" : true
     },
     {
       "id" : "DiagnosticReport.code",

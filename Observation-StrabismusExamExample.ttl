@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation StrabismusExamExample</b></p><a name=\"StrabismusExamExample\"> </a><a name=\"hcStrabismusExamExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-strabismus-exam.html\">Strabismus Exam</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Strabismus exam</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-CoverTestExample.html\">Cover test - alternating exotropia</a></li><li><a href=\"Observation-OcularMotilityLeftEyeExample.html\">Ocular motility, left inferior oblique - hypofunction</a></li><li><a href=\"Observation-OcularMotilityRightEyeExample.html\">Ocular motility, right superior oblique - hyperfunction</a></li><li><a href=\"Observation-NearPointOfConvergenceExample.html\">Near point of convergence - near nasal</a></li><li><a href=\"Observation-ConvergenceAssessmentExample.html\">Convergence assessment - good</a></li><li><a href=\"Observation-StereopsisTestExample.html\">Stereopsis (Titmus) - absent</a></li><li><a href=\"Observation-PrismCoverTestExample.html\">Prism cover test - near, with correction</a></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation StrabismusExamExample</b></p><a name=\"StrabismusExamExample\"> </a><a name=\"hcStrabismusExamExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-strabismus-exam.html\">Strabismus Exam</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs strabismus-exam}\">Strabismus exam</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-CoverTestExample.html\">Cover test, near - orthophoria</a></li><li><a href=\"Observation-CoverTestFarExample.html\">Cover test, far - alternating exotropia</a></li><li><a href=\"Observation-OcularMotilityLeftEyeExample.html\">Ocular motility, left inferior oblique - hypofunction</a></li><li><a href=\"Observation-OcularMotilityRightEyeExample.html\">Ocular motility, right superior oblique - hyperfunction</a></li><li><a href=\"Observation-NearPointOfConvergenceExample.html\">Near point of convergence - near nasal</a></li><li><a href=\"Observation-ConvergenceAssessmentExample.html\">Convergence assessment - good</a></li><li><a href=\"Observation-StereopsisTestExample.html\">Stereopsis (Titmus) - absent</a></li><li><a href=\"Observation-PrismCoverTestExample.html\">Prism cover test - far, with correction</a></li><li><a href=\"Observation-KrimskyTestExample.html\">Krimsky test - far, exo 30 PD FOD / 25 PD FOI</a></li><li><a href=\"Observation-HirschbergTestExample.html\">Hirschberg test - exo about 15 degrees FODI</a></li><li><a href=\"Observation-RedFilterLightTestExample.html\">Red filter plus light test - near, fusion</a></li><li><a href=\"Observation-Worth4DotTestExample.html\">Worth 4 dot test - far, right eye suppression</a></li></ul></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -30,47 +30,84 @@
      ]
   ] ;
   fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "strabismus-exam" ] ;
+       fhir:Coding.display [ fhir:value "Strabismus examination" ]
+     ] ;
      fhir:CodeableConcept.text [ fhir:value "Strabismus exam" ]
   ] ;
   fhir:Observation.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
   ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
   fhir:Observation.hasMember [
      fhir:index 0 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CoverTestExample> ;
      fhir:Reference.reference [ fhir:value "Observation/CoverTestExample" ] ;
-     fhir:Reference.display [ fhir:value "Cover test - alternating exotropia" ]
+     fhir:Reference.display [ fhir:value "Cover test, near - orthophoria" ]
   ], [
      fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/CoverTestFarExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/CoverTestFarExample" ] ;
+     fhir:Reference.display [ fhir:value "Cover test, far - alternating exotropia" ]
+  ], [
+     fhir:index 2 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OcularMotilityLeftEyeExample> ;
      fhir:Reference.reference [ fhir:value "Observation/OcularMotilityLeftEyeExample" ] ;
      fhir:Reference.display [ fhir:value "Ocular motility, left inferior oblique - hypofunction" ]
   ], [
-     fhir:index 2 ;
+     fhir:index 3 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/OcularMotilityRightEyeExample> ;
      fhir:Reference.reference [ fhir:value "Observation/OcularMotilityRightEyeExample" ] ;
      fhir:Reference.display [ fhir:value "Ocular motility, right superior oblique - hyperfunction" ]
   ], [
-     fhir:index 3 ;
+     fhir:index 4 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/NearPointOfConvergenceExample> ;
      fhir:Reference.reference [ fhir:value "Observation/NearPointOfConvergenceExample" ] ;
      fhir:Reference.display [ fhir:value "Near point of convergence - near nasal" ]
   ], [
-     fhir:index 4 ;
+     fhir:index 5 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/ConvergenceAssessmentExample> ;
      fhir:Reference.reference [ fhir:value "Observation/ConvergenceAssessmentExample" ] ;
      fhir:Reference.display [ fhir:value "Convergence assessment - good" ]
   ], [
-     fhir:index 5 ;
+     fhir:index 6 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/StereopsisTestExample> ;
      fhir:Reference.reference [ fhir:value "Observation/StereopsisTestExample" ] ;
      fhir:Reference.display [ fhir:value "Stereopsis (Titmus) - absent" ]
   ], [
-     fhir:index 6 ;
+     fhir:index 7 ;
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/PrismCoverTestExample> ;
      fhir:Reference.reference [ fhir:value "Observation/PrismCoverTestExample" ] ;
-     fhir:Reference.display [ fhir:value "Prism cover test - near, with correction" ]
+     fhir:Reference.display [ fhir:value "Prism cover test - far, with correction" ]
+  ], [
+     fhir:index 8 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/KrimskyTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/KrimskyTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Krimsky test - far, exo 30 PD FOD / 25 PD FOI" ]
+  ], [
+     fhir:index 9 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Hirschberg test - exo about 15 degrees FODI" ]
+  ], [
+     fhir:index 10 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/RedFilterLightTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/RedFilterLightTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Red filter plus light test - near, fusion" ]
+  ], [
+     fhir:index 11 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/Worth4DotTestExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/Worth4DotTestExample" ] ;
+     fhir:Reference.display [ fhir:value "Worth 4 dot test - far, right eye suppression" ]
   ] .
 
 # - ontology header ------------------------------------------------------------

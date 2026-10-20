@@ -1,15 +1,15 @@
-# sp-encounter-appointment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Encounter appointment search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-encounter-appointment**
+* **Encounter appointment search parameter**
 
-## SearchParameter: sp-encounter-appointment 
+## SearchParameter: Encounter appointment search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/encounter-appointment | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:EncounterAppointment |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-encounter-appointment | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:EncounterAppointment |
 
  
 Search ophthalmic encounters by the appointment that led to them. 
@@ -22,11 +22,11 @@ Search ophthalmic encounters by the appointment that led to them.
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-encounter-appointment",
-  "url" : "http://fhir4eyes.org/SearchParameter/encounter-appointment",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-encounter-appointment",
   "version" : "0.4.0",
   "name" : "EncounterAppointment",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{

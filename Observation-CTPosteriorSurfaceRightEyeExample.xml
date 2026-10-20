@@ -6,7 +6,7 @@
     <profile value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name="CTPosteriorSurfaceRightEyeExample"> </a><a name="hcCTPosteriorSurfaceRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Posterior K1 (flat)</span></p><p><b>value</b>: 6.32 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Posterior K2 (steep)</span></p><p><b>value</b>: 6.58 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Posterior Km</span></p><p><b>value</b>: 6.45 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Back astigmatism</span></p><p><b>value</b>: 0.26 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name="CTPosteriorSurfaceRightEyeExample"> </a><a name="hcCTPosteriorSurfaceRightEyeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-tomography-posterior-surface}">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href="Practitioner-OphthalmologistExample.html">Practitioner Ophthalmologist Example </a></p><p><b>bodySite</b>: <span title="Codes:"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-k1}">Posterior K1 (flat)</span></p><p><b>value</b>: -6.32 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-k2}">Posterior K2 (steep)</span></p><p><b>value</b>: -6.58 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-km}">Posterior Km</span></p><p><b>value</b>: -6.45 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism-posterior}">Back astigmatism</span></p><p><b>value</b>: 0.26 [diop]<span style="background: LightGoldenRodYellow"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-asphericity-q-posterior}">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs elevation-posterior}">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs best-fit-sphere-radius-posterior}">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>
   </text>
   <status value="final"/>
   <category>
@@ -17,11 +17,20 @@
     </coding>
   </category>
   <code>
+    <coding>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <code value="corneal-tomography-posterior-surface"/>
+      <display value="Corneal tomography, posterior surface analysis"/>
+    </coding>
     <text value="Corneal tomography, posterior surface analysis"/>
   </code>
   <subject>
     <reference value="Patient/PatientExample"/>
   </subject>
+  <effectiveDateTime value="2026-08-18T09:00:00Z"/>
+  <performer>
+    <reference value="Practitioner/OphthalmologistExample"/>
+  </performer>
   <bodySite>
     <extension url="http://hl7.org/fhir/StructureDefinition/bodySite">
       <valueReference>
@@ -34,36 +43,56 @@
   </device>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="posterior-keratometry-k1"/>
+        <display value="Posterior keratometry K1 (flat)"/>
+      </coding>
       <text value="Posterior K1 (flat)"/>
     </code>
     <valueQuantity>
-      <value value="6.32"/>
+      <value value="-6.32"/>
       <system value="http://unitsofmeasure.org"/>
       <code value="[diop]"/>
     </valueQuantity>
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="posterior-keratometry-k2"/>
+        <display value="Posterior keratometry K2 (steep)"/>
+      </coding>
       <text value="Posterior K2 (steep)"/>
     </code>
     <valueQuantity>
-      <value value="6.58"/>
+      <value value="-6.58"/>
       <system value="http://unitsofmeasure.org"/>
       <code value="[diop]"/>
     </valueQuantity>
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="posterior-keratometry-km"/>
+        <display value="Posterior keratometry Km (mean)"/>
+      </coding>
       <text value="Posterior Km"/>
     </code>
     <valueQuantity>
-      <value value="6.45"/>
+      <value value="-6.45"/>
       <system value="http://unitsofmeasure.org"/>
       <code value="[diop]"/>
     </valueQuantity>
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="corneal-astigmatism-posterior"/>
+        <display value="Corneal astigmatism, posterior surface"/>
+      </coding>
       <text value="Back astigmatism"/>
     </code>
     <valueQuantity>
@@ -74,6 +103,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="corneal-asphericity-q-posterior"/>
+        <display value="Corneal asphericity (Q-value), posterior surface"/>
+      </coding>
       <text value="Posterior Q-value"/>
     </code>
     <valueQuantity>
@@ -84,6 +118,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="elevation-posterior"/>
+        <display value="Corneal elevation relative to best fit sphere, posterior surface"/>
+      </coding>
       <text value="Elevation back BFS"/>
     </code>
     <valueQuantity>
@@ -94,6 +133,11 @@
   </component>
   <component>
     <code>
+      <coding>
+        <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+        <code value="best-fit-sphere-radius-posterior"/>
+        <display value="Best fit sphere radius, posterior surface"/>
+      </coding>
       <text value="BFS radius back"/>
     </code>
     <valueQuantity>

@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLRightEyeExample</b></p><a name=\"OCTRNFLRightEyeExample\"> </a><a name=\"hcOCTRNFLRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 86291-2}\">OCT optic disc / RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>interpretation</b>: <span title=\"Codes:\">Borderline</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 8 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup area</span></p><p><b>value</b>: 0.32 mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm2 = 'mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup volume</span></p><p><b>value</b>: 0.08 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim volume</span></p><p><b>value</b>: 0.35 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D horizontal</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">C/D vertical</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter horizontal</span></p><p><b>value</b>: 1.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter vertical</span></p><p><b>value</b>: 1.92 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc diameter mean</span></p><p><b>value</b>: 1.85 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter horizontal</span></p><p><b>value</b>: 0.75 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter vertical</span></p><p><b>value</b>: 0.73 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup diameter mean</span></p><p><b>value</b>: 0.74 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean cup depth</span></p><p><b>value</b>: 0.18 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Max cup depth</span></p><p><b>value</b>: 0.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Disc vert/horiz ratio</span></p><p><b>value</b>: 1.08 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Cup vert/horiz ratio</span></p><p><b>value</b>: 0.97 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim/Disc ratio</span></p><p><b>value</b>: 0.62 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Rim absence</span></p><p><b>value</b>: 0 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">DDLS</span></p><p><b>value</b>: 2</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">RNFL Symmetry</span></p><p><b>value</b>: 88 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Mean TSNIT</span></p><p><b>value</b>: 92 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">TSNIT std deviation</span></p><p><b>value</b>: 12 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RNFL boundary</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTRNFLRightEyeExample</b></p><a name=\"OCTRNFLRightEyeExample\"> </a><a name=\"hcOCTRNFLRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-rnfl.html\">Ophthalmic OCT RNFL</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 86291-2}\">OCT optic disc / RNFL analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>interpretation</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs borderline}\">Borderline (inferior quadrant borderline)</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-area}\">Cup area</span></p><p><b>value</b>: 0.43 mm2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm2 = 'mm2')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-volume}\">Cup volume</span></p><p><b>value</b>: 0.08 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs neuroretinal-rim-volume}\">Rim volume</span></p><p><b>value</b>: 0.35 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs cup-disc-ratio-horizontal}\">C/D horizontal</span></p><p><b>value</b>: 0.42 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs cup-disc-ratio-vertical}\">C/D vertical</span></p><p><b>value</b>: 0.38 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-disc-diameter-horizontal}\">Disc diameter horizontal</span></p><p><b>value</b>: 1.78 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-disc-diameter-vertical}\">Disc diameter vertical</span></p><p><b>value</b>: 1.92 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-disc-diameter-mean}\">Disc diameter mean</span></p><p><b>value</b>: 1.85 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-diameter-horizontal}\">Cup diameter horizontal</span></p><p><b>value</b>: 0.75 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-diameter-vertical}\">Cup diameter vertical</span></p><p><b>value</b>: 0.73 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-diameter-mean}\">Cup diameter mean</span></p><p><b>value</b>: 0.74 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-depth-mean}\">Mean cup depth</span></p><p><b>value</b>: 0.18 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-depth-max}\">Max cup depth</span></p><p><b>value</b>: 0.35 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-disc-vertical-horizontal-ratio}\">Disc vert/horiz ratio</span></p><p><b>value</b>: 1.08 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs optic-cup-vertical-horizontal-ratio}\">Cup vert/horiz ratio</span></p><p><b>value</b>: 0.97 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rim-disc-area-ratio}\">Rim/Disc ratio</span></p><p><b>value</b>: 0.84 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs neuroretinal-rim-absence-extent}\">Rim absence</span></p><p><b>value</b>: 0 deg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedeg = 'deg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs disc-damage-likelihood-scale}\">DDLS</span></p><p><b>value</b>: 2</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-symmetry}\">RNFL Symmetry</span></p><p><b>value</b>: 0.88 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-mean-tsnit}, {http://loinc.org 86301-9}\">Mean TSNIT</span></p><p><b>value</b>: 92 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-tsnit-sd}\">TSNIT std deviation</span></p><p><b>value</b>: 12 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-superior}\">RNFL Superior quadrant average</span></p><p><b>value</b>: 118 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-inferior}\">RNFL Inferior quadrant average</span></p><p><b>value</b>: 104 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-nasal}\">RNFL Nasal quadrant average</span></p><p><b>value</b>: 74 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs rnfl-thickness-temporal}\">RNFL Temporal quadrant average</span></p><p><b>value</b>: 72 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs signal-strength}\">Signal strength</span></p><p><b>value</b>: 8 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs retinal-thickness-definition}\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RNFL boundary</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pupil-dilated}\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -27,8 +27,17 @@
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "interpretation" : [{
-    "text" : "Borderline"
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "borderline",
+      "display" : "Borderline"
+    }],
+    "text" : "Borderline (inferior quadrant borderline)"
   }],
   "note" : [{
     "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
@@ -43,26 +52,26 @@
   },
   "component" : [{
     "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 8,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-area",
+        "display" : "Optic cup area"
+      }],
       "text" : "Cup area"
     },
     "valueQuantity" : {
-      "value" : 0.32,
+      "value" : 0.43,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm2"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-volume",
+        "display" : "Optic cup volume"
+      }],
       "text" : "Cup volume"
     },
     "valueQuantity" : {
@@ -73,6 +82,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "neuroretinal-rim-volume",
+        "display" : "Neuroretinal rim volume"
+      }],
       "text" : "Rim volume"
     },
     "valueQuantity" : {
@@ -83,6 +97,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "cup-disc-ratio-horizontal",
+        "display" : "Cup-to-disc ratio, horizontal"
+      }],
       "text" : "C/D horizontal"
     },
     "valueQuantity" : {
@@ -93,6 +112,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "cup-disc-ratio-vertical",
+        "display" : "Cup-to-disc ratio, vertical"
+      }],
       "text" : "C/D vertical"
     },
     "valueQuantity" : {
@@ -103,6 +127,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-horizontal",
+        "display" : "Optic disc diameter, horizontal"
+      }],
       "text" : "Disc diameter horizontal"
     },
     "valueQuantity" : {
@@ -113,6 +142,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-vertical",
+        "display" : "Optic disc diameter, vertical"
+      }],
       "text" : "Disc diameter vertical"
     },
     "valueQuantity" : {
@@ -123,6 +157,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-mean",
+        "display" : "Optic disc diameter, mean"
+      }],
       "text" : "Disc diameter mean"
     },
     "valueQuantity" : {
@@ -133,6 +172,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-horizontal",
+        "display" : "Optic cup diameter, horizontal"
+      }],
       "text" : "Cup diameter horizontal"
     },
     "valueQuantity" : {
@@ -143,6 +187,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-vertical",
+        "display" : "Optic cup diameter, vertical"
+      }],
       "text" : "Cup diameter vertical"
     },
     "valueQuantity" : {
@@ -153,6 +202,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-mean",
+        "display" : "Optic cup diameter, mean"
+      }],
       "text" : "Cup diameter mean"
     },
     "valueQuantity" : {
@@ -163,6 +217,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-depth-mean",
+        "display" : "Optic cup depth, mean"
+      }],
       "text" : "Mean cup depth"
     },
     "valueQuantity" : {
@@ -173,6 +232,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-depth-max",
+        "display" : "Optic cup depth, maximum"
+      }],
       "text" : "Max cup depth"
     },
     "valueQuantity" : {
@@ -183,6 +247,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-vertical-horizontal-ratio",
+        "display" : "Optic disc vertical-to-horizontal diameter ratio"
+      }],
       "text" : "Disc vert/horiz ratio"
     },
     "valueQuantity" : {
@@ -193,6 +262,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-vertical-horizontal-ratio",
+        "display" : "Optic cup vertical-to-horizontal diameter ratio"
+      }],
       "text" : "Cup vert/horiz ratio"
     },
     "valueQuantity" : {
@@ -203,16 +277,26 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rim-disc-area-ratio",
+        "display" : "Neuroretinal rim-to-disc area ratio"
+      }],
       "text" : "Rim/Disc ratio"
     },
     "valueQuantity" : {
-      "value" : 0.62,
+      "value" : 0.84,
       "system" : "http://unitsofmeasure.org",
       "code" : "1"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "neuroretinal-rim-absence-extent",
+        "display" : "Angular extent of neuroretinal rim absence"
+      }],
       "text" : "Rim absence"
     },
     "valueQuantity" : {
@@ -223,22 +307,42 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "disc-damage-likelihood-scale",
+        "display" : "Disc Damage Likelihood Scale (DDLS) stage"
+      }],
       "text" : "DDLS"
     },
     "valueInteger" : 2
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-symmetry",
+        "display" : "RNFL inter-eye symmetry"
+      }],
       "text" : "RNFL Symmetry"
     },
     "valueQuantity" : {
-      "value" : 88,
+      "value" : 0.88,
       "system" : "http://unitsofmeasure.org",
-      "code" : "%"
+      "code" : "1"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-mean-tsnit",
+        "display" : "Mean RNFL thickness (TSNIT average)"
+      },
+      {
+        "system" : "http://loinc.org",
+        "code" : "86301-9",
+        "display" : "Right retina Retinal nerve fiber layer.mean thickness by OCT"
+      }],
       "text" : "Mean TSNIT"
     },
     "valueQuantity" : {
@@ -249,6 +353,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-tsnit-sd",
+        "display" : "RNFL TSNIT profile standard deviation"
+      }],
       "text" : "TSNIT std deviation"
     },
     "valueQuantity" : {
@@ -259,6 +368,86 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-superior",
+        "display" : "RNFL average thickness, superior quadrant"
+      }],
+      "text" : "RNFL Superior quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 118,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-inferior",
+        "display" : "RNFL average thickness, inferior quadrant"
+      }],
+      "text" : "RNFL Inferior quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 104,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-nasal",
+        "display" : "RNFL average thickness, nasal quadrant"
+      }],
+      "text" : "RNFL Nasal quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 74,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-temporal",
+        "display" : "RNFL average thickness, temporal quadrant"
+      }],
+      "text" : "RNFL Temporal quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 72,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "signal-strength",
+        "display" : "Scan signal strength / quality"
+      }],
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "retinal-thickness-definition",
+        "display" : "Retinal thickness definition"
+      }],
       "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
@@ -267,6 +456,11 @@
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-dilated",
+        "display" : "Pupil dilated"
+      }],
       "text" : "Pupil dilated"
     },
     "valueCodeableConcept" : {

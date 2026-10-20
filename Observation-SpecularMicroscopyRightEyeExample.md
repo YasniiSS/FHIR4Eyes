@@ -14,7 +14,11 @@ Profile: [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specula
 
 **code**: Corneal endothelial specular microscopy
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **note**: 
 
@@ -31,6 +35,8 @@ Example based on typical Topcon SP-1P specular microscopy report
 
 > **component****code**: Endothelial cell density (CD)**value**: 2456 /mm2 (Details: UCUM code/mm2 = '/mm2')
 
+> **component****code**: Capture position**value**: Central
+
 > **component****code**: Number of cells analyzed (N)**value**: 98 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Coefficient of variation (CV)**value**: 32 % (Details: UCUM code% = '%')
@@ -46,8 +52,6 @@ Example based on typical Topcon SP-1P specular microscopy report
 > **component****code**: Average cell area (AVG)**value**: 407 um2 (Details: UCUM codeum2 = 'um2')
 
 > **component****code**: Cell area SD**value**: 89 um2 (Details: UCUM codeum2 = 'um2')
-
-> **component****code**: Capture position**value**: Central
 
 
 
@@ -69,11 +73,20 @@ Example based on typical Topcon SP-1P specular microscopy report
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "specular-microscopy-panel",
+      "display" : "Corneal endothelial specular microscopy"
+    }],
     "text" : "Corneal endothelial specular microscopy"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "note" : [{
     "text" : "Example based on typical Topcon SP-1P specular microscopy report"
   }],
@@ -94,6 +107,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   "component" : [{
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-density",
+        "display" : "Corneal endothelial cell density"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100070-2",
         "display" : "Right cornea Cell density"
@@ -109,6 +127,24 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "specular-capture-position",
+        "display" : "Specular microscopy capture position"
+      }],
+      "text" : "Capture position"
+    },
+    "valueCodeableConcept" : {
+      "text" : "Central"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cells-counted",
+        "display" : "Corneal endothelial cells counted"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100076-9",
         "display" : "Right cornea Endothelial cells counted"
@@ -124,6 +160,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-area-cv",
+        "display" : "Corneal endothelial cell area coefficient of variation"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100072-8",
         "display" : "Right cornea Coefficient of variation"
@@ -139,6 +180,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-hexagonality",
+        "display" : "Corneal endothelial hexagonality"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100074-4",
         "display" : "Right cornea Hexagonality"
@@ -154,6 +200,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "central-corneal-thickness",
+        "display" : "Central corneal thickness"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "79825-6",
         "display" : "Right cornea Central corneal thickness Pachymetry"
@@ -169,6 +220,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-area-min",
+        "display" : "Corneal endothelial cell area, minimum"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100078-5",
         "display" : "Right cornea Endothelial cell area.min"
@@ -184,6 +240,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-area-max",
+        "display" : "Corneal endothelial cell area, maximum"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100080-1",
         "display" : "Right cornea Endothelial cell area.max"
@@ -199,6 +260,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-area-mean",
+        "display" : "Corneal endothelial cell area, mean"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100082-7",
         "display" : "Right cornea Endothelial cell area.mean"
@@ -214,6 +280,11 @@ Example based on typical Topcon SP-1P specular microscopy report
   {
     "code" : {
       "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "endothelial-cell-area-sd",
+        "display" : "Corneal endothelial cell area, standard deviation"
+      },
+      {
         "system" : "http://loinc.org",
         "code" : "100084-3",
         "display" : "Right cornea Cell area.standard deviation"
@@ -224,14 +295,6 @@ Example based on typical Topcon SP-1P specular microscopy report
       "value" : 89,
       "system" : "http://unitsofmeasure.org",
       "code" : "um2"
-    }
-  },
-  {
-    "code" : {
-      "text" : "Capture position"
-    },
-    "valueCodeableConcept" : {
-      "text" : "Central"
     }
   }]
 }

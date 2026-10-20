@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="normative-classification-vs"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet normative-classification-vs</b></p><a name="normative-classification-vs"> </a><a name="hcnormative-classification-vs"> </a><ul><li>Include these codes as defined in <a href="CodeSystem-fhir4eyes-cs.html"><code>https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.4.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-within-normal-limits">within-normal-limits</a></td><td>Within normal limits</td><td>The measurement or analysis falls within the normal range of the device normative (age-matched reference) database (typically p &gt;= 5%).</td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-borderline">borderline</a></td><td>Borderline</td><td>The measurement or analysis falls in the borderline range of the device normative database (typically 1% &lt;= p &lt; 5%).</td></tr><tr><td><a href="CodeSystem-fhir4eyes-cs.html#fhir4eyes-cs-outside-normal-limits">outside-normal-limits</a></td><td>Outside normal limits</td><td>The measurement or analysis falls outside the normal range of the device normative database (typically p &lt; 1%).</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs"/>
+  <version value="0.4.0"/>
+  <name value="NormativeClassificationVS"/>
+  <title value="Normative Classification Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T20:13:11-03:00"/>
+  <publisher value="FHIR4Eyes Project"/>
+  <contact>
+    <name value="FHIR4Eyes Project"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Yasna Soto"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://YasniiSS.github.io/fhir4eyes"/>
+    </telecom>
+  </contact>
+  <description value="Classification of an ophthalmic measurement or analysis against the device&#xA;normative (age-matched reference) database: within normal limits, borderline, or outside&#xA;normal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve&#xA;head analyses, and for the per-subfield deviation category of the OCT macula profile.&#xA;Bindings are extensible, so device-specific percentile categories (e.g. p&lt;5%, p&lt;1%) may be&#xA;used when no concept here applies."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"/>
+      <concept>
+        <code value="within-normal-limits"/>
+        <display value="Within normal limits"/>
+      </concept>
+      <concept>
+        <code value="borderline"/>
+        <display value="Borderline"/>
+      </concept>
+      <concept>
+        <code value="outside-normal-limits"/>
+        <display value="Outside normal limits"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

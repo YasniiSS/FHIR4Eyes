@@ -8,7 +8,7 @@
 
 Profile: [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md)
 
-Paciente Ejemplo Female, DoB: 1990-01-01 ( https://www.registrocivil.cl/rut#12345678-9)
+Paciente Ejemplo Female, DoB: 1990-01-01 ( National unique individual identifier: 12345678-9)
 
 -------
 
@@ -30,7 +30,13 @@ Paciente Ejemplo Female, DoB: 1990-01-01 ( https://www.registrocivil.cl/rut#1234
     "profile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"]
   },
   "identifier" : [{
-    "system" : "https://www.registrocivil.cl/rut",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "NI",
+        "display" : "National unique individual identifier"
+      }]
+    },
     "value" : "12345678-9"
   }],
   "name" : [{

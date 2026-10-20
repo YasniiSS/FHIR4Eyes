@@ -245,7 +245,7 @@ data shown is fictitious.</p>
       <td>An ambulatory consultation</td>
     </tr>
     <tr>
-      <td><a href="BodyStructure-RightEyeStructureExample.html">Right eye</a>, <a href="BodyStructure-LeftEyeStructureExample.html">Left eye</a></td>
+      <td><a href="BodyStructure-RightEyeStructureExample.html">Right eye</a>, <a href="BodyStructure-LeftEyeStructureExample.html">Left eye</a>, <a href="BodyStructure-BothEyesStructureExample.html">Both eyes</a></td>
       <td><a href="StructureDefinition-ocular-body-structure.html">Ocular Body Structure</a></td>
       <td>Laterality targets referenced from <code class="language-plaintext highlighter-rouge">bodySite</code></td>
     </tr>
@@ -555,9 +555,9 @@ references the implanted lens via <code class="language-plaintext highlighter-ro
       <td>Groups the sub-tests performed</td>
     </tr>
     <tr>
-      <td><a href="Observation-CoverTestExample.html">Cover test</a></td>
+      <td><a href="Observation-CoverTestExample.html">Cover test: near</a>, <a href="Observation-CoverTestFarExample.html">far</a></td>
       <td><a href="StructureDefinition-cover-test.html">Cover Test</a></td>
-      <td>Direct sub-test</td>
+      <td>Direct sub-test, one per testing distance</td>
     </tr>
     <tr>
       <td><a href="Observation-OcularMotilityRightEyeExample.html">Ocular motility: right eye</a>, <a href="Observation-OcularMotilityLeftEyeExample.html">left eye</a></td>
@@ -588,6 +588,26 @@ references the implanted lens via <code class="language-plaintext highlighter-ro
       <td><a href="Observation-PrismCoverTestPrimaryPositionExample.html">Primary position</a></td>
       <td><a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a></td>
       <td>Member of the prism cover test</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-KrimskyTestExample.html">Krimsky test panel</a> (5 gaze positions × FOD/FOI, e.g. <a href="Observation-KrimskyPrimaryFODExample.html">primary FOD</a>)</td>
+      <td><a href="StructureDefinition-krimsky-test.html">Krimsky Test</a></td>
+      <td>Position-based sub-test, far: 30 PD FOD / 25 PD FOI exo</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-HirschbergTestExample.html">Hirschberg test panel</a> (5 gaze positions × FOD/FOI, e.g. <a href="Observation-HirschbergPrimaryFODExample.html">primary FOD</a>)</td>
+      <td><a href="StructureDefinition-hirschberg-test.html">Hirschberg Test</a></td>
+      <td>Position-based sub-test: about 15° exo FODI</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-RedFilterLightTestExample.html">Red filter light test panel</a> (<a href="Observation-RedFilterPrimaryPositionExample.html">primary position</a>)</td>
+      <td><a href="StructureDefinition-red-filter-light-test.html">Red Filter Light Test</a></td>
+      <td>Position-based sub-test, near</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-Worth4DotTestExample.html">Worth 4 dot test panel</a> (<a href="Observation-Worth4DotPrimaryPositionExample.html">primary position</a>)</td>
+      <td><a href="StructureDefinition-worth-4-dot-test.html">Worth 4 Dot Test</a></td>
+      <td>Position-based sub-test, far</td>
     </tr>
   </tbody>
 </table>
@@ -653,7 +673,7 @@ medication administration.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

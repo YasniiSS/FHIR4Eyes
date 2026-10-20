@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CTPosteriorSurface |
+| Draft as of 2026-10-20 | *Computable Name*:CTPosteriorSurface |
 
  
-Represents the posterior corneal surface analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior Surface section). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+Represents the posterior corneal surface analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
 
-Represents the posterior corneal surface analysis of a corneal tomography exam: back surface keratometry (K1, K2, Km), astigmatism, asphericity (Q-value), elevation from the best fit sphere, and the best fit sphere radius. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTAnteriorSurface](StructureDefinition-ct-anterior-surface.md) even though they share many parallel fields, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are left open where no confirmed SNOMED CT or LOINC code exists (see [Terminology](terminology.md)).
+Represents the posterior corneal surface analysis of a corneal tomography exam: back surface keratometry (K1, K2, Km), astigmatism, asphericity (Q-value), elevation from the best fit sphere, and the best fit sphere radius. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTAnteriorSurface](StructureDefinition-ct-anterior-surface.md) even though they share many parallel fields, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are local FHIR4Eyes codes ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)) pending an external code, since no confirmed SNOMED CT or LOINC code exists for these measurements (see [Terminology](terminology.md)).
 
 **Examples:** [CT posterior surface: right eye](Observation-CTPosteriorSurfaceRightEyeExample.md)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
   "name" : "CTPosteriorSurface",
   "title" : "Corneal Tomography - Posterior Surface",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology).",
+  "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -120,7 +120,22 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -134,6 +149,13 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as the posterior surface component of a corneal tomography exam",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-tomography-posterior-surface",
+          "display" : "Corneal tomography, posterior surface analysis"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -149,10 +171,6 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.encounter",
       "path" : "Observation.encounter",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"]
-      }],
       "mustSupport" : true
     },
     {
@@ -178,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -218,7 +236,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:backK1.code",
       "path" : "Observation.component.code",
-      "short" : "K1 back (flat) - posterior surface flat keratometry"
+      "short" : "K1 back (flat) - posterior surface flat keratometry; negative value in dioptres (posterior surface power, typically about -5.5 to -7 D)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "posterior-keratometry-k1",
+          "display" : "Posterior keratometry K1 (flat)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:backK1.value[x]",
@@ -238,7 +263,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:backK2.code",
       "path" : "Observation.component.code",
-      "short" : "K2 back (steep) - posterior surface steep keratometry"
+      "short" : "K2 back (steep) - posterior surface steep keratometry; negative value in dioptres (posterior surface power), more negative than K1 back",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "posterior-keratometry-k2",
+          "display" : "Posterior keratometry K2 (steep)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:backK2.value[x]",
@@ -258,7 +290,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:backKm.code",
       "path" : "Observation.component.code",
-      "short" : "Km back - posterior surface mean keratometry"
+      "short" : "Km back - posterior surface mean keratometry, (K1 back + K2 back)/2; negative value in dioptres (posterior surface power)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "posterior-keratometry-km",
+          "display" : "Posterior keratometry Km (mean)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:backKm.value[x]",
@@ -278,7 +317,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:backAstig.code",
       "path" : "Observation.component.code",
-      "short" : "Back astigmatism - posterior surface astigmatism"
+      "short" : "Back astigmatism - posterior surface astigmatism, reported as a positive magnitude in dioptres (|K2 back - K1 back|); its axis is the posterior steep meridian",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-astigmatism-posterior",
+          "display" : "Corneal astigmatism, posterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:backAstig.value[x]",
@@ -298,7 +344,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:qValueBack.code",
       "path" : "Observation.component.code",
-      "short" : "Q-value back (asphericity) - posterior surface asphericity"
+      "short" : "Q-value back (asphericity) - posterior surface asphericity",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "corneal-asphericity-q-posterior",
+          "display" : "Corneal asphericity (Q-value), posterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:qValueBack.value[x]",
@@ -318,7 +371,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:elevationBack.code",
       "path" : "Observation.component.code",
-      "short" : "Elevation back BFS - posterior elevation from Best Fit Sphere"
+      "short" : "Elevation back BFS - posterior elevation from Best Fit Sphere",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "elevation-posterior",
+          "display" : "Corneal elevation relative to best fit sphere, posterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:elevationBack.value[x]",
@@ -338,7 +398,14 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
     {
       "id" : "Observation.component:bestFitSphereBack.code",
       "path" : "Observation.component.code",
-      "short" : "BFS radius back - Best Fit Sphere radius posterior"
+      "short" : "BFS radius back - Best Fit Sphere radius posterior",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "best-fit-sphere-radius-posterior",
+          "display" : "Best fit sphere radius, posterior surface"
+        }]
+      }
     },
     {
       "id" : "Observation.component:bestFitSphereBack.value[x]",

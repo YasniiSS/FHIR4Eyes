@@ -1,18 +1,18 @@
-# sp-imagingstudy-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# ImagingStudy eye (laterality) search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-imagingstudy-eye**
+* **ImagingStudy eye (laterality) search parameter**
 
-## SearchParameter: sp-imagingstudy-eye 
+## SearchParameter: ImagingStudy eye (laterality) search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/imagingstudy-eye | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:ImagingStudyEye |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:ImagingStudyEye |
 
  
-Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance. 
+Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left). 
 
 
 
@@ -22,11 +22,11 @@ Search ophthalmic imaging studies by the laterality of an examined series, expre
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-imagingstudy-eye",
-  "url" : "http://fhir4eyes.org/SearchParameter/imagingstudy-eye",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye",
   "version" : "0.4.0",
   "name" : "ImagingStudyEye",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
@@ -43,7 +43,7 @@ Search ophthalmic imaging studies by the laterality of an examined series, expre
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.",
+  "description" : "Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -53,10 +53,9 @@ Search ophthalmic imaging studies by the laterality of an examined series, expre
   }],
   "code" : "eye",
   "base" : ["ImagingStudy"],
-  "type" : "reference",
-  "expression" : "ImagingStudy.series.extension('http://hl7.org/fhir/StructureDefinition/bodySite').value",
+  "type" : "token",
+  "expression" : "ImagingStudy.series.laterality",
   "xpathUsage" : "normal",
-  "target" : ["BodyStructure"],
   "multipleOr" : true,
   "multipleAnd" : true
 }

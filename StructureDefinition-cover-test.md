@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:CoverTest |
+| Draft as of 2026-10-20 | *Computable Name*:CoverTest |
 
  
 Represents a cover test result, performed with or without correction, at near or far distance. Findings are recorded as open text/coded values for now (PC: orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has been verified for these specific findings yet. 
@@ -18,11 +18,11 @@ Represents a cover test result, performed with or without correction, at near or
 
 The finding is recorded in `value[x]` as a `CodeableConcept` or `string` (for example orthophoria, alternating exotropia). No SNOMED CT or LOINC binding has been verified for these findings yet, so terminology is left open. Correction status and test distance are recorded as the optional `correctionStatus` and `testDistance` components, and `bodySite` (`0..1`) can reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md). See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
 
-**Examples:** [Cover test](Observation-CoverTestExample.md)
+**Examples:** [Cover test: near](Observation-CoverTestExample.md), [Cover test: far](Observation-CoverTestFarExample.md)
 
 **Usages:**
 
-* Examples for this Profile: [Observation/CoverTestExample](Observation-CoverTestExample.md)
+* Examples for this Profile: [Observation/CoverTestExample](Observation-CoverTestExample.md) and [Observation/CoverTestFarExample](Observation-CoverTestFarExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-cover-test.json)
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
   "name" : "CoverTest",
   "title" : "Cover Test",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet.",
+  "description" : "Represents a cover test result, performed with or without correction, at\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\nbeen verified for these specific findings yet.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -121,7 +121,22 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -135,6 +150,13 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
       "id" : "Observation.code",
       "path" : "Observation.code",
       "short" : "Identifies this as a cover test",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "cover-test",
+          "display" : "Cover test"
+        }]
+      },
       "mustSupport" : true
     },
     {
@@ -172,7 +194,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
@@ -206,7 +228,14 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
     {
       "id" : "Observation.component:correctionStatus.code",
       "path" : "Observation.component.code",
-      "short" : "With or without correction"
+      "short" : "With or without correction",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "correction-status",
+          "display" : "Refractive correction status during test"
+        }]
+      }
     },
     {
       "id" : "Observation.component:correctionStatus.value[x]",
@@ -226,14 +255,25 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
     {
       "id" : "Observation.component:testDistance.code",
       "path" : "Observation.component.code",
-      "short" : "Near or far"
+      "short" : "Near or far (categorical; near about 33-40 cm, far about 6 m / 20 ft)",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "test-distance-category",
+          "display" : "Testing distance category (near/far)"
+        }]
+      }
     },
     {
       "id" : "Observation.component:testDistance.value[x]",
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs"
+      }
     }]
   }
 }

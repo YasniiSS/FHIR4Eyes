@@ -17,7 +17,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name=\"CTPosteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTPosteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-posterior-surface.html\">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:\">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K1 (flat)</span></p><p><b>value</b>: 6.32 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior K2 (steep)</span></p><p><b>value</b>: 6.58 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Km</span></p><p><b>value</b>: 6.45 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Back astigmatism</span></p><p><b>value</b>: 0.26 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CTPosteriorSurfaceRightEyeExample</b></p><a name=\"CTPosteriorSurfaceRightEyeExample\"> </a><a name=\"hcCTPosteriorSurfaceRightEyeExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ct-posterior-surface.html\">Corneal Tomography - Posterior Surface</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-tomography-posterior-surface}\">Corneal tomography, posterior surface analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><p><b>device</b>: Pentacam AXL</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-k1}\">Posterior K1 (flat)</span></p><p><b>value</b>: -6.32 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-k2}\">Posterior K2 (steep)</span></p><p><b>value</b>: -6.58 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs posterior-keratometry-km}\">Posterior Km</span></p><p><b>value</b>: -6.45 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-astigmatism-posterior}\">Back astigmatism</span></p><p><b>value</b>: 0.26 [diop]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[diop] = '[diop]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs corneal-asphericity-q-posterior}\">Posterior Q-value</span></p><p><b>value</b>: -0.32 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs elevation-posterior}\">Elevation back BFS</span></p><p><b>value</b>: 8 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs best-fit-sphere-radius-posterior}\">BFS radius back</span></p><p><b>value</b>: 6.4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm = 'mm')</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -30,11 +30,23 @@
      ]
   ] ;
   fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "corneal-tomography-posterior-surface" ] ;
+       fhir:Coding.display [ fhir:value "Corneal tomography, posterior surface analysis" ]
+     ] ;
      fhir:CodeableConcept.text [ fhir:value "Corneal tomography, posterior surface analysis" ]
   ] ;
   fhir:Observation.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
   ] ;
   fhir:Observation.bodySite [
      fhir:Element.extension [
@@ -52,36 +64,60 @@
   fhir:Observation.component [
      fhir:index 0 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "posterior-keratometry-k1" ] ;
+         fhir:Coding.display [ fhir:value "Posterior keratometry K1 (flat)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Posterior K1 (flat)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "6.32"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "-6.32"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 1 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "posterior-keratometry-k2" ] ;
+         fhir:Coding.display [ fhir:value "Posterior keratometry K2 (steep)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Posterior K2 (steep)" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "6.58"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "-6.58"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 2 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "posterior-keratometry-km" ] ;
+         fhir:Coding.display [ fhir:value "Posterior keratometry Km (mean)" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Posterior Km" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "6.45"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "-6.45"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "[diop]" ]
      ]
   ], [
      fhir:index 3 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-astigmatism-posterior" ] ;
+         fhir:Coding.display [ fhir:value "Corneal astigmatism, posterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Back astigmatism" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -92,6 +128,12 @@
   ], [
      fhir:index 4 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "corneal-asphericity-q-posterior" ] ;
+         fhir:Coding.display [ fhir:value "Corneal asphericity (Q-value), posterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Posterior Q-value" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -102,6 +144,12 @@
   ], [
      fhir:index 5 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "elevation-posterior" ] ;
+         fhir:Coding.display [ fhir:value "Corneal elevation relative to best fit sphere, posterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Elevation back BFS" ]
      ] ;
      fhir:Observation.component.valueQuantity [
@@ -112,6 +160,12 @@
   ], [
      fhir:index 6 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "best-fit-sphere-radius-posterior" ] ;
+         fhir:Coding.display [ fhir:value "Best fit sphere radius, posterior surface" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "BFS radius back" ]
      ] ;
      fhir:Observation.component.valueQuantity [

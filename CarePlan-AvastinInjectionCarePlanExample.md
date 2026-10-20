@@ -18,7 +18,7 @@ Profile: [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md)
 
 **description**: 3 monthly intravitreal Avastin injections for diabetic macular edema
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 **period**: 2026-08-18 --> 2026-10-18
 

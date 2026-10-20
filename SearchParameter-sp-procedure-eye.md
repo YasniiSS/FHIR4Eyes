@@ -1,15 +1,15 @@
-# sp-procedure-eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Procedure eye (laterality) search parameter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **sp-procedure-eye**
+* **Procedure eye (laterality) search parameter**
 
-## SearchParameter: sp-procedure-eye 
+## SearchParameter: Procedure eye (laterality) search parameter (Experimental) 
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://fhir4eyes.org/SearchParameter/procedure-eye | *Version*:0.4.0 |
-| Active as of 2026-09-01 | *Computable Name*:ProcedureEye |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-procedure-eye | *Version*:0.4.0 |
+| Draft as of 2026-09-01 | *Computable Name*:ProcedureEye |
 
  
 Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. 
@@ -22,11 +22,11 @@ Search ophthalmic procedures by eye laterality, expressed via the bodySite exten
 {
   "resourceType" : "SearchParameter",
   "id" : "sp-procedure-eye",
-  "url" : "http://fhir4eyes.org/SearchParameter/procedure-eye",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-procedure-eye",
   "version" : "0.4.0",
   "name" : "ProcedureEye",
-  "status" : "active",
-  "experimental" : false,
+  "status" : "draft",
+  "experimental" : true,
   "date" : "2026-09-01",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{

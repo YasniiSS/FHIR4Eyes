@@ -14,7 +14,11 @@ Profile: [Near Point of Convergence](StructureDefinition-near-point-of-convergen
 
 **code**: Near point of convergence
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **value**: Near nasal
 
@@ -38,11 +42,20 @@ Profile: [Near Point of Convergence](StructureDefinition-near-point-of-convergen
     }]
   }],
   "code" : {
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "near-point-of-convergence",
+      "display" : "Near point of convergence"
+    }],
     "text" : "Near point of convergence"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "valueCodeableConcept" : {
     "text" : "Near nasal"
   }

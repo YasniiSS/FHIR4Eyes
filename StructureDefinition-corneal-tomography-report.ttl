@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "CornealTomographyReport"] ;
   fhir:StructureDefinition.title [ fhir:value "Corneal Tomography Report"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-10-19T22:17:00-03:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-10-20T20:13:11-03:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -913,6 +913,14 @@
          fhir:index 0 ;
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ] ;
+       fhir:ElementDefinition.patternCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ] ;
+           fhir:Coding.code [ fhir:value "IMG" ] ;
+           fhir:Coding.display [ fhir:value "Diagnostic Imaging" ]
+         ]
+       ] ;
        fhir:ElementDefinition.constraint [
          fhir:index 0 ;
          fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
@@ -929,10 +937,16 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
-         fhir:ElementDefinition.binding.strength [ fhir:value "extensible" ] ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName" ] ;
+           fhir:Extension.valueString [ fhir:value "DiagnosticServiceSection" ]
+         ] ;
+         fhir:ElementDefinition.binding.strength [ fhir:value "example" ] ;
+         fhir:ElementDefinition.binding.description [ fhir:value "Codes for diagnostic service sections." ] ;
          fhir:ElementDefinition.binding.valueSet [
-           fhir:value "http://terminology.hl7.org/ValueSet/v2-0074" ;
-           fhir:link <http://terminology.hl7.org/ValueSet/v2-0074>
+           fhir:value "http://hl7.org/fhir/ValueSet/diagnostic-service-sections|4.0.1" ;
+           fhir:link <http://hl7.org/fhir/ValueSet/diagnostic-service-sections|4.0.1>
          ]
        ] ;
        fhir:ElementDefinition.mapping [

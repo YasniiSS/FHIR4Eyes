@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server | *Version*:0.4.0 |
+| *Official URL*:https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/FHIR4EyesCapabilityStatement | *Version*:0.4.0 |
 | Draft as of 2026-09-01 | *Computable Name*:FHIR4EyesServer |
 
  
@@ -24,7 +24,7 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
 {
   "resourceType" : "CapabilityStatement",
   "id" : "FHIR4EyesCapabilityStatement",
-  "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/fhir4eyes-server",
+  "url" : "https://YasniiSS.github.io/fhir4eyes/CapabilityStatement/FHIR4EyesCapabilityStatement",
   "version" : "0.4.0",
   "name" : "FHIR4EyesServer",
   "title" : "FHIR4Eyes Server Capability Statement",

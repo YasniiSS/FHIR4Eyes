@@ -233,9 +233,15 @@ the HL7 Eye Care IG's pattern and where it diverges.</p>
 
 <p><code class="language-plaintext highlighter-rouge">ImagingStudy</code> is the one exception: its <code class="language-plaintext highlighter-rouge">series.bodySite</code> and <code class="language-plaintext highlighter-rouge">series.laterality</code> are
 native <code class="language-plaintext highlighter-rouge">Coding</code> fields (not references), for standard DICOM/PACS compatibility. This guide
-adds the same <code class="language-plaintext highlighter-rouge">bodySiteEye</code> extension alongside those native fields, so an imaging study
-can still be linked to the same shared <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code> instance when needed. See
-<code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> in <a href="profiles.html">Profiles</a>.</p>
+uses those native fields as they are, coded with SNOMED CT (for example <code class="language-plaintext highlighter-rouge">24028007</code> Right /
+<code class="language-plaintext highlighter-rouge">7771000</code> Left in <code class="language-plaintext highlighter-rouge">series.laterality</code>), and does <strong>not</strong> add the <code class="language-plaintext highlighter-rouge">bodySiteEye</code> extension on
+the series. The <code class="language-plaintext highlighter-rouge">eye</code> search parameter for <code class="language-plaintext highlighter-rouge">ImagingStudy</code> searches <code class="language-plaintext highlighter-rouge">series.laterality</code>
+directly (see <a href="search-parameters.html">Search Parameters</a>). See <code class="language-plaintext highlighter-rouge">OphthalmicImagingStudy</code> in
+<a href="profiles.html">Profiles</a>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">OphthalmicMedicationAdministration</code> has no <code class="language-plaintext highlighter-rouge">bodySite</code> element of its own in R4; there the
+<code class="language-plaintext highlighter-rouge">bodySiteEye</code> extension is placed on <code class="language-plaintext highlighter-rouge">dosage</code>, to record which eye the medication was
+administered to.</p>
 
 <h2 id="the-study--series--instance-hierarchy">The Study / Series / Instance hierarchy</h2>
 
@@ -315,6 +321,15 @@ diverges from the HL7 Eye Care IG's 2021 approach.</p>
     ...
 </code></pre></div></div>
 
+<p>Every component slice in this guide is identified by a fixed code, which is what the
+<code class="language-plaintext highlighter-rouge">pattern</code> discriminator on <code class="language-plaintext highlighter-rouge">code</code> matches. That code is LOINC or SNOMED CT where a suitable
+code has been verified (for example LOINC <code class="language-plaintext highlighter-rouge">79908-0</code> for the visual acuity chart), and
+otherwise a laterality-neutral code from the
+<a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a> (see <a href="terminology.html">Terminology</a>).
+Instances <strong>must</strong> carry that coding in <code class="language-plaintext highlighter-rouge">component.code</code> for the component to be recognized
+as the slice; additional codings (for example an eye-specific LOINC) may be added alongside
+it, but do not replace it.</p>
+
 <p>Implementers consuming these resources should read <code class="language-plaintext highlighter-rouge">component</code> as an open set of optional,
 independently meaningful facts about the measurement, not a fixed record structure: only
 the components relevant to the specific test performed will be present.</p>
@@ -351,8 +366,9 @@ report").</p>
 <p>See <a href="terminology.html">Terminology</a> for the full detail. In short: this guide binds
 directly to SNOMED CT and LOINC wherever possible, rather than depending on the HL7 Eye
 Care IG's own value sets (which cannot be formally imported, since that guide has no
-published FHIR package yet). New terminology (like <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code>) is only
-introduced where a genuine, verified gap exists.</p>
+published FHIR package yet). New terminology (like <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code>, or the
+laterality-neutral codes in the <a href="CodeSystem-fhir4eyes-cs.html">FHIR4Eyes Code System</a>) is
+only introduced where a genuine, verified gap exists.</p>
 
 <h2 id="a-note-on-how-this-guide-was-built">A note on how this guide was built</h2>
 
@@ -382,7 +398,7 @@ element as provisional and check for updates.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

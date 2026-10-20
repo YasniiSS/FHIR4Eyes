@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:OphthalmicMedicationAdministration |
+| Draft as of 2026-10-20 | *Computable Name*:OphthalmicMedicationAdministration |
 
  
 Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. Always linked back to the specific procedure it was administered during, via partOf, consistent with FHIR's standard 'larger event of which this is a component' pattern. 
 
 Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. It is always linked back to the specific [OphthalmicProcedure](StructureDefinition-ophthalmic-procedure.md) it was administered during, via `partOf` (`1..1`), consistent with FHIR's standard "larger event of which this is a component" pattern; the procedure does not reference the administration.
 
-The medication itself is a required reference to an [OphthalmicMedication](StructureDefinition-ophthalmic-medication.md). `effective[x]`, at least one `performer`, and `dosage` (with required `route` and `dose`) are also required. The laterality of the administration site is recorded on `dosage.site`, using the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md).
+The medication itself is a required reference to an [OphthalmicMedication](StructureDefinition-ophthalmic-medication.md). `effective[x]`, at least one `performer`, and `dosage` (with required `route` and `dose`) are also required. The laterality of the administration site is recorded with the standard `bodySite` extension on `dosage` itself (alongside the optional coded `dosage.site`), referencing an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md).
 
 **Examples:** [Bevacizumab administration: dose 1](MedicationAdministration-AvastinDose1AdministrationExample.md)
 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "name" : "OphthalmicMedicationAdministration",
   "title" : "Ophthalmic Medication Administration",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern.",
+  "description" : "Records the administration of a medication during an ophthalmic procedure,\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\nthis is a component' pattern.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -180,30 +180,42 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
       "mustSupport" : true
     },
     {
-      "id" : "MedicationAdministration.dosage.site",
-      "path" : "MedicationAdministration.dosage.site",
-      "mustSupport" : true
+      "id" : "MedicationAdministration.dosage.extension",
+      "path" : "MedicationAdministration.dosage.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
     },
     {
-      "id" : "MedicationAdministration.dosage.site.extension:bodySiteEye",
-      "path" : "MedicationAdministration.dosage.site.extension",
+      "id" : "MedicationAdministration.dosage.extension:bodySiteEye",
+      "path" : "MedicationAdministration.dosage.extension",
       "sliceName" : "bodySiteEye",
       "short" : "Laterality of the administration site, via BodyStructure",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },
     {
-      "id" : "MedicationAdministration.dosage.site.extension:bodySiteEye.value[x]",
-      "path" : "MedicationAdministration.dosage.site.extension.value[x]",
+      "id" : "MedicationAdministration.dosage.extension:bodySiteEye.value[x]",
+      "path" : "MedicationAdministration.dosage.extension.value[x]",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"]
       }]
+    },
+    {
+      "id" : "MedicationAdministration.dosage.site",
+      "path" : "MedicationAdministration.dosage.site",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationAdministration.dosage.route",

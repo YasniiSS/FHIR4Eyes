@@ -12,15 +12,23 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
 
 **category**: Exam
 
-**code**: Primary position
+**code**: Gaze position measurement
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
+
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
 
 **bodySite**: 
 
+> **component****code**: Gaze position**value**: Primary position
+
 > **component****code**: Fixating eye**value**: Left
 
-> **component****code**: Horizontal deviation**value**: -30 prism diopter (Details: UCUM code[p'diop] = '[p'diop]')
+> **component****code**: Horizontal deviation**value**: 30 prism diopter (Details: UCUM code[p'diop] = '[p'diop]')
+
+> **component****code**: Horizontal deviation direction**value**: Exodeviation
 
 
 
@@ -42,11 +50,20 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
     }]
   }],
   "code" : {
-    "text" : "Primary position"
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "gaze-position-measurement",
+      "display" : "Gaze position measurement"
+    }],
+    "text" : "Gaze position measurement"
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "bodySite" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
@@ -57,6 +74,29 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
   },
   "component" : [{
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "gaze-position",
+        "display" : "Gaze position"
+      }],
+      "text" : "Gaze position"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "408744005",
+        "display" : "Primary gaze"
+      }],
+      "text" : "Primary position"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "fixating-eye",
+        "display" : "Fixating eye"
+      }],
       "text" : "Fixating eye"
     },
     "valueCodeableConcept" : {
@@ -69,13 +109,35 @@ Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measureme
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "horizontal-deviation",
+        "display" : "Horizontal ocular deviation"
+      }],
       "text" : "Horizontal deviation"
     },
     "valueQuantity" : {
-      "value" : -30,
+      "value" : 30,
       "unit" : "prism diopter",
       "system" : "http://unitsofmeasure.org",
       "code" : "[p'diop]"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "horizontal-deviation-direction",
+        "display" : "Horizontal deviation direction"
+      }],
+      "text" : "Horizontal deviation direction"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "exodeviation",
+        "display" : "Exodeviation"
+      }]
     }
   }]
 }

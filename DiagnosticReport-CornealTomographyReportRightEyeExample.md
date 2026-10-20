@@ -12,7 +12,7 @@ Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-repo
 
 | | |
 | :--- | :--- |
-| Subject | Patient Example Female, DoB: 1990-01-01 ( PA1234567) |
+| Subject | Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567) |
 | Relevant Time | 2026-08-20 10:00:00+0000 |
 | Performer | [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md) |
 
@@ -22,26 +22,32 @@ Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-repo
   * **Value**: 
   * **Flags**: Final
   * **Note**: > Example based on typical Pentacam-style anterior surface report
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [Corneal tomography, posterior surface analysis](Observation-CTPosteriorSurfaceRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
   * **Note**: 
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [Corneal tomography, pachymetry analysis](Observation-CTPachymetryRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
   * **Note**: 
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [Corneal tomography, anterior chamber analysis](Observation-CTAnteriorChamberRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
   * **Note**: 
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [Corneal tomography, keratoconus indices](Observation-CTKeratoconusIndicesRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
   * **Note**: 
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 * **Code**: [Corneal tomography, densitometry analysis](Observation-CTDensitometryRightEyeExample.md)()
   * **Value**: 
   * **Flags**: Final
   * **Note**: 
+  * **Relevant Time**: 2026-08-18 09:00:00+0000
 
 No topographic or tomographic signs of ectasia. Regular corneal astigmatism of 1.4D. Suitable candidate for toric IOL calculation using the reported optimal axis.
 

@@ -9,12 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-10-19 | *Computable Name*:Pachymetry |
+| Draft as of 2026-10-20 | *Computable Name*:Pachymetry |
 
  
 Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when correcting an IOP reading for corneal thickness. 
 
-Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres, recorded as a required `Quantity` value. `code` is fixed to LOINC `79825-6` (central corneal thickness by pachymetry).
+Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres, recorded as a required `Quantity` value. `code` is fixed to the laterality-neutral local code `central-corneal-thickness` ([FHIR4EyesCS](CodeSystem-fhir4eyes-cs.md)), because the only LOINC codes for this concept are eye-specific; instances add the eye-specific LOINC as a second coding (`79825-6` right cornea / `79826-4` left cornea).
 
 ### Usage
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
   "name" : "Pachymetry",
   "title" : "Pachymetry",
   "status" : "draft",
-  "date" : "2026-10-19T22:17:00-03:00",
+  "date" : "2026-10-20T20:13:11-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -71,7 +71,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a corneal pachymetry measurement (corneal thickness), typically\r\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\r\ncorrecting an IOP reading for corneal thickness.",
+  "description" : "Represents a corneal pachymetry measurement (corneal thickness), typically\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\ncorrecting an IOP reading for corneal thickness.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -128,7 +128,22 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
     {
       "id" : "Observation.category",
       "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category:exam",
+      "path" : "Observation.category",
+      "sliceName" : "exam",
+      "min" : 1,
+      "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -141,12 +156,12 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "short" : "LOINC 79825-6 — Central corneal thickness by pachymetry",
+      "short" : "Laterality-neutral FHIR4Eyes code; instances add the eye-specific LOINC as a second coding: 79825-6 (right cornea) / 79826-4 (left cornea)",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://loinc.org",
-          "code" : "79825-6",
-          "display" : "Right cornea Central corneal thickness Pachymetry"
+          "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+          "code" : "central-corneal-thickness",
+          "display" : "Central corneal thickness"
         }]
       },
       "mustSupport" : true
@@ -205,7 +220,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
       }],
       "mustSupport" : true
     },

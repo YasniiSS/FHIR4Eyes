@@ -6,5 +6,13 @@
     "name" : "FHIR4EyesCarePlanCategoryCS",
     "title" : "FHIR4Eyes Care Plan Category Code System",
     "description" : "Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an\nexternal terminology. See the Profiles page of this guide for the design rationale."
+  },
+  {
+    "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+    "version" : "0.4.0",
+    "status" : "draft",
+    "name" : "FHIR4EyesCS",
+    "title" : "FHIR4Eyes Code System",
+    "description" : "Local, laterality-neutral codes for ophthalmic observations and components\ndefined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been\nverified. Open to replacement as external codes become available."
   }]
 }

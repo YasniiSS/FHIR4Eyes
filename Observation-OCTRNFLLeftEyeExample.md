@@ -14,9 +14,13 @@ Profile: [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md)
 
 **code**: OCT optic disc / RNFL analysis
 
-**subject**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
-**interpretation**: Outside Normal Limits
+**effective**: 2026-08-18 09:00:00+0000
+
+**performer**: [Practitioner Ophthalmologist Example ](Practitioner-OphthalmologistExample.md)
+
+**interpretation**: Outside normal limits
 
 **note**: 
 
@@ -27,17 +31,15 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 **bodySite**: 
 
-> **component****code**: Signal strength**value**: 8 1 (Details: UCUM code1 = '1')
+> **component****code**: Cup area**value**: 1 mm2 (Details: UCUM codemm2 = 'mm2')
 
-> **component****code**: Cup area**value**: 0.58 mm2 (Details: UCUM codemm2 = 'mm2')
-
-> **component****code**: Cup volume**value**: 0.16 mm3 (Details: UCUM codemm3 = 'mm3')
+> **component****code**: Cup volume**value**: 0.29 mm3 (Details: UCUM codemm3 = 'mm3')
 
 > **component****code**: Rim volume**value**: 0.21 mm3 (Details: UCUM codemm3 = 'mm3')
 
 > **component****code**: C/D horizontal**value**: 0.61 1 (Details: UCUM code1 = '1')
 
-> **component****code**: C/D vertical**value**: 0.64 1 (Details: UCUM code1 = '1')
+> **component****code**: C/D vertical**value**: 0.61 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Disc diameter horizontal**value**: 1.8 mm (Details: UCUM codemm = 'mm')
 
@@ -59,17 +61,27 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
 
 > **component****code**: Cup vert/horiz ratio**value**: 1.05 1 (Details: UCUM code1 = '1')
 
-> **component****code**: Rim/Disc ratio**value**: 0.39 1 (Details: UCUM code1 = '1')
+> **component****code**: Rim/Disc ratio**value**: 0.63 1 (Details: UCUM code1 = '1')
 
-> **component****code**: Rim absence**value**: 15 deg (Details: UCUM codedeg = 'deg')
+> **component****code**: Rim absence**value**: 0 deg (Details: UCUM codedeg = 'deg')
 
 > **component****code**: DDLS**value**: 5
 
-> **component****code**: RNFL Symmetry**value**: 88 % (Details: UCUM code% = '%')
+> **component****code**: RNFL Symmetry**value**: 0.88 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Mean TSNIT**value**: 76 um (Details: UCUM codeum = 'um')
 
 > **component****code**: TSNIT std deviation**value**: 18 um (Details: UCUM codeum = 'um')
+
+> **component****code**: RNFL Superior quadrant average**value**: 92 um (Details: UCUM codeum = 'um')
+
+> **component****code**: RNFL Inferior quadrant average**value**: 88 um (Details: UCUM codeum = 'um')
+
+> **component****code**: RNFL Nasal quadrant average**value**: 62 um (Details: UCUM codeum = 'um')
+
+> **component****code**: RNFL Temporal quadrant average**value**: 62 um (Details: UCUM codeum = 'um')
+
+> **component****code**: Signal strength**value**: 8 1 (Details: UCUM code1 = '1')
 
 > **component****code**: Retinal thickness definition**value**: ILM to RNFL boundary
 
@@ -105,8 +117,17 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
+  "effectiveDateTime" : "2026-08-18T09:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/OphthalmologistExample"
+  }],
   "interpretation" : [{
-    "text" : "Outside Normal Limits"
+    "coding" : [{
+      "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+      "code" : "outside-normal-limits",
+      "display" : "Outside normal limits"
+    }],
+    "text" : "Outside normal limits"
   }],
   "note" : [{
     "text" : "Device: Heidelberg Spectralis SPIRIT tracking laser tomography"
@@ -121,36 +142,41 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   "component" : [{
     "code" : {
-      "text" : "Signal strength"
-    },
-    "valueQuantity" : {
-      "value" : 8,
-      "system" : "http://unitsofmeasure.org",
-      "code" : "1"
-    }
-  },
-  {
-    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-area",
+        "display" : "Optic cup area"
+      }],
       "text" : "Cup area"
     },
     "valueQuantity" : {
-      "value" : 0.58,
+      "value" : 1,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm2"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-volume",
+        "display" : "Optic cup volume"
+      }],
       "text" : "Cup volume"
     },
     "valueQuantity" : {
-      "value" : 0.16,
+      "value" : 0.29,
       "system" : "http://unitsofmeasure.org",
       "code" : "mm3"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "neuroretinal-rim-volume",
+        "display" : "Neuroretinal rim volume"
+      }],
       "text" : "Rim volume"
     },
     "valueQuantity" : {
@@ -161,6 +187,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "cup-disc-ratio-horizontal",
+        "display" : "Cup-to-disc ratio, horizontal"
+      }],
       "text" : "C/D horizontal"
     },
     "valueQuantity" : {
@@ -171,16 +202,26 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "cup-disc-ratio-vertical",
+        "display" : "Cup-to-disc ratio, vertical"
+      }],
       "text" : "C/D vertical"
     },
     "valueQuantity" : {
-      "value" : 0.64,
+      "value" : 0.61,
       "system" : "http://unitsofmeasure.org",
       "code" : "1"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-horizontal",
+        "display" : "Optic disc diameter, horizontal"
+      }],
       "text" : "Disc diameter horizontal"
     },
     "valueQuantity" : {
@@ -191,6 +232,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-vertical",
+        "display" : "Optic disc diameter, vertical"
+      }],
       "text" : "Disc diameter vertical"
     },
     "valueQuantity" : {
@@ -201,6 +247,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-diameter-mean",
+        "display" : "Optic disc diameter, mean"
+      }],
       "text" : "Disc diameter mean"
     },
     "valueQuantity" : {
@@ -211,6 +262,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-horizontal",
+        "display" : "Optic cup diameter, horizontal"
+      }],
       "text" : "Cup diameter horizontal"
     },
     "valueQuantity" : {
@@ -221,6 +277,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-vertical",
+        "display" : "Optic cup diameter, vertical"
+      }],
       "text" : "Cup diameter vertical"
     },
     "valueQuantity" : {
@@ -231,6 +292,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-diameter-mean",
+        "display" : "Optic cup diameter, mean"
+      }],
       "text" : "Cup diameter mean"
     },
     "valueQuantity" : {
@@ -241,6 +307,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-depth-mean",
+        "display" : "Optic cup depth, mean"
+      }],
       "text" : "Mean cup depth"
     },
     "valueQuantity" : {
@@ -251,6 +322,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-depth-max",
+        "display" : "Optic cup depth, maximum"
+      }],
       "text" : "Max cup depth"
     },
     "valueQuantity" : {
@@ -261,6 +337,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-disc-vertical-horizontal-ratio",
+        "display" : "Optic disc vertical-to-horizontal diameter ratio"
+      }],
       "text" : "Disc vert/horiz ratio"
     },
     "valueQuantity" : {
@@ -271,6 +352,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "optic-cup-vertical-horizontal-ratio",
+        "display" : "Optic cup vertical-to-horizontal diameter ratio"
+      }],
       "text" : "Cup vert/horiz ratio"
     },
     "valueQuantity" : {
@@ -281,42 +367,72 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rim-disc-area-ratio",
+        "display" : "Neuroretinal rim-to-disc area ratio"
+      }],
       "text" : "Rim/Disc ratio"
     },
     "valueQuantity" : {
-      "value" : 0.39,
+      "value" : 0.63,
       "system" : "http://unitsofmeasure.org",
       "code" : "1"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "neuroretinal-rim-absence-extent",
+        "display" : "Angular extent of neuroretinal rim absence"
+      }],
       "text" : "Rim absence"
     },
     "valueQuantity" : {
-      "value" : 15,
+      "value" : 0,
       "system" : "http://unitsofmeasure.org",
       "code" : "deg"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "disc-damage-likelihood-scale",
+        "display" : "Disc Damage Likelihood Scale (DDLS) stage"
+      }],
       "text" : "DDLS"
     },
     "valueInteger" : 5
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-symmetry",
+        "display" : "RNFL inter-eye symmetry"
+      }],
       "text" : "RNFL Symmetry"
     },
     "valueQuantity" : {
-      "value" : 88,
+      "value" : 0.88,
       "system" : "http://unitsofmeasure.org",
-      "code" : "%"
+      "code" : "1"
     }
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-mean-tsnit",
+        "display" : "Mean RNFL thickness (TSNIT average)"
+      },
+      {
+        "system" : "http://loinc.org",
+        "code" : "86290-4",
+        "display" : "Left retina Retinal nerve fiber layer.mean thickness by OCT"
+      }],
       "text" : "Mean TSNIT"
     },
     "valueQuantity" : {
@@ -327,6 +443,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-tsnit-sd",
+        "display" : "RNFL TSNIT profile standard deviation"
+      }],
       "text" : "TSNIT std deviation"
     },
     "valueQuantity" : {
@@ -337,6 +458,86 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-superior",
+        "display" : "RNFL average thickness, superior quadrant"
+      }],
+      "text" : "RNFL Superior quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 92,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-inferior",
+        "display" : "RNFL average thickness, inferior quadrant"
+      }],
+      "text" : "RNFL Inferior quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 88,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-nasal",
+        "display" : "RNFL average thickness, nasal quadrant"
+      }],
+      "text" : "RNFL Nasal quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 62,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "rnfl-thickness-temporal",
+        "display" : "RNFL average thickness, temporal quadrant"
+      }],
+      "text" : "RNFL Temporal quadrant average"
+    },
+    "valueQuantity" : {
+      "value" : 62,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "um"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "signal-strength",
+        "display" : "Scan signal strength / quality"
+      }],
+      "text" : "Signal strength"
+    },
+    "valueQuantity" : {
+      "value" : 8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "retinal-thickness-definition",
+        "display" : "Retinal thickness definition"
+      }],
       "text" : "Retinal thickness definition"
     },
     "valueCodeableConcept" : {
@@ -345,6 +546,11 @@ Device: Heidelberg Spectralis SPIRIT tracking laser tomography
   },
   {
     "code" : {
+      "coding" : [{
+        "system" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs",
+        "code" : "pupil-dilated",
+        "display" : "Pupil dilated"
+      }],
       "text" : "Pupil dilated"
     },
     "valueCodeableConcept" : {

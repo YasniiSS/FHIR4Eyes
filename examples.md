@@ -19,7 +19,7 @@ Instances referenced by most of the other examples.
 | [Patient (Chilean RUT identifier)](Patient-PacienteEjemplo.md) | [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient identified with a Chilean RUT |
 | [Ophthalmologist](Practitioner-OphthalmologistExample.md) | Practitioner (base) | Requester and performer in the examples |
 | [Ambulatory ophthalmology encounter](Encounter-EncounterExample.md) | [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) | An ambulatory consultation |
-| [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md) | [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | Laterality targets referenced from`bodySite` |
+| [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md),[Both eyes](BodyStructure-BothEyesStructureExample.md) | [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | Laterality targets referenced from`bodySite` |
 
 ### Visual acuity
 
@@ -106,13 +106,17 @@ The biometry groups one `IOLFormulaResult` per formula via `hasMember`; the surg
 | | | |
 | :--- | :--- | :--- |
 | [Strabismus exam panel](Observation-StrabismusExamExample.md) | [Strabismus Exam](StructureDefinition-strabismus-exam.md) | Groups the sub-tests performed |
-| [Cover test](Observation-CoverTestExample.md) | [Cover Test](StructureDefinition-cover-test.md) | Direct sub-test |
+| [Cover test: near](Observation-CoverTestExample.md),[far](Observation-CoverTestFarExample.md) | [Cover Test](StructureDefinition-cover-test.md) | Direct sub-test, one per testing distance |
 | [Ocular motility: right eye](Observation-OcularMotilityRightEyeExample.md),[left eye](Observation-OcularMotilityLeftEyeExample.md) | [Ocular Motility](StructureDefinition-ocular-motility.md) | Direct sub-test |
 | [Near point of convergence](Observation-NearPointOfConvergenceExample.md) | [Near Point of Convergence](StructureDefinition-near-point-of-convergence.md) | Direct sub-test |
 | [Convergence assessment](Observation-ConvergenceAssessmentExample.md) | [Convergence Assessment](StructureDefinition-convergence-assessment.md) | Direct sub-test |
 | [Stereopsis test](Observation-StereopsisTestExample.md) | [Stereopsis Test](StructureDefinition-stereopsis-test.md) | Direct sub-test |
 | [Prism cover test panel](Observation-PrismCoverTestExample.md) | [Prism Cover Test](StructureDefinition-prism-cover-test.md) | Position-based sub-test |
 | [Primary position](Observation-PrismCoverTestPrimaryPositionExample.md) | [Gaze Position Measurement](StructureDefinition-gaze-position-measurement.md) | Member of the prism cover test |
+| [Krimsky test panel](Observation-KrimskyTestExample.md)(5 gaze positions × FOD/FOI, e.g.[primary FOD](Observation-KrimskyPrimaryFODExample.md)) | [Krimsky Test](StructureDefinition-krimsky-test.md) | Position-based sub-test, far: 30 PD FOD / 25 PD FOI exo |
+| [Hirschberg test panel](Observation-HirschbergTestExample.md)(5 gaze positions × FOD/FOI, e.g.[primary FOD](Observation-HirschbergPrimaryFODExample.md)) | [Hirschberg Test](StructureDefinition-hirschberg-test.md) | Position-based sub-test: about 15° exo FODI |
+| [Red filter light test panel](Observation-RedFilterLightTestExample.md)([primary position](Observation-RedFilterPrimaryPositionExample.md)) | [Red Filter Light Test](StructureDefinition-red-filter-light-test.md) | Position-based sub-test, near |
+| [Worth 4 dot test panel](Observation-Worth4DotTestExample.md)([primary position](Observation-Worth4DotPrimaryPositionExample.md)) | [Worth 4 Dot Test](StructureDefinition-worth-4-dot-test.md) | Position-based sub-test, far |
 
 ### Intravitreal injection treatment
 

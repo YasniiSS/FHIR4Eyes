@@ -30,7 +30,7 @@ Profile: [Ophthalmic Device](StructureDefinition-ophthalmic-device.md)
 | - | **Type** | **ValueQuantity** |
 | * | Diopter power | 21 [diop] (Details: UCUM code[diop] = '[diop]') |
 
-**patient**: [Patient Example Female, DoB: 1990-01-01 ( PA1234567)](Patient-PatientExample.md)
+**patient**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
 
 

@@ -18,7 +18,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTMaculaLeftEyeExample2</b></p><a name=\"OCTMaculaLeftEyeExample2\"> </a><a name=\"hcOCTMaculaLeftEyeExample2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-macula.html\">Ophthalmic OCT Macula</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57119-0}\">OCT macula analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( PA1234567)</a></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57109-1}\">Central macular thickness (CMT)</span></p><p><b>value</b>: 271 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57108-3}\">Center thickness</span></p><p><b>value</b>: 191 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57110-9}\">Inner Superior thickness</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57111-7}\">Inner Nasal thickness</span></p><p><b>value</b>: 317 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57112-5}\">Inner Inferior thickness</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57113-3}\">Inner Temporal thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57114-1}\">Outer Superior thickness</span></p><p><b>value</b>: 269 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57115-8}\">Outer Nasal thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57116-6}\">Outer Inferior thickness</span></p><p><b>value</b>: 268 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57117-4}\">Outer Temporal thickness</span></p><p><b>value</b>: 242 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57118-2}\">Central subfield volume</span></p><p><b>value</b>: 0.27 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Signal strength</span></p><p><b>value</b>: 9 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Central Min</span></p><p><b>value</b>: 189 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Central Max</span></p><p><b>value</b>: 244 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">ETDRS circle diameters</span></p><p><b>value</b>: 1, 3, 6 mm ETDRS</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RPE</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation OCTMaculaLeftEyeExample2</b></p><a name=\"OCTMaculaLeftEyeExample2\"> </a><a name=\"hcOCTMaculaLeftEyeExample2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ophthalmic-oct-macula.html\">Ophthalmic OCT Macula</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57119-0}\">OCT macula analysis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>interpretation</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs within-normal-limits}\">Within normal limits</span></p><p><b>note</b>: </p><blockquote><div><p>Device: Heidelberg Spectralis SPIRIT tracking laser tomography</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:\"></span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57109-1}\">Central macular thickness (CMT)</span></p><p><b>value</b>: 271 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57108-3}\">Center thickness</span></p><p><b>value</b>: 238 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs central-subfield-thickness-min}\">Central Min</span></p><p><b>value</b>: 232 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs central-subfield-thickness-max}\">Central Max</span></p><p><b>value</b>: 305 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57110-9}\">Inner Superior thickness</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57111-7}\">Inner Nasal thickness</span></p><p><b>value</b>: 317 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57112-5}\">Inner Inferior thickness</span></p><p><b>value</b>: 315 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57113-3}\">Inner Temporal thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57114-1}\">Outer Superior thickness</span></p><p><b>value</b>: 269 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57115-8}\">Outer Nasal thickness</span></p><p><b>value</b>: 284 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57116-6}\">Outer Inferior thickness</span></p><p><b>value</b>: 268 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57117-4}\">Outer Temporal thickness</span></p><p><b>value</b>: 242 um<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeum = 'um')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 57118-2}\">Total macular grid volume</span></p><p><b>value</b>: 8.5 mm3<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm3 = 'mm3')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs etdrs-grid-diameters}\">ETDRS circle diameters</span></p><p><b>value</b>: 1, 3, 6 mm ETDRS</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs retinal-thickness-definition}\">Retinal thickness definition</span></p><p><b>value</b>: <span title=\"Codes:\">ILM to RPE</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs pupil-dilated}\">Pupil dilated</span></p><p><b>value</b>: <span title=\"Codes:\">No</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs signal-strength}\">Signal strength</span></p><p><b>value</b>: 9 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote></div>"
   ] ;
   fhir:Observation.status [ fhir:value "final"] ;
   fhir:Observation.category [
@@ -43,6 +43,22 @@
   fhir:Observation.subject [
      fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:Observation.interpretation [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "within-normal-limits" ] ;
+       fhir:Coding.display [ fhir:value "Within normal limits" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Within normal limits" ]
   ] ;
   fhir:Observation.note [
      fhir:index 0 ;
@@ -88,12 +104,44 @@
        fhir:CodeableConcept.text [ fhir:value "Center thickness" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "191"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "238"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
      fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "central-subfield-thickness-min" ] ;
+         fhir:Coding.display [ fhir:value "Central subfield thickness, minimum" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Central Min" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "232"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "central-subfield-thickness-max" ] ;
+         fhir:Coding.display [ fhir:value "Central subfield thickness, maximum" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Central Max" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "305"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "um" ]
+     ]
+  ], [
+     fhir:index 4 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -110,7 +158,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 3 ;
+     fhir:index 5 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -127,7 +175,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 4 ;
+     fhir:index 6 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -144,7 +192,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 5 ;
+     fhir:index 7 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -161,7 +209,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 6 ;
+     fhir:index 8 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -178,7 +226,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 7 ;
+     fhir:index 9 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -195,7 +243,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 8 ;
+     fhir:index 10 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -212,7 +260,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 9 ;
+     fhir:index 11 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -229,7 +277,7 @@
        fhir:Quantity.code [ fhir:value "um" ]
      ]
   ], [
-     fhir:index 10 ;
+     fhir:index 12 ;
      fhir:Observation.component.code [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
@@ -238,64 +286,68 @@
          fhir:Coding.code [ fhir:value "57118-2" ] ;
          fhir:Coding.display [ fhir:value "Macular grid.total volume by OCT" ]
        ] ;
-       fhir:CodeableConcept.text [ fhir:value "Central subfield volume" ]
+       fhir:CodeableConcept.text [ fhir:value "Total macular grid volume" ]
      ] ;
      fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "0.27"^^xsd:decimal ] ;
+       fhir:Quantity.value [ fhir:value "8.5"^^xsd:decimal ] ;
        fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
        fhir:Quantity.code [ fhir:value "mm3" ]
      ]
   ], [
-     fhir:index 11 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Signal strength" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "9"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "1" ]
-     ]
-  ], [
-     fhir:index 12 ;
-     fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Central Min" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "189"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "um" ]
-     ]
-  ], [
      fhir:index 13 ;
      fhir:Observation.component.code [
-       fhir:CodeableConcept.text [ fhir:value "Central Max" ]
-     ] ;
-     fhir:Observation.component.valueQuantity [
-       fhir:Quantity.value [ fhir:value "244"^^xsd:decimal ] ;
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
-       fhir:Quantity.code [ fhir:value "um" ]
-     ]
-  ], [
-     fhir:index 14 ;
-     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "etdrs-grid-diameters" ] ;
+         fhir:Coding.display [ fhir:value "ETDRS grid circle diameters" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "ETDRS circle diameters" ]
      ] ;
      fhir:Observation.component.valueString [ fhir:value "1, 3, 6 mm ETDRS" ]
   ], [
-     fhir:index 15 ;
+     fhir:index 14 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "retinal-thickness-definition" ] ;
+         fhir:Coding.display [ fhir:value "Retinal thickness definition" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Retinal thickness definition" ]
      ] ;
      fhir:Observation.component.valueCodeableConcept [
        fhir:CodeableConcept.text [ fhir:value "ILM to RPE" ]
      ]
   ], [
-     fhir:index 16 ;
+     fhir:index 15 ;
      fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "pupil-dilated" ] ;
+         fhir:Coding.display [ fhir:value "Pupil dilated" ]
+       ] ;
        fhir:CodeableConcept.text [ fhir:value "Pupil dilated" ]
      ] ;
      fhir:Observation.component.valueCodeableConcept [
        fhir:CodeableConcept.text [ fhir:value "No" ]
+     ]
+  ], [
+     fhir:index 16 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+         fhir:Coding.code [ fhir:value "signal-strength" ] ;
+         fhir:Coding.display [ fhir:value "Scan signal strength / quality" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Signal strength" ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "9"^^xsd:decimal ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
      ]
   ] .
 

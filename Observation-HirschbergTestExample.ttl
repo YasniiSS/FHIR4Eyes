@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergTestExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "HirschbergTestExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test" ;
+       fhir:index 0 ;
+       fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation HirschbergTestExample</b></p><a name=\"HirschbergTestExample\"> </a><a name=\"hcHirschbergTestExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-hirschberg-test.html\">Hirschberg Test</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs hirschberg-test}\">Hirschberg test</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Patient Example  Female, DoB: 1990-01-01 ( Passport number: PA1234567)</a></p><p><b>effective</b>: 2026-08-18 09:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-OphthalmologistExample.html\">Practitioner Ophthalmologist Example </a></p><p><b>note</b>: </p><blockquote><div><p>Exotropia of about 15 degrees fixating either eye (FODI), comitant in the five principal gaze positions.</p>\n</div></blockquote><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-HirschbergPrimaryFODExample.html\">Primary position - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergPrimaryFOIExample.html\">Primary position - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergUpFODExample.html\">Up gaze (supraversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergUpFOIExample.html\">Up gaze (supraversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergDownFODExample.html\">Down gaze (infraversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergDownFOIExample.html\">Down gaze (infraversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergRightFODExample.html\">Right gaze (dextroversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergRightFOIExample.html\">Right gaze (dextroversion) - FOI, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergLeftFODExample.html\">Left gaze (levoversion) - FOD, about 15 degrees exodeviation</a></li><li><a href=\"Observation-HirschbergLeftFOIExample.html\">Left gaze (levoversion) - FOI, about 15 degrees exodeviation</a></li></ul></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "exam" ] ;
+       fhir:Coding.display [ fhir:value "Exam" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs" ] ;
+       fhir:Coding.code [ fhir:value "hirschberg-test" ] ;
+       fhir:Coding.display [ fhir:value "Hirschberg test" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Hirschberg test" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-08-18T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Practitioner/OphthalmologistExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/OphthalmologistExample" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Exotropia of about 15 degrees fixating either eye (FODI), comitant in the five principal gaze positions." ]
+  ] ;
+  fhir:Observation.hasMember [
+     fhir:index 0 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergPrimaryFODExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergPrimaryFODExample" ] ;
+     fhir:Reference.display [ fhir:value "Primary position - FOD, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 1 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergPrimaryFOIExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergPrimaryFOIExample" ] ;
+     fhir:Reference.display [ fhir:value "Primary position - FOI, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 2 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergUpFODExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergUpFODExample" ] ;
+     fhir:Reference.display [ fhir:value "Up gaze (supraversion) - FOD, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 3 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergUpFOIExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergUpFOIExample" ] ;
+     fhir:Reference.display [ fhir:value "Up gaze (supraversion) - FOI, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 4 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergDownFODExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergDownFODExample" ] ;
+     fhir:Reference.display [ fhir:value "Down gaze (infraversion) - FOD, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 5 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergDownFOIExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergDownFOIExample" ] ;
+     fhir:Reference.display [ fhir:value "Down gaze (infraversion) - FOI, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 6 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergRightFODExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergRightFODExample" ] ;
+     fhir:Reference.display [ fhir:value "Right gaze (dextroversion) - FOD, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 7 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergRightFOIExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergRightFOIExample" ] ;
+     fhir:Reference.display [ fhir:value "Right gaze (dextroversion) - FOI, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 8 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergLeftFODExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergLeftFODExample" ] ;
+     fhir:Reference.display [ fhir:value "Left gaze (levoversion) - FOD, about 15 degrees exodeviation" ]
+  ], [
+     fhir:index 9 ;
+     fhir:link <https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergLeftFOIExample> ;
+     fhir:Reference.reference [ fhir:value "Observation/HirschbergLeftFOIExample" ] ;
+     fhir:Reference.display [ fhir:value "Left gaze (levoversion) - FOI, about 15 degrees exodeviation" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://YasniiSS.github.io/fhir4eyes/Observation/HirschbergTestExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
