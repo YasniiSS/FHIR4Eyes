@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "IntraocularPressure"] ;
   fhir:StructureDefinition.title [ fhir:value "Intraocular Pressure"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-09-11T00:16:12+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-10-19T22:17:00-03:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -211,7 +211,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "inv-iop-range" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "IOP value must be between 0 and 80 mmHg" ] ;
-         fhir:ElementDefinition.constraint.expression [ fhir:value "valueQuantity.value >= 0 and valueQuantity.value <= 80" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 80)" ] ;
          fhir:ElementDefinition.constraint.source [
            fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure" ;
            fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>
@@ -3338,7 +3338,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "inv-iop-range" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "IOP value must be between 0 and 80 mmHg" ] ;
-         fhir:ElementDefinition.constraint.expression [ fhir:value "valueQuantity.value >= 0 and valueQuantity.value <= 80" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 80)" ] ;
          fhir:ElementDefinition.constraint.source [
            fhir:value "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure" ;
            fhir:link <https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure>

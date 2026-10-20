@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.28"}
-    h3,h4,h5,h6{--heading-prefix:"9.28"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.5"}
+    h3,h4,h5,h6{--heading-prefix:"12.5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -273,6 +303,51 @@ FHIR4Eyes departs from the Eye Care IG's own narrative documentation.</p>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Represents the formal, past or present clinical diagnosis of a specific ophthalmic
+condition. It is used throughout <a href="usecases.html">Use Cases</a> wherever a diagnosis is reached
+(for example after reviewing an imaging study, or before starting an intravitreal
+injection treatment scheme).</p>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p>This profile follows the same technical pattern as the HL7 Eye Care IG's equivalent
+profile (<code class="language-plaintext highlighter-rouge">condition-base</code>), aligned wherever it made sense, and adapted where its own
+narrative documentation and its technical definition disagreed with each other (see the
+note below).</p>
+
+<p><strong>Code.</strong> <code class="language-plaintext highlighter-rouge">Condition.code</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, bound to the diagnosis terminology defined in
+<a href="terminology.html">Terminology</a>: SNOMED CT and/or ICD-11 for FHIR4Eyes Core, ICD-10 for
+FHIR4Eyes CL.</p>
+
+<p><strong>Laterality.</strong> <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> is <code class="language-plaintext highlighter-rouge">0..*</code> and optional, using the standard FHIR
+<code class="language-plaintext highlighter-rouge">bodySite</code> extension to reference a <code class="language-plaintext highlighter-rouge">BodyStructure</code> (the same
+<a href="StructureDefinition-ocular-body-structure.html">OcularBodyStructure</a> pattern used
+throughout this guide for laterality; see <a href="guidance.html">Guidance</a>). This is included
+because many ophthalmic diagnoses are laterality-specific (for example, uveitis affecting
+only one eye, which is common in clinical practice).</p>
+
+<blockquote>
+  <p><strong>Note on the HL7 Eye Care IG's equivalent profile:</strong> its narrative documentation states
+that its "Ocular anatomical location" profile is <em>not</em> expected to be used together with
+its condition profile. However, its actual technical definition (the StructureDefinition
+itself) does define a <code class="language-plaintext highlighter-rouge">bodySite</code> slice referencing <code class="language-plaintext highlighter-rouge">BodyStructure</code>, contradicting that
+narrative statement. FHIR4Eyes follows the technical definition (bodySite included,
+optional) rather than the narrative text, since the former is what is actually
+enforceable and validated.</p>
+</blockquote>
+
+<p><strong>Subject.</strong> <code class="language-plaintext highlighter-rouge">Condition.subject</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, <code class="language-plaintext highlighter-rouge">Reference(Patient)</code>.</p>
+
+<p><strong>Examples:</strong> <a href="Condition-DiabeticMacularEdemaConditionExample.html">Diabetic macular edema diagnosis</a></p>
+
+
+</div>
 
 
 
@@ -401,7 +476,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Who has the condition?</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionK'), 'binding', document.getElementById('cbophthalmic-conditionK-binding').checked, document.getElementById('ppophthalmic-conditionK'));
 document.getElementById('cbophthalmic-conditionK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -666,7 +741,7 @@ filterDesc(document.getElementById('ophthalmic-conditionK'), 'obligation', docum
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Who has the condition?</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionD'), 'binding', document.getElementById('cbophthalmic-conditionD-binding').checked, document.getElementById('ppophthalmic-conditionD'));
 document.getElementById('cbophthalmic-conditionD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -978,7 +1053,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Additional information about the Condition<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionS'), 'binding', document.getElementById('cbophthalmic-conditionS-binding').checked, document.getElementById('ppophthalmic-conditionS'));
 document.getElementById('cbophthalmic-conditionS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1504,7 +1579,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Who has the condition?</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionKA'), 'binding', document.getElementById('cbophthalmic-conditionKA-binding').checked, document.getElementById('ppophthalmic-conditionKA'));
 document.getElementById('cbophthalmic-conditionKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1769,7 +1844,7 @@ filterDesc(document.getElementById('ophthalmic-conditionKA'), 'obligation', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Who has the condition?</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionDA'), 'binding', document.getElementById('cbophthalmic-conditionDA-binding').checked, document.getElementById('ppophthalmic-conditionDA'));
 document.getElementById('cbophthalmic-conditionDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2080,7 +2155,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Additional information about the Condition<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-conditionSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-conditionSA'), 'binding', document.getElementById('cbophthalmic-conditionSA-binding').checked, document.getElementById('ppophthalmic-conditionSA'));
 document.getElementById('cbophthalmic-conditionSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2554,7 +2629,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

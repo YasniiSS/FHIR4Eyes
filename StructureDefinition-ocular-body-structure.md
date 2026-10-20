@@ -9,10 +9,20 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OcularBodyStructure |
+| Draft as of 2026-10-19 | *Computable Name*:OcularBodyStructure |
 
  
 Represents an anatomical ocular location, used throughout this guide to express laterality (right eye, left eye, or both eyes) for observations, conditions, procedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care IG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location` element identifying the anatomical structure, and a `locationQualifier` element carrying laterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets for these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for locationQualifier), which are the intended reference terminology for this profile. However, because the HL7 Eye Care IG is not published as a usable FHIR package, those value sets cannot be formally imported here; this profile binds to SNOMED CT directly instead (see the Terminology page of this guide for the general rationale). 
+
+Represents an anatomical ocular location, used throughout this guide to express laterality (right eye, left eye, or both eyes) for observations, conditions, procedures, and imaging studies. It follows the same structural pattern as the HL7 Eye Care IG's equivalent profile ("Ocular anatomical location"): a required `location` identifying the anatomical structure (for example entire eye, cornea, retina), and `locationQualifier` carrying laterality and other qualifiers, both coded using SNOMED CT. `patient` is required.
+
+### The laterality pattern
+
+Other profiles do not carry a plain laterality code. Instead, their `bodySite` element carries the standard `http://hl7.org/fhir/StructureDefinition/bodySite` extension (named `bodySiteEye`), whose value is a `Reference(OcularBodyStructure)`. This lets the same `OcularBodyStructure` instance (for example, "right eye" for a specific patient) be shared across a `Condition`, a `Procedure`, and an `Observation`, enabling queries like "what else references this eye". [OphthalmicImagingStudy](StructureDefinition-ophthalmic-imaging-study.md) adds the same extension on each `series`, alongside the native DICOM-compatible `Coding` fields. See [Guidance](guidance.md) for the full pattern.
+
+The HL7 Eye Care IG's own value sets for `location` and `locationQualifier` are the intended reference terminology, but since that guide is not published as a usable FHIR package, they cannot be formally imported; this profile binds to SNOMED CT directly instead (see [Terminology](terminology.md)).
+
+**Examples:** [Right eye (laterality)](BodyStructure-RightEyeStructureExample.md), [Left eye (laterality)](BodyStructure-LeftEyeStructureExample.md)
 
 **Usages:**
 
@@ -43,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ocular-body-structur
   "name" : "OcularBodyStructure",
   "title" : "Ocular Body Structure",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

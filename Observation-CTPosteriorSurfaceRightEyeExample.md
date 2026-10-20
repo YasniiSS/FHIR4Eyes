@@ -1,10 +1,10 @@
-# CTPosteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT posterior surface: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTPosteriorSurfaceRightEyeExample**
+* **CT posterior surface: right eye**
 
-## Example Observation: CTPosteriorSurfaceRightEyeExample
+## Example Observation: CT posterior surface: right eye
 
 Profile: [Corneal Tomography - Posterior Surface](StructureDefinition-ct-posterior-surface.md)
 

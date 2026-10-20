@@ -10,7 +10,7 @@
   "name" : "CornealTomographyReport",
   "title" : "Corneal Tomography Report",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -563,12 +563,8 @@
       "path" : "DiagnosticReport.category",
       "slicing" : {
         "discriminator" : [{
-          "type" : "value",
-          "path" : "coding.code"
-        },
-        {
-          "type" : "value",
-          "path" : "coding.system"
+          "type" : "pattern",
+          "path" : "$this"
         }],
         "rules" : "open"
       },

@@ -1,10 +1,10 @@
-# IntravitrealInjectionProcedureExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Intravitreal injection procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **IntravitrealInjectionProcedureExample**
+* **Intravitreal injection procedure**
 
-## Example Procedure: IntravitrealInjectionProcedureExample
+## Example Procedure: Intravitreal injection procedure
 
 Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 

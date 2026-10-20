@@ -9,10 +9,22 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:IntraocularPressure |
+| Draft as of 2026-10-19 | *Computable Name*:IntraocularPressure |
 
  
 Represents a single intraocular pressure (IOP) reading, in mmHg. Code is fixed to SNOMED CT 41633001 (Intraocular pressure). 
+
+Represents a single intraocular pressure (IOP) reading, in mmHg. `code` is fixed to SNOMED CT `41633001` (Intraocular pressure), and `value[x]` is a required `Quantity` (`1..1`), constrained by the `inv-iop-range` invariant to between 0 and 80 mmHg.
+
+### Usage
+
+**Tonometry method.** `method` (`0..1`) optionally records the type of tonometer used (for example applanation or non-contact), a concept covered by LOINC `79764-7` (Type of Tonometer).
+
+**Laterality.** `bodySite` (`0..1`) uses the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md), following the laterality pattern described in [Guidance](guidance.md).
+
+**Relationship to other profiles.** An `IntraocularPressure` reading may be recorded on its own, may be grouped with other readings across a day as a member of a [TensionCurve](StructureDefinition-tension-curve.md), and may serve as the base reading that a [CorrectedIntraocularPressure](StructureDefinition-corrected-intraocular-pressure.md) references via `derivedFrom`, together with a [Pachymetry](StructureDefinition-pachymetry.md) measurement.
+
+**Examples:** [IOP: right eye](Observation-IntraocularPressureRightEyeExample.md), [IOP: left eye](Observation-IntraocularPressureLeftEyeExample.md), [Tension curve reading 08:00, right eye](Observation-TensionCurveRightEye0800Example.md), [Tension curve reading 12:00, right eye](Observation-TensionCurveRightEye1200Example.md), [Tension curve reading 14:00, right eye](Observation-TensionCurveRightEye1400Example.md)
 
 **Usages:**
 
@@ -43,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
   "name" : "IntraocularPressure",
   "title" : "Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -111,7 +123,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
         "key" : "inv-iop-range",
         "severity" : "error",
         "human" : "IOP value must be between 0 and 80 mmHg",
-        "expression" : "valueQuantity.value >= 0 and valueQuantity.value <= 80",
+        "expression" : "value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 80)",
         "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
       }]
     },

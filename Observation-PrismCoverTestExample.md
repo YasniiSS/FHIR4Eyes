@@ -1,10 +1,10 @@
-# PrismCoverTestExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Prism cover test panel - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PrismCoverTestExample**
+* **Prism cover test panel**
 
-## Example Observation: PrismCoverTestExample
+## Example Observation: Prism cover test panel
 
 Profile: [Prism Cover Test](StructureDefinition-prism-cover-test.md)
 

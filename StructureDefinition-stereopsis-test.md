@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:StereopsisTest |
+| Draft as of 2026-10-19 | *Computable Name*:StereopsisTest |
 
  
 Represents a stereoacuity test result (e.g. Titmus, Randot). The specific test used is recorded as a component, since several different stereopsis tests exist in practice and the test type affects how the result should be interpreted. 
+
+Represents a stereoacuity test result (for example Titmus, Randot). It is a **direct** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md): it produces a single result and does not vary by gaze position.
+
+The specific test used is recorded in the required `testType` component, since several different stereopsis tests exist in practice and the test type affects how the result should be interpreted (the catalog of test types is still to be built out). The result itself is either qualitative (`CodeableConcept`, for example absent or present) or quantitative (`Quantity`, in arc seconds), depending on the test used. See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
+
+**Examples:** [Stereopsis test](Observation-StereopsisTestExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
   "name" : "StereopsisTest",
   "title" : "Stereopsis Test",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

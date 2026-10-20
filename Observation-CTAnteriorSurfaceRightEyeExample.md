@@ -1,10 +1,10 @@
-# CTAnteriorSurfaceRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT anterior surface: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTAnteriorSurfaceRightEyeExample**
+* **CT anterior surface: right eye**
 
-## Example Observation: CTAnteriorSurfaceRightEyeExample
+## Example Observation: CT anterior surface: right eye
 
 Profile: [Corneal Tomography - Anterior Surface](StructureDefinition-ct-anterior-surface.md)
 

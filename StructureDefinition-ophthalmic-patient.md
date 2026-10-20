@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicPatient |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicPatient |
 
  
 Represents a patient receiving eye care, extending the base Patient resource with identifier slices for the Chilean national identifier (RUT) and passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. 
+
+Represents a patient receiving eye care. It extends the base `Patient` resource with two `identifier` slices, discriminated by `system`: `rut`, whose system is fixed to the Chilean RUT namespace (`https://www.registrocivil.cl/rut`), and `passport`, whose type is fixed to the v2-0203 `PPN` (Passport number) code, for use when a RUT is not available (for example, foreign patients). Both slices are optional and the slicing is open, so other identifiers may also be recorded.
+
+The core demographic elements `name`, `gender`, and `birthDate` are required (`1..1`), since they are needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, reporting, and age-based clinical calculations (for example IOL formulas or paediatric norms). `telecom` and `address` are Must Support but optional.
+
+**Examples:** [Patient (Chilean RUT identifier)](Patient-PacienteEjemplo.md), [Patient (international identifier)](Patient-PatientExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
   "name" : "OphthalmicPatient",
   "title" : "Ophthalmic Patient",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

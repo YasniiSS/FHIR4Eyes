@@ -9,10 +9,18 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicDevice |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicDevice |
 
  
 An implanted ophthalmic device instance, such as an intraocular lens (IOL), affixed to a specific patient. Following the same pattern as US Core's Implantable Device Profile, this represents the specific unit already implanted, not a generic catalog item; patient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also references this Device from the implanting procedure, consistent with US Core's own guidance that a procedure involving an implantable device should reference it via focalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for now. See the Profiles page of this guide for the full design rationale, including a note on other implantable devices (such as glaucoma drainage devices) that may also fit this profile. 
+
+Represents an implanted ophthalmic device instance, such as an intraocular lens (IOL), affixed to a specific patient. Following the same pattern as US Core's Implantable Device Profile, it represents the specific unit already implanted, not a generic catalog item; `patient` is therefore required (`1..1`). A generic device catalog (`DeviceDefinition`) is out of scope for this guide for now.
+
+The implanting procedure references the device through `Procedure.focalDevice.manipulated` in [OphthalmicProcedure](StructureDefinition-ophthalmic-procedure.md), consistent with US Core's guidance that a procedure involving an implantable device should reference it via `focalDevice` (see [use case 5](usecases.md#use-case-5-cataract-surgery-with-intraocular-lens-implantation)).
+
+`type` (the kind of device, for example intraocular lens) and `deviceName` (the manufacturer's model name, `1..*`) are required. `manufacturer`, `lotNumber`, `serialNumber`, `udiCarrier`, and `property` (technical specifications such as diopter power, material, or diameter) are Must Support.
+
+**Examples:** [Intraocular lens (implanted device)](Device-IntraocularLensExample.md)
 
 **Usages:**
 
@@ -43,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-device.cs
   "name" : "OphthalmicDevice",
   "title" : "Ophthalmic Device",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

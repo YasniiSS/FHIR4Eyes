@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicHumphreyVisualField |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicHumphreyVisualField |
 
  
 Represents an automated static perimetry (Humphrey field analyzer) exam. Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey) section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted. 
+
+Represents an automated static perimetry (Humphrey field analyzer) exam, as a single `Observation` with one `component` per reported value. Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey) section), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.
+
+The threshold strategy (SITA Standard, SITA Fast, SITA Faster, or Full Threshold) is recorded in the required `method`. The test `pattern` (for example 24-2, 30-2, 10-2, Esterman) and the Mean Deviation (`md`) are required components; the remaining components (for example PSD, VFI, stimulus and background parameters, field extent, foveal sensitivity, test duration, and correction lens used) are optional. Laterality uses the standard `bodySite` extension referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md), and the acquisition device may be recorded in `device`.
+
+**Examples:** [Humphrey visual field: right eye](Observation-HumphreyVFRightEyeExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
   "name" : "OphthalmicHumphreyVisualField",
   "title" : "Ophthalmic Humphrey Visual Field",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

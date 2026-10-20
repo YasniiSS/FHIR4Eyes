@@ -33,7 +33,7 @@
   <name value="IntraocularPressure"/>
   <title value="Intraocular Pressure"/>
   <status value="draft"/>
-  <date value="2026-09-11T00:16:12+00:00"/>
+  <date value="2026-10-19T22:17:00-03:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -179,7 +179,7 @@
         <key value="inv-iop-range"/>
         <severity value="error"/>
         <human value="IOP value must be between 0 and 80 mmHg"/>
-        <expression value="valueQuantity.value &gt;= 0 and valueQuantity.value &lt;= 80"/>
+        <expression value="value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value &gt;= 0 and value.ofType(Quantity).value &lt;= 80)"/>
         <source value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
       </constraint>
       <isModifier value="false"/>
@@ -2577,7 +2577,7 @@
         <key value="inv-iop-range"/>
         <severity value="error"/>
         <human value="IOP value must be between 0 and 80 mmHg"/>
-        <expression value="valueQuantity.value &gt;= 0 and valueQuantity.value &lt;= 80"/>
+        <expression value="value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value &gt;= 0 and value.ofType(Quantity).value &lt;= 80)"/>
         <source value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"/>
       </constraint>
     </element>

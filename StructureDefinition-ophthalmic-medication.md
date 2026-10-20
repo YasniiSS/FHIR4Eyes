@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicMedication |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicMedication |
 
  
 A medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. 
+
+Represents a medication used in ophthalmology, such as an anti-VEGF agent for intravitreal injection. `code` is required, and so is `batch`, with both `batch.lotNumber` and `batch.expirationDate` required (`1..1`); `form` and `manufacturer` are Must Support but optional. It is referenced from [OphthalmicMedicationAdministration](StructureDefinition-ophthalmic-medication-administration.md) via `medication[x]`.
+
+**Examples:** [Bevacizumab (Avastin)](Medication-AvastinMedicationExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "name" : "OphthalmicMedication",
   "title" : "Ophthalmic Medication",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

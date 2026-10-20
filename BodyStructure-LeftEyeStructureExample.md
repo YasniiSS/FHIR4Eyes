@@ -1,10 +1,10 @@
-# LeftEyeStructureExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Left eye (laterality) - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **LeftEyeStructureExample**
+* **Left eye (laterality)**
 
-## Example BodyStructure: LeftEyeStructureExample
+## Example BodyStructure: Left eye (laterality)
 
 Profile: [Ocular Body Structure](StructureDefinition-ocular-body-structure.md)
 

@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.16"}
-    h3,h4,h5,h6{--heading-prefix:"9.16"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.16"}
+    h3,h4,h5,h6{--heading-prefix:"12.16"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -280,6 +310,89 @@ for future review.</p>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>A modern corneal tomographer (Scheimpflug/Pentacam-style device) produces a single exam
+session that covers several genuinely distinct analyses: the shape of the front of the
+cornea, the shape of the back of the cornea, how thick the cornea is at each point, the
+anterior chamber behind it, derived keratoconus screening indices, and corneal transparency
+(densitometry). This guide represents each of these six analyses as its own <code class="language-plaintext highlighter-rouge">Observation</code>
+profile, grouped together under a single <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code>, a specialization of
+<a href="StructureDefinition-ophthalmic-diagnostic-report.html">OphthalmicDiagnosticReport</a> whose
+<code class="language-plaintext highlighter-rouge">result</code> is restricted to the six analyses:
+<a href="StructureDefinition-ct-anterior-surface.html">CTAnteriorSurface</a>,
+<a href="StructureDefinition-ct-posterior-surface.html">CTPosteriorSurface</a>,
+<a href="StructureDefinition-ct-pachymetry.html">CTPachymetry</a>,
+<a href="StructureDefinition-ct-anterior-chamber.html">CTAnteriorChamber</a>,
+<a href="StructureDefinition-ct-keratoconus-indices.html">CTKeratoconusIndices</a>, and
+<a href="StructureDefinition-ct-densitometry.html">CTDensitometry</a>. Not all six are necessarily
+present, depending on the device.</p>
+
+<pre><code class="language-mermaid">graph TD
+    R[CornealTomographyReport] --&gt;|result| A[CTAnteriorSurface&lt;br/&gt;54 components]
+    R --&gt;|result| B[CTPosteriorSurface&lt;br/&gt;7 components]
+    R --&gt;|result| C[CTPachymetry&lt;br/&gt;6 components]
+    R --&gt;|result| D[CTAnteriorChamber&lt;br/&gt;5 components]
+    R --&gt;|result| E[CTKeratoconusIndices&lt;br/&gt;19 components]
+    R --&gt;|result| F[CTDensitometry&lt;br/&gt;7 components]
+</code></pre>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>Why six Observations, not one, and not fifty-plus.</strong> This is the same underlying
+principle applied in the OCT profiles (see the "Component-based" note on
+<a href="StructureDefinition-ophthalmic-oct-rnfl.html">OphthalmicOCTRNFL</a>), taken to its natural
+conclusion for a much richer exam. Values that describe the <em>same</em> underlying analysis —
+for example, all the different keratometry and elevation readings that describe the
+anterior corneal surface — are grouped as <code class="language-plaintext highlighter-rouge">component</code> entries within a single Observation,
+exactly like RNFL's quadrant thicknesses. But <code class="language-plaintext highlighter-rouge">CTAnteriorSurface</code> and <code class="language-plaintext highlighter-rouge">CTPosteriorSurface</code>
+are <strong>not</strong> merged into one Observation with a "front/back" component, even though they
+share many parallel fields (K1, K2, Km, Q-value, elevation, BFS radius all appear in both).
+The distinction is not "are these numbers similar in shape", it is "are these numbers
+describing the same physical/optical entity". The anterior and posterior corneal surfaces
+are optically and clinically distinct surfaces — a keratorefractive surgeon reasons about
+them separately, and a device can output one without the other (for example, older
+Placido-based topographers only measure the anterior surface). Likewise, pachymetry (a
+thickness map), the anterior chamber (a different anatomical structure entirely),
+keratoconus indices (derived screening scores, not raw measurements), and densitometry (a
+transparency/light-scatter property, not a shape property) are each their own kind of
+analysis, so each gets its own Observation.</p>
+
+<p><strong>Rule of thumb used throughout this guide:</strong> if two values are two facets of describing
+the <em>same object at the same moment</em> (e.g. this scan's superior RNFL thickness and this
+scan's inferior RNFL thickness — both are "how thick is the RNFL, broken down by
+direction"), they are components of one Observation. If two values describe <em>different
+objects or different kinds of analysis</em> (e.g. how the front of the cornea curves vs. how
+thick the cornea is), they belong in separate Observations, tied together by the parent
+<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>.</p>
+
+<p><strong>A note on the HL7 Eye Care IG.</strong> Corneal tomography of this depth (Scheimpflug-based,
+with keratoconus screening indices) is not covered by the HL7 Eye Care IG at all; this
+entire family of profiles is a FHIR4Eyes contribution, not an adaptation of an existing
+pattern.</p>
+
+<p><strong>Grouping under one report is provisional.</strong> In practice, a tomography device may print
+these as separate reports or "maps" (an anterior surface map, a posterior surface map, and
+so on) rather than a single integrated report. Whether these six analyses should be grouped
+under a single report, or split to mirror how a given device physically prints separate
+"maps", is left open for future review, since the current priority is representing the
+underlying data correctly.</p>
+
+<p><strong>Sourced directly from the FHIR4Eyes Observations catalog.</strong> Every component in these six
+profiles, including the components that reference specific DICOM Sup 168 tags (vertex
+location, pupil centroid, map type, and others), was taken directly from the project's
+maintained variable catalog, not invented for this guide. Where a component has no
+confirmed SNOMED CT or LOINC binding, its code is left open, following this guide's
+terminology rigor (see <a href="terminology.html">Terminology</a>).</p>
+
+<p><strong>Examples:</strong> <a href="DiagnosticReport-CornealTomographyReportRightEyeExample.html">Corneal tomography report: right eye</a></p>
+
+
+</div>
 
 
 
@@ -371,7 +484,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000; font-style: italic" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null; font-style: italic" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="font-style: italic">1</span><span style="font-style: italic">..</span><span style="font-style: italic">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by value:coding.code, value:coding.system</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by pattern:$this</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck135.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.category:specialty" title="Slice specialty: A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes." data-no-external="true">category:specialty</a><a name="k-DiagnosticReport.category:specialty"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -436,7 +549,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.code" title="A code or name that describes this diagnostic report." data-no-external="true">code</a><a name="k-DiagnosticReport.code"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -507,7 +620,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Entire report as issued<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportK'), 'binding', document.getElementById('cbcorneal-tomography-reportK-binding').checked, document.getElementById('ppcorneal-tomography-reportK'));
 document.getElementById('cbcorneal-tomography-reportK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -590,12 +703,12 @@ filterDesc(document.getElementById('corneal-tomography-reportK'), 'obligation', 
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0074" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -745,7 +858,7 @@ filterDesc(document.getElementById('corneal-tomography-reportK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ct-anterior-surface.html">Corneal Tomography - Anterior Surface</a> | <a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a> | <a href="StructureDefinition-ct-pachymetry.html">Corneal Tomography - Pachymetry</a> | <a href="StructureDefinition-ct-anterior-chamber.html">Corneal Tomography - Anterior Chamber</a> | <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a> | <a href="StructureDefinition-ct-densitometry.html">Corneal Tomography - Densitometry</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The corneal tomography component analyses available for this exam (up to six: CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry); not all six are necessarily present, depending on the device</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportD'), 'binding', document.getElementById('cbcorneal-tomography-reportD-binding').checked, document.getElementById('ppcorneal-tomography-reportD'));
 document.getElementById('cbcorneal-tomography-reportD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -837,7 +950,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000; font-style: italic" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null; font-style: italic" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="font-style: italic">1</span><span style="font-style: italic">..</span><span style="font-style: italic">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by value:coding.code, value:coding.system</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by pattern:$this</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ala" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck135.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.category:specialty" title="Slice specialty: A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes." data-no-external="true">category:specialty</a><a name="s-DiagnosticReport.category:specialty"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -902,7 +1015,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="am" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.code" title="A code or name that describes this diagnostic report." data-no-external="true">code</a><a name="s-DiagnosticReport.code"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -1010,7 +1123,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Entire report as issued<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportS'), 'binding', document.getElementById('cbcorneal-tomography-reportS-binding').checked, document.getElementById('ppcorneal-tomography-reportS'));
 document.getElementById('cbcorneal-tomography-reportS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1108,12 +1221,12 @@ filterDesc(document.getElementById('corneal-tomography-reportS'), 'obligation', 
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0074" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -1276,7 +1389,7 @@ filterDesc(document.getElementById('corneal-tomography-reportS'), 'obligation', 
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.identifier" title="Identifiers assigned to this report by the performer or other systems (this element must be supported)" class="dict"><span style="text-decoration: underline">identifier</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Business identifier for report</span>
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.basedOn" title="Details concerning a service requested (this element must be supported)" class="dict"><span style="text-decoration: underline">basedOn</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request]])}], <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">The medical order that led to this report, when applicable</span>
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.status" title="The status of the diagnostic report (this element modifies the meaning of other elements, and must be supported)" class="dict"><span style="text-decoration: underline">status</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">registered | partial | preliminary | final +</a></span>
-    "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.category" title="A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes (this element must be supported)" class="dict"><span style="text-decoration: underline">category</span></a>" : [ <span style="color: navy"> // sliced by value:coding.code, value:coding.system in the specified order Open</span>
+    "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.category" title="A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes (this element must be supported)" class="dict"><span style="text-decoration: underline">category</span></a>" : [ <span style="color: navy"> // sliced by pattern:$this in the specified order Open</span>
       { // <span style="color: navy; opacity: 0.8">Service category</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: brown" title="This element is an array in the base standard, but the profile only allows one element"><b>Only One!</b></span> 
       // from Element: <a href="http://hl7.org/fhir/R4/extensibility.html">extension</a>
       },
@@ -1393,7 +1506,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000; font-style: italic" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null; font-style: italic" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="font-style: italic">1</span><span style="font-style: italic">..</span><span style="font-style: italic">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by value:coding.code, value:coding.system</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by pattern:$this</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck135.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.category:specialty" title="Slice specialty: A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes." data-no-external="true">category:specialty</a><a name="ka-DiagnosticReport.category:specialty"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -1458,7 +1571,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.code" title="A code or name that describes this diagnostic report." data-no-external="true">code</a><a name="ka-DiagnosticReport.code"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -1529,7 +1642,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Entire report as issued<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportKA'), 'binding', document.getElementById('cbcorneal-tomography-reportKA-binding').checked, document.getElementById('ppcorneal-tomography-reportKA'));
 document.getElementById('cbcorneal-tomography-reportKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1612,12 +1725,12 @@ filterDesc(document.getElementById('corneal-tomography-reportKA'), 'obligation',
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0074" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -1767,7 +1880,7 @@ filterDesc(document.getElementById('corneal-tomography-reportKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ct-anterior-surface.html">Corneal Tomography - Anterior Surface</a> | <a href="StructureDefinition-ct-posterior-surface.html">Corneal Tomography - Posterior Surface</a> | <a href="StructureDefinition-ct-pachymetry.html">Corneal Tomography - Pachymetry</a> | <a href="StructureDefinition-ct-anterior-chamber.html">Corneal Tomography - Anterior Chamber</a> | <a href="StructureDefinition-ct-keratoconus-indices.html">Corneal Tomography - Keratoconus Indices</a> | <a href="StructureDefinition-ct-densitometry.html">Corneal Tomography - Densitometry</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The corneal tomography component analyses available for this exam (up to six: CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry); not all six are necessarily present, depending on the device</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportDA'), 'binding', document.getElementById('cbcorneal-tomography-reportDA-binding').checked, document.getElementById('ppcorneal-tomography-reportDA'));
 document.getElementById('cbcorneal-tomography-reportDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1858,7 +1971,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000; font-style: italic" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null; font-style: italic" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="font-style: italic">1</span><span style="font-style: italic">..</span><span style="font-style: italic">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by value:coding.code, value:coding.system</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Service category</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by pattern:$this</span><br style="font-style: italic" class="binding"/><span style="font-weight:bold; font-style: italic" title="null" class="binding">Binding: </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" title="http://hl7.org/fhir/ValueSet/diagnostic-service-sections" class="binding">DiagnosticServiceSectionCodes</a><span style="font-style: italic" title="null" class="binding"> (</span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span style="font-style: italic" title="null" class="binding">)</span><span style="font-style: italic" title="null" class="binding">: </span><span style="font-style: italic" title="null" class="binding">Codes for diagnostic service sections.</span><br style="font-style: italic"/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ala" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck135.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.category:specialty" title="Slice specialty: A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes." data-no-external="true">category:specialty</a><a name="sa-DiagnosticReport.category:specialty"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -1923,7 +2036,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">IMG (Diagnostic Imaging), only when the exam is image-based; omitted otherwise<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" title="http://terminology.hl7.org/ValueSet/v2-0074" class="binding">hl7VS-diagnosticServiceSectionId</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="am" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-corneal-tomography-report-definitions.html#DiagnosticReport.code" title="A code or name that describes this diagnostic report." data-no-external="true">code</a><a name="sa-DiagnosticReport.code"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
@@ -2031,7 +2144,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Entire report as issued<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbcorneal-tomography-reportSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('corneal-tomography-reportSA'), 'binding', document.getElementById('cbcorneal-tomography-reportSA-binding').checked, document.getElementById('ppcorneal-tomography-reportSA'));
 document.getElementById('cbcorneal-tomography-reportSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2129,12 +2242,12 @@ filterDesc(document.getElementById('corneal-tomography-reportSA'), 'obligation',
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html">hl7VS-diagnosticServiceSectionId</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0074" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -2297,7 +2410,7 @@ filterDesc(document.getElementById('corneal-tomography-reportSA'), 'obligation',
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.identifier" title="Identifiers assigned to this report by the performer or other systems (this element must be supported)" class="dict"><span style="text-decoration: underline">identifier</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Business identifier for report</span>
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.basedOn" title="Details concerning a service requested (this element must be supported)" class="dict"><span style="text-decoration: underline">basedOn</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request]])}], <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">The medical order that led to this report, when applicable</span>
     "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.status" title="The status of the diagnostic report (this element modifies the meaning of other elements, and must be supported)" class="dict"><span style="text-decoration: underline">status</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">registered | partial | preliminary | final +</a></span>
-    "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.category" title="A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes (this element must be supported)" class="dict"><span style="text-decoration: underline">category</span></a>" : [ <span style="color: navy"> // sliced by value:coding.code, value:coding.system in the specified order Open</span>
+    "<a href="StructureDefinition-corneal-tomography-report.html#DiagnosticReport.category" title="A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes (this element must be supported)" class="dict"><span style="text-decoration: underline">category</span></a>" : [ <span style="color: navy"> // sliced by pattern:$this in the specified order Open</span>
       { // <span style="color: navy; opacity: 0.8">Service category</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: brown" title="This element is an array in the base standard, but the profile only allows one element"><b>Only One!</b></span> 
       // from Element: <a href="http://hl7.org/fhir/R4/extensibility.html">extension</a>
       },
@@ -2398,7 +2511,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

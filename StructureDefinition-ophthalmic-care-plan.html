@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.27"}
-    h3,h4,h5,h6{--heading-prefix:"9.27"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.40"}
+    h3,h4,h5,h6{--heading-prefix:"12.40"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -274,6 +304,78 @@ Procedure.basedOn.</p>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Represents a long-term treatment scheme made up of repeated sessions or administrations,
+rather than a single event. This guide identified two such schemes in
+<a href="usecases.html">Use Cases</a>: intravitreal injection treatment
+(<a href="usecases.html#intravitreal-injection-treatment">use case 4</a>) and vision therapy or
+orthoptic treatment (<a href="usecases.html#use-case-3-vision-therapy-and-rehabilitation">use case 3</a>).
+As with <a href="StructureDefinition-ophthalmic-service-request.html">OphthalmicServiceRequest</a>,
+there is no equivalent profile in the HL7 Eye Care IG to align with; this profile is
+designed from the base FHIR <code class="language-plaintext highlighter-rouge">CarePlan</code> resource and this guide's own use cases.</p>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>One profile, differentiated by category.</strong> Rather than defining two separate profiles,
+<code class="language-plaintext highlighter-rouge">OphthalmicCarePlan</code> is a single profile whose <code class="language-plaintext highlighter-rouge">category</code> element (<code class="language-plaintext highlighter-rouge">1..1</code>, required binding
+to <a href="ValueSet-ophthalmic-care-plan-category-vs.html">OphthalmicCarePlanCategoryVS</a>)
+distinguishes the type of scheme:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">intravitreal-injection-therapy</code></td>
+      <td>A scheme of repeated intravitreal injections</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functional-therapy</code></td>
+      <td>A scheme of repeated vision therapy or orthoptic sessions</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>These are proposed FHIR4Eyes-only codes, not yet bound to an external terminology, since
+no existing HL7 Eye Care IG or SNOMED CT pattern was found for this specific
+distinction. Open to revision if a suitable external code is identified later.</p>
+</blockquote>
+
+<p><strong>Goal.</strong> <code class="language-plaintext highlighter-rouge">CarePlan.goal</code> (<code class="language-plaintext highlighter-rouge">Reference(Goal)</code>) is <code class="language-plaintext highlighter-rouge">0..1</code>, included when clinically relevant,
+rather than being required for every scheme. Some schemes have a clear measurable target
+(for example, a target intraocular pressure), while others may not need one recorded
+explicitly. A dedicated <code class="language-plaintext highlighter-rouge">Goal</code> profile for ophthalmology is listed as a lower-priority item
+still to be built (see <a href="background.html">Background</a>).</p>
+
+<p><strong>Addressed diagnosis.</strong> <code class="language-plaintext highlighter-rouge">CarePlan.addresses</code> (<code class="language-plaintext highlighter-rouge">0..1</code>) references the
+<a href="StructureDefinition-ophthalmic-condition.html">OphthalmicCondition</a> motivating the scheme.</p>
+
+<p><strong>Planned vs. performed sessions.</strong> Not every planned session is necessarily scheduled at
+once: a session that is planned but not yet carried out is represented as a
+<code class="language-plaintext highlighter-rouge">CarePlan.activity</code>. Since <code class="language-plaintext highlighter-rouge">CarePlan.activity.reference</code> cannot point to <code class="language-plaintext highlighter-rouge">Procedure</code> (only
+to request-type resources), once a session is scheduled it can reference the relevant
+<a href="StructureDefinition-ophthalmic-service-request.html">OphthalmicServiceRequest</a> there.</p>
+
+<p><strong>Linked procedures.</strong> Individual sessions or injections that are actually performed are
+recorded as separate <a href="StructureDefinition-ophthalmic-procedure.html">OphthalmicProcedure</a>
+instances, linked back to this <code class="language-plaintext highlighter-rouge">CarePlan</code> via <code class="language-plaintext highlighter-rouge">Procedure.basedOn</code>, as established in
+<a href="usecases.html#intravitreal-injection-treatment">use case 4</a> for intravitreal injections.
+The same pattern applies to vision therapy and orthoptic sessions.</p>
+
+<p><strong>Examples:</strong> <a href="CarePlan-AvastinInjectionCarePlanExample.html">Intravitreal injection care plan</a></p>
+
+
+</div>
 
 
 
@@ -446,7 +548,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments about the plan<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planK'), 'binding', document.getElementById('cbophthalmic-care-planK-binding').checked, document.getElementById('ppophthalmic-care-planK'));
 document.getElementById('cbophthalmic-care-planK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -736,7 +838,7 @@ filterDesc(document.getElementById('ophthalmic-care-planK'), 'obligation', docum
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments about the plan</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planD'), 'binding', document.getElementById('cbophthalmic-care-planD-binding').checked, document.getElementById('ppophthalmic-care-planD'));
 document.getElementById('cbophthalmic-care-planD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1129,7 +1231,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments about the plan<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planS'), 'binding', document.getElementById('cbophthalmic-care-planS-binding').checked, document.getElementById('ppophthalmic-care-planS'));
 document.getElementById('cbophthalmic-care-planS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1664,7 +1766,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments about the plan<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planKA'), 'binding', document.getElementById('cbophthalmic-care-planKA-binding').checked, document.getElementById('ppophthalmic-care-planKA'));
 document.getElementById('cbophthalmic-care-planKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1954,7 +2056,7 @@ filterDesc(document.getElementById('ophthalmic-care-planKA'), 'obligation', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments about the plan</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planDA'), 'binding', document.getElementById('cbophthalmic-care-planDA-binding').checked, document.getElementById('ppophthalmic-care-planDA'));
 document.getElementById('cbophthalmic-care-planDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2346,7 +2448,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments about the plan<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-care-planSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-care-planSA'), 'binding', document.getElementById('cbophthalmic-care-planSA-binding').checked, document.getElementById('ppophthalmic-care-planSA'));
 document.getElementById('cbophthalmic-care-planSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2785,7 +2887,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

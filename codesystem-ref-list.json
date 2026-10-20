@@ -21,7 +21,7 @@
     "oids" : ["2.16.840.1.113883.18.29"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.3.0/ValueSet-v2-0074.html" : "hl7VS-diagnosticServiceSectionId"
+    "http://terminology.hl7.org/7.4.0/ValueSet-v2-0074.html" : "hl7VS-diagnosticServiceSectionId"
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-care-plan-category-cs",

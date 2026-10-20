@@ -1,10 +1,10 @@
-# CorrectedIntraocularPressureLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Corrected IOP: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CorrectedIntraocularPressureLeftEyeExample**
+* **Corrected IOP: left eye**
 
-## Example Observation: CorrectedIntraocularPressureLeftEyeExample
+## Example Observation: Corrected IOP: left eye
 
 Profile: [Corrected Intraocular Pressure](StructureDefinition-corrected-intraocular-pressure.md)
 

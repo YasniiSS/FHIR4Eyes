@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.37"}
-    h3,h4,h5,h6{--heading-prefix:"9.37"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.14"}
+    h3,h4,h5,h6{--heading-prefix:"12.14"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -273,6 +303,70 @@ earlier, quadrant-thickness-only version of this profile.</p>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Represents an OCT optic nerve head (ONH)/retinal nerve fiber layer (RNFL) analysis: cup and
+disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), and the global TSNIT
+(Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics, alongside acquisition
+metadata and an overall normative classification. It is grouped under an
+<a href="StructureDefinition-ophthalmic-diagnostic-report.html">OphthalmicDiagnosticReport</a>
+together with the <a href="StructureDefinition-ophthalmic-imaging-study.html">OphthalmicImagingStudy</a>
+it was derived from, alongside its companion macular analysis,
+<a href="StructureDefinition-ophthalmic-oct-macula.html">OphthalmicOCTMacula</a>. Sourced directly from
+the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section).</p>
+
+<pre><code class="language-mermaid">graph TD
+    R[OphthalmicDiagnosticReport&lt;br/&gt;OCT report] --&gt;|imagingStudy| S[OphthalmicImagingStudy&lt;br/&gt;RNFL + Macula series]
+    R --&gt;|result| RNFL[OphthalmicOCTRNFL&lt;br/&gt;25 components]
+    R --&gt;|result| MAC[OphthalmicOCTMacula&lt;br/&gt;22 components]
+
+    RNFL -.-&gt; RNFLG["cup/disc geometry, DDLS,&lt;br/&gt;TSNIT mean/SD"]
+    MAC -.-&gt; MACG["ETDRS 9-sector grid,&lt;br/&gt;acquisition metadata"]
+</code></pre>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>Component-based, diverging from the HL7 Eye Care IG's atomic pattern.</strong> The HL7 Eye Care
+IG represents each individual sector value (for example, "RNFL superior thickness") as its
+own separate <code class="language-plaintext highlighter-rouge">Observation</code>, each with a single LOINC code and a single value. This guide
+instead represents each full analysis as a single <code class="language-plaintext highlighter-rouge">Observation</code> with multiple <code class="language-plaintext highlighter-rouge">component</code>
+entries, one per measurement.</p>
+
+<p>This is a deliberate divergence, not an oversight: the values produced by a single OCT scan
+are, by FHIR's own definition of <code class="language-plaintext highlighter-rouge">component</code>, "multiple component observations for a
+single measurement" (the same pattern used for systolic/diastolic blood pressure). They are
+produced together, from the same scan, at the same instant, for the same eye; modeling them
+as separate, disconnected <code class="language-plaintext highlighter-rouge">Observation</code> resources would lose that inherent grouping and
+require an additional panel/<code class="language-plaintext highlighter-rouge">hasMember</code> layer to reconstruct it. The component-based
+approach keeps that grouping implicit in the resource's own structure.</p>
+
+<p><strong>Real LOINC codes, where they exist, are laterality-specific.</strong> The HL7 Eye Care IG's
+RNFL value sets use <em>different</em> LOINC codes for the right versus left eye (for example,
+<code class="language-plaintext highlighter-rouge">86276-3</code> for right eye superior RNFL thickness, <code class="language-plaintext highlighter-rouge">86277-1</code> for left eye). Because this
+guide's <code class="language-plaintext highlighter-rouge">component[x].code</code> is fixed once per profile (not per instance), it cannot be
+pre-bound to a single laterality-specific code that would work for both eyes. The profile's
+own <code class="language-plaintext highlighter-rouge">code</code> is fixed to the laterality-neutral LOINC <code class="language-plaintext highlighter-rouge">86291-2</code> (RNFL panel by OCT); where a
+laterality-specific component code applies, implementers select the correct one for the
+eye being examined (indicated via <code class="language-plaintext highlighter-rouge">bodySite</code>) when populating an instance.</p>
+
+<p><strong>Normative classification.</strong> The overall classification (Within Normal Limits /
+Borderline / Outside Normal Limits) commonly shown in commercial vendor reports (see the
+reference reports this guide's examples are based on) is recorded in
+<code class="language-plaintext highlighter-rouge">Observation.interpretation</code> (<code class="language-plaintext highlighter-rouge">0..1</code>). It does not exist in the HL7 Eye Care IG's RNFL value
+set and has no confirmed SNOMED CT or LOINC binding yet; this is left open pending
+verification, following the same pattern as other unconfirmed terminology in this guide.</p>
+
+<p><strong>Signal strength.</strong> The <code class="language-plaintext highlighter-rouge">inv-oct-signal</code> invariant raises a warning when the
+<code class="language-plaintext highlighter-rouge">signalStrength</code> component is absent.</p>
+
+<p><strong>Examples:</strong> <a href="Observation-OCTRNFLRightEyeExample.html">OCT RNFL: right eye</a>, <a href="Observation-OCTRNFLLeftEyeExample.html">OCT RNFL: left eye</a>, <a href="DiagnosticReport-OCTDiagnosticReportExample.html">OCT report (RNFL + macula)</a></p>
+
+
+</div>
 
 
 
@@ -1127,7 +1221,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Actual component result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflK'), 'binding', document.getElementById('cbophthalmic-oct-rnflK-binding').checked, document.getElementById('ppophthalmic-oct-rnflK'));
 document.getElementById('cbophthalmic-oct-rnflK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2252,7 +2346,7 @@ filterDesc(document.getElementById('ophthalmic-oct-rnflK'), 'obligation', docume
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Actual component result</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflD'), 'binding', document.getElementById('cbophthalmic-oct-rnflD-binding').checked, document.getElementById('ppophthalmic-oct-rnflD'));
 document.getElementById('cbophthalmic-oct-rnflD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4052,7 +4146,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflS'), 'binding', document.getElementById('cbophthalmic-oct-rnflS-binding').checked, document.getElementById('ppophthalmic-oct-rnflS'));
 document.getElementById('cbophthalmic-oct-rnflS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -6740,7 +6834,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Actual component result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflKA'), 'binding', document.getElementById('cbophthalmic-oct-rnflKA-binding').checked, document.getElementById('ppophthalmic-oct-rnflKA'));
 document.getElementById('cbophthalmic-oct-rnflKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -7865,7 +7959,7 @@ filterDesc(document.getElementById('ophthalmic-oct-rnflKA'), 'obligation', docum
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Actual component result</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflDA'), 'binding', document.getElementById('cbophthalmic-oct-rnflDA-binding').checked, document.getElementById('ppophthalmic-oct-rnflDA'));
 document.getElementById('cbophthalmic-oct-rnflDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -9664,7 +9758,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-oct-rnflSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-oct-rnflSA'), 'binding', document.getElementById('cbophthalmic-oct-rnflSA-binding').checked, document.getElementById('ppophthalmic-oct-rnflSA'));
 document.getElementById('cbophthalmic-oct-rnflSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -11573,7 +11667,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

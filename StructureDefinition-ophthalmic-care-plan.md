@@ -9,10 +9,33 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicCarePlan |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicCarePlan |
 
  
 A long-term treatment scheme made up of repeated sessions or administrations, rather than a single event. Covers two schemes identified in this guide's Use Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not every planned session is necessarily scheduled at once: some sessions remain planned but unscheduled within the CarePlan (via activity), while each session that is actually performed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via Procedure.basedOn. 
+
+Represents a long-term treatment scheme made up of repeated sessions or administrations, rather than a single event. This guide identified two such schemes in [Use Cases](usecases.md): intravitreal injection treatment ([use case 4](usecases.md#intravitreal-injection-treatment)) and vision therapy or orthoptic treatment ([use case 3](usecases.md#use-case-3-vision-therapy-and-rehabilitation)). As with [OphthalmicServiceRequest](StructureDefinition-ophthalmic-service-request.md), there is no equivalent profile in the HL7 Eye Care IG to align with; this profile is designed from the base FHIR `CarePlan` resource and this guide's own use cases.
+
+### Design decisions
+
+**One profile, differentiated by category.** Rather than defining two separate profiles, `OphthalmicCarePlan` is a single profile whose `category` element (`1..1`, required binding to [OphthalmicCarePlanCategoryVS](ValueSet-ophthalmic-care-plan-category-vs.md)) distinguishes the type of scheme:
+
+| | |
+| :--- | :--- |
+| `intravitreal-injection-therapy` | A scheme of repeated intravitreal injections |
+| `functional-therapy` | A scheme of repeated vision therapy or orthoptic sessions |
+
+> These are proposed FHIR4Eyes-only codes, not yet bound to an external terminology, since no existing HL7 Eye Care IG or SNOMED CT pattern was found for this specific distinction. Open to revision if a suitable external code is identified later.
+
+**Goal.** `CarePlan.goal` (`Reference(Goal)`) is `0..1`, included when clinically relevant, rather than being required for every scheme. Some schemes have a clear measurable target (for example, a target intraocular pressure), while others may not need one recorded explicitly. A dedicated `Goal` profile for ophthalmology is listed as a lower-priority item still to be built (see [Background](background.md)).
+
+**Addressed diagnosis.** `CarePlan.addresses` (`0..1`) references the [OphthalmicCondition](StructureDefinition-ophthalmic-condition.md) motivating the scheme.
+
+**Planned vs. performed sessions.** Not every planned session is necessarily scheduled at once: a session that is planned but not yet carried out is represented as a `CarePlan.activity`. Since `CarePlan.activity.reference` cannot point to `Procedure` (only to request-type resources), once a session is scheduled it can reference the relevant [OphthalmicServiceRequest](StructureDefinition-ophthalmic-service-request.md) there.
+
+**Linked procedures.** Individual sessions or injections that are actually performed are recorded as separate [OphthalmicProcedure](StructureDefinition-ophthalmic-procedure.md) instances, linked back to this `CarePlan` via `Procedure.basedOn`, as established in [use case 4](usecases.md#intravitreal-injection-treatment) for intravitreal injections. The same pattern applies to vision therapy and orthoptic sessions.
+
+**Examples:** [Intravitreal injection care plan](CarePlan-AvastinInjectionCarePlanExample.md)
 
 **Usages:**
 
@@ -43,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-care-plan
   "name" : "OphthalmicCarePlan",
   "title" : "Ophthalmic Care Plan",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:NearPointOfConvergence |
+| Draft as of 2026-10-19 | *Computable Name*:NearPointOfConvergence |
 
  
 Represents the near point of convergence (PPC), recorded either as a numeric distance in centimetres, or, when a precise measurement isn't obtained, as a qualitative finding (e.g. 'nasal', 'near nasal'). 
+
+Represents the near point of convergence (PPC), recorded either as a numeric distance in centimetres (`Quantity`), or, when a precise measurement isn't obtained, as a qualitative finding such as "nasal" or "near nasal" (`CodeableConcept`). It is a **direct** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md): it produces a single result and does not vary by gaze position. See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
+
+**Examples:** [Near point of convergence](Observation-NearPointOfConvergenceExample.md)
 
 **Usages:**
 
@@ -42,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
   "name" : "NearPointOfConvergence",
   "title" : "Near Point of Convergence",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

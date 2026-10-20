@@ -86,29 +86,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -160,23 +190,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#background" id="markdown-toc-background">Background</a>    <ul>
-      <li><a href="#why-does-ophthalmology-need-its-own-profiles" id="markdown-toc-why-does-ophthalmology-need-its-own-profiles">Why does ophthalmology need its own profiles?</a>        <ul>
-          <li><a href="#bilaterality" id="markdown-toc-bilaterality">Bilaterality</a></li>
-          <li><a href="#serial-measurements-and-panels" id="markdown-toc-serial-measurements-and-panels">Serial measurements and panels</a></li>
-          <li><a href="#implantable-devices" id="markdown-toc-implantable-devices">Implantable devices</a></li>
-          <li><a href="#chronic-treatment-with-repeated-doses" id="markdown-toc-chronic-treatment-with-repeated-doses">Chronic treatment with repeated doses</a></li>
-          <li><a href="#an-integrated-imaging-and-care-pathway" id="markdown-toc-an-integrated-imaging-and-care-pathway">An integrated imaging and care pathway</a></li>
-          <li><a href="#the-current-state-of-standardization" id="markdown-toc-the-current-state-of-standardization">The current state of standardization</a></li>
-        </ul>
-      </li>
+  <li><a href="#why-does-ophthalmology-need-its-own-profiles" id="markdown-toc-why-does-ophthalmology-need-its-own-profiles">Why does ophthalmology need its own profiles?</a>    <ul>
+      <li><a href="#bilaterality" id="markdown-toc-bilaterality">Bilaterality</a></li>
+      <li><a href="#serial-measurements-and-panels" id="markdown-toc-serial-measurements-and-panels">Serial measurements and panels</a></li>
+      <li><a href="#implantable-devices" id="markdown-toc-implantable-devices">Implantable devices</a></li>
+      <li><a href="#chronic-treatment-with-repeated-doses" id="markdown-toc-chronic-treatment-with-repeated-doses">Chronic treatment with repeated doses</a></li>
+      <li><a href="#an-integrated-imaging-and-care-pathway" id="markdown-toc-an-integrated-imaging-and-care-pathway">An integrated imaging and care pathway</a></li>
+      <li><a href="#the-current-state-of-standardization" id="markdown-toc-the-current-state-of-standardization">The current state of standardization</a></li>
     </ul>
   </li>
 </ul>
 
 </div>
-<h1 id="background">Background</h1>
-
 <h2 id="why-does-ophthalmology-need-its-own-profiles">Why does ophthalmology need its own profiles?</h2>
 
 <p>Generic FHIR resources like <code class="language-plaintext highlighter-rouge">Observation</code>, <code class="language-plaintext highlighter-rouge">Procedure</code>, or <code class="language-plaintext highlighter-rouge">ImagingStudy</code> can technically
@@ -320,7 +345,7 @@ that motivated the profiles that already exist.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

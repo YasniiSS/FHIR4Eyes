@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:ConvergenceAssessment |
+| Draft as of 2026-10-19 | *Computable Name*:ConvergenceAssessment |
 
  
 Represents a qualitative assessment of convergence ability (good, fair, insufficient, poor). 
+
+Represents a qualitative assessment of convergence ability (good, fair, insufficient, poor), recorded as a required `CodeableConcept` value whose terminology is still to be confirmed. It is a **direct** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md): it produces a single result and does not vary by gaze position. It complements the measured [NearPointOfConvergence](StructureDefinition-near-point-of-convergence.md). See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
+
+**Examples:** [Convergence assessment](Observation-ConvergenceAssessmentExample.md)
 
 **Usages:**
 
@@ -42,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-convergence-assessme
   "name" : "ConvergenceAssessment",
   "title" : "Convergence Assessment",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -5,8 +5,6 @@
 
 ## Security and Privacy
 
-# Security and Privacy
-
 This guide does not define its own security or authentication mechanisms. Implementers should rely on the security and privacy guidance already established by the base FHIR specification, and by whichever access framework their deployment uses (for example, SMART on FHIR, or a national health information exchange's own authentication and authorization layer).
 
 This page highlights considerations specific to ophthalmology data, on top of that general guidance.

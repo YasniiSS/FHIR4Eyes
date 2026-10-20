@@ -9,10 +9,22 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:Pachymetry |
+| Draft as of 2026-10-19 | *Computable Name*:Pachymetry |
 
  
 Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when correcting an IOP reading for corneal thickness. 
+
+Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres, recorded as a required `Quantity` value. `code` is fixed to LOINC `79825-6` (central corneal thickness by pachymetry).
+
+### Usage
+
+A `Pachymetry` measurement is used on its own, and is also referenced via `derivedFrom` by [CorrectedIntraocularPressure](StructureDefinition-corrected-intraocular-pressure.md) when an IOP reading is corrected for corneal thickness. It is not referenced directly from a [TensionCurve](StructureDefinition-tension-curve.md); see the worked example on that page.
+
+This profile is distinct from [CTPachymetry](StructureDefinition-ct-pachymetry.md), which captures the fuller thickness map data produced by a corneal tomography device as part of a [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md).
+
+**Laterality.** `bodySite` (`0..1`) uses the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md).
+
+**Examples:** [Pachymetry: right eye](Observation-PachymetryRightEyeExample.md), [Pachymetry: left eye](Observation-PachymetryLeftEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
   "name" : "Pachymetry",
   "title" : "Pachymetry",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

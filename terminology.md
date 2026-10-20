@@ -5,8 +5,6 @@
 
 ## Terminology
 
-# Terminology
-
 ## Strategy
 
 This guide follows a simple principle: reuse existing terminology wherever it already exists, and only define new terminology where a genuine gap exists.
@@ -90,5 +88,13 @@ All five codes below have a confirmed match in SNOMED CT, verified directly agai
 
 The distinction between good and poor projection matters clinically: both indicate that the patient can perceive light, but poor projection means the patient cannot reliably tell where the light is coming from, which is a clinically meaningful difference from good projection.
 
-> The exact code system URL, formal value set URL, and FSH definition for `LowVisionAssessment` are to be finalized when this value set is implemented in [Profiles](profiles.md).
+The formal definition is published as the [Low Vision Assessment Value Set](ValueSet-low-vision-assessment-vs.md), used by [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md).
+
+## Terminology artefacts defined in this guide
+
+| | | |
+| :--- | :--- | :--- |
+| [Low Vision Assessment Value Set](ValueSet-low-vision-assessment-vs.md) | ValueSet | [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md) |
+| [Ophthalmic Care Plan Category Value Set](ValueSet-ophthalmic-care-plan-category-vs.md) | ValueSet | [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md) |
+| [FHIR4Eyes Care Plan Category Code System](CodeSystem-fhir4eyes-care-plan-category-cs.md) | CodeSystem | [Ophthalmic Care Plan Category Value Set](ValueSet-ophthalmic-care-plan-category-vs.md) |
 

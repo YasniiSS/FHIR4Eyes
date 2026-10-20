@@ -1,10 +1,10 @@
-# OCTDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT report (RNFL + macula) - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTDiagnosticReportExample**
+* **OCT report (RNFL + macula)**
 
-## Example DiagnosticReport: OCTDiagnosticReportExample
+## Example DiagnosticReport: OCT report (RNFL + macula)
 
 Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnostic-report.md)
 

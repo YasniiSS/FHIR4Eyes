@@ -1,16 +1,16 @@
-# EncounterExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Ambulatory ophthalmology encounter - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EncounterExample**
+* **Ambulatory ophthalmology encounter**
 
-## Example Encounter: EncounterExample
+## Example Encounter: Ambulatory ophthalmology encounter
 
 Profile: [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md)
 
 **status**: Finished
 
-**class**: [ActCode: AMB](http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (ambulatory)
+**class**: [ActCode: AMB](http://terminology.hl7.org/7.4.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (ambulatory)
 
 **type**: Ophthalmology outpatient consultation
 

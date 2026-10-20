@@ -1,10 +1,10 @@
-# Avastin injection scheme - left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Intravitreal injection care plan - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Avastin injection scheme - left eye**
+* **Intravitreal injection care plan**
 
-## Example CarePlan: Avastin injection scheme - left eye
+## Example CarePlan: Intravitreal injection care plan
 
 Profile: [Ophthalmic Care Plan](StructureDefinition-ophthalmic-care-plan.md)
 

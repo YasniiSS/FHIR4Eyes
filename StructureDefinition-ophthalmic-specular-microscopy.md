@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicSpecularMicroscopy |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicSpecularMicroscopy |
 
  
 Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). 
+
+Represents a corneal endothelial specular microscopy exam, as a single `Observation` with one `component` per reported value. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section).
+
+Endothelial cell density (`density`) is the only required component; the others cover the capture position, analysis method, number of cells analyzed, coefficient of variation, hexagonality, central corneal thickness, and minimum, maximum, average, and standard deviation of cell area. Most components carry LOINC codes, which are laterality-specific: each component's short description documents both the right eye (OD) and left eye (OS) codes, following the same approach described on [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md). Laterality uses the standard `bodySite` extension referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md); the microscope model may be recorded in `device` and the cell counting method in `method`.
+
+**Examples:** [Specular microscopy: right eye](Observation-SpecularMicroscopyRightEyeExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
   "name" : "OphthalmicSpecularMicroscopy",
   "title" : "Ophthalmic Specular Microscopy",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

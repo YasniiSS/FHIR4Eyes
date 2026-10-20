@@ -1,10 +1,10 @@
-# PatientExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Patient (international identifier) - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PatientExample**
+* **Patient (international identifier)**
 
-## Example Patient: PatientExample
+## Example Patient: Patient (international identifier)
 
 Profile: [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md)
 

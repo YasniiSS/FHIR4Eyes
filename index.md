@@ -8,9 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:FHIR4Eyes |
-
-# FHIR4Eyes
+| Draft as of 2026-10-19 | *Computable Name*:FHIR4Eyes |
 
 ## What is this guide for?
 
@@ -40,12 +38,40 @@ FHIR4Eyes is published as two related Implementation Guides:
 
 If you're implementing outside Chile, you only need FHIR4Eyes Core. If you're implementing in Chile, you need both.
 
+## How to read this guide
+
+This guide is divided into several pages, listed in the menu bar at the top of each page.
+
+* [Home](index.md): introduction and scope of this guide.
+* **Guidance**: the "why" and the "how" before the formal definitions. 
+* [Background](background.md): why ophthalmology needs its own profiles, and the current state of standardization.
+* [Use Cases](usecases.md): the clinical scenarios this guide supports, and the resources each one uses.
+* [General Guidance](guidance.md): patterns shared by all profiles (Must Support, laterality, panels, components, the imaging study hierarchy).
+* [Security and Privacy](security.md): considerations specific to eye care data.
+ 
+* **FHIR Artefacts**: detailed descriptions and formal definitions of everything this guide defines. 
+* [Artefacts Summary](artifacts.md): every artefact in this guide, grouped by clinical domain.
+* [Profiles](profiles.md): the profiles, grouped by clinical domain, with links to their examples. Each profile page includes its narrative, design decisions and formal definition.
+* [Search Parameters and Capabilities](search-parameters.md): the search parameters and the capability statement.
+* [Terminology](terminology.md): the terminology strategy, value sets and code systems.
+ 
+* [Examples](examples.md): all example instances, grouped by clinical scenario.
+* **Support** 
+* [Downloads](downloads.md): the package, the examples and the full guide for download.
+ 
+* [Change Log](changes.md): changes across versions of this guide.
+
 ## Getting started
 
 * New to FHIR? Start with the [official FHIR specification](http://hl7.org/fhir/R4/index.html)
 * New to this guide? Read [Background](background.md) next, then [Use Cases](usecases.md)
 * Looking for a specific resource profile? Go straight to [Profiles](profiles.md)
-* Want to know what "must support" means here? See [Guidance](guidance.md)
+* Want to see real instances? Browse the [Examples](examples.md)
+* Want to know what "must support" means here? See [General Guidance](guidance.md)
+
+## Dependencies
+
+
 
 ## Feedback and community
 
@@ -72,7 +98,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -107,7 +133,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.3.0"
+    "version" : "7.4.0"
   },
   {
     "id" : "hl7ext",
@@ -674,1082 +700,127 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
+    "grouping" : [{
+      "id" : "GroupFoundation",
+      "name" : "Foundation: patient, encounter and laterality",
+      "description" : "Base profiles reused throughout the guide: the patient, the ophthalmology encounter, and the ocular BodyStructure used to express laterality."
+    },
+    {
+      "id" : "GroupWorkflow",
+      "name" : "Clinical workflow: orders, diagnoses, procedures, imaging and reports",
+      "description" : "Profiles that chain an ophthalmic episode together: the order, the diagnosis, the procedure, the imaging study and the resulting diagnostic report."
+    },
+    {
+      "id" : "GroupVisualAcuity",
+      "name" : "Visual acuity",
+      "description" : "Visual acuity measurements, including pinhole and low vision results."
+    },
+    {
+      "id" : "GroupIOP",
+      "name" : "Intraocular pressure and pachymetry",
+      "description" : "Single IOP readings, central corneal thickness, corrected IOP and the ambulatory tension curve panel."
+    },
+    {
+      "id" : "GroupOCT",
+      "name" : "Optical coherence tomography (OCT)",
+      "description" : "OCT optic nerve head / RNFL and macular thickness analyses."
+    },
+    {
+      "id" : "GroupCornealTomography",
+      "name" : "Corneal tomography",
+      "description" : "The corneal tomography report and the six analyses grouped under it."
+    },
+    {
+      "id" : "GroupOtherTests",
+      "name" : "Other diagnostic tests",
+      "description" : "Visual field and specular microscopy."
+    },
+    {
+      "id" : "GroupBiometry",
+      "name" : "Ocular biometry, IOL calculation and implanted devices",
+      "description" : "Biometry for cataract surgery planning, IOL power formula results and the implanted intraocular lens."
+    },
+    {
+      "id" : "GroupStrabismus",
+      "name" : "Strabismus and binocular vision",
+      "description" : "The strabismus exam panel and its family of direct and position-based sub-tests."
+    },
+    {
+      "id" : "GroupTreatment",
+      "name" : "Treatment: care plans and medications",
+      "description" : "Long-term treatment schemes (e.g. intravitreal injections) and the medications administered."
+    },
+    {
+      "id" : "GroupCapabilities",
+      "name" : "Capability statement and search parameters",
+      "description" : "The expected server capabilities and the search parameters defined by this guide."
+    },
+    {
+      "id" : "GroupTerminology",
+      "name" : "Terminology",
+      "description" : "Code systems and value sets defined by this guide."
+    },
+    {
+      "id" : "GroupExFoundation",
+      "name" : "Examples: shared actors",
+      "description" : "Patient, practitioner, encounter and laterality instances referenced by the other examples."
+    },
+    {
+      "id" : "GroupExVisualAcuity",
+      "name" : "Examples: visual acuity",
+      "description" : "Visual acuity examples."
+    },
+    {
+      "id" : "GroupExIOP",
+      "name" : "Examples: intraocular pressure and tension curve",
+      "description" : "IOP, pachymetry, corrected IOP and tension curve examples."
+    },
+    {
+      "id" : "GroupExOCT",
+      "name" : "Examples: OCT",
+      "description" : "OCT orders, imaging studies, analyses and reports."
+    },
+    {
+      "id" : "GroupExCornealTomography",
+      "name" : "Examples: corneal tomography",
+      "description" : "Corneal tomography order, report and its six analyses."
+    },
+    {
+      "id" : "GroupExOtherTests",
+      "name" : "Examples: other diagnostic tests",
+      "description" : "Visual field and specular microscopy examples."
+    },
+    {
+      "id" : "GroupExCataract",
+      "name" : "Examples: biometry and cataract surgery",
+      "description" : "Biometry, IOL formula results, cataract surgery and the implanted IOL."
+    },
+    {
+      "id" : "GroupExStrabismus",
+      "name" : "Examples: strabismus exam",
+      "description" : "Strabismus exam panel and its sub-tests."
+    },
+    {
+      "id" : "GroupExIntravitreal",
+      "name" : "Examples: intravitreal injection treatment",
+      "description" : "Diagnosis, care plan, medication, administration and injection procedure."
+    }],
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CarePlan"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CarePlan-AvastinInjectionCarePlanExample.html"
-      }],
-      "reference" : {
-        "reference" : "CarePlan/AvastinInjectionCarePlanExample"
-      },
-      "name" : "Avastin injection scheme - left eye",
-      "description" : "3 monthly intravitreal Avastin injections for diabetic macular edema",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationAdministration"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationAdministration-AvastinDose1AdministrationExample.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationAdministration/AvastinDose1AdministrationExample"
-      },
-      "name" : "AvastinDose1AdministrationExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Medication"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Medication-AvastinMedicationExample.html"
-      }],
-      "reference" : {
-        "reference" : "Medication/AvastinMedicationExample"
-      },
-      "name" : "AvastinMedicationExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-BiometryRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/BiometryRightEyeExample"
-      },
-      "name" : "BiometryRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Procedure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-CataractSurgeryProcedureExample.html"
-      }],
-      "reference" : {
-        "reference" : "Procedure/CataractSurgeryProcedureExample"
-      },
-      "name" : "CataractSurgeryProcedureExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-convergence-assessment.html"
+        "valueUri" : "StructureDefinition-ophthalmic-patient.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/convergence-assessment"
+        "reference" : "StructureDefinition/ophthalmic-patient"
       },
-      "name" : "Convergence Assessment",
-      "description" : "Represents a qualitative assessment of convergence ability (good, fair,\ninsufficient, poor).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-ConvergenceAssessmentExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/ConvergenceAssessmentExample"
-      },
-      "name" : "ConvergenceAssessmentExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-anterior-chamber.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-anterior-chamber"
-      },
-      "name" : "Corneal Tomography - Anterior Chamber",
-      "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-anterior-surface.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-anterior-surface"
-      },
-      "name" : "Corneal Tomography - Anterior Surface",
-      "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-densitometry.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-densitometry"
-      },
-      "name" : "Corneal Tomography - Densitometry",
-      "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-keratoconus-indices.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-keratoconus-indices"
-      },
-      "name" : "Corneal Tomography - Keratoconus Indices",
-      "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-pachymetry.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-pachymetry"
-      },
-      "name" : "Corneal Tomography - Pachymetry",
-      "description" : "Represents the pachymetry (corneal thickness) component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nDistinct from the standalone Pachymetry profile used for simple central corneal thickness\nmeasurements outside the tomography context (see Profiles); this profile captures the\nfuller thickness map data a tomography device produces. Sourced directly from the\nFHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ct-posterior-surface.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ct-posterior-surface"
-      },
-      "name" : "Corneal Tomography - Posterior Surface",
-      "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-corneal-tomography-report.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/corneal-tomography-report"
-      },
-      "name" : "Corneal Tomography Report",
-      "description" : "A specialization of OphthalmicDiagnosticReport for corneal tomography exams\n(e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses\n(CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber,\nCTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport\ngrouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula).\n\nOpen question, not yet resolved: in practice, a tomography device may print these as\nseparate reports or 'maps' (an anterior surface map, a posterior surface map, and so on)\nrather than a single integrated report. For now, this guide captures all six as results\nunder a single combined report, since the current priority is representing the underlying\ndata correctly rather than resolving the exact report/printout structure a given device\nproduces. Whether this should instead be split into multiple report profiles is left open\nfor future review.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DiagnosticReport"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "DiagnosticReport-CornealTomographyReportRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "DiagnosticReport/CornealTomographyReportRightEyeExample"
-      },
-      "name" : "CornealTomographyReportRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ServiceRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ServiceRequest-CornealTomographyServiceRequestExample.html"
-      }],
-      "reference" : {
-        "reference" : "ServiceRequest/CornealTomographyServiceRequestExample"
-      },
-      "name" : "CornealTomographyServiceRequestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-corrected-intraocular-pressure.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/corrected-intraocular-pressure"
-      },
-      "name" : "Corrected Intraocular Pressure",
-      "description" : "Represents an intraocular pressure reading corrected for corneal thickness\r\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\r\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CorrectedIntraocularPressureLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CorrectedIntraocularPressureLeftEyeExample"
-      },
-      "name" : "CorrectedIntraocularPressureLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CorrectedIntraocularPressureRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CorrectedIntraocularPressureRightEyeExample"
-      },
-      "name" : "CorrectedIntraocularPressureRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-cover-test.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/cover-test"
-      },
-      "name" : "Cover Test",
-      "description" : "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CoverTestExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CoverTestExample"
-      },
-      "name" : "CoverTestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTAnteriorChamberRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTAnteriorChamberRightEyeExample"
-      },
-      "name" : "CTAnteriorChamberRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTAnteriorSurfaceRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTAnteriorSurfaceRightEyeExample"
-      },
-      "name" : "CTAnteriorSurfaceRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTDensitometryRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTDensitometryRightEyeExample"
-      },
-      "name" : "CTDensitometryRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTKeratoconusIndicesRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTKeratoconusIndicesRightEyeExample"
-      },
-      "name" : "CTKeratoconusIndicesRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTPachymetryRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTPachymetryRightEyeExample"
-      },
-      "name" : "CTPachymetryRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-CTPosteriorSurfaceRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/CTPosteriorSurfaceRightEyeExample"
-      },
-      "name" : "CTPosteriorSurfaceRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiabeticMacularEdemaConditionExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiabeticMacularEdemaConditionExample"
-      },
-      "name" : "DiabeticMacularEdemaConditionExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Encounter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Encounter-EncounterExample.html"
-      }],
-      "reference" : {
-        "reference" : "Encounter/EncounterExample"
-      },
-      "name" : "EncounterExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CodeSystem-fhir4eyes-care-plan-category-cs.html"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/fhir4eyes-care-plan-category-cs"
-      },
-      "name" : "FHIR4Eyes Care Plan Category Code System",
-      "description" : "Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an\nexternal terminology. See the Profiles page of this guide for the design rationale.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CapabilityStatement-FHIR4EyesCapabilityStatement.html"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/FHIR4EyesCapabilityStatement"
-      },
-      "name" : "FHIR4Eyes Server Capability Statement",
-      "description" : "Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic clinical data exchange",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-gaze-position-measurement.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/gaze-position-measurement"
-      },
-      "name" : "Gaze Position Measurement",
-      "description" : "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-hirschberg-test.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/hirschberg-test"
-      },
-      "name" : "Hirschberg Test",
-      "description" : "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-HumphreyVFRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/HumphreyVFRightEyeExample"
-      },
-      "name" : "HumphreyVFRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-intraocular-pressure.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/intraocular-pressure"
-      },
-      "name" : "Intraocular Pressure",
-      "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\r\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Device"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Device-IntraocularLensExample.html"
-      }],
-      "reference" : {
-        "reference" : "Device/IntraocularLensExample"
-      },
-      "name" : "IntraocularLensExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-IntraocularPressureLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/IntraocularPressureLeftEyeExample"
-      },
-      "name" : "IntraocularPressureLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-IntraocularPressureRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/IntraocularPressureRightEyeExample"
-      },
-      "name" : "IntraocularPressureRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Procedure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-IntravitrealInjectionProcedureExample.html"
-      }],
-      "reference" : {
-        "reference" : "Procedure/IntravitrealInjectionProcedureExample"
-      },
-      "name" : "IntravitrealInjectionProcedureExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-iol-formula-result.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/iol-formula-result"
-      },
-      "name" : "IOL Formula Result",
-      "description" : "Represents the result of a single IOL power calculation formula (e.g.\nBarrett Universal II, SRK/T, Holladay), including the recommended lens and expected\nrefraction. Not intended to be used standalone: always referenced via hasMember from an\nOphthalmicOcularBiometry instance, since one biometry exam typically has its shared\nmeasurements calculated through several formulas, each with its own suggested lens.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-IOLFormulaBarrettExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/IOLFormulaBarrettExample"
-      },
-      "name" : "IOLFormulaBarrettExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-IOLFormulaSRKTExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/IOLFormulaSRKTExample"
-      },
-      "name" : "IOLFormulaSRKTExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-krimsky-test.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/krimsky-test"
-      },
-      "name" : "Krimsky Test",
-      "description" : "Represents a Krimsky test (corneal light reflex test with prism), measuring\r\nocular deviation in prism diopters across multiple gaze positions. Follows the same\r\nstructural pattern as PrismCoverTest: each gaze position is a separate\r\nGazePositionMeasurement, referenced via hasMember.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "BodyStructure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "BodyStructure-LeftEyeStructureExample.html"
-      }],
-      "reference" : {
-        "reference" : "BodyStructure/LeftEyeStructureExample"
-      },
-      "name" : "LeftEyeStructureExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-low-vision-assessment-vs.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/low-vision-assessment-vs"
-      },
-      "name" : "Low Vision Assessment Value Set",
-      "description" : "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-near-point-of-convergence.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/near-point-of-convergence"
-      },
-      "name" : "Near Point of Convergence",
-      "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-NearPointOfConvergenceExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/NearPointOfConvergenceExample"
-      },
-      "name" : "NearPointOfConvergenceExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DiagnosticReport"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "DiagnosticReport-OCTDiagnosticReportExample.html"
-      }],
-      "reference" : {
-        "reference" : "DiagnosticReport/OCTDiagnosticReportExample"
-      },
-      "name" : "OCTDiagnosticReportExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DiagnosticReport"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "DiagnosticReport-OCTMaculaDiagnosticReportExample.html"
-      }],
-      "reference" : {
-        "reference" : "DiagnosticReport/OCTMaculaDiagnosticReportExample"
-      },
-      "name" : "OCTMaculaDiagnosticReportExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ImagingStudy"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ImagingStudy-OCTMaculaLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "ImagingStudy/OCTMaculaLeftEyeExample"
-      },
-      "name" : "OCTMaculaLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OCTMaculaLeftEyeExample2.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OCTMaculaLeftEyeExample2"
-      },
-      "name" : "OCTMaculaLeftEyeExample2",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OCTMaculaRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OCTMaculaRightEyeExample"
-      },
-      "name" : "OCTMaculaRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ServiceRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ServiceRequest-OCTMaculaServiceRequestExample.html"
-      }],
-      "reference" : {
-        "reference" : "ServiceRequest/OCTMaculaServiceRequestExample"
-      },
-      "name" : "OCTMaculaServiceRequestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ImagingStudy"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ImagingStudy-OCTOpticDiscLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "ImagingStudy/OCTOpticDiscLeftEyeExample"
-      },
-      "name" : "OCTOpticDiscLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ServiceRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ServiceRequest-OCTOpticDiscServiceRequestExample.html"
-      }],
-      "reference" : {
-        "reference" : "ServiceRequest/OCTOpticDiscServiceRequestExample"
-      },
-      "name" : "OCTOpticDiscServiceRequestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Procedure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-OCTProcedureExample.html"
-      }],
-      "reference" : {
-        "reference" : "Procedure/OCTProcedureExample"
-      },
-      "name" : "OCTProcedureExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OCTRNFLLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OCTRNFLLeftEyeExample"
-      },
-      "name" : "OCTRNFLLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OCTRNFLRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OCTRNFLRightEyeExample"
-      },
-      "name" : "OCTRNFLRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ServiceRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ServiceRequest-OCTServiceRequestExample.html"
-      }],
-      "reference" : {
-        "reference" : "ServiceRequest/OCTServiceRequestExample"
-      },
-      "name" : "OCTServiceRequestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ImagingStudy"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ImagingStudy-OCTStudyLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "ImagingStudy/OCTStudyLeftEyeExample"
-      },
-      "name" : "OCTStudyLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ImagingStudy"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ImagingStudy-OCTStudyRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "ImagingStudy/OCTStudyRightEyeExample"
-      },
-      "name" : "OCTStudyRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ocular-body-structure.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ocular-body-structure"
-      },
-      "name" : "Ocular Body Structure",
-      "description" : "Represents an anatomical ocular location, used throughout this guide to\nexpress laterality (right eye, left eye, or both eyes) for observations, conditions,\nprocedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care\nIG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location`\nelement identifying the anatomical structure, and a `locationQualifier` element carrying\nlaterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets\nfor these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for\nlocationQualifier), which are the intended reference terminology for this profile. However,\nbecause the HL7 Eye Care IG is not published as a usable FHIR package, those value sets\ncannot be formally imported here; this profile binds to SNOMED CT directly instead (see the\nTerminology page of this guide for the general rationale).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ocular-motility.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ocular-motility"
-      },
-      "name" : "Ocular Motility",
-      "description" : "Represents the assessment of extraocular muscle function (hypofunction or\r\nhyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can\r\ndiffer between the two eyes independently.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OcularMotilityLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OcularMotilityLeftEyeExample"
-      },
-      "name" : "OcularMotilityLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-OcularMotilityRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/OcularMotilityRightEyeExample"
-      },
-      "name" : "OcularMotilityRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-care-plan.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-care-plan"
-      },
-      "name" : "Ophthalmic Care Plan",
-      "description" : "A long-term treatment scheme made up of repeated sessions or\nadministrations, rather than a single event. Covers two schemes identified in this guide's\nUse Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not\nevery planned session is necessarily scheduled at once: some sessions remain planned but\nunscheduled within the CarePlan (via activity), while each session that is actually\nperformed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via\nProcedure.basedOn.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-ophthalmic-care-plan-category-vs.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/ophthalmic-care-plan-category-vs"
-      },
-      "name" : "Ophthalmic Care Plan Category Value Set",
-      "description" : "The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,\nopen to revision if a suitable external code is identified later.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-condition.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-condition"
-      },
-      "name" : "Ophthalmic Condition",
-      "description" : "The formal, past or present clinical diagnosis of a specific ophthalmic\ncondition. Follows the same minimalist technical pattern as the HL7 Eye Care IG's\nequivalent profile (condition-base): only code, bodySite, and subject carry real\nconstraints; everything else in the base Condition resource is left as-is. See the\nProfiles page of this guide for the full design rationale, including a note on where\nFHIR4Eyes departs from the Eye Care IG's own narrative documentation.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-device.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-device"
-      },
-      "name" : "Ophthalmic Device",
-      "description" : "An implanted ophthalmic device instance, such as an intraocular lens (IOL),\naffixed to a specific patient. Following the same pattern as US Core's Implantable Device\nProfile, this represents the specific unit already implanted, not a generic catalog item;\npatient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also\nreferences this Device from the implanting procedure, consistent with US Core's own\nguidance that a procedure involving an implantable device should reference it via\nfocalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for\nnow. See the Profiles page of this guide for the full design rationale, including a note\non other implantable devices (such as glaucoma drainage devices) that may also fit this\nprofile.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-diagnostic-report.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-diagnostic-report"
-      },
-      "name" : "Ophthalmic Diagnostic Report",
-      "description" : "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report.",
-      "exampleBoolean" : false
+      "name" : "Ophthalmic Patient",
+      "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith identifier slices for the Chilean national identifier (RUT) and passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupFoundation"
     },
     {
       "extension" : [{
@@ -1765,7 +836,8 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Ophthalmic Encounter",
       "description" : "An ambulatory ophthalmology consultation encounter. Parented on the generic\r\nFHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean\r\ndependency belongs in the FHIR4Eyes CL extension, not this Core guide.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GroupFoundation"
     },
     {
       "extension" : [{
@@ -1774,142 +846,15 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-humphrey-visual-field.html"
+        "valueUri" : "StructureDefinition-ocular-body-structure.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-humphrey-visual-field"
+        "reference" : "StructureDefinition/ocular-body-structure"
       },
-      "name" : "Ophthalmic Humphrey Visual Field",
-      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-imaging-study.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-imaging-study"
-      },
-      "name" : "Ophthalmic Imaging Study",
-      "description" : "An ophthalmic imaging study, such as OCT, retinography, or angiography.\r\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\r\nrepresented both through the native series.bodySite/series.laterality Coding fields (for\r\nstandard DICOM/PACS compatibility) and through an additional extension referencing\r\nOcularBodyStructure (for structured cross-resource navigation, consistent with the rest of\r\nthis guide).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-medication.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-medication"
-      },
-      "name" : "Ophthalmic Medication",
-      "description" : "A medication used in ophthalmology, such as an anti-VEGF agent for\r\nintravitreal injection.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-medication-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-medication-administration"
-      },
-      "name" : "Ophthalmic Medication Administration",
-      "description" : "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-oct-macula.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-oct-macula"
-      },
-      "name" : "Ophthalmic OCT Macula",
-      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-oct-rnfl.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
-      },
-      "name" : "Ophthalmic OCT RNFL",
-      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-ocular-biometry.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-ocular-biometry"
-      },
-      "name" : "Ophthalmic Ocular Biometry",
-      "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-patient.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-patient"
-      },
-      "name" : "Ophthalmic Patient",
-      "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith identifier slices for the Chilean national identifier (RUT) and passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-procedure.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-procedure"
-      },
-      "name" : "Ophthalmic Procedure",
-      "description" : "Any ophthalmic procedure, from minor ambulatory surgeries to individual\nsessions within a longer treatment scheme, such as an intravitreal injection or a vision\ntherapy session. When a procedure involves administering a medication (e.g. an intravitreal\ninjection), the medication administration is recorded as a separate\nOphthalmicMedicationAdministration, linked back to this procedure via\nMedicationAdministration.partOf, not the other way around.",
-      "exampleBoolean" : false
+      "name" : "Ocular Body Structure",
+      "description" : "Represents an anatomical ocular location, used throughout this guide to\nexpress laterality (right eye, left eye, or both eyes) for observations, conditions,\nprocedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care\nIG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location`\nelement identifying the anatomical structure, and a `locationQualifier` element carrying\nlaterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets\nfor these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for\nlocationQualifier), which are the intended reference terminology for this profile. However,\nbecause the HL7 Eye Care IG is not published as a usable FHIR package, those value sets\ncannot be formally imported here; this profile binds to SNOMED CT directly instead (see the\nTerminology page of this guide for the general rationale).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupFoundation"
     },
     {
       "extension" : [{
@@ -1925,7 +870,8 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Ophthalmic Service Request",
       "description" : "A request for an ophthalmic examination and, where relevant, its\ninterpretation or treatment. Covers three scenarios: an order fulfilled locally, an order\nreferred from primary care to a hospital or reference center, and an order originating\ndirectly at a hospital. See the Use Cases and Profiles pages of this guide for the full\nclinical and design rationale.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GroupWorkflow"
     },
     {
       "extension" : [{
@@ -1934,14 +880,66 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-ophthalmic-specular-microscopy.html"
+        "valueUri" : "StructureDefinition-ophthalmic-condition.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ophthalmic-specular-microscopy"
+        "reference" : "StructureDefinition/ophthalmic-condition"
       },
-      "name" : "Ophthalmic Specular Microscopy",
-      "description" : "Represents a corneal endothelial specular microscopy exam. Sourced directly\nfrom the FHIR4Eyes Observations catalog (Specular Microscopy section).",
-      "exampleBoolean" : false
+      "name" : "Ophthalmic Condition",
+      "description" : "The formal, past or present clinical diagnosis of a specific ophthalmic\ncondition. Follows the same minimalist technical pattern as the HL7 Eye Care IG's\nequivalent profile (condition-base): only code, bodySite, and subject carry real\nconstraints; everything else in the base Condition resource is left as-is. See the\nProfiles page of this guide for the full design rationale, including a note on where\nFHIR4Eyes departs from the Eye Care IG's own narrative documentation.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-procedure.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-procedure"
+      },
+      "name" : "Ophthalmic Procedure",
+      "description" : "Any ophthalmic procedure, from minor ambulatory surgeries to individual\nsessions within a longer treatment scheme, such as an intravitreal injection or a vision\ntherapy session. When a procedure involves administering a medication (e.g. an intravitreal\ninjection), the medication administration is recorded as a separate\nOphthalmicMedicationAdministration, linked back to this procedure via\nMedicationAdministration.partOf, not the other way around.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-imaging-study.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-imaging-study"
+      },
+      "name" : "Ophthalmic Imaging Study",
+      "description" : "An ophthalmic imaging study, such as OCT, retinography, or angiography.\r\nAlways traceable back to the medical order that led to it via basedOn. Laterality is\r\nrepresented both through the native series.bodySite/series.laterality Coding fields (for\r\nstandard DICOM/PACS compatibility) and through an additional extension referencing\r\nOcularBodyStructure (for structured cross-resource navigation, consistent with the rest of\r\nthis guide).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-diagnostic-report.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-diagnostic-report"
+      },
+      "name" : "Ophthalmic Diagnostic Report",
+      "description" : "Represents the findings, diagnosis, and treatment plan reached after\r\nreviewing an imaging study or structured examination dataset. Unlike a radiology report,\r\nthis is not limited to describing imaging findings: the same clinical act typically also\r\nreaches a diagnosis and defines a treatment plan, recorded as separate Condition and\r\nCarePlan resources referencing this report.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupWorkflow"
     },
     {
       "extension" : [{
@@ -1957,22 +955,25 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Ophthalmic Visual Acuity",
       "description" : "Represents a visual acuity measurement, modeled as discrete, independently\r\ncombinable components (distance, correction status, chart/optotype, scale, pinhole) rather\r\nthan as a single pre-coordinated code that bundles all of these together. This follows a\r\nmore granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a\r\nnewer proposal discussed within SNOMED International's Eye Care Clinical Reference Group\r\n(2025), which favors flexible, independently recordable components over pre-coordinated\r\ncodes. See Terminology for the underlying terminology strategy, including the\r\nLowVisionAssessment value set for vision below what any chart can measure.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GroupVisualAcuity"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Practitioner"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Practitioner-OphthalmologistExample.html"
+        "valueUri" : "StructureDefinition-intraocular-pressure.html"
       }],
       "reference" : {
-        "reference" : "Practitioner/OphthalmologistExample"
+        "reference" : "StructureDefinition/intraocular-pressure"
       },
-      "name" : "OphthalmologistExample",
-      "exampleBoolean" : true
+      "name" : "Intraocular Pressure",
+      "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\r\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupIOP"
     },
     {
       "extension" : [{
@@ -1988,67 +989,8 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Pachymetry",
       "description" : "Represents a corneal pachymetry measurement (corneal thickness), typically\r\nin micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when\r\ncorrecting an IOP reading for corneal thickness.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-PachymetryLeftEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/PachymetryLeftEyeExample"
-      },
-      "name" : "PachymetryLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-PachymetryRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/PachymetryRightEyeExample"
-      },
-      "name" : "PachymetryRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-PacienteEjemplo.html"
-      }],
-      "reference" : {
-        "reference" : "Patient/PacienteEjemplo"
-      },
-      "name" : "PacienteEjemplo",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-PatientExample.html"
-      }],
-      "reference" : {
-        "reference" : "Patient/PatientExample"
-      },
-      "name" : "PatientExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"
+      "exampleBoolean" : false,
+      "groupingId" : "GroupIOP"
     },
     {
       "extension" : [{
@@ -2057,264 +999,15 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-prism-cover-test.html"
+        "valueUri" : "StructureDefinition-corrected-intraocular-pressure.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/prism-cover-test"
+        "reference" : "StructureDefinition/corrected-intraocular-pressure"
       },
-      "name" : "Prism Cover Test",
-      "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-PrismCoverTestExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/PrismCoverTestExample"
-      },
-      "name" : "PrismCoverTestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-PrismCoverTestPrimaryPositionExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/PrismCoverTestPrimaryPositionExample"
-      },
-      "name" : "PrismCoverTestPrimaryPositionExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-red-filter-light-test.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/red-filter-light-test"
-      },
-      "name" : "Red Filter Light Test",
-      "description" : "Represents a red filter plus light test, assessing fusion, suppression, or\r\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent. Distance and correction status are recorded as components on this panel.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "BodyStructure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "BodyStructure-RightEyeStructureExample.html"
-      }],
-      "reference" : {
-        "reference" : "BodyStructure/RightEyeStructureExample"
-      },
-      "name" : "RightEyeStructureExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-condition-eye.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-condition-eye"
-      },
-      "name" : "sp-condition-eye",
-      "description" : "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-diagnosticreport-imaging-study.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-diagnosticreport-imaging-study"
-      },
-      "name" : "sp-diagnosticreport-imaging-study",
-      "description" : "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-encounter-appointment.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-encounter-appointment"
-      },
-      "name" : "sp-encounter-appointment",
-      "description" : "Search ophthalmic encounters by the appointment that led to them.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-imagingstudy-eye.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-imagingstudy-eye"
-      },
-      "name" : "sp-imagingstudy-eye",
-      "description" : "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-imagingstudy-modality.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-imagingstudy-modality"
-      },
-      "name" : "sp-imagingstudy-modality",
-      "description" : "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-observation-eye.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-observation-eye"
-      },
-      "name" : "sp-observation-eye",
-      "description" : "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-procedure-eye.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-procedure-eye"
-      },
-      "name" : "sp-procedure-eye",
-      "description" : "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-SpecularMicroscopyRightEyeExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/SpecularMicroscopyRightEyeExample"
-      },
-      "name" : "SpecularMicroscopyRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-stereopsis-test.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/stereopsis-test"
-      },
-      "name" : "Stereopsis Test",
-      "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\r\ntest used is recorded as a component, since several different stereopsis tests exist in\r\npractice and the test type affects how the result should be interpreted.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-StereopsisTestExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/StereopsisTestExample"
-      },
-      "name" : "StereopsisTestExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-strabismus-exam.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/strabismus-exam"
-      },
-      "name" : "Strabismus Exam",
-      "description" : "Represents a strabismus examination as a panel grouping together whichever\r\nsub-tests were actually performed for this patient (for example, cover test, motility,\r\nnear point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible\r\nsub-test is performed for every patient; this profile does not enforce a fixed checklist.\r\nEach sub-test is recorded as its own Observation, referenced here via hasMember.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-StrabismusExamExample.html"
-      }],
-      "reference" : {
-        "reference" : "Observation/StrabismusExamExample"
-      },
-      "name" : "StrabismusExamExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam"
+      "name" : "Corrected Intraocular Pressure",
+      "description" : "Represents an intraocular pressure reading corrected for corneal thickness\r\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\r\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupIOP"
     },
     {
       "extension" : [{
@@ -2330,142 +1023,416 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Tension Curve",
       "description" : "Represents an ambulatory tension curve: several intraocular pressure\r\nreadings taken across a single day, grouped together as a single clinical concept rather\r\nthan recorded as unrelated, disconnected observations. This profile was already defined in\r\nan earlier version of this guide's design work and is carried forward here.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GroupIOP"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-TensionCurveRightEye0800Example.html"
+        "valueUri" : "StructureDefinition-ophthalmic-oct-rnfl.html"
       }],
       "reference" : {
-        "reference" : "Observation/TensionCurveRightEye0800Example"
+        "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
       },
-      "name" : "TensionCurveRightEye0800Example",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
+      "name" : "Ophthalmic OCT RNFL",
+      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nand the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics,\nalongside acquisition metadata and an overall normative classification. Sourced directly\nfrom the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an\nearlier, quadrant-thickness-only version of this profile.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupOCT"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-TensionCurveRightEye1200Example.html"
+        "valueUri" : "StructureDefinition-ophthalmic-oct-macula.html"
       }],
       "reference" : {
-        "reference" : "Observation/TensionCurveRightEye1200Example"
+        "reference" : "StructureDefinition/ophthalmic-oct-macula"
       },
-      "name" : "TensionCurveRightEye1200Example",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
+      "name" : "Ophthalmic OCT Macula",
+      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152\nclassification fields (thickness definition, deviation category, anatomic reference\npoint). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupOCT"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-TensionCurveRightEye1400Example.html"
+        "valueUri" : "StructureDefinition-corneal-tomography-report.html"
       }],
       "reference" : {
-        "reference" : "Observation/TensionCurveRightEye1400Example"
+        "reference" : "StructureDefinition/corneal-tomography-report"
       },
-      "name" : "TensionCurveRightEye1400Example",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
+      "name" : "Corneal Tomography Report",
+      "description" : "A specialization of OphthalmicDiagnosticReport for corneal tomography exams\n(e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses\n(CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber,\nCTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport\ngrouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula).\n\nOpen question, not yet resolved: in practice, a tomography device may print these as\nseparate reports or 'maps' (an anterior surface map, a posterior surface map, and so on)\nrather than a single integrated report. For now, this guide captures all six as results\nunder a single combined report, since the current priority is representing the underlying\ndata correctly rather than resolving the exact report/printout structure a given device\nproduces. Whether this should instead be split into multiple report profiles is left open\nfor future review.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-TensionCurveRightEyeExample.html"
+        "valueUri" : "StructureDefinition-ct-anterior-surface.html"
       }],
       "reference" : {
-        "reference" : "Observation/TensionCurveRightEyeExample"
+        "reference" : "StructureDefinition/ct-anterior-surface"
       },
-      "name" : "TensionCurveRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve"
+      "name" : "Corneal Tomography - Anterior Surface",
+      "description" : "Represents the anterior corneal surface analysis component of a corneal\ntomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped\nunder a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations\ncatalog (Corneal Topography: Anterior Surface section). Component codes are left as open\ntext for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC\ncodes were not identified for these device-specific indices (see Terminology); a handful\nof components reference specific DICOM Sup 168 tags directly in their terminology, noted\nin the catalog.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-VisualAcuityBinocularExample.html"
+        "valueUri" : "StructureDefinition-ct-posterior-surface.html"
       }],
       "reference" : {
-        "reference" : "Observation/VisualAcuityBinocularExample"
+        "reference" : "StructureDefinition/ct-posterior-surface"
       },
-      "name" : "VisualAcuityBinocularExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      "name" : "Corneal Tomography - Posterior Surface",
+      "description" : "Represents the posterior corneal surface analysis component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nSourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior\nSurface section). Component codes are left as open text for now, following this guide's\nterminology rigor (see Terminology).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-VisualAcuityCorrectedLeftEyeExample.html"
+        "valueUri" : "StructureDefinition-ct-pachymetry.html"
       }],
       "reference" : {
-        "reference" : "Observation/VisualAcuityCorrectedLeftEyeExample"
+        "reference" : "StructureDefinition/ct-pachymetry"
       },
-      "name" : "VisualAcuityCorrectedLeftEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      "name" : "Corneal Tomography - Pachymetry",
+      "description" : "Represents the pachymetry (corneal thickness) component of a corneal\ntomography exam, one of six Observations grouped under a single CornealTomographyReport.\nDistinct from the standalone Pachymetry profile used for simple central corneal thickness\nmeasurements outside the tomography context (see Profiles); this profile captures the\nfuller thickness map data a tomography device produces. Sourced directly from the\nFHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-VisualAcuityCountingFingersRightEyeExample.html"
+        "valueUri" : "StructureDefinition-ct-anterior-chamber.html"
       }],
       "reference" : {
-        "reference" : "Observation/VisualAcuityCountingFingersRightEyeExample"
+        "reference" : "StructureDefinition/ct-anterior-chamber"
       },
-      "name" : "VisualAcuityCountingFingersRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      "name" : "Corneal Tomography - Anterior Chamber",
+      "description" : "Represents the anterior chamber analysis component of a corneal tomography\nexam, one of six Observations grouped under a single CornealTomographyReport. Component\ncodes are left as open text for now, following this guide's terminology rigor: no\nconfirmed SNOMED CT/LOINC codes were identified for these device-specific measurements\n(see Terminology).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-VisualAcuityPinholeRightEyeExample.html"
+        "valueUri" : "StructureDefinition-ct-keratoconus-indices.html"
       }],
       "reference" : {
-        "reference" : "Observation/VisualAcuityPinholeRightEyeExample"
+        "reference" : "StructureDefinition/ct-keratoconus-indices"
       },
-      "name" : "VisualAcuityPinholeRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      "name" : "Corneal Tomography - Keratoconus Indices",
+      "description" : "Represents the keratoconus screening/classification indices component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Keratoconus Indices section). Component codes are left as open text\nfor now, following this guide's terminology rigor (see Terminology).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "StructureDefinition:resource"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-VisualAcuityUncorrectedRightEyeExample.html"
+        "valueUri" : "StructureDefinition-ct-densitometry.html"
       }],
       "reference" : {
-        "reference" : "Observation/VisualAcuityUncorrectedRightEyeExample"
+        "reference" : "StructureDefinition/ct-densitometry"
       },
-      "name" : "VisualAcuityUncorrectedRightEyeExample",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity"
+      "name" : "Corneal Tomography - Densitometry",
+      "description" : "Represents the corneal densitometry (light backscatter) component of a\ncorneal tomography exam, one of six Observations grouped under a single\nCornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog\n(Corneal Topography: Densitometry section): three radial zones plus total, and a\nper-layer breakdown (anterior, central, posterior). Component codes are left as open\ntext for now, following this guide's terminology rigor (see Terminology).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-humphrey-visual-field.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-humphrey-visual-field"
+      },
+      "name" : "Ophthalmic Humphrey Visual Field",
+      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), DICOM-aligned per CIDs 4250-4257 where a CID reference is noted.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupOtherTests"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-specular-microscopy.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-specular-microscopy"
+      },
+      "name" : "Ophthalmic Specular Microscopy",
+      "description" : "Represents a corneal endothelial specular microscopy exam. Sourced directly\nfrom the FHIR4Eyes Observations catalog (Specular Microscopy section).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupOtherTests"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-ocular-biometry.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-ocular-biometry"
+      },
+      "name" : "Ophthalmic Ocular Biometry",
+      "description" : "Represents an ocular biometry exam (optical or ultrasonic), used primarily\nfor IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes\nObservations catalog (Ocular Biometry section), DICOM-aligned per CIDs 4230-4243 where a\nCID reference is noted. Holds the shared measurements common to the whole exam (axial\nlength, keratometry, and so on) as components; each formula calculated from those shared\nmeasurements, with its own suggested IOL and expected outcome, is a separate\nIOLFormulaResult instance referenced via hasMember, since one biometry exam is typically\nrun through several formulas.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupBiometry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-iol-formula-result.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/iol-formula-result"
+      },
+      "name" : "IOL Formula Result",
+      "description" : "Represents the result of a single IOL power calculation formula (e.g.\nBarrett Universal II, SRK/T, Holladay), including the recommended lens and expected\nrefraction. Not intended to be used standalone: always referenced via hasMember from an\nOphthalmicOcularBiometry instance, since one biometry exam typically has its shared\nmeasurements calculated through several formulas, each with its own suggested lens.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupBiometry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-device.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-device"
+      },
+      "name" : "Ophthalmic Device",
+      "description" : "An implanted ophthalmic device instance, such as an intraocular lens (IOL),\naffixed to a specific patient. Following the same pattern as US Core's Implantable Device\nProfile, this represents the specific unit already implanted, not a generic catalog item;\npatient is therefore required. Procedure.focalDevice (in OphthalmicProcedure) also\nreferences this Device from the implanting procedure, consistent with US Core's own\nguidance that a procedure involving an implantable device should reference it via\nfocalDevice. A generic device catalog (DeviceDefinition) is out of scope for this guide for\nnow. See the Profiles page of this guide for the full design rationale, including a note\non other implantable devices (such as glaucoma drainage devices) that may also fit this\nprofile.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupBiometry"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-strabismus-exam.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/strabismus-exam"
+      },
+      "name" : "Strabismus Exam",
+      "description" : "Represents a strabismus examination as a panel grouping together whichever\r\nsub-tests were actually performed for this patient (for example, cover test, motility,\r\nnear point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible\r\nsub-test is performed for every patient; this profile does not enforce a fixed checklist.\r\nEach sub-test is recorded as its own Observation, referenced here via hasMember.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-cover-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/cover-test"
+      },
+      "name" : "Cover Test",
+      "description" : "Represents a cover test result, performed with or without correction, at\r\nnear or far distance. Findings are recorded as open text/coded values for now (PC:\r\northophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has\r\nbeen verified for these specific findings yet.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ocular-motility.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ocular-motility"
+      },
+      "name" : "Ocular Motility",
+      "description" : "Represents the assessment of extraocular muscle function (hypofunction or\r\nhyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can\r\ndiffer between the two eyes independently.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-near-point-of-convergence.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/near-point-of-convergence"
+      },
+      "name" : "Near Point of Convergence",
+      "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-convergence-assessment.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/convergence-assessment"
+      },
+      "name" : "Convergence Assessment",
+      "description" : "Represents a qualitative assessment of convergence ability (good, fair,\ninsufficient, poor).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-stereopsis-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stereopsis-test"
+      },
+      "name" : "Stereopsis Test",
+      "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\r\ntest used is recorded as a component, since several different stereopsis tests exist in\r\npractice and the test type affects how the result should be interpreted.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-prism-cover-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/prism-cover-test"
+      },
+      "name" : "Prism Cover Test",
+      "description" : "Represents a prism cover test, measuring ocular deviation in prism diopters\r\nacross multiple gaze positions. Each gaze position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember. Distance and correction status are\r\nrecorded as components on this panel, following the same granular pattern used for\r\nOphthalmicVisualAcuity, rather than being folded into a single pre-coordinated code.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-krimsky-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/krimsky-test"
+      },
+      "name" : "Krimsky Test",
+      "description" : "Represents a Krimsky test (corneal light reflex test with prism), measuring\r\nocular deviation in prism diopters across multiple gaze positions. Follows the same\r\nstructural pattern as PrismCoverTest: each gaze position is a separate\r\nGazePositionMeasurement, referenced via hasMember.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-hirschberg-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/hirschberg-test"
+      },
+      "name" : "Hirschberg Test",
+      "description" : "Represents a Hirschberg corneal light reflex test, used to estimate the\r\nangle of deviation when other tests aren't feasible (e.g. young children). Performed across\r\nmultiple gaze positions; each position is recorded as a separate GazePositionMeasurement,\r\nreferenced here via hasMember, using its qualitative finding component.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-red-filter-light-test.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/red-filter-light-test"
+      },
+      "name" : "Red Filter Light Test",
+      "description" : "Represents a red filter plus light test, assessing fusion, suppression, or\r\ndiplopia. Performed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent. Distance and correction status are recorded as components on this panel.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
     },
     {
       "extension" : [{
@@ -2481,7 +1448,1351 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Worth 4 Dot Test",
       "description" : "Represents a Worth 4 dot test, assessing fusion, suppression, or diplopia.\r\nPerformed across multiple gaze positions; each position is recorded as a separate\r\nGazePositionMeasurement, referenced here via hasMember, using its qualitative finding\r\ncomponent.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-gaze-position-measurement.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/gaze-position-measurement"
+      },
+      "name" : "Gaze Position Measurement",
+      "description" : "A reusable pattern for a single measurement or finding taken at one gaze\r\nposition (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and\r\nKrimskyTest for quantitative prism diopter deviation, and by HirschbergTest,\r\nRedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test\r\nuses only the components relevant to it; all components are optional. Not intended to be\r\nused standalone; always referenced via hasMember from one of those panels.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-care-plan.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-care-plan"
+      },
+      "name" : "Ophthalmic Care Plan",
+      "description" : "A long-term treatment scheme made up of repeated sessions or\nadministrations, rather than a single event. Covers two schemes identified in this guide's\nUse Cases: intravitreal injection treatment, and vision therapy or orthoptic treatment. Not\nevery planned session is necessarily scheduled at once: some sessions remain planned but\nunscheduled within the CarePlan (via activity), while each session that is actually\nperformed is recorded as a separate OphthalmicProcedure, linked back to this CarePlan via\nProcedure.basedOn.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTreatment"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-medication.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-medication"
+      },
+      "name" : "Ophthalmic Medication",
+      "description" : "A medication used in ophthalmology, such as an anti-VEGF agent for\r\nintravitreal injection.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTreatment"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ophthalmic-medication-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ophthalmic-medication-administration"
+      },
+      "name" : "Ophthalmic Medication Administration",
+      "description" : "Records the administration of a medication during an ophthalmic procedure,\r\nmost notably an intravitreal injection. Always linked back to the specific procedure it was\r\nadministered during, via partOf, consistent with FHIR's standard 'larger event of which\r\nthis is a component' pattern.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTreatment"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-FHIR4EyesCapabilityStatement.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/FHIR4EyesCapabilityStatement"
+      },
+      "name" : "FHIR4Eyes Server Capability Statement",
+      "description" : "Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic clinical data exchange",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-observation-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-observation-eye"
+      },
+      "name" : "sp-observation-eye",
+      "description" : "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-condition-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-condition-eye"
+      },
+      "name" : "sp-condition-eye",
+      "description" : "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-procedure-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-procedure-eye"
+      },
+      "name" : "sp-procedure-eye",
+      "description" : "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-imagingstudy-eye.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-imagingstudy-eye"
+      },
+      "name" : "sp-imagingstudy-eye",
+      "description" : "Search ophthalmic imaging studies by the laterality of an examined series, expressed via the bodySite extension on ImagingStudy.series referencing an OcularBodyStructure instance.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-imagingstudy-modality.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-imagingstudy-modality"
+      },
+      "name" : "sp-imagingstudy-modality",
+      "description" : "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-diagnosticreport-imaging-study.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-diagnosticreport-imaging-study"
+      },
+      "name" : "sp-diagnosticreport-imaging-study",
+      "description" : "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-sp-encounter-appointment.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/sp-encounter-appointment"
+      },
+      "name" : "sp-encounter-appointment",
+      "description" : "Search ophthalmic encounters by the appointment that led to them.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupCapabilities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-fhir4eyes-care-plan-category-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/fhir4eyes-care-plan-category-cs"
+      },
+      "name" : "FHIR4Eyes Care Plan Category Code System",
+      "description" : "Proposed FHIR4Eyes-only codes for care plan category, not yet bound to an\nexternal terminology. See the Profiles page of this guide for the design rationale.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ophthalmic-care-plan-category-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ophthalmic-care-plan-category-vs"
+      },
+      "name" : "Ophthalmic Care Plan Category Value Set",
+      "description" : "The type of ophthalmic treatment scheme. Proposed FHIR4Eyes-only codes,\nopen to revision if a suitable external code is identified later.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-low-vision-assessment-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/low-vision-assessment-vs"
+      },
+      "name" : "Low Vision Assessment Value Set",
+      "description" : "Qualitative visual acuity for patients whose vision falls below what any\nchart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed\nSNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for\nthe full clinical and terminology rationale. The counting-fingers concept below uses the\ngeneric code by default; the more specific distance-based codes may be used instead when\nthat detail is known.",
+      "exampleBoolean" : false,
+      "groupingId" : "GroupTerminology"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientExample.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientExample"
+      },
+      "name" : "Patient (international identifier)",
+      "description" : "Example patient identified with a passport number, used across the guide's examples.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PacienteEjemplo.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PacienteEjemplo"
+      },
+      "name" : "Patient (Chilean RUT identifier)",
+      "description" : "Example patient identified with a Chilean RUT.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-OphthalmologistExample.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/OphthalmologistExample"
+      },
+      "name" : "Ophthalmologist",
+      "description" : "Example ophthalmologist referenced as requester and performer.",
+      "exampleBoolean" : true,
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-EncounterExample.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/EncounterExample"
+      },
+      "name" : "Ambulatory ophthalmology encounter",
+      "description" : "Example ambulatory ophthalmology consultation.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "BodyStructure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "BodyStructure-RightEyeStructureExample.html"
+      }],
+      "reference" : {
+        "reference" : "BodyStructure/RightEyeStructureExample"
+      },
+      "name" : "Right eye (laterality)",
+      "description" : "OcularBodyStructure for the right eye, referenced via bodySite for laterality.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "BodyStructure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "BodyStructure-LeftEyeStructureExample.html"
+      }],
+      "reference" : {
+        "reference" : "BodyStructure/LeftEyeStructureExample"
+      },
+      "name" : "Left eye (laterality)",
+      "description" : "OcularBodyStructure for the left eye, referenced via bodySite for laterality.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-body-structure",
+      "groupingId" : "GroupExFoundation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-VisualAcuityUncorrectedRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/VisualAcuityUncorrectedRightEyeExample"
+      },
+      "name" : "Visual acuity: uncorrected, right eye",
+      "description" : "Uncorrected distance visual acuity of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+      "groupingId" : "GroupExVisualAcuity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-VisualAcuityPinholeRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/VisualAcuityPinholeRightEyeExample"
+      },
+      "name" : "Visual acuity: pinhole, right eye",
+      "description" : "Pinhole measurement derived from the uncorrected right eye measurement.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+      "groupingId" : "GroupExVisualAcuity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-VisualAcuityCorrectedLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/VisualAcuityCorrectedLeftEyeExample"
+      },
+      "name" : "Visual acuity: corrected, left eye",
+      "description" : "Corrected distance visual acuity of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+      "groupingId" : "GroupExVisualAcuity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-VisualAcuityCountingFingersRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/VisualAcuityCountingFingersRightEyeExample"
+      },
+      "name" : "Visual acuity: counting fingers, right eye",
+      "description" : "Low vision qualitative result (counting fingers) with testing distance.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+      "groupingId" : "GroupExVisualAcuity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-VisualAcuityBinocularExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/VisualAcuityBinocularExample"
+      },
+      "name" : "Visual acuity: binocular",
+      "description" : "Binocular visual acuity measurement.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity",
+      "groupingId" : "GroupExVisualAcuity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-IntraocularPressureRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/IntraocularPressureRightEyeExample"
+      },
+      "name" : "IOP: right eye",
+      "description" : "Single intraocular pressure reading, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-IntraocularPressureLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/IntraocularPressureLeftEyeExample"
+      },
+      "name" : "IOP: left eye",
+      "description" : "Single intraocular pressure reading, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-PachymetryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/PachymetryRightEyeExample"
+      },
+      "name" : "Pachymetry: right eye",
+      "description" : "Central corneal thickness, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-PachymetryLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/PachymetryLeftEyeExample"
+      },
+      "name" : "Pachymetry: left eye",
+      "description" : "Central corneal thickness, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CorrectedIntraocularPressureRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CorrectedIntraocularPressureRightEyeExample"
+      },
+      "name" : "Corrected IOP: right eye",
+      "description" : "IOP corrected for corneal thickness, derived from IOP and pachymetry, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CorrectedIntraocularPressureLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CorrectedIntraocularPressureLeftEyeExample"
+      },
+      "name" : "Corrected IOP: left eye",
+      "description" : "IOP corrected for corneal thickness, derived from IOP and pachymetry, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-TensionCurveRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/TensionCurveRightEyeExample"
+      },
+      "name" : "Tension curve panel, right eye",
+      "description" : "Ambulatory tension curve grouping three IOP readings via hasMember.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-TensionCurveRightEye0800Example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/TensionCurveRightEye0800Example"
+      },
+      "name" : "Tension curve reading 08:00, right eye",
+      "description" : "IOP reading at 08:00, member of the tension curve.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-TensionCurveRightEye1200Example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/TensionCurveRightEye1200Example"
+      },
+      "name" : "Tension curve reading 12:00, right eye",
+      "description" : "IOP reading at 12:00, member of the tension curve.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-TensionCurveRightEye1400Example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/TensionCurveRightEye1400Example"
+      },
+      "name" : "Tension curve reading 14:00, right eye",
+      "description" : "IOP reading at 14:00, member of the tension curve.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure",
+      "groupingId" : "GroupExIOP"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-OCTServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/OCTServiceRequestExample"
+      },
+      "name" : "OCT order",
+      "description" : "Order for an OCT examination (RNFL and macula).",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-OCTProcedureExample.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/OCTProcedureExample"
+      },
+      "name" : "OCT procedure",
+      "description" : "Procedure record for the OCT acquisition.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTStudyRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTStudyRightEyeExample"
+      },
+      "name" : "OCT imaging study: right eye",
+      "description" : "ImagingStudy for the OCT acquisition of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTStudyLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTStudyLeftEyeExample"
+      },
+      "name" : "OCT imaging study: left eye",
+      "description" : "ImagingStudy for the OCT acquisition of the left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTRNFLRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTRNFLRightEyeExample"
+      },
+      "name" : "OCT RNFL: right eye",
+      "description" : "OCT optic nerve head / RNFL analysis, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTRNFLLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTRNFLLeftEyeExample"
+      },
+      "name" : "OCT RNFL: left eye",
+      "description" : "OCT optic nerve head / RNFL analysis, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTMaculaRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTMaculaRightEyeExample"
+      },
+      "name" : "OCT macula: right eye",
+      "description" : "OCT macular thickness (ETDRS grid), right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OCTMaculaLeftEyeExample2.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OCTMaculaLeftEyeExample2"
+      },
+      "name" : "OCT macula: left eye",
+      "description" : "OCT macular thickness (ETDRS grid), left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DiagnosticReport-OCTDiagnosticReportExample.html"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/OCTDiagnosticReportExample"
+      },
+      "name" : "OCT report (RNFL + macula)",
+      "description" : "Diagnostic report grouping the OCT RNFL and macula results.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-OCTMaculaServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/OCTMaculaServiceRequestExample"
+      },
+      "name" : "OCT macula order",
+      "description" : "Order for an OCT macula examination.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTMaculaLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTMaculaLeftEyeExample"
+      },
+      "name" : "OCT macula imaging study: left eye",
+      "description" : "ImagingStudy for an OCT macula acquisition, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DiagnosticReport-OCTMaculaDiagnosticReportExample.html"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/OCTMaculaDiagnosticReportExample"
+      },
+      "name" : "OCT macula report",
+      "description" : "Diagnostic report for an OCT macula examination.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-OCTOpticDiscServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/OCTOpticDiscServiceRequestExample"
+      },
+      "name" : "OCT optic disc order",
+      "description" : "Order for an OCT optic disc examination.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ImagingStudy"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ImagingStudy-OCTOpticDiscLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "ImagingStudy/OCTOpticDiscLeftEyeExample"
+      },
+      "name" : "OCT optic disc imaging study: left eye",
+      "description" : "ImagingStudy for an OCT optic disc acquisition, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study",
+      "groupingId" : "GroupExOCT"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-CornealTomographyServiceRequestExample.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/CornealTomographyServiceRequestExample"
+      },
+      "name" : "Corneal tomography order",
+      "description" : "Order for a corneal tomography examination.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-service-request",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DiagnosticReport-CornealTomographyReportRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/CornealTomographyReportRightEyeExample"
+      },
+      "name" : "Corneal tomography report: right eye",
+      "description" : "Report grouping the six corneal tomography analyses of the right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTAnteriorSurfaceRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTAnteriorSurfaceRightEyeExample"
+      },
+      "name" : "CT anterior surface: right eye",
+      "description" : "Anterior corneal surface analysis, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTPosteriorSurfaceRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTPosteriorSurfaceRightEyeExample"
+      },
+      "name" : "CT posterior surface: right eye",
+      "description" : "Posterior corneal surface analysis, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTPachymetryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTPachymetryRightEyeExample"
+      },
+      "name" : "CT pachymetry: right eye",
+      "description" : "Corneal thickness map analysis, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTAnteriorChamberRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTAnteriorChamberRightEyeExample"
+      },
+      "name" : "CT anterior chamber: right eye",
+      "description" : "Anterior chamber analysis, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTKeratoconusIndicesRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTKeratoconusIndicesRightEyeExample"
+      },
+      "name" : "CT keratoconus indices: right eye",
+      "description" : "Keratoconus screening indices, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CTDensitometryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CTDensitometryRightEyeExample"
+      },
+      "name" : "CT densitometry: right eye",
+      "description" : "Corneal densitometry, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry",
+      "groupingId" : "GroupExCornealTomography"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-HumphreyVFRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/HumphreyVFRightEyeExample"
+      },
+      "name" : "Humphrey visual field: right eye",
+      "description" : "Automated static perimetry, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field",
+      "groupingId" : "GroupExOtherTests"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-SpecularMicroscopyRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/SpecularMicroscopyRightEyeExample"
+      },
+      "name" : "Specular microscopy: right eye",
+      "description" : "Corneal endothelial specular microscopy, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy",
+      "groupingId" : "GroupExOtherTests"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BiometryRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BiometryRightEyeExample"
+      },
+      "name" : "Ocular biometry: right eye",
+      "description" : "Biometry with shared measurements and IOL formula results as members.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry",
+      "groupingId" : "GroupExCataract"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-IOLFormulaBarrettExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/IOLFormulaBarrettExample"
+      },
+      "name" : "IOL formula: Barrett Universal II",
+      "description" : "IOL power calculation result using Barrett Universal II.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result",
+      "groupingId" : "GroupExCataract"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-IOLFormulaSRKTExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/IOLFormulaSRKTExample"
+      },
+      "name" : "IOL formula: SRK/T",
+      "description" : "IOL power calculation result using SRK/T.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result",
+      "groupingId" : "GroupExCataract"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-CataractSurgeryProcedureExample.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/CataractSurgeryProcedureExample"
+      },
+      "name" : "Cataract surgery with IOL implantation",
+      "description" : "Cataract surgery referencing the implanted IOL via focalDevice.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
+      "groupingId" : "GroupExCataract"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-IntraocularLensExample.html"
+      }],
+      "reference" : {
+        "reference" : "Device/IntraocularLensExample"
+      },
+      "name" : "Intraocular lens (implanted device)",
+      "description" : "Implanted IOL referenced from the cataract surgery procedure.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-device",
+      "groupingId" : "GroupExCataract"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-StrabismusExamExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/StrabismusExamExample"
+      },
+      "name" : "Strabismus exam panel",
+      "description" : "Strabismus examination grouping the sub-tests performed.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-CoverTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/CoverTestExample"
+      },
+      "name" : "Cover test",
+      "description" : "Cover test result.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OcularMotilityRightEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OcularMotilityRightEyeExample"
+      },
+      "name" : "Ocular motility: right eye",
+      "description" : "Extraocular muscle function assessment, right eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-OcularMotilityLeftEyeExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/OcularMotilityLeftEyeExample"
+      },
+      "name" : "Ocular motility: left eye",
+      "description" : "Extraocular muscle function assessment, left eye.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-NearPointOfConvergenceExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/NearPointOfConvergenceExample"
+      },
+      "name" : "Near point of convergence",
+      "description" : "Near point of convergence measurement.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ConvergenceAssessmentExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ConvergenceAssessmentExample"
+      },
+      "name" : "Convergence assessment",
+      "description" : "Qualitative convergence assessment.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-StereopsisTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/StereopsisTestExample"
+      },
+      "name" : "Stereopsis test",
+      "description" : "Stereoacuity test result.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-PrismCoverTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/PrismCoverTestExample"
+      },
+      "name" : "Prism cover test panel",
+      "description" : "Prism cover test grouping per-gaze-position measurements.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-PrismCoverTestPrimaryPositionExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/PrismCoverTestPrimaryPositionExample"
+      },
+      "name" : "Prism cover test: primary position",
+      "description" : "GazePositionMeasurement for the primary gaze position.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement",
+      "groupingId" : "GroupExStrabismus"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-DiabeticMacularEdemaConditionExample.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/DiabeticMacularEdemaConditionExample"
+      },
+      "name" : "Diabetic macular edema diagnosis",
+      "description" : "Ophthalmic diagnosis that motivates the intravitreal injection care plan.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition",
+      "groupingId" : "GroupExIntravitreal"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-AvastinInjectionCarePlanExample.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/AvastinInjectionCarePlanExample"
+      },
+      "name" : "Intravitreal injection care plan",
+      "description" : "Treatment scheme of repeated intravitreal anti-VEGF injections.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-care-plan",
+      "groupingId" : "GroupExIntravitreal"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-AvastinMedicationExample.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/AvastinMedicationExample"
+      },
+      "name" : "Bevacizumab (Avastin)",
+      "description" : "Anti-VEGF medication used for intravitreal injection.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication",
+      "groupingId" : "GroupExIntravitreal"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationAdministration"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationAdministration-AvastinDose1AdministrationExample.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationAdministration/AvastinDose1AdministrationExample"
+      },
+      "name" : "Bevacizumab administration: dose 1",
+      "description" : "First intravitreal dose administration.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration",
+      "groupingId" : "GroupExIntravitreal"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-IntravitrealInjectionProcedureExample.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/IntravitrealInjectionProcedureExample"
+      },
+      "name" : "Intravitreal injection procedure",
+      "description" : "One injection session, linked to the care plan via basedOn.",
+      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-procedure",
+      "groupingId" : "GroupExIntravitreal"
     }],
     "page" : {
       "extension" : [{
@@ -2521,28 +2832,10 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "terminology.html"
-        }],
-        "nameUrl" : "terminology.html",
-        "title" : "Terminology",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "profiles.html"
-        }],
-        "nameUrl" : "profiles.html",
-        "title" : "Profiles",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "guidance.html"
         }],
         "nameUrl" : "guidance.html",
-        "title" : "Guidance",
+        "title" : "General Guidance",
         "generation" : "markdown"
       },
       {
@@ -2557,10 +2850,55 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "profiles.html"
+        }],
+        "nameUrl" : "profiles.html",
+        "title" : "Profiles",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "search-parameters.html"
+        }],
+        "nameUrl" : "search-parameters.html",
+        "title" : "Search Parameters and Capabilities",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "terminology.html"
+        }],
+        "nameUrl" : "terminology.html",
+        "title" : "Terminology",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "examples.html"
+        }],
+        "nameUrl" : "examples.html",
+        "title" : "Examples",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "downloads.html"
+        }],
+        "nameUrl" : "downloads.html",
+        "title" : "Downloads",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "changes.html"
         }],
         "nameUrl" : "changes.html",
-        "title" : "Change History",
+        "title" : "Change Log",
         "generation" : "markdown"
       }]
     },

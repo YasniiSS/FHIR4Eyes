@@ -1,10 +1,10 @@
-# CataractSurgeryProcedureExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Cataract surgery with IOL implantation - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CataractSurgeryProcedureExample**
+* **Cataract surgery with IOL implantation**
 
-## Example Procedure: CataractSurgeryProcedureExample
+## Example Procedure: Cataract surgery with IOL implantation
 
 Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 

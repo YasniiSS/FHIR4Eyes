@@ -1,11 +1,20 @@
-# Change History - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Change Log - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
-* **Change History**
+* **Change Log**
 
-## Change History
+## Change Log
 
-# Change History
+## Unreleased (current build)
+
+**Guide reorganization**, modelled on the structure of the AU Base IG:
+
+* New menu with submenus: Guidance, FHIR Artefacts, Examples, Support and Change Log.
+* [Profiles](profiles.md) is now an index grouped by clinical domain, with direct links to each profile and its examples. The design narrative of each profile moved to the profile's own page.
+* New [Examples](examples.md) page, grouped by clinical scenario, showing how the instances reference each other.
+* New [Search Parameters and Capabilities](search-parameters.md) and [Downloads](downloads.md) pages.
+* The [Artefacts Summary](artifacts.md) is grouped by clinical domain.
+* All examples now have a title and description.
 
 ## 0.3.0
 
@@ -27,7 +36,7 @@ Corrective release following a multi-agent audit of the guide (2026-09-01).
 
 Substantial expansion of the profile set, covering the remaining high-complexity examinations identified in this guide's scope.
 
-**New: Corneal Tomography.** Six `Observation` profiles (`CTAnteriorSurface`, `CTPosteriorSurface`, `CTPachymetry`, `CTAnteriorChamber`, `CTKeratoconusIndices`, `CTDensitometry`) grouped under `CornealTomographyReport`, covering Scheimpflug/Pentacam- style tomography in full detail, including keratoconus screening indices (BAD-D and its sub-components, ABCD grading, Amsler-Krumeich staging) and layered densitometry. See [Profiles](profiles.md#corneal-tomography-six-observations-under-one-report).
+**New: Corneal Tomography.** Six `Observation` profiles (`CTAnteriorSurface`, `CTPosteriorSurface`, `CTPachymetry`, `CTAnteriorChamber`, `CTKeratoconusIndices`, `CTDensitometry`) grouped under `CornealTomographyReport`, covering Scheimpflug/Pentacam- style tomography in full detail, including keratoconus screening indices (BAD-D and its sub-components, ABCD grading, Amsler-Krumeich staging) and layered densitometry. See [Corneal Tomography Report](StructureDefinition-corneal-tomography-report.md).
 
 **Replaced: `OphthalmicOCTMacula` and `OphthalmicOCTRNFL`.** Both profiles were rebuilt to match this guide's maintained variable catalog. `OphthalmicOCTRNFL` in particular changed structurally, from a quadrant-thickness model to an optic nerve head (cup/disc geometry), Disc Damage Likelihood Scale (DDLS), and global TSNIT profile model, which better reflects how RNFL/ONH analysis is actually reported in practice.
 

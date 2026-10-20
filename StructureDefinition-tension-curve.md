@@ -9,10 +9,46 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:TensionCurve |
+| Draft as of 2026-10-19 | *Computable Name*:TensionCurve |
 
  
 Represents an ambulatory tension curve: several intraocular pressure readings taken across a single day, grouped together as a single clinical concept rather than recorded as unrelated, disconnected observations. This profile was already defined in an earlier version of this guide's design work and is carried forward here. 
+
+### Design decisions
+
+**Panel pattern.** This is a panel `Observation` using `hasMember` to group the individual readings, rather than holding a value itself (see the panel pattern in [Guidance](guidance.md)).
+
+**`value[x]`** is `0..0`. The panel itself has no value; the values live in each member reading.
+
+**`effective[x]`** is `1..1` and only allows `Period`, reflecting that the curve spans a period of time (the day of the ambulatory assessment), not a single instant.
+
+**`hasMember`** accepts `Reference(IntraocularPressure | CorrectedIntraocularPressure)`, `1..*`. Both variants of intraocular pressure reading may be part of a curve; pachymetry itself is not referenced directly from the curve, since [CorrectedIntraocularPressure](StructureDefinition-corrected-intraocular-pressure.md) already references it via `derivedFrom`.
+
+> In clinical practice, a tension curve typically consists of three readings taken across the day, though this varies by site. This is noted here as clinical context, not enforced as a fixed cardinality in the profile.
+
+**Laterality.** `bodySite` is `0..1`, using the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md). It is optional, since the curve as a whole may or may not need its own laterality tag (individual member readings carry their own).
+
+#### Worked example: combining readings with corrected values
+
+`TensionCurve.hasMember` accepts **either** [IntraocularPressure](StructureDefinition-intraocular-pressure.md) or [CorrectedIntraocularPressure](StructureDefinition-corrected-intraocular-pressure.md) as its members, since a single curve may mix plain and corrected readings depending on whether pachymetry was available for each reading:
+
+* `TensionCurve` groups several readings across the day via `hasMember`.
+* Each member is either a plain `IntraocularPressure` reading, or a `CorrectedIntraocularPressure` reading.
+* A `CorrectedIntraocularPressure` instance is never a standalone measurement: it always references, via `derivedFrom`, the specific `IntraocularPressure` reading and [Pachymetry](StructureDefinition-pachymetry.md) measurement it was calculated from.
+
+So a single curve reading can carry a two-level chain: the curve references the corrected reading, and the corrected reading itself references the two measurements it was derived from.
+
+```
+graph TD
+    TC[TensionCurve<br/>panel] -->|hasMember| IOP1[IntraocularPressure<br/>08:00]
+    TC -->|hasMember| IOP2[IntraocularPressure<br/>12:00]
+    TC -->|hasMember| CIOP[CorrectedIntraocularPressure<br/>14:00]
+    CIOP -->|derivedFrom| IOP3[IntraocularPressure<br/>base reading]
+    CIOP -->|derivedFrom| PACHY[Pachymetry<br/>corneal thickness]
+
+```
+
+**Examples:** [Tension curve panel, right eye](Observation-TensionCurveRightEyeExample.md), [Tension curve reading 08:00, right eye](Observation-TensionCurveRightEye0800Example.md), [Tension curve reading 12:00, right eye](Observation-TensionCurveRightEye1200Example.md), [Tension curve reading 14:00, right eye](Observation-TensionCurveRightEye1400Example.md)
 
 **Usages:**
 
@@ -42,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
   "name" : "TensionCurve",
   "title" : "Tension Curve",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

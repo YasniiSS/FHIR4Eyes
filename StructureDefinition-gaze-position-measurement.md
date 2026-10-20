@@ -9,10 +9,27 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:GazePositionMeasurement |
+| Draft as of 2026-10-19 | *Computable Name*:GazePositionMeasurement |
 
  
 A reusable pattern for a single measurement or finding taken at one gaze position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and KrimskyTest for quantitative prism diopter deviation, and by HirschbergTest, RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test uses only the components relevant to it; all components are optional. Not intended to be used standalone; always referenced via hasMember from one of those panels. 
+
+A reusable pattern for a single measurement or finding taken at one gaze position (for example primary position, right gaze, up-and-right gaze); `code` identifies the gaze position. It is not intended to be used standalone: it is always referenced via `hasMember` from one of the position-based sub-tests of a [StrabismusExam](StructureDefinition-strabismus-exam.md), and itself carries no value (`value[x]` is `0..0`).
+
+### Two kinds of per-position result
+
+All components are optional, and each test uses only the components relevant to it:
+
+* **Quantitative deviation:** `horizontalDeviation` and `verticalDeviation`, in prism diopters, used by [PrismCoverTest](StructureDefinition-prism-cover-test.md) and [KrimskyTest](StructureDefinition-krimsky-test.md).
+* **Qualitative finding:** `finding` (for example fusion, suppression, diplopia), used by [HirschbergTest](StructureDefinition-hirschberg-test.md), [RedFilterLightTest](StructureDefinition-red-filter-light-test.md), and [Worth4DotTest](StructureDefinition-worth-4-dot-test.md).
+
+A single shared pattern is used for both cases, rather than two separate profiles, since only the choice of component differs.
+
+### Fixating eye vs. measured eye
+
+`bodySite` (via the standard extension to [OcularBodyStructure](StructureDefinition-ocular-body-structure.md)) identifies the eye being **measured** (the deviating eye), while the separate `fixatingEye` component identifies which eye was **fixating** during that measurement (right or left eye, SNOMED CT `24028007` / `7771000`). The two are never combined into a single field; see [StrabismusExam](StructureDefinition-strabismus-exam.md) and [Guidance](guidance.md).
+
+**Examples:** [Prism cover test: primary position](Observation-PrismCoverTestPrimaryPositionExample.md)
 
 **Usages:**
 
@@ -43,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
   "name" : "GazePositionMeasurement",
   "title" : "Gaze Position Measurement",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

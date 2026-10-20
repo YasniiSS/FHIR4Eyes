@@ -1,10 +1,10 @@
-# OCTRNFLLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT RNFL: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTRNFLLeftEyeExample**
+* **OCT RNFL: left eye**
 
-## Example Observation: OCTRNFLLeftEyeExample
+## Example Observation: OCT RNFL: left eye
 
 Profile: [Ophthalmic OCT RNFL](StructureDefinition-ophthalmic-oct-rnfl.md)
 

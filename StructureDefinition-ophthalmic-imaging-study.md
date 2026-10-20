@@ -9,10 +9,22 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicImagingStudy |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicImagingStudy |
 
  
 An ophthalmic imaging study, such as OCT, retinography, or angiography. Always traceable back to the medical order that led to it via basedOn. Laterality is represented both through the native series.bodySite/series.laterality Coding fields (for standard DICOM/PACS compatibility) and through an additional extension referencing OcularBodyStructure (for structured cross-resource navigation, consistent with the rest of this guide). 
+
+Represents an ophthalmic imaging study, such as OCT, retinography, or angiography, as established throughout [use case 2, group B](usecases.md#group-b-imaging-studies-with-report). This profile was already defined in an earlier version of this guide's design work and is carried forward here.
+
+### Design decisions
+
+**Always linked to a medical order.** `ImagingStudy.basedOn` is `1..1`, required, referencing an [OphthalmicServiceRequest](StructureDefinition-ophthalmic-service-request.md). Every imaging study must be traceable back to the medical order that led to it being acquired, regardless of whether that order was fulfilled locally or referred elsewhere (see the three scenarios covered by `OphthalmicServiceRequest`).
+
+**Laterality.** Laterality is represented the same way as throughout the rest of this guide, using the standard FHIR `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md). Because `ImagingStudy` has native `series.bodySite` and `series.laterality` `Coding` fields (kept for standard DICOM/PACS compatibility), the `bodySiteEye` extension is added on each `series` alongside those native fields, so a study can still be linked to the same shared `OcularBodyStructure` instance used by related `Condition`, `Procedure`, or `Observation` resources (see [Guidance](guidance.md)).
+
+**Study / series / instance.** The profile follows the standard DICOM/FHIR hierarchy: at least one `series` (each with its `uid` and `modality`), each containing `instance` entries with their `uid` and `sopClass`. Scan type (for example RNFL vs. macula) is distinguished at the series level; see [Guidance](guidance.md) for the one-study-per-eye and one-study-per-session patterns.
+
+**Examples:** [OCT imaging study: right eye](ImagingStudy-OCTStudyRightEyeExample.md), [OCT imaging study: left eye](ImagingStudy-OCTStudyLeftEyeExample.md), [OCT macula imaging study: left eye](ImagingStudy-OCTMaculaLeftEyeExample.md), [OCT optic disc imaging study: left eye](ImagingStudy-OCTOpticDiscLeftEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-imaging-s
   "name" : "OphthalmicImagingStudy",
   "title" : "Ophthalmic Imaging Study",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

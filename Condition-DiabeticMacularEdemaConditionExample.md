@@ -1,10 +1,10 @@
-# DiabeticMacularEdemaConditionExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Diabetic macular edema diagnosis - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **DiabeticMacularEdemaConditionExample**
+* **Diabetic macular edema diagnosis**
 
-## Example Condition: DiabeticMacularEdemaConditionExample
+## Example Condition: Diabetic macular edema diagnosis
 
 Profile: [Ophthalmic Condition](StructureDefinition-ophthalmic-condition.md)
 

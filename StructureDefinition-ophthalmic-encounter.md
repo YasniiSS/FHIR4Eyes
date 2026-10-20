@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicEncounter |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicEncounter |
 
  
 An ambulatory ophthalmology consultation encounter. Parented on the generic FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean dependency belongs in the FHIR4Eyes CL extension, not this Core guide. 
+
+Represents an ambulatory ophthalmology consultation encounter. It is parented on the generic FHIR `Encounter`, not the Chilean core Encounter profile (EncounterCL): the Chilean dependency belongs in the FHIR4Eyes CL extension, not in this Core guide.
+
+`serviceType` is required and fixed to the HL7 service-type code `217` (Ophthalmology), and `status`, `class`, `type` (`1..*`), and `subject` are required. At least one `participant` is required, each referencing a `Practitioner`. The encounter may reference the [OphthalmicServiceRequest](StructureDefinition-ophthalmic-service-request.md) that led to it via `basedOn`, and its `diagnosis.condition` entries reference [OphthalmicCondition](StructureDefinition-ophthalmic-condition.md).
+
+**Examples:** [Ambulatory ophthalmology encounter](Encounter-EncounterExample.md)
 
 **Usages:**
 
@@ -43,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-encounter
   "name" : "OphthalmicEncounter",
   "title" : "Ophthalmic Encounter",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

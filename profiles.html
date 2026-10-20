@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5"}
-    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -86,29 +86,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -160,862 +190,441 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#profiles" id="markdown-toc-profiles">Profiles</a>    <ul>
-      <li><a href="#index-by-fhir-resource" id="markdown-toc-index-by-fhir-resource">Index by FHIR resource</a></li>
-      <li><a href="#ophthalmicservicerequest" id="markdown-toc-ophthalmicservicerequest">OphthalmicServiceRequest</a>        <ul>
-          <li><a href="#design-decisions" id="markdown-toc-design-decisions">Design decisions</a></li>
-          <li><a href="#status" id="markdown-toc-status">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmiccondition" id="markdown-toc-ophthalmiccondition">OphthalmicCondition</a>        <ul>
-          <li><a href="#design-decisions-1" id="markdown-toc-design-decisions-1">Design decisions</a></li>
-          <li><a href="#status-1" id="markdown-toc-status-1">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicprocedure" id="markdown-toc-ophthalmicprocedure">OphthalmicProcedure</a>        <ul>
-          <li><a href="#design-decisions-2" id="markdown-toc-design-decisions-2">Design decisions</a></li>
-          <li><a href="#status-2" id="markdown-toc-status-2">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#tensioncurve" id="markdown-toc-tensioncurve">TensionCurve</a>        <ul>
-          <li><a href="#design-decisions-3" id="markdown-toc-design-decisions-3">Design decisions</a></li>
-          <li><a href="#status-3" id="markdown-toc-status-3">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#strabismusexam" id="markdown-toc-strabismusexam">StrabismusExam</a>        <ul>
-          <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
-          <li><a href="#design-decisions-4" id="markdown-toc-design-decisions-4">Design decisions</a></li>
-          <li><a href="#status-4" id="markdown-toc-status-4">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicimagingstudy" id="markdown-toc-ophthalmicimagingstudy">OphthalmicImagingStudy</a>        <ul>
-          <li><a href="#design-decisions-5" id="markdown-toc-design-decisions-5">Design decisions</a></li>
-          <li><a href="#status-5" id="markdown-toc-status-5">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicdiagnosticreport" id="markdown-toc-ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</a>        <ul>
-          <li><a href="#design-decisions-6" id="markdown-toc-design-decisions-6">Design decisions</a></li>
-          <li><a href="#status-6" id="markdown-toc-status-6">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmiccareplan" id="markdown-toc-ophthalmiccareplan">OphthalmicCarePlan</a>        <ul>
-          <li><a href="#design-decisions-7" id="markdown-toc-design-decisions-7">Design decisions</a></li>
-          <li><a href="#status-7" id="markdown-toc-status-7">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicvisualacuity" id="markdown-toc-ophthalmicvisualacuity">OphthalmicVisualAcuity</a>        <ul>
-          <li><a href="#design-decisions-8" id="markdown-toc-design-decisions-8">Design decisions</a></li>
-          <li><a href="#status-8" id="markdown-toc-status-8">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula" id="markdown-toc-ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a>        <ul>
-          <li><a href="#design-decisions-9" id="markdown-toc-design-decisions-9">Design decisions</a></li>
-          <li><a href="#status-9" id="markdown-toc-status-9">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#corneal-tomography-six-observations-under-one-report" id="markdown-toc-corneal-tomography-six-observations-under-one-report">Corneal Tomography: six Observations under one report</a>        <ul>
-          <li><a href="#design-decisions-10" id="markdown-toc-design-decisions-10">Design decisions</a></li>
-          <li><a href="#status-10" id="markdown-toc-status-10">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#ophthalmicocularbiometry-and-iolformularesult" id="markdown-toc-ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</a>        <ul>
-          <li><a href="#design-decisions-11" id="markdown-toc-design-decisions-11">Design decisions</a></li>
-          <li><a href="#status-11" id="markdown-toc-status-11">Status</a></li>
-        </ul>
-      </li>
-      <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
-    </ul>
-  </li>
+  <li><a href="#foundation-patient-encounter-and-laterality" id="markdown-toc-foundation-patient-encounter-and-laterality">Foundation: patient, encounter and laterality</a></li>
+  <li><a href="#clinical-workflow-orders-diagnoses-procedures-imaging-and-reports" id="markdown-toc-clinical-workflow-orders-diagnoses-procedures-imaging-and-reports">Clinical workflow: orders, diagnoses, procedures, imaging and reports</a></li>
+  <li><a href="#visual-acuity" id="markdown-toc-visual-acuity">Visual acuity</a></li>
+  <li><a href="#intraocular-pressure-and-pachymetry" id="markdown-toc-intraocular-pressure-and-pachymetry">Intraocular pressure and pachymetry</a></li>
+  <li><a href="#optical-coherence-tomography-oct" id="markdown-toc-optical-coherence-tomography-oct">Optical coherence tomography (OCT)</a></li>
+  <li><a href="#corneal-tomography" id="markdown-toc-corneal-tomography">Corneal tomography</a></li>
+  <li><a href="#other-diagnostic-tests" id="markdown-toc-other-diagnostic-tests">Other diagnostic tests</a></li>
+  <li><a href="#ocular-biometry-iol-calculation-and-implanted-devices" id="markdown-toc-ocular-biometry-iol-calculation-and-implanted-devices">Ocular biometry, IOL calculation and implanted devices</a></li>
+  <li><a href="#strabismus-and-binocular-vision" id="markdown-toc-strabismus-and-binocular-vision">Strabismus and binocular vision</a></li>
+  <li><a href="#treatment-care-plans-and-medications" id="markdown-toc-treatment-care-plans-and-medications">Treatment: care plans and medications</a></li>
+  <li><a href="#profiles-pending-clinical-validation" id="markdown-toc-profiles-pending-clinical-validation">Profiles pending clinical validation</a></li>
 </ul>
 
 </div>
-<h1 id="profiles">Profiles</h1>
+<p>This page lists every profile defined in FHIR4Eyes Core, grouped by clinical domain. Each
+profile page contains the narrative description and design decisions for that profile,
+followed by its formal definition. For the clinical motivation behind each profile, see
+<a href="usecases.html">Use Cases</a>; for the patterns shared across profiles (laterality, panels,
+components), see <a href="guidance.html">General Guidance</a>; for terminology, see
+<a href="terminology.html">Terminology</a>. All example instances are listed on the
+<a href="examples.html">Examples</a> page.</p>
 
-<p>This page documents the profile-level design decisions for FHIR4Eyes Core. For the
-clinical motivation behind each profile, see <a href="usecases.html">Use Cases</a>. For terminology
-strategy and value sets, see <a href="terminology.html">Terminology</a>.</p>
-
-<p>Profiles below are presented in the chronological order they typically appear within a
-clinical encounter: the medical order, the diagnosis (when already known), the procedure
-or observation performed, any imaging study involved, the resulting diagnostic report, and
+<p>Within each domain, profiles are listed in the order they typically appear in a clinical
+encounter: the medical order, the diagnosis (when already known), the procedure or
+observation performed, any imaging study involved, the resulting diagnostic report, and
 finally the treatment plan.</p>
 
-<h2 id="index-by-fhir-resource">Index by FHIR resource</h2>
+<h3 id="foundation-patient-encounter-and-laterality">Foundation: patient, encounter and laterality</h3>
 
-<table>
+<table class="grid">
   <thead>
     <tr>
-      <th>Resource</th>
-      <th>Profiles</th>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
-      <td><a href="#ophthalmicservicerequest">OphthalmicServiceRequest</a></td>
+      <td><a href="StructureDefinition-ophthalmic-patient.html">Ophthalmic Patient</a></td>
+      <td>Patient</td>
+      <td>A patient receiving eye care</td>
+      <td><a href="Patient-PatientExample.html">Patient (international)</a>, <a href="Patient-PacienteEjemplo.html">Patient (Chile)</a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Condition</code></td>
-      <td><a href="#ophthalmiccondition">OphthalmicCondition</a></td>
+      <td><a href="StructureDefinition-ophthalmic-encounter.html">Ophthalmic Encounter</a></td>
+      <td>Encounter</td>
+      <td>An ambulatory ophthalmology consultation</td>
+      <td><a href="Encounter-EncounterExample.html">Encounter</a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Procedure</code></td>
-      <td><a href="#ophthalmicprocedure">OphthalmicProcedure</a></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Observation</code></td>
-      <td><a href="#ophthalmicvisualacuity">OphthalmicVisualAcuity</a>, <a href="#tensioncurve">TensionCurve</a>, IntraocularPressure, CorrectedIntraocularPressure, Pachymetry, <a href="#strabismusexam">StrabismusExam</a> and its sub-test family (see below), <a href="#ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</a>, <a href="#corneal-tomography-six-observations-under-one-report">Corneal Tomography's six profiles</a>, <a href="#ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</a>, OphthalmicHumphreyVisualField, OphthalmicSpecularMicroscopy</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Observation</code> (StrabismusExam sub-test family)</td>
-      <td>GazePositionMeasurement, CoverTest, OcularMotility, NearPointOfConvergence, ConvergenceAssessment, StereopsisTest, PrismCoverTest, KrimskyTest, HirschbergTest, RedFilterLightTest, Worth4DotTest</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Observation</code> (Corneal Tomography family)</td>
-      <td>CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">ImagingStudy</code></td>
-      <td><a href="#ophthalmicimagingstudy">OphthalmicImagingStudy</a></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport</code></td>
-      <td><a href="#ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</a>, CornealTomographyReport</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">CarePlan</code></td>
-      <td><a href="#ophthalmiccareplan">OphthalmicCarePlan</a></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Device</code></td>
-      <td>OphthalmicDevice (referenced from OphthalmicProcedure)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Encounter</code></td>
-      <td>OphthalmicEncounter</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code></td>
-      <td>OphthalmicMedication</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">MedicationAdministration</code></td>
-      <td>OphthalmicMedicationAdministration</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">BodyStructure</code></td>
-      <td>OcularBodyStructure (referenced throughout for laterality)</td>
+      <td><a href="StructureDefinition-ocular-body-structure.html">Ocular Body Structure</a></td>
+      <td>BodyStructure</td>
+      <td>The eye or ocular location, referenced from <code class="language-plaintext highlighter-rouge">bodySite</code> to express laterality</td>
+      <td><a href="BodyStructure-RightEyeStructureExample.html">Right eye</a>, <a href="BodyStructure-LeftEyeStructureExample.html">Left eye</a></td>
     </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p>Some profiles listed above without a link are defined directly in FSH but do not yet
-have their own narrative "Design decisions" section on this page (<code class="language-plaintext highlighter-rouge">IntraocularPressure</code>,
-<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code>, <code class="language-plaintext highlighter-rouge">Pachymetry</code>, <code class="language-plaintext highlighter-rouge">OphthalmicDevice</code>, <code class="language-plaintext highlighter-rouge">OphthalmicEncounter</code>,
-<code class="language-plaintext highlighter-rouge">OphthalmicMedication</code>, <code class="language-plaintext highlighter-rouge">OphthalmicMedicationAdministration</code>, and the individual
-StrabismusExam sub-test profiles beyond what is already summarized in the
-<a href="#strabismusexam">StrabismusExam</a> section). Adding narrative for these is a documentation
-item still to be completed.</p>
-</blockquote>
+<h3 id="clinical-workflow-orders-diagnoses-procedures-imaging-and-reports">Clinical workflow: orders, diagnoses, procedures, imaging and reports</h3>
 
-<h2 id="ophthalmicservicerequest">OphthalmicServiceRequest</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest</code></p>
-
-<p><strong>Motivation:</strong> Represents a request for an ophthalmic examination and, where relevant, its
-interpretation or treatment. This single profile covers three scenarios seen in practice:</p>
-
-<ol>
-  <li>An order created and fulfilled at the same facility (for example, a primary care
-professional orders and performs the examination locally).</li>
-  <li>An order created at a primary care facility but referred to a hospital or reference
-center for analysis and/or treatment, as in
-<a href="usecases.html#use-case-6-teleophthalmology">use case 6 (teleophthalmology)</a>.</li>
-  <li>An order created directly at a hospital (secondary care) facility.</li>
-</ol>
-
-<p>There is no equivalent profile in the HL7 Eye Care IG to align with; this profile is
-designed from the base FHIR <code class="language-plaintext highlighter-rouge">ServiceRequest</code> resource and this guide's own use cases.</p>
-
-<h3 id="design-decisions">Design decisions</h3>
-
-<p><strong>A single generic profile.</strong> Rather than defining separate profiles for each scenario,
-<code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> is one profile that covers all three. What differs between them
-is simply who is recorded as <code class="language-plaintext highlighter-rouge">requester</code>, <code class="language-plaintext highlighter-rouge">performer</code>, and where the order originated, not
-the structure of the resource itself.</p>
-
-<p><strong>Timing.</strong> For examinations that require acquiring an imaging study (as in
-<a href="usecases.html#group-b-imaging-studies-with-report">use case 2, group B</a>), the request is
-created <em>before</em> the study exists: it requests both the acquisition and, where the request
-is referred elsewhere, its remote interpretation. The resulting <code class="language-plaintext highlighter-rouge">ImagingStudy</code> is expected
-to reference this request via <code class="language-plaintext highlighter-rouge">ImagingStudy.basedOn</code>.</p>
-
-<p><strong>Code.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.code</code> identifies the specific examination being requested (for
-example OCT, retinography), not a generic "referral" or "remote interpretation" concept. It
-follows the same terminology strategy already defined for that examination in
-<a href="terminology.html">Terminology</a> (SNOMED CT or LOINC, depending on the examination).</p>
-
-<p><strong>Roles.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.requester</code> is the professional who initiates the request.
-<code class="language-plaintext highlighter-rouge">ServiceRequest.performer</code> is the professional expected to fulfill it (who may be the same
-professional, for a locally fulfilled order, or a different one at another facility, for a
-referred order). Both are kept as simple <code class="language-plaintext highlighter-rouge">Reference(Practitioner)</code>, rather than
-<code class="language-plaintext highlighter-rouge">Reference(PractitionerRole)</code>, since a single practitioner may hold roles at more than one
-facility and a simple practitioner reference avoids ambiguity about which role applies.</p>
-
-<p><strong>Originating facility.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.locationReference</code> (<code class="language-plaintext highlighter-rouge">Reference(Location)</code>) is
-used to explicitly record the facility where the order originated. This is kept as a
-generic, internationally applicable field. The specific Chilean mechanism of referral and
-counter-referral ("referencia y contrarreferencia"), which governs how a request moves
-between facilities within Chile's public health network, is a national workflow concern
-and belongs in the FHIR4Eyes CL extension, not in this Core profile.</p>
-
-<p><strong>Priority.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.priority</code> uses the standard FHIR value set
-(<code class="language-plaintext highlighter-rouge">routine | urgent | asap | stat</code>); no ophthalmology-specific extension is needed for this.</p>
-
-<h3 id="status">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="ophthalmiccondition">OphthalmicCondition</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Condition</code></p>
-
-<p><strong>Motivation:</strong> Represents the formal, past or present clinical diagnosis of a specific
-ophthalmic condition. This is a high-priority profile still to be built (see
-<a href="background.html">Background</a>), used throughout <a href="usecases.html">Use Cases</a> wherever a
-diagnosis is reached (for example after reviewing an imaging study, or before starting an
-intravitreal injection treatment scheme).</p>
-
-<h3 id="design-decisions-1">Design decisions</h3>
-
-<p>This profile follows the same technical pattern as the HL7 Eye Care IG's equivalent
-profile (<code class="language-plaintext highlighter-rouge">condition-base</code>), aligned wherever it made sense, and adapted where its own
-narrative documentation and its technical definition disagreed with each other (see the
-note below).</p>
-
-<p><strong>Code.</strong> <code class="language-plaintext highlighter-rouge">Condition.code</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, bound to the diagnosis terminology defined in
-<a href="terminology.html">Terminology</a>: SNOMED CT and/or ICD-11 for FHIR4Eyes Core, ICD-10 for
-FHIR4Eyes CL.</p>
-
-<p><strong>Laterality.</strong> <code class="language-plaintext highlighter-rouge">Condition.bodySite</code> is <code class="language-plaintext highlighter-rouge">0..*</code> and optional, using the standard FHIR
-<code class="language-plaintext highlighter-rouge">bodySite</code> extension to reference a <code class="language-plaintext highlighter-rouge">BodyStructure</code> (the same <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code> pattern
-used throughout this guide for laterality). This is included because many ophthalmic
-diagnoses are laterality-specific (for example, uveitis affecting only one eye, which is
-common in clinical practice).</p>
-
-<blockquote>
-  <p><strong>Note on the HL7 Eye Care IG's equivalent profile:</strong> its narrative documentation states
-that its "Ocular anatomical location" profile is <em>not</em> expected to be used together with
-its condition profile. However, its actual technical definition (the StructureDefinition
-itself) does define a <code class="language-plaintext highlighter-rouge">bodySite</code> slice referencing <code class="language-plaintext highlighter-rouge">BodyStructure</code>, contradicting that
-narrative statement. FHIR4Eyes follows the technical definition (bodySite included,
-optional) rather than the narrative text, since the former is what is actually
-enforceable and validated.</p>
-</blockquote>
-
-<p><strong>Subject.</strong> <code class="language-plaintext highlighter-rouge">Condition.subject</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, <code class="language-plaintext highlighter-rouge">Reference(Patient)</code>.</p>
-
-<h3 id="status-1">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="ophthalmicprocedure">OphthalmicProcedure</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Procedure</code></p>
-
-<p><strong>Motivation:</strong> Represents any ophthalmic procedure, from minor ambulatory surgeries to
-individual sessions within a longer treatment scheme, such as an intravitreal injection or
-a vision therapy session. This profile was already defined in an earlier version of this
-guide's design work and is carried forward here.</p>
-
-<h3 id="design-decisions-2">Design decisions</h3>
-
-<p><strong>Code.</strong> <code class="language-plaintext highlighter-rouge">Procedure.code</code> follows the terminology strategy already defined in
-<a href="terminology.html">Terminology</a>: SNOMED CT descendants of <code class="language-plaintext highlighter-rouge">371548008</code> (Procedure on eye
-region) and <code class="language-plaintext highlighter-rouge">371560009</code> (Procedure on visual system), with CPT as a fallback for codes not
-covered by SNOMED CT.</p>
-
-<p><strong>Laterality.</strong> <code class="language-plaintext highlighter-rouge">Procedure.bodySite</code> is <code class="language-plaintext highlighter-rouge">0..*</code> and optional, using the standard FHIR
-<code class="language-plaintext highlighter-rouge">bodySite</code> extension to reference a <code class="language-plaintext highlighter-rouge">BodyStructure</code>. It is optional because not every
-ophthalmic procedure is inherently lateral.</p>
-
-<p><strong>Implantable devices.</strong> <code class="language-plaintext highlighter-rouge">Procedure.focalDevice</code> is used to reference an implanted
-<code class="language-plaintext highlighter-rouge">OphthalmicDevice</code> (for example, an intraocular lens), as established in
-<a href="usecases.html#use-case-5-cataract-surgery-with-intraocular-lens-implantation">use case 5 (cataract surgery)</a>.
-The patient is linked to the device only through this reference; the <code class="language-plaintext highlighter-rouge">Device</code> resource
-itself is not linked to the patient directly (see the <code class="language-plaintext highlighter-rouge">OphthalmicDevice</code> design notes,
-still to be documented in this section).</p>
-
-<p><strong>Linking to a treatment scheme.</strong> When a procedure is one session within a longer scheme
-(for example, one dose of an intravitreal injection treatment, or one vision therapy
-session), it references the relevant <code class="language-plaintext highlighter-rouge">OphthalmicCarePlan</code> via <code class="language-plaintext highlighter-rouge">Procedure.basedOn</code>, as
-established in <a href="usecases.html#intravitreal-injection-treatment">use case 4</a> and
-<a href="usecases.html#use-case-3-vision-therapy-and-rehabilitation">use case 3</a>.</p>
-
-<h3 id="status-2">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="tensioncurve">TensionCurve</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code> (panel)</p>
-
-<p><strong>Motivation:</strong> Represents an ambulatory tension curve: several intraocular pressure
-readings taken across a single day, grouped together as a single clinical concept rather
-than recorded as unrelated, disconnected observations. This profile was already defined in
-an earlier version of this guide's design work and is carried forward here.</p>
-
-<h3 id="design-decisions-3">Design decisions</h3>
-
-<p><strong>Panel pattern.</strong> This is a panel <code class="language-plaintext highlighter-rouge">Observation</code> using <code class="language-plaintext highlighter-rouge">hasMember</code> to group the individual
-readings, rather than holding a value itself.</p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">value[x]</code></strong> is <code class="language-plaintext highlighter-rouge">0..0</code>. The panel itself has no value; the values live in each member
-reading.</p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">effective[x]</code></strong> only allows <code class="language-plaintext highlighter-rouge">Period</code>, reflecting that the curve spans a period of time
-(the day of the ambulatory assessment), not a single instant.</p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">hasMember</code></strong> accepts <code class="language-plaintext highlighter-rouge">Reference(IntraocularPressure | CorrectedIntraocularPressure)</code>,
-<code class="language-plaintext highlighter-rouge">0..*</code>. Both variants of intraocular pressure reading may be part of a curve; pachymetry
-itself is not referenced directly from the curve, since <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code>
-already references it via <code class="language-plaintext highlighter-rouge">derivedFrom</code>.</p>
-
-<blockquote>
-  <p>In clinical practice, a tension curve typically consists of three readings taken across
-the day, though this varies by site. This is noted here as clinical context, not
-enforced as a fixed cardinality in the profile.</p>
-</blockquote>
-
-<p><strong>Worked example: combining readings with corrected values.</strong> <code class="language-plaintext highlighter-rouge">TensionCurve.hasMember</code>
-accepts <em>either</em> <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> or <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> as its members,
-since a single curve may mix plain and corrected readings depending on whether pachymetry
-was available for each reading:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">TensionCurve</code> groups several readings across the day via <code class="language-plaintext highlighter-rouge">hasMember</code>.</li>
-  <li>Each member is either a plain <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading, or a
-<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> reading.</li>
-  <li>A <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> instance is never a standalone measurement: it always
-references, via <code class="language-plaintext highlighter-rouge">derivedFrom</code>, the specific <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading and
-<code class="language-plaintext highlighter-rouge">Pachymetry</code> measurement it was calculated from.</li>
-</ul>
-
-<p>So a single curve reading can carry a two-level chain: the curve references the corrected
-reading, and the corrected reading itself references the two measurements it was derived
-from.</p>
-
-<pre><code class="language-mermaid">graph TD
-    TC[TensionCurve&lt;br/&gt;panel] --&gt;|hasMember| IOP1[IntraocularPressure&lt;br/&gt;08:00]
-    TC --&gt;|hasMember| IOP2[IntraocularPressure&lt;br/&gt;12:00]
-    TC --&gt;|hasMember| CIOP[CorrectedIntraocularPressure&lt;br/&gt;14:00]
-    CIOP --&gt;|derivedFrom| IOP3[IntraocularPressure&lt;br/&gt;base reading]
-    CIOP --&gt;|derivedFrom| PACHY[Pachymetry&lt;br/&gt;corneal thickness]
-</code></pre>
-
-<h3 id="status-3">Status</h3>
-
-<p>This profile is formally defined in FSH.</p>
-
-<h2 id="strabismusexam">StrabismusExam</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code> (panel), plus a family of related sub-test profiles</p>
-
-<p><strong>Motivation:</strong> Represents a strabismus examination. Unlike most examinations in
-<a href="usecases.html#group-a-direct-observations">use case 2, group A</a>, this is not a single
-measurement: it is made up of several possible sub-tests (cover test, ocular motility,
-near point of convergence, stereopsis, prism cover test, Krimsky test, and others),
-evaluated as needed for the specific clinical case, patient age, and available equipment.
-No two strabismus exams necessarily include the same set of sub-tests.</p>
-
-<h3 id="architecture">Architecture</h3>
-
-<p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is a panel <code class="language-plaintext highlighter-rouge">Observation</code> that groups together whichever sub-tests were
-actually performed, via <code class="language-plaintext highlighter-rouge">hasMember</code>. <code class="language-plaintext highlighter-rouge">hasMember</code> is intentionally open (<code class="language-plaintext highlighter-rouge">0..*</code>, not bound
-to a fixed list of profiles): the set of sub-tests recognized by this guide is expected to
-grow over time, and a clinical team may also record sub-tests not yet covered here.</p>
-
-<p>The sub-tests fall into two groups, based on their structure:</p>
-
-<p><strong>Direct sub-tests</strong> produce a single result and do not vary by gaze position:
-<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>, <code class="language-plaintext highlighter-rouge">NearPointOfConvergence</code>, <code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>,
-<code class="language-plaintext highlighter-rouge">StereopsisTest</code>.</p>
-
-<p><strong>Position-based sub-tests</strong> are performed across multiple gaze positions (primary
-position, right gaze, up-and-right gaze, and so on), with one measurement or finding
-recorded per position: <code class="language-plaintext highlighter-rouge">PrismCoverTest</code>, <code class="language-plaintext highlighter-rouge">KrimskyTest</code>, <code class="language-plaintext highlighter-rouge">HirschbergTest</code>,
-<code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>. Each of these is itself a small panel: it groups its
-per-position results via <code class="language-plaintext highlighter-rouge">hasMember</code>, referencing a shared reusable pattern,
-<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>, once per gaze position tested.</p>
-
-<p><code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> supports two kinds of per-position result through optional
-components: a quantitative prism diopter deviation (<code class="language-plaintext highlighter-rouge">horizontalDeviation</code>,
-<code class="language-plaintext highlighter-rouge">verticalDeviation</code>), used by <code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code>; and a qualitative
-<code class="language-plaintext highlighter-rouge">finding</code> (for example fusion, suppression, diplopia), used by <code class="language-plaintext highlighter-rouge">HirschbergTest</code>,
-<code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, and <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>. A single shared pattern is used for both cases,
-rather than two separate profiles, since only the choice of component differs.</p>
-
-<blockquote>
-  <p>This list of sub-tests is not exhaustive. Other tests exist in practice (for example,
-additional stereopsis test types beyond what this guide currently distinguishes) and may
-be added to this guide over time, following the same patterns established here.</p>
-</blockquote>
-
-<pre><code class="language-mermaid">graph TD
-    SE[StrabismusExam&lt;br/&gt;panel] --&gt;|hasMember| CT[CoverTest]
-    SE --&gt;|hasMember| OM[OcularMotility]
-    SE --&gt;|hasMember| PPC[NearPointOfConvergence]
-    SE --&gt;|hasMember| CA[ConvergenceAssessment]
-    SE --&gt;|hasMember| ST[StereopsisTest]
-    SE --&gt;|hasMember| PCT[PrismCoverTest]
-    SE --&gt;|hasMember| KT[KrimskyTest]
-
-    PCT --&gt;|hasMember| GPM1[GazePositionMeasurement&lt;br/&gt;primary position]
-    PCT --&gt;|hasMember| GPM2[GazePositionMeasurement&lt;br/&gt;right gaze]
-    KT --&gt;|hasMember| GPM3[GazePositionMeasurement&lt;br/&gt;primary position]
-
-    GPM1 -.-&gt; COMP1["fixatingEye, horizontalDeviation,&lt;br/&gt;verticalDeviation"]
-</code></pre>
-
-<h3 id="design-decisions-4">Design decisions</h3>
-
-<p><strong>Fixating eye vs. measured eye.</strong> A recurring source of confusion in strabismus testing
-is that measurements are described relative to which eye is fixating (for example "FOD",
-fixing with the right eye), while the actual deviation being measured belongs to the
-<em>other</em> eye. To avoid this ambiguity, this guide separates the two explicitly: <code class="language-plaintext highlighter-rouge">bodySite</code>
-(via the standard extension to <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code>) always identifies the eye being
-<em>measured</em> (the deviating eye), while a separate <code class="language-plaintext highlighter-rouge">fixatingEye</code> component identifies which
-eye was <em>fixating</em> during that specific measurement. The two are never combined into a
-single field.</p>
-
-<p><strong>Flexible components, not a fixed checklist.</strong> None of the sub-test profiles enforce a
-required set of components. Which aspects are assessed and recorded depends on the
-clinical case, the patient's age, and what equipment is available.</p>
-
-<p><strong>Open terminology.</strong> Several sub-test profiles (<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>,
-<code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>, and others) leave their finding values as an open
-<code class="language-plaintext highlighter-rouge">CodeableConcept</code>, explicitly noted as "terminology to be confirmed" in their FSH source.
-No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is
-left as an open item rather than guessing at codes.</p>
-
-<blockquote>
-  <p>This architecture was defined by the guide's author directly, as a case where enough
-clinical judgment was already available to model it without deferring to further
-ophthalmologist review (unlike the lower-priority profiles listed below).</p>
-</blockquote>
-
-<h3 id="status-4">Status</h3>
-
-<p>None of the profiles in this family are yet formally defined in FSH. This page currently
-documents the design decisions reached so far; the StructureDefinitions themselves are the
-next step.</p>
-
-<h2 id="ophthalmicimagingstudy">OphthalmicImagingStudy</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">ImagingStudy</code></p>
-
-<p><strong>Motivation:</strong> Represents an ophthalmic imaging study, such as OCT, retinography, or
-angiography, as established throughout
-<a href="usecases.html#group-b-imaging-studies-with-report">use case 2, group B</a>. This profile was
-already defined in an earlier version of this guide's design work and is carried forward
-here.</p>
-
-<h3 id="design-decisions-5">Design decisions</h3>
-
-<p><strong>Always linked to a medical order.</strong> <code class="language-plaintext highlighter-rouge">ImagingStudy.basedOn</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, required,
-referencing an <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>. Every imaging study must be traceable back to
-the medical order that led to it being acquired, regardless of whether that order was
-fulfilled locally or referred elsewhere (see the three scenarios covered by
-<code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>).</p>
-
-<p><strong>Laterality.</strong> Laterality is represented the same way as throughout the rest of this
-guide, using the standard FHIR <code class="language-plaintext highlighter-rouge">bodySite</code> extension to reference a <code class="language-plaintext highlighter-rouge">BodyStructure</code>.</p>
-
-<h3 id="status-5">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="ophthalmicdiagnosticreport">OphthalmicDiagnosticReport</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">DiagnosticReport</code></p>
-
-<p><strong>Motivation:</strong> Every examination in
-<a href="usecases.html#group-b-imaging-studies-with-report">use case 2, group B</a>, and
-<a href="usecases.html#use-case-6-teleophthalmology">use case 6 (teleophthalmology)</a>, depends on
-this profile to represent the findings, diagnosis, and treatment plan reached after
-reviewing an imaging study or structured examination dataset. It is one of the two
-high-priority profiles still to be built for this guide (see
-<a href="background.html">Background</a>).</p>
-
-<h3 id="design-decisions-6">Design decisions</h3>
-
-<p><strong>Category.</strong> <code class="language-plaintext highlighter-rouge">DiagnosticReport.category</code> is <code class="language-plaintext highlighter-rouge">0..*</code> by the base FHIR specification, which
-allows more than one classification to be recorded at once. No dedicated ophthalmology code
-exists in the standard <code class="language-plaintext highlighter-rouge">v2-0074</code> diagnostic service section table (the closest available
-code is <code class="language-plaintext highlighter-rouge">IMG</code>, Diagnostic Imaging, which does not fit examinations that are not strictly
-image-based, such as computerized visual fields). FHIR4Eyes uses two independent slices:</p>
-
-<table>
+<table class="grid">
   <thead>
     <tr>
-      <th>Slice</th>
-      <th>Cardinality</th>
-      <th>Value</th>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Specialty</td>
-      <td>1..1 (always present)</td>
-      <td>SNOMED CT <code class="language-plaintext highlighter-rouge">394594003</code> (Ophthalmology, qualifier value)</td>
+      <td><a href="StructureDefinition-ophthalmic-service-request.html">Ophthalmic Service Request</a></td>
+      <td>ServiceRequest</td>
+      <td>The order for an ophthalmic examination, local or referred</td>
+      <td><a href="ServiceRequest-OCTServiceRequestExample.html">OCT order</a>, <a href="ServiceRequest-CornealTomographyServiceRequestExample.html">Corneal tomography order</a></td>
     </tr>
     <tr>
-      <td>Type</td>
-      <td>0..1 (only when applicable)</td>
-      <td><code class="language-plaintext highlighter-rouge">IMG</code> (Diagnostic Imaging), used only when the examination produces an image in the strict sense (for example OCT, angiography, retinography, topography); omitted for examinations that produce structured data without a photographic image</td>
+      <td><a href="StructureDefinition-ophthalmic-condition.html">Ophthalmic Condition</a></td>
+      <td>Condition</td>
+      <td>A diagnosis of an ophthalmic condition, optionally lateral</td>
+      <td><a href="Condition-DiabeticMacularEdemaConditionExample.html">Diabetic macular edema</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-procedure.html">Ophthalmic Procedure</a></td>
+      <td>Procedure</td>
+      <td>Any ophthalmic procedure, including sessions of a treatment scheme</td>
+      <td><a href="Procedure-CataractSurgeryProcedureExample.html">Cataract surgery</a>, <a href="Procedure-IntravitrealInjectionProcedureExample.html">Intravitreal injection</a>, <a href="Procedure-OCTProcedureExample.html">OCT</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-imaging-study.html">Ophthalmic Imaging Study</a></td>
+      <td>ImagingStudy</td>
+      <td>An ophthalmic imaging study (OCT, retinography, angiography…), always linked to its order</td>
+      <td><a href="ImagingStudy-OCTStudyRightEyeExample.html">OCT right eye</a>, <a href="ImagingStudy-OCTStudyLeftEyeExample.html">OCT left eye</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a></td>
+      <td>DiagnosticReport</td>
+      <td>Findings and conclusions of an ophthalmic examination</td>
+      <td><a href="DiagnosticReport-OCTDiagnosticReportExample.html">OCT report</a>, <a href="DiagnosticReport-OCTMaculaDiagnosticReportExample.html">OCT macula report</a></td>
     </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p><strong>Open discussion, not yet resolved:</strong> whether to add a third, more granular
-classification level for subspecialty (for example Retina, Glaucoma) is a design question
-left open for a future iteration of this guide. It is noted here so it is not lost, but is
-intentionally out of scope for the current version.</p>
-</blockquote>
+<h3 id="visual-acuity">Visual acuity</h3>
 
-<p><strong>Relationship to ImagingStudy.</strong> <code class="language-plaintext highlighter-rouge">DiagnosticReport.imagingStudy</code> is <code class="language-plaintext highlighter-rouge">0..1</code> (optional), not
-required. Not every examination in group B necessarily produces a formal <code class="language-plaintext highlighter-rouge">ImagingStudy</code>
-resource (for example, computerized visual field data may be stored as part of the report
-itself rather than as a separate imaging study).</p>
-
-<p><strong>Scope beyond imaging interpretation.</strong> Unlike a radiology report, this profile is not
-limited to describing imaging findings. As established in
-<a href="background.html">Background</a> and <a href="usecases.html">Use Cases</a>, the same clinical act
-typically also reaches a diagnosis and defines a treatment plan. <code class="language-plaintext highlighter-rouge">Condition</code> and <code class="language-plaintext highlighter-rouge">CarePlan</code>
-are therefore expected to be recorded alongside this report, referencing it, rather than
-being folded into the report itself.</p>
-
-<h3 id="status-6">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="ophthalmiccareplan">OphthalmicCarePlan</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">CarePlan</code></p>
-
-<p><strong>Motivation:</strong> Represents a long-term treatment scheme made up of repeated sessions or
-administrations, rather than a single event. This guide identified two such schemes in
-<a href="usecases.html">Use Cases</a>: intravitreal injection treatment
-(<a href="usecases.html#intravitreal-injection-treatment">use case 4</a>) and vision therapy or
-orthoptic treatment (<a href="usecases.html#use-case-3-vision-therapy-and-rehabilitation">use case 3</a>).
-As with <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>, there is no equivalent profile in the HL7 Eye Care IG
-to align with; this profile is designed from the base FHIR <code class="language-plaintext highlighter-rouge">CarePlan</code> resource and this
-guide's own use cases.</p>
-
-<h3 id="design-decisions-7">Design decisions</h3>
-
-<p><strong>One profile, differentiated by category.</strong> Rather than defining two separate profiles,
-<code class="language-plaintext highlighter-rouge">OphthalmicCarePlan</code> is a single profile whose <code class="language-plaintext highlighter-rouge">category</code> element distinguishes the type of
-scheme:</p>
-
-<table>
+<table class="grid">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Meaning</th>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">intravitreal-injection-therapy</code></td>
-      <td>A scheme of repeated intravitreal injections</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">functional-therapy</code></td>
-      <td>A scheme of repeated vision therapy or orthoptic sessions</td>
+      <td><a href="StructureDefinition-ophthalmic-visual-acuity.html">Ophthalmic Visual Acuity</a></td>
+      <td>Observation</td>
+      <td>Visual acuity with distance, correction, chart, scale and pinhole as components</td>
+      <td><a href="Observation-VisualAcuityUncorrectedRightEyeExample.html">Uncorrected</a>, <a href="Observation-VisualAcuityPinholeRightEyeExample.html">Pinhole</a>, <a href="Observation-VisualAcuityCorrectedLeftEyeExample.html">Corrected</a>, <a href="Observation-VisualAcuityCountingFingersRightEyeExample.html">Counting fingers</a>, <a href="Observation-VisualAcuityBinocularExample.html">Binocular</a></td>
     </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p>These are proposed FHIR4Eyes-only codes, not yet bound to an external terminology, since
-no existing HL7 Eye Care IG or SNOMED CT pattern was found for this specific
-distinction. Open to revision if a suitable external code is identified later.</p>
-</blockquote>
+<h3 id="intraocular-pressure-and-pachymetry">Intraocular pressure and pachymetry</h3>
 
-<p><strong>Goal.</strong> <code class="language-plaintext highlighter-rouge">CarePlan.goal</code> (<code class="language-plaintext highlighter-rouge">Reference(Goal)</code>) is <code class="language-plaintext highlighter-rouge">0..1</code>, included when clinically relevant,
-rather than being required for every scheme. Some schemes have a clear measurable target
-(for example, a target intraocular pressure), while others may not need one recorded
-explicitly. A dedicated <code class="language-plaintext highlighter-rouge">Goal</code> profile for ophthalmology is listed as a lower-priority item
-still to be built (see <a href="background.html">Background</a>).</p>
-
-<p><strong>Linked procedures.</strong> Individual sessions or injections are recorded as separate
-<code class="language-plaintext highlighter-rouge">OphthalmicProcedure</code> instances, linked back to this <code class="language-plaintext highlighter-rouge">CarePlan</code> via <code class="language-plaintext highlighter-rouge">Procedure.basedOn</code>, as
-established in <a href="usecases.html#intravitreal-injection-treatment">use case 4</a> for
-intravitreal injections. The same pattern applies to vision therapy and orthoptic sessions.</p>
-
-<h3 id="status-7">Status</h3>
-
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
-
-<h2 id="ophthalmicvisualacuity">OphthalmicVisualAcuity</h2>
-
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code></p>
-
-<p><strong>Motivation:</strong> Represents a visual acuity measurement. This is one of the two
-high-priority profiles still to be built for this guide (see <a href="background.html">Background</a>).</p>
-
-<h3 id="design-decisions-8">Design decisions</h3>
-
-<p><strong>Granular components, not a single pre-coordinated code.</strong> The HL7 Eye Care IG's
-published (2021) approach captures distance and correction status entirely within <code class="language-plaintext highlighter-rouge">code</code>
-itself (for example, SNOMED CT <code class="language-plaintext highlighter-rouge">251739003</code>, "Distance visual acuity"), relying on SNOMED CT
-to provide a distinct, pre-coordinated concept for every possible combination. This guide
-instead follows a more granular pattern, aligned with a newer proposal discussed within
-SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible,
-independently recordable components over pre-coordinated codes: <code class="language-plaintext highlighter-rouge">code</code> is fixed to the
-generic concept "Visual acuity" (SNOMED CT <code class="language-plaintext highlighter-rouge">363983007</code>), and the specific detail is
-captured through separate components instead:</p>
-
-<table>
+<table class="grid">
   <thead>
     <tr>
-      <th>Component</th>
-      <th>Notes</th>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">distance</code></td>
-      <td>The testing distance (e.g. in metres). Not applicable to the qualitative <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> values (light perception, no light perception), which are distance-independent by nature. For counting fingers, this captures the specific distance separately from the qualitative "counting fingers" value itself.</td>
+      <td><a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a></td>
+      <td>Observation</td>
+      <td>A single IOP reading in mmHg</td>
+      <td><a href="Observation-IntraocularPressureRightEyeExample.html">Right eye</a>, <a href="Observation-IntraocularPressureLeftEyeExample.html">Left eye</a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">correctionStatus</code></td>
-      <td>Only two states are used clinically: corrected or uncorrected.</td>
+      <td><a href="StructureDefinition-pachymetry.html">Pachymetry</a></td>
+      <td>Observation</td>
+      <td>Central corneal thickness</td>
+      <td><a href="Observation-PachymetryRightEyeExample.html">Right eye</a>, <a href="Observation-PachymetryLeftEyeExample.html">Left eye</a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">chart</code></td>
-      <td>The chart or optotype used (e.g. Snellen, ETDRS).</td>
+      <td><a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a></td>
+      <td>Observation</td>
+      <td>IOP corrected for corneal thickness, derived from an IOP and a pachymetry</td>
+      <td><a href="Observation-CorrectedIntraocularPressureRightEyeExample.html">Right eye</a>, <a href="Observation-CorrectedIntraocularPressureLeftEyeExample.html">Left eye</a></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">scale</code></td>
-      <td>The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR).</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">pinhole</code></td>
-      <td>A boolean: whether this specific measurement was taken through a pinhole occluder.</td>
+      <td><a href="StructureDefinition-tension-curve.html">Tension Curve</a></td>
+      <td>Observation (panel)</td>
+      <td>Several IOP readings across one day, grouped with <code class="language-plaintext highlighter-rouge">hasMember</code></td>
+      <td><a href="Observation-TensionCurveRightEyeExample.html">Tension curve</a></td>
     </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p>The exact code system to use for the <code class="language-plaintext highlighter-rouge">distance</code> component's own code is still to be
-identified (a placeholder is used for now; see the FSH source).</p>
-</blockquote>
+<h3 id="optical-coherence-tomography-oct">Optical coherence tomography (OCT)</h3>
 
-<p><strong>Value.</strong> <code class="language-plaintext highlighter-rouge">value[x]</code> accepts <code class="language-plaintext highlighter-rouge">Ratio</code> (Snellen fractions), <code class="language-plaintext highlighter-rouge">Quantity</code> (decimal or LogMAR),
-or <code class="language-plaintext highlighter-rouge">CodeableConcept</code> (the qualitative <code class="language-plaintext highlighter-rouge">LowVisionAssessment</code> scale, for vision that falls
-below what any chart can measure; see <a href="terminology.html">Terminology</a>).</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-oct-rnfl.html">Ophthalmic OCT RNFL</a></td>
+      <td>Observation</td>
+      <td>Optic nerve head and RNFL analysis</td>
+      <td><a href="Observation-OCTRNFLRightEyeExample.html">Right eye</a>, <a href="Observation-OCTRNFLLeftEyeExample.html">Left eye</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-oct-macula.html">Ophthalmic OCT Macula</a></td>
+      <td>Observation</td>
+      <td>Macular thickness on the ETDRS 9-sector grid</td>
+      <td><a href="Observation-OCTMaculaRightEyeExample.html">Right eye</a>, <a href="Observation-OCTMaculaLeftEyeExample2.html">Left eye</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>Pinhole measurements reference their base measurement.</strong> In practice, a pinhole
-measurement is only taken as a follow-up to an uncorrected measurement already taken (for
-example, "OD sc 20/40, with pinhole 20/30"): it does not happen on its own. Rather than
-leaving the two measurements unconnected, or forcing them into a single Observation, this
-guide records them as two separate <code class="language-plaintext highlighter-rouge">OphthalmicVisualAcuity</code> instances (one with the
-<code class="language-plaintext highlighter-rouge">pinhole</code> component set to <code class="language-plaintext highlighter-rouge">false</code> or absent, one with it set to <code class="language-plaintext highlighter-rouge">true</code>), with the pinhole
-measurement's <code class="language-plaintext highlighter-rouge">derivedFrom</code> referencing the base measurement it followed. This mirrors the
-same pattern already used for <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code>, which references the plain
-IOP and pachymetry measurements it derives from.</p>
+<h3 id="corneal-tomography">Corneal tomography</h3>
 
-<p><strong>Laterality.</strong> Uses the same <code class="language-plaintext highlighter-rouge">bodySite</code> extension pattern as the rest of this guide,
-referencing <code class="language-plaintext highlighter-rouge">OcularBodyStructure</code>.</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-corneal-tomography-report.html">Corneal Tomography Report</a></td>
+      <td>OphthalmicDiagnosticReport</td>
+      <td>Groups the six corneal tomography analyses of one exam</td>
+      <td><a href="DiagnosticReport-CornealTomographyReportRightEyeExample.html">Report</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-anterior-surface.html">CT - Anterior Surface</a></td>
+      <td>Observation</td>
+      <td>Anterior corneal surface (keratometry, elevation, …)</td>
+      <td><a href="Observation-CTAnteriorSurfaceRightEyeExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-posterior-surface.html">CT - Posterior Surface</a></td>
+      <td>Observation</td>
+      <td>Posterior corneal surface</td>
+      <td><a href="Observation-CTPosteriorSurfaceRightEyeExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-pachymetry.html">CT - Pachymetry</a></td>
+      <td>Observation</td>
+      <td>Corneal thickness map</td>
+      <td><a href="Observation-CTPachymetryRightEyeExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-anterior-chamber.html">CT - Anterior Chamber</a></td>
+      <td>Observation</td>
+      <td>Anterior chamber analysis</td>
+      <td><a href="Observation-CTAnteriorChamberRightEyeExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-keratoconus-indices.html">CT - Keratoconus Indices</a></td>
+      <td>Observation</td>
+      <td>Keratoconus screening indices</td>
+      <td><a href="Observation-CTKeratoconusIndicesRightEyeExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ct-densitometry.html">CT - Densitometry</a></td>
+      <td>Observation</td>
+      <td>Corneal transparency (light backscatter)</td>
+      <td><a href="Observation-CTDensitometryRightEyeExample.html">Example</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="status-8">Status</h3>
+<h3 id="other-diagnostic-tests">Other diagnostic tests</h3>
 
-<p>This profile is not yet formally defined in FSH. This page currently documents the design
-decisions reached so far; the StructureDefinition itself is the next step.</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-humphrey-visual-field.html">Ophthalmic Humphrey Visual Field</a></td>
+      <td>Observation</td>
+      <td>Automated static perimetry</td>
+      <td><a href="Observation-HumphreyVFRightEyeExample.html">Right eye</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-specular-microscopy.html">Ophthalmic Specular Microscopy</a></td>
+      <td>Observation</td>
+      <td>Corneal endothelial specular microscopy</td>
+      <td><a href="Observation-SpecularMicroscopyRightEyeExample.html">Right eye</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="ophthalmicoctrnfl-and-ophthalmicoctmacula">OphthalmicOCTRNFL and OphthalmicOCTMacula</h2>
+<h3 id="ocular-biometry-iol-calculation-and-implanted-devices">Ocular biometry, IOL calculation and implanted devices</h3>
 
-<p><strong>FHIR resource:</strong> <code class="language-plaintext highlighter-rouge">Observation</code>, both</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-ocular-biometry.html">Ophthalmic Ocular Biometry</a></td>
+      <td>Observation</td>
+      <td>Shared biometry measurements for IOL power calculation</td>
+      <td><a href="Observation-BiometryRightEyeExample.html">Right eye</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-iol-formula-result.html">IOL Formula Result</a></td>
+      <td>Observation</td>
+      <td>The result of one IOL power formula, member of the biometry</td>
+      <td><a href="Observation-IOLFormulaBarrettExample.html">Barrett Universal II</a>, <a href="Observation-IOLFormulaSRKTExample.html">SRK/T</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-device.html">Ophthalmic Device</a></td>
+      <td>Device</td>
+      <td>An implanted ophthalmic device such as an intraocular lens</td>
+      <td><a href="Device-IntraocularLensExample.html">Intraocular lens</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>Motivation:</strong> Represent, respectively, an OCT optic nerve head (ONH)/retinal nerve fiber
-layer (RNFL) analysis and an OCT macular thickness analysis, each grouped under a
-<code class="language-plaintext highlighter-rouge">DiagnosticReport</code> together with the imaging study they were derived from. Sourced directly
-from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL and OCT Macula sections).</p>
+<h3 id="strabismus-and-binocular-vision">Strabismus and binocular vision</h3>
 
-<pre><code class="language-mermaid">graph TD
-    R[OphthalmicDiagnosticReport&lt;br/&gt;OCT report] --&gt;|imagingStudy| S[OphthalmicImagingStudy&lt;br/&gt;RNFL + Macula series]
-    R --&gt;|result| RNFL[OphthalmicOCTRNFL&lt;br/&gt;25 components]
-    R --&gt;|result| MAC[OphthalmicOCTMacula&lt;br/&gt;22 components]
+<p><a href="StructureDefinition-strabismus-exam.html">Strabismus Exam</a> is a panel that groups whichever
+sub-tests were performed. Direct sub-tests produce a single result; position-based sub-tests
+group one <a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a> per
+gaze position tested.</p>
 
-    RNFL -.-&gt; RNFLG["cup/disc geometry, DDLS,&lt;br/&gt;TSNIT mean/SD"]
-    MAC -.-&gt; MACG["ETDRS 9-sector grid,&lt;br/&gt;acquisition metadata"]
-</code></pre>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Kind</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-strabismus-exam.html">Strabismus Exam</a></td>
+      <td>Observation (panel)</td>
+      <td>Panel</td>
+      <td><a href="Observation-StrabismusExamExample.html">Strabismus exam</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-cover-test.html">Cover Test</a></td>
+      <td>Observation</td>
+      <td>Direct</td>
+      <td><a href="Observation-CoverTestExample.html">Cover test</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ocular-motility.html">Ocular Motility</a></td>
+      <td>Observation</td>
+      <td>Direct</td>
+      <td><a href="Observation-OcularMotilityRightEyeExample.html">Right eye</a>, <a href="Observation-OcularMotilityLeftEyeExample.html">Left eye</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-near-point-of-convergence.html">Near Point of Convergence</a></td>
+      <td>Observation</td>
+      <td>Direct</td>
+      <td><a href="Observation-NearPointOfConvergenceExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-convergence-assessment.html">Convergence Assessment</a></td>
+      <td>Observation</td>
+      <td>Direct</td>
+      <td><a href="Observation-ConvergenceAssessmentExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-stereopsis-test.html">Stereopsis Test</a></td>
+      <td>Observation</td>
+      <td>Direct</td>
+      <td><a href="Observation-StereopsisTestExample.html">Example</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-prism-cover-test.html">Prism Cover Test</a></td>
+      <td>Observation (panel)</td>
+      <td>Position-based</td>
+      <td><a href="Observation-PrismCoverTestExample.html">Prism cover test</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-krimsky-test.html">Krimsky Test</a></td>
+      <td>Observation (panel)</td>
+      <td>Position-based</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-hirschberg-test.html">Hirschberg Test</a></td>
+      <td>Observation (panel)</td>
+      <td>Position-based</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-red-filter-light-test.html">Red Filter Light Test</a></td>
+      <td>Observation (panel)</td>
+      <td>Position-based</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-worth-4-dot-test.html">Worth 4 Dot Test</a></td>
+      <td>Observation (panel)</td>
+      <td>Position-based</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-gaze-position-measurement.html">Gaze Position Measurement</a></td>
+      <td>Observation</td>
+      <td>Reusable per-position result</td>
+      <td><a href="Observation-PrismCoverTestPrimaryPositionExample.html">Primary position</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="design-decisions-9">Design decisions</h3>
+<h3 id="treatment-care-plans-and-medications">Treatment: care plans and medications</h3>
 
-<p><strong>Component-based, diverging from the HL7 Eye Care IG's atomic pattern.</strong> The HL7 Eye Care
-IG represents each individual sector value (for example, "RNFL superior thickness") as its
-own separate <code class="language-plaintext highlighter-rouge">Observation</code>, each with a single LOINC code and a single value. This guide
-instead represents each full analysis as a single <code class="language-plaintext highlighter-rouge">Observation</code> with multiple <code class="language-plaintext highlighter-rouge">component</code>
-entries, one per measurement.</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Based on</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-care-plan.html">Ophthalmic Care Plan</a></td>
+      <td>CarePlan</td>
+      <td>A long-term scheme of repeated sessions (intravitreal injections, vision therapy)</td>
+      <td><a href="CarePlan-AvastinInjectionCarePlanExample.html">Intravitreal injection plan</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-medication.html">Ophthalmic Medication</a></td>
+      <td>Medication</td>
+      <td>A medication used in ophthalmology</td>
+      <td><a href="Medication-AvastinMedicationExample.html">Bevacizumab</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ophthalmic-medication-administration.html">Ophthalmic Medication Administration</a></td>
+      <td>MedicationAdministration</td>
+      <td>Administration of a medication during an ophthalmic procedure</td>
+      <td><a href="MedicationAdministration-AvastinDose1AdministrationExample.html">Dose 1</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>This is a deliberate divergence, not an oversight: the values produced by a single OCT scan
-are, by FHIR's own definition of <code class="language-plaintext highlighter-rouge">component</code>, "multiple component observations for a
-single measurement" (the same pattern used for systolic/diastolic blood pressure). They are
-produced together, from the same scan, at the same instant, for the same eye; modeling them
-as separate, disconnected <code class="language-plaintext highlighter-rouge">Observation</code> resources would lose that inherent grouping and
-require an additional panel/<code class="language-plaintext highlighter-rouge">hasMember</code> layer to reconstruct it. The component-based
-approach keeps that grouping implicit in the resource's own structure.</p>
-
-<p><strong>Real LOINC codes, where they exist, are laterality-specific.</strong> The HL7 Eye Care IG's
-RNFL and macula value sets use <em>different</em> LOINC codes for the right versus left eye (for
-example, <code class="language-plaintext highlighter-rouge">86276-3</code> for right eye superior RNFL thickness, <code class="language-plaintext highlighter-rouge">86277-1</code> for left eye). Because
-this guide's <code class="language-plaintext highlighter-rouge">component[x].code</code> is fixed once per profile (not per instance), it cannot
-be pre-bound to a single laterality-specific code that would work for both eyes. Instead,
-each affected component documents both real codes in its <code class="language-plaintext highlighter-rouge">^short</code> text, and implementers
-select the correct one for the eye being examined (indicated via <code class="language-plaintext highlighter-rouge">bodySite</code>) when
-populating an instance.</p>
-
-<p><strong>RNFL classification is a FHIR4Eyes addition.</strong> The <code class="language-plaintext highlighter-rouge">classification</code> component
-(Within Normal Limits / Borderline / Outside Normal Limits) does not exist in the HL7 Eye
-Care IG's RNFL value set. It reflects a classification commonly shown in commercial vendor
-reports (see the reference reports this guide's examples are based on) but has no
-confirmed SNOMED CT or LOINC binding yet; this is left open pending verification, following
-the same pattern as other unconfirmed terminology in this guide.</p>
-
-<p><strong>Macula outer sectors are not yet confirmed.</strong> LOINC codes were confirmed for the macula
-center point, center subfield, and the four inner sectors, but not for the four outer
-sectors. Those components are left with open <code class="language-plaintext highlighter-rouge">CodeableConcept</code> codes and a note, rather
-than guessing at a code, consistent with this guide's terminology rigor (see
-<a href="terminology.html">Terminology</a>).</p>
-
-<h3 id="status-9">Status</h3>
-
-<p>Both profiles are formally defined in FSH.</p>
-
-<h2 id="corneal-tomography-six-observations-under-one-report">Corneal Tomography: six Observations under one report</h2>
-
-<p><strong>FHIR resources:</strong> <code class="language-plaintext highlighter-rouge">Observation</code> (six profiles: <code class="language-plaintext highlighter-rouge">CTAnteriorSurface</code>, <code class="language-plaintext highlighter-rouge">CTPosteriorSurface</code>,
-<code class="language-plaintext highlighter-rouge">CTPachymetry</code>, <code class="language-plaintext highlighter-rouge">CTAnteriorChamber</code>, <code class="language-plaintext highlighter-rouge">CTKeratoconusIndices</code>, <code class="language-plaintext highlighter-rouge">CTDensitometry</code>), plus
-<code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> (<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>)</p>
-
-<p><strong>Motivation:</strong> A modern corneal tomographer (Scheimpflug/Pentacam-style device) produces
-a single exam session that covers several genuinely distinct analyses: the shape of the
-front of the cornea, the shape of the back of the cornea, how thick the cornea is at each
-point, the anterior chamber behind it, derived keratoconus screening indices, and corneal
-transparency (densitometry). This guide represents each of these six analyses as its own
-<code class="language-plaintext highlighter-rouge">Observation</code> profile, grouped together under a single <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code>.</p>
-
-<pre><code class="language-mermaid">graph TD
-    R[CornealTomographyReport] --&gt;|result| A[CTAnteriorSurface&lt;br/&gt;55 components]
-    R --&gt;|result| B[CTPosteriorSurface&lt;br/&gt;7 components]
-    R --&gt;|result| C[CTPachymetry&lt;br/&gt;6 components]
-    R --&gt;|result| D[CTAnteriorChamber&lt;br/&gt;5 components]
-    R --&gt;|result| E[CTKeratoconusIndices&lt;br/&gt;19 components]
-    R --&gt;|result| F[CTDensitometry&lt;br/&gt;7 components]
-</code></pre>
-
-<h3 id="design-decisions-10">Design decisions</h3>
-
-<p><strong>Why six Observations, not one, and not fifty-plus.</strong> This is the same underlying
-principle applied at the OCT profiles above (see the "Component-based" note there), taken
-to its natural conclusion for a much richer exam. Values that describe the <em>same</em>
-underlying analysis — for example, all the different keratometry and elevation readings
-that describe the anterior corneal surface — are grouped as <code class="language-plaintext highlighter-rouge">component</code> entries within a
-single Observation, exactly like RNFL's quadrant thicknesses. But <code class="language-plaintext highlighter-rouge">CTAnteriorSurface</code> and
-<code class="language-plaintext highlighter-rouge">CTPosteriorSurface</code> are <strong>not</strong> merged into one Observation with a "front/back" component,
-even though they share many parallel fields (K1, K2, Km, Q-value, elevation, BFS radius all
-appear in both). The distinction is not "are these numbers similar in shape", it is "are
-these numbers describing the same physical/optical entity". The anterior and posterior
-corneal surfaces are optically and clinically distinct surfaces — a keratorefractive
-surgeon reasons about them separately, and a device can output one without the other (for
-example, older Placido-based topographers only measure the anterior surface). Likewise,
-pachymetry (a thickness map), the anterior chamber (a different anatomical structure
-entirely), keratoconus indices (derived screening scores, not raw measurements), and
-densitometry (a transparency/light-scatter property, not a shape property) are each their
-own kind of analysis, so each gets its own Observation.</p>
-
-<p><strong>Rule of thumb used throughout this guide:</strong> if two values are two facets of describing
-the <em>same object at the same moment</em> (e.g. this scan's superior RNFL thickness and this
-scan's inferior RNFL thickness — both are "how thick is the RNFL, broken down by
-direction"), they are components of one Observation. If two values describe <em>different
-objects or different kinds of analysis</em> (e.g. how the front of the cornea curves vs. how
-thick the cornea is), they belong in separate Observations, tied together by the parent
-<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>.</p>
-
-<p><strong>A note on the HL7 Eye Care IG.</strong> Corneal tomography of this depth (Scheimpflug-based,
-with keratoconus screening indices) is not covered by the HL7 Eye Care IG at all; this
-entire family of profiles is a FHIR4Eyes contribution, not an adaptation of an existing
-pattern.</p>
-
-<p><strong>Grouping under one report is provisional.</strong> See the design note in
-<code class="language-plaintext highlighter-rouge">CornealTomographyReport</code>'s own FSH source: whether these six analyses should be grouped
-under a single report, or split to mirror how a given device physically prints separate
-"maps", is left open for future review, since the current priority is representing the
-underlying data correctly.</p>
-
-<p><strong>Sourced directly from the FHIR4Eyes Observations catalog.</strong> Every component in these six
-profiles, including the eight components that reference specific DICOM Sup 168 tags
-(vertex location, pupil centroid, map type, and others), was taken directly from the
-project's maintained variable catalog, not invented for this guide. Where a component has
-no confirmed SNOMED CT or LOINC binding, its code is left open, following this guide's
-terminology rigor (see <a href="terminology.html">Terminology</a>).</p>
-
-<h3 id="status-10">Status</h3>
-
-<p>All six Observation profiles and <code class="language-plaintext highlighter-rouge">CornealTomographyReport</code> are formally defined in FSH.</p>
-
-<h2 id="ophthalmicocularbiometry-and-iolformularesult">OphthalmicOcularBiometry and IOLFormulaResult</h2>
-
-<p><strong>FHIR resources:</strong> <code class="language-plaintext highlighter-rouge">Observation</code>, both</p>
-
-<p><strong>Motivation:</strong> Represents an ocular biometry exam used for IOL power calculation ahead of
-cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular
-Biometry section), DICOM-aligned per CIDs 4230-4243.</p>
-
-<pre><code class="language-mermaid">graph TD
-    B[OphthalmicOcularBiometry&lt;br/&gt;26 shared components:&lt;br/&gt;AL, ACD, LT, K1/K2, WTW...] --&gt;|hasMember| F1[IOLFormulaResult&lt;br/&gt;Barrett Universal II]
-    B --&gt;|hasMember| F2[IOLFormulaResult&lt;br/&gt;SRK/T]
-    B --&gt;|hasMember| F3[IOLFormulaResult&lt;br/&gt;Holladay 2 ...]
-
-    F1 -.-&gt; D1["lens model, IOL power,&lt;br/&gt;expected refraction"]
-</code></pre>
-
-<h3 id="design-decisions-11">Design decisions</h3>
-
-<p><strong>Shared measurements as components, each formula as a separate Observation.</strong> A single
-biometry exam produces one set of shared measurements (axial length, keratometry, anterior
-chamber depth, and so on), but is typically run through <em>several</em> IOL power formulas for
-comparison (for example Barrett Universal II, SRK/T, Holladay 2), each producing its own
-suggested lens, power, and expected refractive outcome. Rather than fixing two hardcoded
-"formula 1" / "formula 2" component slots on the biometry Observation itself, this guide
-represents each formula's result as a separate <code class="language-plaintext highlighter-rouge">IOLFormulaResult</code> instance, referenced via
-<code class="language-plaintext highlighter-rouge">hasMember</code>. This allows any number of formulas to be recorded, and keeps each formula's
-full result (constant, lens, power, expected refraction) together as its own coherent unit,
-following the same "different object/analysis gets its own Observation" principle used
-throughout this guide (see the Corneal Tomography section above).</p>
-
-<p><strong>Formula-specific fields live only on <code class="language-plaintext highlighter-rouge">IOLFormulaResult</code>.</strong> <code class="language-plaintext highlighter-rouge">formula</code>, <code class="language-plaintext highlighter-rouge">lensConstantType</code>,
-<code class="language-plaintext highlighter-rouge">lensConstantValue</code>, <code class="language-plaintext highlighter-rouge">iolModel</code>, <code class="language-plaintext highlighter-rouge">iolPower</code>, <code class="language-plaintext highlighter-rouge">expectedRef</code>, and <code class="language-plaintext highlighter-rouge">iolTable</code> are components of
-<code class="language-plaintext highlighter-rouge">IOLFormulaResult</code>, not of <code class="language-plaintext highlighter-rouge">OphthalmicOcularBiometry</code>. The biometry Observation holds only
-the measurements that are shared and independent of which formula is later applied to
-them.</p>
-
-<h3 id="status-11">Status</h3>
-
-<p>Both profiles are formally defined in FSH.</p>
-
-<h2 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h2>
+<h3 id="profiles-pending-clinical-validation">Profiles pending clinical validation</h3>
 
 <p>The following profiles remain lower priority and are deliberately left undesigned in this
 guide until they can be reviewed with an ophthalmologist colleague, rather than being
@@ -1055,7 +664,7 @@ profile, and are already covered by the general terminology strategy.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

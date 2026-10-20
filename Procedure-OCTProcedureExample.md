@@ -1,10 +1,10 @@
-# OCTProcedureExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT procedure - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTProcedureExample**
+* **OCT procedure**
 
-## Example Procedure: OCTProcedureExample
+## Example Procedure: OCT procedure
 
 Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 

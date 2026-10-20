@@ -1,10 +1,10 @@
-# NearPointOfConvergenceExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Near point of convergence - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **NearPointOfConvergenceExample**
+* **Near point of convergence**
 
-## Example Observation: NearPointOfConvergenceExample
+## Example Observation: Near point of convergence
 
 Profile: [Near Point of Convergence](StructureDefinition-near-point-of-convergence.md)
 

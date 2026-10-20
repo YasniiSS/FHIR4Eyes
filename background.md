@@ -5,8 +5,6 @@
 
 ## Background
 
-# Background
-
 ## Why does ophthalmology need its own profiles?
 
 Generic FHIR resources like `Observation`, `Procedure`, or `ImagingStudy` can technically represent almost any clinical data. But using them without further guidance leaves too much room for different systems to represent the same clinical concept in incompatible ways. Eye care has a specific set of characteristics that make this especially true.

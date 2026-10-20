@@ -1,10 +1,10 @@
-# VisualAcuityCountingFingersRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Visual acuity: counting fingers, right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **VisualAcuityCountingFingersRightEyeExample**
+* **Visual acuity: counting fingers, right eye**
 
-## Example Observation: VisualAcuityCountingFingersRightEyeExample
+## Example Observation: Visual acuity: counting fingers, right eye
 
 Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md)
 

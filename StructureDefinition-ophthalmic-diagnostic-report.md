@@ -9,10 +9,33 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicDiagnosticReport |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicDiagnosticReport |
 
  
 Represents the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset. Unlike a radiology report, this is not limited to describing imaging findings: the same clinical act typically also reaches a diagnosis and defines a treatment plan, recorded as separate Condition and CarePlan resources referencing this report. 
+
+Every examination in [use case 2, group B](usecases.md#group-b-imaging-studies-with-report), and [use case 6 (teleophthalmology)](usecases.md#use-case-6-teleophthalmology), depends on this profile to represent the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset.
+
+### Design decisions
+
+**Category.** `DiagnosticReport.category` is `0..*` by the base FHIR specification (`1..*` in this profile), which allows more than one classification to be recorded at once. No dedicated ophthalmology code exists in the standard `v2-0074` diagnostic service section table (the closest available code is `IMG`, Diagnostic Imaging, which does not fit examinations that are not strictly image-based, such as computerized visual fields). FHIR4Eyes uses two independent slices:
+
+| | | |
+| :--- | :--- | :--- |
+| `specialty` | 1..1 (always present) | SNOMED CT`394594003`(Ophthalmology, qualifier value) |
+| `imagingType` | 0..1 (only when applicable) | `IMG`(Diagnostic Imaging), used only when the examination produces an image in the strict sense (for example OCT, angiography, retinography, topography); omitted for examinations that produce structured data without a photographic image |
+
+> **Open discussion, not yet resolved:** whether to add a third, more granular classification level for subspecialty (for example Retina, Glaucoma) is a design question left open for a future iteration of this guide. It is noted here so it is not lost, but is intentionally out of scope for the current version.
+
+**Relationship to ImagingStudy.** `DiagnosticReport.imagingStudy` is optional (`0..*`), referencing [OphthalmicImagingStudy](StructureDefinition-ophthalmic-imaging-study.md). Not every examination in group B necessarily produces a formal `ImagingStudy` resource (for example, computerized visual field data may be stored as part of the report itself rather than as a separate imaging study). When a session produces more than one study (for example, one per eye), all of them can be referenced; see [Guidance](guidance.md).
+
+**Relationship to the order.** `DiagnosticReport.basedOn` may reference the [OphthalmicServiceRequest](StructureDefinition-ophthalmic-service-request.md) that led to the report, consistent with both the HL7 Eye Care IG and the IHE Radiology Imaging Diagnostic Report profile.
+
+**Results.** `DiagnosticReport.result` accepts any `Observation` in this base profile, since the type of report it backs varies. Specializations narrow it to their specific set of Observation profiles, as [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) does. For OCT, the results are typically [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md) and [OphthalmicOCTMacula](StructureDefinition-ophthalmic-oct-macula.md).
+
+**Scope beyond imaging interpretation.** Unlike a radiology report, this profile is not limited to describing imaging findings. As established in [Background](background.md) and [Use Cases](usecases.md), the same clinical act typically also reaches a diagnosis and defines a treatment plan. [OphthalmicCondition](StructureDefinition-ophthalmic-condition.md) and [OphthalmicCarePlan](StructureDefinition-ophthalmic-care-plan.md) are therefore expected to be recorded alongside this report, referencing it, rather than being folded into the report itself.
+
+**Examples:** [OCT report (RNFL + macula)](DiagnosticReport-OCTDiagnosticReportExample.md), [OCT macula report](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
 
 **Usages:**
 
@@ -44,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
   "name" : "OphthalmicDiagnosticReport",
   "title" : "Ophthalmic Diagnostic Report",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -124,12 +147,8 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
       "path" : "DiagnosticReport.category",
       "slicing" : {
         "discriminator" : [{
-          "type" : "value",
-          "path" : "coding.code"
-        },
-        {
-          "type" : "value",
-          "path" : "coding.system"
+          "type" : "pattern",
+          "path" : "$this"
         }],
         "rules" : "open"
       },

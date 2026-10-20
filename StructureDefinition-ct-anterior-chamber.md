@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTAnteriorChamber |
+| Draft as of 2026-10-19 | *Computable Name*:CTAnteriorChamber |
 
  
 Represents the anterior chamber analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are left as open text for now, following this guide's terminology rigor: no confirmed SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
+
+Represents the anterior chamber analysis of a corneal tomography exam: anterior chamber depth, chamber volume, chamber angle, pupil diameter, and lens thickness. The anterior chamber is a different anatomical structure from the cornea, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open, since no confirmed SNOMED CT or LOINC codes were identified for these device-specific measurements (see [Terminology](terminology.md)).
+
+**Examples:** [CT anterior chamber: right eye](Observation-CTAnteriorChamberRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
   "name" : "CTAnteriorChamber",
   "title" : "Corneal Tomography - Anterior Chamber",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

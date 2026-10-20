@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="f529bc72-18c8-4fee-aa40-7ad48a725b0c"/>
+  <id value="12d35e6b-dd8a-48ae-b83c-e96e21ce5a8e"/>
   <meta>
-    <lastUpdated value="2026-09-11T00:16:12.009+00:00"/>
+    <lastUpdated value="2026-10-19T22:17:00.417-03:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -14,7 +14,7 @@
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
             <p class="res-header-id"/>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on SNOMED CT International edition 01-Feb 2025
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on SNOMED CT International edition 01-feb 2025
               <span class="copy-text-inline">
                 <button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201" title="Click to Copy URL" class="btn-copy"> </button>
               </span>
@@ -146,7 +146,7 @@
         <name value="LowVisionAssessmentVS"/>
         <title value="Low Vision Assessment Value Set"/>
         <status value="draft"/>
-        <date value="2026-09-11T00:16:12+00:00"/>
+        <date value="2026-10-19T22:17:00-03:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -155,8 +155,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:72af63bf-34ae-4368-8b06-0624ce5b9a3b"/>
-          <timestamp value="2026-09-11T00:54:39+00:00"/>
+          <identifier value="urn:uuid:04e8a519-4ea4-4948-be69-8182c19464a0"/>
+          <timestamp value="2026-10-19T22:19:51-03:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -302,7 +302,7 @@
         <name value="OphthalmicCarePlanCategoryVS"/>
         <title value="Ophthalmic Care Plan Category Value Set"/>
         <status value="draft"/>
-        <date value="2026-09-11T00:16:12+00:00"/>
+        <date value="2026-10-19T22:17:00-03:00"/>
         <jurisdiction>
           <coding>
             <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -311,8 +311,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:1b8fcae4-d49f-483c-91c0-28318adb1803"/>
-          <timestamp value="2026-09-11T00:55:10+00:00"/>
+          <identifier value="urn:uuid:01690f94-3bd2-4f90-be75-a6be575c631e"/>
+          <timestamp value="2026-10-19T22:19:55-03:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>

@@ -5,8 +5,6 @@
 
 ## Use Cases
 
-# Use Cases
-
 This page describes the clinical scenarios that motivated the profiles defined in this guide. Each use case lists the actors involved, the general flow, and the FHIR resources that come into play. For the full technical detail of each profile, see [Profiles](profiles.md).
 
 ### Actors used throughout this page

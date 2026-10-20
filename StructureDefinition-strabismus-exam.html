@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.48"}
-    h3,h4,h5,h6{--heading-prefix:"9.48"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.28"}
+    h3,h4,h5,h6{--heading-prefix:"12.28"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -272,6 +302,109 @@ Each sub-test is recorded as its own Observation, referenced here via hasMember.
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Represents a strabismus examination. Unlike most examinations in
+<a href="usecases.html#group-a-direct-observations">use case 2, group A</a>, this is not a single
+measurement: it is made up of several possible sub-tests (cover test, ocular motility,
+near point of convergence, stereopsis, prism cover test, Krimsky test, and others),
+evaluated as needed for the specific clinical case, patient age, and available equipment.
+No two strabismus exams necessarily include the same set of sub-tests.</p>
+
+<h3 id="architecture">Architecture</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StrabismusExam</code> is a panel <code class="language-plaintext highlighter-rouge">Observation</code> (<code class="language-plaintext highlighter-rouge">value[x]</code> is <code class="language-plaintext highlighter-rouge">0..0</code>) that groups together
+whichever sub-tests were actually performed, via <code class="language-plaintext highlighter-rouge">hasMember</code>. <code class="language-plaintext highlighter-rouge">hasMember</code> is intentionally
+open (<code class="language-plaintext highlighter-rouge">0..*</code>, not bound to a fixed list of profiles): the set of sub-tests recognized by
+this guide is expected to grow over time, and a clinical team may also record sub-tests not
+yet covered here.</p>
+
+<p>The sub-tests fall into two groups, based on their structure:</p>
+
+<p><strong>Direct sub-tests</strong> produce a single result and do not vary by gaze position:
+<a href="StructureDefinition-cover-test.html">CoverTest</a>,
+<a href="StructureDefinition-ocular-motility.html">OcularMotility</a>,
+<a href="StructureDefinition-near-point-of-convergence.html">NearPointOfConvergence</a>,
+<a href="StructureDefinition-convergence-assessment.html">ConvergenceAssessment</a>,
+<a href="StructureDefinition-stereopsis-test.html">StereopsisTest</a>.</p>
+
+<p><strong>Position-based sub-tests</strong> are performed across multiple gaze positions (primary
+position, right gaze, up-and-right gaze, and so on), with one measurement or finding
+recorded per position: <a href="StructureDefinition-prism-cover-test.html">PrismCoverTest</a>,
+<a href="StructureDefinition-krimsky-test.html">KrimskyTest</a>,
+<a href="StructureDefinition-hirschberg-test.html">HirschbergTest</a>,
+<a href="StructureDefinition-red-filter-light-test.html">RedFilterLightTest</a>,
+<a href="StructureDefinition-worth-4-dot-test.html">Worth4DotTest</a>. Each of these is itself a small
+panel: it groups its per-position results via <code class="language-plaintext highlighter-rouge">hasMember</code>, referencing a shared reusable
+pattern, <a href="StructureDefinition-gaze-position-measurement.html">GazePositionMeasurement</a>, once
+per gaze position tested.</p>
+
+<p><code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code> supports two kinds of per-position result through optional
+components: a quantitative prism diopter deviation (<code class="language-plaintext highlighter-rouge">horizontalDeviation</code>,
+<code class="language-plaintext highlighter-rouge">verticalDeviation</code>), used by <code class="language-plaintext highlighter-rouge">PrismCoverTest</code> and <code class="language-plaintext highlighter-rouge">KrimskyTest</code>; and a qualitative
+<code class="language-plaintext highlighter-rouge">finding</code> (for example fusion, suppression, diplopia), used by <code class="language-plaintext highlighter-rouge">HirschbergTest</code>,
+<code class="language-plaintext highlighter-rouge">RedFilterLightTest</code>, and <code class="language-plaintext highlighter-rouge">Worth4DotTest</code>. A single shared pattern is used for both cases,
+rather than two separate profiles, since only the choice of component differs.</p>
+
+<blockquote>
+  <p>This list of sub-tests is not exhaustive. Other tests exist in practice (for example,
+additional stereopsis test types beyond what this guide currently distinguishes) and may
+be added to this guide over time, following the same patterns established here.</p>
+</blockquote>
+
+<pre><code class="language-mermaid">graph TD
+    SE[StrabismusExam&lt;br/&gt;panel] --&gt;|hasMember| CT[CoverTest]
+    SE --&gt;|hasMember| OM[OcularMotility]
+    SE --&gt;|hasMember| PPC[NearPointOfConvergence]
+    SE --&gt;|hasMember| CA[ConvergenceAssessment]
+    SE --&gt;|hasMember| ST[StereopsisTest]
+    SE --&gt;|hasMember| PCT[PrismCoverTest]
+    SE --&gt;|hasMember| KT[KrimskyTest]
+
+    PCT --&gt;|hasMember| GPM1[GazePositionMeasurement&lt;br/&gt;primary position]
+    PCT --&gt;|hasMember| GPM2[GazePositionMeasurement&lt;br/&gt;right gaze]
+    KT --&gt;|hasMember| GPM3[GazePositionMeasurement&lt;br/&gt;primary position]
+
+    GPM1 -.-&gt; COMP1["fixatingEye, horizontalDeviation,&lt;br/&gt;verticalDeviation"]
+</code></pre>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>Fixating eye vs. measured eye.</strong> A recurring source of confusion in strabismus testing
+is that measurements are described relative to which eye is fixating (for example "FOD",
+fixing with the right eye), while the actual deviation being measured belongs to the
+<em>other</em> eye. To avoid this ambiguity, this guide separates the two explicitly: <code class="language-plaintext highlighter-rouge">bodySite</code>
+(via the standard extension to
+<a href="StructureDefinition-ocular-body-structure.html">OcularBodyStructure</a>) always identifies the
+eye being <em>measured</em> (the deviating eye), while a separate <code class="language-plaintext highlighter-rouge">fixatingEye</code> component (on
+<code class="language-plaintext highlighter-rouge">GazePositionMeasurement</code>) identifies which eye was <em>fixating</em> during that specific
+measurement. The two are never combined into a single field.</p>
+
+<p><strong>Flexible components, not a fixed checklist.</strong> None of the sub-test profiles enforce a
+required set of components. Which aspects are assessed and recorded depends on the
+clinical case, the patient's age, and what equipment is available.</p>
+
+<p><strong>Open terminology.</strong> Several sub-test profiles (<code class="language-plaintext highlighter-rouge">CoverTest</code>, <code class="language-plaintext highlighter-rouge">OcularMotility</code>,
+<code class="language-plaintext highlighter-rouge">ConvergenceAssessment</code>, and others) leave their finding values as an open
+<code class="language-plaintext highlighter-rouge">CodeableConcept</code>, explicitly noted as "terminology to be confirmed" in their FSH source.
+No SNOMED CT or LOINC binding has been verified for these specific findings yet; this is
+left as an open item rather than guessing at codes.</p>
+
+<blockquote>
+  <p>This architecture was defined by the guide's author directly, as a case where enough
+clinical judgment was already available to model it without deferring to further
+ophthalmologist review (unlike the lower-priority profiles still pending clinical
+validation).</p>
+</blockquote>
+
+<p><strong>Examples:</strong> <a href="Observation-StrabismusExamExample.html">Strabismus exam panel</a></p>
+
+
+</div>
 
 
 
@@ -464,7 +597,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/observation.html">Observation</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a> | <a href="http://hl7.org/fhir/R4/molecularsequence.html">MolecularSequence</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Any sub-test performed as part of this strabismus exam (e.g. cover test, motility, PPC, stereopsis, prism cover test, Krimsky)<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examK'), 'binding', document.getElementById('cbstrabismus-examK-binding').checked, document.getElementById('ppstrabismus-examK'));
 document.getElementById('cbstrabismus-examK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -740,7 +873,7 @@ filterDesc(document.getElementById('strabismus-examK'), 'obligation', document.g
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/observation.html">Observation</a> | <a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a> | <a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/molecularsequence.html">MolecularSequence</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Any sub-test performed as part of this strabismus exam (e.g. cover test, motility, PPC, stereopsis, prism cover test, Krimsky)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examD'), 'binding', document.getElementById('cbstrabismus-examD-binding').checked, document.getElementById('ppstrabismus-examD'));
 document.getElementById('cbstrabismus-examD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1147,7 +1280,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examS'), 'binding', document.getElementById('cbstrabismus-examS-binding').checked, document.getElementById('ppstrabismus-examS'));
 document.getElementById('cbstrabismus-examS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1759,7 +1892,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/observation.html">Observation</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a> | <a href="http://hl7.org/fhir/R4/molecularsequence.html">MolecularSequence</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Any sub-test performed as part of this strabismus exam (e.g. cover test, motility, PPC, stereopsis, prism cover test, Krimsky)<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examKA'), 'binding', document.getElementById('cbstrabismus-examKA-binding').checked, document.getElementById('ppstrabismus-examKA'));
 document.getElementById('cbstrabismus-examKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2035,7 +2168,7 @@ filterDesc(document.getElementById('strabismus-examKA'), 'obligation', document.
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/observation.html">Observation</a> | <a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a> | <a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/molecularsequence.html">MolecularSequence</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Any sub-test performed as part of this strabismus exam (e.g. cover test, motility, PPC, stereopsis, prism cover test, Krimsky)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examDA'), 'binding', document.getElementById('cbstrabismus-examDA-binding').checked, document.getElementById('ppstrabismus-examDA'));
 document.getElementById('cbstrabismus-examDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2441,7 +2574,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbstrabismus-examSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('strabismus-examSA'), 'binding', document.getElementById('cbstrabismus-examSA-binding').checked, document.getElementById('ppstrabismus-examSA'));
 document.getElementById('cbstrabismus-examSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2936,7 +3069,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

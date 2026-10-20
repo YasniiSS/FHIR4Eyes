@@ -1,10 +1,10 @@
-# CTKeratoconusIndicesRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT keratoconus indices: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTKeratoconusIndicesRightEyeExample**
+* **CT keratoconus indices: right eye**
 
-## Example Observation: CTKeratoconusIndicesRightEyeExample
+## Example Observation: CT keratoconus indices: right eye
 
 Profile: [Corneal Tomography - Keratoconus Indices](StructureDefinition-ct-keratoconus-indices.md)
 

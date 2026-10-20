@@ -9,10 +9,35 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicOCTMacula |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicOCTMacula |
 
  
 Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
+
+Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength) and DICOM Sup 152 classification fields (thickness definition, deviation category, anatomic reference point). It is grouped under an [OphthalmicDiagnosticReport](StructureDefinition-ophthalmic-diagnostic-report.md) together with the [OphthalmicImagingStudy](StructureDefinition-ophthalmic-imaging-study.md) it was derived from, alongside its companion optic nerve head/RNFL analysis, [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md). Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section).
+
+```
+graph TD
+    R[OphthalmicDiagnosticReport<br/>OCT report] -->|imagingStudy| S[OphthalmicImagingStudy<br/>RNFL + Macula series]
+    R -->|result| RNFL[OphthalmicOCTRNFL<br/>25 components]
+    R -->|result| MAC[OphthalmicOCTMacula<br/>22 components]
+
+    RNFL -.-> RNFLG["cup/disc geometry, DDLS,<br/>TSNIT mean/SD"]
+    MAC -.-> MACG["ETDRS 9-sector grid,<br/>acquisition metadata"]
+
+```
+
+### Design decisions
+
+**Component-based, diverging from the HL7 Eye Care IG's atomic pattern.** The HL7 Eye Care IG represents each individual sector value (for example, a single macular subfield thickness) as its own separate `Observation`, each with a single LOINC code and a single value. This guide instead represents each full analysis as a single `Observation` with multiple `component` entries, one per measurement.
+
+This is a deliberate divergence, not an oversight: the values produced by a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
+
+**LOINC codes for the ETDRS grid.** The profile's own `code` is fixed to LOINC `57119-0` (Optical coherence tomography panel). LOINC component codes are assigned for the center subfield thickness (`cmt`, `57109-1`, required), the center point thickness (`57108-3`), the four inner and four outer ETDRS sectors (`57110-9` to `57117-4`), and the total grid volume (`57118-2`). The remaining components (for example central minimum/maximum, volume per subfield, the DICOM classification fields, and dilation metadata) are left with open `CodeableConcept` codes rather than guessing at a code, consistent with this guide's terminology rigor (see [Terminology](terminology.md)).
+
+**Signal strength.** The `inv-oct-signal` invariant raises a warning when the `signalStrength` component is absent.
+
+**Examples:** [OCT macula: right eye](Observation-OCTMaculaRightEyeExample.md), [OCT macula: left eye](Observation-OCTMaculaLeftEyeExample2.md), [OCT report (RNFL + macula)](DiagnosticReport-OCTDiagnosticReportExample.md), [OCT macula report](DiagnosticReport-OCTMaculaDiagnosticReportExample.md)
 
 **Usages:**
 
@@ -42,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

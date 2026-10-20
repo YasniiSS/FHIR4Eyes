@@ -1,10 +1,10 @@
-# PrismCoverTestPrimaryPositionExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Prism cover test: primary position - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PrismCoverTestPrimaryPositionExample**
+* **Prism cover test: primary position**
 
-## Example Observation: PrismCoverTestPrimaryPositionExample
+## Example Observation: Prism cover test: primary position
 
 Profile: [Gaze Position Measurement](StructureDefinition-gaze-position-measurement.md)
 

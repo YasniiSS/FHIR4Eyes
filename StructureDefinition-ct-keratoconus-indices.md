@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTKeratoconusIndices |
+| Draft as of 2026-10-19 | *Computable Name*:CTKeratoconusIndices |
 
  
 Represents the keratoconus screening/classification indices component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Keratoconus Indices section). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+
+Represents the keratoconus screening and classification indices of a corneal tomography exam: the Belin-Ambrósio (BAD) deviation indices and classification, enhanced best fit sphere radii, Amsler-Krumeich stage, ABCD grading, the topometric indices (ISV, IVA, KI, CKI, IHA, IHD), minimum sagittal curvature radius, and the topographic keratoconus classification. These are derived screening scores rather than raw measurements, so they form one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open (see [Terminology](terminology.md)).
+
+**Examples:** [CT keratoconus indices: right eye](Observation-CTKeratoconusIndicesRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
   "name" : "CTKeratoconusIndices",
   "title" : "Corneal Tomography - Keratoconus Indices",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

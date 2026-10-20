@@ -1,10 +1,10 @@
-# TensionCurveRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Tension curve panel, right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **TensionCurveRightEyeExample**
+* **Tension curve panel, right eye**
 
-## Example Observation: TensionCurveRightEyeExample
+## Example Observation: Tension curve panel, right eye
 
 Profile: [Tension Curve](StructureDefinition-tension-curve.md)
 

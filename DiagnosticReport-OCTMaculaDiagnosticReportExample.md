@@ -1,10 +1,10 @@
-# OCTMaculaDiagnosticReportExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT macula report - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTMaculaDiagnosticReportExample**
+* **OCT macula report**
 
-## Example DiagnosticReport: OCTMaculaDiagnosticReportExample
+## Example DiagnosticReport: OCT macula report
 
 Profile: [Ophthalmic Diagnostic Report](StructureDefinition-ophthalmic-diagnostic-report.md)
 

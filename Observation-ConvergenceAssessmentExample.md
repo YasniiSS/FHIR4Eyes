@@ -1,10 +1,10 @@
-# ConvergenceAssessmentExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Convergence assessment - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ConvergenceAssessmentExample**
+* **Convergence assessment**
 
-## Example Observation: ConvergenceAssessmentExample
+## Example Observation: Convergence assessment
 
 Profile: [Convergence Assessment](StructureDefinition-convergence-assessment.md)
 

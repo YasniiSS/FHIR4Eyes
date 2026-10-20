@@ -86,29 +86,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -160,24 +190,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a>    <ul>
-      <li><a href="#actors-used-throughout-this-page" id="markdown-toc-actors-used-throughout-this-page">Actors used throughout this page</a></li>
-      <li><a href="#baseline-resources-assumed-throughout" id="markdown-toc-baseline-resources-assumed-throughout">Baseline resources assumed throughout</a></li>
-      <li><a href="#use-case-1-general-ophthalmology-encounter" id="markdown-toc-use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</a></li>
-      <li><a href="#use-case-2-diagnostic-examinations" id="markdown-toc-use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</a></li>
-      <li><a href="#group-a-direct-observations" id="markdown-toc-group-a-direct-observations">Group A: Direct observations</a></li>
-      <li><a href="#group-b-imaging-studies-with-report" id="markdown-toc-group-b-imaging-studies-with-report">Group B: Imaging studies with report</a></li>
-      <li><a href="#use-case-3-vision-therapy-and-rehabilitation" id="markdown-toc-use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</a></li>
-      <li><a href="#use-case-4-minor-ambulatory-surgical-procedures" id="markdown-toc-use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</a></li>
-      <li><a href="#use-case-5-cataract-surgery-with-intraocular-lens-implantation" id="markdown-toc-use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</a></li>
-      <li><a href="#use-case-6-teleophthalmology" id="markdown-toc-use-case-6-teleophthalmology">Use case 6: Teleophthalmology</a></li>
-    </ul>
-  </li>
+  <li><a href="#actors-used-throughout-this-page" id="markdown-toc-actors-used-throughout-this-page">Actors used throughout this page</a></li>
+  <li><a href="#baseline-resources-assumed-throughout" id="markdown-toc-baseline-resources-assumed-throughout">Baseline resources assumed throughout</a></li>
+  <li><a href="#use-case-1-general-ophthalmology-encounter" id="markdown-toc-use-case-1-general-ophthalmology-encounter">Use case 1: General ophthalmology encounter</a></li>
+  <li><a href="#use-case-2-diagnostic-examinations" id="markdown-toc-use-case-2-diagnostic-examinations">Use case 2: Diagnostic examinations</a></li>
+  <li><a href="#group-a-direct-observations" id="markdown-toc-group-a-direct-observations">Group A: Direct observations</a></li>
+  <li><a href="#group-b-imaging-studies-with-report" id="markdown-toc-group-b-imaging-studies-with-report">Group B: Imaging studies with report</a></li>
+  <li><a href="#use-case-3-vision-therapy-and-rehabilitation" id="markdown-toc-use-case-3-vision-therapy-and-rehabilitation">Use case 3: Vision therapy and rehabilitation</a></li>
+  <li><a href="#use-case-4-minor-ambulatory-surgical-procedures" id="markdown-toc-use-case-4-minor-ambulatory-surgical-procedures">Use case 4: Minor ambulatory surgical procedures</a></li>
+  <li><a href="#use-case-5-cataract-surgery-with-intraocular-lens-implantation" id="markdown-toc-use-case-5-cataract-surgery-with-intraocular-lens-implantation">Use case 5: Cataract surgery with intraocular lens implantation</a></li>
+  <li><a href="#use-case-6-teleophthalmology" id="markdown-toc-use-case-6-teleophthalmology">Use case 6: Teleophthalmology</a></li>
 </ul>
 
 </div>
-<h1 id="use-cases">Use Cases</h1>
-
 <p>This page describes the clinical scenarios that motivated the profiles defined in this
 guide. Each use case lists the actors involved, the general flow, and the FHIR resources
 that come into play. For the full technical detail of each profile, see
@@ -185,7 +210,7 @@ that come into play. For the full technical detail of each profile, see
 
 <h3 id="actors-used-throughout-this-page">Actors used throughout this page</h3>
 
-<p><a name="l337">​</a>To keep this guide usable across different health systems, the following generic actor
+<p><a name="l377">​</a>To keep this guide usable across different health systems, the following generic actor
 names are used instead of country-specific role titles (see the
 <a href="cl/index.html">FHIR4Eyes CL</a> extension for Chile-specific role mappings):</p>
 
@@ -684,7 +709,7 @@ case.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

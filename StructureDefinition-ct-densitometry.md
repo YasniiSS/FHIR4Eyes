@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-densitometry | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTDensitometry |
+| Draft as of 2026-10-19 | *Computable Name*:CTDensitometry |
 
  
 Represents the corneal densitometry (light backscatter) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Densitometry section): three radial zones plus total, and a per-layer breakdown (anterior, central, posterior). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+
+Represents the corneal densitometry (light backscatter) analysis of a corneal tomography exam: three radial zones (0-2 mm, 2-6 mm, 6-10 mm) plus total, and a per-layer breakdown (anterior, central, posterior). Densitometry describes a transparency/light-scatter property rather than a shape property, so it is one of six separate analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. Component codes are left open (see [Terminology](terminology.md)).
+
+**Examples:** [CT densitometry: right eye](Observation-CTDensitometryRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-densitometry.csv)
   "name" : "CTDensitometry",
   "title" : "Corneal Tomography - Densitometry",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

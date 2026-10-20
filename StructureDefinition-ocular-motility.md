@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OcularMotility |
+| Draft as of 2026-10-19 | *Computable Name*:OcularMotility |
 
  
 Represents the assessment of extraocular muscle function (hypofunction or hyperfunction) for a specific eye and muscle. Recorded per eye, since motility findings can differ between the two eyes independently. 
+
+Represents the assessment of extraocular muscle function (hypofunction or hyperfunction) for a specific eye and muscle. It is a **direct** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md): it produces a single result and does not vary by gaze position.
+
+Motility is recorded per eye, since findings can differ between the two eyes independently: `bodySite` and its `bodySiteEye` extension referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md) are therefore required (`1..1`). The `muscle` (which of the six extraocular muscles) and `finding` (hypofunction or hyperfunction) components are both required; the finding terminology is still to be confirmed. See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
+
+**Examples:** [Ocular motility: left eye](Observation-OcularMotilityLeftEyeExample.md), [Ocular motility: right eye](Observation-OcularMotilityRightEyeExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ocular-motility.csv)
   "name" : "OcularMotility",
   "title" : "Ocular Motility",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

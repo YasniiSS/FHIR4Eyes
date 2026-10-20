@@ -1,10 +1,10 @@
-# SpecularMicroscopyRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Specular microscopy: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **SpecularMicroscopyRightEyeExample**
+* **Specular microscopy: right eye**
 
-## Example Observation: SpecularMicroscopyRightEyeExample
+## Example Observation: Specular microscopy: right eye
 
 Profile: [Ophthalmic Specular Microscopy](StructureDefinition-ophthalmic-specular-microscopy.md)
 

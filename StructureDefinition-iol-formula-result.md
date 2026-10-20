@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:IOLFormulaResult |
+| Draft as of 2026-10-19 | *Computable Name*:IOLFormulaResult |
 
  
 Represents the result of a single IOL power calculation formula (e.g. Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected refraction. Not intended to be used standalone: always referenced via hasMember from an OphthalmicOcularBiometry instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. 
+
+Represents the result of a single IOL power calculation formula (for example Barrett Universal II, SRK/T, Holladay), including the lens constant, the suggested IOL model and power, the expected refraction, and optionally the full IOL power table from the report; the `formula` component is required. It is not intended to be used standalone: it is always referenced via `hasMember` from an [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. See [OphthalmicOcularBiometry](StructureDefinition-ophthalmic-ocular-biometry.md) for the design rationale.
+
+**Examples:** [IOL formula: Barrett Universal II](Observation-IOLFormulaBarrettExample.md), [IOL formula: SRK/T](Observation-IOLFormulaSRKTExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
   "name" : "IOLFormulaResult",
   "title" : "IOL Formula Result",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

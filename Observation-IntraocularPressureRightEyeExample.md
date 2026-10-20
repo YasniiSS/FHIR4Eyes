@@ -1,10 +1,10 @@
-# IntraocularPressureRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# IOP: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **IntraocularPressureRightEyeExample**
+* **IOP: right eye**
 
-## Example Observation: IntraocularPressureRightEyeExample
+## Example Observation: IOP: right eye
 
 Profile: [Intraocular Pressure](StructureDefinition-intraocular-pressure.md)
 

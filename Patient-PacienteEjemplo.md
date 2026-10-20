@@ -1,10 +1,10 @@
-# PacienteEjemplo - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Patient (Chilean RUT identifier) - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PacienteEjemplo**
+* **Patient (Chilean RUT identifier)**
 
-## Example Patient: PacienteEjemplo
+## Example Patient: Patient (Chilean RUT identifier)
 
 Profile: [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md)
 

@@ -9,10 +9,12 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:KrimskyTest |
+| Draft as of 2026-10-19 | *Computable Name*:KrimskyTest |
 
  
 Represents a Krimsky test (corneal light reflex test with prism), measuring ocular deviation in prism diopters across multiple gaze positions. Follows the same structural pattern as PrismCoverTest: each gaze position is a separate GazePositionMeasurement, referenced via hasMember. 
+
+Represents a Krimsky test (corneal light reflex test with prism), measuring ocular deviation in prism diopters across multiple gaze positions. It is a **position-based** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md), following the same structural pattern as [PrismCoverTest](StructureDefinition-prism-cover-test.md): a small panel (`value[x]` is `0..0`) that groups one [GazePositionMeasurement](StructureDefinition-gaze-position-measurement.md) per gaze position via `hasMember` (`1..*`), each using the quantitative `horizontalDeviation` and `verticalDeviation` components. Test distance and correction status are recorded as the optional `testDistance` and `correctionStatus` components on this panel. See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
 
 **Usages:**
 
@@ -42,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-krimsky-test.csv), [
   "name" : "KrimskyTest",
   "title" : "Krimsky Test",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

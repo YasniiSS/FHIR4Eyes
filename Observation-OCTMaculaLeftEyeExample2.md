@@ -1,10 +1,10 @@
-# OCTMaculaLeftEyeExample2 - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT macula: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTMaculaLeftEyeExample2**
+* **OCT macula: left eye**
 
-## Example Observation: OCTMaculaLeftEyeExample2
+## Example Observation: OCT macula: left eye
 
 Profile: [Ophthalmic OCT Macula](StructureDefinition-ophthalmic-oct-macula.md)
 

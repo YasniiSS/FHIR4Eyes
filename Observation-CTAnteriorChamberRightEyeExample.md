@@ -1,10 +1,10 @@
-# CTAnteriorChamberRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT anterior chamber: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTAnteriorChamberRightEyeExample**
+* **CT anterior chamber: right eye**
 
-## Example Observation: CTAnteriorChamberRightEyeExample
+## Example Observation: CT anterior chamber: right eye
 
 Profile: [Corneal Tomography - Anterior Chamber](StructureDefinition-ct-anterior-chamber.md)
 

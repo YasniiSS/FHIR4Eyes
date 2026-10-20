@@ -1,10 +1,10 @@
-# PachymetryLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Pachymetry: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PachymetryLeftEyeExample**
+* **Pachymetry: left eye**
 
-## Example Observation: PachymetryLeftEyeExample
+## Example Observation: Pachymetry: left eye
 
 Profile: [Pachymetry](StructureDefinition-pachymetry.md)
 

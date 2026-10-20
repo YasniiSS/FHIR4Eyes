@@ -9,11 +9,38 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CornealTomographyReport |
+| Draft as of 2026-10-19 | *Computable Name*:CornealTomographyReport |
 
  
 A specialization of OphthalmicDiagnosticReport for corneal tomography exams (e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses (CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport grouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula). 
 Open question, not yet resolved: in practice, a tomography device may print these as separate reports or 'maps' (an anterior surface map, a posterior surface map, and so on) rather than a single integrated report. For now, this guide captures all six as results under a single combined report, since the current priority is representing the underlying data correctly rather than resolving the exact report/printout structure a given device produces. Whether this should instead be split into multiple report profiles is left open for future review. 
+
+A modern corneal tomographer (Scheimpflug/Pentacam-style device) produces a single exam session that covers several genuinely distinct analyses: the shape of the front of the cornea, the shape of the back of the cornea, how thick the cornea is at each point, the anterior chamber behind it, derived keratoconus screening indices, and corneal transparency (densitometry). This guide represents each of these six analyses as its own `Observation` profile, grouped together under a single `CornealTomographyReport`, a specialization of [OphthalmicDiagnosticReport](StructureDefinition-ophthalmic-diagnostic-report.md) whose `result` is restricted to the six analyses: [CTAnteriorSurface](StructureDefinition-ct-anterior-surface.md), [CTPosteriorSurface](StructureDefinition-ct-posterior-surface.md), [CTPachymetry](StructureDefinition-ct-pachymetry.md), [CTAnteriorChamber](StructureDefinition-ct-anterior-chamber.md), [CTKeratoconusIndices](StructureDefinition-ct-keratoconus-indices.md), and [CTDensitometry](StructureDefinition-ct-densitometry.md). Not all six are necessarily present, depending on the device.
+
+```
+graph TD
+    R[CornealTomographyReport] -->|result| A[CTAnteriorSurface<br/>54 components]
+    R -->|result| B[CTPosteriorSurface<br/>7 components]
+    R -->|result| C[CTPachymetry<br/>6 components]
+    R -->|result| D[CTAnteriorChamber<br/>5 components]
+    R -->|result| E[CTKeratoconusIndices<br/>19 components]
+    R -->|result| F[CTDensitometry<br/>7 components]
+
+```
+
+### Design decisions
+
+**Why six Observations, not one, and not fifty-plus.** This is the same underlying principle applied in the OCT profiles (see the "Component-based" note on [OphthalmicOCTRNFL](StructureDefinition-ophthalmic-oct-rnfl.md)), taken to its natural conclusion for a much richer exam. Values that describe the **same** underlying analysis — for example, all the different keratometry and elevation readings that describe the anterior corneal surface — are grouped as `component` entries within a single Observation, exactly like RNFL's quadrant thicknesses. But `CTAnteriorSurface` and `CTPosteriorSurface` are **not** merged into one Observation with a "front/back" component, even though they share many parallel fields (K1, K2, Km, Q-value, elevation, BFS radius all appear in both). The distinction is not "are these numbers similar in shape", it is "are these numbers describing the same physical/optical entity". The anterior and posterior corneal surfaces are optically and clinically distinct surfaces — a keratorefractive surgeon reasons about them separately, and a device can output one without the other (for example, older Placido-based topographers only measure the anterior surface). Likewise, pachymetry (a thickness map), the anterior chamber (a different anatomical structure entirely), keratoconus indices (derived screening scores, not raw measurements), and densitometry (a transparency/light-scatter property, not a shape property) are each their own kind of analysis, so each gets its own Observation.
+
+**Rule of thumb used throughout this guide:** if two values are two facets of describing the **same object at the same moment** (e.g. this scan's superior RNFL thickness and this scan's inferior RNFL thickness — both are "how thick is the RNFL, broken down by direction"), they are components of one Observation. If two values describe **different objects or different kinds of analysis** (e.g. how the front of the cornea curves vs. how thick the cornea is), they belong in separate Observations, tied together by the parent `DiagnosticReport`.
+
+**A note on the HL7 Eye Care IG.** Corneal tomography of this depth (Scheimpflug-based, with keratoconus screening indices) is not covered by the HL7 Eye Care IG at all; this entire family of profiles is a FHIR4Eyes contribution, not an adaptation of an existing pattern.
+
+**Grouping under one report is provisional.** In practice, a tomography device may print these as separate reports or "maps" (an anterior surface map, a posterior surface map, and so on) rather than a single integrated report. Whether these six analyses should be grouped under a single report, or split to mirror how a given device physically prints separate "maps", is left open for future review, since the current priority is representing the underlying data correctly.
+
+**Sourced directly from the FHIR4Eyes Observations catalog.** Every component in these six profiles, including the components that reference specific DICOM Sup 168 tags (vertex location, pupil centroid, map type, and others), was taken directly from the project's maintained variable catalog, not invented for this guide. Where a component has no confirmed SNOMED CT or LOINC binding, its code is left open, following this guide's terminology rigor (see [Terminology](terminology.md)).
+
+**Examples:** [Corneal tomography report: right eye](DiagnosticReport-CornealTomographyReportRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +70,7 @@ Other representations of profile: [CSV](StructureDefinition-corneal-tomography-r
   "name" : "CornealTomographyReport",
   "title" : "Corneal Tomography Report",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

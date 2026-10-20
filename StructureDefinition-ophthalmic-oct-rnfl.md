@@ -9,10 +9,37 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicOCTRNFL |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicOCTRNFL |
 
  
 Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL) analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics, alongside acquisition metadata and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile. 
+
+Represents an OCT optic nerve head (ONH)/retinal nerve fiber layer (RNFL) analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), and the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics, alongside acquisition metadata and an overall normative classification. It is grouped under an [OphthalmicDiagnosticReport](StructureDefinition-ophthalmic-diagnostic-report.md) together with the [OphthalmicImagingStudy](StructureDefinition-ophthalmic-imaging-study.md) it was derived from, alongside its companion macular analysis, [OphthalmicOCTMacula](StructureDefinition-ophthalmic-oct-macula.md). Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section).
+
+```
+graph TD
+    R[OphthalmicDiagnosticReport<br/>OCT report] -->|imagingStudy| S[OphthalmicImagingStudy<br/>RNFL + Macula series]
+    R -->|result| RNFL[OphthalmicOCTRNFL<br/>25 components]
+    R -->|result| MAC[OphthalmicOCTMacula<br/>22 components]
+
+    RNFL -.-> RNFLG["cup/disc geometry, DDLS,<br/>TSNIT mean/SD"]
+    MAC -.-> MACG["ETDRS 9-sector grid,<br/>acquisition metadata"]
+
+```
+
+### Design decisions
+
+**Component-based, diverging from the HL7 Eye Care IG's atomic pattern.** The HL7 Eye Care IG represents each individual sector value (for example, "RNFL superior thickness") as its own separate `Observation`, each with a single LOINC code and a single value. This guide instead represents each full analysis as a single `Observation` with multiple `component` entries, one per measurement.
+
+This is a deliberate divergence, not an oversight: the values produced by a single OCT scan are, by FHIR's own definition of `component`, "multiple component observations for a single measurement" (the same pattern used for systolic/diastolic blood pressure). They are produced together, from the same scan, at the same instant, for the same eye; modeling them as separate, disconnected `Observation` resources would lose that inherent grouping and require an additional panel/`hasMember` layer to reconstruct it. The component-based approach keeps that grouping implicit in the resource's own structure.
+
+**Real LOINC codes, where they exist, are laterality-specific.** The HL7 Eye Care IG's RNFL value sets use **different** LOINC codes for the right versus left eye (for example, `86276-3` for right eye superior RNFL thickness, `86277-1` for left eye). Because this guide's `component[x].code` is fixed once per profile (not per instance), it cannot be pre-bound to a single laterality-specific code that would work for both eyes. The profile's own `code` is fixed to the laterality-neutral LOINC `86291-2` (RNFL panel by OCT); where a laterality-specific component code applies, implementers select the correct one for the eye being examined (indicated via `bodySite`) when populating an instance.
+
+**Normative classification.** The overall classification (Within Normal Limits / Borderline / Outside Normal Limits) commonly shown in commercial vendor reports (see the reference reports this guide's examples are based on) is recorded in `Observation.interpretation` (`0..1`). It does not exist in the HL7 Eye Care IG's RNFL value set and has no confirmed SNOMED CT or LOINC binding yet; this is left open pending verification, following the same pattern as other unconfirmed terminology in this guide.
+
+**Signal strength.** The `inv-oct-signal` invariant raises a warning when the `signalStrength` component is absent.
+
+**Examples:** [OCT RNFL: right eye](Observation-OCTRNFLRightEyeExample.md), [OCT RNFL: left eye](Observation-OCTRNFLLeftEyeExample.md), [OCT report (RNFL + macula)](DiagnosticReport-OCTDiagnosticReportExample.md)
 
 **Usages:**
 
@@ -42,7 +69,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
   "name" : "OphthalmicOCTRNFL",
   "title" : "Ophthalmic OCT RNFL",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

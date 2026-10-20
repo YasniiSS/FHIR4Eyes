@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-medication-administration | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicMedicationAdministration |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicMedicationAdministration |
 
  
 Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. Always linked back to the specific procedure it was administered during, via partOf, consistent with FHIR's standard 'larger event of which this is a component' pattern. 
+
+Records the administration of a medication during an ophthalmic procedure, most notably an intravitreal injection. It is always linked back to the specific [OphthalmicProcedure](StructureDefinition-ophthalmic-procedure.md) it was administered during, via `partOf` (`1..1`), consistent with FHIR's standard "larger event of which this is a component" pattern; the procedure does not reference the administration.
+
+The medication itself is a required reference to an [OphthalmicMedication](StructureDefinition-ophthalmic-medication.md). `effective[x]`, at least one `performer`, and `dosage` (with required `route` and `dose`) are also required. The laterality of the administration site is recorded on `dosage.site`, using the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md).
+
+**Examples:** [Bevacizumab administration: dose 1](MedicationAdministration-AvastinDose1AdministrationExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-medicatio
   "name" : "OphthalmicMedicationAdministration",
   "title" : "Ophthalmic Medication Administration",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

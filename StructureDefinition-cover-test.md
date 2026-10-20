@@ -9,10 +9,16 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CoverTest |
+| Draft as of 2026-10-19 | *Computable Name*:CoverTest |
 
  
 Represents a cover test result, performed with or without correction, at near or far distance. Findings are recorded as open text/coded values for now (PC: orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has been verified for these specific findings yet. 
+
+Represents a cover test result, performed with or without correction, at near or far distance. It is a **direct** sub-test of a [StrabismusExam](StructureDefinition-strabismus-exam.md): it produces a single result and does not vary by gaze position.
+
+The finding is recorded in `value[x]` as a `CodeableConcept` or `string` (for example orthophoria, alternating exotropia). No SNOMED CT or LOINC binding has been verified for these findings yet, so terminology is left open. Correction status and test distance are recorded as the optional `correctionStatus` and `testDistance` components, and `bodySite` (`0..1`) can reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md). See [StrabismusExam](StructureDefinition-strabismus-exam.md) for the overall architecture.
+
+**Examples:** [Cover test](Observation-CoverTestExample.md)
 
 **Usages:**
 
@@ -42,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
   "name" : "CoverTest",
   "title" : "Cover Test",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

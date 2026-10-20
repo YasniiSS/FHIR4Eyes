@@ -1,10 +1,10 @@
-# CornealTomographyServiceRequestExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Corneal tomography order - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CornealTomographyServiceRequestExample**
+* **Corneal tomography order**
 
-## Example ServiceRequest: CornealTomographyServiceRequestExample
+## Example ServiceRequest: Corneal tomography order
 
 Profile: [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md)
 

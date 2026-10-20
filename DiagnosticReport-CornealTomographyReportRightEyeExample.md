@@ -1,10 +1,10 @@
-# CornealTomographyReportRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Corneal tomography report: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CornealTomographyReportRightEyeExample**
+* **Corneal tomography report: right eye**
 
-## Example DiagnosticReport: CornealTomographyReportRightEyeExample
+## Example DiagnosticReport: Corneal tomography report: right eye
 
 Profile: [Corneal Tomography Report](StructureDefinition-corneal-tomography-report.md)
 

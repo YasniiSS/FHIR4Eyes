@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "CornealTomographyReport"] ;
   fhir:StructureDefinition.title [ fhir:value "Corneal Tomography Report"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-09-11T00:16:12+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-10-19T22:17:00-03:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "FHIR4Eyes Project"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -726,12 +726,8 @@
        fhir:ElementDefinition.slicing [
          fhir:ElementDefinition.slicing.discriminator [
            fhir:index 0 ;
-           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "value" ] ;
-           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "coding.code" ]
-         ], [
-           fhir:index 1 ;
-           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "value" ] ;
-           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "coding.system" ]
+           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "pattern" ] ;
+           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "$this" ]
          ] ;
          fhir:ElementDefinition.slicing.rules [ fhir:value "open" ]
        ] ;

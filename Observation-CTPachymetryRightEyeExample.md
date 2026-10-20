@@ -1,10 +1,10 @@
-# CTPachymetryRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT pachymetry: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTPachymetryRightEyeExample**
+* **CT pachymetry: right eye**
 
-## Example Observation: CTPachymetryRightEyeExample
+## Example Observation: CT pachymetry: right eye
 
 Profile: [Corneal Tomography - Pachymetry](StructureDefinition-ct-pachymetry.md)
 

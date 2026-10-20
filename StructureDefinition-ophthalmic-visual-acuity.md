@@ -9,10 +9,34 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-visual-acuity | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:OphthalmicVisualAcuity |
+| Draft as of 2026-10-19 | *Computable Name*:OphthalmicVisualAcuity |
 
  
 Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code that bundles all of these together. This follows a more granular pattern than the HL7 Eye Care IG's published (2021) approach, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes. See Terminology for the underlying terminology strategy, including the LowVisionAssessment value set for vision below what any chart can measure. 
+
+Represents a visual acuity measurement, modeled as discrete, independently combinable components (distance, correction status, chart/optotype, scale, pinhole) rather than as a single pre-coordinated code.
+
+### Design decisions
+
+**Granular components, not a single pre-coordinated code.** The HL7 Eye Care IG's published (2021) approach captures distance and correction status entirely within `code` itself (for example, SNOMED CT `251739003`, "Distance visual acuity"), relying on SNOMED CT to provide a distinct, pre-coordinated concept for every possible combination. This guide instead follows a more granular pattern, aligned with a newer proposal discussed within SNOMED International's Eye Care Clinical Reference Group (2025), which favors flexible, independently recordable components over pre-coordinated codes: `code` is fixed to the generic LOINC `98497-1` "Visual acuity panel", and the specific detail is captured through separate components instead:
+
+| | |
+| :--- | :--- |
+| `distance` | The testing distance (e.g. in metres). Not applicable to the qualitative`LowVisionAssessment`values (light perception, no light perception), which are distance-independent by nature. For counting fingers, this captures the specific distance separately from the qualitative "counting fingers" value itself. |
+| `correctionStatus` | Only two states are used clinically: corrected or uncorrected. |
+| `chart` | The chart or optotype used (e.g. Snellen, ETDRS), coded with LOINC`79908-0`. |
+| `scale` | The scale the value is expressed in (e.g. Snellen fraction, decimal, LogMAR). |
+| `pinhole` | A boolean: whether this specific measurement was taken through a pinhole occluder. |
+
+> The exact code system to use for the `distance` component's own code (and for `correctionStatus`, `scale`, and `pinhole`) is still to be identified; a text-only code is used for now (see the FSH source).
+
+**Value.** `value[x]` accepts `Ratio` (Snellen fractions), `Quantity` (decimal or LogMAR), or `CodeableConcept` (the qualitative [LowVisionAssessment](ValueSet-low-vision-assessment-vs.md) scale, for vision that falls below what any chart can measure; see [Terminology](terminology.md)).
+
+**Pinhole measurements reference their base measurement.** In practice, a pinhole measurement is only taken as a follow-up to an uncorrected measurement already taken (for example, "OD sc 20/40, with pinhole 20/30"): it does not happen on its own. Rather than leaving the two measurements unconnected, or forcing them into a single Observation, this guide records them as two separate `OphthalmicVisualAcuity` instances (one with the `pinhole` component set to `false` or absent, one with it set to `true`), with the pinhole measurement's `derivedFrom` referencing the base measurement it followed. This mirrors the same pattern already used for [CorrectedIntraocularPressure](StructureDefinition-corrected-intraocular-pressure.md), which references the plain IOP and pachymetry measurements it derives from.
+
+**Laterality.** Uses the same `bodySite` extension pattern as the rest of this guide, referencing [OcularBodyStructure](StructureDefinition-ocular-body-structure.md). The `inv-va-laterality` invariant raises a warning when `bodySite` is absent, which is acceptable for binocular measurements.
+
+**Examples:** [Visual acuity: uncorrected, right eye](Observation-VisualAcuityUncorrectedRightEyeExample.md), [Visual acuity: corrected, left eye](Observation-VisualAcuityCorrectedLeftEyeExample.md), [Visual acuity: pinhole, right eye](Observation-VisualAcuityPinholeRightEyeExample.md), [Visual acuity: counting fingers, right eye](Observation-VisualAcuityCountingFingersRightEyeExample.md), [Visual acuity: binocular](Observation-VisualAcuityBinocularExample.md)
 
 **Usages:**
 
@@ -43,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-visual-ac
   "name" : "OphthalmicVisualAcuity",
   "title" : "Ophthalmic Visual Acuity",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

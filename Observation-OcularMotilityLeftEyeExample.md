@@ -1,10 +1,10 @@
-# OcularMotilityLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Ocular motility: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OcularMotilityLeftEyeExample**
+* **Ocular motility: left eye**
 
-## Example Observation: OcularMotilityLeftEyeExample
+## Example Observation: Ocular motility: left eye
 
 Profile: [Ocular Motility](StructureDefinition-ocular-motility.md)
 

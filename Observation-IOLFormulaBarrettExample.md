@@ -1,10 +1,10 @@
-# IOLFormulaBarrettExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# IOL formula: Barrett Universal II - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **IOLFormulaBarrettExample**
+* **IOL formula: Barrett Universal II**
 
-## Example Observation: IOLFormulaBarrettExample
+## Example Observation: IOL formula: Barrett Universal II
 
 Profile: [IOL Formula Result](StructureDefinition-iol-formula-result.md)
 

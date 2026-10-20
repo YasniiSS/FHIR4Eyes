@@ -1,10 +1,10 @@
-# AvastinDose1AdministrationExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Bevacizumab administration: dose 1 - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AvastinDose1AdministrationExample**
+* **Bevacizumab administration: dose 1**
 
-## Example MedicationAdministration: AvastinDose1AdministrationExample
+## Example MedicationAdministration: Bevacizumab administration: dose 1
 
 Profile: [Ophthalmic Medication Administration](StructureDefinition-ophthalmic-medication-administration.md)
 

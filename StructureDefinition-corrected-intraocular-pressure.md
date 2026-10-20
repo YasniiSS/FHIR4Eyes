@@ -9,10 +9,24 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CorrectedIntraocularPressure |
+| Draft as of 2026-10-19 | *Computable Name*:CorrectedIntraocularPressure |
 
  
 Represents an intraocular pressure reading corrected for corneal thickness (pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing both the IOP and pachymetry measurements it was derived from via derivedFrom. 
+
+Represents an intraocular pressure reading corrected for corneal thickness (pachymetry), with the corrected value as a required `Quantity` in mmHg. It is recorded as a separate `Observation` from the plain IOP reading, rather than overwriting or annotating it.
+
+### Usage
+
+**Always derived, never standalone.** `derivedFrom` is `1..*` and only accepts `Reference(IntraocularPressure | Pachymetry)`: a corrected reading always references the specific [IntraocularPressure](StructureDefinition-intraocular-pressure.md) reading and [Pachymetry](StructureDefinition-pachymetry.md) measurement it was calculated from.
+
+**Within a tension curve.** A [TensionCurve](StructureDefinition-tension-curve.md) may include a `CorrectedIntraocularPressure` as one of its members, alongside plain `IntraocularPressure` readings. Pachymetry is not referenced directly from the curve, since the corrected reading already references it via `derivedFrom`; see the worked example and diagram on the [TensionCurve](StructureDefinition-tension-curve.md) page.
+
+**Laterality.** `bodySite` (`0..1`) uses the standard `bodySite` extension to reference an [OcularBodyStructure](StructureDefinition-ocular-body-structure.md).
+
+The same `derivedFrom` pattern is reused by [OphthalmicVisualAcuity](StructureDefinition-ophthalmic-visual-acuity.md) for pinhole measurements.
+
+**Examples:** [Corrected IOP: right eye](Observation-CorrectedIntraocularPressureRightEyeExample.md), [Corrected IOP: left eye](Observation-CorrectedIntraocularPressureLeftEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
   "name" : "CorrectedIntraocularPressure",
   "title" : "Corrected Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

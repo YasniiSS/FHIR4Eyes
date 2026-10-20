@@ -1,10 +1,10 @@
-# TensionCurveRightEye1200Example - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Tension curve reading 12:00, right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **TensionCurveRightEye1200Example**
+* **Tension curve reading 12:00, right eye**
 
-## Example Observation: TensionCurveRightEye1200Example
+## Example Observation: Tension curve reading 12:00, right eye
 
 Profile: [Intraocular Pressure](StructureDefinition-intraocular-pressure.md)
 

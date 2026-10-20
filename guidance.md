@@ -1,11 +1,9 @@
-# Guidance - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# General Guidance - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
-* **Guidance**
+* **General Guidance**
 
-## Guidance
-
-# Guidance
+## General Guidance
 
 This page explains the conventions used consistently throughout FHIR4Eyes, and gives practical guidance for implementers building systems against these profiles. If you are new to this guide, this page is a good companion to [Profiles](profiles.md): the profiles page defines **what** each resource looks like, while this page explains the recurring **patterns** behind those definitions.
 
@@ -69,7 +67,7 @@ For worked, diagrammed examples of this pattern (including how `TensionCurve` co
 
 ## The granular-components pattern
 
-`OphthalmicVisualAcuity` and the `StrabismusExam` sub-test family follow a shared design principle: rather than using a single pre-coordinated code that bundles multiple pieces of clinical detail together (for example, one SNOMED CT code for "distance visual acuity, uncorrected"), this guide records that detail as independent, optional `component` elements (distance, correction status, chart type, and so on). See [Profiles](profiles.md#ophthalmicvisualacuity) for the full rationale, including how this diverges from the HL7 Eye Care IG's 2021 approach.
+`OphthalmicVisualAcuity` and the `StrabismusExam` sub-test family follow a shared design principle: rather than using a single pre-coordinated code that bundles multiple pieces of clinical detail together (for example, one SNOMED CT code for "distance visual acuity, uncorrected"), this guide records that detail as independent, optional `component` elements (distance, correction status, chart type, and so on). See [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md) for the full rationale, including how this diverges from the HL7 Eye Care IG's 2021 approach.
 
 In FSH, this pattern always requires declaring the slicing discriminator explicitly before `component contains`:
 

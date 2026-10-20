@@ -1,10 +1,10 @@
-# CoverTestExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Cover test - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CoverTestExample**
+* **Cover test**
 
-## Example Observation: CoverTestExample
+## Example Observation: Cover test
 
 Profile: [Cover Test](StructureDefinition-cover-test.md)
 

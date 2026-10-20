@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTAnteriorSurface |
+| Draft as of 2026-10-19 | *Computable Name*:CTAnteriorSurface |
 
  
 Represents the anterior corneal surface analysis component of a corneal tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Anterior Surface section). Component codes are left as open text for now, following this guide's terminology rigor: most confirmed SNOMED CT/LOINC codes were not identified for these device-specific indices (see Terminology); a handful of components reference specific DICOM Sup 168 tags directly in their terminology, noted in the catalog. 
+
+Represents the anterior corneal surface analysis of a corneal tomography exam: keratometry (K1, K2, Km, K Max and their axes and radii), asphericity, elevation from the best fit sphere, surface regularity and asymmetry indices, zonal powers, astigmatism and aberration values, surgical planning values, and a handful of components that reference specific DICOM Sup 168 tags. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTPosteriorSurface](StructureDefinition-ct-posterior-surface.md) because the two surfaces are optically and clinically distinct, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are left open where no confirmed SNOMED CT or LOINC code exists (see [Terminology](terminology.md)).
+
+**Examples:** [CT anterior surface: right eye](Observation-CTAnteriorSurfaceRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
   "name" : "CTAnteriorSurface",
   "title" : "Corneal Tomography - Anterior Surface",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

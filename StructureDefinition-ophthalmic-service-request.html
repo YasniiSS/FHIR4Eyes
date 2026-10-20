@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.41"}
-    h3,h4,h5,h6{--heading-prefix:"9.41"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.4"}
+    h3,h4,h5,h6{--heading-prefix:"12.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -276,9 +306,80 @@ clinical and design rationale.</p>
 
 
 
+<div style="display:inline-block" markdown="1">
+
+<p>Represents a request for an ophthalmic examination and, where relevant, its interpretation
+or treatment. This single profile covers three scenarios seen in practice:</p>
+
+<ol>
+  <li>An order created and fulfilled at the same facility (for example, a primary care
+professional orders and performs the examination locally).</li>
+  <li>An order created at a primary care facility but referred to a hospital or reference
+center for analysis and/or treatment, as in
+<a href="usecases.html#use-case-6-teleophthalmology">use case 6 (teleophthalmology)</a>.</li>
+  <li>An order created directly at a hospital (secondary care) facility.</li>
+</ol>
+
+<p>There is no equivalent profile in the HL7 Eye Care IG to align with; this profile is
+designed from the base FHIR <code class="language-plaintext highlighter-rouge">ServiceRequest</code> resource and this guide's own use cases.</p>
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>A single generic profile.</strong> Rather than defining separate profiles for each scenario,
+<code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code> is one profile that covers all three. What differs between them
+is simply who is recorded as <code class="language-plaintext highlighter-rouge">requester</code>, <code class="language-plaintext highlighter-rouge">performer</code>, and where the order originated, not
+the structure of the resource itself.</p>
+
+<p><strong>Timing.</strong> For examinations that require acquiring an imaging study (as in
+<a href="usecases.html#group-b-imaging-studies-with-report">use case 2, group B</a>), the request is
+created <em>before</em> the study exists: it requests both the acquisition and, where the request
+is referred elsewhere, its remote interpretation. The resulting
+<a href="StructureDefinition-ophthalmic-imaging-study.html">OphthalmicImagingStudy</a> references this
+request via <code class="language-plaintext highlighter-rouge">ImagingStudy.basedOn</code>.</p>
+
+<p><strong>Code.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.code</code> (<code class="language-plaintext highlighter-rouge">1..1</code>) identifies the specific examination being
+requested (for example OCT, retinography), not a generic "referral" or "remote
+interpretation" concept. It follows the same terminology strategy already defined for that
+examination in <a href="terminology.html">Terminology</a> (SNOMED CT or LOINC, depending on the
+examination).</p>
+
+<p><strong>Category.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.category</code> is <code class="language-plaintext highlighter-rouge">1..1</code>, fixed to SNOMED CT <code class="language-plaintext highlighter-rouge">394594003</code>
+(Ophthalmology). Unlike
+<a href="StructureDefinition-ophthalmic-diagnostic-report.html">OphthalmicDiagnosticReport</a>, no
+second "type" slice is used here.</p>
+
+<p><strong>Requisition.</strong> When a single medical order includes several examinations, each becomes
+its own <code class="language-plaintext highlighter-rouge">OphthalmicServiceRequest</code>; <code class="language-plaintext highlighter-rouge">requisition</code> is the shared identifier that groups them
+together as belonging to the same order.</p>
+
+<p><strong>Roles.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.requester</code> (<code class="language-plaintext highlighter-rouge">1..1</code>) is the professional who initiates the
+request. <code class="language-plaintext highlighter-rouge">ServiceRequest.performer</code> is the professional expected to fulfill it (who may be
+the same professional, for a locally fulfilled order, or a different one at another
+facility, for a referred order). Both are kept as simple <code class="language-plaintext highlighter-rouge">Reference(Practitioner)</code>, rather
+than <code class="language-plaintext highlighter-rouge">Reference(PractitionerRole)</code>, since a single practitioner may hold roles at more than
+one facility and a simple practitioner reference avoids ambiguity about which role applies.</p>
+
+<p><strong>Originating facility.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.locationReference</code> (<code class="language-plaintext highlighter-rouge">Reference(Location)</code>) is
+used to explicitly record the facility where the order originated. This is kept as a
+generic, internationally applicable field. The specific Chilean mechanism of referral and
+counter-referral ("referencia y contrarreferencia"), which governs how a request moves
+between facilities within Chile's public health network, is a national workflow concern
+and belongs in the FHIR4Eyes CL extension, not in this Core profile.</p>
+
+<p><strong>Priority.</strong> <code class="language-plaintext highlighter-rouge">ServiceRequest.priority</code> uses the standard FHIR value set
+(<code class="language-plaintext highlighter-rouge">routine | urgent | asap | stat</code>); no ophthalmology-specific extension is needed for this.</p>
+
+<p><strong>Examples:</strong> <a href="ServiceRequest-OCTServiceRequestExample.html">OCT order</a>, <a href="ServiceRequest-OCTMaculaServiceRequestExample.html">OCT macula order</a>, <a href="ServiceRequest-OCTOpticDiscServiceRequestExample.html">OCT optic disc order</a>, <a href="ServiceRequest-CornealTomographyServiceRequestExample.html">Corneal tomography order</a></p>
+
+
+</div>
+
+
+
+
 <p><b>Usages:</b></p>
 <ul>
- <li>Refer to this Profile: <a href="StructureDefinition-ophthalmic-care-plan.html">Ophthalmic Care Plan</a>, <a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a>, <a href="StructureDefinition-ophthalmic-encounter.html">Ophthalmic Encounter</a> and <a href="StructureDefinition-ophthalmic-imaging-study.html">Ophthalmic Imaging Study</a></li>
+ <li>Refer to this Profile: <a href="StructureDefinition-ophthalmic-care-plan.html">Ophthalmic Care Plan</a>, <a href="StructureDefinition-ophthalmic-diagnostic-report.html">Ophthalmic Diagnostic Report</a>, <a href="StructureDefinition-ophthalmic-encounter.html">Ophthalmic Encounter</a>, <a href="StructureDefinition-ophthalmic-imaging-study.html">Ophthalmic Imaging Study</a> and <a href="StructureDefinition-ophthalmic-procedure.html">Ophthalmic Procedure</a></li>
  <li>Examples for this Profile: <a href="ServiceRequest-CornealTomographyServiceRequestExample.html">ServiceRequest/CornealTomographyServiceRequestExample</a>, <a href="ServiceRequest-OCTMaculaServiceRequestExample.html">ServiceRequest/OCTMaculaServiceRequestExample</a>, <a href="ServiceRequest-OCTOpticDiscServiceRequestExample.html">ServiceRequest/OCTOpticDiscServiceRequestExample</a> and <a href="ServiceRequest-OCTServiceRequestExample.html">ServiceRequest/OCTServiceRequestExample</a></li>
  <li>CapabilityStatements using this Profile: <a href="CapabilityStatement-FHIR4EyesCapabilityStatement.html">FHIR4Eyes Server Capability Statement</a></li>
 </ul>
@@ -480,7 +581,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestK'), 'binding', document.getElementById('cbophthalmic-service-requestK-binding').checked, document.getElementById('ppophthalmic-service-requestK'));
 document.getElementById('cbophthalmic-service-requestK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -817,7 +918,7 @@ filterDesc(document.getElementById('ophthalmic-service-requestK'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestD'), 'binding', document.getElementById('cbophthalmic-service-requestD-binding').checked, document.getElementById('ppophthalmic-service-requestD'));
 document.getElementById('cbophthalmic-service-requestD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1099,7 +1200,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Requested location<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" title="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" class="binding">ServiceDeliveryLocationRoleType</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">A location type where services are delivered.</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Requested location<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" title="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" class="binding">ServiceDeliveryLocationRoleType</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">A location type where services are delivered.</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="a31." data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ophthalmic-service-request-definitions.html#ServiceRequest.locationReference" title="A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center." data-no-external="true">locationReference</a><a name="s-ServiceRequest.locationReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -1150,7 +1251,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Request provenance<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestS'), 'binding', document.getElementById('cbophthalmic-service-requestS-binding').checked, document.getElementById('ppophthalmic-service-requestS'));
 document.getElementById('cbophthalmic-service-requestS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1323,12 +1424,12 @@ filterDesc(document.getElementById('ophthalmic-service-requestS'), 'obligation',
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A location type where services are delivered.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html">ServiceDeliveryLocationRoleType</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html">ServiceDeliveryLocationRoleType</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -1730,7 +1831,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestKA'), 'binding', document.getElementById('cbophthalmic-service-requestKA-binding').checked, document.getElementById('ppophthalmic-service-requestKA'));
 document.getElementById('cbophthalmic-service-requestKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2067,7 +2168,7 @@ filterDesc(document.getElementById('ophthalmic-service-requestKA'), 'obligation'
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestDA'), 'binding', document.getElementById('cbophthalmic-service-requestDA-binding').checked, document.getElementById('ppophthalmic-service-requestDA'));
 document.getElementById('cbophthalmic-service-requestDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2348,7 +2449,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Requested location<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" title="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" class="binding">ServiceDeliveryLocationRoleType</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">A location type where services are delivered.</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Requested location<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" title="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" class="binding">ServiceDeliveryLocationRoleType</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included." class="binding">example</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">A location type where services are delivered.</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="a31." data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ophthalmic-service-request-definitions.html#ServiceRequest.locationReference" title="A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center." data-no-external="true">locationReference</a><a name="sa-ServiceRequest.locationReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: #D50000" title="This element must be supported">S</span><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -2399,7 +2500,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Request provenance<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbophthalmic-service-requestSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ophthalmic-service-requestSA'), 'binding', document.getElementById('cbophthalmic-service-requestSA-binding').checked, document.getElementById('ppophthalmic-service-requestSA'));
 document.getElementById('cbophthalmic-service-requestSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2572,12 +2673,12 @@ filterDesc(document.getElementById('ophthalmic-service-requestSA'), 'obligation'
       <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A location type where services are delivered.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html">ServiceDeliveryLocationRoleType</a>
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html">ServiceDeliveryLocationRoleType</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType" title="Click to copy URL" class="btn-copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
     <td>
-      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+      <a href="http://terminology.hl7.org/7.4.0">THO v7.4</a>
     </td>
   </tr>
   <tr>
@@ -2847,7 +2948,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,10 +1,10 @@
-# IntraocularLensExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Intraocular lens (implanted device) - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **IntraocularLensExample**
+* **Intraocular lens (implanted device)**
 
-## Example Device: IntraocularLensExample
+## Example Device: Intraocular lens (implanted device)
 
 Profile: [Ophthalmic Device](StructureDefinition-ophthalmic-device.md)
 

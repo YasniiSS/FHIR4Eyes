@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTPosteriorSurface |
+| Draft as of 2026-10-19 | *Computable Name*:CTPosteriorSurface |
 
  
 Represents the posterior corneal surface analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior Surface section). Component codes are left as open text for now, following this guide's terminology rigor (see Terminology). 
+
+Represents the posterior corneal surface analysis of a corneal tomography exam: back surface keratometry (K1, K2, Km), astigmatism, asphericity (Q-value), elevation from the best fit sphere, and the best fit sphere radius. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), and is kept separate from [CTAnteriorSurface](StructureDefinition-ct-anterior-surface.md) even though they share many parallel fields, following the rule of thumb explained on the [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md) page. Component codes are left open where no confirmed SNOMED CT or LOINC code exists (see [Terminology](terminology.md)).
+
+**Examples:** [CT posterior surface: right eye](Observation-CTPosteriorSurfaceRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
   "name" : "CTPosteriorSurface",
   "title" : "Corneal Tomography - Posterior Surface",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

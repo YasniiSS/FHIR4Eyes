@@ -9,10 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-09-11 | *Computable Name*:CTPachymetry |
+| Draft as of 2026-10-19 | *Computable Name*:CTPachymetry |
 
  
 Represents the pachymetry (corneal thickness) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Distinct from the standalone Pachymetry profile used for simple central corneal thickness measurements outside the tomography context (see Profiles); this profile captures the fuller thickness map data a tomography device produces. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section). 
+
+Represents the pachymetry (corneal thickness map) analysis of a corneal tomography exam: central corneal thickness at the apex (the only required component) and at the pupil center, the thinnest point value and location, corneal volume, and the pachymetry progression index. It is one of six analyses grouped under a single [CornealTomographyReport](StructureDefinition-corneal-tomography-report.md), following the rule of thumb explained on that page. It is distinct from the standalone [Pachymetry](StructureDefinition-pachymetry.md) profile, used for simple central corneal thickness measurements outside the tomography context.
+
+**Examples:** [CT pachymetry: right eye](Observation-CTPachymetryRightEyeExample.md)
 
 **Usages:**
 
@@ -43,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
   "name" : "CTPachymetry",
   "title" : "Corneal Tomography - Pachymetry",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

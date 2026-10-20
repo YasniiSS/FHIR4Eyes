@@ -1,10 +1,10 @@
-# CTDensitometryRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# CT densitometry: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **CTDensitometryRightEyeExample**
+* **CT densitometry: right eye**
 
-## Example Observation: CTDensitometryRightEyeExample
+## Example Observation: CT densitometry: right eye
 
 Profile: [Corneal Tomography - Densitometry](StructureDefinition-ct-densitometry.md)
 

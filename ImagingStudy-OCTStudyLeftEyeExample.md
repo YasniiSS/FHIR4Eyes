@@ -1,10 +1,10 @@
-# OCTStudyLeftEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT imaging study: left eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTStudyLeftEyeExample**
+* **OCT imaging study: left eye**
 
-## Example ImagingStudy: OCTStudyLeftEyeExample
+## Example ImagingStudy: OCT imaging study: left eye
 
 Profile: [Ophthalmic Imaging Study](StructureDefinition-ophthalmic-imaging-study.md)
 

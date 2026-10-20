@@ -10,7 +10,7 @@
   "name" : "IntraocularPressure",
   "title" : "Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-09-11T00:16:12+00:00",
+  "date" : "2026-10-19T22:17:00-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -160,7 +160,7 @@
         "key" : "inv-iop-range",
         "severity" : "error",
         "human" : "IOP value must be between 0 and 80 mmHg",
-        "expression" : "valueQuantity.value >= 0 and valueQuantity.value <= 80",
+        "expression" : "value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 80)",
         "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
       }],
       "isModifier" : false,
@@ -2639,7 +2639,7 @@
         "key" : "inv-iop-range",
         "severity" : "error",
         "human" : "IOP value must be between 0 and 80 mmHg",
-        "expression" : "valueQuantity.value >= 0 and valueQuantity.value <= 80",
+        "expression" : "value.ofType(Quantity).value.empty() or (value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 80)",
         "source" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure"
       }]
     },

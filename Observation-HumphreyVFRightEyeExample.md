@@ -1,10 +1,10 @@
-# HumphreyVFRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Humphrey visual field: right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **HumphreyVFRightEyeExample**
+* **Humphrey visual field: right eye**
 
-## Example Observation: HumphreyVFRightEyeExample
+## Example Observation: Humphrey visual field: right eye
 
 Profile: [Ophthalmic Humphrey Visual Field](StructureDefinition-ophthalmic-humphrey-visual-field.md)
 

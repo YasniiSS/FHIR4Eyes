@@ -1,10 +1,10 @@
-# OCTMaculaServiceRequestExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT macula order - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTMaculaServiceRequestExample**
+* **OCT macula order**
 
-## Example ServiceRequest: OCTMaculaServiceRequestExample
+## Example ServiceRequest: OCT macula order
 
 Profile: [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md)
 

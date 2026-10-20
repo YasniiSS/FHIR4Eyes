@@ -1,10 +1,10 @@
-# StrabismusExamExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Strabismus exam panel - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **StrabismusExamExample**
+* **Strabismus exam panel**
 
-## Example Observation: StrabismusExamExample
+## Example Observation: Strabismus exam panel
 
 Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 

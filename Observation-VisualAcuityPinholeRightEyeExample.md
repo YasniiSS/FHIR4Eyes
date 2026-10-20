@@ -1,10 +1,10 @@
-# VisualAcuityPinholeRightEyeExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# Visual acuity: pinhole, right eye - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **VisualAcuityPinholeRightEyeExample**
+* **Visual acuity: pinhole, right eye**
 
-## Example Observation: VisualAcuityPinholeRightEyeExample
+## Example Observation: Visual acuity: pinhole, right eye
 
 Profile: [Ophthalmic Visual Acuity](StructureDefinition-ophthalmic-visual-acuity.md)
 

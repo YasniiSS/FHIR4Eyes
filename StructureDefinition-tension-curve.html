@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.49"}
-    h3,h4,h5,h6{--heading-prefix:"9.49"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.13"}
+    h3,h4,h5,h6{--heading-prefix:"12.13"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -90,29 +90,59 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+      <li>
+        <a href="usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="security.html">Security and Privacy</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefacts Summary</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="search-parameters.html">Search Parameters and Capabilities</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="usecases.html">Use Cases</a>
+    <a href="examples.html">Examples</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
   <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
-  </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
-  <li>
-    <a href="security.html">Security</a>
-  </li>
-  <li>
-    <a href="changes.html">Changes</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -245,7 +275,7 @@
         
           Draft
           
-            as of 2026-09-11
+            as of 2026-10-19
           
         
       </td>
@@ -271,6 +301,75 @@ an earlier version of this guide's design work and is carried forward here.</p>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<h3 id="design-decisions">Design decisions</h3>
+
+<p><strong>Panel pattern.</strong> This is a panel <code class="language-plaintext highlighter-rouge">Observation</code> using <code class="language-plaintext highlighter-rouge">hasMember</code> to group the individual
+readings, rather than holding a value itself (see the panel pattern in
+<a href="guidance.html">Guidance</a>).</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">value[x]</code></strong> is <code class="language-plaintext highlighter-rouge">0..0</code>. The panel itself has no value; the values live in each member
+reading.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">effective[x]</code></strong> is <code class="language-plaintext highlighter-rouge">1..1</code> and only allows <code class="language-plaintext highlighter-rouge">Period</code>, reflecting that the curve spans a
+period of time (the day of the ambulatory assessment), not a single instant.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">hasMember</code></strong> accepts
+<code class="language-plaintext highlighter-rouge">Reference(IntraocularPressure | CorrectedIntraocularPressure)</code>, <code class="language-plaintext highlighter-rouge">1..*</code>. Both variants of
+intraocular pressure reading may be part of a curve; pachymetry itself is not referenced
+directly from the curve, since
+<a href="StructureDefinition-corrected-intraocular-pressure.html">CorrectedIntraocularPressure</a>
+already references it via <code class="language-plaintext highlighter-rouge">derivedFrom</code>.</p>
+
+<blockquote>
+  <p>In clinical practice, a tension curve typically consists of three readings taken across
+the day, though this varies by site. This is noted here as clinical context, not
+enforced as a fixed cardinality in the profile.</p>
+</blockquote>
+
+<p><strong>Laterality.</strong> <code class="language-plaintext highlighter-rouge">bodySite</code> is <code class="language-plaintext highlighter-rouge">0..1</code>, using the standard <code class="language-plaintext highlighter-rouge">bodySite</code> extension to reference
+an <a href="StructureDefinition-ocular-body-structure.html">OcularBodyStructure</a>. It is optional,
+since the curve as a whole may or may not need its own laterality tag (individual member
+readings carry their own).</p>
+
+<h4 id="worked-example-combining-readings-with-corrected-values">Worked example: combining readings with corrected values</h4>
+
+<p><code class="language-plaintext highlighter-rouge">TensionCurve.hasMember</code> accepts <em>either</em>
+<a href="StructureDefinition-intraocular-pressure.html">IntraocularPressure</a> or
+<a href="StructureDefinition-corrected-intraocular-pressure.html">CorrectedIntraocularPressure</a> as
+its members, since a single curve may mix plain and corrected readings depending on whether
+pachymetry was available for each reading:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TensionCurve</code> groups several readings across the day via <code class="language-plaintext highlighter-rouge">hasMember</code>.</li>
+  <li>Each member is either a plain <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading, or a
+<code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> reading.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">CorrectedIntraocularPressure</code> instance is never a standalone measurement: it always
+references, via <code class="language-plaintext highlighter-rouge">derivedFrom</code>, the specific <code class="language-plaintext highlighter-rouge">IntraocularPressure</code> reading and
+<a href="StructureDefinition-pachymetry.html">Pachymetry</a> measurement it was calculated from.</li>
+</ul>
+
+<p>So a single curve reading can carry a two-level chain: the curve references the corrected
+reading, and the corrected reading itself references the two measurements it was derived
+from.</p>
+
+<pre><code class="language-mermaid">graph TD
+    TC[TensionCurve&lt;br/&gt;panel] --&gt;|hasMember| IOP1[IntraocularPressure&lt;br/&gt;08:00]
+    TC --&gt;|hasMember| IOP2[IntraocularPressure&lt;br/&gt;12:00]
+    TC --&gt;|hasMember| CIOP[CorrectedIntraocularPressure&lt;br/&gt;14:00]
+    CIOP --&gt;|derivedFrom| IOP3[IntraocularPressure&lt;br/&gt;base reading]
+    CIOP --&gt;|derivedFrom| PACHY[Pachymetry&lt;br/&gt;corneal thickness]
+</code></pre>
+
+<p><strong>Examples:</strong> <a href="Observation-TensionCurveRightEyeExample.html">Tension curve panel, right eye</a>, <a href="Observation-TensionCurveRightEye0800Example.html">Tension curve reading 08:00, right eye</a>, <a href="Observation-TensionCurveRightEye1200Example.html">Tension curve reading 12:00, right eye</a>, <a href="Observation-TensionCurveRightEye1400Example.html">Tension curve reading 14:00, right eye</a></p>
+
+
+</div>
 
 
 
@@ -473,7 +572,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a> | <a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related resource that belongs to the Observation group<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveK'), 'binding', document.getElementById('cbtension-curveK-binding').checked, document.getElementById('pptension-curveK'));
 document.getElementById('cbtension-curveK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -784,7 +883,7 @@ filterDesc(document.getElementById('tension-curveK'), 'obligation', document.get
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a> | <a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Related resource that belongs to the Observation group</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveD'), 'binding', document.getElementById('cbtension-curveD-binding').checked, document.getElementById('pptension-curveD'));
 document.getElementById('cbtension-curveD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1216,7 +1315,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveS'), 'binding', document.getElementById('cbtension-curveS-binding').checked, document.getElementById('pptension-curveS'));
 document.getElementById('cbtension-curveS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1859,7 +1958,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a> | <a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related resource that belongs to the Observation group<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveKA'), 'binding', document.getElementById('cbtension-curveKA-binding').checked, document.getElementById('pptension-curveKA'));
 document.getElementById('cbtension-curveKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2170,7 +2269,7 @@ filterDesc(document.getElementById('tension-curveKA'), 'obligation', document.ge
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-intraocular-pressure.html">Intraocular Pressure</a> | <a href="StructureDefinition-corrected-intraocular-pressure.html">Corrected Intraocular Pressure</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Related resource that belongs to the Observation group</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveDA'), 'binding', document.getElementById('cbtension-curveDA-binding').checked, document.getElementById('pptension-curveDA'));
 document.getElementById('cbtension-curveDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2601,7 +2700,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4f2e5fcc-e00f-42e5-94a3-656cabdb685d
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // d049ae75-dc63-4e1a-9b65-03cbff07a2ce
 document.getElementById('cbtension-curveSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('tension-curveSA'), 'binding', document.getElementById('cbtension-curveSA-binding').checked, document.getElementById('pptension-curveSA'));
 document.getElementById('cbtension-curveSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3117,7 +3216,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 00:16+0000">2026-09-11</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2026 22:17-0300">2026-10-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

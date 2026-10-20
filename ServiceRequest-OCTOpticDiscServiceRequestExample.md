@@ -1,10 +1,10 @@
-# OCTOpticDiscServiceRequestExample - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
+# OCT optic disc order - FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology v0.4.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **OCTOpticDiscServiceRequestExample**
+* **OCT optic disc order**
 
-## Example ServiceRequest: OCTOpticDiscServiceRequestExample
+## Example ServiceRequest: OCT optic disc order
 
 Profile: [Ophthalmic Service Request](StructureDefinition-ophthalmic-service-request.md)
 

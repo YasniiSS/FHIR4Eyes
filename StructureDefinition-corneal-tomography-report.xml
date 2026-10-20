@@ -12,7 +12,7 @@
   <name value="CornealTomographyReport"/>
   <title value="Corneal Tomography Report"/>
   <status value="draft"/>
-  <date value="2026-09-11T00:16:12+00:00"/>
+  <date value="2026-10-19T22:17:00-03:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -545,12 +545,8 @@
       <path value="DiagnosticReport.category"/>
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="coding.code"/>
-        </discriminator>
-        <discriminator>
-          <type value="value"/>
-          <path value="coding.system"/>
+          <type value="pattern"/>
+          <path value="$this"/>
         </discriminator>
         <rules value="open"/>
       </slicing>
