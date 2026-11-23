@@ -436,6 +436,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "appointment",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The appointment that scheduled this encounter"
           }
         ]
       },
@@ -749,6 +757,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "eye",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search observations (e.g. OphthalmicVisualAcuity, IntraocularPressure, and other ophthalmic Observation profiles in this guide) by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance."
           }
         ]
       },
@@ -1047,6 +1063,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "eye",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance."
           }
         ]
       },
@@ -1346,6 +1370,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "eye",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance."
           }
         ]
       },
@@ -1950,6 +1982,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "imaging-study",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret."
           }
         ]
       },
@@ -2242,6 +2282,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "eye",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left)."
+          },
+          {
+            "name": "modality",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The modality of the series"
           }
         ]
       },

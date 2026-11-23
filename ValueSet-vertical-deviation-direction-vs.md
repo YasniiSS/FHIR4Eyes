@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:VerticalDeviationDirectionVS |
+| Draft as of 2026-11-16 | *Computable Name*:VerticalDeviationDirectionVS |
 
  
 Direction of a vertical ocular deviation of the deviating eye at a gaze position: hyperdeviation or hypodeviation. Covers both tropias and phorias; the magnitude is recorded separately as a positive value. 
@@ -51,7 +51,7 @@ Direction of a vertical ocular deviation of the deviating eye at a gaze position
   "title" : "Vertical Deviation Direction Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

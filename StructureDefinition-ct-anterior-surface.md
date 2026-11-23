@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CTAnteriorSurface |
+| Draft as of 2026-11-16 | *Computable Name*:CTAnteriorSurface |
 
  
 Represents the anterior corneal surface analysis component of a corneal tomography exam (e.g. Scheimpflug/Pentacam-style device), one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Anterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). Informative correspondences to DICOM corneal topography attributes are given in the DICOM mapping. 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
   "name" : "CTAnteriorSurface",
   "title" : "Corneal Tomography - Anterior Surface",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -202,7 +202,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -261,7 +261,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:k1Axis",
@@ -293,7 +297,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:k1Radius",
@@ -325,7 +333,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:k2",
@@ -357,7 +369,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:k2Axis",
@@ -389,7 +405,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:k2Radius",
@@ -421,7 +441,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:km",
@@ -448,7 +472,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:cornealAstig",
@@ -479,7 +507,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:kMax",
@@ -510,7 +542,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:simK",
@@ -537,7 +573,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:rh",
@@ -564,7 +604,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:rv",
@@ -591,7 +635,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:rmin",
@@ -618,7 +666,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:qFront",
@@ -672,7 +724,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:bfsRadiusFront",
@@ -699,7 +755,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:sri",
@@ -792,7 +852,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:kisa",
@@ -819,7 +883,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:keratIndex",
@@ -904,7 +972,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:tnp",
@@ -931,7 +1003,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:ekr10",
@@ -958,7 +1034,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:ekr30",
@@ -985,7 +1065,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:ekr45",
@@ -1012,7 +1096,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:zone3MeanPwr",
@@ -1039,7 +1127,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:zone3AstigPwr",
@@ -1066,7 +1158,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:zone3SteepAxis",
@@ -1093,7 +1189,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:zone3FlatAxis",
@@ -1120,7 +1220,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:zone5MeanPwr",
@@ -1147,7 +1251,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:zone5AstigPwr",
@@ -1174,7 +1282,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:zone5SteepAxis",
@@ -1201,7 +1313,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:zone5FlatAxis",
@@ -1228,7 +1344,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:totalCornealAstig",
@@ -1255,7 +1375,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:irregularAstig",
@@ -1282,7 +1406,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:cornealHOA",
@@ -1309,7 +1437,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:kappaAngle",
@@ -1336,7 +1468,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:kappaIntercept",
@@ -1390,7 +1526,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:predictedAstig",
@@ -1417,7 +1557,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:toricAxis",
@@ -1444,7 +1588,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:qs",
@@ -1537,7 +1685,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:pupilCentroidY",
@@ -1568,7 +1720,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:pupilRadius",
@@ -1599,7 +1755,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:mapType",
@@ -1661,7 +1821,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-surface.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm2"
+      }
     },
     {
       "id" : "Observation.component:eccentricity",

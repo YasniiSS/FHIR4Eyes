@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CTPachymetry |
+| Draft as of 2026-11-16 | *Computable Name*:CTPachymetry |
 
  
 Represents the pachymetry (corneal thickness) component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Distinct from the standalone Pachymetry profile used for simple central corneal thickness measurements outside the tomography context (see Profiles); this profile captures the fuller thickness map data a tomography device produces. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Pachymetry section). 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
   "name" : "CTPachymetry",
   "title" : "Corneal Tomography - Pachymetry",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -196,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -251,7 +251,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:cctPupil",
@@ -278,7 +282,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:thinnest",
@@ -305,7 +313,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:thinnestLoc",
@@ -359,7 +371,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-pachymetry.csv), 
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:pachyProgression",

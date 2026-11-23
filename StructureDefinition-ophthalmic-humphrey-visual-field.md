@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-humphrey-visual-field | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicHumphreyVisualField |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicHumphreyVisualField |
 
  
 Represents an automated static perimetry (Humphrey field analyzer) exam. Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey) section), with reliability indices (fixation losses, false positive and false negative errors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for informative correspondences. 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
   "name" : "OphthalmicHumphreyVisualField",
   "title" : "Ophthalmic Humphrey Visual Field",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\r\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\r\nsection), with reliability indices (fixation losses, false positive and false negative\r\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\r\ninformative correspondences.",
+  "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), with reliability indices (fixation losses, false positive and false negative\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\ninformative correspondences.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -203,7 +203,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -304,7 +304,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "dB"
+      }
     },
     {
       "id" : "Observation.component:psd",
@@ -335,7 +339,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "dB"
+      }
     },
     {
       "id" : "Observation.component:vfi",
@@ -366,7 +374,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:ght",
@@ -471,7 +483,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:falseNegative",
@@ -502,7 +518,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:screeningMode",
@@ -669,7 +689,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "cd/m2"
+      }
     },
     {
       "id" : "Observation.component:maxLuminance",
@@ -700,7 +724,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "cd/m2"
+      }
     },
     {
       "id" : "Observation.component:stimulusDuration",
@@ -731,7 +759,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "ms"
+      }
     },
     {
       "id" : "Observation.component:hExtent",
@@ -762,7 +794,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:vExtent",
@@ -793,7 +829,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:fieldShape",
@@ -855,7 +895,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "dB"
+      }
     },
     {
       "id" : "Observation.component:testDuration",
@@ -975,7 +1019,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-humphrey-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     }]
   }
 }

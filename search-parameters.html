@@ -238,22 +238,10 @@ for the expected server behaviour.</p>
       <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.imagingStudy</code></td>
     </tr>
     <tr>
-      <td>Encounter</td>
-      <td><code class="language-plaintext highlighter-rouge">appointment</code></td>
-      <td><a href="SearchParameter-sp-encounter-appointment.html">EncounterAppointment</a></td>
-      <td><code class="language-plaintext highlighter-rouge">Encounter.appointment</code></td>
-    </tr>
-    <tr>
       <td>ImagingStudy</td>
       <td><code class="language-plaintext highlighter-rouge">eye</code></td>
       <td><a href="SearchParameter-sp-imagingstudy-eye.html">ImagingStudyEye</a></td>
       <td><code class="language-plaintext highlighter-rouge">ImagingStudy.series.laterality</code> (token)</td>
-    </tr>
-    <tr>
-      <td>ImagingStudy</td>
-      <td><code class="language-plaintext highlighter-rouge">modality</code></td>
-      <td><a href="SearchParameter-sp-imagingstudy-modality.html">ImagingStudyModality</a></td>
-      <td><code class="language-plaintext highlighter-rouge">ImagingStudy.series.modality</code></td>
     </tr>
     <tr>
       <td>Observation</td>
@@ -269,6 +257,12 @@ for the expected server behaviour.</p>
     </tr>
   </tbody>
 </table>
+
+<p>Searching ImagingStudy by <code class="language-plaintext highlighter-rouge">modality</code> and Encounter by <code class="language-plaintext highlighter-rouge">appointment</code> uses the core R4
+search parameters (<a href="http://hl7.org/fhir/R4/imagingstudy.html#search">ImagingStudy-modality</a>
+and <a href="http://hl7.org/fhir/R4/encounter.html#search">Encounter-appointment</a>); this guide does
+not redefine them. All parameters above are listed in the
+<a href="CapabilityStatement-FHIR4EyesCapabilityStatement.html">Capability Statement</a>.</p>
 
 
 
@@ -289,7 +283,7 @@ for the expected server behaviour.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 16, 2026 21:59-0300">2026-11-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

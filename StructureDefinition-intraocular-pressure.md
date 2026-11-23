@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/intraocular-pressure | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:IntraocularPressure |
+| Draft as of 2026-11-16 | *Computable Name*:IntraocularPressure |
 
  
 Represents a single intraocular pressure (IOP) reading, in mmHg. Code is fixed to SNOMED CT 41633001 (Intraocular pressure). 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
   "name" : "IntraocularPressure",
   "title" : "Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -71,7 +71,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\r\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
+  "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -205,6 +205,10 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
       "type" : [{
         "code" : "Quantity"
       }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm[Hg]"
+      },
       "mustSupport" : true
     },
     {
@@ -226,7 +230,7 @@ Other representations of profile: [CSV](StructureDefinition-intraocular-pressure
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

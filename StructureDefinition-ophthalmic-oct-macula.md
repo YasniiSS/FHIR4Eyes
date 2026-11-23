@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-macula | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicOCTMacula |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicOCTMacula |
 
  
 Represents an OCT macular thickness analysis using the ETDRS 9-sector grid, plus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned classification fields (thickness definition, per-subfield deviation category, anatomic reference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section), replacing an earlier, less complete version of this profile. 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
   "name" : "OphthalmicOCTMacula",
   "title" : "Ophthalmic OCT Macula",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -83,7 +83,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\r\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\r\nclassification fields (thickness definition, per-subfield deviation category, anatomic\r\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\r\nreplacing an earlier, less complete version of this profile.",
+  "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\nclassification fields (thickness definition, per-subfield deviation category, anatomic\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -240,7 +240,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -295,7 +295,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:center",
@@ -322,7 +326,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:centralMin",
@@ -349,7 +357,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:centralMax",
@@ -376,7 +388,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:innerSup",
@@ -403,7 +419,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:innerNas",
@@ -430,7 +450,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:innerInf",
@@ -457,7 +481,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:innerTemp",
@@ -484,7 +512,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:outerSup",
@@ -511,7 +543,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:outerNas",
@@ -538,7 +574,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:outerInf",
@@ -565,7 +605,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:outerTemp",
@@ -592,7 +636,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:totalVol",
@@ -619,7 +667,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:subfieldVol",
@@ -646,7 +698,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:etdrsGrid",
@@ -867,7 +923,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-macul
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:signalStrength",

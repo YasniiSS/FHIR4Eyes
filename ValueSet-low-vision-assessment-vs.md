@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/low-vision-assessment-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:LowVisionAssessmentVS |
+| Draft as of 2026-11-16 | *Computable Name*:LowVisionAssessmentVS |
 
  
 Qualitative visual acuity for patients whose vision falls below what any chart can measure (ICD-11 blindness categories 4 through 6). All five codes are confirmed SNOMED CT concepts, verified directly against the SNOMED CT browser. See Terminology for the full clinical and terminology rationale. The counting-fingers concept below uses the generic code by default; the more specific distance-based codes may be used instead when that detail is known. 
@@ -51,7 +51,7 @@ Qualitative visual acuity for patients whose vision falls below what any chart c
   "title" : "Low Vision Assessment Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

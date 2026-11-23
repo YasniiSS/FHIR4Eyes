@@ -14,7 +14,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
-**performed**: 2026-08-18 10:00:00+0000
+**performed**: 2026-08-18 08:55:00+0000
 
 ### Performers
 
@@ -45,7 +45,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "performedDateTime" : "2026-08-18T10:00:00Z",
+  "performedDateTime" : "2026-08-18T08:55:00Z",
   "performer" : [{
     "actor" : {
       "reference" : "Practitioner/OphthalmologistExample"
@@ -55,7 +55,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/bodySite",
       "valueReference" : {
-        "reference" : "BodyStructure/LeftEyeStructureExample"
+        "reference" : "BodyStructure/BothEyesStructureExample"
       }
     }]
   }],

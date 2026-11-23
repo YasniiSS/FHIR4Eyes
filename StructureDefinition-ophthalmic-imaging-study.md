@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-imaging-study | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicImagingStudy |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicImagingStudy |
 
  
 An ophthalmic imaging study, such as OCT, retinography, or angiography. Always traceable back to the medical order that led to it via basedOn. Laterality is represented through the native series.bodySite/series.laterality Coding fields (for standard DICOM/PACS compatibility); the core bodySite extension is not allowed on ImagingStudy.series in FHIR R4. 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-imaging-s
   "name" : "OphthalmicImagingStudy",
   "title" : "Ophthalmic Imaging Study",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

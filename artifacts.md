@@ -13,7 +13,7 @@ Base profiles reused throughout the guide: the patient, the ophthalmology encoun
 
 | | |
 | :--- | :--- |
-| [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Represents a patient receiving eye care, extending the base Patient resource with identifier slices for the Chilean national identifier (RUT) and passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. |
+| [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Represents a patient receiving eye care, extending the base Patient resource with country-neutral identifier slices for a national identifier and a passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. |
 | [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) | An ambulatory ophthalmology consultation encounter. Parented on the generic FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean dependency belongs in the FHIR4Eyes CL extension, not this Core guide. |
 | [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | Represents an anatomical ocular location, used throughout this guide to express laterality (right eye, left eye, or both eyes) for observations, conditions, procedures, and imaging studies. Follows the same structural pattern as the HL7 Eye Care IG's equivalent profile ('Ocular anatomical location' / body-structure-eye): a `location` element identifying the anatomical structure, and a `locationQualifier` element carrying laterality and other qualifiers. The HL7 Eye Care IG defines its own dedicated value sets for these two elements (`ValueSet/body-site-eye` for location, `ValueSet/qualifiers` for locationQualifier), which are the intended reference terminology for this profile. However, because the HL7 Eye Care IG is not published as a usable FHIR package, those value sets cannot be formally imported here; this profile binds to SNOMED CT directly instead (see the Terminology page of this guide for the general rationale). |
 
@@ -130,9 +130,7 @@ The expected server capabilities and the search parameters defined by this guide
 | [Condition eye (laterality) search parameter](SearchParameter-sp-condition-eye.md) | Search ophthalmic conditions/diagnoses by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. |
 | [Procedure eye (laterality) search parameter](SearchParameter-sp-procedure-eye.md) | Search ophthalmic procedures by eye laterality, expressed via the bodySite extension referencing an OcularBodyStructure instance. |
 | [ImagingStudy eye (laterality) search parameter](SearchParameter-sp-imagingstudy-eye.md) | Search ophthalmic imaging studies by the laterality of an examined series, using the native ImagingStudy.series.laterality element (SNOMED CT 24028007 Right / 7771000 Left). |
-| [ImagingStudy modality search parameter](SearchParameter-sp-imagingstudy-modality.md) | Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR). |
 | [DiagnosticReport imaging study search parameter](SearchParameter-sp-diagnosticreport-imaging-study.md) | Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret. |
-| [Encounter appointment search parameter](SearchParameter-sp-encounter-appointment.md) | Search ophthalmic encounters by the appointment that led to them. |
 
 ### Terminology 
 
@@ -158,7 +156,6 @@ Patient, practitioner, encounter and laterality instances referenced by the othe
 | | |
 | :--- | :--- |
 | [Patient (international identifier)](Patient-PatientExample.md) | Example patient identified with a passport number, used across the guide's examples. |
-| [Patient (Chilean RUT identifier)](Patient-PacienteEjemplo.md) | Example patient identified with a Chilean RUT. |
 | [Ophthalmologist](Practitioner-OphthalmologistExample.md) | Example ophthalmologist referenced as requester and performer. |
 | [Ambulatory ophthalmology encounter](Encounter-EncounterExample.md) | Example ambulatory ophthalmology consultation. |
 | [Right eye (laterality)](BodyStructure-RightEyeStructureExample.md) | OcularBodyStructure for the right eye, referenced via bodySite for laterality. |

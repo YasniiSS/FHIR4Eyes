@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ImplementationGuide/fhir4eyes.core | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:FHIR4Eyes |
+| Draft as of 2026-11-16 | *Computable Name*:FHIR4Eyes |
 
 ## What is this guide for?
 
@@ -34,7 +34,7 @@ There is an existing early-stage effort at HL7, the [Eye Care Implementation Gui
 FHIR4Eyes is published as two related Implementation Guides:
 
 * **FHIR4Eyes Core** (this guide) covers international, resource and terminology level content that isn't tied to any country's regulations.
-* **[FHIR4Eyes CL](cl/index.md)** is a Chilean extension, adding the constraints and bindings required for use within Chile's national FHIR core profiles ([`hl7.fhir.cl.clcore`](https://simplifier.net/chilehl7)).
+* **FHIR4Eyes CL** (in development, published separately) is a Chilean extension, adding the constraints and bindings required for use within Chile's national FHIR core profiles ([`hl7.fhir.cl.clcore`](https://simplifier.net/chilehl7)).
 
 If you're implementing outside Chile, you only need FHIR4Eyes Core. If you're implementing in Chile, you need both.
 
@@ -98,7 +98,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
   "name" : "FHIR4Eyes",
   "title" : "FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -133,7 +133,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -143,7 +143,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   }],
   "definition" : {
     "extension" : [{
@@ -840,7 +840,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-patient"
       },
       "name" : "Ophthalmic Patient",
-      "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith identifier slices for the Chilean national identifier (RUT) and passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
+      "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith country-neutral identifier slices for a national identifier and a passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
       "exampleBoolean" : false,
       "groupingId" : "GroupFoundation"
     },
@@ -993,7 +993,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/intraocular-pressure"
       },
       "name" : "Intraocular Pressure",
-      "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\r\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
+      "description" : "Represents a single intraocular pressure (IOP) reading, in mmHg. Code is\nfixed to SNOMED CT 41633001 (Intraocular pressure).",
       "exampleBoolean" : false,
       "groupingId" : "GroupIOP"
     },
@@ -1027,7 +1027,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/corrected-intraocular-pressure"
       },
       "name" : "Corrected Intraocular Pressure",
-      "description" : "Represents an intraocular pressure reading corrected for corneal thickness\r\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\r\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
+      "description" : "Represents an intraocular pressure reading corrected for corneal thickness\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
       "exampleBoolean" : false,
       "groupingId" : "GroupIOP"
     },
@@ -1061,7 +1061,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-rnfl"
       },
       "name" : "Ophthalmic OCT RNFL",
-      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\r\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\r\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\r\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\r\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\r\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.",
+      "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOCT"
     },
@@ -1078,7 +1078,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-oct-macula"
       },
       "name" : "Ophthalmic OCT Macula",
-      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\r\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\r\nclassification fields (thickness definition, per-subfield deviation category, anatomic\r\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\r\nreplacing an earlier, less complete version of this profile.",
+      "description" : "Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,\nplus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned\nclassification fields (thickness definition, per-subfield deviation category, anatomic\nreference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),\nreplacing an earlier, less complete version of this profile.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOCT"
     },
@@ -1214,7 +1214,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/ophthalmic-humphrey-visual-field"
       },
       "name" : "Ophthalmic Humphrey Visual Field",
-      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\r\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\r\nsection), with reliability indices (fixation losses, false positive and false negative\r\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\r\ninformative correspondences.",
+      "description" : "Represents an automated static perimetry (Humphrey field analyzer) exam.\nSourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)\nsection), with reliability indices (fixation losses, false positive and false negative\nerrors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for\ninformative correspondences.",
       "exampleBoolean" : false,
       "groupingId" : "GroupOtherTests"
     },
@@ -1350,7 +1350,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/near-point-of-convergence"
       },
       "name" : "Near Point of Convergence",
-      "description" : "Represents the near point of convergence (PPC), recorded either as a\r\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\r\nqualitative finding (e.g. 'nasal', 'near nasal').",
+      "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1384,7 +1384,7 @@ I worked for five years in clinical and hospital settings within ophthalmology u
         "reference" : "StructureDefinition/stereopsis-test"
       },
       "name" : "Stereopsis Test",
-      "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\r\ntest used is recorded as a component, since several different stereopsis tests exist in\r\npractice and the test type affects how the result should be interpreted.",
+      "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\ntest used is recorded as a component, since several different stereopsis tests exist in\npractice and the test type affects how the result should be interpreted.",
       "exampleBoolean" : false,
       "groupingId" : "GroupStrabismus"
     },
@@ -1633,23 +1633,6 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-imagingstudy-modality.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-imagingstudy-modality"
-      },
-      "name" : "ImagingStudy modality search parameter",
-      "description" : "Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).",
-      "exampleBoolean" : false,
-      "groupingId" : "GroupCapabilities"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "SearchParameter-sp-diagnosticreport-imaging-study.html"
       }],
       "reference" : {
@@ -1657,23 +1640,6 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "DiagnosticReport imaging study search parameter",
       "description" : "Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.",
-      "exampleBoolean" : false,
-      "groupingId" : "GroupCapabilities"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-sp-encounter-appointment.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/sp-encounter-appointment"
-      },
-      "name" : "Encounter appointment search parameter",
-      "description" : "Search ophthalmic encounters by the appointment that led to them.",
       "exampleBoolean" : false,
       "groupingId" : "GroupCapabilities"
     },
@@ -1861,23 +1827,6 @@ I worked for five years in clinical and hospital settings within ophthalmology u
       },
       "name" : "Patient (international identifier)",
       "description" : "Example patient identified with a passport number, used across the guide's examples.",
-      "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
-      "groupingId" : "GroupExFoundation"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-PacienteEjemplo.html"
-      }],
-      "reference" : {
-        "reference" : "Patient/PacienteEjemplo"
-      },
-      "name" : "Patient (Chilean RUT identifier)",
-      "description" : "Example patient identified with a Chilean RUT.",
       "exampleCanonical" : "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient",
       "groupingId" : "GroupExFoundation"
     },

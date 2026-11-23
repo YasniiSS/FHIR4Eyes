@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/gaze-position-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:GazePositionVS |
+| Draft as of 2026-11-16 | *Computable Name*:GazePositionVS |
 
  
 The nine diagnostic positions of gaze at which a strabismus measurement or binocular finding is recorded: primary position, the four secondary positions (up gaze / supraversion, down gaze / infraversion, right gaze / dextroversion, left gaze / levoversion) and the four tertiary (oblique) positions. SNOMED CT qualifier values from the Gaze directions hierarchy. 
@@ -51,7 +51,7 @@ The nine diagnostic positions of gaze at which a strabismus measurement or binoc
   "title" : "Gaze Position Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

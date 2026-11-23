@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/pachymetry | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:Pachymetry |
+| Draft as of 2026-11-16 | *Computable Name*:Pachymetry |
 
  
 Represents a corneal pachymetry measurement (corneal thickness), typically in micrometres. Used on its own, and also referenced by CorrectedIntraocularPressure when correcting an IOP reading for corneal thickness. 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
   "name" : "Pachymetry",
   "title" : "Pachymetry",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -199,6 +199,10 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
       "type" : [{
         "code" : "Quantity"
       }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      },
       "mustSupport" : true
     },
     {
@@ -220,7 +224,7 @@ Other representations of profile: [CSV](StructureDefinition-pachymetry.csv), [Ex
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

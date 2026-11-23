@@ -90,9 +90,7 @@
 
 * [ConditionEye](SearchParameter-sp-condition-eye.md)
 * [DiagnosticReportImagingStudy](SearchParameter-sp-diagnosticreport-imaging-study.md)
-* [EncounterAppointment](SearchParameter-sp-encounter-appointment.md)
 * [ImagingStudyEye](SearchParameter-sp-imagingstudy-eye.md)
-* [ImagingStudyModality](SearchParameter-sp-imagingstudy-modality.md)
 * [ObservationEye](SearchParameter-sp-observation-eye.md)
 * [ProcedureEye](SearchParameter-sp-procedure-eye.md)
 
@@ -180,7 +178,6 @@
 * [VisualAcuityUncorrectedRightEyeExample (Observation)](Observation-VisualAcuityUncorrectedRightEyeExample.md)
 * [Worth4DotPrimaryPositionExample (Observation)](Observation-Worth4DotPrimaryPositionExample.md)
 * [Worth4DotTestExample (Observation)](Observation-Worth4DotTestExample.md)
-* [PacienteEjemplo (Patient)](Patient-PacienteEjemplo.md)
 * [PatientExample (Patient)](Patient-PatientExample.md)
 * [OphthalmologistExample (Practitioner)](Practitioner-OphthalmologistExample.md)
 * [CataractSurgeryProcedureExample (Procedure)](Procedure-CataractSurgeryProcedureExample.md)

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:FHIR4EyesCS |
+| Draft as of 2026-11-16 | *Computable Name*:FHIR4EyesCS |
 
  
 Local, laterality-neutral codes for ophthalmic observations and components defined by FHIR4Eyes where no suitable side-neutral LOINC or SNOMED CT code has been verified. Open to replacement as external codes become available. 
@@ -36,7 +36,7 @@ Local, laterality-neutral codes for ophthalmic observations and components defin
   "title" : "FHIR4Eyes Code System",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

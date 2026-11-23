@@ -16,6 +16,14 @@
 * The [Artefacts Summary](artifacts.md) is grouped by clinical domain.
 * All examples now have a title and description.
 
+**Structural review fixes**:
+
+* `StrabismusExam.hasMember` is restricted to the ten strabismus sub-test profiles.
+* Quantity values now carry fixed UCUM units (e.g. `mm[Hg]` for IOP, `um` for thickness).
+* The CapabilityStatement now lists the guide's `eye` and `imaging-study` search parameters with their definitions. The `modality` (ImagingStudy) and `appointment` (Encounter) search parameters are no longer redefined; the core R4 ones are referenced instead.
+* `OphthalmicPatient` is country-neutral: the `rut` slice became a generic `nationalIdentifier` slice (type `NI`, system required but not fixed). The Chilean RUT example moved out of Core, to the FHIR4Eyes CL guide.
+* Example timeline fixes: cataract surgery now follows the biometry that plans it, the corneal tomography report is effective when its analyses were acquired (issued two days later), and the OCT procedure precedes its imaging studies and covers both eyes.
+
 **Terminology and validation fixes**:
 
 * New [FHIR4Eyes Code System](CodeSystem-fhir4eyes-cs.md) (`FHIR4EyesCS`, about 213 laterality-neutral codes). Every `component` slice is now identified by a fixed code (LOINC or SNOMED CT where verified, otherwise FHIR4EyesCS), and most `Observation.code` values are fixed as well. IG Publisher QA errors dropped from about 5478 to 0 (excluding the two known links to the future FHIR4Eyes CL guide).

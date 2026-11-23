@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/normative-classification-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:NormativeClassificationVS |
+| Draft as of 2026-11-16 | *Computable Name*:NormativeClassificationVS |
 
  
 Classification of an ophthalmic measurement or analysis against the device normative (age-matched reference) database: within normal limits, borderline, or outside normal limits. Used for the overall interpretation of OCT macula and OCT RNFL / optic nerve head analyses, and for the per-subfield deviation category of the OCT macula profile. Bindings are extensible, so device-specific percentile categories (e.g. p<5%, p<1%) may be used when no concept here applies. 
@@ -52,7 +52,7 @@ Classification of an ophthalmic measurement or analysis against the device norma
   "title" : "Normative Classification Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

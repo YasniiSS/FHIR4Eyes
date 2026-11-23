@@ -9,7 +9,7 @@ This page describes the clinical scenarios that motivated the profiles defined i
 
 ### Actors used throughout this page
 
-To keep this guide usable across different health systems, the following generic actor names are used instead of country-specific role titles (see the [FHIR4Eyes CL](cl/index.md) extension for Chile-specific role mappings):
+To keep this guide usable across different health systems, the following generic actor names are used instead of country-specific role titles (see the FHIR4Eyes CL extension, in development, for Chile-specific role mappings):
 
 * **Patient**: the person receiving eye care.
 * **Ophthalmologist**: the physician specialized in eye care, responsible for diagnosis, clinical decision-making, and interpretation of most eye examinations.

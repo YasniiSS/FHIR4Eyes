@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/tension-curve | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:TensionCurve |
+| Draft as of 2026-11-16 | *Computable Name*:TensionCurve |
 
  
 Represents an ambulatory tension curve: several intraocular pressure readings taken across a single day, grouped together as a single clinical concept rather than recorded as unrelated, disconnected observations. This profile was already defined in an earlier version of this guide's design work and is carried forward here. 
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
   "name" : "TensionCurve",
   "title" : "Tension Curve",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -242,7 +242,7 @@ Other representations of profile: [CSV](StructureDefinition-tension-curve.csv), 
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

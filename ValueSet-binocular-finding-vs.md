@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/binocular-finding-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:BinocularFindingVS |
+| Draft as of 2026-11-16 | *Computable Name*:BinocularFindingVS |
 
  
 Qualitative findings recorded at a gaze position: sensory responses on the red filter plus light and Worth 4 dot tests (fusion, suppression of one eye, crossed or uncrossed diplopia) and the position of the corneal light reflex on the Hirschberg test (centered, or displaced nasally, temporally, superiorly or inferiorly in the eye assessed). The binding is extensible, so other findings (e.g. tropia vs phoria on a prism cover test) may be used when no concept here applies. 
@@ -51,7 +51,7 @@ Qualitative findings recorded at a gaze position: sensory responses on the red f
   "title" : "Binocular Finding Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -14,8 +14,8 @@ Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)
 
 | | |
 | :--- | :--- |
-| Contact Detail | * [+56912345678](tel:+56912345678)
-* 123 Example Street Santiago CL 
+| Contact Detail | * [+1 555 0100](tel:+15550100)
+* 123 Example Street Exampleville 
  |
 
 
@@ -45,14 +45,13 @@ Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)
   }],
   "telecom" : [{
     "system" : "phone",
-    "value" : "+56912345678"
+    "value" : "+1 555 0100"
   }],
   "gender" : "female",
   "birthDate" : "1990-01-01",
   "address" : [{
     "line" : ["123 Example Street"],
-    "city" : "Santiago",
-    "country" : "CL"
+    "city" : "Exampleville"
   }]
 }
 

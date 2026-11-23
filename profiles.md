@@ -13,7 +13,7 @@ Within each domain, profiles are listed in the order they typically appear in a 
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient | A patient receiving eye care | [Patient (international)](Patient-PatientExample.md),[Patient (Chile)](Patient-PacienteEjemplo.md) |
+| [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient | A patient receiving eye care | [Patient (international)](Patient-PatientExample.md) |
 | [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) | Encounter | An ambulatory ophthalmology consultation | [Encounter](Encounter-EncounterExample.md) |
 | [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | BodyStructure | The eye or ocular location, referenced from`bodySite`to express laterality | [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md),[Both eyes](BodyStructure-BothEyesStructureExample.md) |
 

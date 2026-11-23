@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:StereopsisTest |
+| Draft as of 2026-11-16 | *Computable Name*:StereopsisTest |
 
  
 Represents a stereoacuity test result (e.g. Titmus, Randot). The specific test used is recorded as a component, since several different stereopsis tests exist in practice and the test type affects how the result should be interpreted. 
@@ -22,6 +22,7 @@ The specific test used is recorded in the required `testType` component, since s
 
 **Usages:**
 
+* Refer to this Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 * Examples for this Profile: [Observation/StereopsisTestExample](Observation-StereopsisTestExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
@@ -48,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
   "name" : "StereopsisTest",
   "title" : "Stereopsis Test",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\r\ntest used is recorded as a component, since several different stereopsis tests exist in\r\npractice and the test type affects how the result should be interpreted.",
+  "description" : "Represents a stereoacuity test result (e.g. Titmus, Randot). The specific\ntest used is recorded as a component, since several different stereopsis tests exist in\npractice and the test type affects how the result should be interpreted.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -172,6 +173,14 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
       "short" : "Result: qualitative (e.g. absent, present) or quantitative (arc seconds), depending on the test used",
       "type" : [{
         "code" : "Quantity"
@@ -179,6 +188,21 @@ Other representations of profile: [CSV](StructureDefinition-stereopsis-test.csv)
       {
         "code" : "CodeableConcept"
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x]:valueQuantity",
+      "path" : "Observation.value[x]",
+      "sliceName" : "valueQuantity",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "''"
+      },
       "mustSupport" : true
     },
     {

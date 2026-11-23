@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-encounter | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicEncounter |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicEncounter |
 
  
 An ambulatory ophthalmology consultation encounter. Parented on the generic FHIR Encounter, not the Chilean core Encounter profile (EncounterCL); the Chilean dependency belongs in the FHIR4Eyes CL extension, not this Core guide. 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-encounter
   "name" : "OphthalmicEncounter",
   "title" : "Ophthalmic Encounter",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

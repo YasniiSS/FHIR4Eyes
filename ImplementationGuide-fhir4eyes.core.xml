@@ -11,7 +11,7 @@
   <name value="FHIR4Eyes"/>
   <title value="FHIR4Eyes - A Proposed FHIR Implementation Guide for Ophthalmology"/>
   <status value="draft"/>
-  <date value="2026-10-20T20:13:11-03:00"/>
+  <date value="2026-11-16T21:59:20-03:00"/>
   <publisher value="FHIR4Eyes Project"/>
   <contact>
     <name value="FHIR4Eyes Project"/>
@@ -44,7 +44,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.4.0"/>
+    <version value="7.5.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -52,7 +52,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.3.0"/>
+    <version value="5.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -566,7 +566,7 @@
         <reference value="StructureDefinition/ophthalmic-patient"/>
       </reference>
       <name value="Ophthalmic Patient"/>
-      <description value="Represents a patient receiving eye care, extending the base Patient resource&#xA;with identifier slices for the Chilean national identifier (RUT) and passport number, and&#xA;requiring the core demographic elements (name, gender, birthDate) needed for clinical&#xA;ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting."/>
+      <description value="Represents a patient receiving eye care, extending the base Patient resource&#xA;with country-neutral identifier slices for a national identifier and a passport number, and&#xA;requiring the core demographic elements (name, gender, birthDate) needed for clinical&#xA;ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupFoundation"/>
     </resource>
@@ -674,7 +674,7 @@
         <reference value="StructureDefinition/intraocular-pressure"/>
       </reference>
       <name value="Intraocular Pressure"/>
-      <description value="Represents a single intraocular pressure (IOP) reading, in mmHg. Code is&#xD;&#xA;fixed to SNOMED CT 41633001 (Intraocular pressure)."/>
+      <description value="Represents a single intraocular pressure (IOP) reading, in mmHg. Code is&#xA;fixed to SNOMED CT 41633001 (Intraocular pressure)."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupIOP"/>
     </resource>
@@ -698,7 +698,7 @@
         <reference value="StructureDefinition/corrected-intraocular-pressure"/>
       </reference>
       <name value="Corrected Intraocular Pressure"/>
-      <description value="Represents an intraocular pressure reading corrected for corneal thickness&#xD;&#xA;(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing&#xD;&#xA;both the IOP and pachymetry measurements it was derived from via derivedFrom."/>
+      <description value="Represents an intraocular pressure reading corrected for corneal thickness&#xA;(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing&#xA;both the IOP and pachymetry measurements it was derived from via derivedFrom."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupIOP"/>
     </resource>
@@ -722,7 +722,7 @@
         <reference value="StructureDefinition/ophthalmic-oct-rnfl"/>
       </reference>
       <name value="Ophthalmic OCT RNFL"/>
-      <description value="Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)&#xD;&#xA;analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),&#xD;&#xA;the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and&#xD;&#xA;the quadrant average RNFL thicknesses, alongside acquisition metadata and an overall&#xD;&#xA;normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT&#xD;&#xA;Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile."/>
+      <description value="Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)&#xA;analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),&#xA;the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and&#xA;the quadrant average RNFL thicknesses, alongside acquisition metadata and an overall&#xA;normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT&#xA;Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupOCT"/>
     </resource>
@@ -734,7 +734,7 @@
         <reference value="StructureDefinition/ophthalmic-oct-macula"/>
       </reference>
       <name value="Ophthalmic OCT Macula"/>
-      <description value="Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,&#xD;&#xA;plus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned&#xD;&#xA;classification fields (thickness definition, per-subfield deviation category, anatomic&#xD;&#xA;reference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),&#xD;&#xA;replacing an earlier, less complete version of this profile."/>
+      <description value="Represents an OCT macular thickness analysis using the ETDRS 9-sector grid,&#xA;plus device-reported acquisition metadata (dilation, signal strength), DICOM-aligned&#xA;classification fields (thickness definition, per-subfield deviation category, anatomic&#xA;reference point) and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Macula section),&#xA;replacing an earlier, less complete version of this profile."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupOCT"/>
     </resource>
@@ -830,7 +830,7 @@
         <reference value="StructureDefinition/ophthalmic-humphrey-visual-field"/>
       </reference>
       <name value="Ophthalmic Humphrey Visual Field"/>
-      <description value="Represents an automated static perimetry (Humphrey field analyzer) exam.&#xD;&#xA;Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)&#xD;&#xA;section), with reliability indices (fixation losses, false positive and false negative&#xD;&#xA;errors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for&#xD;&#xA;informative correspondences."/>
+      <description value="Represents an automated static perimetry (Humphrey field analyzer) exam.&#xA;Sourced directly from the FHIR4Eyes Observations catalog (Automated Visual Field (Humphrey)&#xA;section), with reliability indices (fixation losses, false positive and false negative&#xA;errors) and the Glaucoma Hemifield Test. DICOM-aligned; see the DICOM mapping for&#xA;informative correspondences."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupOtherTests"/>
     </resource>
@@ -926,7 +926,7 @@
         <reference value="StructureDefinition/near-point-of-convergence"/>
       </reference>
       <name value="Near Point of Convergence"/>
-      <description value="Represents the near point of convergence (PPC), recorded either as a&#xD;&#xA;numeric distance in centimetres, or, when a precise measurement isn't obtained, as a&#xD;&#xA;qualitative finding (e.g. 'nasal', 'near nasal')."/>
+      <description value="Represents the near point of convergence (PPC), recorded either as a&#xA;numeric distance in centimetres, or, when a precise measurement isn't obtained, as a&#xA;qualitative finding (e.g. 'nasal', 'near nasal')."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupStrabismus"/>
     </resource>
@@ -950,7 +950,7 @@
         <reference value="StructureDefinition/stereopsis-test"/>
       </reference>
       <name value="Stereopsis Test"/>
-      <description value="Represents a stereoacuity test result (e.g. Titmus, Randot). The specific&#xD;&#xA;test used is recorded as a component, since several different stereopsis tests exist in&#xD;&#xA;practice and the test type affects how the result should be interpreted."/>
+      <description value="Represents a stereoacuity test result (e.g. Titmus, Randot). The specific&#xA;test used is recorded as a component, since several different stereopsis tests exist in&#xA;practice and the test type affects how the result should be interpreted."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupStrabismus"/>
     </resource>
@@ -1127,34 +1127,10 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/sp-imagingstudy-modality"/>
-      </reference>
-      <name value="ImagingStudy modality search parameter"/>
-      <description value="Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR)."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="GroupCapabilities"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
         <reference value="SearchParameter/sp-diagnosticreport-imaging-study"/>
       </reference>
       <name value="DiagnosticReport imaging study search parameter"/>
       <description value="Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="GroupCapabilities"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
-        <reference value="SearchParameter/sp-encounter-appointment"/>
-      </reference>
-      <name value="Encounter appointment search parameter"/>
-      <description value="Search ophthalmic encounters by the appointment that led to them."/>
       <exampleBoolean value="false"/>
       <groupingId value="GroupCapabilities"/>
     </resource>
@@ -1287,18 +1263,6 @@
       </reference>
       <name value="Patient (international identifier)"/>
       <description value="Example patient identified with a passport number, used across the guide's examples."/>
-      <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"/>
-      <groupingId value="GroupExFoundation"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/PacienteEjemplo"/>
-      </reference>
-      <name value="Patient (Chilean RUT identifier)"/>
-      <description value="Example patient identified with a Chilean RUT."/>
       <exampleCanonical value="https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"/>
       <groupingId value="GroupExFoundation"/>
     </resource>

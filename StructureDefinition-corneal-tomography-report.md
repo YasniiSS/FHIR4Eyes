@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corneal-tomography-report | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CornealTomographyReport |
+| Draft as of 2026-11-16 | *Computable Name*:CornealTomographyReport |
 
  
 A specialization of OphthalmicDiagnosticReport for corneal tomography exams (e.g. Scheimpflug/Pentacam-style devices), grouping its six component analyses (CTAnteriorSurface, CTPosteriorSurface, CTPachymetry, CTAnteriorChamber, CTKeratoconusIndices, CTDensitometry) via result, following the same DiagnosticReport grouping pattern already used for OCT (see OphthalmicOCTRNFL and OphthalmicOCTMacula). 
@@ -70,7 +70,7 @@ Other representations of profile: [CSV](StructureDefinition-corneal-tomography-r
   "name" : "CornealTomographyReport",
   "title" : "Corneal Tomography Report",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

@@ -2,9 +2,9 @@ FHIR4Eyes : Validation Results
 =========================================
 
 err = 0, warn = 18, info = 1151
-IG Publisher Version: 2.3.2 Out of date - current version is 3.0.1
-Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0.4.0 (canonical = https://YasniiSS.github.io/fhir4eyes)
- Build Errors : 2 / 0 / 0
+IG Publisher Version: 2.3.2 Out of date - current version is 3.0.4
+Generated Mon Nov 16 22:05:36 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0.4.0 (canonical = https://YasniiSS.github.io/fhir4eyes)
+ Build Errors : 0 / 0 / 0
  C:\FHIR4Eyes\fsh-generated\resources\BodyStructure-BothEyesStructureExample : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\BodyStructure-LeftEyeStructureExample : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\BodyStructure-RightEyeStructureExample : 0 / 0 / 1
@@ -64,7 +64,7 @@ Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0
  C:\FHIR4Eyes\fsh-generated\resources\Observation-KrimskyTestExample : 0 / 0 / 5
  C:\FHIR4Eyes\fsh-generated\resources\Observation-KrimskyUpFODExample : 0 / 0 / 7
  C:\FHIR4Eyes\fsh-generated\resources\Observation-KrimskyUpFOIExample : 0 / 0 / 7
- C:\FHIR4Eyes\fsh-generated\resources\Observation-NearPointOfConvergenceExample : 0 / 0 / 2
+ C:\FHIR4Eyes\fsh-generated\resources\Observation-NearPointOfConvergenceExample : 0 / 0 / 3
  C:\FHIR4Eyes\fsh-generated\resources\Observation-OCTMaculaLeftEyeExample2 : 0 / 0 / 7
  C:\FHIR4Eyes\fsh-generated\resources\Observation-OCTMaculaRightEyeExample : 0 / 0 / 7
  C:\FHIR4Eyes\fsh-generated\resources\Observation-OCTRNFLLeftEyeExample : 0 / 0 / 29
@@ -78,7 +78,7 @@ Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0
  C:\FHIR4Eyes\fsh-generated\resources\Observation-RedFilterLightTestExample : 0 / 0 / 5
  C:\FHIR4Eyes\fsh-generated\resources\Observation-RedFilterPrimaryPositionExample : 0 / 0 / 5
  C:\FHIR4Eyes\fsh-generated\resources\Observation-SpecularMicroscopyRightEyeExample : 0 / 0 / 12
- C:\FHIR4Eyes\fsh-generated\resources\Observation-StereopsisTestExample : 0 / 0 / 3
+ C:\FHIR4Eyes\fsh-generated\resources\Observation-StereopsisTestExample : 0 / 0 / 4
  C:\FHIR4Eyes\fsh-generated\resources\Observation-StrabismusExamExample : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\Observation-TensionCurveRightEye0800Example : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\Observation-TensionCurveRightEye1200Example : 0 / 0 / 1
@@ -91,7 +91,6 @@ Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0
  C:\FHIR4Eyes\fsh-generated\resources\Observation-VisualAcuityUncorrectedRightEyeExample : 0 / 0 / 5
  C:\FHIR4Eyes\fsh-generated\resources\Observation-Worth4DotPrimaryPositionExample : 0 / 0 / 4
  C:\FHIR4Eyes\fsh-generated\resources\Observation-Worth4DotTestExample : 0 / 0 / 5
- C:\FHIR4Eyes\fsh-generated\resources\Patient-PacienteEjemplo : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\Patient-PatientExample : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\Practitioner-OphthalmologistExample : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\Procedure-CataractSurgeryProcedureExample : 0 / 0 / 1
@@ -99,9 +98,7 @@ Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0
  C:\FHIR4Eyes\fsh-generated\resources\Procedure-OCTProcedureExample : 0 / 0 / 1
  C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-condition-eye : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-diagnosticreport-imaging-study : 0 / 0 / 2
- C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-encounter-appointment : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-imagingstudy-eye : 0 / 0 / 2
- C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-imagingstudy-modality : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-observation-eye : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\SearchParameter-sp-procedure-eye : 0 / 0 / 2
  C:\FHIR4Eyes\fsh-generated\resources\ServiceRequest-CornealTomographyServiceRequestExample : 0 / 0 / 1
@@ -160,8 +157,6 @@ Generated Tue Oct 20 20:21:35 CLST 2026. FHIR version 4.0.1 for fhir4eyes.core#0
  C:\FHIR4Eyes\fsh-generated\resources\ValueSet-vertical-deviation-direction-vs : 0 / 1 / 1
 </table>
 == n/a ==
-ERROR: index.html#/html/body/div/div/div/div/div/ul/li/strong/a at Line 287, column 16: The link 'cl/index.html' for "FHIR4Eyes CL" cannot be resolved
-ERROR: usecases.html#/html/body/div/div/div/div/div/p/a at Line 215, column 2: The link 'cl/index.html' for "FHIR4Eyes CL" cannot be resolved
 == fsh-generated\resources\BodyStructure-BothEyesStructureExample.json ==
 == fsh-generated\resources\BodyStructure-LeftEyeStructureExample.json ==
 == fsh-generated\resources\BodyStructure-RightEyeStructureExample.json ==
@@ -541,6 +536,7 @@ INFORMATION: Observation/KrimskyUpFOIExample: Observation.component[2].code: Ref
 INFORMATION: Observation/KrimskyUpFOIExample: Observation.component[3].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: Observation/KrimskyUpFOIExample: Observation.component[3].value.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 == fsh-generated\resources\Observation-NearPointOfConvergenceExample.json ==
+INFORMATION: Observation/NearPointOfConvergenceExample: Observation.value.ofType(CodeableConcept): Este elemento no coincide con ninguna partición conocida defined in the profile https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence|0.4.0
 INFORMATION: Observation/NearPointOfConvergenceExample: Observation.code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 == fsh-generated\resources\Observation-OCTMaculaLeftEyeExample2.json ==
 INFORMATION: Observation/OCTMaculaLeftEyeExample2: Observation.component[2].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -661,6 +657,7 @@ INFORMATION: Observation/SpecularMicroscopyRightEyeExample: Observation.componen
 INFORMATION: Observation/SpecularMicroscopyRightEyeExample: Observation.component[8].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0 from active ValueSet https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs/vs|0.4.0
 INFORMATION: Observation/SpecularMicroscopyRightEyeExample: Observation.component[9].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0 from active ValueSet https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs/vs|0.4.0
 == fsh-generated\resources\Observation-StereopsisTestExample.json ==
+INFORMATION: Observation/StereopsisTestExample: Observation.value.ofType(CodeableConcept): Este elemento no coincide con ninguna partición conocida defined in the profile https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test|0.4.0
 INFORMATION: Observation/StereopsisTestExample: Observation.code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: Observation/StereopsisTestExample: Observation.component[0].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 == fsh-generated\resources\Observation-StrabismusExamExample.json ==
@@ -698,7 +695,6 @@ INFORMATION: Observation/Worth4DotTestExample: Observation.code: Reference to dr
 INFORMATION: Observation/Worth4DotTestExample: Observation.component[0].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: Observation/Worth4DotTestExample: Observation.component[0].value.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: Observation/Worth4DotTestExample: Observation.component[1].code: Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
-== fsh-generated\resources\Patient-PacienteEjemplo.json ==
 == fsh-generated\resources\Patient-PatientExample.json ==
 == fsh-generated\resources\Practitioner-OphthalmologistExample.json ==
 == fsh-generated\resources\Procedure-CataractSurgeryProcedureExample.json ==
@@ -708,12 +704,8 @@ INFORMATION: Observation/Worth4DotTestExample: Observation.component[1].code: Re
 INFORMATION: Resource: The resource SearchParameter/sp-condition-eye could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\SearchParameter-sp-diagnosticreport-imaging-study.json ==
 INFORMATION: Resource: The resource SearchParameter/sp-diagnosticreport-imaging-study could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-== fsh-generated\resources\SearchParameter-sp-encounter-appointment.json ==
-INFORMATION: Resource: The resource SearchParameter/sp-encounter-appointment could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\SearchParameter-sp-imagingstudy-eye.json ==
 INFORMATION: Resource: The resource SearchParameter/sp-imagingstudy-eye could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
-== fsh-generated\resources\SearchParameter-sp-imagingstudy-modality.json ==
-INFORMATION: Resource: The resource SearchParameter/sp-imagingstudy-modality could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\SearchParameter-sp-observation-eye.json ==
 INFORMATION: Resource: The resource SearchParameter/sp-observation-eye could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\SearchParameter-sp-procedure-eye.json ==
@@ -723,7 +715,7 @@ INFORMATION: Resource: The resource SearchParameter/sp-procedure-eye could usefu
 == fsh-generated\resources\ServiceRequest-OCTOpticDiscServiceRequestExample.json ==
 == fsh-generated\resources\ServiceRequest-OCTServiceRequestExample.json ==
 == fsh-generated\resources\StructureDefinition-convergence-assessment.json ==
-INFORMATION: StructureDefinition/convergence-assessment: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+INFORMATION: StructureDefinition/convergence-assessment: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 INFORMATION: StructureDefinition/convergence-assessment: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/convergence-assessment: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/convergence-assessment: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -733,16 +725,16 @@ INFORMATION: Resource: The resource StructureDefinition/convergence-assessment c
 INFORMATION: StructureDefinition/corneal-tomography-report: StructureDefinition.snapshot.element[12].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/corneal-tomography-report could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-corrected-intraocular-pressure.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/corrected-intraocular-pressure: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/corrected-intraocular-pressure: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/corrected-intraocular-pressure: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/corrected-intraocular-pressure: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/corrected-intraocular-pressure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-cover-test.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[8].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[8].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/cover-test: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/cover-test: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/cover-test: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -755,8 +747,8 @@ INFORMATION: StructureDefinition/cover-test: StructureDefinition.snapshot.elemen
 INFORMATION: StructureDefinition/cover-test: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/cover-test could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-anterior-chamber.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-anterior-chamber: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-anterior-chamber: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-anterior-chamber: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -775,8 +767,8 @@ INFORMATION: StructureDefinition/ct-anterior-chamber: StructureDefinition.snapsh
 INFORMATION: StructureDefinition/ct-anterior-chamber: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-anterior-chamber could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-anterior-surface.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-anterior-surface: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-anterior-surface: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-anterior-surface: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -891,8 +883,8 @@ INFORMATION: StructureDefinition/ct-anterior-surface: StructureDefinition.snapsh
 INFORMATION: StructureDefinition/ct-anterior-surface: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-anterior-surface could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-densitometry.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-densitometry: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-densitometry: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-densitometry: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -915,8 +907,8 @@ INFORMATION: StructureDefinition/ct-densitometry: StructureDefinition.snapshot.e
 INFORMATION: StructureDefinition/ct-densitometry: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-densitometry could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-keratoconus-indices.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-keratoconus-indices: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-keratoconus-indices: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-keratoconus-indices: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -963,8 +955,8 @@ INFORMATION: StructureDefinition/ct-keratoconus-indices: StructureDefinition.sna
 INFORMATION: StructureDefinition/ct-keratoconus-indices: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-keratoconus-indices could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-pachymetry.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-pachymetry: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-pachymetry: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-pachymetry: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -985,8 +977,8 @@ INFORMATION: StructureDefinition/ct-pachymetry: StructureDefinition.snapshot.ele
 INFORMATION: StructureDefinition/ct-pachymetry: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-pachymetry could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ct-posterior-surface.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ct-posterior-surface: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-posterior-surface: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ct-posterior-surface: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1009,8 +1001,8 @@ INFORMATION: StructureDefinition/ct-posterior-surface: StructureDefinition.snaps
 INFORMATION: StructureDefinition/ct-posterior-surface: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ct-posterior-surface could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-gaze-position-measurement.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[8].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[8].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/gaze-position-measurement: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/gaze-position-measurement: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/gaze-position-measurement: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1039,8 +1031,8 @@ INFORMATION: StructureDefinition/hirschberg-test: StructureDefinition.differenti
 INFORMATION: StructureDefinition/hirschberg-test: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/hirschberg-test could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-intraocular-pressure.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/intraocular-pressure: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/intraocular-pressure: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/intraocular-pressure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
@@ -1087,8 +1079,8 @@ INFORMATION: Resource: The resource StructureDefinition/near-point-of-convergenc
 == fsh-generated\resources\StructureDefinition-ocular-body-structure.json ==
 INFORMATION: Resource: The resource StructureDefinition/ocular-body-structure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ocular-motility.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ocular-motility: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ocular-motility: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ocular-motility: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1103,8 +1095,8 @@ INFORMATION: Resource: The resource StructureDefinition/ocular-motility could us
 == fsh-generated\resources\StructureDefinition-ophthalmic-care-plan.json ==
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-care-plan could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-condition.json ==
-INFORMATION: StructureDefinition.snapshot.element[18].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[4].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[4].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-device.json ==
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-device could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
@@ -1115,8 +1107,8 @@ INFORMATION: Resource: The resource StructureDefinition/ophthalmic-diagnostic-re
 == fsh-generated\resources\StructureDefinition-ophthalmic-encounter.json ==
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-encounter could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-humphrey-visual-field.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-humphrey-visual-field: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-humphrey-visual-field: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-humphrey-visual-field: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1175,12 +1167,12 @@ INFORMATION: Resource: The resource StructureDefinition/ophthalmic-imaging-study
 == fsh-generated\resources\StructureDefinition-ophthalmic-medication.json ==
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-medication could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-medication-administration.json ==
-INFORMATION: StructureDefinition.snapshot.element[34].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[34].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-medication-administration could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-oct-macula.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-oct-macula: StructureDefinition.snapshot.element[82].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-oct-macula: StructureDefinition.snapshot.element[91].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-oct-macula: StructureDefinition.snapshot.element[181].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1209,8 +1201,8 @@ INFORMATION: StructureDefinition/ophthalmic-oct-macula: StructureDefinition.snap
 INFORMATION: StructureDefinition/ophthalmic-oct-macula: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-oct-macula could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-oct-rnfl.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-oct-rnfl: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-oct-rnfl: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-oct-rnfl: StructureDefinition.snapshot.element[82].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1275,8 +1267,8 @@ INFORMATION: StructureDefinition/ophthalmic-oct-rnfl: StructureDefinition.snapsh
 INFORMATION: StructureDefinition/ophthalmic-oct-rnfl: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-oct-rnfl could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-ocular-biometry.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-ocular-biometry: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-ocular-biometry: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-ocular-biometry: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1345,14 +1337,14 @@ INFORMATION: StructureDefinition/ophthalmic-patient: StructureDefinition.differe
 INFORMATION: StructureDefinition/ophthalmic-patient: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-patient could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-procedure.json ==
-INFORMATION: StructureDefinition.snapshot.element[36].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[13].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[36].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[13].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-procedure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-service-request.json ==
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-service-request could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-specular-microscopy.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-specular-microscopy: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-specular-microscopy: StructureDefinition.snapshot.element[64].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-specular-microscopy: StructureDefinition.snapshot.element[73].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1383,8 +1375,8 @@ INFORMATION: StructureDefinition/ophthalmic-specular-microscopy: StructureDefini
 INFORMATION: StructureDefinition/ophthalmic-specular-microscopy: StructureDefinition.snapshot.element[51].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-specular-microscopy could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-ophthalmic-visual-acuity.json ==
-INFORMATION: StructureDefinition.snapshot.element[30].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[14].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[30].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[14].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/ophthalmic-visual-acuity: StructureDefinition.snapshot.element[65].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-visual-acuity: StructureDefinition.snapshot.element[74].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/ophthalmic-visual-acuity: StructureDefinition.snapshot.element[92].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1400,8 +1392,8 @@ INFORMATION: StructureDefinition/ophthalmic-visual-acuity: StructureDefinition.s
 WARNING: StructureDefinition/ophthalmic-visual-acuity: StructureDefinition.snapshot: The slice 'valueCodeableConcept' on path 'Observation.value[x]' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 INFORMATION: Resource: The resource StructureDefinition/ophthalmic-visual-acuity could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-pachymetry.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/pachymetry: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/pachymetry: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/pachymetry: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -1433,13 +1425,13 @@ INFORMATION: StructureDefinition/red-filter-light-test: StructureDefinition.snap
 INFORMATION: Resource: The resource StructureDefinition/red-filter-light-test could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-stereopsis-test.json ==
 INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
-INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[55].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
+INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[56].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
-INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
+INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[11].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[8].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.differential.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[42].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/stereopsis-test: StructureDefinition.snapshot.element[43].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/stereopsis-test could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-strabismus-exam.json ==
 INFORMATION: StructureDefinition/strabismus-exam: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
@@ -1448,8 +1440,8 @@ INFORMATION: StructureDefinition/strabismus-exam: StructureDefinition.differenti
 INFORMATION: StructureDefinition/strabismus-exam: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: Resource: The resource StructureDefinition/strabismus-exam could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated\resources\StructureDefinition-tension-curve.json ==
-INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
-INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.3.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.3.0 (hl7.fhir.uv.extensions.r4#5.3.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/bodySite to 5.4.0 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
 INFORMATION: StructureDefinition/tension-curve: StructureDefinition.snapshot.element[15].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/tension-curve: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs|0.4.0
 INFORMATION: StructureDefinition/tension-curve: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)

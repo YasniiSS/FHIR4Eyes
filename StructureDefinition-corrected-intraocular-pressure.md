@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/corrected-intraocular-pressure | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CorrectedIntraocularPressure |
+| Draft as of 2026-11-16 | *Computable Name*:CorrectedIntraocularPressure |
 
  
 Represents an intraocular pressure reading corrected for corneal thickness (pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing both the IOP and pachymetry measurements it was derived from via derivedFrom. 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
   "name" : "CorrectedIntraocularPressure",
   "title" : "Corrected Intraocular Pressure",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -73,7 +73,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an intraocular pressure reading corrected for corneal thickness\r\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\r\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
+  "description" : "Represents an intraocular pressure reading corrected for corneal thickness\n(pachymetry). Recorded as a separate Observation from the plain IOP reading, referencing\nboth the IOP and pachymetry measurements it was derived from via derivedFrom.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -201,6 +201,10 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
       "type" : [{
         "code" : "Quantity"
       }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm[Hg]"
+      },
       "mustSupport" : true
     },
     {
@@ -222,7 +226,7 @@ Other representations of profile: [CSV](StructureDefinition-corrected-intraocula
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/gaze-position-measurement | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:GazePositionMeasurement |
+| Draft as of 2026-11-16 | *Computable Name*:GazePositionMeasurement |
 
  
 A reusable pattern for a single measurement or finding taken at one gaze position (e.g. primary position, right gaze, up-and-right gaze). Used by PrismCoverTest and KrimskyTest for quantitative prism diopter deviation (recorded as a positive magnitude plus a separate direction component, never as a signed value), and by HirschbergTest, RedFilterLightTest, and Worth4DotTest for a qualitative finding at each position. Each test uses only the components relevant to it; all components are optional. Not intended to be used standalone; always referenced via hasMember from one of those panels. 
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
   "name" : "GazePositionMeasurement",
   "title" : "Gaze Position Measurement",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -200,7 +200,7 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -370,7 +370,11 @@ Other representations of profile: [CSV](StructureDefinition-gaze-position-measur
       "short" : "Positive magnitude; never signed",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[p'diop]"
+      }
     },
     {
       "id" : "Observation.component:verticalDirection",

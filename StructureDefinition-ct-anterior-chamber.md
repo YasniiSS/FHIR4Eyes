@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-anterior-chamber | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CTAnteriorChamber |
+| Draft as of 2026-11-16 | *Computable Name*:CTAnteriorChamber |
 
  
 Represents the anterior chamber analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
   "name" : "CTAnteriorChamber",
   "title" : "Corneal Tomography - Anterior Chamber",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -202,7 +202,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -260,7 +260,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:chamberVolume",
@@ -287,7 +291,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:angle",
@@ -314,7 +322,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:pupilDiameter",
@@ -345,7 +357,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:lensThickness",
@@ -376,7 +392,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-anterior-chamber.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     }]
   }
 }

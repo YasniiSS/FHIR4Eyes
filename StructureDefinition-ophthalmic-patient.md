@@ -9,20 +9,20 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicPatient |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicPatient |
 
  
-Represents a patient receiving eye care, extending the base Patient resource with identifier slices for the Chilean national identifier (RUT) and passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. 
+Represents a patient receiving eye care, extending the base Patient resource with country-neutral identifier slices for a national identifier and a passport number, and requiring the core demographic elements (name, gender, birthDate) needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting. 
 
-Represents a patient receiving eye care. It extends the base `Patient` resource with two `identifier` slices, discriminated by `type`: `rut`, whose type is fixed to the v2-0203 `NI` (National unique individual identifier) code and whose system is fixed to the Chilean RUT namespace (`https://www.registrocivil.cl/rut`), and `passport`, whose type is fixed to the v2-0203 `PPN` (Passport number) code, for use when a RUT is not available (for example, foreign patients). Both slices are optional (each requires a `value` when present) and the slicing is open, so other identifiers may also be recorded.
+Represents a patient receiving eye care. It extends the base `Patient` resource with two `identifier` slices, discriminated by `type`: `nationalIdentifier`, whose type is fixed to the v2-0203 `NI` (National unique individual identifier) code and which requires a `system` (the national namespace is left open here and fixed by national guides such as FHIR4Eyes CL), and `passport`, whose type is fixed to the v2-0203 `PPN` (Passport number) code, for use when a national identifier is not available (for example, foreign patients). Both slices are optional (each requires a `value` when present) and the slicing is open, so other identifiers may also be recorded.
 
 The core demographic elements `name`, `gender`, and `birthDate` are required (`1..1`), since they are needed for clinical ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, reporting, and age-based clinical calculations (for example IOL formulas or paediatric norms). `telecom` and `address` are Must Support but optional.
 
-**Examples:** [Patient (Chilean RUT identifier)](Patient-PacienteEjemplo.md), [Patient (international identifier)](Patient-PatientExample.md)
+**Examples:** [Patient (international identifier)](Patient-PatientExample.md)
 
 **Usages:**
 
-* Examples for this Profile: [Patient/PacienteEjemplo](Patient-PacienteEjemplo.md) and [Patient/PatientExample](Patient-PatientExample.md)
+* Examples for this Profile: [Patient/PatientExample](Patient-PatientExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir4eyes.core|current/StructureDefinition/StructureDefinition-ophthalmic-patient.json)
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
   "name" : "OphthalmicPatient",
   "title" : "Ophthalmic Patient",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith identifier slices for the Chilean national identifier (RUT) and passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
+  "description" : "Represents a patient receiving eye care, extending the base Patient resource\nwith country-neutral identifier slices for a national identifier and a passport number, and\nrequiring the core demographic elements (name, gender, birthDate) needed for clinical\nophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -121,15 +121,15 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
       "mustSupport" : true
     },
     {
-      "id" : "Patient.identifier:rut",
+      "id" : "Patient.identifier:nationalIdentifier",
       "path" : "Patient.identifier",
-      "sliceName" : "rut",
+      "sliceName" : "nationalIdentifier",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Patient.identifier:rut.type",
+      "id" : "Patient.identifier:nationalIdentifier.type",
       "path" : "Patient.identifier.type",
       "short" : "Fixed to the National unique individual identifier type",
       "min" : 1,
@@ -142,15 +142,16 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
       }
     },
     {
-      "id" : "Patient.identifier:rut.system",
+      "id" : "Patient.identifier:nationalIdentifier.system",
       "path" : "Patient.identifier.system",
-      "short" : "Fixed to the Chilean Servicio de Registro Civil e Identificación RUT namespace",
-      "patternUri" : "https://www.registrocivil.cl/rut"
+      "short" : "The namespace of the national identifier (fixed by national guides)",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
-      "id" : "Patient.identifier:rut.value",
+      "id" : "Patient.identifier:nationalIdentifier.value",
       "path" : "Patient.identifier.value",
-      "short" : "The patient's Chilean RUT (Rol Único Tributario), e.g. 12345678-9",
+      "short" : "The patient's national identifier",
       "min" : 1,
       "mustSupport" : true
     },
@@ -178,7 +179,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-patient.c
     {
       "id" : "Patient.identifier:passport.value",
       "path" : "Patient.identifier.value",
-      "short" : "The patient's passport number, used when a Chilean RUT is not available (e.g. foreign patients)",
+      "short" : "The patient's passport number, used when a national identifier is not available (e.g. foreign patients)",
       "min" : 1,
       "mustSupport" : true
     },

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-specular-microscopy | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicSpecularMicroscopy |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicSpecularMicroscopy |
 
  
 Represents a corneal endothelial specular microscopy exam. Sourced directly from the FHIR4Eyes Observations catalog (Specular Microscopy section). 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
   "name" : "OphthalmicSpecularMicroscopy",
   "title" : "Ophthalmic Specular Microscopy",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -197,7 +197,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -312,7 +312,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "/mm2"
+      }
     },
     {
       "id" : "Observation.component:cellCount",
@@ -366,7 +370,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:hexagonality",
@@ -393,7 +401,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
     },
     {
       "id" : "Observation.component:cct",
@@ -420,7 +432,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:minArea",
@@ -447,7 +463,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um2"
+      }
     },
     {
       "id" : "Observation.component:maxArea",
@@ -474,7 +494,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um2"
+      }
     },
     {
       "id" : "Observation.component:avgArea",
@@ -501,7 +525,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um2"
+      }
     },
     {
       "id" : "Observation.component:sdArea",
@@ -528,7 +556,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-specular-
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um2"
+      }
     }]
   }
 }

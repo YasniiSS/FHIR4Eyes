@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/iol-formula-result | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:IOLFormulaResult |
+| Draft as of 2026-11-16 | *Computable Name*:IOLFormulaResult |
 
  
 Represents the result of a single IOL power calculation formula (e.g. Barrett Universal II, SRK/T, Holladay), including the recommended lens and expected refraction. Not intended to be used standalone: always referenced via hasMember from an OphthalmicOcularBiometry instance, since one biometry exam typically has its shared measurements calculated through several formulas, each with its own suggested lens. 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
   "name" : "IOLFormulaResult",
   "title" : "IOL Formula Result",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -355,7 +355,11 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:expectedRef",
@@ -386,7 +390,11 @@ Other representations of profile: [CSV](StructureDefinition-iol-formula-result.c
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:iolTable",

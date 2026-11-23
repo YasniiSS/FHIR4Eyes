@@ -19,9 +19,9 @@ The search parameters below **SHALL NOT** be interpreted on their own as a list 
 | :--- | :--- | :--- | :--- |
 | Condition | `eye` | [ConditionEye](SearchParameter-sp-condition-eye.md) | Laterality (`bodySite`→ BodyStructure) |
 | DiagnosticReport | `imaging-study` | [DiagnosticReportImagingStudy](SearchParameter-sp-diagnosticreport-imaging-study.md) | `DiagnosticReport.imagingStudy` |
-| Encounter | `appointment` | [EncounterAppointment](SearchParameter-sp-encounter-appointment.md) | `Encounter.appointment` |
 | ImagingStudy | `eye` | [ImagingStudyEye](SearchParameter-sp-imagingstudy-eye.md) | `ImagingStudy.series.laterality`(token) |
-| ImagingStudy | `modality` | [ImagingStudyModality](SearchParameter-sp-imagingstudy-modality.md) | `ImagingStudy.series.modality` |
 | Observation | `eye` | [ObservationEye](SearchParameter-sp-observation-eye.md) | Laterality (`bodySite`→ BodyStructure) |
 | Procedure | `eye` | [ProcedureEye](SearchParameter-sp-procedure-eye.md) | Laterality (`bodySite`→ BodyStructure) |
+
+Searching ImagingStudy by `modality` and Encounter by `appointment` uses the core R4 search parameters ([ImagingStudy-modality](http://hl7.org/fhir/R4/imagingstudy.html#search) and [Encounter-appointment](http://hl7.org/fhir/R4/encounter.html#search)); this guide does not redefine them. All parameters above are listed in the [Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md).
 

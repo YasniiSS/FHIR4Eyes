@@ -1,8 +1,8 @@
 {
   "resourceType" : "Bundle",
-  "id" : "860602db-e5ca-45c4-b700-7751ed5f1de1",
+  "id" : "d1ac5bb7-6eef-4c2e-acbe-998a6e56cb59",
   "meta" : {
-    "lastUpdated" : "2026-10-20T20:13:11.158-03:00"
+    "lastUpdated" : "2026-11-16T21:59:20.331-03:00"
   },
   "type" : "collection",
   "entry" : [{
@@ -19,7 +19,7 @@
       "title" : "Binocular Finding Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -28,8 +28,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:4c2f057e-0bd7-41f3-977c-5733e4c0c6fa",
-        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "identifier" : "urn:uuid:ddd636f0-a293-434d-bdbc-5fa973b0a3b3",
+        "timestamp" : "2026-11-16T22:00:56-03:00",
         "total" : 10,
         "offset" : 0,
         "parameter" : [{
@@ -135,7 +135,7 @@
       "title" : "Gaze Position Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -144,8 +144,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:86215cc9-02e5-4e4e-af98-5ea45beca80d",
-        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "identifier" : "urn:uuid:7123de05-3381-4302-8eff-86c1efe9bb5c",
+        "timestamp" : "2026-11-16T22:00:56-03:00",
         "total" : 9,
         "offset" : 0,
         "parameter" : [{
@@ -238,7 +238,7 @@
       "title" : "Horizontal Deviation Direction Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -247,8 +247,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:ca752bb3-de60-49bc-ba10-65bd4cb4ddfc",
-        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "identifier" : "urn:uuid:05ef45df-6220-404c-8d4b-f0c048164fce",
+        "timestamp" : "2026-11-16T22:00:56-03:00",
         "total" : 3,
         "offset" : 0,
         "parameter" : [{
@@ -303,7 +303,7 @@
       "title" : "Low Vision Assessment Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -312,8 +312,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:6e03d50c-ba95-4f3b-8796-8d5654ccf3fa",
-        "timestamp" : "2026-10-20T20:16:03-03:00",
+        "identifier" : "urn:uuid:d6e2c781-a18f-4b16-9813-488126f395b1",
+        "timestamp" : "2026-11-16T22:01:12-03:00",
         "total" : 9,
         "offset" : 0,
         "parameter" : [{
@@ -406,7 +406,7 @@
       "title" : "Normative Classification Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -415,8 +415,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:51e8fff3-f92b-48f2-8596-d3ba62c0392e",
-        "timestamp" : "2026-10-20T20:15:51-03:00",
+        "identifier" : "urn:uuid:072475aa-d320-45ce-9788-f85578704111",
+        "timestamp" : "2026-11-16T22:01:04-03:00",
         "total" : 3,
         "offset" : 0,
         "parameter" : [{
@@ -471,7 +471,7 @@
       "title" : "Ophthalmic Care Plan Category Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -480,8 +480,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:19497d9e-6176-4a81-8b26-98308cdfbd3a",
-        "timestamp" : "2026-10-20T20:16:11-03:00",
+        "identifier" : "urn:uuid:749743f1-6b2e-4788-acff-ef5b492fc4a7",
+        "timestamp" : "2026-11-16T22:01:18-03:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -531,7 +531,7 @@
       "title" : "Test Distance Category Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -540,8 +540,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:f42dde77-c625-4970-b08a-6a3771702ece",
-        "timestamp" : "2026-10-20T20:15:25-03:00",
+        "identifier" : "urn:uuid:75bcc193-1508-4dd6-8d36-6ac97f0571cb",
+        "timestamp" : "2026-11-16T22:00:49-03:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -591,7 +591,7 @@
       "title" : "Vertical Deviation Direction Value Set",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-20T20:13:11-03:00",
+      "date" : "2026-11-16T21:59:20-03:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -600,8 +600,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:577ba54d-daba-4b40-a8e9-638dab483743",
-        "timestamp" : "2026-10-20T20:15:36-03:00",
+        "identifier" : "urn:uuid:250060fa-3adf-47dc-92a4-0eb2d9c46b06",
+        "timestamp" : "2026-11-16T22:00:56-03:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{

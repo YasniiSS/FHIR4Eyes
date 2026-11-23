@@ -116,7 +116,7 @@ If the use case requires BodySite to be handled as a separate resource (e.g. to 
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Observation.bodySite.extension:bodySiteEye","Observation.bodySite.extension","bodySiteEye","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0]]} {[]}
+"Observation.bodySite.extension:bodySiteEye","Observation.bodySite.extension","bodySiteEye","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0]]} {[]}
 ","The eye being assessed (required, since motility is always eye-specific)","Record details about the anatomical location of a specimen or body part. This resource may be used when a coded concept does not provide the necessary detail needed for the use case.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Observation.bodySite.extension:bodySiteEye.id","Observation.bodySite.extension.id","","","",0,1,"","","","string {[]} {[]}

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CoverTest |
+| Draft as of 2026-11-16 | *Computable Name*:CoverTest |
 
  
 Represents a cover test result, performed with or without correction, at near or far distance. Findings are recorded as open text/coded values for now (PC: orthophoria, PL: various movement patterns), since no confirmed SNOMED/LOINC binding has been verified for these specific findings yet. 
@@ -22,6 +22,7 @@ The finding is recorded in `value[x]` as a `CodeableConcept` or `string` (for ex
 
 **Usages:**
 
+* Refer to this Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 * Examples for this Profile: [Observation/CoverTestExample](Observation-CoverTestExample.md) and [Observation/CoverTestFarExample](Observation-CoverTestFarExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
@@ -48,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
   "name" : "CoverTest",
   "title" : "Cover Test",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -194,7 +195,7 @@ Other representations of profile: [CSV](StructureDefinition-cover-test.csv), [Ex
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

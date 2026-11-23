@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-diagnostic-report | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicDiagnosticReport |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicDiagnosticReport |
 
  
 Represents the findings, diagnosis, and treatment plan reached after reviewing an imaging study or structured examination dataset. Unlike a radiology report, this is not limited to describing imaging findings: the same clinical act typically also reaches a diagnosis and defines a treatment plan, recorded as separate Condition and CarePlan resources referencing this report. 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-diagnosti
   "name" : "OphthalmicDiagnosticReport",
   "title" : "Ophthalmic Diagnostic Report",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

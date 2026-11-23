@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-ocular-biometry | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicOcularBiometry |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicOcularBiometry |
 
  
 Represents an ocular biometry exam (optical or ultrasonic), used primarily for IOL power calculation ahead of cataract surgery. Sourced directly from the FHIR4Eyes Observations catalog (Ocular Biometry section), with informative DICOM correspondences given in the DICOM mapping. Holds the shared measurements common to the whole exam (axial length, keratometry, and so on) as components; each formula calculated from those shared measurements, with its own suggested IOL and expected outcome, is a separate IOLFormulaResult instance referenced via hasMember, since one biometry exam is typically run through several formulas. 
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
   "name" : "OphthalmicOcularBiometry",
   "title" : "Ophthalmic Ocular Biometry",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -217,7 +217,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -297,7 +297,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:alType",
@@ -422,7 +426,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:acdDef",
@@ -484,7 +492,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:lensStatus",
@@ -578,7 +590,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:k1Axis",
@@ -610,7 +626,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:k1Radius",
@@ -642,7 +662,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:k2",
@@ -674,7 +698,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:k2Axis",
@@ -706,7 +734,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:k2Radius",
@@ -738,7 +770,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:km",
@@ -765,7 +801,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:rse",
@@ -792,7 +832,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cornealCyl",
@@ -819,7 +863,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:keratIndex",
@@ -881,7 +929,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:pupilDiam",
@@ -912,7 +964,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:mydriaticAgent",
@@ -1036,7 +1092,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:refErrorType",
@@ -1129,7 +1189,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-ocular-bi
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     }]
   }
 }

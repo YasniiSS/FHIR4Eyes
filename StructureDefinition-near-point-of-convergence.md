@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:NearPointOfConvergence |
+| Draft as of 2026-11-16 | *Computable Name*:NearPointOfConvergence |
 
  
 Represents the near point of convergence (PPC), recorded either as a numeric distance in centimetres, or, when a precise measurement isn't obtained, as a qualitative finding (e.g. 'nasal', 'near nasal'). 
@@ -20,6 +20,7 @@ Represents the near point of convergence (PPC), recorded either as a numeric dis
 
 **Usages:**
 
+* Refer to this Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 * Examples for this Profile: [Observation/NearPointOfConvergenceExample](Observation-NearPointOfConvergenceExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
@@ -46,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
   "name" : "NearPointOfConvergence",
   "title" : "Near Point of Convergence",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -62,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents the near point of convergence (PPC), recorded either as a\r\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\r\nqualitative finding (e.g. 'nasal', 'near nasal').",
+  "description" : "Represents the near point of convergence (PPC), recorded either as a\nnumeric distance in centimetres, or, when a precise measurement isn't obtained, as a\nqualitative finding (e.g. 'nasal', 'near nasal').",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -170,6 +171,14 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
       "short" : "Distance in cm (Quantity), or a qualitative finding such as 'nasal' or 'near nasal' (CodeableConcept)",
       "type" : [{
         "code" : "Quantity"
@@ -177,6 +186,21 @@ Other representations of profile: [CSV](StructureDefinition-near-point-of-conver
       {
         "code" : "CodeableConcept"
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x]:valueQuantity",
+      "path" : "Observation.value[x]",
+      "sliceName" : "valueQuantity",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "cm"
+      },
       "mustSupport" : true
     },
     {

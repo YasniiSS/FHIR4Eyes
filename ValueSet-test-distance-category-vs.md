@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/test-distance-category-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:TestDistanceCategoryVS |
+| Draft as of 2026-11-16 | *Computable Name*:TestDistanceCategoryVS |
 
  
 Categorical testing distance of a strabismus or binocular vision test: near (about 33-40 cm) or far (about 6 m / 20 ft). The binding is extensible, so other categories (e.g. intermediate) may be used when needed. 
@@ -55,7 +55,7 @@ Categorical testing distance of a strabismus or binocular vision test: near (abo
   "title" : "Test Distance Category Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

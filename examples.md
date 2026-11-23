@@ -16,7 +16,6 @@ Instances referenced by most of the other examples.
 | | | |
 | :--- | :--- | :--- |
 | [Patient (international identifier)](Patient-PatientExample.md) | [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient identified with a passport number |
-| [Patient (Chilean RUT identifier)](Patient-PacienteEjemplo.md) | [Ophthalmic Patient](StructureDefinition-ophthalmic-patient.md) | Patient identified with a Chilean RUT |
 | [Ophthalmologist](Practitioner-OphthalmologistExample.md) | Practitioner (base) | Requester and performer in the examples |
 | [Ambulatory ophthalmology encounter](Encounter-EncounterExample.md) | [Ophthalmic Encounter](StructureDefinition-ophthalmic-encounter.md) | An ambulatory consultation |
 | [Right eye](BodyStructure-RightEyeStructureExample.md),[Left eye](BodyStructure-LeftEyeStructureExample.md),[Both eyes](BodyStructure-BothEyesStructureExample.md) | [Ocular Body Structure](StructureDefinition-ocular-body-structure.md) | Laterality targets referenced from`bodySite` |

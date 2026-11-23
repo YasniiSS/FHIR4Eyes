@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-condition | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicCondition |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicCondition |
 
  
 The formal, past or present clinical diagnosis of a specific ophthalmic condition. Follows the same minimalist technical pattern as the HL7 Eye Care IG's equivalent profile (condition-base): only code, bodySite, and subject carry real constraints; everything else in the base Condition resource is left as-is. See the Profiles page of this guide for the full design rationale, including a note on where FHIR4Eyes departs from the Eye Care IG's own narrative documentation. 
@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-condition
   "name" : "OphthalmicCondition",
   "title" : "Ophthalmic Condition",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -151,7 +151,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-condition
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },

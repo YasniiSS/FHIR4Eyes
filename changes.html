@@ -208,6 +208,22 @@ reference each other.</li>
   <li>All examples now have a title and description.</li>
 </ul>
 
+<p><strong>Structural review fixes</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">StrabismusExam.hasMember</code> is restricted to the ten strabismus sub-test profiles.</li>
+  <li>Quantity values now carry fixed UCUM units (e.g. <code class="language-plaintext highlighter-rouge">mm[Hg]</code> for IOP, <code class="language-plaintext highlighter-rouge">um</code> for thickness).</li>
+  <li>The CapabilityStatement now lists the guide's <code class="language-plaintext highlighter-rouge">eye</code> and <code class="language-plaintext highlighter-rouge">imaging-study</code> search parameters
+with their definitions. The <code class="language-plaintext highlighter-rouge">modality</code> (ImagingStudy) and <code class="language-plaintext highlighter-rouge">appointment</code> (Encounter) search
+parameters are no longer redefined; the core R4 ones are referenced instead.</li>
+  <li><code class="language-plaintext highlighter-rouge">OphthalmicPatient</code> is country-neutral: the <code class="language-plaintext highlighter-rouge">rut</code> slice became a generic
+<code class="language-plaintext highlighter-rouge">nationalIdentifier</code> slice (type <code class="language-plaintext highlighter-rouge">NI</code>, system required but not fixed). The Chilean RUT
+example moved out of Core, to the FHIR4Eyes CL guide.</li>
+  <li>Example timeline fixes: cataract surgery now follows the biometry that plans it, the
+corneal tomography report is effective when its analyses were acquired (issued two days
+later), and the OCT procedure precedes its imaging studies and covers both eyes.</li>
+</ul>
+
 <p><strong>Terminology and validation fixes</strong>:</p>
 
 <ul>
@@ -369,7 +385,7 @@ pattern, and the granular-components pattern).</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 16, 2026 21:59-0300">2026-11-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

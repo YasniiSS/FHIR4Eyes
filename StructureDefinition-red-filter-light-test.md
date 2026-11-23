@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:RedFilterLightTest |
+| Draft as of 2026-11-16 | *Computable Name*:RedFilterLightTest |
 
  
 Represents a red filter plus light test, assessing fusion, suppression, or diplopia. Performed across multiple gaze positions; each position is recorded as a separate GazePositionMeasurement, referenced here via hasMember, using its qualitative finding component. Distance and correction status are recorded as components on this panel. 
@@ -20,6 +20,7 @@ Represents a red filter plus light test, assessing fusion, suppression, or diplo
 
 **Usages:**
 
+* Refer to this Profile: [Strabismus Exam](StructureDefinition-strabismus-exam.md)
 * Examples for this Profile: [Observation/RedFilterLightTestExample](Observation-RedFilterLightTestExample.md)
 * CapabilityStatements using this Profile: [FHIR4Eyes Server Capability Statement](CapabilityStatement-FHIR4EyesCapabilityStatement.md)
 
@@ -46,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-red-filter-light-tes
   "name" : "RedFilterLightTest",
   "title" : "Red Filter Light Test",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

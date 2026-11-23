@@ -58,8 +58,8 @@
     "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
     "uses" : {
     },
-    "StructureDefinition-ophthalmic-oct-rnfl.html" : "Ophthalmic OCT RNFL",
-    "StructureDefinition-ophthalmic-oct-macula.html" : "Ophthalmic OCT Macula"
+    "StructureDefinition-ophthalmic-oct-macula.html" : "Ophthalmic OCT Macula",
+    "StructureDefinition-ophthalmic-oct-rnfl.html" : "Ophthalmic OCT RNFL"
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/ophthalmic-care-plan-category-vs",
@@ -83,11 +83,11 @@
     "systems" : ["https://YasniiSS.github.io/fhir4eyes/CodeSystem/fhir4eyes-cs"],
     "uses" : {
     },
+    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test",
     "StructureDefinition-cover-test.html" : "Cover Test",
     "StructureDefinition-krimsky-test.html" : "Krimsky Test",
-    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test",
     "StructureDefinition-worth-4-dot-test.html" : "Worth 4 Dot Test",
-    "StructureDefinition-red-filter-light-test.html" : "Red Filter Light Test"
+    "StructureDefinition-prism-cover-test.html" : "Prism Cover Test"
   },
   {
     "url" : "https://YasniiSS.github.io/fhir4eyes/ValueSet/vertical-deviation-direction-vs",

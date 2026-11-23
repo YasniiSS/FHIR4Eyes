@@ -41,25 +41,11 @@
   "name" : "DiagnosticReportImagingStudy"
 },
 {
-  "id" : "sp-encounter-appointment",
-  "type" : "SearchParameter",
-  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-encounter-appointment",
-  "version" : "0.4.0",
-  "name" : "EncounterAppointment"
-},
-{
   "id" : "sp-imagingstudy-eye",
   "type" : "SearchParameter",
   "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye",
   "version" : "0.4.0",
   "name" : "ImagingStudyEye"
-},
-{
-  "id" : "sp-imagingstudy-modality",
-  "type" : "SearchParameter",
-  "url" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-modality",
-  "version" : "0.4.0",
-  "name" : "ImagingStudyModality"
 },
 {
   "id" : "sp-observation-eye",

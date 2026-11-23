@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-oct-rnfl | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:OphthalmicOCTRNFL |
+| Draft as of 2026-11-16 | *Computable Name*:OphthalmicOCTRNFL |
 
  
 Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL) analysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS), the global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and the quadrant average RNFL thicknesses, alongside acquisition metadata and an overall normative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT Optic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile. 
@@ -69,7 +69,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
   "name" : "OphthalmicOCTRNFL",
   "title" : "Ophthalmic OCT RNFL",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -85,7 +85,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "value" : "https://YasniiSS.github.io/fhir4eyes"
     }]
   }],
-  "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\r\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\r\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\r\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\r\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\r\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.",
+  "description" : "Represents an OCT optic nerve head (ONH) and retinal nerve fiber layer (RNFL)\nanalysis: cup and disc geometry, cup-to-disc ratios, Disc Damage Likelihood Scale (DDLS),\nthe global TSNIT (Temporal-Superior-Nasal-Inferior-Temporal) RNFL profile statistics and\nthe quadrant average RNFL thicknesses, alongside acquisition metadata and an overall\nnormative classification. Sourced directly from the FHIR4Eyes Observations catalog (OCT\nOptic Disc/RNFL section), replacing an earlier, quadrant-thickness-only version of this profile.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
@@ -242,7 +242,7 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -296,7 +296,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm2"
+      }
     },
     {
       "id" : "Observation.component:cupVol",
@@ -323,7 +327,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:rimVol",
@@ -350,7 +358,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm3"
+      }
     },
     {
       "id" : "Observation.component:cdH",
@@ -431,7 +443,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:discDiamV",
@@ -458,7 +474,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:discDiamMean",
@@ -485,7 +505,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cupDiamH",
@@ -512,7 +536,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cupDiamV",
@@ -539,7 +567,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cupDiamMean",
@@ -566,7 +598,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cupDepthMean",
@@ -593,7 +629,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:cupDepthMax",
@@ -620,7 +660,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:discVHratio",
@@ -728,7 +772,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "deg"
+      }
     },
     {
       "id" : "Observation.component:ddls",
@@ -809,7 +857,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:tsnitSD",
@@ -836,7 +888,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:rnflSuperior",
@@ -863,7 +919,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:rnflInferior",
@@ -890,7 +950,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:rnflNasal",
@@ -917,7 +981,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:rnflTemporal",
@@ -944,7 +1012,11 @@ Other representations of profile: [CSV](StructureDefinition-ophthalmic-oct-rnfl.
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:signalStrength",

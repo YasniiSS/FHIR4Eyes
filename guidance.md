@@ -29,7 +29,7 @@ Why a reference instead of a simple code? A `Reference` lets the same `OcularBod
 
 `ImagingStudy` is the one exception: its `series.bodySite` and `series.laterality` are native `Coding` fields (not references), for standard DICOM/PACS compatibility. This guide uses those native fields as they are, coded with SNOMED CT (for example `24028007` Right / `7771000` Left in `series.laterality`), and does **not** add the `bodySiteEye` extension on the series. The `eye` search parameter for `ImagingStudy` searches `series.laterality` directly (see [Search Parameters](search-parameters.md)). See `OphthalmicImagingStudy` in [Profiles](profiles.md).
 
-`OphthalmicMedicationAdministration` has no `bodySite` element of its own in R4; there the `bodySiteEye` extension is placed on `dosage`, to record which eye the medication was administered to.
+`OphthalmicMedicationAdministration` has no `bodySite` element of its own in R4; there the `bodySiteEye` extension is placed on `dosage` (a context the core `bodySite` extension explicitly allows), to record which eye the medication was administered to.
 
 ## The Study / Series / Instance hierarchy
 

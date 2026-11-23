@@ -63,7 +63,7 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
     "resource" : [{
       "type" : "Patient",
       "supportedProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ophthalmic-patient"],
-      "documentation" : "Patient demographics with Chilean RUT and passport identifier slices.",
+      "documentation" : "Patient demographics with national identifier and passport identifier slices.",
       "interaction" : [{
         "code" : "read"
       },
@@ -115,6 +115,11 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       {
         "name" : "status",
         "type" : "token"
+      },
+      {
+        "name" : "appointment",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Encounter-appointment",
+        "type" : "reference"
       }]
     },
     {
@@ -183,6 +188,11 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       {
         "name" : "status",
         "type" : "token"
+      },
+      {
+        "name" : "eye",
+        "definition" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-observation-eye",
+        "type" : "reference"
       }]
     },
     {
@@ -215,6 +225,11 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       {
         "name" : "clinical-status",
         "type" : "token"
+      },
+      {
+        "name" : "eye",
+        "definition" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-condition-eye",
+        "type" : "reference"
       }]
     },
     {
@@ -247,6 +262,11 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       {
         "name" : "status",
         "type" : "token"
+      },
+      {
+        "name" : "eye",
+        "definition" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-procedure-eye",
+        "type" : "reference"
       }]
     },
     {
@@ -316,6 +336,11 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       {
         "name" : "status",
         "type" : "token"
+      },
+      {
+        "name" : "imaging-study",
+        "definition" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-diagnosticreport-imaging-study",
+        "type" : "reference"
       }]
     },
     {
@@ -343,6 +368,16 @@ Capability Statement for a FHIR4Eyes conformant server supporting ophthalmic cli
       },
       {
         "name" : "status",
+        "type" : "token"
+      },
+      {
+        "name" : "eye",
+        "definition" : "https://YasniiSS.github.io/fhir4eyes/SearchParameter/sp-imagingstudy-eye",
+        "type" : "token"
+      },
+      {
+        "name" : "modality",
+        "definition" : "http://hl7.org/fhir/SearchParameter/ImagingStudy-modality",
         "type" : "token"
       }]
     },

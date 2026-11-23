@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/ValueSet/horizontal-deviation-direction-vs | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:HorizontalDeviationDirectionVS |
+| Draft as of 2026-11-16 | *Computable Name*:HorizontalDeviationDirectionVS |
 
  
 Direction of a horizontal ocular deviation at a gaze position: esodeviation, exodeviation, or orthophoria when no horizontal deviation is present. Covers both tropias and phorias; the magnitude is recorded separately as a positive value. 
@@ -51,7 +51,7 @@ Direction of a horizontal ocular deviation at a gaze position: esodeviation, exo
   "title" : "Horizontal Deviation Direction Value Set",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",

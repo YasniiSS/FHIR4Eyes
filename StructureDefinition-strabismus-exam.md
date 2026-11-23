@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/strabismus-exam | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:StrabismusExam |
+| Draft as of 2026-11-16 | *Computable Name*:StrabismusExam |
 
  
 Represents a strabismus examination as a panel grouping together whichever sub-tests were actually performed for this patient (for example, cover test, motility, near point of convergence, stereopsis, prism cover test, Krimsky test). Not every possible sub-test is performed for every patient; this profile does not enforce a fixed checklist. Each sub-test is recorded as its own Observation, referenced here via hasMember. 
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
   "name" : "StrabismusExam",
   "title" : "Strabismus Exam",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -238,6 +238,19 @@ Other representations of profile: [CSV](StructureDefinition-strabismus-exam.csv)
       "id" : "Observation.hasMember",
       "path" : "Observation.hasMember",
       "short" : "Any sub-test performed as part of this strabismus exam (e.g. cover test, motility, PPC, stereopsis, prism cover test, Krimsky)",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://YasniiSS.github.io/fhir4eyes/StructureDefinition/cover-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ocular-motility",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/near-point-of-convergence",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/convergence-assessment",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/stereopsis-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/prism-cover-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/krimsky-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/hirschberg-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/red-filter-light-test",
+        "https://YasniiSS.github.io/fhir4eyes/StructureDefinition/worth-4-dot-test"]
+      }],
       "mustSupport" : true
     }]
   }

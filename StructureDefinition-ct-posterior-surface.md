@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-posterior-surface | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CTPosteriorSurface |
+| Draft as of 2026-11-16 | *Computable Name*:CTPosteriorSurface |
 
  
 Represents the posterior corneal surface analysis component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Posterior Surface section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
   "name" : "CTPosteriorSurface",
   "title" : "Corneal Tomography - Posterior Surface",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -196,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -250,7 +250,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:backK2",
@@ -277,7 +281,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:backKm",
@@ -304,7 +312,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:backAstig",
@@ -331,7 +343,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[diop]"
+      }
     },
     {
       "id" : "Observation.component:qValueBack",
@@ -385,7 +401,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "um"
+      }
     },
     {
       "id" : "Observation.component:bestFitSphereBack",
@@ -412,7 +432,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-posterior-surface
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     }]
   }
 }

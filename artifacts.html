@@ -265,7 +265,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Represents a patient receiving eye care, extending the base Patient resource
-with identifier slices for the Chilean national identifier (RUT) and passport number, and
+with country-neutral identifier slices for a national identifier and a passport number, and
 requiring the core demographic elements (name, gender, birthDate) needed for clinical
 ophthalmic workflows such as scheduling, MWL/DICOM worklist generation, and reporting.</p>
 </td>
@@ -929,29 +929,11 @@ this is a component' pattern.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="SearchParameter-sp-imagingstudy-modality.html"
-                  title="SearchParameter/sp-imagingstudy-modality">ImagingStudy modality search parameter</a>
-            </td>
-            <td>
-<p>Search ophthalmic imaging studies by the DICOM acquisition modality of their series (e.g. OPT, OP, OPV, OPM, OAM, AR).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="SearchParameter-sp-diagnosticreport-imaging-study.html"
                   title="SearchParameter/sp-diagnosticreport-imaging-study">DiagnosticReport imaging study search parameter</a>
             </td>
             <td>
 <p>Search ophthalmic diagnostic reports by the OphthalmicImagingStudy they interpret.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="SearchParameter-sp-encounter-appointment.html"
-                  title="SearchParameter/sp-encounter-appointment">Encounter appointment search parameter</a>
-            </td>
-            <td>
-<p>Search ophthalmic encounters by the appointment that led to them.</p>
 </td>
          </tr>
       </tbody>
@@ -1093,14 +1075,6 @@ recorded separately as a positive value.</p>
             </td>
             <td>
 <p>Example patient identified with a passport number, used across the guide's examples.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-PacienteEjemplo.html" title="Patient/PacienteEjemplo">Patient (Chilean RUT identifier)</a>
-            </td>
-            <td>
-<p>Example patient identified with a Chilean RUT.</p>
 </td>
          </tr>
          <tr>
@@ -1997,7 +1971,7 @@ recorded separately as a positive value.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2026 20:13-0300">2026-10-20</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://YasniiSS.github.io/fhir4eyes">FHIR4Eyes Project</a>.  Package fhir4eyes.core#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 16, 2026 21:59-0300">2026-11-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

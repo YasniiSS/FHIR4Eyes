@@ -14,7 +14,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
 
 **subject**: [Patient Example Female, DoB: 1990-01-01 ( Passport number: PA1234567)](Patient-PatientExample.md)
 
-**performed**: 2026-07-01 09:00:00+0000
+**performed**: 2026-09-01 09:00:00+0000
 
 ### Performers
 
@@ -52,7 +52,7 @@ Profile: [Ophthalmic Procedure](StructureDefinition-ophthalmic-procedure.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "performedDateTime" : "2026-07-01T09:00:00Z",
+  "performedDateTime" : "2026-09-01T09:00:00Z",
   "performer" : [{
     "actor" : {
       "reference" : "Practitioner/OphthalmologistExample"

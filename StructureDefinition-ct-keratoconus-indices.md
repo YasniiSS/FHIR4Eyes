@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://YasniiSS.github.io/fhir4eyes/StructureDefinition/ct-keratoconus-indices | *Version*:0.4.0 |
-| Draft as of 2026-10-20 | *Computable Name*:CTKeratoconusIndices |
+| Draft as of 2026-11-16 | *Computable Name*:CTKeratoconusIndices |
 
  
 Represents the keratoconus screening/classification indices component of a corneal tomography exam, one of six Observations grouped under a single CornealTomographyReport. Sourced directly from the FHIR4Eyes Observations catalog (Corneal Topography: Keratoconus Indices section). Component codes are local FHIR4Eyes codes, as no confirmed laterality-neutral SNOMED CT/LOINC codes were identified for these device-specific measurements (see Terminology). 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
   "name" : "CTKeratoconusIndices",
   "title" : "Corneal Tomography - Keratoconus Indices",
   "status" : "draft",
-  "date" : "2026-10-20T20:13:11-03:00",
+  "date" : "2026-11-16T21:59:20-03:00",
   "publisher" : "FHIR4Eyes Project",
   "contact" : [{
     "name" : "FHIR4Eyes Project",
@@ -196,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.3.0"]
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0"]
       }],
       "mustSupport" : true
     },
@@ -439,7 +439,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:enhBfsBack",
@@ -466,7 +470,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:amslerKrumeich",
@@ -709,7 +717,11 @@ Other representations of profile: [CSV](StructureDefinition-ct-keratoconus-indic
       "path" : "Observation.component.value[x]",
       "type" : [{
         "code" : "Quantity"
-      }]
+      }],
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mm"
+      }
     },
     {
       "id" : "Observation.component:tkc",
